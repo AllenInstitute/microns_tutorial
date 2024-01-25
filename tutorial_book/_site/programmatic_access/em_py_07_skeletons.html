@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.546">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tutorial_book - Skeletons</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Tutorial_book</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#skeletons" id="toc-skeletons" class="nav-link active" data-scroll-target="#skeletons">Skeletons</a>
+  <ul class="collapse">
+  <li><a href="#working-with-meshwork-files" id="toc-working-with-meshwork-files" class="nav-link" data-scroll-target="#working-with-meshwork-files">Working with Meshwork Files</a></li>
+  <li><a href="#meshwork-nrn.mesh-vs-nrn.skeleton" id="toc-meshwork-nrn.mesh-vs-nrn.skeleton" class="nav-link" data-scroll-target="#meshwork-nrn.mesh-vs-nrn.skeleton">Meshwork nrn.mesh vs nrn.skeleton</a></li>
+  </ul></li>
+  <li><a href="#heres-a-simple-way-to-plot-vertices-of-the-skeleton" id="toc-heres-a-simple-way-to-plot-vertices-of-the-skeleton" class="nav-link" data-scroll-target="#heres-a-simple-way-to-plot-vertices-of-the-skeleton">here’s a simple way to plot vertices of the skeleton</a>
+  <ul class="collapse">
+  <li><a href="#skeleton-properties-and-methods" id="toc-skeleton-properties-and-methods" class="nav-link" data-scroll-target="#skeleton-properties-and-methods">Skeleton Properties and Methods</a></li>
+  <li><a href="#indexing-and-selecting-sets-of-points" id="toc-indexing-and-selecting-sets-of-points" class="nav-link" data-scroll-target="#indexing-and-selecting-sets-of-points">Indexing And Selecting Sets of Points</a></li>
+  <li><a href="#masking" id="toc-masking" class="nav-link" data-scroll-target="#masking">Masking</a></li>
+  </ul></li>
+  <li><a href="#this-will-make-a-mask-with-only-the-vertices-in-the-first-cover-path." id="toc-this-will-make-a-mask-with-only-the-vertices-in-the-first-cover-path." class="nav-link" data-scroll-target="#this-will-make-a-mask-with-only-the-vertices-in-the-first-cover-path.">This will make a mask with only the vertices in the first cover path.</a>
+  <ul class="collapse">
+  <li><a href="#annotations" id="toc-annotations" class="nav-link" data-scroll-target="#annotations">Annotations</a>
+  <ul class="collapse">
+  <li><a href="#filtering-annotations-by-skeleton-arbor" id="toc-filtering-annotations-by-skeleton-arbor" class="nav-link" data-scroll-target="#filtering-annotations-by-skeleton-arbor">Filtering Annotations by Skeleton Arbor</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Skeletons</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="skeletons" class="level1">
+<h1>Skeletons</h1>
+<p>Often in thinking about neurons, you want to measure things along a linear dimension of a neuron. However, the segmentation is a full complex 3d shape that makes this non-trivial. There are methods for reducing the shape of a segmented neuron down to a linear tree like structure usually referred to as a skeleton. We have precalculated skeletons for a large number of cells in the dataset, including all the proofread cells, and many of the excitatory cells with a single soma in the dataset, and these are available on the harddrives and in the aws directory. These skeletons are stored in an h5 file format, and also contain annotations on the skeletons that have the synapses, which skeleton nodes are axon and which are dendrite, and which are likely the apical dendrite of excitatory neurons.</p>
+<p>:::{figure} img/skeleton-cartoon.png Cartoon illustration of “level 2” graph and skeletons. :::</p>
+<p>In order to understand these skeletons, you have to understand how large scale EM data is represented. Portions of 3d space are broken up into chunks, such as the grid in the image above. Neurons, such as the cartoon green cell above, span many chunks. Components of the segmentation that live within a single chunk are called level 2 ids, this is because in fact the chunks get iteratively combined into larger chunks, until the chunks span the whole volume. We call this the PyChunkedGraph or PCG, after the library which we use to store and interact with this represenation. Level 0 is the voxels, level 1 refers to the grouping of voxels within the chunk (also known as supervoxels) and level 2 are the groups of supervoxels within a chunk. A segmentation result can be thought of as a graph at any of these levels, where the voxels, supervoxels, or level 2 ids that are part of the same object are connected. In the above diagram, the PCG level 2 graph is represented as the light red lines.</p>
+<p>Such graphs are useful in that they track all the parts of the neuron that are connected to one another, but they aren’t skeletons, because the graph is not directed, and isn’t a simple branching structure.</p>
+<p>In order to turn them into a skeleton we have to run an algorithm, that finds a tree like structure that covers the graph and gets close to every node. This is called the TEASAR algorithm and you can read more about how to skeletonize graphs in the <a href="https://meshparty.readthedocs.io/en/latest/guide/skeletons.html#skeletonization">MeshParty documentation</a>.</p>
+<p>The result of the algorithm, when applied to a level 2 graph, is a linear tree (like the dotted purple one shown above), where a subset of the level 2 chunks are vertices in that tree, but all the unused level 2 nodes “near” a vertex (red unfilled circles) on the graph are mapped to one of the skeleton vertices (black arrows). This means there are two sets of indices, mesh indices, and skeleton indices, which have a mapping between them (see diagram above).</p>
+<p>The Meshwork library allows us to easily store these representations and helps us relate them to each other. A Meshwork object is a data structure that is designed to have three main components that are kept in sync with mesh and skeleton indices:</p>
+<ul>
+<li>mesh: the graph of PCG level2 ID nodes that are skeletonized, stored as a standard meshparty mesh. Note that this is not the high resolution mesh that you see in neuroglancer.</li>
+<li>skeleton: a meshparty skeleton,</li>
+<li>anno : is a class that holds dataframes and adds some extra info to keep track of indexing.</li>
+</ul>
+<section id="working-with-meshwork-files" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-meshwork-files">Working with Meshwork Files</h2>
+<p>Loading a meshwork file imports the level 2 graph (the “mesh”), the skeleton, and a collection of associated annotations.</p>
+<p><code>xrjrdymbecpg python from meshparty import meshwork nrn = meshwork.load_meshwork(mesh_filename)</code></p>
+<p>The main three properties of the meshwork object are:</p>
+<ul>
+<li>nrn.mesh : The l2graph representation of the reconstruction.</li>
+<li>nrn.skeleton : The skeleton representation of the reconstruction.</li>
+<li>nrn.anno : A table of annotation dataframes and associated metadata that links them to specific vertices in the mesh and skeleton.</li>
+</ul>
+</section>
+<section id="meshwork-nrn.mesh-vs-nrn.skeleton" class="level2">
+<h2 class="anchored" data-anchor-id="meshwork-nrn.mesh-vs-nrn.skeleton">Meshwork nrn.mesh vs nrn.skeleton</h2>
+<p>Skeletons are “tree-like”, where every vertex (except the root vertex) has a single parent that is closer to the root than it, and any number of child vertices. Because of this, for a skeleton there are well-defined directions “away from root” and “towards root” and few types of vertices have special names:</p>
+<ul>
+<li>Branch point: vertices with two or more children, where a neuronal process splits.</li>
+<li>End point: vertices with no childen, where a neuronal process ends.</li>
+<li>Root point: The one vertex with no parent node. By convention, we typically set the root vertex at the cell body, so these are equivalent to “away from soma” and “towards soma”.</li>
+<li>Segment: A collection of vertices along an unbranched region, between one branch point and the next end point or branch point downstream.</li>
+</ul>
+<p>Meshes are arbitrary collections of vertices and edges, but do not have a notion of “parent” or “child” “branch point” or “end point”. Here, this means the “mesh” used here includes a vertex for every level 2 chunk, even where it is thick like at a cell body or very thick dendrite. However, by default this means that there is not always a well-defined notion of parent or child nodes, or towards or away from root.</p>
+<p>In contrast “Meshes” (really, graphs of connected vertices) do not have a unique “inward” and “outward” direction. For the sake of rapid skeletonization, the “meshes” we use here are really the graph of level 2 vertices as described above. These aren’t a mesh in the visualization sense of the section on <a href="em:meshes">downloading Meshes</a>, but have the same data representation.</p>
+<p>To handle this, the meshwork object associates each mesh vertices with a single nearby skeleton vertex, and each skeleton vertex is associated with one or more mesh vertices. By representing data this way, annotations like synapses can be directly associated with a mesh vertex (because synapses can be anywhere on the object) and then mapped to the skeleton in order to enjoy the topological benefits of the skeleton representation.</p>
+<p>:::{code-block} python # By the definition of skeleton vs mesh, we would expect that mesh contains more vertices than the skeleton. # We can see this by looking at the size of the skeleton vertex location array vs the size of the mesh vertex location array.</p>
+<p>print(‘Skeleton vertices array length:’, len(nrn.skeleton.vertices)) print(‘Mesh vertices array length:’, len(nrn.mesh.vertices)) :::</p>
+<p>:::{code-block} python #Let us try to visualize the skeleton: # Visualize the whole skeleton</p>
+</section>
+</section>
+<section id="heres-a-simple-way-to-plot-vertices-of-the-skeleton" class="level1">
+<h1>here’s a simple way to plot vertices of the skeleton</h1>
+<p>import matplotlib.pyplot as plt from mpl_toolkits import mplot3d %matplotlib notebook</p>
+<p>fig = plt.figure(figsize=(6, 6)) ax = plt.axes(projection=‘3d’) ax.scatter3D(nrn.skeleton.vertices[:,0], nrn.skeleton.vertices[:,1], nrn.skeleton.vertices[:,2], s=1) :::</p>
+<p>:::{figure} img/skeleton_scatterplot.png</p>
+<p>Scatterplot of skeleton vertices as a point cloud. :::</p>
+<section id="skeleton-properties-and-methods" class="level2">
+<h2 class="anchored" data-anchor-id="skeleton-properties-and-methods">Skeleton Properties and Methods</h2>
+<p>To plot this skeleton in a more sophisticated way, you have to start thinking of it as a graph, and the meshwork object has a bunch of tools and properties to help you utilize the skeleton graph.</p>
+<p>Let’s list some of the most useful ones below You access each of these with nrn.skeleton.* Use the ? to read more details about each one</p>
+<p><strong>Properties</strong></p>
+<ul>
+<li>`branch_points``: a list of skeleton vertices which are branches</li>
+<li><code>root</code>: the skeleton vertice which is the soma</li>
+<li><code>distance_to_root</code>: an array the length of vertices which tells you how far away from the root each vertex is</li>
+<li><code>root_position</code>: the position of the root node in nanometers</li>
+<li><code>end_points</code>: the tips of the neuron</li>
+<li><code>cover_paths</code>: a list of arrays containing vertex indices that describe individual paths that in total cover the neuron without repeating a vertex. Each path starts at an end point and continues toward root, stopping once it gets to a vertex already listed in a previously defined path. Paths are ordered to start with the end points farthest from root first. Each skeleton vertex appears in exactly one cover path.</li>
+<li><code>csgraph</code>: a scipy.sparse.csr.csr_matrix containing a graph representation of the skeleton. Useful to do more advanced graph operations and algorithms. https://docs.scipy.org/doc/scipy/reference/sparse.csgraph.html</li>
+<li><code>kdtree</code>: a scipy.spatial.ckdtree.cKDTree containing the vertices of skeleton as a kdtree. Useful for quickly finding points that are nearby. https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.cKDTree.html</li>
+</ul>
+<p><strong>Methods</strong></p>
+<ul>
+<li><code>path_length(paths=None)</code>: the path length of the whole neuron if no arguments, or pass a list of paths to get the path length of that. A path is just a list of vertices which are connected by edges.</li>
+<li><code>path_to_root(vertex_index)</code>: returns the path to the root from the passed vertex</li>
+<li><code>path_between(source_index, target_index)</code>: the shortest path between the source vertex index and the target vertex index</li>
+<li><code>child_nodes(vertex_indices)</code>: a list of arrays listing the children of the vertex indices passed in</li>
+<li><code>parent_nodes(vertex_indices)</code>: an array listing the parent of the vertex indices passed in</li>
+</ul>
+<p>:::{code-block} python # A better way to plot a neuron is to use cover_paths # and plot those as 3d lines def plot_neuron_skeleton(neuron, ax, c=‘b’, linewidth=1):</p>
+<pre><code>for cover_path in neuron.skeleton.cover_paths:
+    path_verts = neuron.skeleton.vertices[cover_path,:]
+    ax.plot(path_verts[:,0], path_verts[:,1], path_verts[:,2], c=c, linewidth=linewidth)</code></pre>
+<p>fig = plt.figure(figsize=(6, 6)) ax = plt.axes(projection=‘3d’) plot_neuron_skeleton(nrn, ax) :::</p>
+</section>
+<section id="indexing-and-selecting-sets-of-points" class="level2">
+<h2 class="anchored" data-anchor-id="indexing-and-selecting-sets-of-points">Indexing And Selecting Sets of Points</h2>
+<p>The meshworks object contains a mesh with lots of vertices and a skeleton which holds a subset of these vertices. Therefore, in python these points have different “indices” in the mesh and skeleton. For example, if the mesh contains 10000 vertices, the indexing of those would run from 0 - 9999. The skeleton, which contains a subset of 100 of these would have indexing from 0-99. How would you figure out which of the mesh vertices these correspond to?</p>
+<p>Luckily, we have some really nifty functions that help us distinguish those:</p>
+<p>Let us first look at some attributes in the meshworks objects:</p>
+<p>A few nifty function for subselecting points: <code>downstream points</code> and `path_between``. For a given point, downstream points are defined as points on paths from endpoints to the root which are further than the given point. For example, if the skeleton path is : A-B-C-D-E where A is the root, D and E are downstream points of C. With branching, this can be more complex. To find the downstream points from say the 9th branch point, we can do:</p>
+<p><code>xrjrdymbecpg python #Downstream points nrn.downstream_of(nrn.branch_points[9])</code></p>
+<p><code>path_between</code> returns the vertices from one point to another. For example, we can get the every mesh vertex from the end point 5 to the root point. As a quick visualization, we can look at the distance to root along the, showing that it is descreasing.</p>
+<p>:::{code-block} python fig, ax = plt.subplots() ax.plot( nrn.distance_to_root( nrn.path_between( nrn.end_points[5], nrn.root, ) ) / 1_000, )</p>
+<p>ax.set_ylabel(‘Distance from root (<span class="math inline">\(\mu m\)</span>)’) ax.set_ylabel(‘Vertex along path’) :::</p>
+<p>:::{figure} img/distance_to_root.png</p>
+<p>Distance to root along graph path indicated above. Note that this flattens out at zero because “distance” is computed along the skeleton and many graph vertices in the level 2 graph are associated with the soma vertex of the skeleton. :::</p>
+</section>
+<section id="masking" class="level2">
+<h2 class="anchored" data-anchor-id="masking">Masking</h2>
+<p>Just like meshes, we can mask the meshwork object. Like all basic meshwork functions, the expected input is in mesh vertices. Importantly, doing so will be synchronized across the mesh, the skeleton, and annotations.</p>
+<p>:::{code-block} python # Let’s now use masking to highlight one particular cover path.</p>
+<p>fig = plt.figure(figsize=(6, 6)) ax = plt.axes(projection=“3d”)</p>
+<p>plot_neuron_skeleton(nrn, ax, “b”)</p>
+<p>nrn.reset_mask() # This just makes sure we are working with the same baseline object.</p>
+</section>
+</section>
+<section id="this-will-make-a-mask-with-only-the-vertices-in-the-first-cover-path." class="level1">
+<h1>This will make a mask with only the vertices in the first cover path.</h1>
+<p>with neuron.mask_context(nrn.skeleton.cover_paths[0].to_mesh_mask) as nrnf: plot_neuron_skeleton(nrnf, ax, “r”, linewidth=2) ax.scatter( nrnf.skeleton.root_position[0], nrnf.skeleton.root_position[1], nrnf.skeleton.root_position[2], ) :::</p>
+<p>While <code>mask_context</code> acts to mask the skeleton and then unmasks it at the end of operations, you can also just mask a skeleton and let it stay that way. In that case, use the <code>nrn.apply_mask</code> function.</p>
+<div class="{important}">
+<p>Do not use the <code>nrn.mesh.apply_mask</code> or <code>nrn.skeleton.apply_mask</code> functions, which will not synchronize the mask across the mesh, skeleton, and annotations.</p>
+</div>
+<p>:::{figure} img/branch_plot.png :::</p>
+<section id="annotations" class="level2">
+<h2 class="anchored" data-anchor-id="annotations">Annotations</h2>
+<p><code>nrn.anno</code> has set of annotation tables containing some additional information for analysis. Each annotation table has both a Pandas DataFrame object storing data and additional information that allow the rows of the DataFrame to be mapped to mesh and skeleton vertices. For the neurons that have been pre-computed, there is a consisent set of annotation tables:</p>
+<ul>
+<li><code>post_syn</code>: Postsynaptic sites (inputs) for the cell</li>
+<li><code>pre_syn</code>: Presynaptic sites (outputs) for the cell</li>
+<li><code>is_axon</code>: List of vertices that have been labeled as part of the axon</li>
+<li><code>lvl2_ids</code>: Gives the PCG level 2 id for each mesh vertex, largely for book-keeping reasons.</li>
+<li><code>segment_properties</code>: For each vertex, information about the approximate radius, surface area, volume, and length of the segment it is on.</li>
+<li><code>vol_prop</code>: For every vertex, information about the volume and surface area of the level 2 id it is associated with.</li>
+</ul>
+<p>To access one of the DataFrames, use the name of the table as an attribute of the <code>anno</code> object and then get the <code>.df</code> property. For example, to get the postsynaptic sites, we can do:</p>
+<div id="82e578f0" class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> meshparty <span class="im">import</span> meshwork</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>nrn <span class="op">=</span> meshwork.load_meshwork(<span class="st">'data/864691134940133219_skel.h5'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>nrn.anno.post_syn.df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>However, in addition to these rows, you can also easily get the mesh vertex index or skeleton vertex index that a row corresponds to with <code>nrn.anno.post_syn.mesh_index</code> or <code>nrn.anno.post_syn.skel_index</code> respectively. This seems small, but it allows you to integrate skeleton-like measurements with annotations trivially.</p>
+<p>For example, to get the distance from the cell body for each postsynaptic site, we can do:</p>
+<div id="d9c08fe9" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nrn.distance_to_root(nrn.anno.post_syn.mesh_index)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre class="{important}"><code>Note that the `nrn.distance_to_root`, like all basic meshwork object functions, expects a mesh vertex index rather than a skeleton vertex index.</code></pre>
+<p>A common pattern is to copy a synapse dataframe and then add columns to it. For example, to add the distance to root to the postsynaptic sites, we can do:</p>
+<div id="1de1bd16" class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>syn_df <span class="op">=</span> nrn.anno.pre_syn.df.copy()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>syn_df[<span class="st">'dist_to_root'</span>] <span class="op">=</span> nrn.distance_to_root(nrn.anno.pre_syn.mesh_index)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="filtering-annotations-by-skeleton-arbor" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-annotations-by-skeleton-arbor">Filtering Annotations by Skeleton Arbor</h3>
+<p>Each annotation table has a ‘filter_query’ method that takes a boolean mesh mask and returns only those rows of the dataframe associated with those particular locations on the mesh. Let’s use what we learned above in two examples: first, getting all input synapses within 50 microns of the root and second, getting all input synapses on one particular branch off of the soma.</p>
+<div id="0de1bdc3" class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dtr <span class="op">=</span> nrn.distance_to_root() <span class="op">/</span> <span class="dv">1_000</span>   <span class="co"># Convert from nanometers to microns</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>nrn.anno.post_syn.filter_query( dtr <span class="op">&lt;</span> <span class="dv">50</span>).df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can also use one set of annotations as an input to filter query from another set of annotations. For example, due to errors in segmentation or mistakes in synapse detection, there can be synaptic outputs on the dendrite. However, if we have an <code>is_axon</code> annotation that simply contains a collection of vertices that correspond to the cell’s axon. We can use this annotation to create a mask and filter out all of the synapses that are not on the axon.</p>
+<div id="4249594d" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>axon_mask <span class="op">=</span> nrn.anno.is_axon.mesh_mask</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>nrn.anno.pre_syn.filter_query(<span class="op">~</span>axon_mask).df <span class="co"># The "~" is a logical not operation that flips True and False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>As a sanity check, we can use <code>nglui</code> to see if these synapses we have labeled as being on the axon are all where we expect.</p>
+<div id="41cd9af9" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nglui.statebuilder.helpers <span class="im">import</span> make_synapse_neuroglancer_link</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">'minnie65_public'</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>make_synapse_neuroglancer_link(</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    nrn.anno.pre_syn.filter_query(axon_mask).df,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    client,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    return_as<span class="op">=</span><span class="st">"html"</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>(Click one of the synapse annotations to load the neuron mesh).</p>
+<p>Another common example might be to pick one of the child nodes of the soma and get all of the synapses on that branch. We can do this by using the <code>nrn.skeleton.get_child_nodes</code> function to get the skeleton vertex indices of the child nodes and then use that to filter the synapses.</p>
+<div id="8133e82f" class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>branch_index <span class="op">=</span> <span class="dv">0</span> <span class="co"># Let's just use the first child vertex of the root node, which is at the soma by default.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>branch_inds <span class="op">=</span> nrn.downstream_of(nrn.child_index(nrn.root)[branch_index])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>branch_mask <span class="op">=</span> branch_inds.to_mesh_mask</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>make_synapse_neuroglancer_link(</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    nrn.anno.post_syn.filter_query(branch_mask).df,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    client,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    return_as<span class="op">=</span><span class="st">"html"</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>l`</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

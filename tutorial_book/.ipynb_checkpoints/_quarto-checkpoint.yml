@@ -1,0 +1,50 @@
+project:
+  type: website
+
+website:
+  title: "MICrONs Tutorial"
+  navbar:
+    left:
+      - href: em_01_background.ipynb
+        text: Introduction
+      - href: https://www.microns-explorer.org/
+        text: Microns Explorer
+    tools: 
+      - icon: github
+        menu:
+          - text: Source Code
+            url:  https://github.com/bpdanskin/test_tutorial
+          - text: Report a Bug
+            url:  https://github.com/bpdanskin/test_tutorial/issues
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - em_01_background.ipynb
+      - em_02_dataset_basics.ipynb
+      - em_03_proofreading.ipynb
+      - em_04_neuroglancer.ipynb
+      - em_05_dash_apps.ipynb
+      - section: "Python Tools"
+        contents:
+          - programmatic_access/em_py_01_caveclient_setup.ipynb
+          - programmatic_access/em_py_02_cave_quickstart.ipynb
+          - programmatic_access/em_py_03_annotation_tables.ipynb
+          - programmatic_access/em_py_04_imagery_segmentation.ipynb
+          - programmatic_access/em_py_05_meshes.ipynb
+          - programmatic_access/em_py_06_skeletons.ipynb
+          - programmatic_access/em_py_07_coordinates.ipynb
+      - programmatic_access/ultrastructure_tutorial/em_ultrastructure.ipynb
+      - section: "Examples"
+        contents: examples/*
+  open-graph: true
+  back-to-top-navigation: true
+  page-footer: 
+      center: "Contributions by: Bethanny Danskin, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald"
+      border: false
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
