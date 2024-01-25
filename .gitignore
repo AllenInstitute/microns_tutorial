@@ -1,0 +1,8 @@
+# Git ignore
+
+# Quarto files
+.quarto/
+_site/
+
+# Jupyter Notebook
+.ipynb_checkpoints
