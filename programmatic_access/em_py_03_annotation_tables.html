@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.546">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>MICrONs Tutorial - Annotation Tables</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="MICrONs Tutorial - Annotation Tables">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="MICrONs Tutorial">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">MICrONs Tutorial</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../em_01_background.html" aria-current="page"> 
+<span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.microns-explorer.org/"> 
+<span class="menu-text">Microns Explorer</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/bpdanskin/test_tutorial">
+            Source Code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/bpdanskin/test_tutorial/issues">
+            Report a Bug
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../programmatic_access/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../programmatic_access/em_py_03_annotation_tables.html">Annotation Tables</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../em_01_background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../em_02_dataset_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dataset Basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../em_03_proofreading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proofreading and Data Quality</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../em_04_neuroglancer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neuroglancer</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../em_05_dash_apps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dash Apps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Python Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_01_caveclient_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVEclient Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_02_cave_quickstart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVE Quickstart</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_03_annotation_tables.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Annotation Tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_04_imagery_segmentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Imagery and Segmentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_05_meshes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Meshes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_06_skeletons.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Skeletons</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_07_coordinates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coordinate System</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/ultrastructure_tutorial/em_ultrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ultrastructure</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Examples</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/generate_neuroglancer_states.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Generating Neuroglancer States</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#common-fields" id="toc-common-fields" class="nav-link active" data-scroll-target="#common-fields">Common Fields</a>
+  <ul class="collapse">
+  <li><a href="#spatial-point-columns" id="toc-spatial-point-columns" class="nav-link" data-scroll-target="#spatial-point-columns">Spatial Point Columns</a></li>
+  <li><a href="#book-keeping-columns" id="toc-book-keeping-columns" class="nav-link" data-scroll-target="#book-keeping-columns">Book-keeping Columns</a></li>
+  </ul></li>
+  <li><a href="#synapse-table" id="toc-synapse-table" class="nav-link" data-scroll-target="#synapse-table">Synapse Table</a></li>
+  <li><a href="#nucleus-table" id="toc-nucleus-table" class="nav-link" data-scroll-target="#nucleus-table">Nucleus Table</a></li>
+  <li><a href="#cell-type-tables" id="toc-cell-type-tables" class="nav-link" data-scroll-target="#cell-type-tables">Cell Type Tables</a>
+  <ul class="collapse">
+  <li><a href="#predictions-from-somanucleus-features" id="toc-predictions-from-somanucleus-features" class="nav-link" data-scroll-target="#predictions-from-somanucleus-features">Predictions from soma/nucleus features</a></li>
+  <li><a href="#coarse-prediction-from-spine-detection" id="toc-coarse-prediction-from-spine-detection" class="nav-link" data-scroll-target="#coarse-prediction-from-spine-detection">Coarse prediction from spine detection</a></li>
+  <li><a href="#fine-prediction-from-dendritic-features" id="toc-fine-prediction-from-dendritic-features" class="nav-link" data-scroll-target="#fine-prediction-from-dendritic-features">Fine prediction from dendritic features</a></li>
+  </ul></li>
+  <li><a href="#proofreading-tables" id="toc-proofreading-tables" class="nav-link" data-scroll-target="#proofreading-tables">Proofreading Tables</a></li>
+  <li><a href="#functional-coregistration-tables" id="toc-functional-coregistration-tables" class="nav-link" data-scroll-target="#functional-coregistration-tables">Functional Coregistration Tables</a></li>
+  <li><a href="#all-tables" id="toc-all-tables" class="nav-link" data-scroll-target="#all-tables">All Tables</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../programmatic_access/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../programmatic_access/em_py_03_annotation_tables.html">Annotation Tables</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Annotation Tables</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The <code>minnie65_public</code> data release includes a number of annotation tables that help label the dataset. This section describes the content of each of these tables — <a href="em_py_02_cave_quickstart.html">see here for instructions for how to query and filter tables</a>.</p>
+<p>Unless otherwise specificied (i.e.&nbsp;via <code>desired_resolution</code>), all positions are in units of 4,4,40 nm/voxel resolution.</p>
+<section id="common-fields" class="level2">
+<h2 class="anchored" data-anchor-id="common-fields">Common Fields</h2>
+<p>Several fields (or column names) are common to many tables. These fall into two main classes: the spatial point columns that are how we assign annotations to cells via points in the 3d space and book-keeping columns, that are used internally to track the state of the data.</p>
+<section id="spatial-point-columns" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-point-columns">Spatial Point Columns</h3>
+<p>Most tables have one or more <strong>Bound Spatial Points</strong>, which is a location in the 3d space that tells the annotation to remain associated with the root id at that location.</p>
+<p>Bound spatial points have will have one prefix, usually <code>pt</code> (i.e.&nbsp;“point”) and three associated columns with different suffixes: <code>_position</code>, <code>_supervoxel_id</code>, and <code>_root_id</code>.</p>
+<p>For a given prefix <code>{pt}</code>, the three columns are as follows:</p>
+<ul>
+<li>The <code>{pt}_position</code> indicates the location of the point in 3d space.</li>
+<li>The <code>{pt}_supervoxel_id</code> indicates a unique identifier in the segmentation, and is mostly internal bookkeeping.</li>
+<li>The <code>{pt}_root_id</code> indicates the root id of the annotation at that location.</li>
+</ul>
+</section>
+<section id="book-keeping-columns" class="level3">
+<h3 class="anchored" data-anchor-id="book-keeping-columns">Book-keeping Columns</h3>
+<p>Several columns are common to many or all tables, and mostly used as internal book-keeping. Rather than describe these for every table, they will just be mentioned briefly here:</p>
+<table class="table-light table-hover table">
+<caption>Common columns</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">A unique ID specific to the annotation within that table</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>created</code></td>
+<td style="text-align: left;">Internal bookkeeping column, should always be <code>t</code> for data you can download</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>valid</code></td>
+<td style="text-align: left;">A unique ID specific to the annotation within that table</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>target_id</code></td>
+<td style="text-align: left;">Some tables reference other tables, particularly the nucleus table. If present, this column will be the same as <code>id</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>created_ref</code> / <code>valid_ref</code> / <code>id_ref</code> (optional)</td>
+<td style="text-align: left;">For reference tables, the data shows both the created/valid/id of the reference annotation and the target annotation. The values with the <code>_ref</code> suffix are those of the reference table (usually something like proofreading state or cell type) and the values without a suffix ar ethose of the target table (usually a nucleus)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="synapse-table" class="level2">
+<h2 class="anchored" data-anchor-id="synapse-table">Synapse Table</h2>
+<p>Table name: <code>synapses_pni_v2</code></p>
+<p>The only synapse table is <code>synapses_pni_v2</code>. This is by far the largest table in the dataset with 337 million entries, one for each synapse. It contains the following columns (in addition to the bookkeeping columns):</p>
+<table class="table-light table-hover table">
+<caption>Synapse table column definitions</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pre_pt_position</code> / <code>pre_pt_supervoxel_id</code> / <code>pre_pt_root_id</code></td>
+<td style="text-align: left;">The bound spatial point data for the presynaptic side of the synapse.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>post_pt_position</code> / <code>post_pt_supervoxel_id</code> / <code>post_pt_root_id</code></td>
+<td style="text-align: left;">IThe bound spatial point data for the postsynaptic side of the synapse.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>size</code></td>
+<td style="text-align: left;">The size of the synapse in voxels. This correlates well, but not perfectly, with the surface area of synapse.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ctr_pt_position</code></td>
+<td style="text-align: left;">A position in the center of the detected synaptic junction. Of all points in the synapse table, this is usually the closest point to the surface (and thus mesh) of both neurons. Because it is at the edge of cells, it is not associated with a root id.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="nucleus-table" class="level2">
+<h2 class="anchored" data-anchor-id="nucleus-table">Nucleus Table</h2>
+<p>Table name: <code>nucleus_ref_neuron_svm</code></p>
+<p>Nucleus detection has been used to define unique cells in the dataset. Distinct from the neuronal segmentation, a convolutional neural network was trained to segment nuclei. Each nucleus detection was given a unique ID, and the centroid of the nucleus was recorded as well as its volume. While the table of centroids for all nuclei is <code>nucleus_detection_v0</code>, this includes neuronal nuclei, non-neuronal nuclei, and some erroneous detections. The table <code>nucleus_ref_neuron_svm</code> shows the results of a classifier that was trained to distinguish neuronal nuclei from non-neuronal nuclei and errors. For the purposes of analysis, we recommend using the <code>nucleus_ref_neuron_svm</code> table to get the most broad collection of neurons in the dataset.</p>
+<p>The key columns of <code>nucleus_ref_neuron_svm</code> are:</p>
+<table class="table-light table-hover table">
+<caption>Nucleus table column definitions</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>classification-system</code></td>
+<td style="text-align: left;">Describes how the classification was done. All values will be <code>is_neuron</code> for this table</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cell_type</code></td>
+<td style="text-align: left;">The output of the classifier. All values will be either <code>neuron</code> or <code>not-neuron</code> (glia or error) for this table</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the <code>id</code> column is the same as the nucleus id.</p>
+</section>
+<section id="cell-type-tables" class="level2">
+<h2 class="anchored" data-anchor-id="cell-type-tables">Cell Type Tables</h2>
+<p>There are several tables that contain information about the cell type of neurons in the dataset, with each table representing a different method of doing the classificaiton. Because each method requires a different kind of information, not all cells are present in all tables. Each of the cell types tables has the same format and in all cases the <code>id</code> column references the nucleus id of the cell in question.</p>
+<section id="predictions-from-somanucleus-features" class="level3">
+<h3 class="anchored" data-anchor-id="predictions-from-somanucleus-features">Predictions from soma/nucleus features</h3>
+<p>Table name: <code>aibs_soma_nuc_metamodel_preds_v117</code></p>
+<p>This table contains the results of a hierarchical classifier trained on features of the cell body and nucleus of cells. This was applied to most cells in the dataset that had complete cell bodies (e.g.&nbsp;not cut off by the edge of the data). For more details, see <a href="https://www.biorxiv.org/content/10.1101/2022.07.20.499976v1">Elabbady et al.&nbsp;2022</a>. In general, this does a good job, but sometimes confuses layer 5 inhibitory neurons as being excitatory:</p>
+<p>The key columns are:</p>
+<table class="table-light table-hover table">
+<caption>AIBS Soma Nuc Metamodel Table</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>classification-system</code></td>
+<td style="text-align: left;">Either <code>aibs_neuronal</code> for neurons (Excitatory or inhibitory) or <code>aibs_non-neuronal</code> for non-neurons (glia/pericytes)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cell_type</code></td>
+<td style="text-align: left;">One of several cell types, detailed below</td>
+</tr>
+</tbody>
+</table>
+<p>The cell types in the table are:</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Soma Nuc Metamodel Cell types
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="table-light table-hover table">
+<caption>AIBS Soma Nuc Metamodel: Cell Type definitions</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Cell Type</th>
+<th style="text-align: left;">Subclass</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>23P</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 2/3 cells</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>4P</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 4 cells</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>5P-IT</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 5 <strong>i</strong>ntra<strong>t</strong>elencephalic cells</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>5P-ET</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 5 <strong>e</strong>xtra<strong>t</strong>elencephalic cells</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>5P-NP</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 5 near-projecting cells</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>6P-IT</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 6 <strong>i</strong>ntra<strong>t</strong>elencephalic cells</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>6P-CT</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 6 <strong>c</strong>ortico<strong>t</strong>halamic cells</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>BC</code></td>
+<td style="text-align: left;">Inhibitory</td>
+<td style="text-align: left;">Basket cell</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>BPC</code></td>
+<td style="text-align: left;">Inhibitory</td>
+<td style="text-align: left;">Bipolar cell. <em>In practice, this was used for all cells thought to be VIP cell, not only those with a bipolar dendrite</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>MC</code></td>
+<td style="text-align: left;">Inhibitory</td>
+<td style="text-align: left;">Martinotti cell. <em>In practice, this label was used for all inhibitory neurons that appeared to be Somatostatin cell, not only those with a Martinotti cell morphology</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>NGC</code></td>
+<td style="text-align: left;">Inhibitory</td>
+<td style="text-align: left;">Neurogliaform cell. <em>In practice, this label also is used for all inhibitory neurons in layer 1, many of which may not be neurogliaform cells although they might be in the same molecular family</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>OPC</code></td>
+<td style="text-align: left;">Non-neuronal</td>
+<td style="text-align: left;">Oligodendrocyte precursor cell</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>astrocyte</code></td>
+<td style="text-align: left;">Non-neuronal</td>
+<td style="text-align: left;">Astrocyte</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>microglia</code></td>
+<td style="text-align: left;">Non-neuronal</td>
+<td style="text-align: left;">Microglia</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>pericyte</code></td>
+<td style="text-align: left;">Non-neuronal</td>
+<td style="text-align: left;">Pericyte</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>oligo</code></td>
+<td style="text-align: left;">Non-neuronal</td>
+<td style="text-align: left;">Oligodendrocyte</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="coarse-prediction-from-spine-detection" class="level3">
+<h3 class="anchored" data-anchor-id="coarse-prediction-from-spine-detection">Coarse prediction from spine detection</h3>
+<p>Table name: <code>baylor_log_reg_cell_type_coarse_v1</code></p>
+<p>This table contains the results of a logistic regression classifier trained on properties of neuronal dendrites. This was applied to many cells in the dataset, but required more data than soma and nucleus features alone and thus more cells did not complete the pipeline. It has very good performance on excitatory vs inhibitory neurons because it focuses on dendritic spines, a characteristic property of excitatory neurons. It is a good table to double check E/I classifications if in doubt.</p>
+<p>The key columns are:</p>
+<table class="table-light table-hover table">
+<caption>Baylor Dendrite Feature Table</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>classification-system</code></td>
+<td style="text-align: left;"><code>baylor_log_reg_cell_type_coarse</code> for all entries</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cell_type</code></td>
+<td style="text-align: left;"><code>excitatory</code> or <code>inhibitory</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fine-prediction-from-dendritic-features" class="level3">
+<h3 class="anchored" data-anchor-id="fine-prediction-from-dendritic-features">Fine prediction from dendritic features</h3>
+<p>Table name: <code>allen_column_mtypes_v1</code></p>
+<p>This table contains all neurons within a well-proofread 100 micron square column in primary visual cortex (VISp) spanning all layers.</p>
+<p>Excitatory neurons and inhibitory neurons were distinguished manually, and subclasses were assigned based on a data-driven clustering of the neuronal features. Inhibitory neurons were classified based on how they distributed they synaptic outputs onto target cells, while exictatory neurons were classified based on a collection of dendritic features.</p>
+<p>For more details, see the section on the <a href="../em_03_proofreading.html#minnie-column">minnie column</a> or read the preprint <span class="citation" data-cites="schneider-mizell2023">(<a href="#ref-schneider-mizell2023" role="doc-biblioref">Schneider-Mizell et al. 2023</a>)</span>.</p>
+<p>Note that all cell type labels in this column come from a clustering specific to this paper, and while they are intended to align with the broader literature they are not a direct mapping or a well-established convention.</p>
+<p>For a more conventional set of labels on the same set of cells, look at the table <code>allen_v1_column_types_slanted_ref</code>. Cell types in that table align with those in <code>aibs_soma_nuc_metamodel_preds_v117</code> above.</p>
+<p>The key columns are:</p>
+<table class="table-light table-hover table">
+<caption>Column M-type Table</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>classification-system</code></td>
+<td style="text-align: left;"><code>excitatory</code> or <code>inhibitory</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cell_type</code></td>
+<td style="text-align: left;">One of several cell types, detailed below</td>
+</tr>
+</tbody>
+</table>
+<p>The cell types in the table are:</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+M-type Cell Type definitions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Cell Type</th>
+<th style="text-align: left;">Subclass</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>L2a</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of layer 2 (upper layer 2/3) excitatory neurons</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>L2b</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of layer 2 (upper layer 2/3) excitatory neurons</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>L3a</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of excitatory neurons transitioning between upper and lower layer 2/3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>L3b</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of layer 3 (upper layer 2/3) excitatory neurons</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>L3c</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of layer 3 (upper layer 2/3) excitatory neurons</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>L4a</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">The largest cluster of layer 4 excitatory neurons</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>L4b</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Another cluster of layer 4 excitatory neurons</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>L4c</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of layer 4 excitatory neurons along the border with layer 5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>L5a</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of layer 5 IT neurons at the top of layer 5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>L5b</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of layer 5 IT neurons throughout layer 5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>L5ET</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">The cluster of layer 5 ET neurons</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>L5NP</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">The cluster of layer 5 NP neurons</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>L6a</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of layer 6 IT neurons at the top of layer 6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>L6b</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of layer 6 IT neurons throughout layer 6. <em>Note that this is different than the label “Layer 6b” which refers to a narrow band at the border between layer 6 and white matter</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>L6c</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of tall layer 6 cells (unsure if IT or CT)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>L6CT</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of tall layer 6 cells matching manual CT labels</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>L6wm</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">A cluster of layer 6 cells along the border with white matter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>PTC</code></td>
+<td style="text-align: left;">Inhibitory</td>
+<td style="text-align: left;">Perisomatic targeting cells, a cluster of inhibitory neurons that target the soma and proximal dendrites of excitatory neurons. Approximately corresponds to <strong>basket cell</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>DTC</code></td>
+<td style="text-align: left;">Inhibitory</td>
+<td style="text-align: left;">Dendrite targeting cells, a cluster of inhibitory neurons that target the distal dendrites of excitatory neurons. Most <strong>SST cells</strong> would be DTC</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>STC</code></td>
+<td style="text-align: left;">Inhibitory</td>
+<td style="text-align: left;">Sparsely targeting cells, a cluster of inhibitory neurons that don’t concentrate multiple synapses onto the same target neurons. Many <strong>neurogliaform cells</strong> and layer 1 interneurons fall into this category</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ITC</code></td>
+<td style="text-align: left;">Inhibitory</td>
+<td style="text-align: left;">Inhibitory targeting cells, a cluster of inhibitory neurons that preferntially target other inhibitory neurons. Most <strong>VIP cells</strong> would be ITCs</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="proofreading-tables" class="level2">
+<h2 class="anchored" data-anchor-id="proofreading-tables">Proofreading Tables</h2>
+<p>Table name: <code>proofreading_status_public_release</code></p>
+<p>The table <code>proofreading_status_public_release</code> describes the status of cells selected for manual proofreading.</p>
+<p>Because of the inherent difference in the challenge and time required for different kinds of proofreading, we describe the status of axons and dendrites separately. Further, we distinguish three different categories of proofreading:</p>
+<ul>
+<li><code>non</code>: No proofreading has been comprehensively performed.</li>
+<li><code>clean</code>: Proofreading has comprehensively removed false merges, but not necessarily added missing parts.</li>
+<li><code>extended</code>: Proofreading has comprehensively removed false merges and attempted to add all or most missing parts.</li>
+</ul>
+<p>Note that many cells not in this table have been edited in some places, but not comprehensively worked on. For more information, please see <a href="../em_03_proofreading.html">Proofreading and Data Quality</a>.</p>
+<p>The key columns are:</p>
+<table class="table-light table-hover table">
+<caption>Proofreading Status Table</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>valid_id</code></td>
+<td style="text-align: left;">The root id of the neuron when it the proofreading assessment was made</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>status_dendrite</code></td>
+<td style="text-align: left;">The status of the dendrite proofreading. One of the three categories described above</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>status_axon</code></td>
+<td style="text-align: left;">The status of the axon proofreading. One of the three categories described above</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functional-coregistration-tables" class="level2">
+<h2 class="anchored" data-anchor-id="functional-coregistration-tables">Functional Coregistration Tables</h2>
+<p>To relate the structural data to functional data, cell bodies must be coregistered between the functional imaging and EM volumes. The results of this coregistration are stored in two tables with the same columns:</p>
+<ul>
+<li><code>coregistration_manual_v3</code> : The results of manually verified coregistration. This table is well-verified, but contains fewer {term}<code>ROI</code>s (N=12,052 root ids, 13,925 ROIs).</li>
+<li><code>apl_functional_coreg_forward_v5</code> : The results of automated functional matching between the EM and 2-p functional data. This table is not manually verified, but contains more {term}<code>ROI</code>s (N=36,078 root ids, 68,873 ROIs).</li>
+</ul>
+<p>Please see the <a href="../functional_tutorial/functional_intro.html">Functional Data</a> section for more information about using this data.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+repair link
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p>The column descriptions are:</p>
+<table class="table-light table-hover table">
+<caption>Coregistration table</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>session</code></td>
+<td style="text-align: left;">The session index from functional imaging</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>scan_idx</code></td>
+<td style="text-align: left;">The scan index from functional imaging</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>unit_id</code></td>
+<td style="text-align: left;">The functional unit index from imaging. Only unique within scan and session</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>field</code></td>
+<td style="text-align: left;">The field index from functional imaging</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>residual</code></td>
+<td style="text-align: left;">The residual distance between the functional and the assigned structural points after transformation, in microns</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>score</code></td>
+<td style="text-align: left;">A separation score, measuring the difference between the residual distance to the assigned neuron and the distance to the nearest non-assigned neuron, in microns. <em>This can be negative if the non-assigned neuron is closer than the assigned neuron. Larger values indicate fewer nearby neurons that could be confused with the assigned neuron.</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="all-tables" class="level2">
+<h2 class="anchored" data-anchor-id="all-tables">All Tables</h2>
+<table class="table-light table-hover table">
+<caption>heard you like tables–here’s a table for your tables</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Table Name</th>
+<th style="text-align: left;">Number of Annotations</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>synapses_pni_v2</code></td>
+<td style="text-align: left;">337,312,429</td>
+<td style="text-align: left;">The locations of synapses and the segment ids of the pre and post-synaptic automated synapse detection</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>nucleus_detection_v0</code></td>
+<td style="text-align: left;">144,120</td>
+<td style="text-align: left;">The locations of nuclei detected via a fully automated method</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>nucleus_alternative_points</code></td>
+<td style="text-align: left;">8,388</td>
+<td style="text-align: left;">A reference annotation table marking alternative segment_id lookup locations for a subset of nuclei in nucleus_detection_v0 that is more accurate than the centroid location listed there</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>nucleus_ref_neuron_svm</code></td>
+<td style="text-align: left;">144,120</td>
+<td style="text-align: left;">reference annotation indicating the output of a model detecting which nucleus detections are neurons versus which are not 1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>coregistration_manual_v4</code></td>
+<td style="text-align: left;">13,658</td>
+<td style="text-align: left;">A table indicating the association between individual units in the functional imaging data and nuclei in the structural data, derived from human powered matching. Includes residual and separation scores to help assess confidence</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>apl_functional_coreg_forward_v5</code></td>
+<td style="text-align: left;">68,436</td>
+<td style="text-align: left;">A table indicating the association between individual units in the functional imaging data and nuclei in the structural data, derived from the automated procedure. Includes residuals and separation scores to help assess confidence</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>nucleus_ref_neuron_svm</code></td>
+<td style="text-align: left;">144,120</td>
+<td style="text-align: left;">reference annotation indicating the output of a model detecting which nucleus detections are neurons versus which are not 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>proofreading_status_public_release</code></td>
+<td style="text-align: left;">1272</td>
+<td style="text-align: left;">A table indicating which neurons have been proofread on their axons or dendrites</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>proofreading_strategy</code></td>
+<td style="text-align: left;">1039</td>
+<td style="text-align: left;">A reference table on <code>proofreading_status_public_release</code> indicating what axon proofreading strategy was executed on each neuron</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>proofreading_edits</code></td>
+<td style="text-align: left;">121,271</td>
+<td style="text-align: left;">A table containing the number of edits on every segment_id associated with a nucleus in the volume</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>aibs_column_nonneuronal_ref</code></td>
+<td style="text-align: left;">542</td>
+<td style="text-align: left;">Cell type reference annotations from a human expert of non-neuronal cells located amongst the Minnie Column</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>allen_v1_column_types_slanted_ref</code></td>
+<td style="text-align: left;">1,357</td>
+<td style="text-align: left;">Neuron cell type reference annotations from human experts of neuronal cells located amongst the Minnie Column</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>allen_column_mtypes_v1</code></td>
+<td style="text-align: left;">1,357</td>
+<td style="text-align: left;">Neuron cell type reference annotations from data driven unsupervised clustering of neuronal cells</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>aibs_soma_nuc_exc_mtype_preds_v117</code></td>
+<td style="text-align: left;">58,624</td>
+<td style="text-align: left;">Reference annotations indicating the output of a model predicting cell types across the dataset based on the labels from allen_column_mtypes_v1.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>aibs_soma_nuc_metamodel_preds_v117</code></td>
+<td style="text-align: left;">86,916</td>
+<td style="text-align: left;">Reference annotations indicating the output of a model predicting cell classes based on the labels from allen_v1_column_types_slanted_ref and aibs_column_nonneuronal_ref</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>baylor_log_reg_cell_type_coarse_v1</code></td>
+<td style="text-align: left;">55,063</td>
+<td style="text-align: left;">Reference annotations indicated the output of a logistic regression model predicting whether the nucleus is part of an excitatory or inhibitory cell</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>baylor_gnn_cell_type_fine_model_v2</code></td>
+<td style="text-align: left;">49,051</td>
+<td style="text-align: left;">Reference annotations indicated the output of a graph neural network model predicting the cell type based on the human labels in allen_v1_column_types_slanted_ref</td>
+</tr>
+</tbody>
+</table>
+
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-schneider-mizell2023" class="csl-entry" role="listitem">
+Schneider-Mizell, Casey M., Agnes Bodor, Derrick Brittain, JoAnn Buchanan, Daniel J. Bumbarger, Leila Elabbady, Daniel Kapner, et al. 2023. <span>“Cell-Type-Specific Inhibitory Circuitry from a Connectomic Census of Mouse Visual Cortex.”</span> <span>bioRxiv</span>. <a href="https://doi.org/10.1101/2023.01.23.525290">https://doi.org/10.1101/2023.01.23.525290</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Contributions by: Bethanny Danskin, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

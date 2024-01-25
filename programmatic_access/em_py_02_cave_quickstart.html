@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.546">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>MICrONs Tutorial - CAVE Quickstart</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="MICrONs Tutorial - CAVE Quickstart">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="MICrONs Tutorial">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">MICrONs Tutorial</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../em_01_background.html" aria-current="page"> 
+<span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.microns-explorer.org/"> 
+<span class="menu-text">Microns Explorer</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/bpdanskin/test_tutorial">
+            Source Code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/bpdanskin/test_tutorial/issues">
+            Report a Bug
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../programmatic_access/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../programmatic_access/em_py_02_cave_quickstart.html">CAVE Quickstart</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../em_01_background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../em_02_dataset_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dataset Basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../em_03_proofreading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proofreading and Data Quality</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../em_04_neuroglancer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neuroglancer</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../em_05_dash_apps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dash Apps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Python Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_01_caveclient_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVEclient Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_02_cave_quickstart.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">CAVE Quickstart</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_03_annotation_tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annotation Tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_04_imagery_segmentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Imagery and Segmentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_05_meshes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Meshes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_06_skeletons.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Skeletons</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/em_py_07_coordinates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coordinate System</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programmatic_access/ultrastructure_tutorial/em_ultrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ultrastructure</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Examples</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/generate_neuroglancer_states.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Generating Neuroglancer States</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#caveclient" id="toc-caveclient" class="nav-link active" data-scroll-target="#caveclient">CAVEclient</a></li>
+  <li><a href="#caveclient-basics" id="toc-caveclient-basics" class="nav-link" data-scroll-target="#caveclient-basics">CAVEclient Basics</a></li>
+  <li><a href="#querying-tables" id="toc-querying-tables" class="nav-link" data-scroll-target="#querying-tables">Querying Tables</a></li>
+  <li><a href="#filtering-queries" id="toc-filtering-queries" class="nav-link" data-scroll-target="#filtering-queries">Filtering Queries</a></li>
+  <li><a href="#querying-synapses" id="toc-querying-synapses" class="nav-link" data-scroll-target="#querying-synapses">Querying Synapses</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../programmatic_access/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../programmatic_access/em_py_02_cave_quickstart.html">CAVE Quickstart</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">CAVE Quickstart</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The <strong>Connectome Annotation Versioning Engine (CAVE)</strong> is a suite of tools developed at the Allen Institute and Seung Lab to manage large connectomics data.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Initial Setup
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before using any programmatic access to the data, <a href="em_py_01_caveclient_setup.html">you first need to set up your CAVEclient token</a>.</p>
+</div>
+</div>
+<section id="caveclient" class="level2">
+<h2 class="anchored" data-anchor-id="caveclient">CAVEclient</h2>
+<p>Most programmatic access to the CAVE services occurs through CAVEclient, a Python client to access various types of data from the online services.</p>
+<p>Full documentation for CAVEclient <a href="http://caveclient.readthedocs.io">is available here</a>.</p>
+<p>To initialize a caveclient, we give it a <strong>datastack</strong>, which is a name that defines a particular combination of imagery, segmentation, and annotation database. For the MICrONs public data, we use the datastack name <code>minnie65_public</code>.</p>
+<div id="3ebc5ac7" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>datastack_name <span class="op">=</span> <span class="st">'minnie65_public'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(datastack_name)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the description of the datastack</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>client.info.get_datastack_info()[<span class="st">'description'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>'This is the publicly released version of the minnie65 volume and segmentation. '</code></pre>
+</div>
+</div>
+</section>
+<section id="caveclient-basics" class="level2">
+<h2 class="anchored" data-anchor-id="caveclient-basics">CAVEclient Basics</h2>
+<p>The most frequent use of the CAVEclient is to query the database for annotations like synapses. All database functions are under the <code>client.materialize</code> property. To see what tables are available, use the <code>get_tables</code> function:</p>
+<div id="65009f3a" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>client.materialize.get_tables()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>['baylor_gnn_cell_type_fine_model_v2',
+ 'nucleus_alternative_points',
+ 'allen_column_mtypes_v2',
+ 'bodor_pt_cells',
+ 'aibs_metamodel_mtypes_v661_v2',
+ 'proofreading_status_public_release',
+ 'allen_column_mtypes_v1',
+ 'allen_v1_column_types_slanted_ref',
+ 'aibs_column_nonneuronal_ref',
+ 'nucleus_ref_neuron_svm',
+ 'aibs_soma_nuc_exc_mtype_preds_v117',
+ 'baylor_log_reg_cell_type_coarse_v1',
+ 'coregistration_manual_v3',
+ 'apl_functional_coreg_forward_v5',
+ 'l5et_column',
+ 'cell_edits_v661',
+ 'pt_synapse_targets',
+ 'aibs_metamodel_celltypes_v661',
+ 'synapses_pni_2',
+ 'nucleus_detection_v0',
+ 'allen_minnie_extra_types',
+ 'aibs_soma_nuc_metamodel_preds_v117',
+ 'bodor_pt_target_proofread']</code></pre>
+</div>
+</div>
+<p>For each table, you can see the metadata describing that table. For example, let’s look at the <code>nucleus_detection_v0</code> table:</p>
+<div id="7703a2d7" class="cell" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>client.materialize.get_table_metadata(<span class="st">'nucleus_detection_v0'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>{'schema': 'nucleus_detection',
+ 'id': 27096,
+ 'created': '2020-11-02T18:56:35.530100',
+ 'table_name': 'nucleus_detection_v0__minnie3_v1',
+ 'valid': True,
+ 'aligned_volume': 'minnie65_phase3',
+ 'schema_type': 'nucleus_detection',
+ 'user_id': '121',
+ 'description': 'A table of nuclei detections from a nucleus detection model developed by Shang Mu, Leila Elabbady, Gayathri Mahalingam and Forrest Collman. Pt is the centroid of the nucleus detection. id corresponds to the flat_segmentation_source segmentID. Only included nucleus detections of volume&gt;25 um^3, below which detections are false positives, though some false positives above that threshold remain. ',
+ 'notice_text': None,
+ 'reference_table': None,
+ 'flat_segmentation_source': 'precomputed://https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/nuclei',
+ 'write_permission': 'PRIVATE',
+ 'read_permission': 'PUBLIC',
+ 'last_modified': '2022-10-25T19:24:28.559914',
+ 'segmentation_source': '',
+ 'pcg_table_name': 'minnie3_v1',
+ 'last_updated': '2024-01-23T23:00:00.080429',
+ 'annotation_table': 'nucleus_detection_v0',
+ 'voxel_resolution': [4.0, 4.0, 40.0]}</code></pre>
+</div>
+</div>
+<p>You get a dictionary of values. Two fields are particularly important: the <code>description</code>, which offers a text description of the contents of the table and <code>voxel_resolution</code> which defines how the coordinates in the table are defined, in nm/voxel.</p>
+</section>
+<section id="querying-tables" class="level2">
+<h2 class="anchored" data-anchor-id="querying-tables">Querying Tables</h2>
+<p>To get the contents of a table, use the <code>query_table</code> function. This will return the whole contents of a table without any filtering, up to for a maximum limit of 200,000 rows. The table is returned as a Pandas DataFrame and you can immediately use standard Pandas function on it.</p>
+<div id="003abc71" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:true}" data-tags="[]" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> client.materialize.query_table(<span class="st">'nucleus_detection_v0'</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>cell_type_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+<th data-quarto-table-cell-role="th">pt_position</th>
+<th data-quarto-table-cell-role="th">bb_start_position</th>
+<th data-quarto-table-cell-role="th">bb_end_position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>730537</td>
+<td>2020-09-28 22:40:41.780734+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>32.307937</td>
+<td>0</td>
+<td>0</td>
+<td>[381312, 273984, 19993]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>373879</td>
+<td>2020-09-28 22:40:41.781788+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>229.045043</td>
+<td>96218056992431305</td>
+<td>864691136090135607</td>
+<td>[228816, 239776, 19593]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>601340</td>
+<td>2020-09-28 22:40:41.782714+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>426.138010</td>
+<td>0</td>
+<td>0</td>
+<td>[340000, 279152, 20946]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>201858</td>
+<td>2020-09-28 22:40:41.783784+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>93.753836</td>
+<td>84955554103121097</td>
+<td>864691135373893678</td>
+<td>[146848, 213600, 26267]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>600774</td>
+<td>2020-09-28 22:40:41.785273+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>135.189791</td>
+<td>0</td>
+<td>0</td>
+<td>[339120, 276112, 19442]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>While most tables are small enough to be returned in full, the synapse table has hundreds of millions of rows and is too large to download this way</p>
+</div>
+</div>
+<p>Tables have a collection of columns, some of which specify point in space (columns ending in <code>_position</code>), some a root id (ending in <code>_root_id</code>), and others that contain other information about the object at that point. Before describing some of the most important tables in the database, it’s useful to know about a few advanced options that apply when querying any table.</p>
+<ul>
+<li><code>desired_resolution</code> : This parameter allows you to convert the columns specifying spatial points to different resolutions. Many tables are stored at a resolution of 4x4x40 nm/voxel, for example, but you can convert to nanometers by setting <code>desired_resolution=[1,1,1]</code>.</li>
+<li><code>split_positions</code> : This parameter allows you to split the columns specifying spatial points into separate columns for each dimension. The new column names will be the original column name with <code>_x</code>, <code>_y</code>, and <code>_z</code> appended.</li>
+<li><code>select_columns</code> : This parameter allows you to get only a subset of columns from the table. Once you know exactly what you want, this can save you some cleanup.</li>
+<li><code>limit</code> : This parameter allows you to limit the number of rows returned. If you are just testing out a query or trying to inspect the kind of data within a table, you can set this to a small number to make sure it works before downloading the whole table. Note that this will show a warning so that you don’t accidentally limit your query when you don’t mean to.</li>
+</ul>
+<p>For example, using all of these together:</p>
+<div id="acfa352d" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> client.materialize.query_table(<span class="st">'nucleus_detection_v0'</span>, split_positions<span class="op">=</span><span class="va">True</span>, desired_resolution<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>], select_columns<span class="op">=</span>[<span class="st">'pt_position'</span>, <span class="st">'pt_root_id'</span>], limit<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>cell_type_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">pt_position_x</th>
+<th data-quarto-table-cell-role="th">pt_position_y</th>
+<th data-quarto-table-cell-role="th">pt_position_z</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>241856.0</td>
+<td>374464.0</td>
+<td>838720.0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>227200.0</td>
+<td>389120.0</td>
+<td>797160.0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>230144.0</td>
+<td>422336.0</td>
+<td>795320.0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>239488.0</td>
+<td>386432.0</td>
+<td>794120.0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>239744.0</td>
+<td>423488.0</td>
+<td>803120.0</td>
+<td>864691136050815731</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>245888.0</td>
+<td>384512.0</td>
+<td>800120.0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>249792.0</td>
+<td>391680.0</td>
+<td>807080.0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>243328.0</td>
+<td>403008.0</td>
+<td>794280.0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>247872.0</td>
+<td>386816.0</td>
+<td>805320.0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>260352.0</td>
+<td>416640.0</td>
+<td>802360.0</td>
+<td>864691135013273238</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="filtering-queries" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-queries">Filtering Queries</h2>
+<p>Filtering tables so that you only get data about certain rows back is a very common operation. While there are filtering options in the <code>query_table</code> function (<a href="https://caveclient.readthedocs.io/en/latest/guide/materialization.html">see documentation for more details</a>), a more unified filter interface is available through a “table manager” interface.</p>
+<p>Rather than passing a table name to the <code>query_table</code> function, <code>client.materialize.tables</code> has a subproperty for each table in the database that can be used to filter that table.</p>
+<p>The general pattern for usage is</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.{table_name}({<span class="bu">filter</span> options}).query({<span class="bu">format</span> <span class="kw">and</span> timestamp options})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>where <code>{table_name}</code> is the name of the table you want to filter, <code>{filter options}</code> is a collection of arguments for filtering the query, and <code>{format and timestamp options}</code> are those parameters controlling the format and timestamp of the query.</p>
+<p>For example, let’s look at the table <code>aibs_soma_nuc_metamodel_preds_v117</code>, which has cell type predictions across the dataset. We can get the whole table as a DataFrame:</p>
+<div id="16a8223a" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> client.materialize.tables.aibs_soma_nuc_metamodel_preds_v117().query()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>cell_type_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id_ref</th>
+<th data-quarto-table-cell-role="th">created_ref</th>
+<th data-quarto-table-cell-role="th">valid_ref</th>
+<th data-quarto-table-cell-role="th">target_id</th>
+<th data-quarto-table-cell-role="th">classification_system</th>
+<th data-quarto-table-cell-role="th">cell_type</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+<th data-quarto-table-cell-role="th">pt_position</th>
+<th data-quarto-table-cell-role="th">bb_start_position</th>
+<th data-quarto-table-cell-role="th">bb_end_position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>553</td>
+<td>2022-07-26 23:54:55.895294+00:00</td>
+<td>t</td>
+<td>498173</td>
+<td>aibs_neuronal</td>
+<td>6P-IT</td>
+<td>498173</td>
+<td>2020-09-28 22:43:20.177696+00:00</td>
+<td>t</td>
+<td>308.176159</td>
+<td>103884538719281829</td>
+<td>864691135373830344</td>
+<td>[284688, 211936, 15566]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>4509</td>
+<td>2022-07-27 00:00:10.165062+00:00</td>
+<td>t</td>
+<td>487329</td>
+<td>aibs_neuronal</td>
+<td>MC</td>
+<td>487329</td>
+<td>2020-09-28 22:41:27.945151+00:00</td>
+<td>t</td>
+<td>295.937638</td>
+<td>105279407463397326</td>
+<td>864691135975935434</td>
+<td>[294544, 118624, 21745]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>4693</td>
+<td>2022-07-27 00:00:10.313814+00:00</td>
+<td>t</td>
+<td>106662</td>
+<td>aibs_neuronal</td>
+<td>23P</td>
+<td>106662</td>
+<td>2020-09-28 22:42:56.452281+00:00</td>
+<td>t</td>
+<td>230.148178</td>
+<td>79524515478544304</td>
+<td>864691136084076652</td>
+<td>[107056, 119248, 19414]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>5061</td>
+<td>2022-07-27 00:00:10.592207+00:00</td>
+<td>t</td>
+<td>271350</td>
+<td>aibs_neuronal</td>
+<td>6P-CT</td>
+<td>271350</td>
+<td>2020-09-28 22:41:38.906480+00:00</td>
+<td>t</td>
+<td>305.328128</td>
+<td>87351114324194368</td>
+<td>864691135777995965</td>
+<td>[163920, 235968, 20875]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>8652</td>
+<td>2022-07-27 00:01:29.589487+00:00</td>
+<td>t</td>
+<td>456040</td>
+<td>aibs_neuronal</td>
+<td>MC</td>
+<td>456040</td>
+<td>2020-09-28 22:42:07.860678+00:00</td>
+<td>t</td>
+<td>257.463910</td>
+<td>101129507251445952</td>
+<td>864691136084057196</td>
+<td>[264544, 132528, 23988]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>and we can add similar formatting options as in the last section to the query function:</p>
+<div id="2819259e" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> client.materialize.tables.aibs_soma_nuc_metamodel_preds_v117().query(split_positions<span class="op">=</span><span class="va">True</span>, desired_resolution<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>], select_columns<span class="op">=</span>[<span class="st">'pt_position'</span>, <span class="st">'pt_root_id'</span>, <span class="st">'cell_type'</span>], limit<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>cell_type_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">cell_type</th>
+<th data-quarto-table-cell-role="th">pt_position_x</th>
+<th data-quarto-table-cell-role="th">pt_position_y</th>
+<th data-quarto-table-cell-role="th">pt_position_z</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>23P</td>
+<td>257600.0</td>
+<td>487936.0</td>
+<td>802760.0</td>
+<td>864691135724233643</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>23P</td>
+<td>260992.0</td>
+<td>493568.0</td>
+<td>801560.0</td>
+<td>864691136436395166</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>NGC</td>
+<td>256256.0</td>
+<td>466432.0</td>
+<td>831040.0</td>
+<td>864691135462260637</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>23P</td>
+<td>255744.0</td>
+<td>480640.0</td>
+<td>833200.0</td>
+<td>864691136723556861</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>23P</td>
+<td>262144.0</td>
+<td>505856.0</td>
+<td>824880.0</td>
+<td>864691135776658528</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>23P</td>
+<td>257536.0</td>
+<td>521728.0</td>
+<td>804440.0</td>
+<td>864691135941166708</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>23P</td>
+<td>251136.0</td>
+<td>546048.0</td>
+<td>821320.0</td>
+<td>864691135479369926</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>astrocyte</td>
+<td>324096.0</td>
+<td>417920.0</td>
+<td>658880.0</td>
+<td>864691135937358133</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>NGC</td>
+<td>324032.0</td>
+<td>432960.0</td>
+<td>679800.0</td>
+<td>864691135207734905</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>NGC</td>
+<td>309568.0</td>
+<td>421120.0</td>
+<td>706000.0</td>
+<td>864691135758479438</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>However, now we can also filter the table to get only cells that are predicted to have cell type <code>"BC"</code> (for “basket cell”).</p>
+<div id="1375a2ea" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>my_cell_type <span class="op">=</span> <span class="st">"BC"</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.aibs_soma_nuc_metamodel_preds_v117(cell_type<span class="op">=</span>my_cell_type).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id_ref</th>
+<th data-quarto-table-cell-role="th">created_ref</th>
+<th data-quarto-table-cell-role="th">valid_ref</th>
+<th data-quarto-table-cell-role="th">target_id</th>
+<th data-quarto-table-cell-role="th">classification_system</th>
+<th data-quarto-table-cell-role="th">cell_type</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+<th data-quarto-table-cell-role="th">pt_position</th>
+<th data-quarto-table-cell-role="th">bb_start_position</th>
+<th data-quarto-table-cell-role="th">bb_end_position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>39997</td>
+<td>2022-07-27 00:05:37.339316+00:00</td>
+<td>t</td>
+<td>193846</td>
+<td>aibs_neuronal</td>
+<td>BC</td>
+<td>193846</td>
+<td>2020-09-28 22:40:41.897904+00:00</td>
+<td>t</td>
+<td>306.148966</td>
+<td>82838443188669165</td>
+<td>864691135684976823</td>
+<td>[131568, 168496, 16452]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>15248</td>
+<td>2022-07-27 00:02:08.492581+00:00</td>
+<td>t</td>
+<td>615735</td>
+<td>aibs_neuronal</td>
+<td>BC</td>
+<td>615735</td>
+<td>2020-09-28 22:40:41.957345+00:00</td>
+<td>t</td>
+<td>314.539540</td>
+<td>112181247505371364</td>
+<td>864691136311774525</td>
+<td>[344880, 161104, 17084]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>41346</td>
+<td>2022-07-27 00:05:49.017547+00:00</td>
+<td>t</td>
+<td>369908</td>
+<td>aibs_neuronal</td>
+<td>BC</td>
+<td>369908</td>
+<td>2020-09-28 22:40:41.814964+00:00</td>
+<td>t</td>
+<td>332.862751</td>
+<td>96002690286851358</td>
+<td>864691136522768017</td>
+<td>[227104, 207840, 20841]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>54811</td>
+<td>2022-07-27 00:07:14.246777+00:00</td>
+<td>t</td>
+<td>432338</td>
+<td>aibs_neuronal</td>
+<td>BC</td>
+<td>432338</td>
+<td>2020-09-28 22:40:42.077679+00:00</td>
+<td>t</td>
+<td>403.668828</td>
+<td>100576589938580580</td>
+<td>864691136296706331</td>
+<td>[260560, 207360, 20577]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>30769</td>
+<td>2022-07-27 00:04:44.154032+00:00</td>
+<td>t</td>
+<td>613047</td>
+<td>aibs_neuronal</td>
+<td>BC</td>
+<td>613047</td>
+<td>2020-09-28 22:40:41.982376+00:00</td>
+<td>t</td>
+<td>242.159780</td>
+<td>113234168401651200</td>
+<td>864691136065413528</td>
+<td>[352688, 141616, 25312]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3079</td>
+<td>60636</td>
+<td>2022-07-27 00:07:51.544023+00:00</td>
+<td>t</td>
+<td>438586</td>
+<td>aibs_neuronal</td>
+<td>BC</td>
+<td>438586</td>
+<td>2020-09-28 22:45:25.430745+00:00</td>
+<td>t</td>
+<td>529.501389</td>
+<td>99807894274485381</td>
+<td>864691136897160046</td>
+<td>[254912, 247440, 23680]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3080</td>
+<td>76524</td>
+<td>2022-07-27 00:09:27.526460+00:00</td>
+<td>t</td>
+<td>452402</td>
+<td>aibs_neuronal</td>
+<td>BC</td>
+<td>452402</td>
+<td>2020-09-28 22:45:25.323945+00:00</td>
+<td>t</td>
+<td>501.542912</td>
+<td>102109927354855018</td>
+<td>864691135386800769</td>
+<td>[271408, 97216, 18797]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3081</td>
+<td>56954</td>
+<td>2022-07-27 00:07:26.643176+00:00</td>
+<td>t</td>
+<td>376258</td>
+<td>aibs_neuronal</td>
+<td>BC</td>
+<td>376258</td>
+<td>2020-09-28 22:45:25.357703+00:00</td>
+<td>t</td>
+<td>507.659387</td>
+<td>95022544591277972</td>
+<td>864691136578023700</td>
+<td>[220080, 245168, 22235]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3082</td>
+<td>74764</td>
+<td>2022-07-27 00:09:16.780389+00:00</td>
+<td>t</td>
+<td>676137</td>
+<td>aibs_neuronal</td>
+<td>BC</td>
+<td>676137</td>
+<td>2020-09-28 22:45:25.371421+00:00</td>
+<td>t</td>
+<td>510.804296</td>
+<td>116061493832778551</td>
+<td>864691136119431960</td>
+<td>[372976, 235696, 25121]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3083</td>
+<td>20112</td>
+<td>2022-07-27 00:03:41.743075+00:00</td>
+<td>t</td>
+<td>591219</td>
+<td>aibs_neuronal</td>
+<td>BC</td>
+<td>591219</td>
+<td>2020-09-28 22:45:25.526753+00:00</td>
+<td>t</td>
+<td>567.517839</td>
+<td>110216764830845707</td>
+<td>864691135279126177</td>
+<td>[330320, 204752, 25060]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+</tbody>
+</table>
+
+<p>3084 rows × 15 columns</p>
+</div>
+</div>
+</div>
+<p>or maybe we just want the cell types for a particular collection of root ids:</p>
+<div id="acd0d226" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_root_ids <span class="op">=</span> [<span class="dv">864691135771677771</span>, <span class="dv">864691135560505569</span>, <span class="dv">864691136723556861</span>]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.aibs_soma_nuc_metamodel_preds_v117(pt_root_id<span class="op">=</span>my_root_ids).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id_ref</th>
+<th data-quarto-table-cell-role="th">created_ref</th>
+<th data-quarto-table-cell-role="th">valid_ref</th>
+<th data-quarto-table-cell-role="th">target_id</th>
+<th data-quarto-table-cell-role="th">classification_system</th>
+<th data-quarto-table-cell-role="th">cell_type</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+<th data-quarto-table-cell-role="th">pt_position</th>
+<th data-quarto-table-cell-role="th">bb_start_position</th>
+<th data-quarto-table-cell-role="th">bb_end_position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>69892</td>
+<td>2022-07-27 00:08:42.855344+00:00</td>
+<td>t</td>
+<td>19116</td>
+<td>aibs_neuronal</td>
+<td>23P</td>
+<td>19116</td>
+<td>2020-09-28 22:41:51.767906+00:00</td>
+<td>t</td>
+<td>301.426115</td>
+<td>74737997899501359</td>
+<td>864691135771677771</td>
+<td>[72576, 108656, 20291]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1778</td>
+<td>2022-07-26 23:54:56.804122+00:00</td>
+<td>t</td>
+<td>21783</td>
+<td>aibs_neuronal</td>
+<td>23P</td>
+<td>21783</td>
+<td>2020-09-28 22:41:59.966574+00:00</td>
+<td>t</td>
+<td>263.637074</td>
+<td>75795590176519004</td>
+<td>864691135560505569</td>
+<td>[80128, 124000, 16563]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>52713</td>
+<td>2022-07-27 00:07:02.006105+00:00</td>
+<td>t</td>
+<td>4074</td>
+<td>aibs_neuronal</td>
+<td>23P</td>
+<td>4074</td>
+<td>2020-09-28 22:42:41.341179+00:00</td>
+<td>t</td>
+<td>313.678234</td>
+<td>73543309863605007</td>
+<td>864691136723556861</td>
+<td>[63936, 120160, 20830]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>You can get a list of all parameters than be used for querying with the standard IPython/Jupyter docstring functionality, e.g.&nbsp;<code>client.materialize.tables.aibs_soma_nuc_metamodel_preds_v117</code>.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use of this functionality will show a brief warning that the interface is experimental. This is because the interface is still being developed and may change in the near future in response to user feedback.</p>
+</div>
+</div>
+</section>
+<section id="querying-synapses" class="level2">
+<h2 class="anchored" data-anchor-id="querying-synapses">Querying Synapses</h2>
+<p>While synapses are stored as any other table in the database, in this case <code>synapses_pni_2</code>, this table is much larger than any other table at more than 337 million rows, and it works best when queried in a different way.</p>
+<p>The <code>synapse_query</code> function allows you to query the synapse table in a more convenient way than most other tables. In particular, the <code>pre_ids</code> and <code>post_ids</code> let you specify which root id (or collection of root ids) you want to query, with pre_ids indicating the collection of presynaptic neurons and post_ids the collection of postsynaptic neurons.</p>
+<p>Using both <code>pre_ids</code> and <code>post_ids</code> in one call is effectively a logical AND, returning only those synapses from neurons in the list of <code>pre_ids</code> that target neurons in the list of <code>post_ids</code>.</p>
+<p>Let’s look at one particular example.</p>
+<div id="453c2056" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>my_root_id <span class="op">=</span> <span class="dv">864691135808473885</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>syn_df <span class="op">=</span> client.materialize.synapse_query(pre_ids<span class="op">=</span>my_root_id)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total number of output synapses for </span><span class="sc">{</span>my_root_id<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">len</span>(syn_df)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>syn_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total number of output synapses for 864691135808473885: 1498</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">size</th>
+<th data-quarto-table-cell-role="th">pre_pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pre_pt_root_id</th>
+<th data-quarto-table-cell-role="th">post_pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">post_pt_root_id</th>
+<th data-quarto-table-cell-role="th">pre_pt_position</th>
+<th data-quarto-table-cell-role="th">post_pt_position</th>
+<th data-quarto-table-cell-role="th">ctr_pt_position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>158405512</td>
+<td>2020-11-04 06:48:59.403833+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>420</td>
+<td>89385416926790697</td>
+<td>864691135808473885</td>
+<td>89385416926797494</td>
+<td>864691135546540484</td>
+<td>[179076, 188248, 20233]</td>
+<td>[179156, 188220, 20239]</td>
+<td>[179140, 188230, 20239]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>185549462</td>
+<td>2020-11-04 06:49:10.903020+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>4832</td>
+<td>91356016507479890</td>
+<td>864691135808473885</td>
+<td>91356016507470163</td>
+<td>864691135884799088</td>
+<td>[193168, 190452, 19262]</td>
+<td>[193142, 190404, 19257]</td>
+<td>[193180, 190432, 19254]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>138110803</td>
+<td>2020-11-04 06:49:46.758528+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>3176</td>
+<td>87263084540201919</td>
+<td>864691135808473885</td>
+<td>87263084540199587</td>
+<td>864691135195078186</td>
+<td>[163440, 104292, 19808]</td>
+<td>[163498, 104348, 19806]</td>
+<td>[163460, 104356, 19804]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>155339535</td>
+<td>2020-11-04 09:53:22.361558+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>5624</td>
+<td>88540717319827050</td>
+<td>864691135808473885</td>
+<td>88540717319834759</td>
+<td>864691136039974142</td>
+<td>[173050, 186398, 21570]</td>
+<td>[173026, 186518, 21573]</td>
+<td>[173100, 186472, 21569]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>148262628</td>
+<td>2020-11-04 06:53:27.294021+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>3536</td>
+<td>88189766885093187</td>
+<td>864691135808473885</td>
+<td>88189835604584343</td>
+<td>864691135250533976</td>
+<td>[170154, 193170, 21123]</td>
+<td>[170046, 193240, 21123]</td>
+<td>[170118, 193220, 21128]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Note that synapse queries always return the list of every synapse between the neurons in the query, even if there are multiple synapses between the same pair of neurons.</p>
+<p>A common pattern to generate a list of connections between unique pairs of neurons is to group by the root ids of the presynaptic and postsynaptic neurons and then count the number of synapses between them. For example, to get the number of synapses from this neuron onto every other neuron, ordered</p>
+<div id="1231811e" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>syn_df.groupby(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  [<span class="st">'pre_pt_root_id'</span>, <span class="st">'post_pt_root_id'</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>).count()[[<span class="st">'id'</span>]].rename(</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  columns<span class="op">=</span>{<span class="st">'id'</span>: <span class="st">'syn_count'</span>}</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>).sort_values(</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  by<span class="op">=</span><span class="st">'syn_count'</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  ascending<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the 'id' part here is just a way to quickly extract one column.</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co"># This could be any of the remaining column names, but `id` is often convenient </span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># because it is common to all tables.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">syn_count</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">pre_pt_root_id</th>
+<th data-quarto-table-cell-role="th">post_pt_root_id</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="11" data-quarto-table-cell-role="th" data-valign="top">864691135808473885</td>
+<td data-quarto-table-cell-role="th">864691135800958562</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">864691135214122296</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">864691136578647572</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">864691136066504856</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">864691135841325283</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">864691135544771112</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">864691135545198632</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">864691135545210408</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">864691135545311272</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">864691137197468481</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+<p>1037 rows × 1 columns</p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Contributions by: Bethanny Danskin, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
