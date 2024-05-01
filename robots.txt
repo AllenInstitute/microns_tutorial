@@ -1,1 +1,1 @@
-Sitemap: https://bpdanskin.github.io/test_microns_tutorial/sitemap.xml
+Sitemap: https://AllenInstitute.github.io/microns_tutorial/sitemap.xml
