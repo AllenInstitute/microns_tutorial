@@ -6,4 +6,5 @@ Introduction to the [MICrONs-Explorer](https://www.microns-explorer.org/) data e
 
 ::: {.callout-important}
 ## Under construction
+This website will be undergoing major updates as we add tutorials and features. 
 :::
