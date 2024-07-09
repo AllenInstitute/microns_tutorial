@@ -42,6 +42,9 @@ website:
   page-footer: 
       center: "Contributions by: Bethanny Danskin, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald"
       border: false
+  repo-url: https://github.com/AllenInstitute/microns_tutorial
+  repo-actions: [edit, issue]
+  repo-subdir: tutorial_book
 
 format:
   html:
