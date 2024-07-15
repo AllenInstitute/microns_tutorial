@@ -14,35 +14,39 @@
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_03_annotation_tables.html</loc>
-    <lastmod>2024-01-24T23:57:18.202Z</lastmod>
+    <lastmod>2024-07-15T22:42:45.388Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_01_caveclient_setup.html</loc>
     <lastmod>2024-01-25T18:50:04.228Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/examples/generate_neuroglancer_states.html</loc>
-    <lastmod>2024-01-23T23:13:25.242Z</lastmod>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/examples/skeleton_load_and_generate.html</loc>
+    <lastmod>2024-07-15T21:46:47.357Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/em_04_neuroglancer.html</loc>
-    <lastmod>2024-01-26T20:02:51.493Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/em_02_dataset_basics.html</loc>
-    <lastmod>2024-01-23T19:56:20.339Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/em_01_background.html</loc>
-    <lastmod>2024-01-25T01:05:14.312Z</lastmod>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/em_05_dash_apps.html</loc>
+    <lastmod>2024-01-23T23:05:49.418Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/em_03_proofreading.html</loc>
     <lastmod>2024-01-23T19:55:04.725Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/em_05_dash_apps.html</loc>
-    <lastmod>2024-01-23T23:05:49.418Z</lastmod>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/em_01_background.html</loc>
+    <lastmod>2024-07-15T21:57:49.015Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/em_02_dataset_basics.html</loc>
+    <lastmod>2024-01-23T19:56:20.339Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/em_04_neuroglancer.html</loc>
+    <lastmod>2024-01-26T20:02:51.493Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/examples/generate_neuroglancer_states.html</loc>
+    <lastmod>2024-01-23T23:13:25.242Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/index.html</loc>

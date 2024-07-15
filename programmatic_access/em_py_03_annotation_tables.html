@@ -269,6 +269,12 @@ div.csl-indent {
  <span class="menu-text">Generating Neuroglancer States</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/skeleton_load_and_generate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neuron Skeletons</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -287,9 +293,14 @@ div.csl-indent {
   <li><a href="#book-keeping-columns" id="toc-book-keeping-columns" class="nav-link" data-scroll-target="#book-keeping-columns">Book-keeping Columns</a></li>
   </ul></li>
   <li><a href="#synapse-table" id="toc-synapse-table" class="nav-link" data-scroll-target="#synapse-table">Synapse Table</a></li>
-  <li><a href="#nucleus-table" id="toc-nucleus-table" class="nav-link" data-scroll-target="#nucleus-table">Nucleus Table</a></li>
+  <li><a href="#nucleus-tables" id="toc-nucleus-tables" class="nav-link" data-scroll-target="#nucleus-tables">Nucleus tables</a>
+  <ul class="collapse">
+  <li><a href="#nucleus-detection-table" id="toc-nucleus-detection-table" class="nav-link" data-scroll-target="#nucleus-detection-table">Nucleus Detection Table</a></li>
+  <li><a href="#neuron-nucleus-table" id="toc-neuron-nucleus-table" class="nav-link" data-scroll-target="#neuron-nucleus-table">Neuron-Nucleus Table</a></li>
+  </ul></li>
   <li><a href="#cell-type-tables" id="toc-cell-type-tables" class="nav-link" data-scroll-target="#cell-type-tables">Cell Type Tables</a>
   <ul class="collapse">
+  <li><a href="#manual-cell-types-v1-column" id="toc-manual-cell-types-v1-column" class="nav-link" data-scroll-target="#manual-cell-types-v1-column">Manual Cell Types (V1 Column)</a></li>
   <li><a href="#predictions-from-somanucleus-features" id="toc-predictions-from-somanucleus-features" class="nav-link" data-scroll-target="#predictions-from-somanucleus-features">Predictions from soma/nucleus features</a></li>
   <li><a href="#coarse-prediction-from-spine-detection" id="toc-coarse-prediction-from-spine-detection" class="nav-link" data-scroll-target="#coarse-prediction-from-spine-detection">Coarse prediction from spine detection</a></li>
   <li><a href="#fine-prediction-from-dendritic-features" id="toc-fine-prediction-from-dendritic-features" class="nav-link" data-scroll-target="#fine-prediction-from-dendritic-features">Fine prediction from dendritic features</a></li>
@@ -298,7 +309,7 @@ div.csl-indent {
   <li><a href="#functional-coregistration-tables" id="toc-functional-coregistration-tables" class="nav-link" data-scroll-target="#functional-coregistration-tables">Functional Coregistration Tables</a></li>
   <li><a href="#all-tables" id="toc-all-tables" class="nav-link" data-scroll-target="#all-tables">All Tables</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/programmatic_access/em_py_03_annotation_tables.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -414,10 +425,43 @@ div.csl-indent {
 </tbody>
 </table>
 </section>
-<section id="nucleus-table" class="level2">
-<h2 class="anchored" data-anchor-id="nucleus-table">Nucleus Table</h2>
+<section id="nucleus-tables" class="level2">
+<h2 class="anchored" data-anchor-id="nucleus-tables">Nucleus tables</h2>
+<p>The ‘nucleus centroid’ of a cell is unlikely to change with proofreading, and so is a useful static identifier for a given cell. The results of automatic nucleus segmentation and neuron-detection are avialable in the following tables. These tables are often the ‘reference’ table for other annotations.</p>
+<section id="nucleus-detection-table" class="level3">
+<h3 class="anchored" data-anchor-id="nucleus-detection-table">Nucleus Detection Table</h3>
+<p>Table name: <code>nucleus_detection_v0</code></p>
+<p>Nucleus detection has been used to define unique cells in the dataset. Distinct from the neuronal segmentation, a convolutional neural network was trained to segment nuclei. Each nucleus detection was given a unique ID, and the centroid of the nucleus was recorded as well as its volume. Many other tables in the dataset are reference tables on <code>nucleus_detection_v0</code>, meaning they are linked by the same annotation id. The id of the segmented nucelus, a 6-digit integer, is static across data versions and for this reason is the preferred method to identify the same ‘cell’ across time.</p>
+<p>The key columns of <code>nucleus_detection_v0</code> are:</p>
+<table class="table-light table-hover table">
+<caption>Nucleus table column definitions</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">6-digit number of the segmentation for that nucleus; ‘nucleus ID’</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the nucleus</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the <code>id</code> column is the nucleus ID, also called the ‘soma ID’ or the ‘cell ID’.</p>
+</section>
+<section id="neuron-nucleus-table" class="level3">
+<h3 class="anchored" data-anchor-id="neuron-nucleus-table">Neuron-Nucleus Table</h3>
 <p>Table name: <code>nucleus_ref_neuron_svm</code></p>
-<p>Nucleus detection has been used to define unique cells in the dataset. Distinct from the neuronal segmentation, a convolutional neural network was trained to segment nuclei. Each nucleus detection was given a unique ID, and the centroid of the nucleus was recorded as well as its volume. While the table of centroids for all nuclei is <code>nucleus_detection_v0</code>, this includes neuronal nuclei, non-neuronal nuclei, and some erroneous detections. The table <code>nucleus_ref_neuron_svm</code> shows the results of a classifier that was trained to distinguish neuronal nuclei from non-neuronal nuclei and errors. For the purposes of analysis, we recommend using the <code>nucleus_ref_neuron_svm</code> table to get the most broad collection of neurons in the dataset.</p>
+<p>While the table of centroids for all nuclei is <code>nucleus_detection_v0</code>, this includes neuronal nuclei, non-neuronal nuclei, and some erroneous detections. The table <code>nucleus_ref_neuron_svm</code> shows the results of a classifier that was trained to distinguish neuronal nuclei from non-neuronal nuclei and errors. For the purposes of analysis, we recommend using the <code>nucleus_ref_neuron_svm</code> table to get the most broad collection of neurons in the dataset.</p>
 <p>The key columns of <code>nucleus_ref_neuron_svm</code> are:</p>
 <table class="table-light table-hover table">
 <caption>Nucleus table column definitions</caption>
@@ -452,12 +496,190 @@ div.csl-indent {
 </table>
 <p>Note that the <code>id</code> column is the same as the nucleus id.</p>
 </section>
+</section>
 <section id="cell-type-tables" class="level2">
 <h2 class="anchored" data-anchor-id="cell-type-tables">Cell Type Tables</h2>
 <p>There are several tables that contain information about the cell type of neurons in the dataset, with each table representing a different method of doing the classificaiton. Because each method requires a different kind of information, not all cells are present in all tables. Each of the cell types tables has the same format and in all cases the <code>id</code> column references the nucleus id of the cell in question.</p>
+<section id="manual-cell-types-v1-column" class="level3">
+<h3 class="anchored" data-anchor-id="manual-cell-types-v1-column">Manual Cell Types (V1 Column)</h3>
+<p>Table name: <code>allen_v1_column_types_slanted_ref</code> and <code>aibs_column_nonneuronal_ref</code></p>
+<p>A subset of nucleus detections in a 100 um column (n=2204) in VISp were manually classified by anatomists at the Allen Institute into categories of cell subclasses, first distinguishing cells into classes of non-neuronal, excitatory and inhibitory.</p>
+<p>The key columns are:</p>
+<table class="table-light table-hover table">
+<caption>AIBS Manual Cell Types, V1 COlumn</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>classification-system</code></td>
+<td style="text-align: left;">One of <code>aibs_coarse_excitatory</code> or <code>aibs_coarse_inhibitory</code> for detected neurons, or <code>aibs_coarse_nonneuronal</code> for non-neurons (glia/pericytes).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cell_type</code></td>
+<td style="text-align: left;">One of several cell types, detailed below</td>
+</tr>
+</tbody>
+</table>
+<p>This is a reference table on <code>nucleus_detection_v0</code>. The cell types in the table are:</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Manual Cell Types (neurons)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="table-light table-hover table">
+<caption>AIBS Manual Cell Type definitions (neurons)</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Cell Type</th>
+<th style="text-align: left;">Subclass</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>23P</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 2/3 cells</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>4P</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 4 cells</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>5P-IT</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 5 <strong>i</strong>ntra<strong>t</strong>elencephalic cells</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>5P-ET</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 5 <strong>e</strong>xtra<strong>t</strong>elencephalic cells</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>5P-NP</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 5 near-projecting cells</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>6P-IT</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 6 <strong>i</strong>ntra<strong>t</strong>elencephalic cells</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>6P-CT</code></td>
+<td style="text-align: left;">Excitatory</td>
+<td style="text-align: left;">Layer 6 <strong>c</strong>ortico<strong>t</strong>halamic cells</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>BC</code></td>
+<td style="text-align: left;">Inhibitory</td>
+<td style="text-align: left;">Basket cell</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>BPC</code></td>
+<td style="text-align: left;">Inhibitory</td>
+<td style="text-align: left;">Bipolar cell. <em>In practice, this was used for all cells thought to be VIP cell, not only those with a bipolar dendrite</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>MC</code></td>
+<td style="text-align: left;">Inhibitory</td>
+<td style="text-align: left;">Martinotti cell. <em>In practice, this label was used for all inhibitory neurons that appeared to be Somatostatin cell, not only those with a Martinotti cell morphology</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Unsure</code></td>
+<td style="text-align: left;">Inhibitory</td>
+<td style="text-align: left;">Unsure. <em>In practice, this label also is used for all likely-inhibitory neurons that did not match other types</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Manual Cell Types (non-neurons)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="table-light table-hover table">
+<caption>AIBS Manual Cell Type definitions (non-neurons)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Cell Type</th>
+<th style="text-align: left;">Subclass</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>OPC</code></td>
+<td style="text-align: left;">Non-neuronal</td>
+<td style="text-align: left;">Oligodendrocyte precursor cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>astrocyte</code></td>
+<td style="text-align: left;">Non-neuronal</td>
+<td style="text-align: left;">Astrocyte</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>microglia</code></td>
+<td style="text-align: left;">Non-neuronal</td>
+<td style="text-align: left;">Microglia</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pericyte</code></td>
+<td style="text-align: left;">Non-neuronal</td>
+<td style="text-align: left;">Pericyte</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>oligo</code></td>
+<td style="text-align: left;">Non-neuronal</td>
+<td style="text-align: left;">Oligodendrocyte</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
 <section id="predictions-from-somanucleus-features" class="level3">
 <h3 class="anchored" data-anchor-id="predictions-from-somanucleus-features">Predictions from soma/nucleus features</h3>
-<p>Table name: <code>aibs_soma_nuc_metamodel_preds_v117</code></p>
+<p>Table name: <code>aibs_metamodel_celltypes_v661</code></p>
 <p>This table contains the results of a hierarchical classifier trained on features of the cell body and nucleus of cells. This was applied to most cells in the dataset that had complete cell bodies (e.g.&nbsp;not cut off by the edge of the data). For more details, see <a href="https://www.biorxiv.org/content/10.1101/2022.07.20.499976v1">Elabbady et al.&nbsp;2022</a>. In general, this does a good job, but sometimes confuses layer 5 inhibitory neurons as being excitatory:</p>
 <p>The key columns are:</p>
 <table class="table-light table-hover table">
@@ -483,7 +705,7 @@ div.csl-indent {
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>classification-system</code></td>
-<td style="text-align: left;">Either <code>aibs_neuronal</code> for neurons (Excitatory or inhibitory) or <code>aibs_non-neuronal</code> for non-neurons (glia/pericytes)</td>
+<td style="text-align: left;">One of <code>excitatory_neuron</code> or <code>inhibitory_neuron</code> for detected neurons, or <code>nonneuron</code> for non-neurons (glia/pericytes).</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>cell_type</code></td>
@@ -491,9 +713,9 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>The cell types in the table are:</p>
+<p>This is a reference table on <code>nucleus_detection_v0</code>, with small-objects and multi-soma errors removed. The model was run with cell-based features as of version 661 of the dataset. The cell types in the table are:</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -502,7 +724,7 @@ Soma Nuc Metamodel Cell types
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="table-light table-hover table">
 <caption>AIBS Soma Nuc Metamodel: Cell Type definitions</caption>
@@ -604,6 +826,7 @@ Soma Nuc Metamodel Cell types
 </div>
 </div>
 </div>
+<p>Previous versions of this table include: <code>aibs_soma_nuc_metamodel_preds_v117</code> (run on a subset of data, the V1 column) and <code>aibs_soma_nuc_exc_mtype_preds_v117</code> (using training data labeled by another classifier: see <code>mtypes</code> below).</p>
 </section>
 <section id="coarse-prediction-from-spine-detection" class="level3">
 <h3 class="anchored" data-anchor-id="coarse-prediction-from-spine-detection">Coarse prediction from spine detection</h3>
@@ -644,12 +867,12 @@ Soma Nuc Metamodel Cell types
 </section>
 <section id="fine-prediction-from-dendritic-features" class="level3">
 <h3 class="anchored" data-anchor-id="fine-prediction-from-dendritic-features">Fine prediction from dendritic features</h3>
-<p>Table name: <code>allen_column_mtypes_v1</code></p>
-<p>This table contains all neurons within a well-proofread 100 micron square column in primary visual cortex (VISp) spanning all layers.</p>
-<p>Excitatory neurons and inhibitory neurons were distinguished manually, and subclasses were assigned based on a data-driven clustering of the neuronal features. Inhibitory neurons were classified based on how they distributed they synaptic outputs onto target cells, while exictatory neurons were classified based on a collection of dendritic features.</p>
+<p>Table name: <code>aibs_metamodel_mtypes_v661_v2</code></p>
+<p>This table contains all detected neurons across the dataset,</p>
+<p>Excitatory neurons and inhibitory neurons were distinguished with the <code>soma_nucleus</code> model above, and subclasses were assigned based on a data-driven clustering of the neuronal features. Inhibitory neurons were classified based on how they distributed they synaptic outputs onto target cells, while exictatory neurons were classified based on a collection of dendritic features.</p>
 <p>For more details, see the section on the <a href="../em_03_proofreading.html#minnie-column">minnie column</a> or read the preprint <span class="citation" data-cites="schneider-mizell2023">(<a href="#ref-schneider-mizell2023" role="doc-biblioref">Schneider-Mizell et al. 2023</a>)</span>.</p>
-<p>Note that all cell type labels in this column come from a clustering specific to this paper, and while they are intended to align with the broader literature they are not a direct mapping or a well-established convention.</p>
-<p>For a more conventional set of labels on the same set of cells, look at the table <code>allen_v1_column_types_slanted_ref</code>. Cell types in that table align with those in <code>aibs_soma_nuc_metamodel_preds_v117</code> above.</p>
+<p>Note that all cell-type labels in this table come from a clustering specific to this paper, and while they are intended to align with the broader literature they are not a direct mapping or a well-established convention.</p>
+<p>For a more conventional set of labels on the same set of cells, look at the manual table <code>allen_v1_column_types_slanted_ref</code>. Cell types in that table align with those in the <code>aibs_metamodel_celltypes_v661</code> classifier above.</p>
 <p>The key columns are:</p>
 <table class="table-light table-hover table">
 <caption>Column M-type Table</caption>
@@ -682,9 +905,10 @@ Soma Nuc Metamodel Cell types
 </tr>
 </tbody>
 </table>
+<p>This is a reference table on <code>nucleus_detection_v0</code>, with non-neuronal objects removed. The model was run with cell-based features as of version 661 of the dataset. The cell types in the table are:</p>
 <p>The cell types in the table are:</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -693,7 +917,7 @@ M-type Cell Type definitions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <table class="table">
 <colgroup>
@@ -819,6 +1043,7 @@ M-type Cell Type definitions
 </div>
 </div>
 </div>
+<p>Previous versions of this table include: <code>allen_column_mtypes_v1</code> (run on a subset of data, the V1 column)</p>
 </section>
 </section>
 <section id="proofreading-tables" class="level2">
@@ -1448,7 +1673,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-</div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/programmatic_access/em_py_03_annotation_tables.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
