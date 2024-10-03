@@ -305,9 +305,12 @@ div.csl-indent {
   <li><a href="#coarse-prediction-from-spine-detection" id="toc-coarse-prediction-from-spine-detection" class="nav-link" data-scroll-target="#coarse-prediction-from-spine-detection">Coarse prediction from spine detection</a></li>
   <li><a href="#fine-prediction-from-dendritic-features" id="toc-fine-prediction-from-dendritic-features" class="nav-link" data-scroll-target="#fine-prediction-from-dendritic-features">Fine prediction from dendritic features</a></li>
   </ul></li>
-  <li><a href="#proofreading-tables" id="toc-proofreading-tables" class="nav-link" data-scroll-target="#proofreading-tables">Proofreading Tables</a></li>
+  <li><a href="#proofreading-tables" id="toc-proofreading-tables" class="nav-link" data-scroll-target="#proofreading-tables">Proofreading Tables</a>
+  <ul class="collapse">
+  <li><a href="#proofreading-status-and-strategy" id="toc-proofreading-status-and-strategy" class="nav-link" data-scroll-target="#proofreading-status-and-strategy">Proofreading Status and Strategy</a></li>
+  </ul></li>
   <li><a href="#functional-coregistration-tables" id="toc-functional-coregistration-tables" class="nav-link" data-scroll-target="#functional-coregistration-tables">Functional Coregistration Tables</a></li>
-  <li><a href="#all-tables" id="toc-all-tables" class="nav-link" data-scroll-target="#all-tables">All Tables</a></li>
+  <li><a href="#overview-of-relevant-tables" id="toc-overview-of-relevant-tables" class="nav-link" data-scroll-target="#overview-of-relevant-tables">Overview of relevant tables</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/programmatic_access/em_py_03_annotation_tables.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -1048,6 +1051,134 @@ M-type Cell Type definitions
 </section>
 <section id="proofreading-tables" class="level2">
 <h2 class="anchored" data-anchor-id="proofreading-tables">Proofreading Tables</h2>
+<section id="proofreading-status-and-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="proofreading-status-and-strategy">Proofreading Status and Strategy</h3>
+<p>Table name: <code>proofreading_status_and_strategy</code></p>
+<p>The table <code>proofreading_status_and_strategy</code> describes the status of cells that have undergone manual proofreading.</p>
+<p>Because of the inherent difference in the difficulty and time required for different kinds of proofreading, we describe the status of axons and dendrites separately.</p>
+<p>Each compartment <code>status</code> may be either:</p>
+<ul>
+<li><code>FALSE</code>: indicates no comprehensive proofreading has been performed, or is not applicable.<br>
+</li>
+<li><code>TRUE</code>: indicates that false merges have been comprehensively removed, and the compartment is at least ‘clean’. Consult the <code>strategy</code> column if completeness of the compartment is relevant to your research.</li>
+</ul>
+<p>An axon or dendrite labeled as <code>status=TRUE</code> can be trusted to be correct, but may not be complete. The degree of completion can be read from the <code>strategy</code> column. For more information, please see <a href="../em_03_proofreading.html">Proofreading and Data Quality</a>; or also the <a href="https://www.microns-explorer.org/manifests/mm3-proofreading">microns-explorer page on proofreading strategies</a>.</p>
+<p>The key columns are:</p>
+<table class="table-light table-hover table">
+<caption>Proofreading Status Table</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>valid_id</code></td>
+<td style="text-align: left;">The root id of the neuron when it the proofreading assessment was made. <em>NOTE: if this does not match the <code>pt_root_id</code> then the cell has undergone further changes. This is usually and improvement in proofreading, but proceed with caution.</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>status_dendrite</code></td>
+<td style="text-align: left;">The status of the dendrite proofreading. May be <code>TRUE</code> or <code>FALSE</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>status_axon</code></td>
+<td style="text-align: left;">The status of the axon proofreading. May be <code>TRUE</code> or <code>FALSE</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>strategy_dendrite</code></td>
+<td style="text-align: left;">The strategy employed to proofread the dendrite. See strategy table below for details</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>strategy_axon</code></td>
+<td style="text-align: left;">The strategy employed to proofread the axon. See strategy table below for details</td>
+</tr>
+</tbody>
+</table>
+<p>The specific strategies are as follows (and will update over time):</p>
+<section id="proofreading-strategies" class="level4">
+<h4 class="anchored" data-anchor-id="proofreading-strategies">Proofreading Strategies</h4>
+<table class="table-light table-hover table">
+<caption>Proofreading Strategy Table</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Strategy</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>none</code></td>
+<td style="text-align: left;">No cleaning, and no extension. Indicates an entry in <code>proofreading_status</code> that is <code>FALSE</code> for that compartment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>dendrite_clean</code></td>
+<td style="text-align: left;">The dendrite had incorrectly-merged axon and dendritic segments comprehensively removed, meaning the input synapses are accurate. The dendrite may be incorrectly truncated by segmentation error. Not all dendrite tips have been checked for extension. No comprehensive attempt was made to re-attach spine heads.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>dendrite_extended</code></td>
+<td style="text-align: left;">The dendrite had incorrectly-merged axon and dendritic segments comprehensively removed, meaning the input synapses are accurate. Every tip was identified, manually inspected, and extended if possible. No comprehensive attempt was made to re-attach spine heads.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>axon_column_truncated</code></td>
+<td style="text-align: left;">AThe axon was extended within the V1 cortical column, with a preference for local connections. In some cases the axon was cut at the column boundary and/or the layer boundary, especially the boundary between layers 2/3 and layer 4. Output synapses represent a sampling of potential partners</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>axon_interareal</code></td>
+<td style="text-align: left;">The axon was extended with a preference for branches that projected to other brain areas. Some axon branches were fully extended, but local connections may be incomplete. Output synapses represent a sampling of potential partners.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>axon_partially_extended</code></td>
+<td style="text-align: left;">The axon was extended outward from the soma, following each branch to its termination. Output synapses represent a sampling of potential partners.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>axon_fully_extended</code></td>
+<td style="text-align: left;">Axon was extended outward from the soma, following each branch to its termination. After initial extension, every endpoint was identified, manually inspected, and extended again if possible. Output synapses represent a largely complete sampling of partners.</td>
+</tr>
+</tbody>
+</table>
+<p>This table, <code>proofreading_status_and_strategy</code>, supercedes <code>proofreading_status_public_release</code>.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proofreading status at public release
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This table is out-of-date, and remains here for convenient reference</p>
+</div>
+</div>
 <p>Table name: <code>proofreading_status_public_release</code></p>
 <p>The table <code>proofreading_status_public_release</code> describes the status of cells selected for manual proofreading.</p>
 <p>Because of the inherent difference in the challenge and time required for different kinds of proofreading, we describe the status of axons and dendrites separately. Further, we distinguish three different categories of proofreading:</p>
@@ -1056,10 +1187,8 @@ M-type Cell Type definitions
 <li><code>clean</code>: Proofreading has comprehensively removed false merges, but not necessarily added missing parts.</li>
 <li><code>extended</code>: Proofreading has comprehensively removed false merges and attempted to add all or most missing parts.</li>
 </ul>
-<p>Note that many cells not in this table have been edited in some places, but not comprehensively worked on. For more information, please see <a href="../em_03_proofreading.html">Proofreading and Data Quality</a>.</p>
 <p>The key columns are:</p>
-<table class="table-light table-hover table">
-<caption>Proofreading Status Table</caption>
+<table class="table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -1093,13 +1222,18 @@ M-type Cell Type definitions
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 <section id="functional-coregistration-tables" class="level2">
 <h2 class="anchored" data-anchor-id="functional-coregistration-tables">Functional Coregistration Tables</h2>
 <p>To relate the structural data to functional data, cell bodies must be coregistered between the functional imaging and EM volumes. The results of this coregistration are stored in two tables with the same columns:</p>
 <ul>
-<li><code>coregistration_manual_v3</code> : The results of manually verified coregistration. This table is well-verified, but contains fewer {term}<code>ROI</code>s (N=12,052 root ids, 13,925 ROIs).</li>
-<li><code>apl_functional_coreg_forward_v5</code> : The results of automated functional matching between the EM and 2-p functional data. This table is not manually verified, but contains more {term}<code>ROI</code>s (N=36,078 root ids, 68,873 ROIs).</li>
+<li><code>coregistration_manual_v4</code> : The results of manually verified coregistration. This table is well-verified, but contains fewer {term}<code>ROI</code>s (N=15,352 root ids, 19,181 ROIs).</li>
+<li><code>coregistration_auto_phase3_fwd_apl_vess_combined</code> : The results of automated functional matching between the EM and 2-p functional data. This table is not manually verified, but contains more {term}<code>ROI</code>s (N=84,233 ROIs). This table reconciles the following two tables that both make a best match of the of registration using different techniques: <code>coregistration_auto_phase3_fwd</code> and <code>apl_functional_coreg_vess_fwd</code>.</li>
 </ul>
 <p>Please see the <a href="../functional_tutorial/functional_intro.html">Functional Data</a> section for more information about using this data.</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -1108,11 +1242,11 @@ M-type Cell Type definitions
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-repair link
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>fix broken link</p>
 </div>
 </div>
 <p>The column descriptions are:</p>
@@ -1163,9 +1297,14 @@ repair link
 </tr>
 </tbody>
 </table>
+<p>Previous versions of this analysis include the following tables:</p>
+<ul>
+<li><code>coregistration_manual_v3</code> : The results of manually verified coregistration. This table is well-verified, but contains fewer {term}<code>ROI</code>s (N=12,052 root ids, 13,925 ROIs).</li>
+<li><code>apl_functional_coreg_forward_v5</code> : The results of automated functional matching between the EM and 2-p functional data. This table is not manually verified, but contains more {term}<code>ROI</code>s (N=36,078 root ids, 68,873 ROIs).</li>
+</ul>
 </section>
-<section id="all-tables" class="level2">
-<h2 class="anchored" data-anchor-id="all-tables">All Tables</h2>
+<section id="overview-of-relevant-tables" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-relevant-tables">Overview of relevant tables</h2>
 <table class="table-light table-hover table">
 <caption>heard you like tables–here’s a table for your tables</caption>
 <colgroup>
@@ -1203,68 +1342,58 @@ repair link
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>coregistration_manual_v4</code></td>
-<td style="text-align: left;">13,658</td>
+<td style="text-align: left;">19,181</td>
 <td style="text-align: left;">A table indicating the association between individual units in the functional imaging data and nuclei in the structural data, derived from human powered matching. Includes residual and separation scores to help assess confidence</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>apl_functional_coreg_forward_v5</code></td>
-<td style="text-align: left;">68,436</td>
+<td style="text-align: left;"><code>coregistration_auto_phase3_fwd_apl_vess_combined</code></td>
+<td style="text-align: left;">84,233</td>
 <td style="text-align: left;">A table indicating the association between individual units in the functional imaging data and nuclei in the structural data, derived from the automated procedure. Includes residuals and separation scores to help assess confidence</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>nucleus_ref_neuron_svm</code></td>
-<td style="text-align: left;">144,120</td>
-<td style="text-align: left;">reference annotation indicating the output of a model detecting which nucleus detections are neurons versus which are not 1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>proofreading_status_public_release</code></td>
-<td style="text-align: left;">1272</td>
+<td style="text-align: left;"><code>proofreading_status_and_strategy</code></td>
+<td style="text-align: left;">1421</td>
 <td style="text-align: left;">A table indicating which neurons have been proofread on their axons or dendrites</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>proofreading_strategy</code></td>
-<td style="text-align: left;">1039</td>
-<td style="text-align: left;">A reference table on <code>proofreading_status_public_release</code> indicating what axon proofreading strategy was executed on each neuron</td>
-</tr>
 <tr class="even">
-<td style="text-align: left;"><code>proofreading_edits</code></td>
-<td style="text-align: left;">121,271</td>
-<td style="text-align: left;">A table containing the number of edits on every segment_id associated with a nucleus in the volume</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;"><code>aibs_column_nonneuronal_ref</code></td>
 <td style="text-align: left;">542</td>
 <td style="text-align: left;">Cell type reference annotations from a human expert of non-neuronal cells located amongst the Minnie Column</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>allen_v1_column_types_slanted_ref</code></td>
 <td style="text-align: left;">1,357</td>
 <td style="text-align: left;">Neuron cell type reference annotations from human experts of neuronal cells located amongst the Minnie Column</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>allen_column_mtypes_v1</code></td>
 <td style="text-align: left;">1,357</td>
 <td style="text-align: left;">Neuron cell type reference annotations from data driven unsupervised clustering of neuronal cells</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><code>aibs_soma_nuc_exc_mtype_preds_v117</code></td>
-<td style="text-align: left;">58,624</td>
+<tr class="odd">
+<td style="text-align: left;"><code>aibs_metamodel_mtypes_v661_v2</code></td>
+<td style="text-align: left;">72,158</td>
 <td style="text-align: left;">Reference annotations indicating the output of a model predicting cell types across the dataset based on the labels from allen_column_mtypes_v1.1</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>aibs_soma_nuc_metamodel_preds_v117</code></td>
-<td style="text-align: left;">86,916</td>
+<tr class="even">
+<td style="text-align: left;"><code>aibs_metamodel_celltypes_v661</code></td>
+<td style="text-align: left;">94,014</td>
 <td style="text-align: left;">Reference annotations indicating the output of a model predicting cell classes based on the labels from allen_v1_column_types_slanted_ref and aibs_column_nonneuronal_ref</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>baylor_log_reg_cell_type_coarse_v1</code></td>
 <td style="text-align: left;">55,063</td>
 <td style="text-align: left;">Reference annotations indicated the output of a logistic regression model predicting whether the nucleus is part of an excitatory or inhibitory cell</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>baylor_gnn_cell_type_fine_model_v2</code></td>
 <td style="text-align: left;">49,051</td>
 <td style="text-align: left;">Reference annotations indicated the output of a graph neural network model predicting the cell type based on the human labels in allen_v1_column_types_slanted_ref</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>proofreading_edits</code></td>
+<td style="text-align: left;">121,271</td>
+<td style="text-align: left;">A table containing the number of edits on every segment_id associated with a nucleus in the volume</td>
 </tr>
 </tbody>
 </table>
