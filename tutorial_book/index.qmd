@@ -4,7 +4,14 @@ title: "MICrONs Tutorials"
 
 Introduction to the [MICrONs-Explorer](https://www.microns-explorer.org/) data ecosystem
 
+A functional connectome containing 200,000 cells, 75,000 neurons with physiology, and 523 million synapses.
+This resource provides interactive visualizations of anatomical and functional data that span all 6 layers of mouse primary visual cortex and 3 higher visual areas (LM, AL, RL) within a cubic millimeter volume.
+
+
+
 ::: {.callout-important}
 ## Under construction
 This website will be undergoing major updates as we add tutorials and features. 
 :::
+
+![View in neuroglancer, from microns-explorer.org/mm3/explore](img/microns_explorer_landing.png)
