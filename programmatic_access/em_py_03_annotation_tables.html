@@ -297,6 +297,7 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#nucleus-detection-table" id="toc-nucleus-detection-table" class="nav-link" data-scroll-target="#nucleus-detection-table">Nucleus Detection Table</a></li>
   <li><a href="#neuron-nucleus-table" id="toc-neuron-nucleus-table" class="nav-link" data-scroll-target="#neuron-nucleus-table">Neuron-Nucleus Table</a></li>
+  <li><a href="#nucleus-brain-area-assignment" id="toc-nucleus-brain-area-assignment" class="nav-link" data-scroll-target="#nucleus-brain-area-assignment">Nucleus brain area assignment</a></li>
   </ul></li>
   <li><a href="#cell-type-tables" id="toc-cell-type-tables" class="nav-link" data-scroll-target="#cell-type-tables">Cell Type Tables</a>
   <ul class="collapse">
@@ -309,7 +310,10 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#proofreading-status-and-strategy" id="toc-proofreading-status-and-strategy" class="nav-link" data-scroll-target="#proofreading-status-and-strategy">Proofreading Status and Strategy</a></li>
   </ul></li>
-  <li><a href="#functional-coregistration-tables" id="toc-functional-coregistration-tables" class="nav-link" data-scroll-target="#functional-coregistration-tables">Functional Coregistration Tables</a></li>
+  <li><a href="#functional-coregistration-tables" id="toc-functional-coregistration-tables" class="nav-link" data-scroll-target="#functional-coregistration-tables">Functional Coregistration Tables</a>
+  <ul class="collapse">
+  <li><a href="#functional-properties" id="toc-functional-properties" class="nav-link" data-scroll-target="#functional-properties">Functional properties</a></li>
+  </ul></li>
   <li><a href="#overview-of-relevant-tables" id="toc-overview-of-relevant-tables" class="nav-link" data-scroll-target="#overview-of-relevant-tables">Overview of relevant tables</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/programmatic_access/em_py_03_annotation_tables.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -498,6 +502,43 @@ div.csl-indent {
 </tbody>
 </table>
 <p>Note that the <code>id</code> column is the same as the nucleus id.</p>
+</section>
+<section id="nucleus-brain-area-assignment" class="level3">
+<h3 class="anchored" data-anchor-id="nucleus-brain-area-assignment">Nucleus brain area assignment</h3>
+<p>Given the nucleus detection table <code>nucleus_detection_v0</code> and the transformation of 2-photon <em>in vivo</em> imaging to the EM structural space (see <a href="em_py_03_annotation_tables.html##functional-coregistration-tables">functional-coregistration-tables</a> ), each cell in the volume has been assigned to one of four visual cortical areas.</p>
+<p>The inferred functional brain area based on the position of the nucleus in the EM volume. Area boundaries estimated from the area-membership assignments of the 2P recorded cells, after transformation to EM space.</p>
+<p>The table <code>nucleus_functional_area_assignment</code> is a reference table on <code>nucleus_detection_v0</code> and adds the following columns:</p>
+<table class="table-light table-hover table">
+<caption>Functional area assignment</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>target_id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>tag</code></td>
+<td style="text-align: left;">the brain area label (one of V1, AL, RL, LM)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>value</code></td>
+<td style="text-align: left;">the distance to the area boundary (in um), calculated as the mean-distance of the 10 nearest neighbors in a non-matching brain area. A larger value is further from the area boundaries, and can be interpretted as higher confidence in area assignment.</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="cell-type-tables" class="level2">
@@ -1235,7 +1276,6 @@ Important
 <li><code>coregistration_manual_v4</code> : The results of manually verified coregistration. This table is well-verified, but contains fewer {term}<code>ROI</code>s (N=15,352 root ids, 19,181 ROIs).</li>
 <li><code>coregistration_auto_phase3_fwd_apl_vess_combined</code> : The results of automated functional matching between the EM and 2-p functional data. This table is not manually verified, but contains more {term}<code>ROI</code>s (N=84,233 ROIs). This table reconciles the following two tables that both make a best match of the of registration using different techniques: <code>coregistration_auto_phase3_fwd</code> and <code>apl_functional_coreg_vess_fwd</code>.</li>
 </ul>
-<p>Please see the <a href="../functional_tutorial/functional_intro.html">Functional Data</a> section for more information about using this data.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1246,6 +1286,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Please see the <a href="../functional_tutorial/functional_intro.html">Functional Data</a> section for more information about using this data.</p>
 <p>fix broken link</p>
 </div>
 </div>
@@ -1302,6 +1343,66 @@ Important
 <li><code>coregistration_manual_v3</code> : The results of manually verified coregistration. This table is well-verified, but contains fewer {term}<code>ROI</code>s (N=12,052 root ids, 13,925 ROIs).</li>
 <li><code>apl_functional_coreg_forward_v5</code> : The results of automated functional matching between the EM and 2-p functional data. This table is not manually verified, but contains more {term}<code>ROI</code>s (N=36,078 root ids, 68,873 ROIs).</li>
 </ul>
+<section id="functional-properties" class="level3">
+<h3 class="anchored" data-anchor-id="functional-properties">Functional properties</h3>
+<p>A summary of the functional properties for each of the coregistered neurons (as of <code>coregistration_manual_v3</code>) are available for convenience.</p>
+<p>The table <code>functional_properties_v3_bcm</code> is a reference table on the <code>nucleus_detection_v0</code>, and adds the following columns</p>
+<table class="table-light table-hover table">
+<caption>Fuctional properties of coregistered neurons</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>target_id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>session</code></td>
+<td style="text-align: left;">The session index from functional imaging</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>scan_idx</code></td>
+<td style="text-align: left;">The scan index from functional imaging</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>unit_id</code></td>
+<td style="text-align: left;">The functional unit index from imaging. Only unique within scan and session</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pref_ori</code></td>
+<td style="text-align: left;">preferred orientation in radians (0 - pi), horizontal bar moving upward is 0 and orientation increases clockwise, extracted from model responses to oriented noise stimuli</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>pref_dir</code></td>
+<td style="text-align: left;">preferred direction in radians (0 - 2pi), horizontal bar moving upward is 0 and orientation increases clockwise, extracted from model responses to oriented noise stimuli</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>gOSI</code></td>
+<td style="text-align: left;">global orientation selectivity index</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>gDSI</code></td>
+<td style="text-align: left;">global direction selectivity index</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cc_abs</code></td>
+<td style="text-align: left;">prediction performance of the model, higher is better</td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="overview-of-relevant-tables" class="level2">
 <h2 class="anchored" data-anchor-id="overview-of-relevant-tables">Overview of relevant tables</h2>
@@ -1394,6 +1495,11 @@ Important
 <td style="text-align: left;"><code>proofreading_edits</code></td>
 <td style="text-align: left;">121,271</td>
 <td style="text-align: left;">A table containing the number of edits on every segment_id associated with a nucleus in the volume</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>vortex_astrocyte_proofreading_status</code></td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">This table reports the status of a manually selected subset of astrocytes within the VISP column. Astrocyte seelection and proofreading performed as part of VORTEX.</td>
 </tr>
 </tbody>
 </table>
