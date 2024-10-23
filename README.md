@@ -1,6 +1,8 @@
 # MICrONs Tutorial
 
-January 2024 draft
+Welcome to the Programmatic Tutorial for the microns dataset. 
 
 ## The build documentation is [hosted on pages](https://alleninstitute.github.io/microns_tutorial/)
+
+Last updated: 10/2024
 
