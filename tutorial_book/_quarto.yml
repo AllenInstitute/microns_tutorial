@@ -27,9 +27,10 @@ website:
       - em_05_dash_apps.ipynb
       - section: "Python Tools"
         contents:
-          - programmatic_access/em_py_01_caveclient_setup.ipynb
-          - programmatic_access/em_py_02_cave_quickstart.ipynb
+          - quickstart_notebooks/em_py_01_caveclient_setup.ipynb
+          - quickstart_notebooks/em_py_02_cave_quickstart.ipynb
           - programmatic_access/em_py_03_annotation_tables.ipynb
+          - quickstart_notebooks/em_py_03_download_cell_connectivity.ipynb
           - programmatic_access/em_py_04_imagery_segmentation.ipynb
           - programmatic_access/em_py_05_meshes.ipynb
           - programmatic_access/em_py_06_skeletons.ipynb
@@ -40,7 +41,7 @@ website:
   open-graph: true
   back-to-top-navigation: true
   page-footer: 
-      center: "Contributions by: Bethanny Danskin, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald"
+      center: "Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald"
       border: false
   repo-url: https://github.com/AllenInstitute/microns_tutorial
   repo-actions: [edit, issue]
