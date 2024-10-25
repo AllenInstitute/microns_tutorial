@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MICrONs Tutorial - Meshes</title>
+<title>MICrONs Tutorial - Skeleton Service</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,8 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="MICrONs Tutorial - Meshes">
-<meta property="og:description" content="">
+<meta property="og:title" content="MICrONs Tutorial - Skeleton Service">
 <meta property="og:site_name" content="MICrONs Tutorial">
 </head>
 
@@ -159,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quickstart_notebooks/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../programmatic_access/em_py_05_meshes.html">Meshes</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Skeleton Service</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -250,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_05_meshes.html" class="sidebar-item-text sidebar-link active">
+  <a href="../programmatic_access/em_py_05_meshes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Meshes</span></a>
   </div>
 </li>
@@ -307,20 +306,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#downloading-meshes" id="toc-downloading-meshes" class="nav-link active" data-scroll-target="#downloading-meshes">Downloading Meshes</a></li>
-  <li><a href="#healing-mesh-gaps" id="toc-healing-mesh-gaps" class="nav-link" data-scroll-target="#healing-mesh-gaps">Healing Mesh Gaps</a></li>
-  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties">Properties</a></li>
-  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
-  <li><a href="#masking" id="toc-masking" class="nav-link" data-scroll-target="#masking">Masking</a></li>
+  <li><a href="#subfunction-to-convert-skeleton" id="toc-subfunction-to-convert-skeleton" class="nav-link active" data-scroll-target="#subfunction-to-convert-skeleton">subfunction to convert skeleton</a></li>
+  <li><a href="#download-skeleton-as-dictionary" id="toc-download-skeleton-as-dictionary" class="nav-link" data-scroll-target="#download-skeleton-as-dictionary">Download skeleton as dictionary</a></li>
+  <li><a href="#convert-dictionary-to-meshwork-skeleton" id="toc-convert-dictionary-to-meshwork-skeleton" class="nav-link" data-scroll-target="#convert-dictionary-to-meshwork-skeleton">Convert dictionary to meshwork skeleton</a></li>
+  <li><a href="#plot-with-skeleton_plot" id="toc-plot-with-skeleton_plot" class="nav-link" data-scroll-target="#plot-with-skeleton_plot">Plot with skeleton_plot</a>
+  <ul class="collapse">
+  <li><a href="#estimate-path-length" id="toc-estimate-path-length" class="nav-link" data-scroll-target="#estimate-path-length">Estimate path length</a></li>
+  </ul></li>
+  <li><a href="#estimate-synaptic-density" id="toc-estimate-synaptic-density" class="nav-link" data-scroll-target="#estimate-synaptic-density">Estimate synaptic density</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/programmatic_access/em_py_05_meshes.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/quickstart_notebooks/em_py_04_skeleton_pathlength.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/AllenInstitute/microns_tutorial/tree/main/tutorial_book/quickstart_notebooks"><i class="bi bi-file-code"></i>Download Quickstart Notebooks</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quickstart_notebooks/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../programmatic_access/em_py_05_meshes.html">Meshes</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Meshes</h1>
+<h1 class="title">Skeleton Service</h1>
 </div>
 
 
@@ -337,150 +339,160 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>When trying to understand the fine 3d morphology of a neuron (e.g.&nbsp;features under 1 micron in scale), meshes are a particularly useful representation. More precisely, a mesh is a collection of vertices and faces that define a 3d surface. The exact meshes that one sees in Neuroglancer can also be loaded for analysis and visualization in other tools.</p>
-<section id="downloading-meshes" class="level2">
-<h2 class="anchored" data-anchor-id="downloading-meshes">Downloading Meshes</h2>
-<p>The easiest tool for downloading MICrONs meshes is <a href="https://github.com/sdorkenw/MeshParty">Meshparty</a>, which is a python module that can be installed with <code>pip install meshparty</code>. Documentation for Meshparty can be found <a href="https://meshparty.readthedocs.io/en/latest/">here</a>.</p>
-<p>Once installed, the typical way of getting meshes is by using a “MeshMeta” client that is told both the internet location of the meshes (<code>cv_path</code>) and a local directory in which to store meshes (<code>disk_cache_path</code>). Once initialized, the MeshMeta client can be used to download meshes for a given segmentation using its root id (<code>seg_id</code>). The following code snippet shows how to download an example mesh using a directory “<code>meshes</code>” as the local storage folder.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div id="77b3b569-d8cf-40cd-aea3-6c51042d5d3b" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> meshparty.skeleton_io</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">"minnie65_public"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-title-container flex-fill">
-Initial Setup
+<section id="subfunction-to-convert-skeleton" class="level3">
+<h3 class="anchored" data-anchor-id="subfunction-to-convert-skeleton">subfunction to convert skeleton</h3>
+<div id="a852c44e-4478-4dd6-8044-2b4da5d08f17" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> meshparty <span class="im">import</span> skeleton</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> read_skeleton_from_dict(f):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Helper function for extracting all parts of a skeleton file from a dictionary.</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">    f : dict</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">        dictionary that includes the constituent elements for building a meshparty skeleon</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">    :obj:`meshparty.skeleton.Skeleton`</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">        skeleton object loaded from the dictionary</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    vertices <span class="op">=</span> np.array(f[<span class="st">"vertices"</span>])</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    edges <span class="op">=</span> np.array(f[<span class="st">"edges"</span>])</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"mesh_to_skel_map"</span> <span class="kw">in</span> f.keys():</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        mesh_to_skel_map <span class="op">=</span> f[<span class="st">"mesh_to_skel_map"</span>]</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        mesh_to_skel_map <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    vertex_properties <span class="op">=</span> f[<span class="st">"vertex_properties"</span>]</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"meta"</span> <span class="kw">in</span> f.keys():</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        meta <span class="op">=</span> f[<span class="st">"meta"</span>]</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        meta <span class="op">=</span> {}</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"root"</span> <span class="kw">in</span> f.keys():</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        root <span class="op">=</span> f[<span class="st">"root"</span>]</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="st">"compartment"</span> <span class="kw">in</span> vertex_properties.keys():</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        root_guess <span class="op">=</span> np.where(np.array(vertex_properties[<span class="st">'compartment'</span>])<span class="op">==</span><span class="dv">1</span>)[<span class="dv">0</span>]</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(root_guess)<span class="op">==</span><span class="dv">1</span>:</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>            root <span class="op">=</span> root_guess[<span class="dv">0</span>] </span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>            root <span class="op">=</span> <span class="bu">len</span>(edges)</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        root <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> skeleton.Skeleton(</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        vertices<span class="op">=</span>vertices,</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        edges<span class="op">=</span>edges,</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        mesh_to_skel_map<span class="op">=</span>mesh_to_skel_map,</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        vertex_properties<span class="op">=</span>vertex_properties,</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        root<span class="op">=</span>root,</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>        meta<span class="op">=</span>meta,</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Before using any programmatic access to the data, <a href="em_py_01_caveclient_setup.html">you first need to set up your CAVEclient token</a>.</p>
-</div>
-</div>
-<div id="b011ef59-ec37-43a9-9196-dc631c8ba225" class="cell" data-tags="[]" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> meshparty <span class="im">import</span> trimesh_io</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">'minnie65_public'</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>mm <span class="op">=</span> trimesh_io.MeshMeta(</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  cv_path<span class="op">=</span>client.info.segmentation_source(),</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  disk_cache_path<span class="op">=</span><span class="st">"meshes"</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>root_id <span class="op">=</span> <span class="dv">864691135014128278</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>mesh <span class="op">=</span> mm.mesh(seg_id<span class="op">=</span>root_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Warning: deduplication not currently supported for this layer's variable layered draco meshes</code></pre>
-</div>
-</div>
-<p>One convenience of using the <code>MeshMeta</code> approach is that if you have already downloaded a mesh for with a given root id, it will be loaded from disk rather than re-downloaded.</p>
-<p>If you have to download many meshes, it is somewhat faster to use the bulk <code>download_meshes</code> function and use multiple threads via the <code>n_threads</code> argument. If you download them to the same folder used for the MeshMeta object, they can be loaded through the same interface.</p>
-<div id="b0105a35-1eb6-471b-898a-994f175b2fb9" class="cell" data-tags="[]" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>root_ids <span class="op">=</span> [<span class="dv">864691135014128278</span>, <span class="dv">864691134940133219</span>]</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mm <span class="op">=</span> trimesh_io.download_meshes(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    seg_ids<span class="op">=</span>root_ids,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    target_dir<span class="op">=</span><span class="st">'meshes'</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    cv_path<span class="op">=</span>client.info.segmentation_source(),</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    n_threads<span class="op">=</span><span class="dv">4</span>, <span class="co"># Or whatever value you choose above one but less than the number of cores on your computer</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-File size
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Meshes can be hundresds of megabytes in size, so be careful about downloading too many if the internet is not acting well or your computer doesn’t have much disk space!</p>
+</section>
+<section id="download-skeleton-as-dictionary" class="level2">
+<h2 class="anchored" data-anchor-id="download-skeleton-as-dictionary">Download skeleton as dictionary</h2>
+<div id="fb0f36d5-f7ef-4d53-8a14-cecbd4c62e51" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>root_id <span class="op">=</span> <span class="dv">864691134918592778</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sk_dict <span class="op">=</span> client.skeleton.get_skeleton(root_id, output_format<span class="op">=</span><span class="st">'json'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sk_dict.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>dict_keys(['jsonification_version', 'branch_points', 'branch_points_undirected', 'distance_to_root', 'edges', 'end_points', 'end_points_undirected', 'hops_to_root', 'indices_unmasked', 'mesh_to_skel_map', 'mesh_to_skel_map_base', 'meta', 'node_mask', 'root', 'root_position', 'segment_map', 'topo_points', 'unmasked_size', 'vertex_properties', 'vertices'])</code></pre>
 </div>
 </div>
 </section>
-<section id="healing-mesh-gaps" class="level2">
-<h2 class="anchored" data-anchor-id="healing-mesh-gaps">Healing Mesh Gaps</h2>
-<div class="quarto-figure quarto-figure-center">
+<section id="convert-dictionary-to-meshwork-skeleton" class="level2">
+<h2 class="anchored" data-anchor-id="convert-dictionary-to-meshwork-skeleton">Convert dictionary to meshwork skeleton</h2>
+<div id="1b736178-c6d7-4249-840a-397ea98d6de7" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># manually generating meshparty skeleton</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sk <span class="op">=</span> meshparty.skeleton.Skeleton(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    vertices<span class="op">=</span>np.array(sk_dict[<span class="st">'vertices'</span>]),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    edges<span class="op">=</span>np.array(sk_dict[<span class="st">'edges'</span>]),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    mesh_to_skel_map<span class="op">=</span>sk_dict[<span class="st">'mesh_to_skel_map'</span>],</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    vertex_properties<span class="op">=</span>sk_dict[<span class="st">'vertex_properties'</span>],</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    root<span class="op">=</span>sk_dict[<span class="st">'root'</span>],</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    meta<span class="op">=</span>sk_dict[<span class="st">'meta'</span>],</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="faf12731-15c5-46c3-8a76-0f2337b0a8a8" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># with function call</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sk <span class="op">=</span> read_skeleton_from_dict(sk_dict)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="plot-with-skeleton_plot" class="level2">
+<h2 class="anchored" data-anchor-id="plot-with-skeleton_plot">Plot with skeleton_plot</h2>
+<div id="f737a84b-16b8-4558-9516-a75c01ce2a89" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> skeleton_plot</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>skeleton_plot.plot_tools.plot_skel(sk<span class="op">=</span>sk,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                                   invert_y<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                                   pull_compartment_colors<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                                   plot_soma<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="../img/mesh-discontinuity.png" class="img-fluid figure-img"></p>
-<figcaption>Example of a continuous neuron whose mesh has a gap</figcaption>
+<p><img src="em_py_04_skeleton_pathlength_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<p>Many meshes are not actually fully continuous due to small gaps in the segmentation. However, information collected during proofreading allows one to partially repair these gaps by adding in links where the segmentation was merged across a small gap. If you are just visualizaing a mesh, these gaps are not a problem, but if you want to do analysis on the mesh, you will want to heal these gaps. Conveniently, there’s a function to do this:</p>
-<div id="604ca384-f662-461b-82e4-6136d1a9542f" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mesh.add_link_edges(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    seg_id<span class="op">=</span><span class="dv">864691134940133219</span>, <span class="co"># This needs to be the same as the root id used to download the mesh</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    client<span class="op">=</span>client.chunkedgraph,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<section id="estimate-path-length" class="level3">
+<h3 class="anchored" data-anchor-id="estimate-path-length">Estimate path length</h3>
+<div id="a1de9aaa-963c-4de5-9056-b77a89ce2c6f" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select the indices associated with the dendrites</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sk_compartments <span class="op">=</span> np.array(sk.vertex_properties[<span class="st">'compartment'</span>])</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>dendrite_inds <span class="op">=</span> (sk_compartments<span class="op">==</span><span class="dv">3</span>) <span class="op">|</span> (sk_compartments<span class="op">==</span><span class="dv">4</span>)<span class="op">|</span> (sk_compartments<span class="op">==</span><span class="dv">1</span>) <span class="co">#soma is included here to connect the dendrite graphs </span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># create new skeleton that masks (selects) only the dendrite</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>sk_dendrite <span class="op">=</span> sk.apply_mask(dendrite_inds)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dendrite pathlength of all branches is : "</span>, sk_dendrite.path_length() <span class="op">/</span> <span class="dv">1000</span>, <span class="st">' um'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Dendrite pathlength of all branches is :  5038.296  um</code></pre>
+</div>
+</div>
+<div id="03de1f0b-d53e-4f9b-a8e7-f6b6ab3638ad" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select the indices associated with the dendrites</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sk_compartments <span class="op">=</span> np.array(sk.vertex_properties[<span class="st">'compartment'</span>])</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>axon_inds <span class="op">=</span> (sk_compartments<span class="op">==</span><span class="dv">2</span>) </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># create new skeleton that masks (selects) only the axon</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>sk_axon <span class="op">=</span> sk.apply_mask(axon_inds)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Axon pathlength is : "</span>, sk_axon.path_length() <span class="op">/</span> <span class="dv">1000</span>, <span class="st">' um'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Axon pathlength is :  2666.8994  um</code></pre>
+</div>
 </div>
 </section>
-<section id="properties" class="level2">
-<h2 class="anchored" data-anchor-id="properties">Properties</h2>
-<p>Meshes have a large number of properties, many of which come from being based on the <a href="https://trimsh.org/">Trimesh</a> library’s mesh format, and others being specific to MeshParty.</p>
-<p>Several of the most important properties are:</p>
-<ul>
-<li><code>mesh.vertices</code> : An <code>N x 3</code> list of vertices and their 3d location in nanometers, where <code>N</code> is the number of vertices.</li>
-<li><code>mesh.faces</code> : An <code>P x 3</code> list of integers, with each row specifying a triangle of connected vertex indices.</li>
-<li><code>mesh.edges</code> : An <code>M x 2</code> list of integers, with each row specifying a pair of connected vertex indices based off of faces.</li>
-<li><code>mesh.edges</code> : An <code>M x 2</code> list of integers, with each row specifying a pair of connected vertex indices based off of faces.</li>
-<li><code>mesh.link_edges</code> : An <code>M_l x 2</code> list of integers, with each row specifying a pair of “link edges” that were used to heal gaps based on proofreading edits.</li>
-<li><code>mesh.graph_edges</code> : An <code>(M+M_l) x 2</code> list of integers, with each row specifying a pair of graph edges, which is the collection of both <code>mesh.edges</code> and <code>mesh.link_edges</code>.</li>
-<li><code>mesh.csgraph</code> : A <a href="https://docs.scipy.org/doc/scipy/reference/sparse.csgraph.html">Scipy Compressed Sparse Graph</a> representation of the mesh as an <code>NxN</code> graph of vertices connected to one another using graph edges and with edge weights being the distance between vertices. This is particularly useful for computing shortest paths between vertices.</li>
-</ul>
-<div class="calloute-warning">
-<p>MICrONs meshes are not generally “watertight”, a property that would enable a number of properties to be computed natively by Trimesh. Because of this, Trimesh-computed properties relating to solid forms or volumes like <code>mesh.volume</code> or <code>mesh.center_mass</code> do not have sensible values and other approaches should be taken. Unfortunately, because of the Trimesh implementation of these properties it is up to the user to be aware of this issue.</p>
-</div>
 </section>
-<section id="visualization" class="level2">
-<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
-<p>There are a variety of tools for visualizing meshes in python. MeshParty interfaces with VTK, a powerful but complex data visualization library that does not always work well in python. The basic pattern for MeshParty’s VTK integration is to create one or more “actors” from the data, and then pass those to a renderer that can be displayed in an interactive approach. The following code snippet shows how to visualize a mesh using this approach.</p>
-<div id="19611a9c-c651-4296-b790-8996a220cda1" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mesh_actor <span class="op">=</span> trimesh_vtk.mesh_actor(</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  mesh,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  color<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>),</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  opacity<span class="op">=</span><span class="fl">0.5</span>,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>trimesh_vtk.render_actors([mesh_actor])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="estimate-synaptic-density" class="level2">
+<h2 class="anchored" data-anchor-id="estimate-synaptic-density">Estimate synaptic density</h2>
+<div id="0b0ef600-f742-4888-bab0-c98032c7451d" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate synapse density (CAVE query)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>n_syn_in <span class="op">=</span> <span class="bu">len</span>(client.materialize.synapse_query(post_ids<span class="op">=</span>root_id))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>n_syn_out <span class="op">=</span> <span class="bu">len</span>(client.materialize.synapse_query(pre_ids<span class="op">=</span>root_id))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dendrite synaptic density is : "</span>, n_syn_in <span class="op">/</span> (sk_dendrite.path_length()<span class="op">/</span><span class="dv">1000</span>), <span class="st">' per um'</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Axon synaptic density is : "</span>, n_syn_out <span class="op">/</span> (sk_axon.path_length()<span class="op">/</span><span class="dv">1000</span>), <span class="st">' per um'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Dendrite synaptic density is :  1.3034168  per um
+Axon synaptic density is :  0.06861901  per um</code></pre>
 </div>
-<p>Note that by default, neurons will appear upside down because the coordinate system of the dataset has the y-axis value increasing along the “downward” pia to white matter axis.</p>
-<p>More documentation on the MeshParty VTK visualization can be <a href="https://meshparty.readthedocs.io/en/latest/source/meshparty.html">found here</a>.</p>
-<p>Other tools worth exploring are:</p>
-<ul>
-<li><a href="https://docs.pyvista.org/">PyVista</a></li>
-<li><a href="https://polyscope.run/">Polyscope</a></li>
-<li><a href="https://vedo.embl.es/">Vedo</a></li>
-<li><a href="https://www.meshlab.net/">MeshLab</a></li>
-<li>If you have some existing experience, <a href="https://www.blender.org/">Blender</a> (see Blender integration by our friends behind <a href="https://navis.readthedocs.io/en/latest/source/blender.html">Navis</a>, a fly-focused framework analyzing connectomics data).</li>
-</ul>
-</section>
-<section id="masking" class="level2">
-<h2 class="anchored" data-anchor-id="masking">Masking</h2>
-<p>One of the most common operations on meshes is to mask them to a particular region of interest. This can be done by “masking” the mesh with a boolean array of length <code>N</code> where <code>N</code> is the number of vertices in the mesh, with <code>True</code> where the vertex should be kept and <code>False</code> where it should be omitted. There are several convenience functions to generate common masks in the <a href="https://meshparty.readthedocs.io/en/latest/source/meshparty.html#module-meshparty.mesh_filters">Mesh Filters</a> module.</p>
-<p>In the following example, we will first mask out all vertices that aren’t part of the largest connected component of the mesh (i.e.&nbsp;get rid of floating vertices that might arise due to internal surfaces) and then mask out all vertices that are more than 20,000 nm away from the soma center.</p>
-<div id="1187934a-43cf-468b-9211-c3fbba2e6c99" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> meshparty <span class="im">import</span> mesh_filters</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>root_id <span class="op">=</span><span class="dv">864691134940133219</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>root_point <span class="op">=</span> client.materialize.tables.nucleus_detection_v0(pt_root_id<span class="op">=</span>root_id).query()[<span class="st">'pt_position'</span>].values[<span class="dv">0</span>] <span class="op">*</span> [<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">40</span>]  <span class="co"># Convert the nucleus location from voxels to nanometers via the data resolution.</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>mesh <span class="op">=</span> mm.mesh(seg_id<span class="op">=</span>root_id)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Heal gaps in the mesh</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>mesh.add_link_edges(</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    seg_id<span class="op">=</span><span class="dv">864691134940133219</span>,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    client<span class="op">=</span>client.chunkedgraph,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate and use the largest component mask</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>comp_mask <span class="op">=</span> mesh_filters.filter_largest_component(mesh)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>mask_filt <span class="op">=</span> mesh.apply_mask(comp_mask)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>soma_mask <span class="op">=</span> mesh_filters.filter_spatial_distance_from_points(</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    mask_filt,</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    root_point,</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="dv">20_000</span>, <span class="co"># Note that this is in nanometers</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>mesh_soma <span class="op">=</span> mesh.apply_mask(soma_mask)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This resulting mesh is just a small cutout around the soma. <img src="../img/soma_mesh_cutout.png" class="img-fluid" alt="Soma cutout from a full-neuron mesh"></p>
 
 
 </section>
@@ -881,7 +893,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/programmatic_access/em_py_05_meshes.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/quickstart_notebooks/em_py_04_skeleton_pathlength.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

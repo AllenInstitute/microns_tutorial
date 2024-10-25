@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/em_py_04_skeleton_pathlength.html</loc>
+    <lastmod>2024-10-25T00:48:02.065Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/em_py_02_cave_quickstart.html</loc>
+    <lastmod>2024-10-24T23:39:04.936Z</lastmod>
+  </url>
+  <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/ultrastructure_tutorial/em_ultrastructure.html</loc>
     <lastmod>2024-01-25T01:02:45.148Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_07_coordinates.html</loc>
-    <lastmod>2024-01-25T00:27:10.092Z</lastmod>
+    <lastmod>2024-10-24T23:17:06.188Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_05_meshes.html</loc>
@@ -15,10 +23,6 @@
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_03_annotation_tables.html</loc>
     <lastmod>2024-10-23T00:46:04.786Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_01_caveclient_setup.html</loc>
-    <lastmod>2024-01-25T18:50:04.228Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/examples/skeleton_load_and_generate.html</loc>
@@ -53,10 +57,6 @@
     <lastmod>2024-10-03T00:34:58.257Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_02_cave_quickstart.html</loc>
-    <lastmod>2024-01-25T19:01:29.190Z</lastmod>
-  </url>
-  <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_04_imagery_segmentation.html</loc>
     <lastmod>2024-01-25T00:05:30.366Z</lastmod>
   </url>
@@ -67,5 +67,13 @@
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/functional_tutorial/em_functional_intro.html</loc>
     <lastmod>2024-01-09T19:05:38.597Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/em_py_01_caveclient_setup.html</loc>
+    <lastmod>2024-10-24T23:00:53.365Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/em_py_03_download_cell_connectivity.html</loc>
+    <lastmod>2024-10-25T00:48:17.259Z</lastmod>
   </url>
 </urlset>

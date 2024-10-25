@@ -159,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../programmatic_access/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../programmatic_access/em_py_07_coordinates.html">Coordinate System</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quickstart_notebooks/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../programmatic_access/em_py_07_coordinates.html">Coordinate System</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -220,13 +220,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_01_caveclient_setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/em_py_01_caveclient_setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CAVEclient Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_02_cave_quickstart.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/em_py_02_cave_quickstart.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CAVE Quickstart</span></a>
   </div>
 </li>
@@ -234,6 +234,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../programmatic_access/em_py_03_annotation_tables.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Annotation Tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart_notebooks/em_py_03_download_cell_connectivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Synaptic Connectivity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -314,7 +320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../programmatic_access/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../programmatic_access/em_py_07_coordinates.html">Coordinate System</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quickstart_notebooks/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../programmatic_access/em_py_07_coordinates.html">Coordinate System</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Coordinate System</h1>
 </div>
@@ -373,7 +379,7 @@ Note
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">'minnie65_public'</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ct_df <span class="op">=</span> client.materialize.query_table(<span class="st">'aibs_soma_nuc_metamodel_preds_v117'</span>, split_positions<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ct_df <span class="op">=</span> client.materialize.query_table(<span class="st">'aibs_metamodel_celltypes_v661'</span>, split_positions<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># convert to nanometers</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ct_df[<span class="st">'pt_position_x_nm'</span>] <span class="op">=</span> ct_df[<span class="st">'pt_position_x'</span>] <span class="op">*</span> <span class="dv">4</span></span>
@@ -395,7 +401,7 @@ Note
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="em_py_07_coordinates_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="em_py_07_coordinates_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -429,7 +435,7 @@ Note
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="em_py_07_coordinates_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="em_py_07_coordinates_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -868,7 +874,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Contributions by: Bethanny Danskin, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
+<p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/programmatic_access/em_py_07_coordinates.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
