@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -386,15 +406,20 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Location of the Minnie column (yellow) within the dataset. Top view.</figcaption>
 </figure>
 </div>
-<p>This was originally considered a region of interest for a <a href="https://www.biorxiv.org/content/10.1101/2023.01.23.525290v2">comprehensive census of the neuronal population</a>, and thus all neurons in this region were proofread to some extent and manually evaulated.</p>
+<p>This was originally considered a region of interest for a “A comprehensive census of the neuronal population” <span class="citation" data-cites="schneider-mizell2023">(<a href="#ref-schneider-mizell2023" role="doc-biblioref">Schneider-Mizell et al. 2023</a>)</span>, and thus all neurons in this region were proofread to some extent and manually evaulated.</p>
 <p>All excitatory neurons had their dendrites cleaned and extended to assess dendritic morphology and synaptic inputs, while inhibitory neurons had both their dendrites cleaned and extended, and then their axons were extensively cleaned and extended to capture their targeting properties. Efforts were made to extend inhibitory axons to every major region of their arbor, but not every individual tip was followed and the resulting analysis focused on population-level connectivity rather than individual connections.</p>
-<p>Morphological and connectivity-based cell typing was performed on these cells in terms of both classical and novel categories, and considerable expert attention ensured that the baseline data quality was high. Cell type results can be found in several of the <a href="programmatic_access/em_py_03_annotation_tables.html#cell-type-tables">cell type tables</a>available. These cell types were used for training the various whole-dataset cell typing classifiers.</p>
+<p>Morphological and connectivity-based cell typing was performed on these cells in terms of both classical and novel categories, and considerable expert attention ensured that the baseline data quality was high. Cell type results can be found in several of the <a href="programmatic_access/em_py_03_annotation_tables.html#cell-type-tables">cell type tables</a> available. These cell types were used for training the various whole-dataset cell typing classifiers.</p>
 <p>In addition, the proofreading and multiple levels of cell typing applied to this dense and diverse population has made it a useful reference, and spawned further analysis. Subsequent work has cleaned many of the excitatory axons from layers 2–5, albeit to a variety of degrees of extension.</p>
+
 
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-schneider-mizell2023" class="csl-entry" role="listitem">
+Schneider-Mizell, Casey M, Agnes L. Bodor, Derrick Brittain, JoAnn Buchanan, Daniel J. Bumbarger, Leila Elabbady, Clare Gamlin, et al. 2023. <span>“Cell-Type-Specific Inhibitory Circuitry from a Connectomic Census of Mouse Visual Cortex.”</span> <a href="https://doi.org/10.1101/2023.01.23.525290">https://doi.org/10.1101/2023.01.23.525290</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

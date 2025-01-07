@@ -2,78 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/em_py_04_skeleton_pathlength.html</loc>
-    <lastmod>2024-10-25T00:48:02.065Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.924Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/em_py_02_cave_quickstart.html</loc>
-    <lastmod>2024-10-24T23:39:04.936Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.897Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/ultrastructure_tutorial/em_ultrastructure.html</loc>
-    <lastmod>2024-01-25T01:02:45.148Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.833Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_07_coordinates.html</loc>
-    <lastmod>2024-10-24T23:17:06.188Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.502Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_05_meshes.html</loc>
-    <lastmod>2024-01-25T00:19:28.145Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.478Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_03_annotation_tables.html</loc>
-    <lastmod>2024-10-23T00:46:04.786Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.456Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/examples/skeleton_load_and_generate.html</loc>
-    <lastmod>2024-10-03T00:41:03.828Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.033Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/em_05_dash_apps.html</loc>
-    <lastmod>2024-10-23T00:16:33.359Z</lastmod>
+    <lastmod>2025-01-07T23:43:13.984Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/em_03_proofreading.html</loc>
-    <lastmod>2024-10-23T00:06:50.243Z</lastmod>
+    <lastmod>2025-01-07T23:43:13.955Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/em_01_background.html</loc>
-    <lastmod>2024-07-15T21:57:49.015Z</lastmod>
+    <lastmod>2025-01-07T23:43:13.914Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/em_02_dataset_basics.html</loc>
-    <lastmod>2024-01-23T19:56:20.339Z</lastmod>
+    <lastmod>2025-01-07T23:43:13.944Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/em_04_neuroglancer.html</loc>
-    <lastmod>2024-10-03T00:27:47.349Z</lastmod>
+    <lastmod>2025-01-07T23:43:13.974Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/examples/generate_neuroglancer_states.html</loc>
-    <lastmod>2024-01-23T23:13:25.242Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.001Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/index.html</loc>
-    <lastmod>2024-10-03T00:34:58.257Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.427Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_04_imagery_segmentation.html</loc>
-    <lastmod>2024-01-25T00:05:30.366Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.468Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_06_skeletons.html</loc>
-    <lastmod>2024-01-25T00:47:03.301Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.486Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/functional_tutorial/em_functional_intro.html</loc>
-    <lastmod>2024-01-09T19:05:38.597Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.511Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/em_py_01_caveclient_setup.html</loc>
-    <lastmod>2024-10-24T23:00:53.365Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.886Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/em_py_03_download_cell_connectivity.html</loc>
-    <lastmod>2024-10-25T00:48:17.259Z</lastmod>
+    <lastmod>2025-01-07T23:43:14.912Z</lastmod>
   </url>
 </urlset>
