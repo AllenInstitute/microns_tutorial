@@ -730,7 +730,7 @@ Manual Cell Types (non-neurons)
 <section id="predictions-from-somanucleus-features" class="level3">
 <h3 class="anchored" data-anchor-id="predictions-from-somanucleus-features">Predictions from soma/nucleus features</h3>
 <p>Table name: <code>aibs_metamodel_celltypes_v661</code></p>
-<p>This table contains the results of a hierarchical classifier trained on features of the cell body and nucleus of cells. This was applied to most cells in the dataset that had complete cell bodies (e.g.&nbsp;not cut off by the edge of the data). For more details, see <a href="https://www.biorxiv.org/content/10.1101/2022.07.20.499976v1">Elabbady et al.&nbsp;2022</a>. In general, this does a good job, but sometimes confuses layer 5 inhibitory neurons as being excitatory:</p>
+<p>This table contains the results of a hierarchical classifier trained on features of the cell body and nucleus of cells. This was applied to most cells in the dataset that had complete cell bodies (e.g.&nbsp;not cut off by the edge of the data). For more details, see “Perisomatic Features” <span class="citation" data-cites="elabbady_perisomatic_2022">(<a href="#ref-elabbady_perisomatic_2022" role="doc-biblioref">Elabbady et al. 2022</a>)</span>. In general, this does a good job, but sometimes confuses layer 5 inhibitory neurons as being excitatory:</p>
 <p>The key columns are:</p>
 <table class="table-light table-hover table">
 <caption>AIBS Soma Nuc Metamodel Table</caption>
@@ -920,7 +920,7 @@ Soma Nuc Metamodel Cell types
 <p>Table name: <code>aibs_metamodel_mtypes_v661_v2</code></p>
 <p>This table contains all detected neurons across the dataset,</p>
 <p>Excitatory neurons and inhibitory neurons were distinguished with the <code>soma_nucleus</code> model above, and subclasses were assigned based on a data-driven clustering of the neuronal features. Inhibitory neurons were classified based on how they distributed they synaptic outputs onto target cells, while exictatory neurons were classified based on a collection of dendritic features.</p>
-<p>For more details, see the section on the <a href="../em_03_proofreading.html#minnie-column">minnie column</a> or read the preprint <span class="citation" data-cites="schneider-mizell2023">(<a href="#ref-schneider-mizell2023" role="doc-biblioref">Schneider-Mizell et al. 2023</a>)</span>.</p>
+<p>For more details, see the section on the <a href="../em_03_proofreading.html#minnie-column">minnie column</a> or read the preprint “A connectomic census” <span class="citation" data-cites="schneider-mizell2023">(<a href="#ref-schneider-mizell2023" role="doc-biblioref">Schneider-Mizell et al. 2023</a>)</span>.</p>
 <p>Note that all cell-type labels in this table come from a clustering specific to this paper, and while they are intended to align with the broader literature they are not a direct mapping or a well-established convention.</p>
 <p>For a more conventional set of labels on the same set of cells, look at the manual table <code>allen_v1_column_types_slanted_ref</code>. Cell types in that table align with those in the <code>aibs_metamodel_celltypes_v661</code> classifier above.</p>
 <p>The key columns are:</p>
@@ -1515,6 +1515,9 @@ Important
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-elabbady_perisomatic_2022" class="csl-entry" role="listitem">
+Elabbady, Leila, Sharmishtaa Seshamani, Shang Mu, Gayathri Mahalingam, Casey Schneider-Mizell, Agnes L Bodor, J. Alexander Bae, et al. 2022. <span>“Perisomatic Features Enable Efficient and Dataset Wide Cell-Type Classifications Across Large-Scale Electron Microscopy Volumes.”</span> <a href="https://doi.org/10.1101/2022.07.20.499976">https://doi.org/10.1101/2022.07.20.499976</a>.
+</div>
 <div id="ref-schneider-mizell2023" class="csl-entry" role="listitem">
 Schneider-Mizell, Casey M, Agnes L. Bodor, Derrick Brittain, JoAnn Buchanan, Daniel J. Bumbarger, Leila Elabbady, Clare Gamlin, et al. 2023. <span>“Cell-Type-Specific Inhibitory Circuitry from a Connectomic Census of Mouse Visual Cortex.”</span> <a href="https://doi.org/10.1101/2023.01.23.525290">https://doi.org/10.1101/2023.01.23.525290</a>.
 </div>
