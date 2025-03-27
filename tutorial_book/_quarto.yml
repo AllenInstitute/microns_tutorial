@@ -28,27 +28,42 @@ website:
     contents:
       - background.ipynb
       - dataset-basics.ipynb
-      - em_03_proofreading.ipynb
-      - em_04_neuroglancer.ipynb
-      - em_05_dash_apps.ipynb
+      - section: "Versioning and Data Quality"
+        contents:
+          - proofreading.ipynb
+          - materialization-version.ipynb
+          - vortex-overview.ipynb
+      - section: "Online Tools"
+        contents:
+          - neuroglancer-basic.ipynb
+          - neuroglancer-advanced.ipynb
+          - neuroglancer-data.ipynb
+          - dash-table-viewer.ipynb
+          - dash-connectivity.ipynb
       - section: "Python Tools"
+        href: python-tools.ipynb
         contents:
           - quickstart_notebooks/em_py_01_caveclient_setup.ipynb
           - quickstart_notebooks/em_py_02_cave_quickstart.ipynb
-          - programmatic_access/em_py_03_annotation_tables.ipynb
           - quickstart_notebooks/em_py_03_download_cell_connectivity.ipynb
           - programmatic_access/em_py_04_imagery_segmentation.ipynb
           - programmatic_access/em_py_05_meshes.ipynb
           - programmatic_access/em_py_06_skeletons.ipynb
           - programmatic_access/em_py_07_coordinates.ipynb
-      - programmatic_access/ultrastructure_tutorial/em_ultrastructure.ipynb
-      - section: "Examples"
-        contents: examples/*
+      - section: "Data Inventory"
+        href: data-inventory.ipynb
+        contents:
+          - section: "Release Manifests"
+            contents: release_manifests/*
+          - annotation-tables.ipynb
+          - functional-data.ipynb
+          - static-repositories.ipynb
   open-graph: true
   back-to-top-navigation: true
   page-footer: 
       center: "Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald"
       border: false
+  draft-mode: visible
   repo-url: https://github.com/AllenInstitute/microns_tutorial
   repo-actions: [edit, issue]
   repo-subdir: tutorial_book
