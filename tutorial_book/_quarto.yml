@@ -5,23 +5,29 @@ website:
   title: "MICrONs Tutorial"
   navbar:
     left:
-      - href: em_01_background.ipynb
+      - href: introduction.ipynb
         text: Introduction
       - href: https://www.microns-explorer.org/
         text: Microns Explorer
+      - href: analysis-gallery.ipynb
+        text: Analysis Gallery
+      - href: faq.ipynb
+        text: FAQ
     tools: 
+      - icon: chat-left-text-fill
+        href: https://github.com/AllenInstitute/microns_tutorial
       - icon: github
         menu:
           - text: Source Code
-            url:  https://github.com/bpdanskin/test_tutorial
+            url:  https://github.com/AllenInstitute/microns_tutorial
           - text: Report a Bug
-            url:  https://github.com/bpdanskin/test_tutorial/issues
+            url:  https://github.com/AllenInstitute/microns_tutorial/issues
   sidebar:
     style: "docked"
     search: true
     contents:
-      - em_01_background.ipynb
-      - em_02_dataset_basics.ipynb
+      - background.ipynb
+      - dataset-basics.ipynb
       - em_03_proofreading.ipynb
       - em_04_neuroglancer.ipynb
       - em_05_dash_apps.ipynb
