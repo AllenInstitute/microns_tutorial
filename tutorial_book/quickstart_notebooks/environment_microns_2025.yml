@@ -1,15 +1,9 @@
-name: microns_env_2024
+name: microns_env_2025
 channels:
   - defaults
   - conda-forge
 dependencies:
   - python=3.11
-  - numpy
-  - numpy-base
-  - pandas
-  - xarray
-  - h5netcdf
-  - matplotlib
   - ipykernel
   - jupyter
   - jupyterlab
@@ -18,4 +12,6 @@ dependencies:
       - caveclient
       - meshparty
       - nglui
+      - pcg-skel
       - skeleton-plot
+  

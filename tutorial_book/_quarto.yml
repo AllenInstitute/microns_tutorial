@@ -43,13 +43,15 @@ website:
       - section: "Python Tools"
         href: python-tools.ipynb
         contents:
-          - quickstart_notebooks/em_py_01_caveclient_setup.ipynb
-          - quickstart_notebooks/em_py_02_cave_quickstart.ipynb
-          - quickstart_notebooks/em_py_03_download_cell_connectivity.ipynb
-          - programmatic_access/em_py_04_imagery_segmentation.ipynb
-          - programmatic_access/em_py_05_meshes.ipynb
-          - programmatic_access/em_py_06_skeletons.ipynb
-          - programmatic_access/em_py_07_coordinates.ipynb
+          - quickstart_notebooks/01-caveclient-setup.ipynb
+          - quickstart_notebooks/02-cave-query-cell-types.ipynb
+          - quickstart_notebooks/03-cave-query-proofread-cells.ipynb
+          - quickstart_notebooks/04-cave-query-synapses.ipynb
+          - quickstart_notebooks/05-cave-download-skeleton.ipynb
+          - quickstart_notebooks/06-meshparty-download-mesh.ipynb
+          - quickstart_notebooks/07-cloudvolume-download.ipynb
+          - quickstart_notebooks/08-standard-transform.ipynb
+          - quickstart_notebooks/09-nglui-neuroglancer.ipynb
       - section: "Data Inventory"
         href: data-inventory.ipynb
         contents:
