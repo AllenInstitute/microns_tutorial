@@ -1,0 +1,21 @@
+Table name: `synapses_pni_v2`
+
+The only synapse table is `synapses_pni_v2`. This is by far the largest table in the dataset with 337 million entries, one for each synapse.
+It contains the following columns (in addition to the bookkeeping columns):
+
+| Column | Description |
+| :--- | :--- |
+| `pre_pt_position` / `pre_pt_supervoxel_id` / `pre_pt_root_id` | The bound spatial point data for the presynaptic side of the synapse. |
+| `post_pt_position` / `post_pt_supervoxel_id` / `post_pt_root_id` | IThe bound spatial point data for the postsynaptic side of the synapse. |
+| `size` | The size of the synapse in voxels. This correlates well, but not perfectly, with the surface area of synapse. |
+| `ctr_pt_position` | A position in the center of the detected synaptic junction. Of all points in the synapse table, this is usually the closest point to the surface (and thus mesh) of both neurons. Because it is at the edge of cells, it is not associated with a root id. |
+
+: Synapse table column definitions {.light .hover}
+
+```python
+# Synapse query: outputs
+client.materialize.synapse_query(pre_ids=example_root_id)
+
+# Synapse query: inputs
+client.materialize.synapse_query(post_ids=example_root_id)
+```

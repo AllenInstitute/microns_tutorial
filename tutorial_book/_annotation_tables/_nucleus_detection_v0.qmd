@@ -1,0 +1,26 @@
+Table name: `nucleus_detection_v0`
+
+Nucleus detection has been used to define unique cells in the dataset.
+Distinct from the neuronal segmentation, a convolutional neural network was trained to segment nuclei.
+Each nucleus detection was given a unique ID, and the centroid of the nucleus was recorded as well as its volume.
+Many other tables in the dataset are reference tables on `nucleus_detection_v0`, meaning they are linked by the same annotation id. 
+The id of the segmented nucelus, a 6-digit integer, is static across data versions and for this reason is the preferred method to identify the same 'cell' across time. 
+
+The key columns of `nucleus_detection_v0` are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | 6-digit number of the segmentation for that nucleus; 'nucleus ID' |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the nucleus |
+
+: Nucleus table column definitions {.light .hover}
+
+Note that the `id` column is the nucleus ID, also called the 'soma ID' or the 'cell ID'.
+
+```python
+# Standard query
+client.materialize.query_table('nucleus_detection_v0')
+
+# Content-aware query
+client.materialize.tables.nucleus_detection_v0(id=example_nucleus_id).query()
+```

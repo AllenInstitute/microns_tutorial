@@ -1,0 +1,24 @@
+Table name: `nucleus_functional_area_assignment`
+
+Given the nucleus detection table `nucleus_detection_v0` and the transformation of 2-photon *in vivo* imaging to the EM structural space (see [functional-coregistration-tables](../annotation-tables.html#functional-coregistration-tables) ), each cell in the volume has been assigned to one of four visual cortical areas.
+
+The inferred functional brain area based on the position of the nucleus in the EM volume. Area boundaries estimated from the area-membership assignments of the 2P recorded cells, after transformation to EM space. 
+
+The table `nucleus_functional_area_assignment` is a reference table on `nucleus_detection_v0` and adds the following columns: 
+
+| Column | Description |
+| :--- | :--- |
+| `target_id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the nucleus |
+| `tag` | the brain area label (one of V1, AL, RL, LM) |
+| `value`| the distance to the area boundary (in um), calculated as the mean-distance of the 10 nearest neighbors in a non-matching brain area. A larger value is further from the area boundaries, and can be interpretted as higher confidence in area assignment.  |
+
+: Functional area assignment {.light .hover}
+
+```python
+# Standard query
+client.materialize.query_table('nucleus_functional_area_assignment')
+
+# Content-aware query
+client.materialize.tables.nucleus_functional_area_assignment(tag='V1').query()
+```
