@@ -15,6 +15,10 @@ The table `nucleus_functional_area_assignment` is a reference table on `nucleus_
 
 : Functional area assignment {.light .hover}
 
+:::{.callout-tip}
+This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 
+:::
+
 ```python
 # Standard query
 client.materialize.query_table('nucleus_functional_area_assignment')

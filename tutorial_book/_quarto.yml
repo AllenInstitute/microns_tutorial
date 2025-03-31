@@ -56,7 +56,11 @@ website:
         href: data-inventory.ipynb
         contents:
           - section: "Release Manifests"
-            contents: release_manifests/*
+            contents: 
+              - release_manifests/version-1300.ipynb
+              - release_manifests/version-1181.ipynb
+              - release_manifests/version-1078.ipynb
+              - release_manifests/version-943.ipynb
           - annotation-tables.ipynb
           - functional-data.ipynb
           - static-repositories.ipynb

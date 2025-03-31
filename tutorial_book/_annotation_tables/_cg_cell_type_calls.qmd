@@ -1,6 +1,7 @@
-Table name: `synapses_pni_v2`
+Table name: `cg_cell_type_calls`
 
-The only synapse table is `synapses_pni_v2`. This is by far the largest table in the dataset with 337 million entries, one for each synapse.
+Manual cell type calls on the targets of L5 Martinotti cells (MC) in `gamlin_2023_mcs`, annotated for Gamlin et al., 2023 paper.
+
 It contains the following columns:
 
 | Column | Description |
@@ -9,13 +10,19 @@ It contains the following columns:
 | `post_pt_position` / `post_pt_supervoxel_id` / `post_pt_root_id` | IThe bound spatial point data for the postsynaptic side of the synapse. |
 | `size` | The size of the synapse in voxels. This correlates well, but not perfectly, with the surface area of synapse. |
 | `ctr_pt_position` | A position in the center of the detected synaptic junction. Of all points in the synapse table, this is usually the closest point to the surface (and thus mesh) of both neurons. Because it is at the edge of cells, it is not associated with a root id. |
+| `classification_system` | `cg_calls` |
+| `cell_type` | The excitatory subtype or inhibitory type of the target. One of: '1P', '23P', '4P', '5P_IT', '5P_PT', '5P_NP', '6P', 'INH' |
 
-: Synapse table column definitions {.light .hover}
+: Gamlin et al. Martinotti targets {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `synapses_pni_2`, and can be indexed by the same synapse id. 
+:::
 
 ```python
-# Synapse query: outputs
-client.materialize.synapse_query(pre_ids=example_root_id)
+# Standard query
+client.materialize.query_table('cg_cell_type_calls')
 
-# Synapse query: inputs
-client.materialize.synapse_query(post_ids=example_root_id)
+# Content-aware query
+client.materialize.tables.cg_cell_type_calls(pre_pt_root_id=example_root_id).query()
 ```

@@ -26,6 +26,9 @@ The key columns are:
 This table, `proofreading_status_public_release`, is superceded by `proofreading_status_and_strategy` and will be deprecated.
 
 ```python
+# Set version to 1078 or before
+client.version = 1078
+
 # Standard query
 client.materialize.query_table('proofreading_status_public_release')
 

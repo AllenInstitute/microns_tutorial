@@ -15,7 +15,9 @@ The key columns of `nucleus_ref_neuron_svm` are:
 
 : Nucleus table column definitions {.light .hover}
 
-Note that the `id` column is the same as the nucleus id.
+:::{.callout-tip}
+This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 
+:::
 
 ```python
 # Standard query
