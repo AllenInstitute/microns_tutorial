@@ -1,0 +1,9 @@
+The MICrONS data can be representing and rendered in multiple formats, at different levels of abstraction from the original imagery. 
+
+::: {layout-ncol=3}
+![__Segmentation__: more expensive](../img/explain_representations_segmentation.png)
+
+![__Mesh__](../img/explain_representations_mesh.png)
+
+![__Skeleton__: less expensive](../img/explain_representations_skeleton.png)
+:::

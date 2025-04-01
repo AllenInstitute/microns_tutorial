@@ -47,9 +47,9 @@ website:
           - quickstart_notebooks/02-cave-query-cell-types.ipynb
           - quickstart_notebooks/03-cave-query-proofread-cells.ipynb
           - quickstart_notebooks/04-cave-query-synapses.ipynb
-          - quickstart_notebooks/05-cave-download-skeleton.ipynb
-          - quickstart_notebooks/06-meshparty-download-mesh.ipynb
-          - quickstart_notebooks/07-cloudvolume-download.ipynb
+          - quickstart_notebooks/05-cloudvolume-download.ipynb
+          - quickstart_notebooks/06-cloudvolume-download-mesh.ipynb
+          - quickstart_notebooks/07-cave-download-skeleton.ipynb
           - quickstart_notebooks/08-standard-transform.ipynb
           - quickstart_notebooks/09-nglui-neuroglancer.ipynb
       - section: "Data Inventory"
