@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.546">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MICrONs Tutorial</title>
+<title>em_functional_intro – MICrONs Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,10 +35,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-9eb995e8644016eb670a0cb3bf478a26.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,13 +86,13 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../em_01_background.html" aria-current="page"> 
+    <a class="nav-link" href="../../introduction.html"> 
 <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
@@ -101,17 +101,18 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/AllenInstitute/microns_tutorial/discussions" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-chat-left-text-fill"></i></a>
     <div class="dropdown">
-      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/bpdanskin/test_tutorial">
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/microns_tutorial">
             Source Code
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/bpdanskin/test_tutorial/issues">
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/microns_tutorial/issues">
             Report a Bug
             </a>
           </li>
@@ -122,13 +123,13 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -147,118 +148,169 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../em_01_background.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+  <a href="../../background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Background</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../em_02_dataset_basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../dataset-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dataset Basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../em_03_proofreading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Proofreading and Data Quality</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../em_04_neuroglancer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Neuroglancer</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../em_05_dash_apps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dash Apps</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Python Tools</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Versioning and Data Quality</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quickstart_notebooks/em_py_01_caveclient_setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CAVEclient Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../quickstart_notebooks/em_py_02_cave_quickstart.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CAVE Quickstart</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../programmatic_access/em_py_03_annotation_tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Annotation Tables</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../quickstart_notebooks/em_py_03_download_cell_connectivity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Synaptic Connectivity</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../programmatic_access/em_py_04_imagery_segmentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Imagery and Segmentation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../programmatic_access/em_py_05_meshes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Meshes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../programmatic_access/em_py_06_skeletons.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Skeletons</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../programmatic_access/em_py_07_coordinates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Coordinate System</span></a>
+  <a href="../../proofreading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proofreading and Data Quality</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../programmatic_access/ultrastructure_tutorial/em_ultrastructure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ultrastructure</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Examples</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Online Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../examples/generate_neuroglancer_states.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Generating Neuroglancer States</span></a>
+  <a href="../../neuroglancer-basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neuroglancer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../examples/skeleton_load_and_generate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Neuron Skeletons</span></a>
+  <a href="../../dash-table-viewer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dash Apps: Table Viewer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../dash-connectivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dash Apps: Connectivity Viewer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Python Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quickstart_notebooks/01-caveclient-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVEclient Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quickstart_notebooks/02-cave-query-cell-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVE Query: Cell Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quickstart_notebooks/03-cave-query-proofread-cells.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVE Query: Proofread Cells</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quickstart_notebooks/04-cave-query-synapses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVE Query: Synaptic Connectivity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quickstart_notebooks/06-cloudvolume-download-mesh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Download Mesh (cloudvolume)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quickstart_notebooks/07-cave-download-skeleton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Download Skeleton (CAVE)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quickstart_notebooks/08-standard-transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Standard Transform: Coordinate System</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quickstart_notebooks/09-nglui-neuroglancer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NGLui: Neuroglancer States</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Inventory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Release Manifests</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../release_manifests/version-1300.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1300 (Jan 2025)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../release_manifests/version-1181.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1181 (Sep 2024)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../release_manifests/version-1078.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1078 (Jun 2024)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../release_manifests/version-943.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">943 (Jan 2024)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../annotation-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annotation Tables</span></a>
   </div>
 </li>
       </ul>
@@ -284,7 +336,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="toc-actions"><ul><li><a href="https://github.com/AllenInstitute/microns_tutorial/edit/main/tutorial_book/programmatic_access/functional_tutorial/em_functional_intro.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
@@ -302,10 +354,10 @@ ul.task-list li input[type="checkbox"] {
 <p>The dataset contains two approaches to coregistration, one semi-manual and one fully automatic. In the semi-manual approach, a transform between the EM data and the 2p data was generated based on fiducual points such as blood vessels and cell bodies. This transform was then applied to the functional data to identify a location in the EM space, and a human annotator then identified the cell body in the EM data that was a best match to the functional ROI based on location and context. In the fully automatic approach, blood vessels were segmented in both 2p and EM volumes, and a transform was generated based on matching this 3d structure. More details can be found in the <a href="https://www.biorxiv.org/content/10.1101/2021.07.28.454025v3">MICrONS dataset preprint</a>.</p>
 <section id="coregistration-quality-metrics" class="level3">
 <h3 class="anchored" data-anchor-id="coregistration-quality-metrics">Coregistration Quality Metrics</h3>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th>```pevuxmte img/coreg-metrics.png</th>
+<th>```hqgrcnfx img/coreg-metrics.png</th>
 </tr>
 </thead>
 <tbody>
@@ -344,10 +396,10 @@ Relationship between separation threshold (left) and residual (right) and the ac
 <p>:header-rows: 1 * - Filename - Format - Info * - <code>nat_movie.npy</code> - <code>numpy.ndarray</code> - dimensions=<code>[clip, frame, height, width]</code> * - <code>nat_resp.npy</code> - <code>numpy.ndarray</code> - dimensions=<code>[unit, bin]</code> * - <code>nat_unit.csv</code> - importable into <code>pandas.DataFrame</code> - columns=<code>[animal_id, scan_session, scan_idx, unit_id, row_idx]</code> * - <code>monet_resp.npy</code> - <code>numpy.ndarray</code> - dimensions=<code>[unit, direction, trial]</code> * - <code>monet_dir.npy</code> - <code>numpy.ndarray</code> - dimensions=<code>[direction]</code> * - <code>monet_unit.csv</code> - importable into <code>pandas.DataFrame</code> - columns=<code>[animal_id, scan_session, scan_idx, unit_id]</code></p>
 </div>
 <p>The model response data is organized into two sets of files, one for natural movies and one for Monet stimuli, a type of parametric stimulus that measures orientation tuning. The <code>.npy</code> files can be read with the numpy function <code>np.load</code> and the <code>.csv</code> files with the pandas function <code>pd.read_csv</code>.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th>```pevuxmte img/function-stimulus.png</th>
+<th>```hqgrcnfx img/function-stimulus.png</th>
 </tr>
 </thead>
 <tbody>
@@ -409,18 +461,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -452,7 +493,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/AllenInstitute\.github\.io\/microns_tutorial\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -487,7 +566,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -535,7 +618,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

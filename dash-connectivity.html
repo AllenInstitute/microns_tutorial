@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MICrONs Tutorials – MICrONs Tutorial</title>
+<title>Dash Apps: Connectivity Viewer – MICrONs Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -69,12 +89,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="MICrONs Tutorials – MICrONs Tutorial">
+<meta property="og:title" content="Dash Apps: Connectivity Viewer – MICrONs Tutorial">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://AllenInstitute.github.io/microns_tutorial/img/microns_explorer_landing.png">
+<meta property="og:image" content="https://AllenInstitute.github.io/microns_tutorial/img/connectivity-viewer-top.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
-<meta property="og:image:height" content="1016">
-<meta property="og:image:width" content="2075">
+<meta property="og:image:height" content="518">
+<meta property="og:image:width" content="1836">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -129,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">MICrONs Tutorials</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./neuroglancer-basic.html">Online Tools</a></li><li class="breadcrumb-item"><a href="./dash-connectivity.html">Dash Apps: Connectivity Viewer</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -201,7 +221,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dash-connectivity.html" class="sidebar-item-text sidebar-link">
+  <a href="./dash-connectivity.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Dash Apps: Connectivity Viewer</span></a>
   </div>
 </li>
@@ -323,15 +343,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#connectivity-and-cell-type-viewer" id="toc-connectivity-and-cell-type-viewer" class="nav-link active" data-scroll-target="#connectivity-and-cell-type-viewer">Connectivity and Cell Type Viewer</a>
+  <ul class="collapse">
+  <li><a href="#visualization-tabs" id="toc-visualization-tabs" class="nav-link" data-scroll-target="#visualization-tabs">Visualization tabs</a></li>
+  <li><a href="#connectivity-table" id="toc-connectivity-table" class="nav-link" data-scroll-target="#connectivity-table">Connectivity Table</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/dash-connectivity.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./neuroglancer-basic.html">Online Tools</a></li><li class="breadcrumb-item"><a href="./dash-connectivity.html">Dash Apps: Connectivity Viewer</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">MICrONs Tutorials</h1>
+<h1 class="title">Dash Apps: Connectivity Viewer</h1>
 </div>
 
 
@@ -348,26 +378,90 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to the <a href="https://www.microns-explorer.org/">MICrONs-Explorer</a> data ecosystem.</p>
-<p>The MICrONS open-access dataset is a functional connectome containing <strong>200,000 cells, 75,000 neurons with physiology, and 523 million synapses.</strong></p>
-<p>This resource provides interactive visualizations of anatomical and functional data that span all 6 layers of mouse primary visual cortex and 3 higher visual areas (LM, AL, RL) within a cubic millimeter volume.</p>
-<p><strong>Highlights:</strong></p>
-<blockquote class="blockquote">
-<p>Motivation of and introduction to the MICrONS dataset: <a href="introduction.html">Introduction</a></p>
-<p>Overview of dataset collection, methods, and outputs: <a href="background.html">Background</a></p>
-<p>Programmatic access quickstart: <a href="quickstart_notebooks/01-caveclient-setup.html">Python Tools</a></p>
-<p>Data Release information: Data Inventory, including <a href="annotation-tables.html">Annotation Tables</a> and <a href="release_manifests/version-1300.html">Release Manifests</a></p>
-</blockquote>
+<p>We have created two webapps to help explore and visualize the data. These apps were created using the <a href="https://plotly.com/dash/">Dash</a> framework, hence the name.</p>
+<section id="connectivity-and-cell-type-viewer" class="level2">
+<h2 class="anchored" data-anchor-id="connectivity-and-cell-type-viewer">Connectivity and Cell Type Viewer</h2>
+<p>The <a href="https://minnie.microns-daf.com/dash/datastack/minnie65_public/apps/connectivity/?datastack=%22minnie65_public%22"><strong>Connectivity Viewer</strong></a> is designed to let you glance at the synaptic output or input of a given cell and group connectivity by cell type or other annotations.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/microns_explorer_landing.png" class="img-fluid figure-img"></p>
-<figcaption>Render of 3D reconstruction of pyramidal cells in mouse visual cortex, as seen in Neuroglancer</figcaption>
+<p><img src="img/connectivity-viewer-top.png" class="img-fluid figure-img"></p>
+<figcaption>Connectivity viewer input options.</figcaption>
 </figure>
 </div>
+<p>Along the top, you can enter an <code>Cell ID</code> (either a root ID or a cell ID) and, optionally, a table to use to define cell types for synaptic partners.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that if you want to use cell IDs from the nucleus detection table, you must select the <code>Nucleus ID</code> option from the dropdown next to the entry box.</p>
+</div>
+</div>
+<p>Select the data version from the dropdown. (the <code>Live Query</code> option is not relevent for the public data)</p>
+<p>For the optional <code>Table</code> dropdown, there are several tables to choose from, though the most informative will be one of the <a href="programmatic_access/em_py_03_annotation_tables.html#cell-type-tables">cell type classification tables</a>. The <code>aibs_metamodel_celltypes_v661</code> has the greatest coverage of the dataset, and is described in “Perisomatic features” <span class="citation" data-cites="elabbady_perisomatic_2022">(<a href="#ref-elabbady_perisomatic_2022" role="doc-biblioref">Elabbady et al. 2022</a>)</span>.</p>
+<p>The table <code>aibs_metamodel_mtypes_v661_v2</code> is the most current version version of the cell type classification, described in “A connectomic census of mouse visual cortex” <span class="citation" data-cites="schneider-mizell2023">(<a href="#ref-schneider-mizell2023" role="doc-biblioref">Schneider-Mizell et al. 2023</a>)</span>.</p>
+<p>Pressing “Submit” will query the database for the cell and its synapses.</p>
+<p>Once completed, you will see the bar under the input options turn green and report the data that it is displaying. For example, if we query root id <code>864691135408247241</code> and the default cell type table, we will see the following:</p>
+<p><img src="img/connectivity-viewer-success.png" class="img-fluid"></p>
+<p>Importantly, the data displayed below will match whatever is in this bar —&nbsp;if your query takes a long time or fails for some reason (i.e.bad internet, server error), the tables displayed might be stale.</p>
+<p>There are two locations the resulting data is displayed, as we’ll see below. First, a bar of tabs allows you to quickly visualize the data in different ways. Second, the table can present synaptic partners in a more detailed way.</p>
+<section id="visualization-tabs" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-tabs">Visualization tabs</h3>
+<p>The first and default option in the tabs is <strong>Tables Only</strong> which doesn’t actually show any data. This is merely a placeholder to let you look directly at the tablular data below.</p>
+<p>The next tab, <strong>Plots</strong> lets you visualize the synaptic output of a neuron.</p>
+<p>We focus on synaptic output only right now, because the data quality is such that automated dendritic reconstructions are reliable, but automated axon reconstructions are not (see <a href="em_03_proofreading.html">Proofreading section</a>). Because of that, if a neuron has been proofread we trust the cell types of its postsynaptic partners as a group but do not trust the cell types of its presynaptic partners.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/connectivity-viewer-plots.png" class="img-fluid figure-img"></p>
+<figcaption>Plot view. Left, violin plot of the synaptic distribution of the queried cell. Blue/left is the distribution of the cortical depth of input synapses along, red/right is the distribution of cortical depth of synaptic outputs. Approximate layers are shown. Center, a scatterplot with a dot for each synaptic output of the queried cell that is onto a target with a unique cell body (i.e.&nbsp;no dendritic fragments and no cells erroneously merged into other cells). The y-axis is the depth of the synapse itself, while the x-axis is the depth of the cell body of the target neuron. If a cell body categroy is selected, the dots are colored by the cell type of the target neuron. Right, a bar plot showing of the number of synapses onto target cell types.</figcaption>
+</figure>
+</div>
+<p>These plots are designed to give you a quick overview of a cell’s synaptic outputs.</p>
+<p>To add a particularly cell type column, use the <code>Color by value:</code> dropdown below the row of plots to select a column to color by.</p>
+<p>These plots are handled in <a href="https://plotly.com/python/">Plotly</a>, so you can hover over the plots to see more information, and you can click and drag to zoom in on a particular region and save by clicking on the camera icon. For the scatterplot, you can also turn on and off individual types by clicking on the legend.</p>
+<p>The next tab, <strong>Neuroglancer Links</strong> lets you visualize the synapses of a neuron in Neuroglancer.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/connectivity-viewer-ngl.png" class="img-fluid figure-img"></p>
+<figcaption>Neuroglancer links. From left to right: Show all synaptic inputs to the cell, show all synaptic inputs to the cell grouped into different layers by value in the associated table (e.g.&nbsp;cell type), show all synaptic outputs of the cell, show all synaptic outputs of the cell grouped into different layers by value in the associated table (e.g.&nbsp;cell type). Below the dropdown specifies which column to use if grouping annotations. The <code>Include No Type</code> toggle specifies whether to show synapses with cells that have no cell type annotation in the grouped cases.</figcaption>
+</figure>
+</div>
+<p>The Neuroglancer links generated by these buttons will span all synapses of the queried cell, and do not reflect the filtering in the table below. The synapse annotations are also associated with the synaptic partners, making it easy to browse through a broad sampling of synaptic connectivity.</p>
+</section>
+<section id="connectivity-table" class="level3">
+<h3 class="anchored" data-anchor-id="connectivity-table">Connectivity Table</h3>
+<p>The table below shows a table of all synaptic partners.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/connectivity-viewer-table-view.png" class="img-fluid figure-img"></p>
+<figcaption>Table view options.</figcaption>
+</figure>
+</div>
+<p>One of the first things you can see in the table viewer is that it is split into two tabs, <strong>Input</strong> and <strong>Output</strong>, with the tab names for each showing the total number of synapses in each category.</p>
+<p>To move between them, just click the tab you want.</p>
+<p>Above the Input/Ouput tabs is a link to the Neuroglancer view of the synapses show in the table, after filtering and/or selecting a subset of rows.</p>
+<p>The table view here is similar to in the Annotation Table Viewer described above. You can sort the table by clicking column headers, filter the table using the row underneath the headers, and select individual rows. If you select individual rows, the Neuroglancer link will group all synapses from each partner together, making it particularly easy to see how synaptic connectivity relates to neuronal anatomy.</p>
+<p>The default sorting of the table is by total number of synapses, but note that both summed total synapse size (<code>net_size</code>) and average synapse size (<code>mean_size</code>) are also shown. These can be particularly important values when thinking about connectivity between excitatory neurons.</p>
+<p>A CSV file of the entire table can be downloaded by clicking the “Export to CSV” button.</p>
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-elabbady_perisomatic_2022" class="csl-entry" role="listitem">
+Elabbady, Leila, Sharmishtaa Seshamani, Shang Mu, Gayathri Mahalingam, Casey Schneider-Mizell, Agnes L Bodor, J. Alexander Bae, et al. 2022. <span>“Perisomatic Features Enable Efficient and Dataset Wide Cell-Type Classifications Across Large-Scale Electron Microscopy Volumes.”</span> <a href="https://doi.org/10.1101/2022.07.20.499976">https://doi.org/10.1101/2022.07.20.499976</a>.
+</div>
+<div id="ref-schneider-mizell2023" class="csl-entry" role="listitem">
+Schneider-Mizell, Casey M, Agnes L. Bodor, Derrick Brittain, JoAnn Buchanan, Daniel J. Bumbarger, Leila Elabbady, Clare Gamlin, et al. 2023. <span>“Cell-Type-Specific Inhibitory Circuitry from a Connectomic Census of Mouse Visual Cortex.”</span> <a href="https://doi.org/10.1101/2023.01.23.525290">https://doi.org/10.1101/2023.01.23.525290</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -793,7 +887,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/AllenInstitute/microns_tutorial/edit/main/tutorial_book/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/dash-connectivity.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

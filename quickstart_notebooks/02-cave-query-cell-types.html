@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.546">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MICrONs Tutorial - CAVE Quickstart</title>
+<title>CAVE Query: Cell Types – MICrONs Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -69,10 +69,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9eb995e8644016eb670a0cb3bf478a26.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="MICrONs Tutorial - CAVE Quickstart">
+<meta property="og:title" content="CAVE Query: Cell Types – MICrONs Tutorial">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="MICrONs Tutorial">
 </head>
@@ -123,13 +123,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../em_01_background.html" aria-current="page"> 
+    <a class="nav-link" href="../introduction.html"> 
 <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
@@ -138,17 +138,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/AllenInstitute/microns_tutorial/discussions" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-chat-left-text-fill"></i></a>
     <div class="dropdown">
-      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/bpdanskin/test_tutorial">
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/microns_tutorial">
             Source Code
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/bpdanskin/test_tutorial/issues">
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/microns_tutorial/issues">
             Report a Bug
             </a>
           </li>
@@ -159,13 +160,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quickstart_notebooks/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../quickstart_notebooks/em_py_02_cave_quickstart.html">CAVE Quickstart</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quickstart_notebooks/01-caveclient-setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../quickstart_notebooks/02-cave-query-cell-types.html">CAVE Query: Cell Types</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -184,118 +185,169 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../em_01_background.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+  <a href="../background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Background</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../em_02_dataset_basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../dataset-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dataset Basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../em_03_proofreading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Proofreading and Data Quality</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../em_04_neuroglancer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Neuroglancer</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../em_05_dash_apps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dash Apps</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Python Tools</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Versioning and Data Quality</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quickstart_notebooks/em_py_01_caveclient_setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CAVEclient Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quickstart_notebooks/em_py_02_cave_quickstart.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">CAVE Quickstart</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_03_annotation_tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Annotation Tables</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quickstart_notebooks/em_py_03_download_cell_connectivity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Synaptic Connectivity</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_04_imagery_segmentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Imagery and Segmentation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_05_meshes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Meshes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_06_skeletons.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Skeletons</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_07_coordinates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Coordinate System</span></a>
+  <a href="../proofreading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proofreading and Data Quality</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/ultrastructure_tutorial/em_ultrastructure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ultrastructure</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Examples</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Online Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../examples/generate_neuroglancer_states.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Generating Neuroglancer States</span></a>
+  <a href="../neuroglancer-basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neuroglancer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../examples/skeleton_load_and_generate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Neuron Skeletons</span></a>
+  <a href="../dash-table-viewer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dash Apps: Table Viewer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dash-connectivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dash Apps: Connectivity Viewer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Python Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart_notebooks/01-caveclient-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVEclient Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart_notebooks/02-cave-query-cell-types.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">CAVE Query: Cell Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart_notebooks/03-cave-query-proofread-cells.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVE Query: Proofread Cells</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart_notebooks/04-cave-query-synapses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVE Query: Synaptic Connectivity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart_notebooks/06-cloudvolume-download-mesh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Download Mesh (cloudvolume)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart_notebooks/07-cave-download-skeleton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Download Skeleton (CAVE)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart_notebooks/08-standard-transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Standard Transform: Coordinate System</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quickstart_notebooks/09-nglui-neuroglancer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NGLui: Neuroglancer States</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Inventory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Release Manifests</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-1300.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1300 (Jan 2025)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-1181.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1181 (Sep 2024)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-1078.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1078 (Jun 2024)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-943.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">943 (Jan 2024)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../annotation-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annotation Tables</span></a>
   </div>
 </li>
       </ul>
@@ -310,26 +362,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#caveclient" id="toc-caveclient" class="nav-link active" data-scroll-target="#caveclient">CAVEclient</a>
+  <li><a href="#caveclient-setup" id="toc-caveclient-setup" class="nav-link active" data-scroll-target="#caveclient-setup">CAVEclient Setup</a>
   <ul class="collapse">
   <li><a href="#materialization-versions" id="toc-materialization-versions" class="nav-link" data-scroll-target="#materialization-versions">Materialization versions</a></li>
   </ul></li>
   <li><a href="#caveclient-basics" id="toc-caveclient-basics" class="nav-link" data-scroll-target="#caveclient-basics">CAVEclient Basics</a></li>
   <li><a href="#querying-tables" id="toc-querying-tables" class="nav-link" data-scroll-target="#querying-tables">Querying Tables</a></li>
   <li><a href="#filtering-queries" id="toc-filtering-queries" class="nav-link" data-scroll-target="#filtering-queries">Filtering Queries</a></li>
-  <li><a href="#querying-proofread-neurons" id="toc-querying-proofread-neurons" class="nav-link" data-scroll-target="#querying-proofread-neurons">Querying Proofread neurons</a>
-  <ul class="collapse">
-  <li><a href="#proofread-neurons" id="toc-proofread-neurons" class="nav-link" data-scroll-target="#proofread-neurons">Proofread neurons</a></li>
-  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/quickstart_notebooks/em_py_02_cave_quickstart.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/AllenInstitute/microns_tutorial/tree/main/tutorial_book/quickstart_notebooks"><i class="bi bi-file-code"></i>Download Quickstart Notebooks</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/quickstart_notebooks/02-cave-query-cell-types.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/AllenInstitute/microns_tutorial/tree/main/tutorial_book/quickstart_notebooks"><i class="bi bi-file-code"></i>Download Quickstart Notebooks</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quickstart_notebooks/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../quickstart_notebooks/em_py_02_cave_quickstart.html">CAVE Quickstart</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quickstart_notebooks/01-caveclient-setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../quickstart_notebooks/02-cave-query-cell-types.html">CAVE Query: Cell Types</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">CAVE Quickstart</h1>
+<h1 class="title">CAVE Query: Cell Types</h1>
 </div>
 
 
@@ -360,19 +408,19 @@ Initial Setup
 <p>Before using any programmatic access to the data, <a href="em_py_01_caveclient_setup.html">you first need to set up your CAVEclient token</a>.</p>
 </div>
 </div>
-<section id="caveclient" class="level2">
-<h2 class="anchored" data-anchor-id="caveclient">CAVEclient</h2>
+<section id="caveclient-setup" class="level2">
+<h2 class="anchored" data-anchor-id="caveclient-setup">CAVEclient Setup</h2>
 <p>Most programmatic access to the CAVE services occurs through CAVEclient, a Python client to access various types of data from the online services.</p>
 <p>Full documentation for CAVEclient <a href="http://caveclient.readthedocs.io">is available here</a>.</p>
 <p>To initialize a caveclient, we give it a <strong>datastack</strong>, which is a name that defines a particular combination of imagery, segmentation, and annotation database. For the MICrONs public data, we use the datastack name <code>minnie65_public</code>.</p>
-<div id="3ebc5ac7" class="cell" data-execution_count="2">
+<div id="3ebc5ac7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>datastack_name <span class="op">=</span> <span class="st">'minnie65_public'</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(datastack_name)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the description of the datastack</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>client.info.get_datastack_info()[<span class="st">'description'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>'This is the publicly released version of the minnie65 volume and segmentation. '</code></pre>
 </div>
 </div>
@@ -381,19 +429,20 @@ Initial Setup
 <p>Data in CAVE is timestamped and periodically versioned - each (materialization) version corresponds to a specific timestamp. Individual versions are made publicly available. The materialization service provides annotation queries to the dataset. It is available under <code>client.materialize</code>.</p>
 <p>Periodic updates are made to the public datastack, which will include updates to the available tables. Some cells will have different <code>pt_root_id</code> because they have undergone <a href="..\em_03_proofreading.html">proofreading</a>.</p>
 <p>It is worth checking the version of the data you are using, and specifying the version for analysis consistency.</p>
-<div id="b8e8a165-6cae-44b4-b7c9-b52ae94eec37" class="cell" data-tags="[]" data-execution_count="3">
+<div id="b8e8a165-6cae-44b4-b7c9-b52ae94eec37" class="cell" data-tags="[]" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># see the available materialization versions</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.get_versions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>[1078, 117, 661, 343, 1181, 795, 943]</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>[1300, 1078, 117, 661, 343, 1181, 795, 943]</code></pre>
 </div>
 </div>
 <p>And these are their associated timestamps (all timestamps are in UTC):</p>
-<div id="3c9d7b64-56b6-4567-8307-775dcf139ca4" class="cell" data-execution_count="4">
+<div id="3c9d7b64-56b6-4567-8307-775dcf139ca4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> version <span class="kw">in</span> client.materialize.get_versions():</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Version </span><span class="sc">{</span>version<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>client<span class="sc">.</span>materialize<span class="sc">.</span>get_timestamp(version)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Version 1078: 2024-06-05 10:10:01.203215+00:00
+<pre><code>Version 1300: 2025-01-13 10:10:01.286229+00:00
+Version 1078: 2024-06-05 10:10:01.203215+00:00
 Version 117: 2021-06-11 08:10:00.215114+00:00
 Version 661: 2023-04-06 20:17:09.199182+00:00
 Version 343: 2022-02-24 08:10:00.184668+00:00
@@ -402,9 +451,9 @@ Version 795: 2023-08-23 08:10:01.404268+00:00
 Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 </div>
 </div>
-<div id="a066a177-5d23-4898-9765-4f4e620be719" class="cell" data-tags="[]" data-execution_count="9">
+<div id="a066a177-5d23-4898-9765-4f4e620be719" class="cell" data-tags="[]" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set materialization version, for consistency</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>materialization <span class="op">=</span> <span class="dv">1181</span> <span class="co"># current public as of 9/16/2024</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>materialization <span class="op">=</span> <span class="dv">1300</span> <span class="co"># current public as of 1/13/2025</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> materialization</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -412,10 +461,11 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <section id="caveclient-basics" class="level2">
 <h2 class="anchored" data-anchor-id="caveclient-basics">CAVEclient Basics</h2>
 <p>The most frequent use of the CAVEclient is to query the database for annotations like synapses. All database functions are under the <code>client.materialize</code> property. To see what tables are available, use the <code>get_tables</code> function:</p>
-<div id="65009f3a" class="cell" data-execution_count="10">
+<div id="65009f3a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>client.materialize.get_tables()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>['nucleus_alternative_points',
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>['baylor_gnn_cell_type_fine_model_v2',
+ 'nucleus_alternative_points',
  'allen_column_mtypes_v2',
  'bodor_pt_cells',
  'aibs_metamodel_mtypes_v661_v2',
@@ -426,33 +476,37 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
  'vortex_compartment_targets',
  'baylor_log_reg_cell_type_coarse_v1',
  'functional_properties_v3_bcm',
+ 'gamlin_2023_mcs',
  'l5et_column',
  'pt_synapse_targets',
- 'coregistration_auto_phase3_fwd_apl_vess_combined',
  'coregistration_manual_v4',
- 'vortex_manual_myelination_v0',
+ 'cg_cell_type_calls',
  'synapses_pni_2',
  'nucleus_detection_v0',
  'vortex_manual_nodes_of_ranvier',
  'vortex_astrocyte_proofreading_status',
  'bodor_pt_target_proofread',
  'nucleus_functional_area_assignment',
- 'coregistration_auto_phase3_fwd',
+ 'coregistration_auto_phase3_fwd_apl_vess_combined_v2',
  'synapse_target_structure',
+ 'coregistration_auto_phase3_fwd_v2',
+ 'gamlin_2023_mcs_met_types',
+ 'vortex_manual_myelination_v0',
  'proofreading_status_and_strategy',
+ 'synapse_target_predictions_ssa',
  'aibs_metamodel_celltypes_v661']</code></pre>
 </div>
 </div>
 <p>For each table, you can see the metadata describing that table. For example, let’s look at the <code>nucleus_detection_v0</code> table:</p>
-<div id="7703a2d7" class="cell" data-tags="[]" data-execution_count="11">
+<div id="7703a2d7" class="cell" data-tags="[]" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>client.materialize.get_table_metadata(<span class="st">'nucleus_detection_v0'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>{'aligned_volume': 'minnie65_phase3',
- 'created': '2020-11-02T18:56:35.530100',
- 'id': 45664,
- 'schema': 'nucleus_detection',
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>{'schema': 'nucleus_detection',
+ 'aligned_volume': 'minnie65_phase3',
  'table_name': 'nucleus_detection_v0',
  'valid': True,
+ 'created': '2020-11-02T18:56:35.530100',
+ 'id': 55544,
  'schema_type': 'nucleus_detection',
  'user_id': '121',
  'description': 'A table of nuclei detections from a nucleus detection model developed by Shang Mu, Leila Elabbady, Gayathri Mahalingam and Forrest Collman. Pt is the centroid of the nucleus detection. id corresponds to the flat_segmentation_source segmentID. Only included nucleus detections of volume&gt;25 um^3, below which detections are false positives, though some false positives above that threshold remain. ',
@@ -464,7 +518,7 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
  'last_modified': '2022-10-25T19:24:28.559914',
  'segmentation_source': '',
  'pcg_table_name': 'minnie3_v1',
- 'last_updated': '2024-10-24T22:00:00.145632',
+ 'last_updated': '2025-03-27T01:00:00.156007',
  'voxel_resolution': [4.0, 4.0, 40.0]}</code></pre>
 </div>
 </div>
@@ -486,14 +540,14 @@ Annotation tables
 <section id="querying-tables" class="level2">
 <h2 class="anchored" data-anchor-id="querying-tables">Querying Tables</h2>
 <p>To get the contents of a table, use the <code>query_table</code> function. This will return the whole contents of a table without any filtering, up to for a maximum limit of 200,000 rows. The table is returned as a Pandas DataFrame and you can immediately use standard Pandas function on it.</p>
-<div id="003abc71" class="cell" data-tags="[]" data-execution_count="14">
+<div id="003abc71" class="cell" data-tags="[]" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> client.materialize.query_table(<span class="st">'nucleus_detection_v0'</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>cell_type_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -602,14 +656,14 @@ Caution
 <li><code>limit</code> : This parameter allows you to limit the number of rows returned. If you are just testing out a query or trying to inspect the kind of data within a table, you can set this to a small number to make sure it works before downloading the whole table. Note that this will show a warning so that you don’t accidentally limit your query when you don’t mean to.</li>
 </ul>
 <p>For example, using all of these together:</p>
-<div id="acfa352d" class="cell" data-execution_count="15">
+<div id="acfa352d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> client.materialize.query_table(<span class="st">'nucleus_detection_v0'</span>, split_positions<span class="op">=</span><span class="va">True</span>, desired_resolution<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>], select_columns<span class="op">=</span>[<span class="st">'pt_position'</span>, <span class="st">'pt_root_id'</span>], limit<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>cell_type_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -704,30 +758,43 @@ Caution
 <p>The general pattern for usage is</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.{table_name}({<span class="bu">filter</span> options}).query({<span class="bu">format</span> <span class="kw">and</span> timestamp options})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>where <code>{table_name}</code> is the name of the table you want to filter, <code>{filter options}</code> is a collection of arguments for filtering the query, and <code>{format and timestamp options}</code> are those parameters controlling the format and timestamp of the query.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use of this functionality will show a brief warning that the interface is experimental. This is because the interface is still being developed and may change in the near future in response to user feedback.</p>
+</div>
+</div>
 <p>For example, let’s look at the table <code>aibs_metamodel_celltypes_v661</code>, which has cell type predictions across the dataset. We can get the whole table as a DataFrame:</p>
-<div id="16a8223a" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="16">
+<div id="16a8223a" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> client.materialize.tables.aibs_metamodel_celltypes_v661().query()</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>cell_type_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">created</th>
-<th data-quarto-table-cell-role="th">valid</th>
-<th data-quarto-table-cell-role="th">volume</th>
-<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
-<th data-quarto-table-cell-role="th">pt_root_id</th>
 <th data-quarto-table-cell-role="th">id_ref</th>
 <th data-quarto-table-cell-role="th">created_ref</th>
 <th data-quarto-table-cell-role="th">valid_ref</th>
 <th data-quarto-table-cell-role="th">target_id</th>
 <th data-quarto-table-cell-role="th">classification_system</th>
 <th data-quarto-table-cell-role="th">cell_type</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
 <th data-quarto-table-cell-role="th">pt_position</th>
 <th data-quarto-table-cell-role="th">bb_start_position</th>
 <th data-quarto-table-cell-role="th">bb_end_position</th>
@@ -736,90 +803,90 @@ Caution
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>336365</td>
-<td>2020-09-28 22:42:48.966292+00:00</td>
-<td>t</td>
-<td>272.488202</td>
-<td>93606511657924288</td>
-<td>864691136274724621</td>
 <td>36916</td>
 <td>2023-12-19 22:47:18.659864+00:00</td>
 <td>t</td>
 <td>336365</td>
 <td>excitatory_neuron</td>
 <td>5P-IT</td>
+<td>336365</td>
+<td>2020-09-28 22:42:48.966292+00:00</td>
+<td>t</td>
+<td>272.488202</td>
+<td>93606511657924288</td>
+<td>864691136274724621</td>
 <td>[209760, 180832, 27076]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>110648</td>
-<td>2020-09-28 22:45:09.650639+00:00</td>
-<td>t</td>
-<td>328.533443</td>
-<td>79385153184885329</td>
-<td>864691135489403194</td>
 <td>1070</td>
 <td>2023-12-19 22:38:00.472115+00:00</td>
 <td>t</td>
 <td>110648</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
+<td>110648</td>
+<td>2020-09-28 22:45:09.650639+00:00</td>
+<td>t</td>
+<td>328.533443</td>
+<td>79385153184885329</td>
+<td>864691135489403194</td>
 <td>[106448, 129632, 25410]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>112071</td>
-<td>2020-09-28 22:43:34.088785+00:00</td>
-<td>t</td>
-<td>272.929423</td>
-<td>79035988248401958</td>
-<td>864691136147292311</td>
 <td>1099</td>
 <td>2023-12-19 22:38:00.898837+00:00</td>
 <td>t</td>
 <td>112071</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
+<td>112071</td>
+<td>2020-09-28 22:43:34.088785+00:00</td>
+<td>t</td>
+<td>272.929423</td>
+<td>79035988248401958</td>
+<td>864691136147292311</td>
 <td>[103696, 149472, 15583]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>197927</td>
-<td>2020-09-28 22:43:10.652649+00:00</td>
-<td>t</td>
-<td>91.308851</td>
-<td>84529699506051734</td>
-<td>864691136050858227</td>
 <td>13259</td>
 <td>2023-12-19 22:41:14.417986+00:00</td>
 <td>t</td>
 <td>197927</td>
 <td>nonneuron</td>
 <td>oligo</td>
+<td>197927</td>
+<td>2020-09-28 22:43:10.652649+00:00</td>
+<td>t</td>
+<td>91.308851</td>
+<td>84529699506051734</td>
+<td>864691136050858227</td>
 <td>[143600, 186192, 26471]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>198087</td>
-<td>2020-09-28 22:41:36.677186+00:00</td>
-<td>t</td>
-<td>161.744978</td>
-<td>83756261929388963</td>
-<td>864691135809440972</td>
 <td>13271</td>
 <td>2023-12-19 22:41:14.685474+00:00</td>
 <td>t</td>
 <td>198087</td>
 <td>nonneuron</td>
 <td>astrocyte</td>
+<td>198087</td>
+<td>2020-09-28 22:41:36.677186+00:00</td>
+<td>t</td>
+<td>161.744978</td>
+<td>83756261929388963</td>
+<td>864691135809440972</td>
 <td>[137952, 190944, 27361]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
@@ -831,14 +898,14 @@ Caution
 </div>
 </div>
 <p>and we can add similar formatting options as in the last section to the query function:</p>
-<div id="2819259e" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="17">
+<div id="2819259e" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> client.materialize.tables.aibs_metamodel_celltypes_v661().query(split_positions<span class="op">=</span><span class="va">True</span>, desired_resolution<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>], select_columns<span class="op">=</span>[<span class="st">'pt_position'</span>, <span class="st">'pt_root_id'</span>, <span class="st">'cell_type'</span>], limit<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>cell_type_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -937,14 +1004,14 @@ Caution
 </div>
 </div>
 <p>However, now we can also filter the table to get only cells that are predicted to have cell type <code>"BC"</code> (for “basket cell”).</p>
-<div id="1375a2ea" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="18">
+<div id="1375a2ea" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_cell_type <span class="op">=</span> <span class="st">"BC"</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.aibs_metamodel_celltypes_v661(cell_type<span class="op">=</span>my_cell_type).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -968,24 +1035,6 @@ Caution
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>43009</td>
-<td>2023-12-19 22:48:53.577191+00:00</td>
-<td>t</td>
-<td>369908</td>
-<td>inhibitory_neuron</td>
-<td>BC</td>
-<td>369908</td>
-<td>2020-09-28 22:40:41.814964+00:00</td>
-<td>t</td>
-<td>332.862751</td>
-<td>96002690286851358</td>
-<td>864691136522768017</td>
-<td>[227104, 207840, 20841]</td>
-<td>[nan, nan, nan]</td>
-<td>[nan, nan, nan]</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
 <td>12051</td>
 <td>2023-12-19 22:40:57.133228+00:00</td>
 <td>t</td>
@@ -999,6 +1048,24 @@ Caution
 <td>82838443188669165</td>
 <td>864691135684976823</td>
 <td>[131568, 168496, 16452]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>43009</td>
+<td>2023-12-19 22:48:53.577191+00:00</td>
+<td>t</td>
+<td>369908</td>
+<td>inhibitory_neuron</td>
+<td>BC</td>
+<td>369908</td>
+<td>2020-09-28 22:40:41.814964+00:00</td>
+<td>t</td>
+<td>332.862751</td>
+<td>96002690286851358</td>
+<td>864691136145011252</td>
+<td>[227104, 207840, 20841]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
@@ -1022,24 +1089,6 @@ Caution
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>48718</td>
-<td>2023-12-19 22:50:21.192138+00:00</td>
-<td>t</td>
-<td>401681</td>
-<td>inhibitory_neuron</td>
-<td>BC</td>
-<td>401681</td>
-<td>2020-09-28 22:40:42.066718+00:00</td>
-<td>t</td>
-<td>497.801462</td>
-<td>98465046644219429</td>
-<td>864691136052141043</td>
-<td>[245232, 203952, 21268]</td>
-<td>[nan, nan, nan]</td>
-<td>[nan, nan, nan]</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
 <td>82324</td>
 <td>2023-12-19 22:58:39.896999+00:00</td>
 <td>t</td>
@@ -1053,6 +1102,24 @@ Caution
 <td>113234168401651200</td>
 <td>864691136065413528</td>
 <td>[352688, 141616, 25312]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>48951</td>
+<td>2023-12-19 22:50:24.710643+00:00</td>
+<td>t</td>
+<td>402885</td>
+<td>inhibitory_neuron</td>
+<td>BC</td>
+<td>402885</td>
+<td>2020-09-28 22:40:41.994716+00:00</td>
+<td>t</td>
+<td>279.232348</td>
+<td>97621720621533350</td>
+<td>864691135645529583</td>
+<td>[238848, 211712, 16471]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
@@ -1094,24 +1161,6 @@ Caution
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3361</td>
-<td>15548</td>
-<td>2023-12-19 22:41:48.382554+00:00</td>
-<td>t</td>
-<td>208056</td>
-<td>inhibitory_neuron</td>
-<td>BC</td>
-<td>208056</td>
-<td>2020-09-28 22:45:25.401800+00:00</td>
-<td>t</td>
-<td>521.621668</td>
-<td>84540007091735344</td>
-<td>864691135801456226</td>
-<td>[143472, 262944, 23693]</td>
-<td>[nan, nan, nan]</td>
-<td>[nan, nan, nan]</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">3362</td>
 <td>79472</td>
 <td>2023-12-19 22:57:53.993099+00:00</td>
 <td>t</td>
@@ -1125,6 +1174,24 @@ Caution
 <td>110216764830845707</td>
 <td>864691135279126177</td>
 <td>[330320, 204752, 25060]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3362</td>
+<td>15548</td>
+<td>2023-12-19 22:41:48.382554+00:00</td>
+<td>t</td>
+<td>208056</td>
+<td>inhibitory_neuron</td>
+<td>BC</td>
+<td>208056</td>
+<td>2020-09-28 22:45:25.401800+00:00</td>
+<td>t</td>
+<td>521.621668</td>
+<td>84540007091735344</td>
+<td>864691135801456226</td>
+<td>[143472, 262944, 23693]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
@@ -1172,29 +1239,29 @@ Caution
 </div>
 </div>
 <p>or maybe we just want the cell types for a particular collection of root ids:</p>
-<div id="acd0d226" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="19">
+<div id="acd0d226" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>my_root_ids <span class="op">=</span> [<span class="dv">864691135771677771</span>, <span class="dv">864691135560505569</span>, <span class="dv">864691136723556861</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.aibs_metamodel_celltypes_v661(pt_root_id<span class="op">=</span>my_root_ids).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">created</th>
-<th data-quarto-table-cell-role="th">valid</th>
-<th data-quarto-table-cell-role="th">volume</th>
-<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
-<th data-quarto-table-cell-role="th">pt_root_id</th>
 <th data-quarto-table-cell-role="th">id_ref</th>
 <th data-quarto-table-cell-role="th">created_ref</th>
 <th data-quarto-table-cell-role="th">valid_ref</th>
 <th data-quarto-table-cell-role="th">target_id</th>
 <th data-quarto-table-cell-role="th">classification_system</th>
 <th data-quarto-table-cell-role="th">cell_type</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
 <th data-quarto-table-cell-role="th">pt_position</th>
 <th data-quarto-table-cell-role="th">bb_start_position</th>
 <th data-quarto-table-cell-role="th">bb_end_position</th>
@@ -1203,54 +1270,54 @@ Caution
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>19116</td>
-<td>2020-09-28 22:41:51.767906+00:00</td>
-<td>t</td>
-<td>301.426115</td>
-<td>74737997899501359</td>
-<td>864691135771677771</td>
 <td>11282</td>
 <td>2023-12-19 22:40:43.249642+00:00</td>
 <td>t</td>
 <td>19116</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
+<td>19116</td>
+<td>2020-09-28 22:41:51.767906+00:00</td>
+<td>t</td>
+<td>301.426115</td>
+<td>74737997899501359</td>
+<td>864691135771677771</td>
 <td>[72576, 108656, 20291]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>21783</td>
-<td>2020-09-28 22:41:59.966574+00:00</td>
-<td>t</td>
-<td>263.637074</td>
-<td>75795590176519004</td>
-<td>864691135560505569</td>
 <td>15681</td>
 <td>2023-12-19 22:41:50.365399+00:00</td>
 <td>t</td>
 <td>21783</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
+<td>21783</td>
+<td>2020-09-28 22:41:59.966574+00:00</td>
+<td>t</td>
+<td>263.637074</td>
+<td>75795590176519004</td>
+<td>864691135560505569</td>
 <td>[80128, 124000, 16563]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>4074</td>
-<td>2020-09-28 22:42:41.341179+00:00</td>
-<td>t</td>
-<td>313.678234</td>
-<td>73543309863605007</td>
-<td>864691136723556861</td>
 <td>50080</td>
 <td>2023-12-19 22:50:42.474168+00:00</td>
 <td>t</td>
 <td>4074</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
+<td>4074</td>
+<td>2020-09-28 22:42:41.341179+00:00</td>
+<td>t</td>
+<td>313.678234</td>
+<td>73543309863605007</td>
+<td>864691136723556861</td>
 <td>[63936, 120160, 20830]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
@@ -1262,59 +1329,8 @@ Caution
 </div>
 </div>
 <p>You can get a list of all parameters than be used for querying with the standard IPython/Jupyter docstring functionality, e.g.&nbsp;<code>client.materialize.tables.aibs_metamodel_celltypes_v661</code>.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Use of this functionality will show a brief warning that the interface is experimental. This is because the interface is still being developed and may change in the near future in response to user feedback.</p>
-</div>
-</div>
-</section>
-<section id="querying-proofread-neurons" class="level2">
-<h2 class="anchored" data-anchor-id="querying-proofread-neurons">Querying Proofread neurons</h2>
-<section id="proofread-neurons" class="level3">
-<h3 class="anchored" data-anchor-id="proofread-neurons">Proofread neurons</h3>
-<p>Proofreading is necessary to obtain accurate reconstructions of a cell. In the MICrONS dataset, the general rule is that dendrites onto cells with a <em>single</em> cell body are sufficiently proofread to trust synaptic connections onto a cell. Axons on the other hand require so much proofread that only ~1,000 cells have axons that were proofread to various degrees such that their outputs can be used for analysis.</p>
-<p>The table <code>proofreading_status_and_strategy</code> contains proofreading information about ~1,300 neurons. <a href="https://www.microns-explorer.org/manifests/mm3-proofreading">This website</a> provides the most detailed overview. In brief, axons annotated with any <code>strategy_axon</code> were cleaned of false mergers but not all were fully extended. The most important distinction is axons annotated with <code>axon_column_truncated</code> were only proofread within a certain volume wheras others were proofread without such bias.</p>
-<div id="78de0c65-effb-402c-a77b-5adbe426126d" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>proof_all_df <span class="op">=</span> client.materialize.query_table(<span class="st">"proofreading_status_and_strategy"</span>, desired_resolution<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>], split_positions<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="b89e1d76-0275-475e-9ddc-04bca7d83043" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>proof_all_df[<span class="st">"strategy_axon"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>strategy_axon
-axon_partially_extended    979
-axon_column_truncated      233
-none                       185
-axon_interareal            144
-axon_fully_extended         80
-Name: count, dtype: int64</code></pre>
-</div>
-</div>
-<p>We can filter our query to only return rows that match a condition by adding a filter to our query:</p>
-<div id="104bac4e-6bc1-4a20-8da5-170fc61eaaa9" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>proof_df <span class="op">=</span> client.materialize.query_table(<span class="st">"proofreading_status_and_strategy"</span>, filter_in_dict<span class="op">=</span>{<span class="st">"strategy_axon"</span>: [<span class="st">"axon_partially_extended"</span>, <span class="st">"axon_fully_extended"</span>, <span class="st">"axon_interareal"</span>, <span class="st">"axon_column_truncated"</span>]}, desired_resolution<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>], split_positions<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="f192ca62-ab4a-4f3d-bb0e-e91b44102cfa" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>proof_df[<span class="st">"strategy_axon"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="27">
-<pre><code>strategy_axon
-axon_column_truncated      598
-axon_partially_extended    341
-axon_interareal            146
-axon_fully_extended         77
-Name: count, dtype: int64</code></pre>
-</div>
-</div>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -1353,18 +1369,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1396,7 +1401,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/AllenInstitute\.github\.io\/microns_tutorial\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1431,7 +1474,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1479,7 +1526,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1713,7 +1759,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/quickstart_notebooks/em_py_02_cave_quickstart.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/quickstart_notebooks/02-cave-query-cell-types.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

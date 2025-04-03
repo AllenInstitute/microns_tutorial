@@ -1,79 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/em_py_04_skeleton_pathlength.html</loc>
-    <lastmod>2025-01-07T23:43:14.924Z</lastmod>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/release_manifests/version-943.html</loc>
+    <lastmod>2025-03-31T03:52:51.027Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/em_py_02_cave_quickstart.html</loc>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/release_manifests/version-1181.html</loc>
+    <lastmod>2025-03-31T03:42:38.501Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/09-nglui-neuroglancer.html</loc>
+    <lastmod>2025-04-03T05:00:57.403Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/07-cave-download-skeleton.html</loc>
+    <lastmod>2025-04-03T06:47:19.246Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/03-cave-query-proofread-cells.html</loc>
+    <lastmod>2025-03-27T05:20:27.265Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/01-caveclient-setup.html</loc>
+    <lastmod>2025-03-27T06:11:14.773Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/00_cave_quickstart.html</loc>
     <lastmod>2025-01-07T23:43:14.897Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/ultrastructure_tutorial/em_ultrastructure.html</loc>
-    <lastmod>2025-01-07T23:43:14.833Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_07_coordinates.html</loc>
-    <lastmod>2025-01-07T23:43:14.502Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_05_meshes.html</loc>
-    <lastmod>2025-01-07T23:43:14.478Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_03_annotation_tables.html</loc>
-    <lastmod>2025-01-07T23:52:38.123Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/examples/skeleton_load_and_generate.html</loc>
-    <lastmod>2025-01-07T23:43:14.033Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/em_05_dash_apps.html</loc>
-    <lastmod>2025-01-07T23:43:13.984Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/em_03_proofreading.html</loc>
-    <lastmod>2025-01-07T23:43:13.955Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/em_01_background.html</loc>
-    <lastmod>2025-01-07T23:43:13.914Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/em_02_dataset_basics.html</loc>
-    <lastmod>2025-01-07T23:43:13.944Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/em_04_neuroglancer.html</loc>
-    <lastmod>2025-01-07T23:43:13.974Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/examples/generate_neuroglancer_states.html</loc>
-    <lastmod>2025-01-07T23:43:14.001Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/index.html</loc>
-    <lastmod>2025-01-07T23:43:14.427Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_04_imagery_segmentation.html</loc>
-    <lastmod>2025-01-07T23:43:14.468Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/em_py_06_skeletons.html</loc>
-    <lastmod>2025-01-07T23:43:14.486Z</lastmod>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/proofreading.html</loc>
+    <lastmod>2025-03-27T03:31:46.338Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/functional_tutorial/em_functional_intro.html</loc>
     <lastmod>2025-01-07T23:43:14.511Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/em_py_01_caveclient_setup.html</loc>
-    <lastmod>2025-01-07T23:43:14.886Z</lastmod>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/neuroglancer-basic.html</loc>
+    <lastmod>2025-03-27T03:41:05.852Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/em_py_03_download_cell_connectivity.html</loc>
-    <lastmod>2025-01-07T23:43:14.912Z</lastmod>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/index.html</loc>
+    <lastmod>2025-04-03T18:59:02.189Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/dataset-basics.html</loc>
+    <lastmod>2025-04-03T19:00:28.806Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/dash-table-viewer.html</loc>
+    <lastmod>2025-03-27T03:56:39.729Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/background.html</loc>
+    <lastmod>2025-04-03T19:00:36.599Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/annotation-tables.html</loc>
+    <lastmod>2025-03-31T03:38:48.121Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/dash-connectivity.html</loc>
+    <lastmod>2025-03-27T03:56:31.564Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/examples/skeleton_load_and_generate.html</loc>
+    <lastmod>2025-01-07T23:43:14.033Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/introduction.html</loc>
+    <lastmod>2025-04-03T19:01:00.640Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/ultrastructure_tutorial/em_ultrastructure.html</loc>
+    <lastmod>2025-01-07T23:43:14.833Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/00_skeletons.html</loc>
+    <lastmod>2025-03-27T05:36:53.072Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/02-cave-query-cell-types.html</loc>
+    <lastmod>2025-03-27T05:53:13.387Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/04-cave-query-synapses.html</loc>
+    <lastmod>2025-03-27T05:34:49.039Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/06-cloudvolume-download-mesh.html</loc>
+    <lastmod>2025-04-03T05:52:03.453Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/08-standard-transform.html</loc>
+    <lastmod>2025-03-27T05:54:20.688Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/release_manifests/version-1078.html</loc>
+    <lastmod>2025-03-31T03:53:23.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/release_manifests/version-1300.html</loc>
+    <lastmod>2025-03-31T03:37:58.390Z</lastmod>
   </url>
 </urlset>

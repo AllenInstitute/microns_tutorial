@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.546">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MICrONs Tutorial - CAVEclient Setup</title>
+<title>Dataset Basics – MICrONs Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,59 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-9eb995e8644016eb670a0cb3bf478a26.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,8 +68,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="MICrONs Tutorial - CAVEclient Setup">
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Dataset Basics – MICrONs Tutorial">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="MICrONs Tutorial">
 </head>
@@ -115,18 +81,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">MICrONs Tutorial</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../em_01_background.html" aria-current="page"> 
+    <a class="nav-link" href="./introduction.html"> 
 <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
@@ -135,17 +101,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/AllenInstitute/microns_tutorial/discussions" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-chat-left-text-fill"></i></a>
     <div class="dropdown">
-      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/bpdanskin/test_tutorial">
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/microns_tutorial">
             Source Code
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/bpdanskin/test_tutorial/issues">
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/microns_tutorial/issues">
             Report a Bug
             </a>
           </li>
@@ -156,13 +123,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quickstart_notebooks/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../quickstart_notebooks/em_py_01_caveclient_setup.html">CAVEclient Setup</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dataset-basics.html">Dataset Basics</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -181,118 +148,169 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../em_01_background.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+  <a href="./background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Background</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../em_02_dataset_basics.html" class="sidebar-item-text sidebar-link">
+  <a href="./dataset-basics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Dataset Basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../em_03_proofreading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Proofreading and Data Quality</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../em_04_neuroglancer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Neuroglancer</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../em_05_dash_apps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dash Apps</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Python Tools</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Versioning and Data Quality</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quickstart_notebooks/em_py_01_caveclient_setup.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">CAVEclient Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quickstart_notebooks/em_py_02_cave_quickstart.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CAVE Quickstart</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_03_annotation_tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Annotation Tables</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../quickstart_notebooks/em_py_03_download_cell_connectivity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Synaptic Connectivity</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_04_imagery_segmentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Imagery and Segmentation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_05_meshes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Meshes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_06_skeletons.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Skeletons</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/em_py_07_coordinates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Coordinate System</span></a>
+  <a href="./proofreading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proofreading and Data Quality</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmatic_access/ultrastructure_tutorial/em_ultrastructure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ultrastructure</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Examples</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Online Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../examples/generate_neuroglancer_states.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Generating Neuroglancer States</span></a>
+  <a href="./neuroglancer-basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neuroglancer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../examples/skeleton_load_and_generate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Neuron Skeletons</span></a>
+  <a href="./dash-table-viewer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dash Apps: Table Viewer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dash-connectivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dash Apps: Connectivity Viewer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Python Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quickstart_notebooks/01-caveclient-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVEclient Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quickstart_notebooks/02-cave-query-cell-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVE Query: Cell Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quickstart_notebooks/03-cave-query-proofread-cells.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVE Query: Proofread Cells</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quickstart_notebooks/04-cave-query-synapses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CAVE Query: Synaptic Connectivity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quickstart_notebooks/06-cloudvolume-download-mesh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Download Mesh (cloudvolume)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quickstart_notebooks/07-cave-download-skeleton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Download Skeleton (CAVE)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quickstart_notebooks/08-standard-transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Standard Transform: Coordinate System</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quickstart_notebooks/09-nglui-neuroglancer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NGLui: Neuroglancer States</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Inventory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Release Manifests</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./release_manifests/version-1300.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1300 (Jan 2025)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./release_manifests/version-1181.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1181 (Sep 2024)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./release_manifests/version-1078.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1078 (Jun 2024)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./release_manifests/version-943.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">943 (Jan 2024)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./annotation-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annotation Tables</span></a>
   </div>
 </li>
       </ul>
@@ -307,22 +325,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#setting-up-credentials" id="toc-setting-up-credentials" class="nav-link" data-scroll-target="#setting-up-credentials">Setting up credentials</a>
-  <ul class="collapse">
-  <li><a href="#scenario-1-new-user-no-previous-account" id="toc-scenario-1-new-user-no-previous-account" class="nav-link" data-scroll-target="#scenario-1-new-user-no-previous-account">Scenario 1: New User, No Previous Account</a></li>
-  <li><a href="#scenario-2-existing-user-new-computer" id="toc-scenario-2-existing-user-new-computer" class="nav-link" data-scroll-target="#scenario-2-existing-user-new-computer">Scenario 2: Existing user, New computer</a></li>
-  <li><a href="#something-went-wrong" id="toc-something-went-wrong" class="nav-link" data-scroll-target="#something-went-wrong">Something went wrong?</a></li>
-  </ul></li>
+  <li><a href="#dataset-information-hub" id="toc-dataset-information-hub" class="nav-link active" data-scroll-target="#dataset-information-hub">Dataset Information Hub</a></li>
+  <li><a href="#how-to-reference-a-neuron" id="toc-how-to-reference-a-neuron" class="nav-link" data-scroll-target="#how-to-reference-a-neuron">How to reference a neuron</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/quickstart_notebooks/em_py_01_caveclient_setup.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/AllenInstitute/microns_tutorial/tree/main/tutorial_book/quickstart_notebooks"><i class="bi bi-file-code"></i>Download Quickstart Notebooks</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/dataset-basics.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quickstart_notebooks/em_py_01_caveclient_setup.html">Python Tools</a></li><li class="breadcrumb-item"><a href="../quickstart_notebooks/em_py_01_caveclient_setup.html">CAVEclient Setup</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CAVEclient Setup</h1>
+<h1 class="title">Dataset Basics</h1>
 </div>
 
 
@@ -339,88 +352,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The <strong>Connectome Annotation Versioning Engine (CAVE)</strong> is a suite of tools developed at the Allen Institute and Seung Lab to manage large connectomics data.</p>
-<p>The CAVEclient is the main way to programmatically access the MICrONS data using Python.<br>
-In particular, the CAVEclient provides an interface to query the CAVE database for annotations such as synapses, as well as to get a variety of other kinds of information.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Initial Setup
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This process only needs to happen once per computer</p>
-</div>
-</div>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p>To install caveclient, use pip: <code>pip install caveclient</code>.</p>
-<p>Once you have installed caveclient, to use it you need to set up your user token in one of two ways:</p>
+<p>One of the more complicated things about using connectomics data is that it’s both highly multimodal —&nbsp;there are images, tables, meshes, and more — and that it has been designed to be dynamic, as the segmentation changes with proofeading and carries changes to synaptic connectivity and more. This section will cover what types of data exist and how to access them.</p>
+<p>The types of data we will describe here are:</p>
+<ul>
+<li><strong>Imagery</strong>: The 3d array depicting the ultrastructure, with grayscale values.<br>
+</li>
+<li><strong>Segmentation</strong>: A 3d array where each voxel has the root id of the segmentation at that location (see next section).<br>
+</li>
+<li><strong>Meshes</strong>: A representation of the 3d surface of a neuron.<br>
+</li>
+<li><strong>Skeletons</strong> : A representation of the tree-like structure of a neuron.<br>
+</li>
+<li><strong>Tables</strong>: Database tables that describe the various types of annotations, such as cell types, synapses, and more.</li>
+</ul>
+<p>In addition, there are three primary ways to access the data:</p>
+<ul>
+<li><strong>Neuroglancer</strong> : Neuroglancer is a web-based viewer to explore the 3d data, and offers access to imagery, segmentations, meshes, and annotations.<br>
+Its graphical interface, ability to quickly explore data, and share links make it convenient for fast exploration.</li>
+<li><strong>Dash web apps</strong>: Web apps that allow fast querying of tables and synaptic connectivity that can also be used to generate complex Neuroglancer links.<br>
+Not as flexible as python programmatic access, but it can be used to quickly explore certain features of the data and visualize in Neuroglancer.</li>
+<li><strong>Python</strong> : A collection of tools based around the CAVEclient offer a programmatic interface to the data.</li>
+</ul>
+<section id="dataset-information-hub" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-information-hub">Dataset Information Hub</h2>
+<p>If you need to look up any particular values or links for the dataset — how to open a Neuroglancer link for it, what annotation tables exist, how to find Dash Apps — the <strong>public MICrONs datastack</strong> has a <a href="https://global.daf-apis.com/info/datastack/minnie65_public">useful information page</a>. Go there if you need to look up basic details about the dataset.</p>
+<p>Particularly useful links here are: * the <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6002690212495360">Spelunker neuroglancer link</a> * the <a href="https://minnie.microns-daf.com/dash/datastack/minnie65_public">public Dash Apps</a> * the <a href="https://minnie.microns-daf.com/materialize/views/datastack/minnie65_public">list of all materialization versions</a> * and the <a href="https://minnie.microns-daf.com/materialize/views/datastack/minnie65_public/version/1300">annotation tables</a> associated with the most recent release version (v1300).</p>
 </section>
-<section id="setting-up-credentials" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-credentials">Setting up credentials</h2>
-<p>To access the data programmatically, you need to set up a user token. This token is assigned by the server and functions as a both a username and password to access any aspect of the data. You will need to save this token to your computer using the tools.</p>
-<section id="scenario-1-new-user-no-previous-account" class="level3">
-<h3 class="anchored" data-anchor-id="scenario-1-new-user-no-previous-account">Scenario 1: New User, No Previous Account</h3>
-<p>If you have never interacted with CAVE before, you will need to both create an account and get a token. Note that you can only have one token at a time, and thus if you create a new token any computer running a previous one will no longer have access.</p>
-<p>Step 1: Log into a CAVE site to set up a new account with a GMail-associated email address. To do this, click <a href="https://minnie.microns-daf.com/materialize/views/datastack/minnie65_public">this link</a> and acknowledge the terms of service associated with the MICrONS dataset. Once you have done this, your account is automatically created.</p>
-<p>Step 2: Generate a token. To generate a token, run the following code in a Jupyter notebook:</p>
-<div id="b7f2fd3f-2d42-4504-aab3-48f9289c0009" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient()</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>client.auth.setup_token(make_new<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>This will open a new browser window and ask you to log in.<br>
-You will show you a web page with an alphanumeric string that is your token.<br>
-Copy your token, and save it to your computer using the following:</p>
-<div id="1072bff6-03fb-43c3-9d18-c99be6e55d26" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>client.auth.save_token(token<span class="op">=</span>YOUR_TOKEN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Note that the token must be formatted as a string.</p>
-<p>To check if your setup works, run the following:</p>
-<div id="ae6e794c-99d2-4acc-b4d6-6ad2310da4f1" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">'minnie65_public'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>If you don’t get any errors, your setup has worked and you can move on!</p>
-</section>
-<section id="scenario-2-existing-user-new-computer" class="level3">
-<h3 class="anchored" data-anchor-id="scenario-2-existing-user-new-computer">Scenario 2: Existing user, New computer</h3>
-<p>If you have already created an account and token but not set up your computer yet, you can use the same token on a new computer.</p>
-<p>Step 1) Find your token by running the following code in a Jupyter notebook:</p>
-<div id="56724b03-08e5-47bf-9c47-8b6f83fa6c2f" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient()</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>client.auth.setup_token(make_new<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>This will open a new browser window and ask you to log in.<br>
-After lgging in, the page will display your current token (the value after the <code>token:</code>).<br>
-Copy this token, and save it to your computer using the following:</p>
-<div id="1a0293c7-dd90-4fb4-b256-a626d36868fa" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>client.auth.save_token(token<span class="op">=</span>YOUR_TOKEN, overwrite<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Note that the token must be formatted as a string.</p>
-<p>To check if your setup works, run the following:</p>
-<div id="cc3289bd-f2b3-44eb-9e13-4ec237cbda5a" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">'minnie65_public'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>If you don’t get any errors, your setup has worked and you can move on!</p>
-</section>
-<section id="something-went-wrong" class="level3">
-<h3 class="anchored" data-anchor-id="something-went-wrong">Something went wrong?</h3>
-<p>If you are having trouble with authentication or permissions, it is probably because the token you are trying to use is not the one CAVE expects.</p>
-<p>To find your current token, run the following code in a Jupyter notebook:</p>
-<div id="1f61f0aa-4c8d-4b41-bb42-916c017083d3" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient()</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>client.auth.token</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The notebook will print the token your computer is sending to the server.</p>
-<p>If this token is not the one you find from running the code in Scenario 2, follow the steps there to set up your computer with the correct token.</p>
+<section id="how-to-reference-a-neuron" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-reference-a-neuron">How to reference a neuron</h2>
+<p>The dynamic nature of the data means that there is more than one way to reference a neuron, and each way has a slightly different meaning.</p>
+<p>The most frequent way to reference a specific neuron is its <strong>root id</strong>, a unique integer that identifies a specific segmentation, and can be used in numerous places. However, as proofreading occurs, the segmentation of a cell can change, and each edit creates a new “version” of a given neuron that is given its own unique root id. Root ids thus refer to not only a specific cell, but a specific version of that cell.</p>
+<p>When downloading meshes, querying the database, or browsing in Neuroglancer, we use the <strong>root id</strong> of a cell.</p>
+<p>However, when using data from different points in time, however, root ids can change and the data might not be consistent across two time points. One way to make this easier is to only use data from one moment in time.</p>
+<p>This is the case for the public database that will be used in the course — all data from the public database is synched up to a single moment in time, but it does mean that the analysis cannot respond to any changes in segmentation. In some cases, in some cases, you might see the root id called a “segment id” or an “object id,” but they all refer to the same thing.</p>
+<p>For segmentations with a cell body in the volume, we also have a <strong>cell id</strong> (or <strong>soma id</strong>), which is a unique integer that identifies each nucleus in the dataset. The advantage of the soma id is that it remains constant across all versions of a cell, so it can be used to track a cell across time. The disadvantage is that to look up the id at any given time or to load into Neuroglancer, you need to look up the root id.</p>
+<p>Cell ids can be found in the <code>nucleus_detection_v0</code> table in the database, as well as many of the tables that reference cell types.</p>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -459,18 +427,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -502,7 +459,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/AllenInstitute\.github\.io\/microns_tutorial\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -537,7 +532,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -585,7 +584,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -819,7 +817,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/quickstart_notebooks/em_py_01_caveclient_setup.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/dataset-basics.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
