@@ -3,12 +3,17 @@
 Build for the tutorial.microns-explorer.org documentation. Website built with [Quarto](https://quarto.org/) `version 1.6.42`
 
 Running the code blocks requires packages:
-  `caveclient >=7.4.3`  
-  `cloud-volume >=12.1.0`  
-  `meshparty == 2.0.1`  
-  `pcg_skel >= 1.3.0`
-  `imageryclient >=1.0.4`  
-  `skeleton_plot >= 0.0.10`  
+
+```
+  caveclient >=7.4.3  
+  cloud-volume >=12.1.0  
+  meshparty == 2.0.1
+  pcg_skel >= 1.3.0
+  imageryclient >=1.0.4 
+  skeleton_plot >= 0.0.10
+```
+
+All available with `pip install`.
 
 ## Issues
 We welcome bug reports and questions. Please post an informative issue on the GitHub issue tracker.
