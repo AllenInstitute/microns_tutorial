@@ -1,0 +1,28 @@
+Table name: `nucleus_ref_neuron_svm`
+
+While the table of centroids for all nuclei is `nucleus_detection_v0`, this includes neuronal nuclei, non-neuronal nuclei, and some erroneous detections.
+The table `nucleus_ref_neuron_svm` shows the results of a classifier that was trained to distinguish neuronal nuclei from non-neuronal nuclei and errors.
+For the purposes of analysis, we recommend using the `nucleus_ref_neuron_svm` table to get the most broad collection of neurons in the dataset.
+
+The key columns of `nucleus_ref_neuron_svm` are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the nucleus |
+| `classification-system` | Describes how the classification was done. All values will be `is_neuron` for this table |
+| `cell_type` | The output of the classifier. All values will be either `neuron` or `not-neuron` (glia or error) for this table |
+
+: Nucleus table column definitions {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 
+:::
+
+```python
+# Standard query
+client.materialize.query_table('nucleus_ref_neuron_svm')
+
+# Content-aware query
+client.materialize.tables.nucleus_ref_neuron_svm(target_id=example_nucleus_id).query()
+```

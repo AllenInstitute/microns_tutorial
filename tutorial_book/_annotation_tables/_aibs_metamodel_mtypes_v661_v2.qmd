@@ -1,0 +1,64 @@
+Table name: `aibs_metamodel_mtypes_v661_v2`
+
+Excitatory neurons and inhibitory neurons were distinguished with the soma-nucleus model [@elabbady_perisomatic_2022], and subclasses were assigned based on a data-driven clustering of the neuronal features. Inhibitory neurons were classified based on how they distributed they synaptic outputs onto target cells, while exictatory neurons were classified based on a collection of dendritic features. 
+
+This was applied to most detected neurons in the dataset that had complete cell bodies (e.g. not cut off by the edge of the data), detected by `nucleus_detection_v0`, with small-objects and multi-soma errors removed. The model was run with cell-based features as of version 661 of the dataset.For more details, see [@schneider-mizell2023]. 
+
+Note that all cell-type labels in this table come from a clustering specific to this paper, and while they are intended to align with the broader literature they are not a direct mapping or a well-established convention. 
+
+For a more conventional set of labels on the same set of cells, look at the manual table `allen_v1_column_types_slanted_ref`. Cell types in that table align with those in the `aibs_metamodel_celltypes_v661`.
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification-system`| `excitatory` or `inhibitory` |
+| `cell_type` | One of several cell types, detailed below |
+
+: Allen Motif-type (mtype) Table {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 
+:::
+
+The cell types in the table are:
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+### M-type Cell Type definitions
+
+| Cell Type | Subclass | Description |
+| :--- | :--- | :--- |
+| `L2a` | Excitatory | A cluster of layer 2 (upper layer 2/3) excitatory neurons | 
+| `L2b` | Excitatory | A cluster of layer 2 (upper layer 2/3) excitatory neurons | 
+| `L3a` | Excitatory | A cluster of excitatory neurons transitioning between upper and lower layer 2/3 | 
+| `L3b` | Excitatory | A cluster of layer 3 (upper layer 2/3) excitatory neurons | 
+| `L3c` | Excitatory | A cluster of layer 3 (upper layer 2/3) excitatory neurons | 
+| `L4a` | Excitatory | The largest cluster of layer 4 excitatory neurons | 
+| `L4b` | Excitatory | Another cluster of layer 4 excitatory neurons | 
+| `L4c` | Excitatory | A cluster of layer 4 excitatory neurons along the border with layer 5 | 
+| `L5a` | Excitatory | A cluster of layer 5 IT neurons at the top of layer 5 | 
+| `L5b` | Excitatory | A cluster of layer 5 IT neurons throughout layer 5 | 
+| `L5ET` | Excitatory | The cluster of layer 5 ET neurons | 
+| `L5NP` | Excitatory | The cluster of layer 5 NP neurons | 
+| `L6a` | Excitatory | A cluster of layer 6 IT neurons at the top of layer 6 | 
+| `L6b` | Excitatory | A cluster of layer 6 IT neurons throughout layer 6. *Note that this is different than the label "Layer 6b" which refers to a narrow band at the border between layer 6 and white matter* | 
+| `L6c` | Excitatory | A cluster of tall layer 6 cells (unsure if IT or CT) | 
+| `L6CT` | Excitatory | A cluster of tall layer 6 cells matching manual CT labels | 
+| `L6wm` | Excitatory | A cluster of layer 6 cells along the border with white matter | 
+| `PTC` | Inhibitory | Perisomatic targeting cells, a cluster of inhibitory neurons that target the soma and proximal dendrites of excitatory neurons. Approximately corresponds to **basket cell** | 
+| `DTC` | Inhibitory | Dendrite targeting cells, a cluster of inhibitory neurons that target the distal dendrites of excitatory neurons. Most **SST cells** would be DTC | 
+| `STC` | Inhibitory | Sparsely targeting cells, a cluster of inhibitory neurons that don't concentrate multiple synapses onto the same target neurons. Many **neurogliaform cells** and layer 1 interneurons fall into this category |
+| `ITC` | Inhibitory | Inhibitory targeting cells, a cluster of inhibitory neurons that preferntially target other inhibitory neurons. Most **VIP cells** would be ITCs |
+
+:::
+
+```python
+# Standard query
+client.materialize.query_table('aibs_metamodel_mtypes_v661_v2')
+
+# Content-aware query
+client.materialize.tables.aibs_metamodel_mtypes_v661_v2(id=example_nucleus_id).query()
+```

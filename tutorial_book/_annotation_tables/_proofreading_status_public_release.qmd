@@ -1,0 +1,37 @@
+Table name: `proofreading_status_public_release`
+
+The table `proofreading_status_public_release` describes the status of cells selected for manual proofreading.
+
+Because of the inherent difference in the challenge and time required for different kinds of proofreading, we describe the status of axons and dendrites separately.
+Further, we distinguish three different categories of proofreading:
+
+* `non`: No proofreading has been comprehensively performed.
+* `clean`: Proofreading has comprehensively removed false merges, but not necessarily added missing parts.
+* `extended`: Proofreading has comprehensively removed false merges and attempted to add all or most missing parts.
+
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `valid_id`| The root id of the neuron when it the proofreading assessment was made |
+| `status_dendrite` | The status of the dendrite proofreading. One of the three categories described above |
+| `status_axon` | The status of the axon proofreading. One of the three categories described above |
+
+: Proofreading Status Table {.light .hover}
+
+
+This table, `proofreading_status_public_release`, is superceded by `proofreading_status_and_strategy` and will be deprecated.
+
+```python
+# Set version to 1078 or before
+client.version = 1078
+
+# Standard query
+client.materialize.query_table('proofreading_status_public_release')
+
+# Content-aware query
+client.materialize.tables.proofreading_status_public_release(status_axon='extended').query()
+```

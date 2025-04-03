@@ -1,0 +1,26 @@
+Table name: `gamlin_2023_mcs`
+
+A table containing the manually selected Martinotti cells (MC) included in Gamlin et al., 2023 paper.
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification-system`| `allen_cortex_inhibitory`.
+| `cell_type` | `Martinotti` |
+
+: Gamlin et al. Martinotti cells {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 
+:::
+
+```python
+# Standard query
+client.materialize.query_table('gamlin_2023_mcs')
+
+# Content-aware query
+client.materialize.tables.gamlin_2023_mcs(id=example_nucleus_id).query()
+```

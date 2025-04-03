@@ -5,44 +5,69 @@ website:
   title: "MICrONs Tutorial"
   navbar:
     left:
-      - href: em_01_background.ipynb
+      - href: introduction.ipynb
         text: Introduction
       - href: https://www.microns-explorer.org/
         text: Microns Explorer
+      - href: analysis-gallery.ipynb
+        text: Analysis Gallery
+      - href: faq.ipynb
+        text: FAQ
     tools: 
+      - icon: chat-left-text-fill
+        href: https://github.com/AllenInstitute/microns_tutorial/discussions
       - icon: github
         menu:
           - text: Source Code
-            url:  https://github.com/bpdanskin/test_tutorial
+            url:  https://github.com/AllenInstitute/microns_tutorial
           - text: Report a Bug
-            url:  https://github.com/bpdanskin/test_tutorial/issues
+            url:  https://github.com/AllenInstitute/microns_tutorial/issues
   sidebar:
     style: "docked"
     search: true
     contents:
-      - em_01_background.ipynb
-      - em_02_dataset_basics.ipynb
-      - em_03_proofreading.ipynb
-      - em_04_neuroglancer.ipynb
-      - em_05_dash_apps.ipynb
+      - background.ipynb
+      - dataset-basics.ipynb
+      - section: "Versioning and Data Quality"
+        contents:
+          - proofreading.ipynb
+          - materialization-version.ipynb
+          - vortex-overview.ipynb
+      - section: "Online Tools"
+        contents:
+          - neuroglancer-basic.ipynb
+          - neuroglancer-advanced.ipynb
+          - neuroglancer-data.ipynb
+          - dash-table-viewer.ipynb
+          - dash-connectivity.ipynb
       - section: "Python Tools"
         contents:
-          - quickstart_notebooks/em_py_01_caveclient_setup.ipynb
-          - quickstart_notebooks/em_py_02_cave_quickstart.ipynb
-          - programmatic_access/em_py_03_annotation_tables.ipynb
-          - quickstart_notebooks/em_py_03_download_cell_connectivity.ipynb
-          - programmatic_access/em_py_04_imagery_segmentation.ipynb
-          - programmatic_access/em_py_05_meshes.ipynb
-          - programmatic_access/em_py_06_skeletons.ipynb
-          - programmatic_access/em_py_07_coordinates.ipynb
-      - programmatic_access/ultrastructure_tutorial/em_ultrastructure.ipynb
-      - section: "Examples"
-        contents: examples/*
+          - quickstart_notebooks/01-caveclient-setup.ipynb
+          - quickstart_notebooks/02-cave-query-cell-types.ipynb
+          - quickstart_notebooks/03-cave-query-proofread-cells.ipynb
+          - quickstart_notebooks/04-cave-query-synapses.ipynb
+          - quickstart_notebooks/05-cloudvolume-download.ipynb
+          - quickstart_notebooks/06-cloudvolume-download-mesh.ipynb
+          - quickstart_notebooks/07-cave-download-skeleton.ipynb
+          - quickstart_notebooks/08-standard-transform.ipynb
+          - quickstart_notebooks/09-nglui-neuroglancer.ipynb
+      - section: "Data Inventory"
+        contents:
+          - section: "Release Manifests"
+            contents: 
+              - release_manifests/version-1300.ipynb
+              - release_manifests/version-1181.ipynb
+              - release_manifests/version-1078.ipynb
+              - release_manifests/version-943.ipynb
+          - annotation-tables.ipynb
+          - functional-data.ipynb
+          - static-repositories.ipynb
   open-graph: true
   back-to-top-navigation: true
   page-footer: 
       center: "Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald"
       border: false
+  draft-mode: unlinked
   repo-url: https://github.com/AllenInstitute/microns_tutorial
   repo-actions: [edit, issue]
   repo-subdir: tutorial_book

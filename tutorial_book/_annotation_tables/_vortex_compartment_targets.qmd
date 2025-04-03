@@ -1,0 +1,25 @@
+Table name: `vortex_compartment_targets`
+
+Manual labeling of synaptic targets of putative parvalbumin basket cells, and inputs to pyramidal cells as part of the [VORTEX project](../vortex-overview.html). This is a reference table on the synapses table `synapses_pni_2`, and provided ground truth for the automatic classifier behind `synapse_target_predictions_ssa`.
+
+| Column | Description |
+| :--- | :--- |
+| `target_id` | reference id of the synapse in `synapses_pni_2` |
+| `tag` | Manual label of synapse type. One of: 'spine', 'shaft', 'soma', 'soma_spine', 'orphan', 'other'. Orphan refers to orphan neurites; other is a catch-all for synapses that do not match other labels |
+| `pre_pt_position` \ `pre_pt_supervoxel_id` \ `pre_pt_root_id` | The bound spatial point data for the presynaptic side of the synapse |
+| `post_pt_position` \ `post_pt_supervoxel_id` \ `post_pt_root_id` | The bound spatial point data for the postsynaptic side of the synapse |
+
+: Proofreading Status Table {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `synapses_pni_2`, and can be indexed by the same synapse id. 
+:::
+
+
+```python
+# Standard query
+client.materialize.query_table('vortex_compartment_targets', limit=10)
+
+# Content-aware query
+client.materialize.tables.vortex_compartment_targets(pre_pt_root_id=example_root_id).query()
+```

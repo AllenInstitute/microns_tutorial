@@ -1,0 +1,25 @@
+Table name: `vortex_manual_myelination_v0`
+
+Manual labeling of myelin at 1 um resolution along axons, as part of the [VORTEX project](../vortex-overview.html). This table was created in parallel to the node of Ranvier labeling, `vortex_manual_nodes_of_ranvier`, and used for ground truth of the `myelin_auto_tags` myelination classifier. 
+
+| Column | Description |
+| :--- | :--- |
+| `pt_position` | The position along the axon that was evaluated for myelin. Note that this position is not always on the segmentation of the axon |
+| `valid_id` | The segmentation root_id associated with this assessment is the valid_id, NOT necessarily the `pt_root_id` associated with the point |
+| `tag` | Myelination status, either `True` or `False` |
+| `pt_supervoxel_id` \ `pt_root_id` | The bound spatial point data for the evaluated point. This may not match the valid_id due to proofreading, or spatial downsampling when evaluating the points. |
+
+: Manual Myelination {.light .hover}
+
+:::{.callout-warning}
+The myelination was evaluated for the `valid_id` and not necessarily the `pt_root_id`. 
+:::
+
+
+```python
+# Standard query
+client.materialize.query_table('vortex_manual_myelination_v0', limit=10)
+
+# Content-aware query
+client.materialize.tables.vortex_manual_myelination_v0(valid_id=example_root_id).query()
+```

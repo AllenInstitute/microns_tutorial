@@ -1,0 +1,39 @@
+Table name: `coregistration_auto_phase3_fwd_apl_vess_combined_v2`
+
+A table of EM nucleus centroids automatically matched to Baylor functional units. This table reconciles the following two tables that both make a best match of the of registration using different techniques: `coregistration_auto_phase3_fwd_v2` and `apl_functional_coreg_vess_fwd`. A unique functional unit is identified by its session, scan_idx and unit_id. An EM nucleus centroid may have matched to more than one functional unit if it was scanned on more than one imaging field.
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `session`| The session index from functional imaging |
+| `scan_idx` | The scan index from functional imaging |
+| `unit_id` | The functional unit index from imaging. Only unique within scan and session |
+| `field` | The field index from functional imaging |
+| `residual` | The residual distance between the functional and the assigned structural points after transformation, in microns |
+| `score` | A separation score, measuring the difference between the residual distance to the assigned neuron and the distance to the nearest non-assigned neuron, in microns. *This can be negative if the non-assigned neuron is closer than the assigned neuron. Larger values indicate fewer nearby neurons that could be confused with the assigned neuron.* |
+
+: Coregistration table {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 
+:::
+
+:::{.callout-warning}
+This table includes duplicate entries for the same `pt_root_id` and nucleus id if the coregistered cell has multiple unit recordings
+:::
+
+```python
+# Standard query
+client.materialize.query_table('coregistration_auto_phase3_fwd_apl_vess_combined_v2')
+
+# Content-aware query
+client.materialize.tables.coregistration_auto_phase3_fwd_apl_vess_combined_v2(id=example_nucleus_id).query()
+```
+
+This table `coregistration_auto_phase3_fwd_apl_vess_combined_v2` supercedes previous iterations of this table:
+
+* `coregistration_auto_phase3_fwd_apl_vess_combined_v2`
+* `apl_functional_coreg_forward_v5`

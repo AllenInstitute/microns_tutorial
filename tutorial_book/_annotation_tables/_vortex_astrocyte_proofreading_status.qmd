@@ -1,0 +1,20 @@
+Table name: `vortex_astrocyte_proofreading_status`
+
+Manual screening and proofreading of astrocytes as part of the as part of the [VORTEX project](../vortex-overview.html).
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `status`| One of 'non' indicating no cleaning or extension; 'clean' indicating neurite and non-astrocytic elements have been manually removed; 'extended' meaning astrocytic processes within the volume of the astrocyte have been comprehensively reviewed and assigned to the most likely cell |
+| `valid_id` | The root id of the astrocyte when it the proofreading assessment was made |
+
+```python
+# Standard query
+client.materialize.query_table('vortex_astrocyte_proofreading_status')
+
+# Content-aware query
+client.materialize.tables.vortex_astrocyte_proofreading_status(status='clean').query()
+```

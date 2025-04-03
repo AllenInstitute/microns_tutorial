@@ -1,0 +1,24 @@
+Table name: `vortex_manual_nodes_of_ranvier`
+
+This table annotates manually identified nodes of Ranvier on the axon of a subset of cells. Each point listed was inspected and manually labeled for the presence of myelin; nodes were suggested where myelination disappeared and reappeared within 5 um. Labeling performed as part of the [VORTEX project](../vortex-overview.html), and created in parallel to the myelin labeling, listed below as `vortex_manual_myelination_v0`.
+
+| Column | Description |
+| :--- | :--- |
+| `pt_position` | The position along the axon that was evaluated for myelin. Note that this position is not always on the segmentation of the axon |
+| `valid_id` | The segmentation root_id associated with this assessment is the valid_id, NOT necessarily the `pt_root_id` associated with the point |
+| `tag` | presence of a node of Ranvier, labeled as `node` |
+| `pt_supervoxel_id` \ `pt_root_id` | The bound spatial point data for the evaluated point. This may not match the valid_id due to proofreading, or spatial downsampling when evaluating the points. |
+
+: Manual Myelination {.light .hover}
+
+:::{.callout-warning}
+The myelination was evaluated for the `valid_id` and not necessarily the `pt_root_id`. 
+:::
+
+```python
+# Standard query
+client.materialize.query_table('vortex_manual_nodes_of_ranvier')
+
+# Content-aware query
+client.materialize.tables.vortex_manual_nodes_of_ranvier(valid_id=example_root_id).query()
+```

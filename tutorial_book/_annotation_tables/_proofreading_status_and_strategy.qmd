@@ -1,0 +1,52 @@
+Table name: `proofreading_status_and_strategy`
+
+The table `proofreading_status_and_strategy` describes the status of cells that have undergone manual proofreading.
+
+Because of the inherent difference in the difficulty and time required for different kinds of proofreading, we describe the status of axons and dendrites separately.
+
+Each compartment `status` may be either:
+
+* `FALSE`: indicates no comprehensive proofreading has been performed, or is not applicable.  
+* `TRUE`: indicates that false merges have been comprehensively removed, and the compartment is at least ‘clean’. Consult the `strategy` column if completeness of the compartment is relevant to your  research.
+
+An axon or dendrite labeled as `status=TRUE` can be trusted to be correct, but may not be complete. The degree of completion can be read from the `strategy` column. For more information, please see [Proofreading and Data Quality](../em_03_proofreading.html); or also the [microns-explorer page on proofreading strategies](https://www.microns-explorer.org/manifests/mm3-proofreading). 
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `valid_id`| The root id of the neuron when it the proofreading assessment was made. _NOTE: if this does not match the `pt_root_id` then the cell has undergone further changes. This is usually and improvement in proofreading, but proceed with caution._ |
+| `status_dendrite` | The status of the dendrite proofreading. May be `TRUE` or `FALSE` |
+| `status_axon` | The status of the axon proofreading. May be `TRUE` or `FALSE` |
+| `strategy_dendrite` | The strategy employed to proofread the dendrite. See strategy table below for details |
+| `strategy_axon` | The strategy employed to proofread the axon. See strategy table below for details |
+
+: Proofreading Status Table {.light .hover}
+
+The specific strategies are as follows (and will update over time):
+
+#### Proofreading Strategies
+
+| Strategy | Description |
+| :- | :----- |
+| `none` | No cleaning, and no extension. Indicates an entry in `proofreading_status` that is `FALSE` for that compartment | 
+| `dendrite_clean` | The dendrite had incorrectly-merged axon and dendritic segments comprehensively removed, meaning the input synapses are accurate. The dendrite may be incorrectly truncated by segmentation error. Not all dendrite tips have been checked for extension.  No comprehensive attempt was made to re-attach spine heads.  | 
+| `dendrite_extended` |  The dendrite had incorrectly-merged axon and dendritic segments comprehensively removed, meaning the input synapses are accurate. Every tip was identified, manually inspected, and extended if possible. No comprehensive attempt was made to re-attach spine heads. | 
+| `axon_column_truncated` |  AThe axon was extended within the V1 cortical column, with a preference for local connections. In some cases the axon was cut at the column boundary and/or the layer boundary, especially the boundary between layers 2/3 and layer 4. Output synapses represent a sampling of potential partners  | 
+| `axon_interareal` |  The axon was extended with a preference for branches that projected to other brain areas. Some axon branches were fully extended, but local connections may be incomplete. Output synapses represent a sampling of potential partners.  | 
+| `axon_partially_extended` | The axon was extended outward from the soma, following each branch to its termination. Output synapses represent a sampling of potential partners.  | 
+| `axon_fully_extended` | Axon was extended outward from the soma, following each branch to its termination. After initial extension, every endpoint was identified, manually inspected, and extended again if possible. Output synapses represent a largely complete sampling of partners. | 
+
+: Proofreading Strategy Table {.light .hover}
+
+This table, `proofreading_status_and_strategy`, supercedes `proofreading_status_public_release`.
+
+```python
+# Standard query
+client.materialize.query_table('proofreading_status_and_strategy')
+
+# Content-aware query
+client.materialize.tables.proofreading_status_and_strategy(status_axon='t').query()
+```

@@ -1,0 +1,17 @@
+name: microns_env_2025
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  - ipykernel
+  - jupyter
+  - jupyterlab
+  - ipywidgets
+  - pip:
+      - caveclient
+      - meshparty
+      - nglui
+      - pcg-skel
+      - skeleton-plot
+  
