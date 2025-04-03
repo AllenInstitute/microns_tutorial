@@ -2,16 +2,23 @@
 title: "MICrONs Tutorials"
 ---
 
-Introduction to the [MICrONs-Explorer](https://www.microns-explorer.org/) data ecosystem
+Welcome to the [MICrONs-Explorer](https://www.microns-explorer.org/) data ecosystem.
 
-A functional connectome containing 200,000 cells, 75,000 neurons with physiology, and 523 million synapses.
+The MICrONS open-access dataset is a  functional connectome containing __200,000 cells, 75,000 neurons with physiology, and 523 million synapses.__
+
 This resource provides interactive visualizations of anatomical and functional data that span all 6 layers of mouse primary visual cortex and 3 higher visual areas (LM, AL, RL) within a cubic millimeter volume.
 
+__Highlights:__
 
 
-::: {.callout-important}
-## Under construction
-This website will be undergoing major updates as we add tutorials and features. 
-:::
+> Motivation of and introduction to the MICrONS dataset: [Introduction](introduction.html)
+>  
+> Overview of dataset collection, methods, and outputs: [Background](background.html)
+>  
+> Programmatic access quickstart: [Python Tools](quickstart_notebooks/01-caveclient-setup.html)
+>  
+> Data Release information: Data Inventory, including [Annotation Tables](annotation-tables.html) and [Release Manifests](release_manifests/version-1300.html)
+>  
 
-![View in neuroglancer, from microns-explorer.org/mm3/explore](img/microns_explorer_landing.png)
+
+![Render of 3D reconstruction of pyramidal cells in mouse visual cortex, as seen in Neuroglancer](img/microns_explorer_landing.png)
