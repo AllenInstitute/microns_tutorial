@@ -15,6 +15,8 @@ __Highlights:__
 >  
 > Overview of dataset collection, methods, and outputs: [Background](background.html)
 >  
+> Ongoing proofreading efforts and analysis support through the: [VORTEX program](vortex-overview.html)
+>  
 > Programmatic access quickstart: [Python Tools](quickstart_notebooks/01-caveclient-setup.html)
 >  
 > Data Release information: Data Inventory, including [Annotation Tables](annotation-tables.html) and [Release Manifests](release_manifests/version-1300.html)
