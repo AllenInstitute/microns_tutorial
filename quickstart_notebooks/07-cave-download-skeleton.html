@@ -213,6 +213,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Proofreading and Data Quality</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../vortex-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Virtual Observatory of the Cortex (VORTEX)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -371,13 +377,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#connected-morphological-representations-skeletons" id="toc-connected-morphological-representations-skeletons" class="nav-link active" data-scroll-target="#connected-morphological-representations-skeletons">Connected morphological representations: skeletons</a>
-  <ul class="collapse">
+  <li><a href="#connected-morphological-representations-skeletons" id="toc-connected-morphological-representations-skeletons" class="nav-link active" data-scroll-target="#connected-morphological-representations-skeletons">Connected morphological representations: skeletons</a></li>
   <li><a href="#what-is-a-precomputed-skeleton" id="toc-what-is-a-precomputed-skeleton" class="nav-link" data-scroll-target="#what-is-a-precomputed-skeleton">What is a Precomputed skeleton?</a></li>
-  <li><a href="#caveclient-to-download-skeletons" id="toc-caveclient-to-download-skeletons" class="nav-link" data-scroll-target="#caveclient-to-download-skeletons">CAVEclient to download skeletons</a></li>
-  <li><a href="#download-or-generate-skeletons-with-pcg_skel" id="toc-download-or-generate-skeletons-with-pcg_skel" class="nav-link" data-scroll-target="#download-or-generate-skeletons-with-pcg_skel">Download or generate skeletons with <code>pcg_skel</code></a></li>
-  <li><a href="#plot-with-skeleton_plot" id="toc-plot-with-skeleton_plot" class="nav-link" data-scroll-target="#plot-with-skeleton_plot">Plot with <code>skeleton_plot</code></a></li>
+  <li><a href="#caveclient-to-download-skeletons" id="toc-caveclient-to-download-skeletons" class="nav-link" data-scroll-target="#caveclient-to-download-skeletons">CAVEclient to download skeletons</a>
+  <ul class="collapse">
+  <li><a href="#convert-dictionary-to-meshwork-skeleton" id="toc-convert-dictionary-to-meshwork-skeleton" class="nav-link" data-scroll-target="#convert-dictionary-to-meshwork-skeleton">convert dictionary to meshwork skeleton</a></li>
   </ul></li>
+  <li><a href="#plot-with-skeleton_plot" id="toc-plot-with-skeleton_plot" class="nav-link" data-scroll-target="#plot-with-skeleton_plot">Plot with skeleton_plot</a></li>
+  <li><a href="#download-or-generate-skeletons-with-pcg_skel" id="toc-download-or-generate-skeletons-with-pcg_skel" class="nav-link" data-scroll-target="#download-or-generate-skeletons-with-pcg_skel">Download or generate skeletons with <code>pcg_skel</code></a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/quickstart_notebooks/07-cave-download-skeleton.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/AllenInstitute/microns_tutorial/tree/main/tutorial_book/quickstart_notebooks"><i class="bi bi-file-code"></i>Download Quickstart Notebooks</a></li></ul></div></nav>
     </div>
@@ -403,8 +410,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="connected-morphological-representations-skeletons" class="level1">
-<h1>Connected morphological representations: skeletons</h1>
+<section id="connected-morphological-representations-skeletons" class="level2">
+<h2 class="anchored" data-anchor-id="connected-morphological-representations-skeletons">Connected morphological representations: skeletons</h2>
 <p>Often in thinking about neurons, you want to measure things along a linear dimension of a neuron.</p>
 <p>However, the segmentation and meshes are a full complex 3d shape that makes this non-trivial. There are methods for reducing the shape of a segmented neuron down to a linear tree like structure usually referred to as a <strong>skeleton</strong>. We have precalculated skeletons for a large number of cells in the dataset, and make the skeleton generation available on our server, on demand.</p>
 <p>The meshes that one sees in Neuroglancer are available to download through the python client <a href="https://github.com/seung-lab/cloud-volume">cloud-volume</a>, and can be loaded for analysis and visualization in other tools.</p>
@@ -440,6 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
 <section id="what-is-a-precomputed-skeleton" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-a-precomputed-skeleton">What is a Precomputed skeleton?</h2>
 <p>These skeletons are stored in the cloud as a bytes-IO object, which can be viewed in <strong>Neuroglancer</strong>, or downloaded with <strong>CAVEclient.skeleton</strong> module. These precomputed skeletons also contain annotations on the skeletons that have the synapses, which skeleton nodes are axon and which are dendrite, and which are likely the apical dendrite of excitatory neurons.</p>
@@ -585,16 +593,56 @@ Initial Setup
 Name: pt_root_id, dtype: int64</code></pre>
 </div>
 </div>
-<div id="3be30983-b96d-4a37-87e0-7a423bbec1b5" class="cell" data-scrolled="true" data-execution_count="13">
+<div id="9260c7ec-4780-4043-a435-b81e42d6a791" class="cell" data-scrolled="true" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>all_sk_dict <span class="op">=</span> client.skeleton.get_bulk_skeletons(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    prf_root_ids.head(<span class="dv">3</span>), </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    generate_missing_skeletons<span class="op">=</span><span class="va">False</span>,</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    output_format<span class="op">=</span><span class="st">'dict'</span>,</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    skeleton_version<span class="op">=</span><span class="dv">4</span>)</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>all_sk.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>all_sk_dict.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>dict_keys(['864691135441799752', '864691135855890478', '864691136521831825'])</code></pre>
+</div>
+</div>
+<div id="44de057f-12ec-42c9-bb47-321b5a7ed56b" class="cell" data-scrolled="true" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>all_sk_dict[<span class="st">'864691135441799752'</span>].keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>dict_keys(['meta', 'edges', 'mesh_to_skel_map', 'root', 'vertices', 'compartment', 'radius', 'lvl2_ids'])</code></pre>
+</div>
+</div>
+<section id="convert-dictionary-to-meshwork-skeleton" class="level3">
+<h3 class="anchored" data-anchor-id="convert-dictionary-to-meshwork-skeleton">convert dictionary to meshwork skeleton</h3>
+<p>We use the python package <strong>Meshparty</strong> to convert between mesh representations of neurons, and skeleton representations.</p>
+<p>See <a href="06-cloudvolume-download-meshes.html">Download Meshes | MeshParty</a> for more details.</p>
+<p>Skeletons are “tree-like”, where every vertex (except the root vertex) has a single parent that is closer to the root than it, and any number of child vertices. Because of this, for a skeleton there are well-defined directions “away from root” and “towards root” and few types of vertices have special names:</p>
+<p>Converting the pregenerated skeleton <code>sk_dict</code> to a meshwork object <code>sk</code> converts the skeleton to a graph object, for convenient representation and analysis.</p>
+<div id="e1b32cf4-e581-4383-92f6-668b3b8e057a" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> meshparty.skeleton <span class="im">import</span> Skeleton</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>sk <span class="op">=</span> Skeleton.from_dict(sk_dict)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="plot-with-skeleton_plot" class="level2">
+<h2 class="anchored" data-anchor-id="plot-with-skeleton_plot">Plot with skeleton_plot</h2>
+<p>Our convenience package <strong>skeleton_plot</strong> renders the skeleton in aligned, 2D views.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pip install skeleton_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Our convenience package <strong>skeleton_plot</strong> renders the skeleton in aligned, 2D views, with the compartments labeled in different colors. Here, <em>dendrite</em> is red, <em>axon</em> is blue, and <em>soma</em> (the root of the connected graph) is olive</p>
+<div id="6ce2582a-f097-4ca3-8fb3-40d6730f6f64" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> skeleton_plot.plot_tools <span class="im">import</span> plot_skel</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plot_skel(sk<span class="op">=</span>sk,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>          invert_y<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>          pull_compartment_colors<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>          plot_soma<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>         )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="07-cave-download-skeleton_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -603,46 +651,25 @@ Name: pt_root_id, dtype: int64</code></pre>
 <p><code>pcg_skel</code> is a package used to rapidly build neuronal skeletons from electron microscopy data in the CAVE ecosystem. It integrates structural data, connectivity data, and local features stored across many aspects of a CAVE system, and creates objects as <a href="https://github.com/CAVEconnectome/MeshParty">Meshparty</a> meshes, skeletons, and MeshWork files for subsequent analysis.</p>
 <p>By harnessing the way the structural data is stored, you can build skeletons for even very large neurons quickly and with little memory use.</p>
 <p>To install pcg_skel, use pip.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pip install pcg_skel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>By loading a skeleton with MeshParty, you can easily ‘rehydrate’ the mesh features of the neuron (such as synapses) and MeshParty functions (such as masking)</p>
-<div id="6d9ce395-bfae-498a-9380-ce06f6032ed8" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pcg_skel <span class="im">import</span> get_meshwork_from_client</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sk_mesh <span class="op">=</span> get_meshwork_from_client(example_cell_id,</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                                   client<span class="op">=</span>client,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                                   synapses<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="co"># restore_graph=True,</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                                   restore_properties<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>                                   skeleton_version<span class="op">=</span><span class="dv">4</span>,</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>sk_mesh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
-<pre><code>&lt;meshparty.meshwork.meshwork.Meshwork at 0x2175d3d13d0&gt;</code></pre>
-</div>
-</div>
-</section>
-<section id="plot-with-skeleton_plot" class="level2">
-<h2 class="anchored" data-anchor-id="plot-with-skeleton_plot">Plot with <code>skeleton_plot</code></h2>
-<p>Our convenience package <strong>skeleton_plot</strong> renders the skeleton in aligned, 2D views.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pip install skeleton_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="f737a84b-16b8-4558-9516-a75c01ce2a89" class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> skeleton_plot</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>skeleton_plot.plot_tools.plot_skel(sk<span class="op">=</span>sk_mesh.skeleton,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                                   invert_y<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                                   pull_compartment_colors<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                                   plot_soma<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07-cave-download-skeleton_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>pip install pcg_skel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>By loading a skeleton as a meshwork skeleton, you can easily ‘rehydrate’ the mesh features of the neuron (such as synapses) and MeshParty functions (such as masking)</p>
+<div id="6d9ce395-bfae-498a-9380-ce06f6032ed8" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pcg_skel <span class="im">import</span> get_meshwork_from_client</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>sk_mesh <span class="op">=</span> get_meshwork_from_client(example_cell_id,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                                   client<span class="op">=</span>client,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                                   synapses<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                                   restore_graph<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                                   restore_properties<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                                   skeleton_version<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>sk_mesh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>&lt;meshparty.meshwork.meshwork.Meshwork at 0x1fe3734e110&gt;</code></pre>
 </div>
 </div>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

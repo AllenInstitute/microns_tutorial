@@ -207,6 +207,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Proofreading and Data Quality</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../vortex-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Virtual Observatory of the Cortex (VORTEX)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -424,7 +430,7 @@ Initial Setup
 <section id="scenario-1-new-user-no-previous-account" class="level3">
 <h3 class="anchored" data-anchor-id="scenario-1-new-user-no-previous-account">Scenario 1: New User, No Previous Account</h3>
 <p>If you have never interacted with CAVE before, you will need to both create an account and get a token. Note that you can only have one token at a time, and thus if you create a new token any computer running a previous one will no longer have access.</p>
-<p>Step 1: Log into a CAVE site to set up a new account with a GMail-associated email address. To do this, click <a href="https://minnie.microns-daf.com/materialize/views/datastack/minnie65_public">this link</a> and acknowledge the terms of service associated with the MICrONS dataset. Once you have done this, your account is automatically created.</p>
+<p>Step 1: Log into a CAVE site to set up a new account with a GMail-associated email address. To do this, click <a href="https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept"><strong>this link</strong></a> and acknowledge the terms of service associated with the MICrONS dataset. Once you have done this, your account is automatically created.</p>
 <p>Step 2: Generate a token. To generate a token, run the following code in a Jupyter notebook:</p>
 <div id="b7f2fd3f-2d42-4504-aab3-48f9289c0009" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>

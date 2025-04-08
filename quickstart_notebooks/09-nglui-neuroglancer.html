@@ -210,6 +210,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Proofreading and Data Quality</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../vortex-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Virtual Observatory of the Cortex (VORTEX)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -513,11 +519,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="generating-neuroglancer-states-from-data">Generating Neuroglancer States from Data</h3>
 <p>The <code>nglui.statebuilder</code> package is used to build Neuroglancer states that express arbitrary data.</p>
 <p>The <a href="https://caveconnectome.github.io/nglui/usage/config/">Site Configuration</a> options determine the default configurations for your <code>StateBuilder</code> objects. We will set this to <code>spelunker</code>, and set the materialization version to <code>661</code> for reproducibility.</p>
-<div id="107ae3d2-69ab-42a5-843b-fbd47053e427" class="cell" data-execution_count="10">
+<div id="107ae3d2-69ab-42a5-843b-fbd47053e427" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nglui <span class="im">import</span> statebuilder</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>statebuilder.site_utils.set_default_config(target_site<span class="op">=</span><span class="st">'spelunker'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>client.version<span class="op">=</span><span class="dv">661</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>client.version<span class="op">=</span><span class="dv">1300</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The general pattern is that one makes a “StateBuilder” object that has rules for how to build a Neuroglancer state layer by layer, including selecting certain neurons, and populate layers of annotations.<br>
 You then pass a DataFrame to the StateBuiler, and the rules tell it how to render the DataFrame into a Neuroglancer link.<br>
@@ -525,18 +531,18 @@ The same set of rules can be used on similar dataframes but with different data,
 To understand the detailed use of the package, please see the <a href="https://caveconnectome.github.io/nglui/usage/statebuilder/">tutorial</a>.</p>
 <p>However, a number of basic helper functions allow <code>nglui</code> to be used for common functions in just a few lines.</p>
 <p>For example, to generate a Neuroglancer state that shows a neuron and its synaptic inputs and outputs, we can use the <code>make_neuron_neuroglancer_link</code> helper function.</p>
-<div id="657910bc-023f-4be4-839f-2845d164259a" class="cell" data-execution_count="12">
+<div id="657910bc-023f-4be4-839f-2845d164259a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nglui.statebuilder <span class="im">import</span> helpers</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>statebuilder.helpers.make_neuron_neuroglancer_link(</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    client,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="dv">864691135122603047</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="dv">864691135441799752</span>,</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    show_inputs<span class="op">=</span><span class="va">True</span>,</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    show_outputs<span class="op">=</span><span class="va">True</span>,</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    return_as<span class="op">=</span><span class="st">'html'</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6739189258256384">Neuroglancer Link</a>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5240350697324544">Neuroglancer Link</a>
 </div>
 </div>
 <p>The main helper functions are:</p>

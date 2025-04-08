@@ -213,6 +213,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Proofreading and Data Quality</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../vortex-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Virtual Observatory of the Cortex (VORTEX)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -458,7 +464,7 @@ Quickstart
 <div id="468594d9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>client.materialize.get_versions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>[1078, 117, 661, 343, 1181, 795, 943]</code></pre>
+<pre><code>[1300, 1078, 117, 661, 343, 1181, 795, 943]</code></pre>
 </div>
 </div>
 <p>And these are their associated timestamps (all timestamps are in UTC):</p>
@@ -466,7 +472,8 @@ Quickstart
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> version <span class="kw">in</span> client.materialize.get_versions():</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Version </span><span class="sc">{</span>version<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>client<span class="sc">.</span>materialize<span class="sc">.</span>get_timestamp(version)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Version 1078: 2024-06-05 10:10:01.203215+00:00
+<pre><code>Version 1300: 2025-01-13 10:10:01.286229+00:00
+Version 1078: 2024-06-05 10:10:01.203215+00:00
 Version 117: 2021-06-11 08:10:00.215114+00:00
 Version 661: 2023-04-06 20:17:09.199182+00:00
 Version 343: 2022-02-24 08:10:00.184668+00:00
@@ -476,7 +483,7 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 </div>
 </div>
 <p>The client will automatically query the latest materialization version. You can specify a <code>materialization_version</code> for every query if you want to access a specific version.</p>
-<p>For instance, this example uses <strong>version 1181</strong>, and not default latest</p>
+<p>For instance, this example uses <strong>version 1181</strong>, and not default latest (version 1300, at time of writing)</p>
 <div id="8971ea84-0860-440a-a163-bf51ed437b34" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>client.version<span class="op">=</span><span class="dv">1181</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>

@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -66,18 +100,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Virtual Observatory of the Cortex (VORTEX) – MICrONs Tutorial">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://AllenInstitute.github.io/microns_tutorial/img/edit_annotation_chart_y1_p1.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
+<meta property="og:image:height" content="1600">
+<meta property="og:image:width" content="2400">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -171,6 +208,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./proofreading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Proofreading and Data Quality</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vortex-overview.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Virtual Observatory of the Cortex (VORTEX)</span></a>
   </div>
 </li>
       </ul>
@@ -326,8 +369,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link active" data-scroll-target="#how-it-works">How it works:</a>
+  <ul class="collapse">
+  <li><a href="#data-sharing-policy" id="toc-data-sharing-policy" class="nav-link" data-scroll-target="#data-sharing-policy">Data Sharing Policy</a></li>
+  <li><a href="#submit-the-form" id="toc-submit-the-form" class="nav-link" data-scroll-target="#submit-the-form">Submit the Form</a></li>
+  </ul></li>
+  <li><a href="#scientific-proposals-recieved" id="toc-scientific-proposals-recieved" class="nav-link" data-scroll-target="#scientific-proposals-recieved">Scientific Proposals Recieved</a></li>
+  <li><a href="#project-outcomes" id="toc-project-outcomes" class="nav-link" data-scroll-target="#project-outcomes">Project Outcomes</a>
+  <ul class="collapse">
+  <li><a href="#year-1-period-1" id="toc-year-1-period-1" class="nav-link" data-scroll-target="#year-1-period-1">Year 1: Period 1</a></li>
+  <li><a href="#year-1-period-2" id="toc-year-1-period-2" class="nav-link" data-scroll-target="#year-1-period-2">Year 1: Period 2</a></li>
+  </ul></li>
+  <li><a href="#contributions" id="toc-contributions" class="nav-link" data-scroll-target="#contributions">Contributions</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/vortex-overview.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -351,8 +411,474 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<h2 class="anchored">
+A BRAIN initiative funded project to bring the MICrONS dataset to the scientific research community.
+</h2>
+<p>Is there an observation you could make from this dataset that would help you answer a scientific question, but you aren’t sure how to make it? Or maybe you know how to make it, but don’t have the time or resources to repair or annotate enough examples to answer your question.</p>
+<p>The Virtual Observatory of the Cortex is a grant funded mechanism designed to assist you in precisely this situation. We provide the labor and experience to make corrections and annotations in the data. The results of these efforts will be integrated with an evolving version of the dataset, and shared with you and the larger scientific community.</p>
+<p>We think of it as a metaphor for a large scale astronomy survey: we are providing the infrastructure and focusing mechanisms, the community is steering the observations to the spots of maximum interest, and everyone can see what comes out!</p>
+<section id="how-it-works" class="level2">
+<h2 class="anchored" data-anchor-id="how-it-works">How it works:</h2>
+<p><strong>1. Submit a Request</strong></p>
+<p>Members of the scientific community submits a short request for information they believe might be contained within this dataset, but might require some work to extract. For example:</p>
+<ul>
+<li>proofreading axons and dendrites for a specific group of neurons</li>
+<li>annotating the locations of dense core vesicles in these particular cells</li>
+<li>annotating locations where microglia have engulfed synapses</li>
+</ul>
+<p><strong>2. Develop a Plan</strong></p>
+<p>A scientist at the Allen Institute will work with you on developing a plan that helps address the scientific question you are interested in, including any manual proofreading and annotation work that needs to be done.</p>
+<p>Plans will be designed to maximize impact across all requests when possible.</p>
+<p><strong>3. Plan Execution</strong></p>
+<p>A Scientific Steering Group will evaluate all the plans and prioritize the manual work based upon the resources available to the virtual observatory.</p>
+<p>Plans will then be carried out by staff of the virtual observatory, with no costs to the requestor.</p>
+<p><strong>4. Data Sharing</strong></p>
+<p>The data produced from the efforts of the manual proofreaders is then shared with the entire scientific community for everyone to benefit from.</p>
+<p>Data releases will occur at least quarterly.</p>
+<section id="data-sharing-policy" class="level3">
+<h3 class="anchored" data-anchor-id="data-sharing-policy">Data Sharing Policy</h3>
+<p>Data created by the Vortex project, such a proofreading and annotations, will be integrated into broader publicly available dataset for everyone to use. Proofreading updates the segmentation, which will be released along with any other changes that are part of the centralized dataset, no matter their source. Annotations will be made on the dataset and released as tables via the CAVEclient, and periodically as static file dumps available via google cloud. See the specific dataset pages for details on data access.</p>
+</section>
+<section id="submit-the-form" class="level3">
+<h3 class="anchored" data-anchor-id="submit-the-form">Submit the Form</h3>
+<p>Access the submission system at:</p>
+<p><a href="https://www.microns-explorer.org/vortex#request-form" class="btn btn-outline-primary" role="button" data-toggle="tooltip" title="VORTEX Request">microns-explorer.org/requests | Scientific Request Form</a></p>
+<p>We are also conducting a community survey. If you are using, have used, or plan to use the MICrONS data, give us some feedback!</p>
+<p><a href="https://forms.gle/3zaVQizHdrL5zkVh8" class="btn btn-outline-primary" role="button" data-toggle="tooltip" title="Community Survey">MICrONS Community Survey</a></p>
+</section>
+</section>
+<section id="scientific-proposals-recieved" class="level2">
+<h2 class="anchored" data-anchor-id="scientific-proposals-recieved">Scientific Proposals Recieved</h2>
+<table class="table-light table-hover caption-top table">
+<caption>VORTEX Requests Recieved</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Recieved</th>
+<th style="text-align: left;">Topic</th>
+<th style="text-align: left;">Task</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">How does the orientation tuning of visual cortical neurons arise from the functional organization of inputs onto their dendritic tree?</td>
+<td style="text-align: left;">Axon extension of functionally recorded cells</td>
+<td style="text-align: left;">Complete (111 cells): <a href="release_manifests/version-1078.html">Y1: 1078</a>; (547 cells): <a href="release_manifests/version-1300.html">Y2: 1300</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">How does neural computation arise from the combination of inputs along the dendritic tree?</td>
+<td style="text-align: left;">Axon extension of functionally recorded cells</td>
+<td style="text-align: left;">Complete (111 cells): <a href="release_manifests/version-1078.html">Y1: 1078</a>; (547 cells): <a href="release_manifests/version-1300.html">Y2: 1300</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">To what extent do interareal cortical connections exhibit precise recurrent interactions, and are these connection probabilities governed by shared retinotopy?</td>
+<td style="text-align: left;">Axon extension of functionally recorded cells</td>
+<td style="text-align: left;">Complete (111 cells): <a href="release_manifests/version-1078.html">Y1: 1078</a>; (547 cells): <a href="release_manifests/version-1300.html">Y2: 1300</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">What are the detailed connectivity properties of cortical PV basket cells?</td>
+<td style="text-align: left;">Annotation of parvalbumin interneurons</td>
+<td style="text-align: left;">Complete (20 cells): <a href="release_manifests/version-1078.html">Y1: 1078</a>; (5 cells): <a href="release_manifests/version-1300.html">Y2: 1300</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">How does the connectivity pattern of SST/Chodl cells give rise to their physiological feature: synchronization of cortical states?</td>
+<td style="text-align: left;">Axon extension of putative Chodl cells</td>
+<td style="text-align: left;">Incomplete: pending putative Chodl cells</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">How do astrocytes interact with neurons, at multiple scales of organization and operation?</td>
+<td style="text-align: left;">Proofread ‘cleaning’ of astrocytes</td>
+<td style="text-align: left;">Complete (12 cells): <a href="release_manifests/version-1078.html">Y1: 1078</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">How does the presence of vasculature affect the distribution of electric charge due to an applied electric field (brain stimulation)?</td>
+<td style="text-align: left;">Analysis support</td>
+<td style="text-align: left;">Complete: <a href="release_manifests/version-1078.html">Y1: 1078</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">What is the mechanism of electrical neuro-vasculature coupling, at the microscopic level?</td>
+<td style="text-align: left;">Analysis support</td>
+<td style="text-align: left;">Complete: <a href="release_manifests/version-1078.html">Y1: 1078</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">Census of spinehead apparatus</td>
+<td style="text-align: left;">Annotation of pyramidal spine inputs</td>
+<td style="text-align: left;">Complete (8 cells): <a href="release_manifests/version-1300.html">Y2: 1300</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">OPC spacing and cilia orientation</td>
+<td style="text-align: left;">OPC proofreading and annotation</td>
+<td style="text-align: left;">Incomplete: pending resources</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">Myelin density in cortex</td>
+<td style="text-align: left;">Annotation of myelin</td>
+<td style="text-align: left;">Complete: <a href="release_manifests/version-1300.html">Y2: 1300</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">Perivascular fibroblast</td>
+<td style="text-align: left;">Analysis support</td>
+<td style="text-align: left;">Complete</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">Local environment of spine synapses</td>
+<td style="text-align: left;">Annotation of pyramidal spine inputs</td>
+<td style="text-align: left;">Complete (8 cells): <a href="release_manifests/version-1300.html">Y2: 1300</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y1</td>
+<td style="text-align: left;">Inhibitory-Excitatory connectivity motifs</td>
+<td style="text-align: left;">Axon extenstion of functionally coregistered cells</td>
+<td style="text-align: left;">Complete (547 cells: <a href="release_manifests/version-1300.html">Y2:1300</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y2</td>
+<td style="text-align: left;">Proximity metrics for pyramidal cell dendrites</td>
+<td style="text-align: left;">Analysis support</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y2</td>
+<td style="text-align: left;">Subcellular distribution of large secretory vesicles</td>
+<td style="text-align: left;">Annotation of dense core vesicles</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y2</td>
+<td style="text-align: left;">Neuromodulation at the blood-brain barrier</td>
+<td style="text-align: left;">Axon extenstion of putative neuromodulatory axons</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y2</td>
+<td style="text-align: left;">Neuron structure modeling, using skeletonized neurons</td>
+<td style="text-align: left;">Axon extension: pyramidal cells ; Axon extension: inhibitory cells</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y2</td>
+<td style="text-align: left;">Microglia interaction at synapses</td>
+<td style="text-align: left;">Annotation of microglia lysosomes</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y2</td>
+<td style="text-align: left;">Uncovering local and long-range circuit organization</td>
+<td style="text-align: left;">Axon extension: pyramidal cells ; Axon extension: inhibitory cells</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y2</td>
+<td style="text-align: left;">Connectomics of response heterogeneity in mouse visual cortex</td>
+<td style="text-align: left;">Axon extension of functionally recorded cells</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y2</td>
+<td style="text-align: left;">Design principles underlying astrocyte morphology</td>
+<td style="text-align: left;">Proofread ‘cleaning’ of astrocyte</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y2</td>
+<td style="text-align: left;">Connection between SST subtypes and pyramidal neurons</td>
+<td style="text-align: left;">Axon extension: inhibitory cells</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y2</td>
+<td style="text-align: left;">Dopaminergic projections to cortex</td>
+<td style="text-align: left;">Axon extenstion of putative neuromodulatory axons</td>
+<td style="text-align: left;">Ongoing</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="project-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="project-outcomes">Project Outcomes</h2>
+<section id="year-1-period-1" class="level3">
+<h3 class="anchored" data-anchor-id="year-1-period-1">Year 1: Period 1</h3>
+<div class="grid">
+<div class="g-col-6">
+<table class="table-light table-hover caption-top table">
+<caption>VORTEX Proofreading Plans | Year 1 Period 1</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">SSG Rank</th>
+<th style="text-align: left;">Task</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1.6</td>
+<td style="text-align: left;">Axon extension of functionally recorded cells</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2.0</td>
+<td style="text-align: left;">Proofread ‘cleaning’ of astrocytes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2.6</td>
+<td style="text-align: left;">Vasculature Analysis support</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3.4</td>
+<td style="text-align: left;">Annotation of parvalbumin interneurons</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4.6</td>
+<td style="text-align: left;">Axon extension of putative Chodl cells</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="g-col-6">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/edit_annotation_chart_y1_p1.png" class="img-fluid figure-img"></p>
+<figcaption>Proofreading edits by type</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<h3 class="anchored">
+Axon extension of functionally recorded cells
+</h3>
+<p>Proofreading and extending functionally coregistered pyramidal cells</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/proofreading_connectivity_counts_y1_p1.png" class="img-fluid figure-img"></p>
+<figcaption>Synaptic connectivity added: version 943 to 1078</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/proofreading_upgrades_y1_p1.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Proofreading status upgraded: version 943 to 1078</figcaption>
+</figure>
+</div>
+<p>Queried from CAVE table: <code>proofreading_status_and_strategy</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'proofreading_status_and_strategy'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 class="anchored">
+Proofread ‘cleaning’ of astrocytes
+</h3>
+<p>Selecting quality astrocytes within the V1 Column, and clean to remove false-merges: 12 astrocytes, 7 cleaned</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/proof_astrocytes_v1078_highest_res.png" class="img-fluid figure-img"></p>
+<figcaption>Six physically apposed ‘cleaned’ astrocytes</figcaption>
+</figure>
+</div>
+<p>CAVE table: <code>vortex_astrocyte_proofreading_status</code></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_astrocyte_proofreading_status'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_astrocyte_proofreading_status(status<span class="op">=</span><span class="st">'clean'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 class="anchored">
+Annotation of parvalbumin interneurons
+</h3>
+<p>Manual annotation of <strong>spine</strong> and <strong>shaft</strong> synaptic targets of basket cells: 53517 annotations</p>
+<p>Queried from CAVE table: <code>vortex_compartment_targets</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_compartment_targets'</span>, limit<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_compartment_targets(pre_pt_root_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Manual annotation of <strong>myelination</strong> and <strong>nodes of Ranvier</strong> along basket cell axons: 73237 annotations</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/myelinated_bc_scale3.gif" class="img-fluid figure-img" width="750"></p>
+<figcaption>Myelination annotated along basket cell (putative PV) axon</figcaption>
+</figure>
+</div>
+<p>CAVE table: <code>vortex_manual_myelination_v0</code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_manual_myelination_v0'</span>, limit<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_manual_myelination_v0(valid_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>CAVE table: <code>vortex_manual_nodes_of_ranvier</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_manual_nodes_of_ranvier'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_manual_nodes_of_ranvier(valid_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="year-1-period-2" class="level3">
+<h3 class="anchored" data-anchor-id="year-1-period-2">Year 1: Period 2</h3>
+<div class="grid">
+<div class="g-col-6">
+<table class="caption-top table">
+<caption>VORTEX Proofreading Plans | Year 1 Period 1{.light .hover}</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">SSG Rank</th>
+<th style="text-align: left;">Task</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1.3</td>
+<td style="text-align: left;">Forward-tracing of pyramidal cell axons</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1.7</td>
+<td style="text-align: left;">Annotation of basket cell spine targets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Annotation of pyramidal spine input</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3.7</td>
+<td style="text-align: left;">Annotation of basket cell myelin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Annotation of spine input (any cell type)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">OPC proofreading and annotation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5.7</td>
+<td style="text-align: left;">Annotation of myelin (any cell type)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="g-col-6">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/edit_annotation_chart_y1_p2.png" class="img-fluid figure-img"></p>
+<figcaption>Proofreading edits by type</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<h3 class="anchored">
+Axon extension of functionally recorded cells
+</h3>
+<p>Proofreading and extending functionally coregistered pyramidal cells</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/proofreading_connectivity_counts_y1_p2.png" class="img-fluid figure-img"></p>
+<figcaption>Synaptic connectivity added: version 1078 to 1300</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/proofreading_upgrades_y1_p2.png" class="img-fluid figure-img" width="750"></p>
+<figcaption>Proofreading status upgraded: version 1078 to 1300</figcaption>
+</figure>
+</div>
+<p>With the combined effort across Year 1 and Year 2, VORTEX proofreading has doubled the number of synapses between excitatory cells, and tripled the number of coregistered-coregistered connections</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/proof_cell_coreg_syn_y1_p2.png" class="img-fluid figure-img"></p>
+<figcaption>Improvement in connectivity between functionally-coregistered pyramidal cells</figcaption>
+</figure>
+</div>
+<p>Queried from CAVE table: <code>proofreading_status_and_strategy</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'proofreading_status_and_strategy'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 class="anchored">
+Annotation of spine synapses
+</h3>
+<p>Manual annotation of <strong>spine</strong> and <strong>shaft</strong> synaptic targets of 1) basket cells, and 2) inputs onto pyramidal cells: 67440 annotations</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/manual_synapses_spine_shaft_soma.png" class="img-fluid figure-img"></p>
+<figcaption>Dense manual annotations on the inputs to a pyramidal cell</figcaption>
+</figure>
+</div>
+<p>Queried from CAVE table: <code>vortex_compartment_targets</code></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_compartment_targets'</span>, limit<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_compartment_targets(pre_pt_root_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Provided ground truth for a new <strong>automatic classifier</strong>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'synapse_target_predictions_ssa'</span>, limit<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.synapse_target_predictions_ssa(post_pt_root_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 class="anchored">
+Annotation of myelin
+</h3>
+<p>Manual annotation of <strong>myelination</strong> and <strong>nodes of Ranvier</strong> 1) along basket cell axons, and 2) dense annotations within a subvolume: 26393 annotations</p>
+<p>CAVE table: <code>vortex_manual_myelination_v0</code></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_manual_myelination_v0'</span>, limit<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_manual_myelination_v0(valid_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>CAVE table: <code>vortex_manual_nodes_of_ranvier</code></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_manual_nodes_of_ranvier'</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_manual_nodes_of_ranvier(valid_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="contributions" class="level2">
+<h2 class="anchored" data-anchor-id="contributions">Contributions</h2>
+<p><strong>VORTEX Community Manager:</strong> Bethanny Danskin</p>
+<p><strong>Proofreading Management</strong>: Szi-chieh Yu, Celia David</p>
+<p><strong>Proofreading:</strong> Erika Neace, Rachael Swanstrom, Agnes Bodor, Elanur Acmad, Al-Mishrie Sahijuan, Joselito Astrologo, Arvin Caballes, Rey Cabasag, Jovie Cano, Jessi Deocampo, Emely Deresas, Mark Encallado, Mary Krestine Guzarem, Hannie Grace Hordillo, Logic Domme Ibanez, Angeline Libre, Geronimo Mon, Geomar Pagalan, Joren Paulines, Joshua Angel Remullo, Rezi Selgas,</p>
+<p><strong>Principal Investigators:</strong> Forrest Collman, Nuno Da Costa, R. Clay Reid, Casey Schneider-Mizell, H. Sebastian Seung</p>
+<p><strong>NIH BRAIN Initiative</strong>: U24 NS120053</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -780,7 +1306,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/vortex-overview.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/vortex-overview.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

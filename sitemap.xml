@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://AllenInstitute.github.io/microns_tutorial/vortex-overview.html</loc>
+    <lastmod>2025-04-08T17:47:31.568Z</lastmod>
+  </url>
+  <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/release_manifests/version-943.html</loc>
     <lastmod>2025-04-03T19:28:05.752Z</lastmod>
   </url>
@@ -10,15 +14,15 @@
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/09-nglui-neuroglancer.html</loc>
-    <lastmod>2025-04-03T19:43:48.186Z</lastmod>
+    <lastmod>2025-04-08T17:47:31.560Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/07-cave-download-skeleton.html</loc>
-    <lastmod>2025-04-03T19:43:04.919Z</lastmod>
+    <lastmod>2025-04-08T17:47:31.560Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/05-cloudvolume-download.html</loc>
-    <lastmod>2025-04-03T19:47:43.604Z</lastmod>
+    <lastmod>2025-04-03T22:29:25.628Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/03-cave-query-proofread-cells.html</loc>
@@ -26,7 +30,7 @@
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/01-caveclient-setup.html</loc>
-    <lastmod>2025-04-03T19:41:21.779Z</lastmod>
+    <lastmod>2025-04-08T17:47:31.560Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/00_cave_quickstart.html</loc>
@@ -34,7 +38,7 @@
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/proofreading.html</loc>
-    <lastmod>2025-04-03T19:28:05.367Z</lastmod>
+    <lastmod>2025-04-08T17:47:31.560Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/functional_tutorial/em_functional_intro.html</loc>
@@ -46,7 +50,7 @@
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/index.html</loc>
-    <lastmod>2025-04-03T19:28:05.285Z</lastmod>
+    <lastmod>2025-04-08T17:47:31.560Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/dataset-basics.html</loc>
@@ -86,19 +90,19 @@
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/02-cave-query-cell-types.html</loc>
-    <lastmod>2025-04-03T19:41:32.735Z</lastmod>
+    <lastmod>2025-04-03T22:29:25.611Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/04-cave-query-synapses.html</loc>
-    <lastmod>2025-04-03T19:40:02.489Z</lastmod>
+    <lastmod>2025-04-08T17:47:31.560Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/06-cloudvolume-download-mesh.html</loc>
-    <lastmod>2025-04-03T19:47:39.121Z</lastmod>
+    <lastmod>2025-04-03T22:29:25.628Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/08-standard-transform.html</loc>
-    <lastmod>2025-04-03T19:43:38.138Z</lastmod>
+    <lastmod>2025-04-03T22:29:25.659Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/microns_tutorial/release_manifests/version-1078.html</loc>

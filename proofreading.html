@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -91,10 +125,10 @@ div.csl-indent {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Proofreading and Data Quality – MICrONs Tutorial">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://AllenInstitute.github.io/microns_tutorial/img/minnie-column.png">
+<meta property="og:image" content="https://AllenInstitute.github.io/microns_tutorial/img/split_merge_extension.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
-<meta property="og:image:height" content="498">
-<meta property="og:image:width" content="1106">
+<meta property="og:image:height" content="835">
+<meta property="og:image:width" content="1766">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -194,6 +228,12 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="./proofreading.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Proofreading and Data Quality</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vortex-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Virtual Observatory of the Cortex (VORTEX)</span></a>
   </div>
 </li>
       </ul>
@@ -383,9 +423,21 @@ div.csl-indent {
 </header>
 
 
-<p>Understanding this variablity in data quality is <em>critical</em> when analyzing the data.</p>
 <p>Automated segmentation of neuronal processes in dense EM imaging is challenging at the size of entire neurons, which can have millimeters of axons and dendrites. The automated segmentation algorithms used in the EM data for this project are not perfect, and so proofreading is necessary to correct errors in the segmentation.</p>
-<p>However, while automated proofreading methods are starting to appear, in general the proofreading process is time consuming and involves a lot of manual attention. Some cells in the MICrONs data are thus very well proofread, others are virtually untouched, and many are somewhere in between.</p>
+<p>However, while automated proofreading methods are starting to appear, in general the proofreading process is time consuming and involves a lot of manual attention. A concerted effort was made to do proofreading on a subset of neurons within the dataset, and so some cells can be understood to be more <em>biologically accurate and complete</em> than others. Some cells in the MICrONs data are thus very well proofread, others are virtually untouched, and many are somewhere in between.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Understanding this variablity in data quality is critical when analyzing the data and interpretting results.</p>
+</div>
+</div>
 <p>Each kind of cell can be useful, but different approaches must be taken for each.</p>
 <p>It is useful to distinguish between two kinds of proofreading errors: <em>splits</em> and <em>merges</em>.</p>
 <ul>
@@ -396,6 +448,12 @@ div.csl-indent {
 <p>The frequency of errors is roughly related to the size of the process, and thus axons and dendrites have extremely different error profiles. Because they are thicker, dendrites are largely well-segmented, with only a few split errors and most merge errors being with small axons rather than other dendrites.</p>
 <p>Even without proofreading a neuron’s dendrites, we thus expect that most of the input synapses onto the dendrites are correct (since the vast majority of merge errors are with axons that only have output synapses), though some may be missing due to split errors at tips or missing dendritic spines.</p>
 <p>In contrast, axons, because they are thinner, have many more errors of both kinds. We thus do not trust axonal connectivity at all without additional proofreading.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/split_merge_extension.png" class="img-fluid figure-img"></p>
+<figcaption>Proofreading involves: 1) manually merging two segments should be connected, like to extend an axon, 2) splitting segments that should not be connected, like an axon falsely merged to a dendrite, and 3) correcting ‘path swaps’ where two or more axons become falsely-merged together, confusing their connectivity (corrected by a mix of split and merge operations). Extending the axon to completion might take 30 hours of manual work for an excitatory pyramidal cell</figcaption>
+</figure>
+</div>
 <section id="proofreading-categories" class="level2">
 <h2 class="anchored" data-anchor-id="proofreading-categories">Proofreading categories</h2>
 <p>Proofreading is not an all-or-nothing process. Because of the reasons described above, we distinguish between the proofread status of the axon and the dendrite for each neuron separately. In addition, we consider three levels of proofreading:</p>
@@ -450,26 +508,150 @@ div.csl-indent {
 <ul>
 <li>Excitatory neuron proofreading for functional connectomics. Excitatory neurons in retinotopically matched ares of VISp and RL were proofread to enable functional connectomics analysis, looking for the relationship between functional similarity and synaptic connectivity.</li>
 <li>Martinotti cell proofreading. Extremely extensive reconstructions of several layer 5 Martinotti cells in VISp were performed to enable analysis of the relationship between morphology and transcriptomics.</li>
-<li>Minnie Column. A 100 micron square area of VISp for a comprehensive census of its neuronal population across all layers. Originally, excitatory neurons in this column had dendritic cleaning and extension and inhibitory neurons had comprehensive cleaning and substantail but incomplete extension. However, this population has become a hub for proofreading and cell typing, and will be discussed further in the section below.</li>
+<li>Minnie V1 Column. A 100 micron square area of VISp for a comprehensive census of its neuronal population across all layers. Originally, excitatory neurons in this column had dendritic cleaning and extension and inhibitory neurons had comprehensive cleaning and substantail but incomplete extension. However, this population has become a hub for proofreading and cell typing, and will be discussed further in the section below.</li>
 </ul>
-<p>The NIH-funded <strong>Virtual Observatory of the Cortex (VORTEX)</strong> program supports continued proofreading efforts. Supported efforts include proofreading of: of excitatory functionally-coregistered cells, inhibitory neurons, and glial cell types including astrocytes and oligodendrocyte precursor cells. To learn more, visit <a href="https://www.microns-explorer.org/vortex">microns-explorer.org/vortex</a></p>
+<p>The NIH-funded <strong>Virtual Observatory of the Cortex (VORTEX)</strong> program supports continued proofreading efforts. Supported efforts include proofreading of: of excitatory functionally-coregistered cells, inhibitory neurons, and glial cell types including astrocytes and oligodendrocyte precursor cells.</p>
+<p>To learn more about our supported efforts, see: <a href="vortex-overview.html">Virtual Observatory of the Cortex</a> on MICrONS Tutorials.</p>
+<p>Access our request submission system at:</p>
+<p><a href="https://www.microns-explorer.org/vortex#request-form" class="btn btn-outline-primary" role="button" data-toggle="tooltip" title="VORTEX Request">microns-explorer.org/requests | Scientific Request Form</a></p>
+<p>We are also conducting a community survey. If you are using, have used, or plan to use the MICrONS data, give us some feedback!</p>
+<p><a href="https://forms.gle/3zaVQizHdrL5zkVh8" class="btn btn-outline-primary" role="button" data-toggle="tooltip" title="Community Survey">MICrONS Community Survey</a></p>
 </section>
 <section id="proofreading-tables" class="level2">
 <h2 class="anchored" data-anchor-id="proofreading-tables">Proofreading tables</h2>
-<p>To keep track of the state of proofreading, the table <code>proofreading_status_and_strategy</code> in the annotation database has a row for each proofread neuron and provides a summary of the proofreading status of the axon and dendrite. For more details, look at the <a href="programmatic_access/em_py_03_annotation_tables.html#proofreading-tables">Proofreading table documentation</a>.</p>
+<p>To keep track of the state of proofreading, the table <code>proofreading_status_and_strategy</code> in the annotation database has a row for each proofread neuron and provides a summary of the proofreading status of the axon and dendrite.</p>
+<p>Table name: <code>proofreading_status_and_strategy</code></p>
+<p>The table <code>proofreading_status_and_strategy</code> describes the status of cells that have undergone manual proofreading.</p>
+<p>Because of the inherent difference in the difficulty and time required for different kinds of proofreading, we describe the status of axons and dendrites separately.</p>
+<p>Each compartment <code>status</code> may be either:</p>
+<ul>
+<li><code>FALSE</code>: indicates no comprehensive proofreading has been performed, or is not applicable.<br>
+</li>
+<li><code>TRUE</code>: indicates that false merges have been comprehensively removed, and the compartment is at least ‘clean’. Consult the <code>strategy</code> column if completeness of the compartment is relevant to your research.</li>
+</ul>
+<p>An axon or dendrite labeled as <code>status=TRUE</code> can be trusted to be correct, but may not be complete. The degree of completion can be read from the <code>strategy</code> column. For more information, please see <a href="../em_03_proofreading.html">Proofreading and Data Quality</a>; or also the <a href="https://www.microns-explorer.org/manifests/mm3-proofreading">microns-explorer page on proofreading strategies</a>.</p>
+<p>The key columns are:</p>
+<table class="table-light table-hover caption-top table">
+<caption>Proofreading Status Table</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>valid_id</code></td>
+<td style="text-align: left;">The root id of the neuron when it the proofreading assessment was made. <em>NOTE: if this does not match the <code>pt_root_id</code> then the cell has undergone further changes. This is usually and improvement in proofreading, but proceed with caution.</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>status_dendrite</code></td>
+<td style="text-align: left;">The status of the dendrite proofreading. May be <code>TRUE</code> or <code>FALSE</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>status_axon</code></td>
+<td style="text-align: left;">The status of the axon proofreading. May be <code>TRUE</code> or <code>FALSE</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>strategy_dendrite</code></td>
+<td style="text-align: left;">The strategy employed to proofread the dendrite. See strategy table below for details</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>strategy_axon</code></td>
+<td style="text-align: left;">The strategy employed to proofread the axon. See strategy table below for details</td>
+</tr>
+</tbody>
+</table>
+<p>The specific strategies are as follows (and will update over time):</p>
+<section id="proofreading-strategies" class="level4">
+<h4 class="anchored" data-anchor-id="proofreading-strategies">Proofreading Strategies</h4>
+<table class="table-light table-hover caption-top table">
+<caption>Proofreading Strategy Table</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Strategy</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>none</code></td>
+<td style="text-align: left;">No cleaning, and no extension. Indicates an entry in <code>proofreading_status</code> that is <code>FALSE</code> for that compartment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>dendrite_clean</code></td>
+<td style="text-align: left;">The dendrite had incorrectly-merged axon and dendritic segments comprehensively removed, meaning the input synapses are accurate. The dendrite may be incorrectly truncated by segmentation error. Not all dendrite tips have been checked for extension. No comprehensive attempt was made to re-attach spine heads.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>dendrite_extended</code></td>
+<td style="text-align: left;">The dendrite had incorrectly-merged axon and dendritic segments comprehensively removed, meaning the input synapses are accurate. Every tip was identified, manually inspected, and extended if possible. No comprehensive attempt was made to re-attach spine heads.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>axon_column_truncated</code></td>
+<td style="text-align: left;">AThe axon was extended within the V1 cortical column, with a preference for local connections. In some cases the axon was cut at the column boundary and/or the layer boundary, especially the boundary between layers 2/3 and layer 4. Output synapses represent a sampling of potential partners</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>axon_interareal</code></td>
+<td style="text-align: left;">The axon was extended with a preference for branches that projected to other brain areas. Some axon branches were fully extended, but local connections may be incomplete. Output synapses represent a sampling of potential partners.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>axon_partially_extended</code></td>
+<td style="text-align: left;">The axon was extended outward from the soma, following each branch to its termination. Output synapses represent a sampling of potential partners.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>axon_fully_extended</code></td>
+<td style="text-align: left;">Axon was extended outward from the soma, following each branch to its termination. After initial extension, every endpoint was identified, manually inspected, and extended again if possible. Output synapses represent a largely complete sampling of partners.</td>
+</tr>
+</tbody>
+</table>
+<p>This table, <code>proofreading_status_and_strategy</code>, supercedes <code>proofreading_status_public_release</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'proofreading_status_and_strategy'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </section>
 <section id="minnie-column" class="level2">
 <h2 class="anchored" data-anchor-id="minnie-column">Minnie Column</h2>
 <p>The Minnie Column is a collection of more than 1,300 neurons whose nucleus centroid fell within a 100 x 100 micron square (viewed from the top) and extending across all layers.</p>
+<div class="grid">
+<div class="g-col-6">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/minnie-column.png" class="img-fluid figure-img"></p>
 <figcaption>Location of the Minnie column (yellow) within the dataset. Top view.</figcaption>
 </figure>
 </div>
+</div>
+<div class="g-col-6">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/minnie_colored_all_column_with_back.png" class="img-fluid figure-img"></p>
+<figcaption>Reconstruction of the V1 column cells</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <p>This was originally considered a region of interest for a “A comprehensive census of the neuronal population” <span class="citation" data-cites="schneider-mizell2023">(<a href="#ref-schneider-mizell2023" role="doc-biblioref">Schneider-Mizell et al. 2023</a>)</span>, and thus all neurons in this region were proofread to some extent and manually evaulated.</p>
 <p>All excitatory neurons had their dendrites cleaned and extended to assess dendritic morphology and synaptic inputs, while inhibitory neurons had both their dendrites cleaned and extended, and then their axons were extensively cleaned and extended to capture their targeting properties. Efforts were made to extend inhibitory axons to every major region of their arbor, but not every individual tip was followed and the resulting analysis focused on population-level connectivity rather than individual connections.</p>
-<p>Morphological and connectivity-based cell typing was performed on these cells in terms of both classical and novel categories, and considerable expert attention ensured that the baseline data quality was high. Cell type results can be found in several of the <a href="programmatic_access/em_py_03_annotation_tables.html#cell-type-tables">cell type tables</a> available. These cell types were used for training the various whole-dataset cell typing classifiers.</p>
+<p>Morphological and connectivity-based cell typing was performed on these cells in terms of both classical and novel categories, and considerable expert attention ensured that the baseline data quality was high. Cell type results can be found in several of the <a href="annotation-tables.html#cell-type-tables">cell type tables</a> available. These cell types were used for training the various whole-dataset cell typing classifiers.</p>
 <p>In addition, the proofreading and multiple levels of cell typing applied to this dense and diverse population has made it a useful reference, and spawned further analysis. Subsequent work has cleaned many of the excitatory axons from layers 2–5, albeit to a variety of degrees of extension.</p>
 
 
