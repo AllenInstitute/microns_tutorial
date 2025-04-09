@@ -1,6 +1,6 @@
 Table name: `functional_properties_v3_bcm`
 
-A summary of the functional properties for each of the coregistered neurons (as of `coregistration_manual_v3`). For details, see [@ding_functional_2023]
+A summary of the functional properties for each of the coregistered neurons (as of `coregistration_manual_v3`). For details, see [@ding_functional_2025]
 
 The key columns are:
 
