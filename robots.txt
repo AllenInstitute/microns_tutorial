@@ -1,1 +1,1 @@
-Sitemap: https://AllenInstitute.github.io/microns_tutorial/sitemap.xml
+Sitemap: https://tutorial.microns-explorer.org/sitemap.xml

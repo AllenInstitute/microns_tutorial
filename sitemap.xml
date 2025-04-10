@@ -1,115 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/vortex-overview.html</loc>
+    <loc>https://tutorial.microns-explorer.org/vortex-overview.html</loc>
     <lastmod>2025-04-08T17:47:31.568Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/release_manifests/version-943.html</loc>
+    <loc>https://tutorial.microns-explorer.org/release_manifests/version-943.html</loc>
     <lastmod>2025-04-03T19:28:05.752Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/release_manifests/version-1181.html</loc>
+    <loc>https://tutorial.microns-explorer.org/release_manifests/version-1181.html</loc>
     <lastmod>2025-04-03T19:28:05.737Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/09-nglui-neuroglancer.html</loc>
+    <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/09-nglui-neuroglancer.html</loc>
     <lastmod>2025-04-08T17:47:31.560Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/07-cave-download-skeleton.html</loc>
+    <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/07-cave-download-skeleton.html</loc>
     <lastmod>2025-04-08T17:47:31.560Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/05-cloudvolume-download.html</loc>
+    <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/05-cloudvolume-download.html</loc>
     <lastmod>2025-04-03T22:29:25.628Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/03-cave-query-proofread-cells.html</loc>
+    <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/03-cave-query-proofread-cells.html</loc>
     <lastmod>2025-04-03T19:28:05.402Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/01-caveclient-setup.html</loc>
+    <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/01-caveclient-setup.html</loc>
     <lastmod>2025-04-08T17:47:31.560Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/00_cave_quickstart.html</loc>
+    <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/00_cave_quickstart.html</loc>
     <lastmod>2025-04-03T19:28:05.369Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/proofreading.html</loc>
-    <lastmod>2025-04-08T17:47:31.560Z</lastmod>
+    <loc>https://tutorial.microns-explorer.org/proofreading.html</loc>
+    <lastmod>2025-04-09T18:55:45.576Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/functional_tutorial/em_functional_intro.html</loc>
+    <loc>https://tutorial.microns-explorer.org/programmatic_access/functional_tutorial/em_functional_intro.html</loc>
     <lastmod>2025-01-07T23:43:14.511Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/neuroglancer-basic.html</loc>
+    <loc>https://tutorial.microns-explorer.org/neuroglancer-basic.html</loc>
     <lastmod>2025-04-03T19:28:05.335Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/index.html</loc>
+    <loc>https://tutorial.microns-explorer.org/index.html</loc>
     <lastmod>2025-04-08T17:47:31.560Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/dataset-basics.html</loc>
+    <loc>https://tutorial.microns-explorer.org/dataset-basics.html</loc>
     <lastmod>2025-04-03T19:28:05.052Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/dash-table-viewer.html</loc>
+    <loc>https://tutorial.microns-explorer.org/dash-table-viewer.html</loc>
     <lastmod>2025-04-03T19:28:05.035Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/background.html</loc>
+    <loc>https://tutorial.microns-explorer.org/background.html</loc>
     <lastmod>2025-04-03T19:28:05.019Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/annotation-tables.html</loc>
-    <lastmod>2025-04-03T19:47:33.391Z</lastmod>
+    <loc>https://tutorial.microns-explorer.org/annotation-tables.html</loc>
+    <lastmod>2025-04-09T19:19:45.277Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/dash-connectivity.html</loc>
-    <lastmod>2025-04-03T19:28:05.019Z</lastmod>
+    <loc>https://tutorial.microns-explorer.org/dash-connectivity.html</loc>
+    <lastmod>2025-04-09T18:59:24.305Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/examples/skeleton_load_and_generate.html</loc>
+    <loc>https://tutorial.microns-explorer.org/examples/skeleton_load_and_generate.html</loc>
     <lastmod>2025-01-07T23:43:14.033Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/introduction.html</loc>
-    <lastmod>2025-04-03T19:28:05.302Z</lastmod>
+    <loc>https://tutorial.microns-explorer.org/introduction.html</loc>
+    <lastmod>2025-04-09T18:56:19.983Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/programmatic_access/ultrastructure_tutorial/em_ultrastructure.html</loc>
+    <loc>https://tutorial.microns-explorer.org/programmatic_access/ultrastructure_tutorial/em_ultrastructure.html</loc>
     <lastmod>2025-01-07T23:43:14.833Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/00_skeletons.html</loc>
+    <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/00_skeletons.html</loc>
     <lastmod>2025-04-03T19:28:05.386Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/02-cave-query-cell-types.html</loc>
+    <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/02-cave-query-cell-types.html</loc>
     <lastmod>2025-04-03T22:29:25.611Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/04-cave-query-synapses.html</loc>
+    <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/04-cave-query-synapses.html</loc>
     <lastmod>2025-04-08T17:47:31.560Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/06-cloudvolume-download-mesh.html</loc>
+    <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/06-cloudvolume-download-mesh.html</loc>
     <lastmod>2025-04-03T22:29:25.628Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/quickstart_notebooks/08-standard-transform.html</loc>
+    <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/08-standard-transform.html</loc>
     <lastmod>2025-04-03T22:29:25.659Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/release_manifests/version-1078.html</loc>
+    <loc>https://tutorial.microns-explorer.org/release_manifests/version-1078.html</loc>
     <lastmod>2025-04-03T19:28:05.718Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/microns_tutorial/release_manifests/version-1300.html</loc>
-    <lastmod>2025-04-03T19:28:05.743Z</lastmod>
+    <loc>https://tutorial.microns-explorer.org/release_manifests/version-1300.html</loc>
+    <lastmod>2025-04-09T19:25:14.855Z</lastmod>
   </url>
 </urlset>

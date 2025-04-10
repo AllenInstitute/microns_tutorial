@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Dash Apps: Table Viewer – MICrONs Tutorial">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://AllenInstitute.github.io/microns_tutorial/img/table-viewer.png">
+<meta property="og:image" content="https://tutorial.microns-explorer.org/img/table-viewer.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
 <meta property="og:image:height" content="455">
 <meta property="og:image:width" content="1584">
@@ -504,7 +504,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/AllenInstitute\.github\.io\/microns_tutorial\/");
+      var filterRegex = new RegExp("https:\/\/tutorial\.microns-explorer\.org");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

@@ -91,7 +91,7 @@ div.csl-indent {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Dash Apps: Connectivity Viewer – MICrONs Tutorial">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://AllenInstitute.github.io/microns_tutorial/img/connectivity-viewer-top.png">
+<meta property="og:image" content="https://tutorial.microns-explorer.org/img/connectivity-viewer-top.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
 <meta property="og:image:height" content="518">
 <meta property="og:image:width" content="1836">
@@ -415,8 +415,8 @@ Note
 </div>
 </div>
 <p>Select the data version from the dropdown. (the <code>Live Query</code> option is not relevent for the public data)</p>
-<p>For the optional <code>Table</code> dropdown, there are several tables to choose from, though the most informative will be one of the <a href="programmatic_access/em_py_03_annotation_tables.html#cell-type-tables">cell type classification tables</a>. The <code>aibs_metamodel_celltypes_v661</code> has the greatest coverage of the dataset, and is described in “Perisomatic features” <span class="citation" data-cites="elabbady_perisomatic_2022">(<a href="#ref-elabbady_perisomatic_2022" role="doc-biblioref">Elabbady et al. 2022</a>)</span>.</p>
-<p>The table <code>aibs_metamodel_mtypes_v661_v2</code> is the most current version version of the cell type classification, described in “A connectomic census of mouse visual cortex” <span class="citation" data-cites="schneider-mizell2023">(<a href="#ref-schneider-mizell2023" role="doc-biblioref">Schneider-Mizell et al. 2023</a>)</span>.</p>
+<p>For the optional <code>Table</code> dropdown, there are several tables to choose from, though the most informative will be one of the <a href="annotation-tables.html#cell-type-tables">cell type classification tables</a>. The <code>aibs_metamodel_celltypes_v661</code> has the greatest coverage of the dataset, and is described in Perisomatic ultrastructure efficiently classifies cells in mouse cortex” <span class="citation" data-cites="elabbady_perisomatic_2025">(<a href="#ref-elabbady_perisomatic_2025" role="doc-biblioref">Elabbady et al. 2025</a>)</span>.</p>
+<p>The table <code>aibs_metamodel_mtypes_v661_v2</code> is the most current version version of the cell type classification, described in “A connectomic census of mouse visual cortex” <span class="citation" data-cites="schneider-mizell_inhibitory_2025">(<a href="#ref-schneider-mizell_inhibitory_2025" role="doc-biblioref">Schneider-Mizell et al. 2025</a>)</span>.</p>
 <p>Pressing “Submit” will query the database for the cell and its synapses.</p>
 <p>Once completed, you will see the bar under the input options turn green and report the data that it is displaying. For example, if we query root id <code>864691135408247241</code> and the default cell type table, we will see the following:</p>
 <p><img src="img/connectivity-viewer-success.png" class="img-fluid"></p>
@@ -467,11 +467,11 @@ Note
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-elabbady_perisomatic_2022" class="csl-entry" role="listitem">
-Elabbady, Leila, Sharmishtaa Seshamani, Shang Mu, Gayathri Mahalingam, Casey Schneider-Mizell, Agnes L Bodor, J. Alexander Bae, et al. 2022. <span>“Perisomatic Features Enable Efficient and Dataset Wide Cell-Type Classifications Across Large-Scale Electron Microscopy Volumes.”</span> <a href="https://doi.org/10.1101/2022.07.20.499976">https://doi.org/10.1101/2022.07.20.499976</a>.
+<div id="ref-elabbady_perisomatic_2025" class="csl-entry" role="listitem">
+Elabbady, Leila, Sharmishtaa Seshamani, Shang Mu, Gayathri Mahalingam, Casey M. Schneider-Mizell, Agnes L. Bodor, J. Alexander Bae, et al. 2025. <span>“Perisomatic Ultrastructure Efficiently Classifies Cells in Mouse Cortex.”</span> <em>Nature</em> 640 (8058): 478–86. <a href="https://doi.org/10.1038/s41586-024-07765-7">https://doi.org/10.1038/s41586-024-07765-7</a>.
 </div>
-<div id="ref-schneider-mizell2023" class="csl-entry" role="listitem">
-Schneider-Mizell, Casey M, Agnes L. Bodor, Derrick Brittain, JoAnn Buchanan, Daniel J. Bumbarger, Leila Elabbady, Clare Gamlin, et al. 2023. <span>“Cell-Type-Specific Inhibitory Circuitry from a Connectomic Census of Mouse Visual Cortex.”</span> <a href="https://doi.org/10.1101/2023.01.23.525290">https://doi.org/10.1101/2023.01.23.525290</a>.
+<div id="ref-schneider-mizell_inhibitory_2025" class="csl-entry" role="listitem">
+Schneider-Mizell, Casey M., Agnes L. Bodor, Derrick Brittain, JoAnn Buchanan, Daniel J. Bumbarger, Leila Elabbady, Clare Gamlin, et al. 2025. <span>“Inhibitory Specificity from a Connectomic Census of Mouse Visual Cortex.”</span> <em>Nature</em> 640 (8058): 448–58. <a href="https://doi.org/10.1038/s41586-024-07780-8">https://doi.org/10.1038/s41586-024-07780-8</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -564,7 +564,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/AllenInstitute\.github\.io\/microns_tutorial\/");
+      var filterRegex = new RegExp("https:\/\/tutorial\.microns-explorer\.org");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

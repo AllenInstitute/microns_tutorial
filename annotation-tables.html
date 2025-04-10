@@ -924,7 +924,7 @@ Manual Cell Types (non-neurons)
 <section id="predictions-from-somanucleus-features" class="level3">
 <h3 class="anchored" data-anchor-id="predictions-from-somanucleus-features">Predictions from soma/nucleus features</h3>
 <p>Table name: <code>aibs_metamodel_celltypes_v661</code></p>
-<p>This table contains the results of a hierarchical classifier trained on features of the cell body and nucleus of cells. This was applied to most cells in the dataset that had complete cell bodies (e.g.&nbsp;not cut off by the edge of the data), detected by <code>nucleus_detection_v0</code>, with small-objects and multi-soma errors removed. The model was run with cell-based features as of version 661 of the dataset. For more details, see <span class="citation" data-cites="elabbady_perisomatic_2022">(<a href="#ref-elabbady_perisomatic_2022" role="doc-biblioref">Elabbady et al. 2022</a>)</span>. In general, this does a good job, but sometimes confuses layer 5 inhibitory neurons as being excitatory:</p>
+<p>This table contains the results of a hierarchical classifier trained on features of the cell body and nucleus of cells. This was applied to most cells in the dataset that had complete cell bodies (e.g.&nbsp;not cut off by the edge of the data), detected by <code>nucleus_detection_v0</code>, with small-objects and multi-soma errors removed. The model was run with cell-based features as of version 661 of the dataset. For more details, see <span class="citation" data-cites="elabbady_perisomatic_2025">(<a href="#ref-elabbady_perisomatic_2025" role="doc-biblioref">Elabbady et al. 2025</a>)</span>. In general, this does a good job, but sometimes confuses layer 5 inhibitory neurons as being excitatory:</p>
 <p>The key columns are:</p>
 <table class="table-light table-hover caption-top table">
 <caption>AIBS Soma Nuc Metamodel Table</caption>
@@ -1094,7 +1094,7 @@ Soma Nuc Metamodel Cell types
 <h3 class="anchored" data-anchor-id="coarse-prediction-from-spine-detection">Coarse prediction from spine detection</h3>
 <p>Table name: <code>baylor_log_reg_cell_type_coarse_v1</code></p>
 <p>This table contains the results of a logistic regression classifier trained on properties of neuronal dendrites. This was applied to many cells in the dataset, but required more data than soma and nucleus features alone and thus more cells did not complete the pipeline. It has very good performance on excitatory vs inhibitory neurons because it focuses on dendritic spines, a characteristic property of excitatory neurons. It is a good table to double check E/I classifications if in doubt.</p>
-<p>For details, see <span class="citation" data-cites="celii_neurd_2023">(<a href="#ref-celii_neurd_2023" role="doc-biblioref">Celii et al. 2023</a>)</span>.</p>
+<p>For details, see <span class="citation" data-cites="celii_neurd_2025">(<a href="#ref-celii_neurd_2025" role="doc-biblioref">Celii et al. 2025</a>)</span>.</p>
 <p>The key columns are:</p>
 <table class="table-light table-hover caption-top table">
 <caption>Baylor Dendrite Feature Table</caption>
@@ -1149,8 +1149,8 @@ Tip
 <section id="fine-prediction-from-dendritic-features" class="level3">
 <h3 class="anchored" data-anchor-id="fine-prediction-from-dendritic-features">Fine prediction from dendritic features</h3>
 <p>Table name: <code>aibs_metamodel_mtypes_v661_v2</code></p>
-<p>Excitatory neurons and inhibitory neurons were distinguished with the soma-nucleus model <span class="citation" data-cites="elabbady_perisomatic_2022">(<a href="#ref-elabbady_perisomatic_2022" role="doc-biblioref">Elabbady et al. 2022</a>)</span>, and subclasses were assigned based on a data-driven clustering of the neuronal features. Inhibitory neurons were classified based on how they distributed they synaptic outputs onto target cells, while exictatory neurons were classified based on a collection of dendritic features.</p>
-<p>This was applied to most detected neurons in the dataset that had complete cell bodies (e.g.&nbsp;not cut off by the edge of the data), detected by <code>nucleus_detection_v0</code>, with small-objects and multi-soma errors removed. The model was run with cell-based features as of version 661 of the dataset.For more details, see <span class="citation" data-cites="schneider-mizell2023">(<a href="#ref-schneider-mizell2023" role="doc-biblioref">Schneider-Mizell et al. 2023</a>)</span>.</p>
+<p>Excitatory neurons and inhibitory neurons were distinguished with the soma-nucleus model <span class="citation" data-cites="elabbady_perisomatic_2025">(<a href="#ref-elabbady_perisomatic_2025" role="doc-biblioref">Elabbady et al. 2025</a>)</span>, and subclasses were assigned based on a data-driven clustering of the neuronal features. Inhibitory neurons were classified based on how they distributed they synaptic outputs onto target cells, while exictatory neurons were classified based on a collection of dendritic features.</p>
+<p>This was applied to most detected neurons in the dataset that had complete cell bodies (e.g.&nbsp;not cut off by the edge of the data), detected by <code>nucleus_detection_v0</code>, with small-objects and multi-soma errors removed. The model was run with cell-based features as of version 661 of the dataset.For more details, see <span class="citation" data-cites="schneider-mizell_inhibitory_2025">(<a href="#ref-schneider-mizell_inhibitory_2025" role="doc-biblioref">Schneider-Mizell et al. 2025</a>)</span>.</p>
 <p>Note that all cell-type labels in this table come from a clustering specific to this paper, and while they are intended to align with the broader literature they are not a direct mapping or a well-established convention.</p>
 <p>For a more conventional set of labels on the same set of cells, look at the manual table <code>allen_v1_column_types_slanted_ref</code>. Cell types in that table align with those in the <code>aibs_metamodel_celltypes_v661</code>.</p>
 <p>The key columns are:</p>
@@ -1725,7 +1725,7 @@ Warning
 <section id="functional-properties" class="level3">
 <h3 class="anchored" data-anchor-id="functional-properties">Functional properties</h3>
 <p>Table name: <code>functional_properties_v3_bcm</code></p>
-<p>A summary of the functional properties for each of the coregistered neurons (as of <code>coregistration_manual_v3</code>). For details, see <span class="citation" data-cites="ding_functional_2023">(<a href="#ref-ding_functional_2023" role="doc-biblioref">Ding et al. 2023</a>)</span></p>
+<p>A summary of the functional properties for each of the coregistered neurons (as of <code>coregistration_manual_v3</code>). For details, see <span class="citation" data-cites="ding_functional_2025">(<a href="#ref-ding_functional_2025" role="doc-biblioref">Ding et al. 2025</a>)</span></p>
 <p>The key columns are:</p>
 <table class="table-light table-hover caption-top table">
 <caption>Fuctional properties of coregistered neurons</caption>
@@ -1915,17 +1915,17 @@ Warning
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-celii_neurd_2023" class="csl-entry" role="listitem">
-Celii, Brendan, Stelios Papadopoulos, Zhuokun Ding, Paul G. Fahey, Eric Wang, Christos Papadopoulos, Alexander B. Kunin, et al. 2023. <span>“<span>NEURD</span> Offers Automated Proofreading and Feature Extraction for Connectomics.”</span> <a href="https://doi.org/10.1101/2023.03.14.532674">https://doi.org/10.1101/2023.03.14.532674</a>.
+<div id="ref-celii_neurd_2025" class="csl-entry" role="listitem">
+Celii, Brendan, Stelios Papadopoulos, Zhuokun Ding, Paul G. Fahey, Eric Wang, Christos Papadopoulos, Alexander B. Kunin, et al. 2025. <span>“<span>NEURD</span> Offers Automated Proofreading and Feature Extraction for Connectomics.”</span> <em>Nature</em> 640 (8058): 487–96. <a href="https://doi.org/10.1038/s41586-025-08660-5">https://doi.org/10.1038/s41586-025-08660-5</a>.
 </div>
-<div id="ref-ding_functional_2023" class="csl-entry" role="listitem">
-Ding, Zhuokun, Paul G. Fahey, Stelios Papadopoulos, Eric Y. Wang, Brendan Celii, Christos Papadopoulos, Andersen Chang, et al. 2023. <span>“Functional Connectomics Reveals General Wiring Rule in Mouse Visual Cortex.”</span> <a href="https://doi.org/10.1101/2023.03.13.531369">https://doi.org/10.1101/2023.03.13.531369</a>.
+<div id="ref-ding_functional_2025" class="csl-entry" role="listitem">
+Ding, Zhuokun, Paul G. Fahey, Stelios Papadopoulos, Eric Y. Wang, Brendan Celii, Christos Papadopoulos, Andersen Chang, et al. 2025. <span>“Functional Connectomics Reveals General Wiring Rule in Mouse Visual Cortex.”</span> <em>Nature</em> 640 (8058): 459–69. <a href="https://doi.org/10.1038/s41586-025-08840-3">https://doi.org/10.1038/s41586-025-08840-3</a>.
 </div>
-<div id="ref-elabbady_perisomatic_2022" class="csl-entry" role="listitem">
-Elabbady, Leila, Sharmishtaa Seshamani, Shang Mu, Gayathri Mahalingam, Casey Schneider-Mizell, Agnes L Bodor, J. Alexander Bae, et al. 2022. <span>“Perisomatic Features Enable Efficient and Dataset Wide Cell-Type Classifications Across Large-Scale Electron Microscopy Volumes.”</span> <a href="https://doi.org/10.1101/2022.07.20.499976">https://doi.org/10.1101/2022.07.20.499976</a>.
+<div id="ref-elabbady_perisomatic_2025" class="csl-entry" role="listitem">
+Elabbady, Leila, Sharmishtaa Seshamani, Shang Mu, Gayathri Mahalingam, Casey M. Schneider-Mizell, Agnes L. Bodor, J. Alexander Bae, et al. 2025. <span>“Perisomatic Ultrastructure Efficiently Classifies Cells in Mouse Cortex.”</span> <em>Nature</em> 640 (8058): 478–86. <a href="https://doi.org/10.1038/s41586-024-07765-7">https://doi.org/10.1038/s41586-024-07765-7</a>.
 </div>
-<div id="ref-schneider-mizell2023" class="csl-entry" role="listitem">
-Schneider-Mizell, Casey M, Agnes L. Bodor, Derrick Brittain, JoAnn Buchanan, Daniel J. Bumbarger, Leila Elabbady, Clare Gamlin, et al. 2023. <span>“Cell-Type-Specific Inhibitory Circuitry from a Connectomic Census of Mouse Visual Cortex.”</span> <a href="https://doi.org/10.1101/2023.01.23.525290">https://doi.org/10.1101/2023.01.23.525290</a>.
+<div id="ref-schneider-mizell_inhibitory_2025" class="csl-entry" role="listitem">
+Schneider-Mizell, Casey M., Agnes L. Bodor, Derrick Brittain, JoAnn Buchanan, Daniel J. Bumbarger, Leila Elabbady, Clare Gamlin, et al. 2025. <span>“Inhibitory Specificity from a Connectomic Census of Mouse Visual Cortex.”</span> <em>Nature</em> 640 (8058): 448–58. <a href="https://doi.org/10.1038/s41586-024-07780-8">https://doi.org/10.1038/s41586-024-07780-8</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -2018,7 +2018,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/AllenInstitute\.github\.io\/microns_tutorial\/");
+      var filterRegex = new RegExp("https:\/\/tutorial\.microns-explorer\.org");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

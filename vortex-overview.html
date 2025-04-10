@@ -105,7 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Virtual Observatory of the Cortex (VORTEX) – MICrONs Tutorial">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://AllenInstitute.github.io/microns_tutorial/img/edit_annotation_chart_y1_p1.png">
+<meta property="og:image" content="https://tutorial.microns-explorer.org/img/edit_annotation_chart_y1_p1.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
 <meta property="og:image:height" content="1600">
 <meta property="og:image:width" content="2400">
@@ -971,7 +971,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/AllenInstitute\.github\.io\/microns_tutorial\/");
+      var filterRegex = new RegExp("https:\/\/tutorial\.microns-explorer\.org");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
