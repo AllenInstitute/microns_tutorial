@@ -1,6 +1,6 @@
 Table name: `gamlin_2023_mcs`
 
-A table containing the manually selected Martinotti cells (MC) included in Gamlin et al., 2023 paper.
+A table containing the manually selected Martinotti cells (MC) included in [@gamlin_connectomics_2025].
 
 The key columns are:
 

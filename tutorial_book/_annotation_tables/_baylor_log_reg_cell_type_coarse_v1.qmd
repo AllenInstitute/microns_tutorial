@@ -2,7 +2,7 @@ Table name: `baylor_log_reg_cell_type_coarse_v1`
 
 This table contains the results of a logistic regression classifier trained on properties of neuronal dendrites. This was applied to many cells in the dataset, but required more data than soma and nucleus features alone and thus more cells did not complete the pipeline. It has very good performance on excitatory vs inhibitory neurons because it focuses on dendritic spines, a characteristic property of excitatory neurons. It is a good table to double check E/I classifications if in doubt.
 
-For details, see [@celii_neurd_2023].
+For details, see [@celii_neurd_2025].
 
 The key columns are:
 

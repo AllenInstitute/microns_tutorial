@@ -1,6 +1,6 @@
 Table name: `cg_cell_type_calls`
 
-Manual cell type calls on the targets of L5 Martinotti cells (MC) in `gamlin_2023_mcs`, annotated for Gamlin et al., 2023 paper.
+Manual cell type calls on the targets of L5 Martinotti cells (MC) in `gamlin_2023_mcs`, annotated for [@gamlin_connectomics_2025].
 
 It contains the following columns:
 

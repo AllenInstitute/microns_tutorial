@@ -1,6 +1,6 @@
 Table name: `aibs_metamodel_celltypes_v661`
 
-This table contains the results of a hierarchical classifier trained on features of the cell body and nucleus of cells. This was applied to most cells in the dataset that had complete cell bodies (e.g. not cut off by the edge of the data), detected by `nucleus_detection_v0`, with small-objects and multi-soma errors removed. The model was run with cell-based features as of version 661 of the dataset. For more details, see  [@elabbady_perisomatic_2022]. In general, this does a good job, but sometimes confuses layer 5 inhibitory neurons as being excitatory: 
+This table contains the results of a hierarchical classifier trained on features of the cell body and nucleus of cells. This was applied to most cells in the dataset that had complete cell bodies (e.g. not cut off by the edge of the data), detected by `nucleus_detection_v0`, with small-objects and multi-soma errors removed. The model was run with cell-based features as of version 661 of the dataset. For more details, see  [@elabbady_perisomatic_2025]. In general, this does a good job, but sometimes confuses layer 5 inhibitory neurons as being excitatory: 
 
 The key columns are:
 
