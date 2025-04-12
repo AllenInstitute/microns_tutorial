@@ -20,7 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -66,18 +120,18 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Static Repositories – MICrONs Tutorial">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="MICrONs Tutorial">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -99,13 +153,26 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="https://www.microns-explorer.org/"> 
 <span class="menu-text">Microns Explorer</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.nature.com/collections/bdigiaicbd"> 
+<span class="menu-text">Nature Publications</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com/AllenInstitute/microns_tutorial/discussions" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-chat-left-text-fill"></i></a>
     <div class="dropdown">
-      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-chat-left-text-fill"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/microns_tutorial/discussions">
+            Forum
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/microns_tutorial">
             Source Code
@@ -325,6 +392,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Annotation Tables</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./static-repositories.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Static Repositories</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -332,8 +405,52 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#imagery" id="toc-imagery" class="nav-link active" data-scroll-target="#imagery">Imagery</a>
+  <ul class="collapse">
+  <li><a href="#electron-microscopy-images" id="toc-electron-microscopy-images" class="nav-link" data-scroll-target="#electron-microscopy-images">Electron Microscopy Images</a></li>
+  <li><a href="#microct" id="toc-microct" class="nav-link" data-scroll-target="#microct">MicroCT</a></li>
+  </ul></li>
+  <li><a href="#cellular-segmentation" id="toc-cellular-segmentation" class="nav-link" data-scroll-target="#cellular-segmentation">Cellular Segmentation</a>
+  <ul class="collapse">
+  <li><a href="#flat-segmentation" id="toc-flat-segmentation" class="nav-link" data-scroll-target="#flat-segmentation">Flat Segmentation</a></li>
+  <li><a href="#watershed-segmentation-and-affinities" id="toc-watershed-segmentation-and-affinities" class="nav-link" data-scroll-target="#watershed-segmentation-and-affinities">Watershed segmentation and affinities</a></li>
+  <li><a href="#dynamic-segmentation" id="toc-dynamic-segmentation" class="nav-link" data-scroll-target="#dynamic-segmentation">Dynamic segmentation</a></li>
+  <li><a href="#ground-truth-segmentation" id="toc-ground-truth-segmentation" class="nav-link" data-scroll-target="#ground-truth-segmentation">Ground truth segmentation</a></li>
+  </ul></li>
+  <li><a href="#synapse-segmentation-and-graph" id="toc-synapse-segmentation-and-graph" class="nav-link" data-scroll-target="#synapse-segmentation-and-graph">Synapse segmentation and graph</a>
+  <ul class="collapse">
+  <li><a href="#synaptic-cleft-segmentation" id="toc-synaptic-cleft-segmentation" class="nav-link" data-scroll-target="#synaptic-cleft-segmentation">Synaptic cleft segmentation</a></li>
+  <li><a href="#synapse-graph-versioned" id="toc-synapse-graph-versioned" class="nav-link" data-scroll-target="#synapse-graph-versioned">Synapse graph (versioned)</a></li>
+  </ul></li>
+  <li><a href="#nucleus-segmentation-and-classification" id="toc-nucleus-segmentation-and-classification" class="nav-link" data-scroll-target="#nucleus-segmentation-and-classification">Nucleus segmentation and classification</a>
+  <ul class="collapse">
+  <li><a href="#nucleus-segmentation" id="toc-nucleus-segmentation" class="nav-link" data-scroll-target="#nucleus-segmentation">Nucleus segmentation</a></li>
+  <li><a href="#nucleus-detection-and-centroids" id="toc-nucleus-detection-and-centroids" class="nav-link" data-scroll-target="#nucleus-detection-and-centroids">Nucleus detection and centroids</a></li>
+  <li><a href="#nucleus-based-cell-typing" id="toc-nucleus-based-cell-typing" class="nav-link" data-scroll-target="#nucleus-based-cell-typing">Nucleus-based cell typing</a></li>
+  </ul></li>
+  <li><a href="#functional-data" id="toc-functional-data" class="nav-link" data-scroll-target="#functional-data">Functional Data</a>
+  <ul class="collapse">
+  <li><a href="#stimulus-presentation-movies" id="toc-stimulus-presentation-movies" class="nav-link" data-scroll-target="#stimulus-presentation-movies">Stimulus presentation (movies)</a></li>
+  <li><a href="#functional-imaging-scans-tif" id="toc-functional-imaging-scans-tif" class="nav-link" data-scroll-target="#functional-imaging-scans-tif">Functional Imaging Scans (tif)</a></li>
+  <li><a href="#structural-imaging-z-stack" id="toc-structural-imaging-z-stack" class="nav-link" data-scroll-target="#structural-imaging-z-stack">Structural Imaging (z-stack)</a></li>
+  <li><a href="#datajoint-database" id="toc-datajoint-database" class="nav-link" data-scroll-target="#datajoint-database">DataJoint database</a></li>
+  <li><a href="#digital-twin-and-derived-data" id="toc-digital-twin-and-derived-data" class="nav-link" data-scroll-target="#digital-twin-and-derived-data">Digital twin and derived data</a></li>
+  </ul></li>
+  <li><a href="#proofreading-status" id="toc-proofreading-status" class="nav-link" data-scroll-target="#proofreading-status">Proofreading Status</a></li>
+  <li><a href="#functional-co-registration" id="toc-functional-co-registration" class="nav-link" data-scroll-target="#functional-co-registration">Functional Co-registration</a></li>
+  <li><a href="#neuron-skeletons-v661" id="toc-neuron-skeletons-v661" class="nav-link" data-scroll-target="#neuron-skeletons-v661">Neuron Skeletons (v661)</a>
+  <ul class="collapse">
+  <li><a href="#set-paths-to-the-public-repository" id="toc-set-paths-to-the-public-repository" class="nav-link" data-scroll-target="#set-paths-to-the-public-repository">Set paths to the public repository</a></li>
+  <li><a href="#example-load-cell-with-known-nucleus-id-and-segment-id" id="toc-example-load-cell-with-known-nucleus-id-and-segment-id" class="nav-link" data-scroll-target="#example-load-cell-with-known-nucleus-id-and-segment-id">Example: load cell with known nucleus id and segment id</a></li>
+  </ul></li>
+  <li><a href="#neuron-skeletons-v1300" id="toc-neuron-skeletons-v1300" class="nav-link" data-scroll-target="#neuron-skeletons-v1300">Neuron Skeletons (v1300)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/static-repositories.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -357,10 +474,1071 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="imagery" class="level2">
+<h2 class="anchored" data-anchor-id="imagery">Imagery</h2>
+<section id="electron-microscopy-images" class="level3">
+<h3 class="anchored" data-anchor-id="electron-microscopy-images">Electron Microscopy Images</h3>
+<table class="caption-top table">
+<caption>minnie65 and minnie35 imagery</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Fine-aligned Image (EM)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/em</code></td>
+<td style="text-align: left;">Multi-resolution electron microscopy (EM) imagery from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Image Data (117 TB)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fine-aligned Image (EM)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://storage.googleapis.com/iarpa_microns/minnie/minnie65/em</code></td>
+<td style="text-align: left;">Multi-resolution electron microscopy (EM) imagery from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Image Data (117 TB)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fine-aligned Image (EM)</td>
+<td style="text-align: left;">minnie35</td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie35/em</code></td>
+<td style="text-align: left;">Multi-resolution electron microscopy (EM) imagery from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Image Data (55 TB)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fine-aligned Image (EM)</td>
+<td style="text-align: left;">minnie35</td>
+<td style="text-align: left;"><code>https://storage.googleapis.com/iarpa_microns/minnie/minnie35/em</code></td>
+<td style="text-align: left;">Multi-resolution electron microscopy (EM) imagery from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Image Data (55 TB)</td>
+</tr>
+</tbody>
+</table>
+<p>This contains the fine aligned Electron Microscopy (EM) image data downsampled to 8,8,40 nm resolution stored in precomputed image format. Lower resolution downsampling is available in this bucket as well, including [16, 16, 40], [32, 32, 40], [64, 64, 40], [128, 128, 80], [256, 256, 160], [512, 512, 320], [1024, 1024, 640], [2048, 2048, 1280]. Folder contains many files, for download use cloud-volume, tensor-store, for bulk download use igneous, AWS CLI or gsutil CLI.</p>
+</section>
+<section id="microct" class="level3">
+<h3 class="anchored" data-anchor-id="microct">MicroCT</h3>
+<table class="caption-top table">
+<caption>minnie65 and minnie35 MicroCT</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MicroCT</td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/microCT</code></td>
+<td style="text-align: left;">MicroCT used for inspection and alignment</td>
+<td style="text-align: left;">ZIP (13 GB)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="cellular-segmentation" class="level2">
+<h2 class="anchored" data-anchor-id="cellular-segmentation">Cellular Segmentation</h2>
+<section id="flat-segmentation" class="level3">
+<h3 class="anchored" data-anchor-id="flat-segmentation">Flat Segmentation</h3>
+<table class="caption-top table">
+<caption>minnie65 and minnie35 flat segmentation v117</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Automated Segmentation (v0)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/autoseg</code></td>
+<td style="text-align: left;">Mulit-resolution flat / static cellular segmentation voxels and meshes from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Shareded Compressed Segmentation (12 TB)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proofread Segmentation (v117)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/seg</code></td>
+<td style="text-align: left;">Mulit-resolution flat / static cellular segmentation voxels and meshes from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Shareded Compressed Segmentation (12 TB)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proofread Segmentation (v117)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://storage.googleapis.com/iarpa_microns/minnie/minnie65/seg</code></td>
+<td style="text-align: left;">Mulit-resolution flat / static cellular segmentation voxels and meshes from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Shareded Compressed Segmentation (12 TB)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proofread Segmentation (v343)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://storage.googleapis.com/iarpa_microns/minnie/minnie65/seg_m343</code></td>
+<td style="text-align: left;">Mulit-resolution flat / static cellular segmentation voxels and meshes from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Shareded Compressed Segmentation (12 TB)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proofread Segmentation (v943)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://storage.googleapis.com/iarpa_microns/minnie/minnie65/seg_m943</code></td>
+<td style="text-align: left;">Mulit-resolution flat / static cellular segmentation voxels and meshes from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Shareded Compressed Segmentation (12 TB)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proofread Segmentation (v1300)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://storage.googleapis.com/iarpa_microns/minnie/minnie65/seg_m1300</code></td>
+<td style="text-align: left;">Mulit-resolution flat / static cellular segmentation voxels and meshes from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Shareded Compressed Segmentation (12 TB)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Automated Segmentation (v0)</td>
+<td style="text-align: left;">minnie35</td>
+<td style="text-align: left;"><code>s3://bossdb-open-data/iarpa_microns/minnie/minnie35/autoseg</code></td>
+<td style="text-align: left;">Mulit-resolution flat / static cellular segmentation voxels and meshes from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Shareded Compressed Segmentation (10 TB)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Proofread Segmentation (v0)</td>
+<td style="text-align: left;">minnie35</td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie35/seg</code></td>
+<td style="text-align: left;">Mulit-resolution flat / static cellular segmentation voxels and meshes from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Shareded Compressed Segmentation (10 TB)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Proofread Segmentation (v0)</td>
+<td style="text-align: left;">minnie35</td>
+<td style="text-align: left;"><code>https://storage.googleapis.com/microns_phase3/minnie/minnie35/seg</code></td>
+<td style="text-align: left;">Mulit-resolution flat / static cellular segmentation voxels and meshes from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Shareded Compressed Segmentation (10 TB)</td>
+</tr>
+</tbody>
+</table>
+<p>This contains the fixed state of the cellular segmentation at each version, where each voxel has been assigned an ID which is unique to each cellular object at 8,8,40, along with downsampled versions. Not all objects have been proofread, but a summary of the most focused efforts on cells can be found in the proofreading status metadata. In addition the mesh folder contains meshes of each object available at 3 different levels of downsampling. Folder contains many files, for download use cloud-volume, tensor-store, for bulk download use igneous, AWS CLI or gsutil CLI.</p>
+</section>
+<section id="watershed-segmentation-and-affinities" class="level3">
+<h3 class="anchored" data-anchor-id="watershed-segmentation-and-affinities">Watershed segmentation and affinities</h3>
+<table class="caption-top table">
+<caption>minnie65 and minnie35 Watershed Segmentation</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Watershed Segmentation</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/ws</code></td>
+<td style="text-align: left;">The supervoxel segmentation</td>
+<td style="text-align: left;">Precomputed Shareded Compressed Segmentation (42 TB)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Watershed Segmentation</td>
+<td style="text-align: left;">minnie35</td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie35/ws</code></td>
+<td style="text-align: left;">The supervoxel segmentation</td>
+<td style="text-align: left;">Compressed Sharded Precomputed Segmentation Data (22 TB)</td>
+</tr>
+</tbody>
+</table>
+<p>The individual supervoxels predicted by the affinity network before they were agglomerated by the automated segmentation and then modified through proofreading. Folder contains many files, for download use cloud-volume, tensor-store, for bulk download use igneous, AWS CLI or gsutil CLI.</p>
+</section>
+<section id="dynamic-segmentation" class="level3">
+<h3 class="anchored" data-anchor-id="dynamic-segmentation">Dynamic segmentation</h3>
+<table class="caption-top table">
+<caption>minnie65 and minnie35 Dynamic Segmentation</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Dynamic segmentation (public)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>graphene://https://minnie.microns-daf.com/segmentation/table/minnie65_public</code></td>
+<td style="text-align: left;">Dynamic cellular segmentation on the chunked graph</td>
+<td style="text-align: left;">Graphene Segmentation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dynamic segmentation (production)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>graphene://https://minnie.microns-daf.com/segmentation/table/minnie3_v1</code></td>
+<td style="text-align: left;">Dynamic cellular segmentation on the chunked graph</td>
+<td style="text-align: left;">Graphene Segmentation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dynamic segmentation (production)</td>
+<td style="text-align: left;">minnie35</td>
+<td style="text-align: left;"><code>graphene://middleauth+https://minnie.microns-daf.com/segmentation/table/minnie35_public_v0</code></td>
+<td style="text-align: left;">Dynamic cellular segmentation on the chunked graph</td>
+<td style="text-align: left;">Graphene Segmentation</td>
+</tr>
+</tbody>
+</table>
+<p>The cellular segmentation graphene layers, segmentation on the chunkedgraph. Access through cloud-volume or CAVEclient.</p>
+</section>
+<section id="ground-truth-segmentation" class="level3">
+<h3 class="anchored" data-anchor-id="ground-truth-segmentation">Ground truth segmentation</h3>
+<table class="caption-top table">
+<caption>minnie65 and minnie35 Dynamic Segmentation</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ground Truth Segmentation</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://zenodo.org/record/5760218/files/minnie.tar.gz</code></td>
+<td style="text-align: left;">Manual ground truth</td>
+<td style="text-align: left;">HDF5 file</td>
+</tr>
+</tbody>
+</table>
+<p>Manual ground truth labels provided for training the automated segmentation pipeline. For details and use, see the Zenodo record associated with the manual lables: <a href="https://zenodo.org/records/5760218">https://zenodo.org/records/5760218</a></p>
+</section>
+</section>
+<section id="synapse-segmentation-and-graph" class="level2">
+<h2 class="anchored" data-anchor-id="synapse-segmentation-and-graph">Synapse segmentation and graph</h2>
+<section id="synaptic-cleft-segmentation" class="level3">
+<h3 class="anchored" data-anchor-id="synaptic-cleft-segmentation">Synaptic cleft segmentation</h3>
+<table class="caption-top table">
+<caption>minnie65 synaptic cleft segmentation</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">PSD Segmentation</td>
+<td style="text-align: left;"><strong>minie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/clefts</code></td>
+<td style="text-align: left;">Voxel segmentation of each synapse (post-synaptic density - PSD) detected</td>
+<td style="text-align: left;">Precomputed Compressed Segmentation Data (127 GB)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PSD Segmentation</td>
+<td style="text-align: left;">minnie35</td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie35/clefts</code></td>
+<td style="text-align: left;">Voxel segmentation of each synapse (post-synaptic density - PSD) detected</td>
+<td style="text-align: left;">Precomputed Compressed Segmentation Data (94 GB)</td>
+</tr>
+</tbody>
+</table>
+<p>This contains a flattened segmentation of the synaptic clefts where each voxel has been assigned an ID which is unique to each synapse at 8,8,40. Folder contains many files, for download use cloud-volume, for bulk download use igneous or AWS or gsutill CLI.</p>
+</section>
+<section id="synapse-graph-versioned" class="level3">
+<h3 class="anchored" data-anchor-id="synapse-graph-versioned">Synapse graph (versioned)</h3>
+<table class="caption-top table">
+<caption>minnie65 and minnie35 Synapse Graph</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Synapse Graph (v117)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/synapse_graph/synapses_pni_2.csv</code></td>
+<td style="text-align: left;">Metadata about each synapse detection, including which cellular segmentation(s) are pre/post synaptic</td>
+<td style="text-align: left;">CSV (47.5 GB)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Synapse Graph</td>
+<td style="text-align: left;">minnie35</td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie35/synapse_graph/assigned.csv.gz</code></td>
+<td style="text-align: left;">Metadata about each synapse detection, including which cellular segmentation(s) are pre/post synaptic</td>
+<td style="text-align: left;">CSV (14.5 GB)</td>
+</tr>
+</tbody>
+</table>
+<p>This CSV contains columns of metadata about the synapse detections. Note that this is as of the segmentation at version 117; <code>pre_pt_root_id</code> and <code>post_pt_root_id</code> are pinned to that version.</p>
+<p>Column Descriptions:</p>
+<ul>
+<li><code>id</code>: corresponds to the ID from the PSD segmentation volume</li>
+<li><code>valid</code>: internal check, uniformly ‘t’</li>
+<li><code>pre_pt_position_{x,y,z}</code>: the location in 4,4,40 nm voxels of the pre-synaptic point</li>
+<li><code>post_pt_position_{x,y,z}</code>: the location in 4,4,40 nm voxels of the post-synaptic point</li>
+<li><code>ctr_pt_position_{x,y,z}</code>: the location of the center of mass of the PSD segmentation in 4,4,40 nm voxels</li>
+<li><code>pre_pt_supervoxel_id</code>: the ID of the supervoxel from the watershed segmentation that is under the pre_pt_position</li>
+<li><code>post_pt_supervoxel_id</code>: the ID of the supervoxel from the watershed segmentation that is under the post_pt_position</li>
+<li><code>pre_pt_root_id</code>: the ID of the segment/root_id under the pre_pt_position from the Proofread Segmentation (v117)</li>
+<li><code>post_pt_root_id</code>: the ID of the segment/root_id under the post_pt_position from the Proofread Segmentation (v117)</li>
+<li><code>size</code>: the count of voxels in 4,4,40 nm resolution of the PSD segmentation object</li>
+</ul>
+</section>
+</section>
+<section id="nucleus-segmentation-and-classification" class="level2">
+<h2 class="anchored" data-anchor-id="nucleus-segmentation-and-classification">Nucleus segmentation and classification</h2>
+<section id="nucleus-segmentation" class="level3">
+<h3 class="anchored" data-anchor-id="nucleus-segmentation">Nucleus segmentation</h3>
+<table class="caption-top table">
+<caption>minnie65 nucleus segmentation</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Nucleus Segmentation</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/nuclei</code></td>
+<td style="text-align: left;">Voxel segmentation and meshes of each cell nucleus detected in image volume</td>
+<td style="text-align: left;">Precomputed Compressed Segmentation Data (26.8 GB)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nucleus Segmentation</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://storage.googleapis.com/iarpa_microns/minnie/minnie65/nuclei</code></td>
+<td style="text-align: left;">Voxel segmentation and meshes of each cell nucleus detected in image volume</td>
+<td style="text-align: left;">Precomputed Compressed Segmentation Data (26.8 GB)</td>
+</tr>
+</tbody>
+</table>
+<p>This contains a flattened segmentation of the nucleus segmentation where each voxel has been assigned an ID which is unique to each nucleus at 8,8,40. Folder contains many files, for download use cloud-volume, for bulk download use igneous or AWS CLI.</p>
+</section>
+<section id="nucleus-detection-and-centroids" class="level3">
+<h3 class="anchored" data-anchor-id="nucleus-detection-and-centroids">Nucleus detection and centroids</h3>
+<table class="caption-top table">
+<caption>minnie65 nucleus detection</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Nucleus Detection</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/nucleus_detection/nucleus_detection_v0.csv</code></td>
+<td style="text-align: left;">Metadata about each nucleus detection, including the cellular segment that it overlaps with</td>
+<td style="text-align: left;">CSV (10.5 MB)</td>
+</tr>
+</tbody>
+</table>
+<p>A table of nuclei detections from a nucleus detection model developed by Shang Mu, Leila Elabbady, Gayathri Mahalingam and Forrest Collman. Only included nucleus detections of volume&gt;25 um^3, below which detections are false positives, though some false positives above that threshold remain.</p>
+<p>Column Descriptions:</p>
+<ul>
+<li><code>id</code>: corresponds to the ID from the nucleus detection and segmentation</li>
+<li><code>valid</code>: internal check, uniformly ‘t’</li>
+<li><code>pt_position_{x,y,z}</code>: the location in 4,4,40 nm voxels of the nucleus location</li>
+<li><code>pt_supervoxel_id</code>: the ID of the supervoxel from the watershed segmentation that is under the pt_position</li>
+<li><code>pt_root_id</code>: the ID of the segment/root_id under the pt_position from the Proofread Segmentation (v117).</li>
+<li><code>volume</code>: the volume of the nucleus detection in um^3</li>
+</ul>
+</section>
+<section id="nucleus-based-cell-typing" class="level3">
+<h3 class="anchored" data-anchor-id="nucleus-based-cell-typing">Nucleus-based cell typing</h3>
+<table class="caption-top table">
+<caption>minnie65 neuron nucleus classification</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Nucleus Neuron Classification</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/nucleus_neuron_classification/nucleus_neuron_svm.csv</code></td>
+<td style="text-align: left;">An automated annotation of which nuclei are neurons</td>
+<td style="text-align: left;">CSV (12.8 MB)</td>
+</tr>
+</tbody>
+</table>
+<p>This table contains a prediction about what nucleus detections are neurons and which are likely not neurons. This is based upon a model trained by Leila Elabbady for <span class="citation" data-cites="elabbady_perisomatic_2025">(<a href="#ref-elabbady_perisomatic_2025" role="doc-biblioref">Elabbady et al. 2025</a>)</span> on nucleus segmentations in Basil (Phase 2), processed for features such as volume, foldedness, location in cortex, etc, and applied to Minnie65. In Basil the model had a cross validated f1 score of .97 and a recall of .97 for neurons. Manual validation performed on a column of 1316 nuclei in Minnie65 measured a recall of .996 and a precision of .969.</p>
+<p>Column Descriptions:</p>
+<ul>
+<li><code>id</code>: corresponds to the ID from the nucleus detection and segmentation</li>
+<li><code>valid</code>: internal check, uniformly ‘t’</li>
+<li><code>pt_position_{x,y,z}</code>: the location in 4,4,40 nm voxels of the nucleus location</li>
+<li><code>pt_supervoxel_id</code>: the ID of the supervoxel from the watershed segmentation that is under the pt_position</li>
+<li><code>pt_root_id</code>: the ID of the segment/root_id under the pt_position from the Proofread Segmentation (v117).</li>
+<li><code>classification_system</code>: uniformly “is_neuron” for all entries.</li>
+<li><code>cell_type</code>: ‘neuron’ if the classifier called this a neuron, ‘not-neuron’ if it was not classified as a neuron, this contains both non-neuronal cells as well as false positive detections.</li>
+</ul>
+</section>
+</section>
+<section id="functional-data" class="level2">
+<h2 class="anchored" data-anchor-id="functional-data">Functional Data</h2>
+<p>Downloads available from the following links at <a href="http://bossdb.org/project/microns-minnie">BossDB: IARPA MICrONS Minnie</a>, and also as Neuro-data without borders (.NWB) format from <a href="https://dandiarchive.org/dandiset/000402">DANDI: MICrONS Two Photon Functional Imaging</a></p>
+<section id="stimulus-presentation-movies" class="level3">
+<h3 class="anchored" data-anchor-id="stimulus-presentation-movies">Stimulus presentation (movies)</h3>
+<table class="caption-top table">
+<caption>Functional Data: Stimulus Presentation</caption>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Stimulus Presentation</td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/functional_data/stimulus_movies</code></td>
+<td style="text-align: left;">Visual stimulus presented during functional imaging scans</td>
+<td style="text-align: left;">AVI (multiple, 9.8 GB each, 186.2 GB total)</td>
+</tr>
+</tbody>
+</table>
+<p>The visual stimulus shown to the animal in each scan for 19 scans was recreated by aligning, concatenating, and temporally filtering individual stimulus clips into a single movie, which was sampled by interpolation at scan depth frame times and saved as an avi file. Please see <a href="https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/functional_data/stimulus_movies/stimulus_movies_technical_documentation_v4.pdf">technical documentation</a> for details.</p>
+</section>
+<section id="functional-imaging-scans-tif" class="level3">
+<h3 class="anchored" data-anchor-id="functional-imaging-scans-tif">Functional Imaging Scans (tif)</h3>
+<table class="caption-top table">
+<caption>Functional Data: Functional Imaging Scans</caption>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Functional Imaging Scans</td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/functional_data/two_photon_functional_scans/</code></td>
+<td style="text-align: left;">Two-photon functional imaging scans</td>
+<td style="text-align: left;">TIF (multiple, 66-95 GB each, 1.3TB total)</td>
+</tr>
+</tbody>
+</table>
+<p>The two-photon imaging collected during 19 scans was raster- and motion-corrected, then saved as TIF files. Please see <a href="https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/functional_data/stimulus_movies/stimulus_movies_technical_documentation_v4.pdf">technical documentation</a> for details.</p>
+</section>
+<section id="structural-imaging-z-stack" class="level3">
+<h3 class="anchored" data-anchor-id="structural-imaging-z-stack">Structural Imaging (z-stack)</h3>
+<table class="caption-top table">
+<caption>Functional Data: Structural Imaging Stack</caption>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Structural Imaging Stack</td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/functional_data/two_photon_structural_stacks</code></td>
+<td style="text-align: left;">Two-photon structural volume enclosing imaged area</td>
+<td style="text-align: left;">TIFF (multiple, 1.2-9.4 GB each, 10.6 GB total)</td>
+</tr>
+</tbody>
+</table>
+<p>Two-photon volume imaging including vasculature label of the tissue enclosing the two-photon imaged area, saved at original and upsampled resolutions as TIF files. Please see <a href="https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/functional_data/stimulus_movies/stimulus_movies_technical_documentation_v4.pdf">technical documentation</a> for details.</p>
+</section>
+<section id="datajoint-database" class="level3">
+<h3 class="anchored" data-anchor-id="datajoint-database">DataJoint database</h3>
+<table class="caption-top table">
+<caption>Functional Data: DataJoint</caption>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DataJoint Database</td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/functional_data/two_photon_processed_data_and_metadata</code></td>
+<td style="text-align: left;">Functional Data, Meta Data, Experimental Data</td>
+<td style="text-align: left;">SQL, Containers (225 GB total)</td>
+</tr>
+</tbody>
+</table>
+<p>Scan metadata and processed data including scan and stack metadata, synchronized stimulus movies, synchronized behavioral traces, cell segmentation masks, calcium traces, and inferred spikes, pre-ingested into a containerized MYSQL v5.7 database, schematized using DataJoint. Please see <a href="https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/functional_data/stimulus_movies/stimulus_movies_technical_documentation_v4.pdf">technical documentation</a> for details.</p>
+<p>Instructions for setting up the containers available at <a href="https://github.com/cajal/microns-nda-access">https://github.com/cajal/microns-nda-access</a>.</p>
+</section>
+<section id="digital-twin-and-derived-data" class="level3">
+<h3 class="anchored" data-anchor-id="digital-twin-and-derived-data">Digital twin and derived data</h3>
+<table class="caption-top table">
+<caption>Functional Data: Digital Twin</caption>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Digital Twin Properties (netCDF)</td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/functional_data/digital_twin_properties</code></td>
+<td style="text-align: left;">xarray dataset containing the digital twin neural responses and derived characteristics</td>
+<td style="text-align: left;">netCDF (30.6 GB)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Digital Twin Properties (csv)</td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/functional_data/units_visual_properties</code></td>
+<td style="text-align: left;">table containing the digital twin derived characteristics</td>
+<td style="text-align: left;">CSV (22 MB)</td>
+</tr>
+</tbody>
+</table>
+<p>A deep neural network model trained to predict visual responses has been applied to the functional recordings in the MICrONS dataset. This model predicts neural activity in response to the visual stimuli, and also estimates important visual properties of these neurons. This includes fits of their orientation and direction selectivity, as well as an estimate of their receptive field locations.</p>
+<p>For details and use, see <span class="citation" data-cites="wang_foundation_2025">(<a href="#ref-wang_foundation_2025" role="doc-biblioref">Wang et al. 2025</a>)</span> and <span class="citation" data-cites="ding_functional_2025">(<a href="#ref-ding_functional_2025" role="doc-biblioref">Ding et al. 2025</a>)</span>.</p>
+<p>Variables included in both the .netCDF and .csv data sources are:</p>
+<ul>
+<li><code>session</code>: session ID for the recording. The combination of session and scan_idx uniquely identifies the recording</li>
+<li><code>scan_idx</code>: scan ID for the recording. The combination of session and scan_idx uniquely identifies the recording scan</li>
+<li><code>unit_id</code>: functional unit ID, unique per recording scan</li>
+<li><code>pref_ori</code>: preferred orientation in radians (0 - pi), horizontal bar moving upward is 0 and orientation increases clockwise, extracted from model responses to oriented noise stimuli</li>
+<li><code>pref_dir</code>: preferred direction in radians (0 - 2pi), horizontal bar moving upward is 0 and orientation increases clockwise, extracted from model responses to oriented noise stimuli</li>
+<li><code>gOSI</code>: global orientation selectivity index</li>
+<li><code>gDSI</code>: global direction selectivity index</li>
+<li><code>readout_weight</code>: readout weight vector</li>
+<li><code>readout_location_x</code>: x coordinate of the readout location per unit, in a 128 * 72 downsampled stimulus space, this is an approximation of a neuron’s receptive field center</li>
+<li><code>readout_location_y</code>: y coordinate of the readout location per unit, in a 128 * 72 downsampled stimulus space, this is an approximation of a neuron’s receptive field center</li>
+<li><code>cc_abs</code>: prediction performance of the model, higher is better</li>
+<li><code>cc_max</code>: tuning reliability of functional units, higher is better</li>
+</ul>
+<p>The following data structures are available ONLY in the netCDF files:</p>
+<ul>
+<li><code>natural_movie</code>: a concatenated collection of 10-sec naturalistic movie clips (netCDF file only)</li>
+<li><code>natural_response</code>: model responses to natural_movie, each 10-sec movie clip is fed independently to the model, and the responses are concatenated</li>
+</ul>
+<p>The following variables are available ONLY in the .csv file.</p>
+<ul>
+<li><code>oracle_scan_set_hash</code>: metadata to lookup the matching the visual stimulus set</li>
+<li><code>ori_scan_set_hash</code>: metadata to lookup the matching the visual stimulus set</li>
+<li><code>dynamic_model_scan_set_hash</code>: metadata to lookup the matching the digital twin model responses</li>
+</ul>
+</section>
+</section>
+<section id="proofreading-status" class="level2">
+<h2 class="anchored" data-anchor-id="proofreading-status">Proofreading Status</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This table is available for posterity, but it is highly recommended you use the up-to-date proofreading status available through CAVE. See <a href="quickstart_notebooks/03-cave-query-proofread-cells.html">CAVE Query: Proofread Cells</a> for the preferred workflow</p>
+</div>
+</div>
+<table class="caption-top table">
+<caption>minnie65 Proofreading Status</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Proofreading Status</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/proofreading_status/proofreading_status_public_release.csv</code></td>
+<td style="text-align: left;">Metadata about which cells have undergone what level of proofreading</td>
+<td style="text-align: left;">CSV (56 KB)</td>
+</tr>
+</tbody>
+</table>
+<p>The proofreading status of neurons that have been comprehensively proofread as of v117. Axon and dendrite compartment status are marked separately under ‘axon_status’ and ‘dendrite_status’, as proofreading effort was applied differently to the different compartments in some cells. There are three possible status values for each compartment: ‘non’ indicates no comprehensive proofreading. ‘clean’ indicates that all false merges have been removed, but all tips have not necessarily been followed. ‘extended’ indicates that the cell is both clean and all tips have been followed as far as a proofreader was able to. Very small false axon merges (axon fragments approximately 5 microns or less in length) were considered acceptable for clean neurites. Note that this table does not list all edited cells, but only those with comprehensive effort toward the status mentioned here. It is meant to serve as a resource for analysis as to a list of objects that have undergone different levels of quality control by humans.</p>
+<p>Column Descriptions:</p>
+<ul>
+<li><code>id</code>: a unique identifier for this row</li>
+<li><code>valid</code>: internal check, uniformly ‘t’</li>
+<li><code>pt_position_{x,y,z}</code>: the location in 4,4,40 nm voxels at a cell body or similar core position for the cell</li>
+<li><code>pt_supervoxel_id</code>: the ID of the supervoxel from the watershed segmentation that is under the pt_position</li>
+<li><code>pt_root_id</code>: the ID of the segment/root_id under the pt_position from the Proofread Segmentation (v117).</li>
+<li><code>valid_id</code>: the root id when the proofreading was last checked. If the current root id in ‘pt_root_id’ is not the same as ‘valid_id’, there is no guarantee that the proofreading status is correct. Should not happen be true for all rows in this release.</li>
+<li><code>status_dendrite</code>: the status of proofreading for this cell’s dendrites. (clean, extended, non)</li>
+<li><code>status_axon</code>: the status of proofreading for this cell’s axon. (clean, extended, non)</li>
+</ul>
+</section>
+<section id="functional-co-registration" class="level2">
+<h2 class="anchored" data-anchor-id="functional-co-registration">Functional Co-registration</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This table is available for posterity, but it is highly recommended you use the up-to-date coregistration table available through CAVE. See <a href="annotation-tables.html#functional-coregistration-tables">Annotation Tables: Functional Coregistration Tables</a> for current best practices.</p>
+</div>
+</div>
+<table class="caption-top table">
+<caption>minnie65 Functional Co-registration</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Functional Co-registration</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/functional_coregistration/func_unit_em_match_release.csv</code></td>
+<td style="text-align: left;">Metadata about which cellular segmentations correspond to which functional ROIs</td>
+<td style="text-align: left;">CSV (14KB)</td>
+</tr>
+</tbody>
+</table>
+<p>A table of EM nuclear centroids manually matched to corresponding units from the functional scans. Functional imaging performed by Paul Fahey and Jake Reimer of BCM. A functional unit is uniquely identified by its session, scan_idx and unit_id. An EM centroid may been present in more than one imaging field and therefore be associated with more than one functional unit. Coregistration of Two-Photon imaging data and EM data performed by AIBS. Coregistration: Nuno da Costa and Mark Takeno of AIBS generated correspondence points between the datasets and Dan Kapner of AIBS fit the transform. (Github: https://github.com/AllenInstitute/em_coregistration/tree/phase3). Matching: Functional unit to EM cell matching protocol developed by Stelios Papadopoulos of BCM and performed by trained personnel. Briefly, a summary image of the functional imaging field was compared to its corresponding plane from the coregistered EM volume. Both nearby neuronal somas and vessel features were used as fiducials to confirm the accuracy of coregistration locally and to determine the functional unit to EM cell match.</p>
+<p>Column Descriptions:</p>
+<ul>
+<li><code>id</code>: a unique identifier for this row</li>
+<li><code>valid</code>: internal check, uniformly ‘t’</li>
+<li><code>pt_position_{x,y,z}</code>: the location in 4,4,40 nm voxels at a cell body or similar core position for the cell</li>
+<li><code>pt_supervoxel_id</code>: the ID of the supervoxel from the watershed segmentation that is under the pt_position</li>
+<li><code>pt_root_id</code>: the ID of the segment/root_id under the pt_position from the Proofread Segmentation (v117).</li>
+<li><code>session</code>: the ID indicating the imaging period for the mouse (combination of <code>session</code> and <code>scan_idx</code> indicate a distinct recording)</li>
+<li><code>scan_idx</code>: the index of the scan within the imaging session (combination of <code>session</code> and <code>scan_idx</code> indicate a distinct recording)</li>
+<li><code>unit_id</code>: the ID of the functional ROI (unique per scan)</li>
+</ul>
+</section>
+<section id="neuron-skeletons-v661" class="level2">
+<h2 class="anchored" data-anchor-id="neuron-skeletons-v661">Neuron Skeletons (v661)</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These skeletons are available for posterity, but it is highly recommended you use the up-to-date skeletons and meshes available through CAVE. See <a href="quickstart_notebooks/07-cave-download-skeleton.html">Download Skeletons</a> for the preferred workflow, or the v1300 section below for a more recent static repository</p>
+</div>
+</div>
+<table class="caption-top table">
+<caption>minni65 SWC Skeletons v661</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SWC Skeleton</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie/minnie65/skeletons/v661/skeletons</code></td>
+<td style="text-align: left;">Graph neuron with nodes, the radius, and compartment</td>
+<td style="text-align: left;">.csv (many files)</td>
+</tr>
+</tbody>
+</table>
+<p>The swc files contain a simple graphical representation of neurons that has nodes with their 3d points in space, the estimated radius of those points and the compartment of the node (axon, (basal) dendrite, apical dendrite, soma).</p>
+<table class="caption-top table">
+<caption>minnie65 Meshwork Skeletons v661</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Meshwork Skeleton</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie/minnie65/skeletons/v661/meshworks</code></td>
+<td style="text-align: left;">Graphical representation of neurons as networkx object)</td>
+<td style="text-align: left;">.h5 (many files)</td>
+</tr>
+</tbody>
+</table>
+<p>Each h5 file here can be ingested into a meshwork object in python with the package <a href=".\quickstart_notebooks/06-cloudvolume-download-mesh.html#meshparty-for-processing-mesh-objects">MeshParty</a>. This meshwork integrates anatomical data and other user defined annotations such as synapses. The meshworks here contain annotation tables including pre and post synaptic chemical synapses on the given neuron and the ids of the post or presynaptic neurons respectively. Unless the neuron has had a high level of proofreading, the axon has been masked and removed.</p>
+<table class="caption-top table">
+<caption>minnie65 Skeleton metadata v661</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Metadata Json</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie/minnie65/skeletons/v661/metadata</code></td>
+<td style="text-align: left;">Features of the skeleton and processing pipeline</td>
+<td style="text-align: left;">.json (many files)</td>
+</tr>
+</tbody>
+</table>
+<p>The json files contain metadata and various features of the neuron skeleton including the proofreading version of the microns dataset, the various ids of the given body, and information on masked out indices.</p>
+<p>The variables included in the Json file are:</p>
+<ul>
+<li><code>soma_location</code>: location of the center of the soma for the given neuron in voxels</li>
+<li><code>soma_id</code>: identification number of the soma nucleus of the given neuron</li>
+<li><code>root_id</code>: identification number (segmentation id) of this specific version of this neuron. If the given neuron undergoes proofreading and some neuron segment is added or removed, it will be given a new root it. The root id recorded here was the root for this neuron in the current version (see ‘version’ value in this meta file)</li>
+<li><code>supervoxel_id</code>: identification number of a supervoxel (smallest unit of segmentation) at the center of the soma of the given neuron version MICrONS dataset materialization version from which the meshwork and skeleton was generated from. Different versions have different level of proofreading</li>
+<li><code>apical_nodes</code>: indices of excitatory skeleton nodes in this neuron that have been predicted to be apical nodes. Per the system we used, there could be no apicals, one apical, or multiple apicals. One apical is the most common</li>
+<li><code>basal_nodes</code>: indices of excitatory skeleton nodes predicted to be basal dendrites</li>
+<li><code>true_axon_nodes</code>: Only measured in the highly proofread neurons for which we retained the axons on the skeletons. Indicates the indices of skeleton nodes that represent the axon. Compare to classified_axon_nodes below, and additional metadata on the proofreading status</li>
+<li><code>total_skeleton_path_length</code>: total cable length of skeleton (in nm)</li>
+<li><code>apical_length</code>: total cable length of apical nodes along skeleton (in nm)</li>
+<li><code>basal_length</code>: total cable length of basal nodes along skeleton (in nm)</li>
+<li><code>axon_length</code>: total cable length of axon nodes along skeleton (in nm)</li>
+<li><code>percent_apical_pathlength</code>: (apical_length/total_skeleton_path_length)*100</li>
+<li><code>percent_basal_pathlength</code>: (basal_length/total_skeleton_path_length)*100</li>
+<li><code>percent_axon_pathlength</code>: (axon_length/total_skeleton_path_length)*100</li>
+<li><code>classified_axon_nodes</code>: indices of skeleton nodes that were predicted to be axons by algorithm, but were not removed during peel-back due to having a downstream segment that was identified as a dendrite. (A measure of potential error in the compartment labeling process)</li>
+<li><code>length_remaining_classified_axon</code>: total cable length of skeleton nodes that were predicted to be axons by algorithm, but were not removed due to having a downstream segment that was identified as a dendrite. (A measure of potential error in the compartment labeling process)</li>
+<li><code>percent_remaining_classified_axon_pathlength</code>: (total_classified_axon_pathlength/total_skeleton_path_length)*100</li>
+</ul>
+<p>The Json metadata files also include the proofreading status indicators for the cells, which determined whether the axon was excluded from skeletonization and compartment labeling. These metrics are as follows:</p>
+<ul>
+<li><code>tracing_status_dendrite</code>: indicates the amount and mode of proofreading that has been conducted on the dendrite of the neuron. May be one of: non, clean, extended. See Proofreading Strategies for more information.</li>
+<li><code>tracing_status_axon</code>: indicates the amount and mode of proofreading that has been conducted on axon of the neuron. May be one of: non, clean, extended. See Proofreading Strategies for more information.</li>
+<li>`tracing_pipeline indicates if axon is included or has been masked out/removed from the meshwork and skeletons</li>
+<li><code>clean_axon_included</code>: indicates that the neuron has been sufficiently proofread and that the axon has not been removed and has been included in the skeleton and not masked over in the meshwork. There are 373 such neurons in this collection.</li>
+<li><code>all_axon_removed</code>: indicates that the neuron has not been sufficiently proofread, meaning the axon is not biologically accurate and has therefor been masked and removed. Asterisk indicates that this process may not have removed or masked out all the axon. See classified_axon_nodes above.</li>
+</ul>
+<p>A Use Example for the v661 skeletons follows, and requires the convenience python package <code>skeleton_plot</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install skeleton_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="set-paths-to-the-public-repository" class="level3">
+<h3 class="anchored" data-anchor-id="set-paths-to-the-public-repository">Set paths to the public repository</h3>
+<p>The skeletons of the meshes are calculated at specific timepoints. This collection of neurons in the dataset was at materialization version 661.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> skeleton_plot <span class="im">as</span> skelplot</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> skeleton_plot.skel_io <span class="im">as</span> skel_io</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># path to the skeleton .swc files</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>skel_path <span class="op">=</span> <span class="st">"s3://bossdb-open-data/iarpa_microns/minnie/minnie65/skeletons/v661/skeletons/"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># path to the skeleton and meshwork .h5 files</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>mesh_path <span class="op">=</span> <span class="st">"s3://bossdb-open-data/iarpa_microns/minnie/minnie65/skeletons/v661/meshworks/"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-load-cell-with-known-nucleus-id-and-segment-id" class="level3">
+<h3 class="anchored" data-anchor-id="example-load-cell-with-known-nucleus-id-and-segment-id">Example: load cell with known nucleus id and segment id</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Skeleton</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>nucleus_id <span class="op">=</span> <span class="dv">292685</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>segment_id <span class="op">=</span> <span class="dv">864691135122603047</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>skel_filename <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>segment_id<span class="sc">}</span><span class="ss">_</span><span class="sc">{</span>nucleus_id<span class="sc">}</span><span class="ss">.swc"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># load the .swc skeleton</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>sk <span class="op">=</span> skel_io.read_skeleton(skel_path, skel_filename)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># load the meshwork (may take minutes to locate, if using public credentials)</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>mesh_filename <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>segment_id<span class="sc">}</span><span class="ss">_</span><span class="sc">{</span>nucleus_id<span class="sc">}</span><span class="ss">.h5"</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>mw <span class="op">=</span> skel_io.load_mw(mesh_path, mesh_filename)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="plot-skeleton" class="level4">
+<h4 class="anchored" data-anchor-id="plot-skeleton">Plot skeleton</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>f, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">10</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>skelplot.plot_tools.plot_skel(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    sk,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span>nucleus_id,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    line_width<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    plot_soma<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    invert_y<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    pull_compartment_colors<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"z"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"y"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    skel_color_map <span class="op">=</span> { <span class="dv">3</span>: <span class="st">"firebrick"</span>,<span class="dv">4</span>: <span class="st">"salmon"</span>,<span class="dv">2</span>: <span class="st">"black"</span>,<span class="dv">1</span>: <span class="st">"olive"</span> },</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>) </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'left'</span>].set_visible(<span class="va">False</span>) </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>) </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'bottom'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ax.axis('off')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="plot-meshwork" class="level4">
+<h4 class="anchored" data-anchor-id="plot-meshwork">Plot meshwork)</h4>
+<p>The meshwork object (h5 file) includes additional information about the input and output synapse positions along the skeleton</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>f, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">10</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>skelplot.plot_tools.plot_mw_skel(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    mw, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span>nucleus_id,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    pull_radius <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    line_width<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    plot_soma<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    invert_y<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    pull_compartment_colors<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"z"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"y"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    skel_color_map <span class="op">=</span> { <span class="dv">3</span>: <span class="st">"firebrick"</span>,<span class="dv">4</span>: <span class="st">"salmon"</span>,<span class="dv">2</span>: <span class="st">"black"</span>,<span class="dv">1</span>: <span class="st">"olive"</span> },</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    plot_presyn <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    plot_postsyn <span class="op">=</span> <span class="va">True</span>,)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>) </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'left'</span>].set_visible(<span class="va">False</span>) </span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>) </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'bottom'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co"># ax.axis('off')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="neuron-skeletons-v1300" class="level2">
+<h2 class="anchored" data-anchor-id="neuron-skeletons-v1300">Neuron Skeletons (v1300)</h2>
+<table class="caption-top table">
+<caption>minnie65 SWC Skeletons v1300</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SWC Skeleton (proofread)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://storage.googleapis.com/microns-static-links/skel/swc/proofread</code></td>
+<td style="text-align: left;">Graph neuron with nodes, the radius, and compartment (axon included)</td>
+<td style="text-align: left;">.swc (many files)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SWC Skeleton</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://storage.googleapis.com/microns-static-links/skel/swc/dendrite</code></td>
+<td style="text-align: left;">Graph neuron with nodes, the radius, and compartment (axon excluded)</td>
+<td style="text-align: left;">.swc (many files)</td>
+</tr>
+</tbody>
+</table>
+<p>The swc files contain a simple graphical representation of neurons that has nodes with their 3d points in space, the estimated radius of those points and the compartment of the node (axon, (basal) dendrite, apical dendrite, soma). The <strong>proofread</strong> cells include the axons, while all unproofread cells have had their axons removed from the skeleton reconstruction for clarity.</p>
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-ding_functional_2025" class="csl-entry" role="listitem">
+Ding, Zhuokun, Paul G. Fahey, Stelios Papadopoulos, Eric Y. Wang, Brendan Celii, Christos Papadopoulos, Andersen Chang, et al. 2025. <span>“Functional Connectomics Reveals General Wiring Rule in Mouse Visual Cortex.”</span> <em>Nature</em> 640 (8058): 459–69. <a href="https://doi.org/10.1038/s41586-025-08840-3">https://doi.org/10.1038/s41586-025-08840-3</a>.
+</div>
+<div id="ref-elabbady_perisomatic_2025" class="csl-entry" role="listitem">
+Elabbady, Leila, Sharmishtaa Seshamani, Shang Mu, Gayathri Mahalingam, Casey M. Schneider-Mizell, Agnes L. Bodor, J. Alexander Bae, et al. 2025. <span>“Perisomatic Ultrastructure Efficiently Classifies Cells in Mouse Cortex.”</span> <em>Nature</em> 640 (8058): 478–86. <a href="https://doi.org/10.1038/s41586-024-07765-7">https://doi.org/10.1038/s41586-024-07765-7</a>.
+</div>
+<div id="ref-wang_foundation_2025" class="csl-entry" role="listitem">
+Wang, Eric Y., Paul G. Fahey, Zhuokun Ding, Stelios Papadopoulos, Kayla Ponder, Marissa A. Weis, Andersen Chang, et al. 2025. <span>“Foundation Model of Neural Activity Predicts Response to New Stimulus Types.”</span> <em>Nature</em> 640 (8058): 470–77. <a href="https://doi.org/10.1038/s41586-025-08829-y">https://doi.org/10.1038/s41586-025-08829-y</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -786,7 +1964,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/static-repositories.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/static-repositories.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

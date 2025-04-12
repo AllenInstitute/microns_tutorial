@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/03-cave-query-proofread-cells.html</loc>
-    <lastmod>2025-04-03T19:28:05.402Z</lastmod>
+    <lastmod>2025-04-11T19:13:54.452Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/01-caveclient-setup.html</loc>
@@ -90,11 +90,11 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/02-cave-query-cell-types.html</loc>
-    <lastmod>2025-04-03T22:29:25.611Z</lastmod>
+    <lastmod>2025-04-11T19:07:02.394Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/04-cave-query-synapses.html</loc>
-    <lastmod>2025-04-08T17:47:31.560Z</lastmod>
+    <lastmod>2025-04-11T21:22:33.205Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/06-cloudvolume-download-mesh.html</loc>
@@ -111,5 +111,9 @@
   <url>
     <loc>https://tutorial.microns-explorer.org/release_manifests/version-1300.html</loc>
     <lastmod>2025-04-09T19:25:14.855Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tutorial.microns-explorer.org/static-repositories.html</loc>
+    <lastmod>2025-04-12T00:11:10.252Z</lastmod>
   </url>
 </urlset>
