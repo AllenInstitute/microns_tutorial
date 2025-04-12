@@ -13,9 +13,13 @@ website:
         text: Analysis Gallery
       - href: faq.ipynb
         text: FAQ
+      - href: https://www.nature.com/collections/bdigiaicbd
+        text: Nature Publications
     tools: 
       - icon: chat-left-text-fill
-        href: https://github.com/AllenInstitute/microns_tutorial/discussions
+        menu:
+          - text: Forum
+            url: https://github.com/AllenInstitute/microns_tutorial/discussions
       - icon: github
         menu:
           - text: Source Code
