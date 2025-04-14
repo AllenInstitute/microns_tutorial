@@ -59,6 +59,8 @@ div.csl-indent {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-9eb995e8644016eb670a0cb3bf478a26.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -91,10 +93,10 @@ div.csl-indent {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Introduction – MICrONs Tutorial">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://tutorial.microns-explorer.org/img/minnie-3d-cells.png">
+<meta property="og:image" content="https://tutorial.microns-explorer.org/img/microns_consortium_logo.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
-<meta property="og:image:height" content="1150">
-<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="180">
+<meta property="og:image:width" content="964">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -211,6 +213,12 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./materialization-version.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Materialization and Versioning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./vortex-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Virtual Observatory of the Cortex (VORTEX)</span></a>
   </div>
@@ -248,7 +256,7 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a href="./python-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python Tools</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -407,12 +415,7 @@ div.csl-indent {
 </header>
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/minnie-3d-cells.png" class="img-fluid figure-img"></p>
-<figcaption>A 3D rendering of cells in the MICrONs dataset.</figcaption>
-</figure>
-</div>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="img/nature/minnie_glow_rotate2.mov"></video></div>
 <p>The <strong>Machine Intelligence from Cortical Networks (MICrONS) program</strong> aimed to close the performance gap between human analysts and automated pattern recognition systems by reverse-engineering the algorithms of the brain. This program mapped the function and connectivity of cortical circuits, using high throughput imaging technologies, with the goal of providing insights into the computational principles that underlie cortical function in order to advance the next generation of machine learning algorithms.</p>
 <p>MICrONS assembled the largest (multi-petabyte) extant dataset of co-registered neurophysiological and neuroanatomical data from the mammalian brain, spanning 1 mm3 and encompassing 100,000 neurons. These data include large scale electron microscopy based reconstructions of cortical circuitry from mouse visual cortex, with corresponding functional imaging data from those same neurons.</p>
 <p>This multi-year project was conducted by a consortium of laboratories, led by groups at the Allen Institute for Brain Science, Princeton University, and Baylor College of Medicine, with support from a broad array of teams coordinated and funded by the <a href="https://www.iarpa.gov/index.php/research-programs/microns">IARPA MICrONS program</a></p>
@@ -906,6 +909,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 

@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/03-cave-query-proofread-cells.html</loc>
-    <lastmod>2025-04-11T19:13:54.452Z</lastmod>
+    <lastmod>2025-04-14T17:09:45.759Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/01-caveclient-setup.html</loc>
@@ -49,8 +49,12 @@
     <lastmod>2025-04-03T19:28:05.335Z</lastmod>
   </url>
   <url>
+    <loc>https://tutorial.microns-explorer.org/materialization-version.html</loc>
+    <lastmod>2025-04-14T18:37:02.574Z</lastmod>
+  </url>
+  <url>
     <loc>https://tutorial.microns-explorer.org/index.html</loc>
-    <lastmod>2025-04-08T17:47:31.560Z</lastmod>
+    <lastmod>2025-04-14T19:23:27.644Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/dataset-basics.html</loc>
@@ -62,7 +66,7 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/background.html</loc>
-    <lastmod>2025-04-03T19:28:05.019Z</lastmod>
+    <lastmod>2025-04-14T19:25:15.783Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/annotation-tables.html</loc>
@@ -78,11 +82,15 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/introduction.html</loc>
-    <lastmod>2025-04-09T18:56:19.983Z</lastmod>
+    <lastmod>2025-04-14T19:25:11.556Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/programmatic_access/ultrastructure_tutorial/em_ultrastructure.html</loc>
     <lastmod>2025-01-07T23:43:14.833Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tutorial.microns-explorer.org/python-tools.html</loc>
+    <lastmod>2025-04-14T05:12:33.179Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/00_skeletons.html</loc>
@@ -90,11 +98,11 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/02-cave-query-cell-types.html</loc>
-    <lastmod>2025-04-11T19:07:02.394Z</lastmod>
+    <lastmod>2025-04-14T17:09:51.512Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/04-cave-query-synapses.html</loc>
-    <lastmod>2025-04-11T21:22:33.205Z</lastmod>
+    <lastmod>2025-04-14T18:20:21.711Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/06-cloudvolume-download-mesh.html</loc>

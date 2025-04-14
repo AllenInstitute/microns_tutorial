@@ -20,10 +20,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -66,18 +120,24 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<meta name="quarto:status" content="draft">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Materialization and Versioning – MICrONs Tutorial">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://tutorial.microns-explorer.org/img/nature/nature_cave_fig_2 a-d.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
+<meta property="og:image:height" content="419">
+<meta property="og:image:width" content="2170">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -188,6 +248,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./materialization-version.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Materialization and Versioning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./vortex-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Virtual Observatory of the Cortex (VORTEX)</span></a>
   </div>
@@ -225,7 +291,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a href="./python-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python Tools</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -351,8 +417,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-the-data-changes" id="toc-why-the-data-changes" class="nav-link active" data-scroll-target="#why-the-data-changes">Why the data changes</a></li>
+  <li><a href="#what-types-of-data-change-with-time" id="toc-what-types-of-data-change-with-time" class="nav-link" data-scroll-target="#what-types-of-data-change-with-time">What types of data change with time</a></li>
+  <li><a href="#how-to-set-the-version-of-your-analysis" id="toc-how-to-set-the-version-of-your-analysis" class="nav-link" data-scroll-target="#how-to-set-the-version-of-your-analysis">How to set the version of your analysis</a></li>
+  <li><a href="#how-to-cross-reference-across-time" id="toc-how-to-cross-reference-across-time" class="nav-link" data-scroll-target="#how-to-cross-reference-across-time">How to cross-reference across time</a>
+  <ul class="collapse">
+  <li><a href="#lineage-graphs" id="toc-lineage-graphs" class="nav-link" data-scroll-target="#lineage-graphs">Lineage Graphs</a></li>
+  <li><a href="#static-annotations" id="toc-static-annotations" class="nav-link" data-scroll-target="#static-annotations">Static annotations</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/materialization-version.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -376,10 +455,490 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<h3 class="anchored">
+The MICrONS Dataset is public and open access, ready for analysis. But: manual edits to the segmentation continue to improve data quality.
+</h3>
+<p>When beginning your analysis in the MICrONS dataset, it is important to understand:</p>
+<ol type="1">
+<li>Why the data changes</li>
+<li>What types of data change with time</li>
+<li>How to set the version for your analysis</li>
+<li>How to cross-reference data across time</li>
+</ol>
+<p>The data is regularly <strong>versioned</strong>; that is, a long-term copy of the dataset is made available for users. We highly recommend setting the version or <strong>timestamp</strong> in your analysis for future consistency.</p>
+<p>However, even if you do not set the version, there is a <strong>lineage graph</strong> of changes to the dataset. Meaning, you can find the past version of your cell, annotation table, mesh, skeleton etc. as long as you know the <strong>root id</strong> of the object you are interested in–or the date at which you performed an analysis.</p>
+<section id="why-the-data-changes" class="level2">
+<h2 class="anchored" data-anchor-id="why-the-data-changes">Why the data changes</h2>
+<p>The automatic segmentation from EM imagery to 3D reconstruction was largely effective, and the only way to process data at this scale <span class="citation" data-cites="the_microns_consortium_functional_2025">(<a href="#ref-the_microns_consortium_functional_2025" role="doc-biblioref">The MICrONS Consortium et al. 2025</a>)</span>. However, due to imaging defects and the nature of thin, branching axons, the automated methods do make mistakes that have large impacts on the biological accuracy of the reconstructions.</p>
+<p><a href="proofreading.html">Manual Proofreading</a>, or the correction of segmentation and adding of annotations, is an <a href="vortex-overview.html">ongoing effort</a>.</p>
+<p>Different aspects of the data require different level of manual intervention. For example, the segmentation methods produced highly accurate dendritic arbors before proofreading, enabling morphological identification of broad cell types. Most dendritic spines are properly associated with their dendritic trunk. Recovery of larger-caliber axons, those of inhibitory neurons, and the initial portions of excitatory neurons was also typically successful. Owing to the high frequency of imaging defects in the shallower and deeper portions of the dataset, processes near the pia and white matter often contain errors. Many non-neuronal objects are also well-segmented, including astrocytes, microglia and blood vessels. The two subvolumes of the dataset were segmented separately, but the alignment between the two is sufficient for manually tracing between them.</p>
+<p><strong>Changes to the dataset represent an improvement in accuracy, and reflect an investment in the long-term usefulness of this open-access resource</strong>.</p>
+</section>
+<section id="what-types-of-data-change-with-time" class="level2">
+<h2 class="anchored" data-anchor-id="what-types-of-data-change-with-time">What types of data change with time</h2>
+<p><strong>Proofreading</strong> edits to the segmentation change what <strong>supervoxels</strong> (groups of locally aggregated voxels) are associated with what segmented object. Any time the supervoxel is associated with a different segmented object, all of the <code>id</code>s upstream of that supervoxel will update. In practice, this means the 18-digit segmentation id or <code>pt_root_id</code> of your neuron or microglia or axon etc. will change every time it is proofread.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/nature/nature_cave_fig_2 a-d.png" class="img-fluid figure-img"></p>
+<figcaption>a, Automated segmentation overlaid on EM data. Each color represents an individual putative cell. b, Different colors represent supervoxels that make up putative cells. c, Supervoxels belonging to a particular neuron, with an overlaid cartoon of its supervoxel graph. These data corresponds to the framed square in a and the full panel in b. d, One-dimensional representation of the supervoxel graph. The ChunkedGraph data structure adds an octree structure to the graph to store the connected component information. Each abstract node (black nodes in levels &gt;1) represents the connected component in the spatially underlying graph.</figcaption>
+</figure>
+</div>
+<p>
+</p><center>
+Figure from <span class="citation" data-cites="dorkenwald_cave_2025">(<a href="#ref-dorkenwald_cave_2025" role="doc-biblioref">Dorkenwald et al. 2025</a>)</span>
+</center>
+<p></p>
+<p>The <code>pt_root_id</code> is always associated with the same collection of supervoxels, and therefore the same mesh and same skeleton. But if that <code>pt_root_id</code> is <em>expired</em>, then you may not find that object in current <strong>Annotation Tables</strong>, <strong>Synapse Connectivity Tables</strong>, and Neuroglancer views of the <em>current</em> version of the dataset (default).</p>
+<p>Creating a new <code>pt_root_id</code> for an edited object is the only way to have the flexibility of both <strong>merging</strong> two or more segments that should be connected (for example: extending an axon) and <strong>splitting</strong> an object into two, as in the following example:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/nature/nature_cave_fig_2 f.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>f, To submit a split operation, users place labels for each side of the split (top right). The backend system first connects each set of labels on each side by identifying supervoxels between them in the graph (left). The extended sets are used to identify the edges needed to be cut with a maximum-flow minimum-cut algorithm.</figcaption>
+</figure>
+</div>
+<p>
+</p><center>
+Figure from <span class="citation" data-cites="dorkenwald_cave_2025">(<a href="#ref-dorkenwald_cave_2025" role="doc-biblioref">Dorkenwald et al. 2025</a>)</span>
+</center>
+<p></p>
+<p>But this also means we can track the histories of what <code>id</code>s used to be part of which segmented objects, which helps for finding the same cell, axon, or arbitrary segment across time. See <strong>Lineage Graphs</strong> below for details.</p>
+</section>
+<section id="how-to-set-the-version-of-your-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-set-the-version-of-your-analysis">How to set the version of your analysis</h2>
+<p>Most programmatic access to the CAVE services occurs through CAVEclient, a Python client to access various types of data from the online services.</p>
+<p>Full documentation for CAVEclient <a href="http://caveclient.readthedocs.io">is available here</a>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Initial Setup
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before using any programmatic access to the data, <a href="em_py_01_caveclient_setup.html">you first need to set up your CAVEclient token</a>.</p>
+</div>
+</div>
+<p>To initialize a caveclient, we give it a <strong>datastack</strong>, which is a name that defines a particular combination of imagery, segmentation, and annotation database. For the MICrONs public data, we use the datastack name <code>minnie65_public</code>.</p>
+<div id="afc3fa46-afd4-4a2b-a40a-7ab85fe3cd08" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># initialize cave client</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">'minnie65_public'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># see the available materialization versions</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>client.materialize.get_versions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>[1300, 1078, 117, 661, 343, 1181, 795, 943]</code></pre>
+</div>
+</div>
+<p>And these are their associated timestamps (all timestamps are in UTC):</p>
+<div id="279e72ef-678f-408e-b8fe-e79b34779ba9" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> version <span class="kw">in</span> client.materialize.get_versions():</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Version </span><span class="sc">{</span>version<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>client<span class="sc">.</span>materialize<span class="sc">.</span>get_timestamp(version)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Version 1300: 2025-01-13 10:10:01.286229+00:00
+Version 1078: 2024-06-05 10:10:01.203215+00:00
+Version 117: 2021-06-11 08:10:00.215114+00:00
+Version 661: 2023-04-06 20:17:09.199182+00:00
+Version 343: 2022-02-24 08:10:00.184668+00:00
+Version 1181: 2024-09-16 10:10:01.121167+00:00
+Version 795: 2023-08-23 08:10:01.404268+00:00
+Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
+</div>
+</div>
+<p>You can set the overall materialization version for the dataset using <code>client.version</code>. This will ensure all of the subsequent CAVE queries are performed at the same materialization, so you will get consistency between, for example, a cell type query and a synapse query.</p>
+<div id="c50f2606-e2d8-47aa-acd7-44397e9cdb02" class="cell" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set materialization version, for consistency</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1300</span> <span class="co"># current public as of 1/13/2025</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>However, you can also set individual queries to a different version with optional argument <code>materialization_version</code>. For more about table queries, see <a href="quickstart_notebooks/02-cave-query-cell-types.html">CAVE Query Cell Types</a>.</p>
+<div id="48927998-633f-48da-8866-32382ce19df3" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nuc_v661 <span class="op">=</span> client.materialize.tables.nucleus_detection_v0().query(materialization_version<span class="op">=</span><span class="dv">661</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>nuc_v661.sample(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+<th data-quarto-table-cell-role="th">pt_position</th>
+<th data-quarto-table-cell-role="th">bb_start_position</th>
+<th data-quarto-table-cell-role="th">bb_end_position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">125443</td>
+<td>398306</td>
+<td>2020-09-28 22:44:49.542064+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>286.630216</td>
+<td>97758472447767564</td>
+<td>864691136965779150</td>
+<td>[239760, 182240, 17320]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">128287</td>
+<td>113295</td>
+<td>2020-09-28 22:44:55.201266+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>296.171274</td>
+<td>79246820408581754</td>
+<td>864691135213765688</td>
+<td>[105024, 147216, 21941]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">72688</td>
+<td>292606</td>
+<td>2020-09-28 22:43:04.266731+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>288.664289</td>
+<td>91628420580581006</td>
+<td>864691135545198632</td>
+<td>[195152, 122896, 19950]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>You can even do the same thing with an arbitrary timestamp, using optional argument <code>timestamp</code>. However, due to how the ChunkedGraph operates, this will be more time-intensive than looking up a specific materialized version.</p>
+<div id="730e4285-80d5-4e12-bfac-dd2141ef20bc" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>nuc_v661 <span class="op">=</span> client.materialize.tables.nucleus_detection_v0().query(timestamp<span class="op">=</span>datetime(<span class="dv">2023</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">20</span>))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>nuc_v661.sample(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>CPU times: total: 672 ms
+Wall time: 56.6 s</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+<th data-quarto-table-cell-role="th">pt_position</th>
+<th data-quarto-table-cell-role="th">bb_start_position</th>
+<th data-quarto-table-cell-role="th">bb_end_position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">98260</td>
+<td>565400</td>
+<td>t</td>
+<td>308.334428</td>
+<td>109727549667948559</td>
+<td>864691135195335722</td>
+<td>[326704, 229712, 15842]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">138720</td>
+<td>423107</td>
+<td>t</td>
+<td>163.617997</td>
+<td>100567105912819520</td>
+<td>864691136594656674</td>
+<td>[260336, 136800, 15156]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">124152</td>
+<td>633845</td>
+<td>t</td>
+<td>50.923274</td>
+<td>0</td>
+<td>0</td>
+<td>[366304, 92704, 16738]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-cross-reference-across-time" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-cross-reference-across-time">How to cross-reference across time</h2>
+<section id="lineage-graphs" class="level3">
+<h3 class="anchored" data-anchor-id="lineage-graphs">Lineage Graphs</h3>
+<p><a href="python-tools.html">CAVEclient</a> combines materialized snapshots with ChunkedGraph-based tracking of neuron edit histories to facilitate analysis queries for arbitrary time points. The ChunkedGraph tracks the edit lineage of neurons as they are being proofread, allowing us to map any segment used in a query to the closest available snapshot time point. This produces an overinclusive set of segments with which we query the snapshot database.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/nature/nature_cave_fig_5 a.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>a, Edits change the assignment of synapses to segment IDs. Each of the four synapses is assigned to the segment IDs (colors) according to the presynaptic and postsynaptic points (point, bar). The identity of the segments changes through proofreading (time passed: ΔT) indicated by different colors. The lineage graph shows the current segment ID (color) for each point in time.</figcaption>
+</figure>
+</div>
+<p>
+</p><center>
+Figure from <span class="citation" data-cites="dorkenwald_cave_2025">(<a href="#ref-dorkenwald_cave_2025" role="doc-biblioref">Dorkenwald et al. 2025</a>)</span>
+</center>
+<p></p>
+<p>When we query the ‘live’ database for all changes to annotations since the used materialization snapshot and add them to the set of annotations. The resulting set of annotations is then mapped back to the query timestamp using the lineage graph and supervoxel to root lookups and finally reduced to only include the queried set of root IDs.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/nature/nature_cave_fig_5 b.png" class="img-fluid figure-img"></p>
+<figcaption>b, Analysis queries are not necessarily aligned to exported snapshots. Queries for other time points are supported by on-the-fly delta updates from both the annotations and segmentation through the use of the lineage graph.</figcaption>
+</figure>
+</div>
+<p>
+</p><center>
+Figure from <span class="citation" data-cites="dorkenwald_cave_2025">(<a href="#ref-dorkenwald_cave_2025" role="doc-biblioref">Dorkenwald et al. 2025</a>)</span>
+</center>
+<p></p>
+<h4 class="anchored">
+Example querying the ChunkedGraph history for a root id
+</h4>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Initial Setup
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before using any programmatic access to the data, <a href="em_py_01_caveclient_setup.html">you first need to set up your CAVEclient token</a>.</p>
+</div>
+</div>
+<div id="799b0b55-5d6e-4b11-88e0-23fa5a0c6e21" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># initialize cave client</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">'minnie65_public'</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># return the current timestamp</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>client.materialize.get_timestamp()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>datetime.datetime(2025, 1, 13, 10, 10, 1, 286229, tzinfo=datetime.timezone.utc)</code></pre>
+</div>
+</div>
+<p>Most commonly, what you will want is to look-up the current root id for a <code>pt_root_id</code> in a previous analysis. This is not always a trivial thing to do, for example in the case of a multi-soma object that has been manually split. Which of the two new cells was your original cell of interest?</p>
+<p>The ChunkedGraph will make its best guess, given supervoxel overlap, with the function <code>suggest_latest_roots()</code></p>
+<div id="dcc4a640-8f1e-4224-9395-e9cfb9be4e24" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>example_id <span class="op">=</span> <span class="dv">864691135919440816</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Access the ChunkedGraph service of caveclient</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>client.chunkedgraph.suggest_latest_roots(example_id, timestamp <span class="op">=</span> client.materialize.get_timestamp())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>np.int64(864691135970572133)</code></pre>
+</div>
+</div>
+<p>Now we have updated <code>pt_root_id</code> for our cell, at the current materialized version.</p>
+<p>If you want to run this for a large number of root ids, you can first check if the <code>pt_root_id</code>s are current to your CAVEclient materialization version using <code>is_latest_roots()</code>, and then only update the ids that have expired:</p>
+<div id="bc13e8cd-7d60-4920-87f1-11f908bf86de" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if roots are current</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(client.chunkedgraph.is_latest_roots(example_id))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># See when the id was generated (when the segment was last edited)</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>client.chunkedgraph.get_root_timestamps(example_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[False]</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<pre><code>array([datetime.datetime(2023, 2, 1, 8, 47, 29, 891000, tzinfo=&lt;UTC&gt;)],
+      dtype=object)</code></pre>
+</div>
+</div>
+<p>Using the <code>timestamp</code> argument, you can also lookup the suggested root at any arbitrary time. Here we use the timestamp for a different materialization, verion 943:</p>
+<div id="9211ec58-7ea0-471f-8106-a5f2d87035fe" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>client.chunkedgraph.suggest_latest_roots(example_id, </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                                         timestamp<span class="op">=</span>client.materialize.get_version_metadata(<span class="dv">943</span>)[<span class="st">'time_stamp'</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                                        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<pre><code>np.int64(864691135808631069)</code></pre>
+</div>
+</div>
+<p>Sometimes you may want to check the lineage graph for a cell of interest, to better understand what was edited and why. You can access this and more advanced features from the <code>get_lineage_graph()</code>. See the <a href="https://caveconnectome.github.io/CAVEclient/tutorials/chunkedgraph/">ChunkedGraph documentation</a> for more use cases.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>client.chunkedgraph.get_lineage_graph(example_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="static-annotations" class="level3">
+<h3 class="anchored" data-anchor-id="static-annotations">Static annotations</h3>
+<p>The <a href="python-tools.html">CAVEclient</a> Materialization Engine updates segmentation data and creates databases that combine spatial annotation points and segmentation information.</p>
+<p>The live database is written to by the <a href="https://caveconnectome.github.io/CAVEclient/tutorials/annotation/">Annotation service</a> and is actively managed by the <a href="https://caveconnectome.github.io/CAVEclient/tutorials/materialization/">Materialization service</a> to keep root IDs up to date for all BoundSpatialPoints in all tables. Snapshotted databases are copies of a time-locked state of the ‘live’ database’s segmentation and annotation information used to facilitate consistent querying.</p>
+<p>This means if you use a static <strong>annotation</strong> label to index your analysis, for example a <code>nucleus_id</code> or a <code>synapse_id</code> which do not undergo proofreading, you can look up the current <code>pt_root_id</code> at any time by asking CAVEclient to materialize the new segmentation under the static point.</p>
+<p>Using our example cell from above, let’s find its nucleus id. If we try to query the nucleus table with the expired id, we will return no result:</p>
+<div id="fb9e1dbf-908f-4344-88ab-abce04df077c" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>example_id <span class="op">=</span> <span class="dv">864691135919440816</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.nucleus_detection_v0(pt_root_id<span class="op">=</span>example_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+<th data-quarto-table-cell-role="th">pt_position</th>
+<th data-quarto-table-cell-role="th">bb_start_position</th>
+<th data-quarto-table-cell-role="th">bb_end_position</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>
+</p>
+<p>This is expected, since the example id is <em>expired</em> at the time of this materialization. Instead, let’s query the version we know this id existed at: version 661</p>
+<div id="352e5ca1-7808-4a3b-b114-a9e55417a701" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.nucleus_detection_v0(pt_root_id<span class="op">=</span>example_id).query(materialization_version<span class="op">=</span><span class="dv">661</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+<th data-quarto-table-cell-role="th">pt_position</th>
+<th data-quarto-table-cell-role="th">bb_start_position</th>
+<th data-quarto-table-cell-role="th">bb_end_position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>260620</td>
+<td>2020-09-28 22:44:52.109195+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>292.154409</td>
+<td>88605588438852384</td>
+<td>864691135919440816</td>
+<td>[173584, 145120, 21127]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>This returns both the expected <code>pt_root_id</code> 864691135919440816, and the <code>id</code> from the <code>nucleus_detection_v0</code> – better known as the <code>nucleus_id</code>.</p>
+<p>Given the <code>nucleus_id</code>, we can now query the current materialized version for the current root id.</p>
+<div id="22dbe5e7-ff72-44d2-b8ca-d8f1b81de0d7" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>nuc_id <span class="op">=</span> client.materialize.tables.nucleus_detection_v0(pt_root_id<span class="op">=</span>example_id).query(materialization_version<span class="op">=</span><span class="dv">661</span>)[<span class="st">'id'</span>]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.nucleus_detection_v0(<span class="bu">id</span><span class="op">=</span>nuc_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+<th data-quarto-table-cell-role="th">pt_position</th>
+<th data-quarto-table-cell-role="th">bb_start_position</th>
+<th data-quarto-table-cell-role="th">bb_end_position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>260620</td>
+<td>2020-09-28 22:44:52.109195+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>292.154409</td>
+<td>88605588438852384</td>
+<td>864691135970572133</td>
+<td>[173584, 145120, 21127]</td>
+<td>[nan, nan, nan]</td>
+<td>[nan, nan, nan]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>This returns the same <code>pt_root_id</code> as the lineage graph example above. But, it has the benefit of guaranteeing the id belongs to your cell of interest and not an arbitrary chunk of the previous segmented object.</p>
+<h4 class="anchored">
+If you are working with a neuron, glial cell, or any cell that has a nucleus detection, we recommend using the <code>nucleus_id</code> as your identifier rather than the <code>pt_root_id</code>.
+</h4>
+<h4 class="anchored">
+If you do use <code>pt_root_id</code>, be sure to note the dataset materialization version in your analysis.
+</h4>
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-dorkenwald_cave_2025" class="csl-entry" role="listitem">
+Dorkenwald, Sven, Casey M. Schneider-Mizell, Derrick Brittain, Akhilesh Halageri, Chris Jordan, Nico Kemnitz, Manual A. Castro, et al. 2025. <span>“<span>CAVE</span>: Connectome Annotation Versioning Engine.”</span> <em>Nature Methods</em>, April. <a href="https://doi.org/10.1038/s41592-024-02426-z">https://doi.org/10.1038/s41592-024-02426-z</a>.
+</div>
+<div id="ref-the_microns_consortium_functional_2025" class="csl-entry" role="listitem">
+The MICrONS Consortium, J. Alexander Bae, Mahaly Baptiste, Maya R. Baptiste, Caitlyn A. Bishop, Agnes L. Bodor, Derrick Brittain, et al. 2025. <span>“Functional Connectomics Spanning Multiple Areas of Mouse Visual Cortex.”</span> <em>Nature</em> 640 (8058): 435–47. <a href="https://doi.org/10.1038/s41586-025-08790-w">https://doi.org/10.1038/s41586-025-08790-w</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -805,7 +1364,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/materialization-version.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/materialization-version.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

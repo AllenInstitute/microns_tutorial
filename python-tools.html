@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python Tools: CAVE Ecosystem – MICrONs Tutorial</title>
+<title>Python Tools – MICrONs Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -66,18 +86,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Python Tools: CAVE Ecosystem – MICrONs Tutorial">
+<meta property="og:title" content="Python Tools – MICrONs Tutorial">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://tutorial.microns-explorer.org/img/proofreading_annotating_analysis.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
+<meta property="og:image:height" content="759">
+<meta property="og:image:width" content="1531">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -139,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Python Tools: CAVE Ecosystem</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./python-tools.html">Python Tools</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -188,6 +211,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./materialization-version.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Materialization and Versioning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./vortex-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Virtual Observatory of the Cortex (VORTEX)</span></a>
   </div>
@@ -225,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a href="./python-tools.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Python Tools</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -359,7 +388,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Python Tools: CAVE Ecosystem</h1>
+<h1 class="title">Python Tools</h1>
 </div>
 
 
@@ -376,10 +405,81 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/proofreading_annotating_analysis.png" class="img-fluid figure-img"></p>
+<figcaption>Connectome Annotation Versioning Engine (CAVE) a computational infrastructure developed to manage, proofread, and analyze large connetomic datasets efficiently and collaboratively</figcaption>
+</figure>
+</div>
+<p>The MICrONS dataset, spanning one cubic millimeter of mouse cortex, is comprised of petabytes of data from 1) <em>in vivo</em> functional imaging, 2) electron microscopy images at nanometer resolution, 3) dense segmentation of 200,000 brain cells, and 4) half a billion synapses, and 5) hundreds of thousands of other annotations to label the data.</p>
+<p>To enable systematic analysis without downloading hundreds of gigabytes of data, users can selectively access cloud-based data programmatically through a collection of open source Python clients:</p>
+<table class="caption-top table">
+<caption>Data Access Tools, as of 2025</caption>
+<colgroup>
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tool Name</th>
+<th style="text-align: left;">Data Products</th>
+<th style="text-align: left;">URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">cloud-volume</td>
+<td style="text-align: left;">EM imagery, voxel segmentation, and meshes</td>
+<td style="text-align: left;">https://github.com/seung-lab/cloud-volume</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MeshParty</td>
+<td style="text-align: left;">EM meshes and skeletons</td>
+<td style="text-align: left;">https://github.com/CAVEconnectome/MeshParty</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CAVEclient</td>
+<td style="text-align: left;">EM structural annotations (synapses, cell-types, etc.) segmentation edits, local geometric properties</td>
+<td style="text-align: left;">https://github.com/CAVEconnectome/CAVEclient</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">microns-nda</td>
+<td style="text-align: left;">Functional imaging DataJoint database</td>
+<td style="text-align: left;">https://github.com/cajal/microns-nda-access</td>
+</tr>
+</tbody>
+</table>
+<p>The functional data, including calcium traces, stimuli, behavioural measures and more, are available in a DataJoint database that can be accessed using <a href="https://datajoint.com/docs/">DataJoint’s Python API</a>, or is available as neurodata without borders (NWB) files on the <a href="https://dandiarchive.org/dandiset/000402">Distributed Archives for Neurophysiology Data Integration (DANDI) Archive</a>.</p>
+<p>EM imagery and segmentation volumes are hosted on Google or AWS servers, and accessed with the python client <a href="https://github.com/seung-lab/cloud-volume">cloud-volume</a>. Mesh files describing the shape of cells can be downloaded with cloud-volume, which also provides features for convenient mesh analysis, skeletonization and visualization.</p>
+<p>These meshes can be decomposed and richly annotated for automated proofreading and morphological analysis of processes and spines using <a href="https://github.com/reimerlab/NEURD">NEURD</a>. For more, see reference: <span class="citation" data-cites="celii_neurd_2025">(<a href="#ref-celii_neurd_2025" role="doc-biblioref">Celii et al. 2025</a>)</span></p>
+<p>Annotations on the structural data, such as synapses and cell body locations, can be queried via CAVE client, a Python interface to the <strong>Connectome Annotation Versioning Engine (CAVE)</strong> APIs. CAVE encompasses a set of microservices for collaborative proofreading and analysis of large-scale volumetric data. For more, see reference: <span class="citation" data-cites="dorkenwald_cave_2025">(<a href="#ref-dorkenwald_cave_2025" role="doc-biblioref">Dorkenwald et al. 2025</a>)</span></p>
+<h4 class="anchored">
+The Quickstart Notebooks in this section provide an introduction to CAVE, and examples of how to interact with CAVEclient, MeshParty, and cloud-volume.
+</h4>
+<div class="grid">
+<div class="g-col-2">
+<p><img src="img/cave_icon.png" class="img-fluid"></p>
+</div>
+<div class="g-col-4">
+<p><img src="img/aibs_logo.png" class="img-fluid"></p>
+</div>
+<div class="g-col-4">
+<p><img src="img/Princeton_logo.png" class="img-fluid"></p>
+</div>
+</div>
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-celii_neurd_2025" class="csl-entry" role="listitem">
+Celii, Brendan, Stelios Papadopoulos, Zhuokun Ding, Paul G. Fahey, Eric Wang, Christos Papadopoulos, Alexander B. Kunin, et al. 2025. <span>“<span>NEURD</span> Offers Automated Proofreading and Feature Extraction for Connectomics.”</span> <em>Nature</em> 640 (8058): 487–96. <a href="https://doi.org/10.1038/s41586-025-08660-5">https://doi.org/10.1038/s41586-025-08660-5</a>.
+</div>
+<div id="ref-dorkenwald_cave_2025" class="csl-entry" role="listitem">
+Dorkenwald, Sven, Casey M. Schneider-Mizell, Derrick Brittain, Akhilesh Halageri, Chris Jordan, Nico Kemnitz, Manual A. Castro, et al. 2025. <span>“<span>CAVE</span>: Connectome Annotation Versioning Engine.”</span> <em>Nature Methods</em>, April. <a href="https://doi.org/10.1038/s41592-024-02426-z">https://doi.org/10.1038/s41592-024-02426-z</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
