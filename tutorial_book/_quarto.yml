@@ -45,6 +45,7 @@ website:
           - dash-table-viewer.ipynb
           - dash-connectivity.ipynb
       - section: "Python Tools"
+        href: python-tools.ipynb
         contents:
           - quickstart_notebooks/01-caveclient-setup.ipynb
           - quickstart_notebooks/02-cave-query-cell-types.ipynb
