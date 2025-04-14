@@ -2,25 +2,50 @@
 title: "MICrONs Tutorials"
 ---
 
-Welcome to the [MICrONs-Explorer](https://www.microns-explorer.org/) data ecosystem.
+Welcome to the **MICrONs-Explorer** data tutorial ecosystem.
 
 The MICrONS open-access dataset is a  functional connectome containing __200,000 cells, 75,000 neurons with physiology, and 523 million synapses.__
 
-This resource provides interactive visualizations of anatomical and functional data that span all 6 layers of mouse primary visual cortex and 3 higher visual areas (LM, AL, RL) within a cubic millimeter volume.
+This resource provides tools and tutorials for how to access the anatomical and functional data that span all 6 layers of mouse primary visual cortex and 3 higher visual areas (LM, AL, RL) within a cubic millimeter volume.
 
-__Highlights:__
+<h3> Highlights </h3>
+
+<h4> Dataset overview </h4>
+
+::::{.grid}
+
+:::{.g-col-6}
+
+* [Introduction](introduction.html): motivation of and introduction to the MICrONS dataset 
+* [Background](background.html): Overview of dataset collection, methods, and outputs
+ 
+<h4> Data curation and improvements </h4>
+
+* [VORTEX program](vortex-overview.html): for ongoing proofreading serving the scienfitic community
+* [Proofreading](proofreading.html): description of proofreading efforts and how they impact data interpretability
+* [Materialization and Versioning](materialization-version.html): description of proofreading efforts and how they impact data interpretability
+
+  
+<h4> Data analysis tools </h4> 
+
+* [Neuroglancer](neuroglancer-basic.html): for interactive visualization, exploration, and annotation
+* [Table Viewer](dash-table-viewer.html): a Dash App, browser-based tool, for querying the CAVEclient annotation tables
+* [Connectivity Viewer](dash-connectivity-viewer.html): a Dash App, browser-based tool, for querying and visualizing synaptic connectivity
+* [Python Tools](python-tools.html): introduction and quickstart to the Connectome Annotation Versioning Engine (CAVE) and associated python packages
 
 
-> Motivation of and introduction to the MICrONS dataset: [Introduction](introduction.html)
->  
-> Overview of dataset collection, methods, and outputs: [Background](background.html)
->  
-> Ongoing proofreading efforts and analysis support through the: [VORTEX program](vortex-overview.html)
->  
-> Programmatic access quickstart: [Python Tools](quickstart_notebooks/01-caveclient-setup.html)
->  
-> Data Release information: Data Inventory, including [Annotation Tables](annotation-tables.html) and [Release Manifests](release_manifests/version-1300.html)
->  
+<h4> Data Release information: </h4> 
 
+* [Annotation Tables](annotation-tables.html): semantic description of the annotation tables available throug CAVEclient
+* [Release Manifests](release_manifests/version-1300.html): describing major materialization versions, which are periodic updates to the publicly available data 
+* [Static Repositories](static-repositories.html): for bulk download of data
+  
+:::
 
-![Render of 3D reconstruction of pyramidal cells in mouse visual cortex, as seen in Neuroglancer](img/microns_explorer_landing.png)
+:::{.g-col-6}
+
+![MICrONS dataset overivew. Figure from Nature, 2025 (DOI 0.1038/d41586-025-00908-4)](img/nature/nature_graphical_abstract.webp)
+
+:::
+
+::::

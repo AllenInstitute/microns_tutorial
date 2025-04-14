@@ -1,0 +1,14 @@
+---
+title: "Analysis Gallery"
+draft: true
+format: 
+    html:
+        toc: true
+execute:
+    echo: false
+listing:
+    - id: gallery
+      template: gallery.ejs
+      contents: gallery.yml
+bibliography: ../references.bib 
+---
