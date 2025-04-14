@@ -1,0 +1,40 @@
+
+- category: Code from Research Publications
+  description: |
+    Coding examples and github repositories for the Nature 2025 research publications
+  tiles:
+    - title: The MICrONS Consortium 
+      subtitle: Functional connectomics spanning multiple areas of mouse visual cortex
+      href: https://github.com/AllenInstitute/MicronsFunctionalConnectomics
+      thumbnail: thumbnail/thumbnail_flagship.png
+    - title: Schneider-Mizell et al.
+      subtitle: Inhibitory specificity from a connectomic census of mouse visual cortex
+      href: https://github.com/AllenInstitute/ColumnCensusCSM
+      thumbnail: thumbnail/thumbnail_inhibitory.webp
+    - title: Ding et al. 
+      subtitle: Functional connectomics reveals general wiring rule in mouse visual cortex
+      href: https://github.com/cajal/microns-funconn-2025
+      thumbnail: thumbnail/thumbnail_functional.webp
+    - title: Wang et al. 
+      subtitle: Foundation model of neural activity predicts response to new stimulus types
+      href: https://github.com/cajal/foundation/tree/main
+      thumbnail: thumbnail/thumbnail_foundation.webp
+    - title: Elabbady et al. 
+      subtitle: Perisomatic ultrastructure efficiently classifies cells in mouse cortex
+      href: https://github.com/AllenInstitute/Perisomatic_Based_CellTyping
+      thumbnail: thumbnail/thumbnail_perisomatic.webp
+    - title: Gamlin et al. 
+      subtitle: Connectomics of predicted Sst transcriptomic types in mouse visual cortex
+      href: https://github.com/AllenInstitute/EM_MC_paper_figures
+      thumbnail: thumbnail/thumbnail_connectomics.webp
+    - title: Celii et al. 
+      subtitle: NEURD offers automated proofreading and feature extraction for connectomics
+      href: https://reimerlab.github.io/NEURD
+      code: https://github.com/reimerlab/NEURD.git
+      thumbnail: thumbnail/thumbnail_neurd.webp
+    - title: Dorkenwald et al. 
+      subtitle: CAVE Connectome Annotation Versioning Engine
+      code: https://github.com/caveconnectome
+      href: https://github.com/CAVEconnectome/CAVEpaper/ 
+      thumbnail: thumbnail/thumbnail_cave.webp
+ 

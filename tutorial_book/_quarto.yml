@@ -9,7 +9,7 @@ website:
         text: Introduction
       - href: https://www.microns-explorer.org/
         text: Microns Explorer
-      - href: analysis-gallery.ipynb
+      - href: analysis_gallery/index.qmd
         text: Analysis Gallery
       - href: faq.ipynb
         text: FAQ
