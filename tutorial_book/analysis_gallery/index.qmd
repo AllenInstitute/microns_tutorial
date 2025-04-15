@@ -1,6 +1,6 @@
 ---
 title: "Analysis Gallery"
-draft: true
+draft: false
 format: 
     html:
         toc: true
