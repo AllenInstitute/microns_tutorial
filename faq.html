@@ -20,7 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -66,7 +120,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -77,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -98,6 +151,14 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="https://www.microns-explorer.org/"> 
 <span class="menu-text">Microns Explorer</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./analysis_gallery/index.html"> 
+<span class="menu-text">Analysis Gallery</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./faq.html" aria-current="page"> 
+<span class="menu-text">FAQ</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://www.nature.com/collections/bdigiaicbd"> 
@@ -357,8 +418,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-access" id="toc-data-access" class="nav-link active" data-scroll-target="#data-access">Data Access</a></li>
+  <li><a href="#data-curation" id="toc-data-curation" class="nav-link" data-scroll-target="#data-curation">Data Curation</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/faq.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -382,10 +450,204 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<hr>
+<section id="data-access" class="level2">
+<h2 class="anchored" data-anchor-id="data-access">Data Access</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How do I download the data?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The MICrONS dataset is massive. The imagery and segmentation are on the order of petabytes. There are hundreds of millions of synapses, and even downloading a static table of the synaptic conenctivity is tens of gigabytes.</p>
+<h4 class="anchored">
+In general, you do not want to download the entire dataset.
+</h4>
+<p>Instead, we have tools that allow you to visualize, locate, and download only the data you are most interested in.</p>
+<p>For downloading the <strong>imagery, segmentation, and meshes</strong>, you will use the the python package <code>cloud-volume</code>. CloudVolume is a serverless Python client for random access reading and writing of Neuroglancer volumes in “Precomputed” format, a set of representations for arbitrarily large volumetric images, meshes, and skeletons. See <a href="quickstart_notebooks/05-cloudvolume-download.html">Download Imagery and Segmentation</a> and <a href="quickstart_notebooks/06-cloudvolume-download-mesh.html">Download Meshes</a></p>
+<p>For downloading <strong>neuron skeletons</strong> in .swc format, see <a href="quickstart_notebooks/07-cave-download-skeleton.html">Download Skeletons</a>.</p>
+<p>For <strong>connectivity</strong> information, you can use the brower-based <a href="dash-connectivity.html">Connectivity Viewer</a> which will: access the connectivity for cells of interest, generate neuroglancer links for interactive visualization, and generate connectivity summaries on demand. For large scale connectivity analysis (between many cells, or populations of cells), you will want to access the data programmatically. See the Python tools quickstart notebooks, specifically <a href="quickstart_notebooks/04-cave-query-synapses.html">CAVE Query Synaptic Connectivity</a>.</p>
+<p>For all other annotations – such as <strong>cell types</strong>, <strong>synapse compartment types</strong>, and <strong>axon myelination</strong> – you will want to access the annotation tables programmatically through the python tool <code>CAVEclient</code>. See the Python tools quickstart notebooks, specifically <a href="quickstart_notebooks/02-cave-query-cell-types.html">CAVE Query Cell Types</a> and <a href="quickstart_notebooks/03-cave-query-proofread-cells.html">CAVE Query Proofread Cells</a> for practical examples.</p>
+<h4 class="anchored">
+If you really do still want to download the entire dataset:
+</h4>
+<p>We have bulk downloads available from our cloud service providers. See:</p>
+<ul>
+<li><a href="static-repositories.html">Static Repositories</a> for a list of available data, sizes, and cloud paths. This includes flat segmentation, meshes, or skeletons at some major versions.</li>
+<li><a href="https://bossdb.org/project/microns-minnie">Bossdb</a> repository for MICrONS aligned volume data</li>
+<li><a href="https://dandiarchive.org/dandiset/000402">DANDI</a> for functional NWB files</li>
+</ul>
+<p>Directly downloading these resources may speed up processing time, and you can point <code>cloud-volume</code> to a local filepath just as easily as a cloud source.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How can I access the connectivity information?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<h4 class="anchored">
+Browser-based method
+</h4>
+<p>You can use the <a href="dash-connectivity.html">Connectivity Viewer</a> to: access the connectivity for cells of interest, generate neuroglancer links for interactive visualization, and generate connectivity summaries on demand.</p>
+<h4 class="anchored">
+Programmatic access
+</h4>
+<p>For large scale connectivity analysis (between many cells, or populations of cells), you will want to access the data programmatically. See the Python tools quickstart notebooks, specifically <a href="quickstart_notebooks/04-cave-query-synapses.html">CAVE Query Synaptic Connectivity</a>.</p>
+<h4 class="anchored">
+Bulk download of connectivity grpah
+</h4>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This connectivity table represents the original v117 segmentation. Proofreading has improved the accuracy and added millions of high-quality synaptic connections. The programmatic access above is our recommended method to perform connectivity analysis</p>
+</div>
+</div>
+<p>The synaptic connectivity map at version 117 is available for bulk download from Bossdb. See <a href="static-repositories.html#synapse-segmentation-and-graph">Static Repositories - Synapse Graph</a> for details.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How can I do this analysis?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>There are many, many things worth analyzing in the dataset, and a myriad of ways to do that analysis. On this website we host <a href="python-tools.html">Quickstart tutorials</a> that provide minimal examples of what is possible. We are also expanding the gallery of <a href="analysis_gallery/">Analysis Examples</a>. And we outlink to relevant repositories from <a href="analysis_gallery/#code-from-research-publications">Publications using the MICrONS dataset</a>.</p>
+<p>Consider posting to the <a href="https://github.com/AllenInstitute/microns_tutorial/discussions">Tutorials Forum</a> for feedback and discussion.</p>
+<p>We are also available for individual analysis consultation and support. Access begins with submitting a VORTEX request</p>
+<p><a href="https://www.microns-explorer.org/vortex#request-form" class="btn btn-outline-primary" role="button" data-toggle="tooltip" title="VORTEX Request">microns-explorer.org/requests | Scientific Request Form</a></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How do I cite the dataset?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For any general use of the MICrONS Cubic Millimeter data and resources, please cite the primary flagship publication:</p>
+<blockquote class="blockquote">
+<p>The MICrONS Consortium, J. Alexander Bae, Mahaly Baptiste, Maya R. Baptiste, Caitlyn A. Bishop, Agnes L. Bodor, Derrick Brittain, et al.&nbsp;2025. “Functional Connectomics Spanning Multiple Areas of Mouse Visual Cortex.” <em>Nature</em> 640 (8058): 435–47. https://doi.org/10.1038/s41586-025-08790-w.</p>
+</blockquote>
+<p>For use of the MICrONS Layer 2/3 dataset (Phase 1), please cite the primary flagship publication</p>
+<blockquote class="blockquote">
+<p>Nicholas L. Turner, Thomas Macrina, J. et al.&nbsp;2022. “Reconstruction of neocortex: Organelles, compartments, cells, circuits, and activity.” Cell 185 (6): 1082-1100. https://doi.org/10.1016/j.cell.2022.01.023.</p>
+</blockquote>
+<p>For any primary research publication, cite the publication (if released) or preprint (if unreleased). See <a href="https://www.microns-explorer.org/publications">microns-explorer.org/publications</a> for more.</p>
+<p>When integrating our data into a website, cite the source in a manner that is clear, accurate and easily discoverable and link to www.microns-explorer.org. Also, be sure that our Content is never displayed in the absence of such citation. For images obtained from the Sites, use the following citation: www.microns-explorer.org.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="data-curation" class="level2">
+<h2 class="anchored" data-anchor-id="data-curation">Data Curation</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+My cell disappeared
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The MICrONS dataset is public and open access, ready for analysis, but manual edits to the segmentation continue to improve data quality. The automatic segmentation from EM imagery to 3D reconstruction was largely effective, and the only way to process data at this scale <span class="citation" data-cites="the_microns_consortium_functional_2025">(<a href="#ref-the_microns_consortium_functional_2025" role="doc-biblioref">The MICrONS Consortium et al. 2025</a>)</span>. However, due to imaging defects and the nature of thin, branching axons, the automated methods do make mistakes that have large impacts on the biological accuracy of the reconstructions.</p>
+<p>The data is regularly <a href="materialization-version.html">versioned</a>; that is, a long-term copy of the dataset is made available for users. We highly recommend setting the <strong>version</strong> or <strong>timestamp</strong> in your analysis for consistency.</p>
+<p>However, even if you do not set the version, there is a lineage graph of changes to the dataset. Meaning, you can find the past version of your cell, annotation table, mesh, skeleton etc. as long as you know the root id of the object you are interested in – or the date at which you performed an analysis.</p>
+<h4 class="anchored">
+See the <a href="materialization-version.html">Materialization and Versioning section</a> for detailed examples of how to 1) find your missing cell, and 2) set the version of your analysis so you do not encounter this issue again.
+</h4>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+This cell is incorrect
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Automated methods for cellular segmentation, synapse detection, and classification are fantastic for working with data at this scale <span class="citation" data-cites="the_microns_consortium_functional_2025">(<a href="#ref-the_microns_consortium_functional_2025" role="doc-biblioref">The MICrONS Consortium et al. 2025</a>)</span>. However, each of these processes makes mistakes. We have methods of maunal correction or <strong>proofreading</strong> to improve the quality of the data.</p>
+<h4 class="anchored">
+<a href="proofreading.html">Proofreading</a>
+</h4>
+<p>It is useful to distinguish between two kinds of proofreading errors: splits and merges.</p>
+<p>Split errors occur when a process incorrectly appears to stop in the segmentation, but actually could be continued. Merge errors occur when processes from two different segments are incorrectly merged together. These two kinds of errors impact analysis differently. For example for neurons: while split errors reduce the number of correct synaptic connections, merge errors add incorrect connections.</p>
+<p>The frequency of errors is roughly related to the size of the process, and thus axons and dendrites have extremely different error profiles. Because they are thicker, dendrites are largely well-segmented, with only a few split errors and most merge errors being with small axons rather than other dendrites.</p>
+<p>Segmentation errors are also more common in places where the image quality was lower, or the image sections interupted. Such as at the EM volume boundaries (pial surface, white matter, and lateral edges.</p>
+<p>We provide ongoing proofreading to the dataset through the VORTEX program. We also support and train scientists who want to make their own proofreading edits to the dataset. For either object, see <strong>VORTEX</strong> below</p>
+<h4 class="anchored">
+<a href="vortex-overview.html">Virtual Observatory of the Cortex VORTEX</a>
+</h4>
+<p>The VORTEX program is a grant funded mechanism designed to assist you in precisely this situation. We provide the labor and experience to make corrections and annotations in the data. The results of these efforts will be integrated with an evolving version of the dataset, and shared with you and the larger scientific community.</p>
+<p>Depending on the scale of errors in your cells of interest, we may provide:</p>
+<ol type="1">
+<li>analysis support to interpret the data despite the errors</li>
+<li>limited correction of small errors</li>
+<li>large-scale proofreading support to answer scientific questions</li>
+<li>provide you direct proofreading access to the dataset and training in how to make edits</li>
+</ol>
+<p>Any of these solutions begins with submitting a VORTEX request</p>
+<p><a href="https://www.microns-explorer.org/vortex#request-form" class="btn btn-outline-primary" role="button" data-toggle="tooltip" title="VORTEX Request">microns-explorer.org/requests | Scientific Request Form</a></p>
+<h4 class="anchored">
+Automated classifiers
+</h4>
+<p>Automated classifiers such as the synapse detection and cell type tables can also make mistakes. In practice, it is easiest to exclude data from your analysis if it does not match expectations or quality metrics. If you have specific feedback about performance of the automated classifiers, reach out of the maintainers of the Annotation table in question. This information is included in the table metadata</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.get_table_metadata(table_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-the_microns_consortium_functional_2025" class="csl-entry" role="listitem">
+The MICrONS Consortium, J. Alexander Bae, Mahaly Baptiste, Maya R. Baptiste, Caitlyn A. Bishop, Agnes L. Bodor, Derrick Brittain, et al. 2025. <span>“Functional Connectomics Spanning Multiple Areas of Mouse Visual Cortex.”</span> <em>Nature</em> 640 (8058): 435–47. <a href="https://doi.org/10.1038/s41586-025-08790-w">https://doi.org/10.1038/s41586-025-08790-w</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -811,7 +1073,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/faq.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/faq.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
