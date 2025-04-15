@@ -30,7 +30,7 @@ This resource provides tools and tutorials for how to access the anatomical and 
 
 * [Neuroglancer](neuroglancer-basic.html): for interactive visualization, exploration, and annotation
 * [Table Viewer](dash-table-viewer.html): a Dash App, browser-based tool, for querying the CAVEclient annotation tables
-* [Connectivity Viewer](dash-connectivity-viewer.html): a Dash App, browser-based tool, for querying and visualizing synaptic connectivity
+* [Connectivity Viewer](dash-connectivity.html): a Dash App, browser-based tool, for querying and visualizing synaptic connectivity
 * [Python Tools](python-tools.html): introduction and quickstart to the Connectome Annotation Versioning Engine (CAVE) and associated python packages
 
 
