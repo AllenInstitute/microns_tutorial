@@ -1,0 +1,49 @@
+Table name: `aibs_soma_nuc_metamodel_preds_v117`
+
+This table contains the results of a hierarchical classifier trained on features of the cell body and nucleus of cells. This was applied to most cells in the dataset that had complete cell bodies (e.g. not cut off by the edge of the data), detected by `nucleus_detection_v0`, with small-objects and multi-soma errors removed. The model was run with cell-based features as of version 117 of the dataset. For more details, see  [@elabbady_perisomatic_2025].
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification-system`| One of `excitatory_neuron` or `inhibitory_neuron` for detected neurons, or `nonneuron` for non-neurons (glia/pericytes). |
+| `cell_type` | One of several cell types, detailed below |
+
+: AIBS Soma Nuc Metamodel Table {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 
+:::
+
+The cell types in the table are:
+
+::: {.callout-note appearance="minimal" collapse=true}
+
+### Soma Nuc Metamodel Cell types
+
+| Cell Type | Subclass | Description |
+| :--- | :--- | :--- |
+| `23P` | Excitatory | Layer 2/3 cells | 
+| `4P` | Excitatory | Layer 4 cells | 
+| `5P-IT` | Excitatory | Layer 5 **i**ntra**t**elencephalic cells | 
+| `5P-ET` | Excitatory | Layer 5 **e**xtra**t**elencephalic cells | 
+| `5P-NP` | Excitatory | Layer 5 near-projecting cells | 
+| `6P-IT` | Excitatory | Layer 6 **i**ntra**t**elencephalic cells | 
+| `6P-CT` | Excitatory | Layer 6 **c**ortico**t**halamic cells | 
+| `BC` | Inhibitory | Basket cell | 
+| `BPC` | Inhibitory | Bipolar cell. *In practice, this was used for all cells thought to be VIP cell, not only those with a bipolar dendrite* | 
+| `MC` | Inhibitory | Martinotti cell. *In practice, this label was used for all inhibitory neurons that appeared to be Somatostatin cell, not only those with a Martinotti cell morphology*| 
+| `NGC` | Inhibitory | Neurogliaform cell. *In practice, this label also is used for all inhibitory neurons in layer 1, many of which may not be neurogliaform cells although they might be in the same molecular family*| 
+| `OPC` | Non-neuronal | Oligodendrocyte precursor cell | 
+| `astrocyte` | Non-neuronal | Astrocyte | 
+| `microglia` | Non-neuronal | Microglia | 
+| `pericyte` | Non-neuronal | Pericyte | 
+| `oligo` | Non-neuronal | Oligodendrocyte | 
+
+: AIBS Soma Nuc Metamodel: Cell Type definitions {.light .hover}
+
+:::
+
+This table is deprecated, use `aibs_metamodel_celltypes_v661` instead. 

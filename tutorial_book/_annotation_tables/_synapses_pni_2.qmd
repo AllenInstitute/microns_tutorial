@@ -1,6 +1,6 @@
-Table name: `synapses_pni_v2`
+Table name: `synapses_pni_2`
 
-The only synapse table is `synapses_pni_v2`. This is by far the largest table in the dataset with 337 million entries, one for each synapse.
+The only synapse table is `synapses_pni_2`. This is by far the largest table in the dataset with 337 million entries, one for each synapse.
 It contains the following columns:
 
 | Column | Description |
