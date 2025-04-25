@@ -44,7 +44,7 @@ This resource provides tools and tutorials for how to access the anatomical and 
 
 :::{.g-col-6}
 
-![MICrONS dataset overivew. Figure from Nature, 2025 (DOI 0.1038/d41586-025-00908-4)](img/nature/nature_graphical_abstract.webp)
+![MICrONS dataset overivew. Figure from Nature, 2025 (DOI https://doi.org/10.1038/d41586-025-00908-4)](img/nature/nature_graphical_abstract.webp)
 
 :::
 
