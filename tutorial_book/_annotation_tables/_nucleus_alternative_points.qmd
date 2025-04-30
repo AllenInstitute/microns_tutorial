@@ -1,0 +1,18 @@
+Table name: `nucleus_alternative_points`
+
+A table with alternative segid lookup points for nuclei created using an automated method which looked for nuclei centroids outside nuclie, or centroids which were not in the segmentation. The point at least 320 nm within the nucleus and the segmentation, and closet to the original centroid was choosen in a 3um window.
+
+The key columns of are:
+
+| Column | Description |
+| :--- | :--- |
+| `target_id` | Soma ID for the cell |
+| `pt_position` | Bound spatial point associated with the centroid of the nucleus (manually corrected) |
+
+: Nucleus alternative points {.light .hover}
+
+::: {.callout-tip}
+This is a corrections table, and meant to act upon its reference `nucleus_detection_v0`.
+
+Use `client.materialize.views.nucleus_detection_lookup_v1().query()` to access the combined table.
+:::

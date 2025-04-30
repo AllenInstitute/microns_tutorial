@@ -1,0 +1,10 @@
+Table name: `nucleus_neuron_svm`
+
+Nucleus detection classified as likely neuron.
+
+::: {.callout-warning}
+## Deprecated table
+This table remains available from materialization versions: 117, 343, 795, 943, 1078
+
+Use `nucleus_ref_neuron_svm` instead, which is a reference on the nucleus table `nucleus_detection_v0`.
+:::

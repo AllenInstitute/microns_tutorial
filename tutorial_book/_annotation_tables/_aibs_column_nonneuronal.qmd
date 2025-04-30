@@ -4,19 +4,9 @@ A subset of nucleus detections in a 100 um column (n=2204) in VISp were manually
 
 For the neuronal subclasses, see `allen_v1_column_types_slanted_ref`
 
-The key columns are:
+::: {.callout-warning}
+## Deprecated table
+This table remains available from materialization versions: 343
 
-| Column | Description |
-| :--- | :--- |
-| `id` | Soma ID for the cell |
-| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
-| `classification-system`| One of `aibs_coarse_excitatory` or `aibs_coarse_inhibitory` for detected neurons, or `aibs_coarse_nonneuronal` for non-neurons (glia/pericytes).
-| `cell_type` | One of several cell types, detailed below |
-
-: AIBS Manual Cell Types, V1 Column {.light .hover}
-
-:::{.callout-important}
 It is recommended to use `aibs_column_nonneuronal_ref` instead, which indexes on a consistent `nucleus_id`
 :::
-
-This table is deprecated, use `aibs_column_nonneuronal_ref` instead. 

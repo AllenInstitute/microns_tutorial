@@ -1,0 +1,10 @@
+Table name: `coregistration_manual_v3`
+
+A table of EM nucleus centroids manually matched to Baylor functional units. A unique functional unit is identified by its session, scan_idx and unit_id. An EM nucleus centroid may have matched to more than one functional unit if it was scanned on more than one imaging field.
+
+::: {.callout-warning}
+## Deprecated table
+This table remains available from materialization versions: 661, 795, 943, 1078
+
+Use `coregistration_manual_v4` instead.
+:::

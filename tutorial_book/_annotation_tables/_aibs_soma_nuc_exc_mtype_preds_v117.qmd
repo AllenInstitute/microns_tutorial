@@ -1,0 +1,23 @@
+Table name: `aibs_soma_nuc_exc_mtype_preds_v117`
+
+This table contains excitatory M-type predictions for cells throughout the entire dataset [@schneider-mizell_inhibitory_2025]. The model was trained with soma and nucleus features [@elabbady_perisomatic_2025]. The cells selected were those that were predicted as excitatory based on the soma and nucleus feature trained metamodel - these prediction are available in the `aibs_soma_nuc_metamodel_preds_v117` table. This is a reference table where target_id refers to the unique nucleus id in the `nucleus_detection_v0` table. Classification_system refers to the coarse predictions from the soma and nucleus model and cell_type denotes the excitatory M-type prediction. Errors and soma-soma mergers have been filtered out based on the status of cells in materialization version 117. For more details, see  [@schneider-mizell_inhibitory_2025]. 
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification-system`| `excitatory` or `inhibitory` |
+| `cell_type` | One of several cell types, detailed below |
+
+: Allen Motif-type (mtype) Table {.light .hover}
+
+::: {.callout-warning}
+## Deprecated table
+This table remains available from materialization versions: 661, 795
+
+This table is deprecated, use `aibs_metamodel_mtypes_v661_v2` instead. 
+:::
+
+

@@ -1,0 +1,23 @@
+Table name: `allen_column_mtypes_v1`
+
+Clustering of anatomical properties (and connectivity for inhibitory cells) based on morphological features on cells in the V1 column, with segmentation as of v117. For more details, see  [@schneider-mizell_inhibitory_2025]. 
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification-system`| `excitatory` or `inhibitory` |
+| `cell_type` | One of several cell types, detailed below |
+
+: Allen Motif-type (mtype) Table {.light .hover}
+
+::: {.callout-warning}
+## Deprecated table
+This table remains available from materialization versions: 661, 795
+
+This table is deprecated, use `aibs_metamodel_mtypes_v661_v2` instead. 
+:::
+
+
