@@ -1,0 +1,18 @@
+Table name: `bodor_pt_target_proofread`
+
+A proofread collection of numerically strong BC and MC targets downstream of the L5-ET cells in the `bodor_pt_cells table`, used for [@bodor_agnes_l_synaptic_2023].
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification-system`| `proofread_inhib_target` for all entries.
+| `cell_type` | Inhibitory subclass, one of: `BC` or `MC` |
+
+: Bodor et al. L5PT Targets, proofread {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `nucleus_neuron_svm`, and can be indexed by the same nucleus id. 
+:::

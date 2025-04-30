@@ -60,10 +60,15 @@ website:
         contents:
           - section: "Release Manifests"
             contents: 
+              - release_manifests/version-1412.ipynb
               - release_manifests/version-1300.ipynb
               - release_manifests/version-1181.ipynb
               - release_manifests/version-1078.ipynb
               - release_manifests/version-943.ipynb
+              - release_manifests/version-795.ipynb
+              - release_manifests/version-661.ipynb
+              - release_manifests/version-343.ipynb
+              - release_manifests/version-117.ipynb
           - annotation-tables.ipynb
           - functional-data.ipynb
           - static-repositories.ipynb
