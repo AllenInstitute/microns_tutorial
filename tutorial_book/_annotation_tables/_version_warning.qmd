@@ -2,5 +2,5 @@
 ## Version update
 We have released a new public version 1412, as part of our quarterly release schedule. See details at [Release Manifests: 1412](../release_manifests/version-1412.html). 
 
-Tutorials remained pinned to v1300 as the latest major version.
+Tutorials remain pinned to v1300 as the latest major version.
 :::
