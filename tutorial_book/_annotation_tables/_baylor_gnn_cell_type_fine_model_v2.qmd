@@ -1,0 +1,38 @@
+Table name: `baylor_gnn_cell_type_fine_model_v2`
+
+Exciatory/Inhibitory Subclass cell types derived from a supervised GNN classifier trained on the hand labeled cell types('23P, 4P, 5P-IT, 5P-NP, 5P-PT, 6P-CT, 6P-IT, BC, BPC, MC, NGC'). Process for generating labels 
+
+1. Cells Automatically Proofread  
+2. Graph Objects generated for each neuron with the following node attributes (no z coordinate information included):  
+  * skeleton information ('skeletal_length', 'skeleton_vector_upstream_theta', 'skeleton_vector_upstream_phi' , 'skeleton_vector_downstream_theta', 'skeleton_vector_downstream_phi'),  
+  * width information ('width_upstream', 'width_no_spine', 'width_downstream'),  
+  * synapse information('n_synapses_post', 'n_synapses_pre', 'n_synapses_head_postsyn',  'n_synapses_neck_postsyn', 'n_synapses_shaft_postsyn', 'n_synapses_no_head_postsyn', 'synapse_volume_shaft_postsyn_sum', 'synapse_volume_head_postsyn_sum', 'synapse_volume_no_head_postsyn_sum', 'synapse_volume_neck_postsyn_sum', 'synapse_volume_postsyn_sum',)
+  * spine information ('n_spines', 'spine_volume_sum',),  
+  * global neuron information ("soma_start_angle_max", "max_soma_volume", "n_syn_soma")  
+3. GCN trained on labeled data with 60:20:20 training/validation/testing split  
+4. GCN model generates class probabiliites and highest probability label given  
+
+For details, see [@celii_neurd_2025].
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification-system`| `baylor_gnn_cell_type_fine` for all entries |
+| `cell_type` | one of: ('23P, 4P, 5P-IT, 5P-NP, 5P-PT, 6P-CT, 6P-IT, BC, BPC, MC, NGC') |
+
+: Baylor Fine Cell Type Table {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 
+:::
+
+```python
+# Standard query
+client.materialize.query_table('baylor_gnn_cell_type_fine_model_v2')
+
+# Content-aware query
+client.materialize.tables.baylor_gnn_cell_type_fine_model_v2(id=example_nucleus_id).query()
+```

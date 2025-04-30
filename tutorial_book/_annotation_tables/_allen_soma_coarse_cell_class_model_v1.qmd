@@ -1,0 +1,10 @@
+Table name: `allen_soma_coarse_cell_class_model_v1`
+
+This is a model developed by Leila Elabbady and Forrest Collman, it uses features extracted from the somatic region and nucleus segmentation (developed in collaboration with Shang Mu and Gayathri Mahalingam). Those features included the number of soma synapses, the somatic area, the somatic area to volume ratio, the density of somatic synapses, teh volume of the soma, the depth in cortex of the cell (based upon the y coordinate after a 5 degree rotation), the nucleus area, the ratio of the nucleus area to nucleus volume, the average diameter of the proximal processes of the cell, the area of the nucleus with a fold, the fraction of the nucleus area within a fold, the volume of the nucleus, and the ratio of the volume of the nucleus to the volume of the soma. The model was trained using labels from the allen_v1_column_types_v2 table supplemented with NP labels from allen_minnie_extra_types as of version 91 . The model is a SVM classifier, using an rbf kernel, with class balance. On 20% of the data held out the model has a 77% accuracy, with principal confusion between layer 6 IT and CT, and layer 5 IT with layer 4 and many types. 
+
+::: {.callout-warning}
+## Deprecated table
+This table remains available from materialization versions: 117
+
+Use the current version `aibs_metamodel_celltypes_v661` instead. 
+:::

@@ -1,0 +1,13 @@
+Table name: `bodor_pt_cells`
+
+Pyramidal tract Layer 5 cells used for [@bodor_agnes_l_synaptic_2023]
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification-system` | is `layer5_pt` for all entries in the table |
+| `cell_type` | brain area of the cell body, one of: primary visual cortex `v1` or higher visual areas `hva` |
+: Bodor et al. L5PT {.light .hover}
+

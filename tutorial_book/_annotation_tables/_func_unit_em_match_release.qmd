@@ -1,0 +1,10 @@
+Table name: `func_unit_em_match_release` 
+
+A table of 200 EM centroids manually matched to Baylor `unit_ids` in the functional scans.
+
+::: {.callout-warning}
+## Deprecated table
+This table remains available from materialization versions: 343
+
+This table is deprecated, use `coregistration_manual_v4` instead. 
+:::

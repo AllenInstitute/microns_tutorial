@@ -1,0 +1,23 @@
+Table name: `aibs_soma_nuc_metamodel_preds_v117`
+
+This table contains the results of a hierarchical classifier trained on features of the cell body and nucleus of cells. This was applied to most cells in the dataset that had complete cell bodies (e.g. not cut off by the edge of the data), detected by `nucleus_detection_v0`, with small-objects and multi-soma errors removed. The model was run with cell-based features as of version 117 of the dataset. For more details, see  [@elabbady_perisomatic_2025].
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification-system`| One of `excitatory_neuron` or `inhibitory_neuron` for detected neurons, or `nonneuron` for non-neurons (glia/pericytes). |
+| `cell_type` | One of several cell types, detailed below |
+
+: AIBS Soma Nuc Metamodel Table {.light .hover}
+
+::: {.callout-warning}
+## Deprecated table
+This table remains available from materialization versions: 343, 661, 795
+
+This table is deprecated, use `aibs_metamodel_celltypes_v661` instead. 
+:::
+
+

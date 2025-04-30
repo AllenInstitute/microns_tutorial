@@ -1,0 +1,19 @@
+Table name: `cell_edits_v661`
+
+A count of how many proofreading edits were made to each cell, one entry for every nucleus that had a valid id, calculated at v661.
+
+The key columns of are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the nucleus |
+| `group_id` | The number of edits at v661 |
+
+: Cell edit at v661 {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 
+
+This working table is only available from materialization version 795
+:::

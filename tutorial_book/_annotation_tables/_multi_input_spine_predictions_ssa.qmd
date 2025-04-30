@@ -1,8 +1,6 @@
-Table name: `synapse_target_predictions_ssa`
+Table name: `multi_input_spine_predictions_ssa`
 
-This table contains synapse target structure predictions ('soma', 'shaft', 'spine') for synapses in `synapses_pni_2`. Predictions are currently available for the majority of cells predicted to be neurons by `aibs_metamodel_mtypes_v661_v2`. The predictions come from a model trained on synapse target annotations from `vortex_compartment_targets` as well as some additional manual annotations where the model was failing. 
-
-The model is a random forest trained on spectral shape analysis features from the mesh. Current failure modes include some stubby spines being predicted as shafts, and some very thin dendrites being classified as spines. 
+Spine-predicted objects with more than one input synapse prediction. Based on the same model used in `synapse_target_predictions_ssa`. The model is a random forest trained on spectral shape analysis features from the mesh. Current failure modes include some stubby spines being predicted as shafts, and some very thin dendrites being classified as spines. 
 
 It contains the following columns:
 
@@ -12,7 +10,7 @@ It contains the following columns:
 | `post_pt_position` / `post_pt_supervoxel_id` / `post_pt_root_id` | The bound spatial point data for the postsynaptic side of the synapse. |  
 | `size` | The size of the synapse in voxels. This correlates well, but not perfectly, with the surface area of synapse. |  
 | `ctr_pt_position` | A position in the center of the detected synaptic junction. Of all points in the synapse table, this is usually the closest point to the surface (and thus mesh) of both neurons. Because it is at the edge of cells, it is not associated with a root id. |
-| `tag` | label of the post-synaptic structure, one of: `spine`, `shaft`, `soma` |
+| `group_id` | a unique iterator for shared postsynaptic compartments. Use `pandas.groupby()` to associate synapses on the same target |
 
 : Synapse target predictions column definitions {.light .hover}
 
@@ -22,8 +20,8 @@ This is a reference table on `synapses_pni_2`, and can be indexed by the same sy
 
 ```python
 # Standard query
-client.materialize.query_table('synapse_target_predictions_ssa', limit=10)
+client.materialize.query_table('multi_input_spine_predictions_ssa', limit=10)
 
 # Content-aware query
-client.materialize.tables.synapse_target_predictions_ssa(post_pt_root_id=example_root_id).query()
+client.materialize.tables.multi_input_spine_predictions_ssa(post_pt_root_id=example_root_id).query().value_counts('group_id')
 ```

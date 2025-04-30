@@ -1,0 +1,25 @@
+Table name: `vortex_thalamic_proofreading_status`
+
+This table reports the status of a manually selected subset of putative thalamocortical axons as part of the as part of the [VORTEX project](../vortex-overview.html).
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the entry point of the axon into the EMvolume |
+| `status`| One of 'non' indicating no cleaning or extension; 'clean' indicating synapses can be trusted but may not be complete; 'extended' meaning all end points visited and extended to completion |
+| `valid_id` | The root id of the axon when it the proofreading assessment was made |
+
+::: {.callout-tip}
+Thalamic axons in this table that are complete and `extended` are also posted to `proofreading_status_and_strategy` with strategy: `axon_fully_extended` and `dendrite_none`.
+:::
+
+
+```python
+# Standard query
+client.materialize.query_table('vortex_thalamic_proofreading_status')
+
+# Content-aware query
+client.materialize.tables.vortex_thalamic_proofreading_status(status='extended').query()
+```

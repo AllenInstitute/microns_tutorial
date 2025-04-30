@@ -1,0 +1,15 @@
+Table name: `allen_minnie_extra_types`
+
+This is a table to store extra manual cell typing that the Allen Insitute has done outside the column, in relation to several papers including: [@elabbady_perisomatic_2025], [@schneider-mizell_inhibitory_2025], [@gamlin_connectomics_2025], and [@bodor_agnes_l_synaptic_2023].
+
+| Column | Description |
+| :--- | :--- |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus | 
+| `classification-system`| `aibs_coarse_neuronal, `aibs_coarse_excitatory`, 'aibs_coarse_excitatory, `aibs_coarse_inhibitory` | 
+| `cell_type` | One of several cell types, depending on the `classification-system` |
+
+: Allen Extra Manual Cell Types Table {.light .hover}
+
+::: {.callout-tip}
+This working table is only available from materialization version 795
+:::

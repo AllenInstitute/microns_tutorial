@@ -1,0 +1,28 @@
+Table name: `connectivity_groups_v507`
+
+Inhibitory column connectivity 'motif' groups (cells that distribute their outputs onto target cell types in a similar way) for the V1 column. 
+
+For details, see [@schneider-mizell_inhibitory_2025]. 
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification-system`| `connectivity_group` |
+| `cell_type` | connectivity motif type |
+
+: Allen Inhibitory Motif-type (mtype) Table {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 
+:::
+
+```python
+# Standard query
+client.materialize.query_table('connectivity_groups_v507')
+
+# Content-aware query
+client.materialize.tables.connectivity_groups_v507(id=example_nucleus_id).query()
+```

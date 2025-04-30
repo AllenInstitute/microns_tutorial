@@ -23,7 +23,7 @@ The key columns are:
 : Proofreading Status Table {.light .hover}
 
 
-This table, `proofreading_status_public_release`, is superceded by `proofreading_status_and_strategy` and will be deprecated.
+This table is deprecated and superseded by `proofreading_status_and_strategy`.
 
 ```python
 # Set version to 1078 or before

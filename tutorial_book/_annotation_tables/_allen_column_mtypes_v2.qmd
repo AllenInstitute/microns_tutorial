@@ -1,0 +1,20 @@
+Table name: `allen_column_mtypes_v2`
+
+This table contains the anatomical cell type clusters (m-types) for the Minnie columnar sample described in [@schneider-mizell_inhibitory_2025]. 
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification-system`| `excitatory` or `inhibitory` |
+| `cell_type` | One of several cell types, detailed in the reference |
+
+: Allen Motif-type (mtype) Table {.light .hover}
+
+::: {.callout-tip}
+Consider using `aibs_metamodel_mtypes_v661_v2` instead, which is the same model run across the entire dataset. 
+:::
+
+

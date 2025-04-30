@@ -13,7 +13,7 @@ The key columns are:
 | `classification-system`| `baylor_log_reg_cell_type_coarse` for all entries |
 | `cell_type` | `excitatory` or `inhibitory` |
 
-: Baylor Dendrite Feature Table {.light .hover}
+: Baylor Coarse Cell Type Table {.light .hover}
 
 :::{.callout-tip}
 This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 

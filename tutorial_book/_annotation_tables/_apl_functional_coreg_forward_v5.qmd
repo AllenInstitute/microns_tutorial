@@ -1,0 +1,10 @@
+Table name: `apl_functional_coreg_forward_v5`
+
+Table tracking automated functional matches from EM->2P using an automated diffeomorphic-based approach. The "score" column represents the match separation in microns. Functional matching done by Justin Joyce, JHUAPL. Table managed by Daniel Xenes, JHUAPL.
+
+::: {.callout-warning}
+## Deprecated table
+This table remains available from materialization versions: 661
+
+Use `apl_functional_coreg_vess_fwd` instead.
+:::

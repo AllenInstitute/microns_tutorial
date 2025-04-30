@@ -1,0 +1,18 @@
+Table name: `pt_synapse_targets`
+
+Target classification of a subset of downstream synaptic partners of PT cells in the `bodor_pt_cells table`, used for [@bodor_agnes_l_synaptic_2023].
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification-system`| One of `excitatory`, `inhibitory`, `error`.
+| `cell_type` | Subclass label or `none` |
+
+: Bodor et al. L5PT Targets {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `synapses_pni_2`, and can be indexed by the same synapse id. 
+:::

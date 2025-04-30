@@ -1,0 +1,27 @@
+Table name: `synapse_target_structure`
+
+Postsynaptic structure classification for individual synapses by Brendan Celii and Jacob Reimer at Baylor College of Medicine based on mesh structure and initial synapse detection and classification.
+
+It contains the following columns:
+
+| Column | Description |
+| :--- | :--- |
+| `pre_pt_position` / `pre_pt_supervoxel_id` / `pre_pt_root_id` | The bound spatial point data for the presynaptic side of the synapse. |  
+| `post_pt_position` / `post_pt_supervoxel_id` / `post_pt_root_id` | The bound spatial point data for the postsynaptic side of the synapse. |  
+| `size` | The size of the synapse in voxels. This correlates well, but not perfectly, with the surface area of synapse. |  
+| `ctr_pt_position` | A position in the center of the detected synaptic junction. Of all points in the synapse table, this is usually the closest point to the surface (and thus mesh) of both neurons. Because it is at the edge of cells, it is not associated with a root id. |  
+| `value` | Each synapse has a value from 0-6 indicating spine, shaft, or other target compartments. 0 : Synapse onto spine head 1 : Synapse onto spine neck 2 : Synapse onto dendritic shaft 3 : Synapse onto spine but no clear head/neck separation for spine. 4 : Synapse onto axonal bouton. 5 : Synapse onto axonal structure other than a bouton. 6 : Synapse onto soma |
+
+: Synapse target predictions column definitions {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `synapses_pni_2`, and can be indexed by the same synapse id. 
+:::
+
+```python
+# Standard query
+client.materialize.query_table('synapse_target_structure', limit=10)
+
+# Content-aware query
+client.materialize.tables.synapse_target_structure(post_pt_root_id=example_root_id).query()
+```
