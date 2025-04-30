@@ -398,6 +398,30 @@ div.csl-indent {
  <span class="menu-text">943 (Jan 2024)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./release_manifests/version-795.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">795 (Aug 2023)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./release_manifests/version-661.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">661 (Jun 2023)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./release_manifests/version-343.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">343 (Feb 2022)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./release_manifests/version-117.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">117 (Jun 2021)</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item">
@@ -536,8 +560,8 @@ div.csl-indent {
 </section>
 <section id="synapse-table" class="level2">
 <h2 class="anchored" data-anchor-id="synapse-table">Synapse Table</h2>
-<p>Table name: <code>synapses_pni_v2</code></p>
-<p>The only synapse table is <code>synapses_pni_v2</code>. This is by far the largest table in the dataset with 337 million entries, one for each synapse. It contains the following columns:</p>
+<p>Table name: <code>synapses_pni_2</code></p>
+<p>The only synapse table is <code>synapses_pni_2</code>. This is by far the largest table in the dataset with 337 million entries, one for each synapse. It contains the following columns:</p>
 <table class="table-light table-hover caption-top table">
 <caption>Synapse table column definitions</caption>
 <colgroup>
@@ -1130,7 +1154,7 @@ Soma Nuc Metamodel Cell types
 <p>For details, see <span class="citation" data-cites="celii_neurd_2025">(<a href="#ref-celii_neurd_2025" role="doc-biblioref">Celii et al. 2025</a>)</span>.</p>
 <p>The key columns are:</p>
 <table class="table-light table-hover caption-top table">
-<caption>Baylor Dendrite Feature Table</caption>
+<caption>Baylor Coarse Cell Type Table</caption>
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -1373,7 +1397,7 @@ M-type Cell Type definitions
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.aibs_metamodel_mtypes_v661_v2(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Previous versions of this table include: <code>allen_column_mtypes_v1</code> (run on a subset of data, the V1 column)</p>
+<p>Previous versions of this table include: <code>aibs_soma_nuc_exc_mtype_preds_v117</code> (run at v117), <code>allen_column_mtypes_v1</code> and <code>allen_column_mtypes_v2</code> (run on a subset of data, the V1 column)</p>
 </section>
 </section>
 <section id="proofreading-tables" class="level2">
@@ -1555,7 +1579,7 @@ Important
 </tr>
 </tbody>
 </table>
-<p>This table, <code>proofreading_status_public_release</code>, is superceded by <code>proofreading_status_and_strategy</code> and will be deprecated.</p>
+<p>This table is deprecated and superseded by <code>proofreading_status_and_strategy</code>.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set version to 1078 or before</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1078</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1866,7 +1890,7 @@ Warning
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>synapses_pni_v2</code></td>
+<td style="text-align: left;"><code>synapses_pni_2</code></td>
 <td style="text-align: left;">337,312,429</td>
 <td style="text-align: left;">The locations of synapses and the segment ids of the pre and post-synaptic automated synapse detection</td>
 </tr>

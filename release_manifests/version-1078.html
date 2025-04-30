@@ -181,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1300.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-1078.html">1078 (Jun 2024)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1412.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-1078.html">1078 (Jun 2024)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -378,6 +378,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">943 (Jan 2024)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-795.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">795 (Aug 2023)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-661.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">661 (Jun 2023)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-343.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">343 (Feb 2022)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-117.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">117 (Jun 2021)</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item">
@@ -413,13 +437,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#vortex-nodes-of-ranvier" id="toc-vortex-nodes-of-ranvier" class="nav-link" data-scroll-target="#vortex-nodes-of-ranvier">VORTEX nodes of Ranvier</a></li>
   </ul></li>
   <li><a href="#functional-area-nucleus-look-up" id="toc-functional-area-nucleus-look-up" class="nav-link" data-scroll-target="#functional-area-nucleus-look-up">Functional area nucleus look-up</a></li>
+  <li><a href="#synapse-target-structure" id="toc-synapse-target-structure" class="nav-link" data-scroll-target="#synapse-target-structure">Synapse target structure</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-1078.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1300.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-1078.html">1078 (Jun 2024)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1412.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-1078.html">1078 (Jun 2024)</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">1078 (Jun 2024)</h1>
 </div>
@@ -447,11 +472,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><code>vortex_manual_myelination_v0</code> : manual labels on the myelination status of axons, as part of the VORTEX effort</p></li>
 <li><p><code>vortex_manual_nodes_of_ranvier</code> : manual labels on the nodes of Ranvier on myelinated axons, as part of the VORTEX effort</p></li>
 <li><p><code>nucleus_functional_area_assignment</code> : inferred brain area for all nuclei in the dataset</p></li>
+<li><p><code>synapse_target_structure</code> : a prediction on the target compartment of a synapse</p></li>
 </ul>
-<p>It includes all other tables as of v661, with the following exceptions (removed tables still available in version 1181):</p>
+<p>The following tables from previous versions are included:</p>
 <ul>
-<li></li>
+<li><code>synapses_pni_2</code> ( <a href="version-117.html">v117</a> )</li>
+<li><code>nucleus_detection_v0</code> ( <a href="version-117.html">v117</a> )</li>
+<li><code>proofreading_status_public_release</code> ( <a href="version-343.html">v343</a> )</li>
+<li><code>allen_v1_column_types_slanted_ref</code>( <a href="version-661.html">v661</a> )</li>
+<li><code>aibs_column_nonneuronal_ref</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>baylor_log_reg_cell_type_coarse_v1</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>coregistration_manual_v3</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>nucleus_alternative_points</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>nucleus_ref_neuron_svm</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>allen_column_mtypes_v2</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>aibs_metamodel_celltypes_v661</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>aibs_metamodel_mtypes_v661_v2</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>l5et_column</code>, <code>bodor_pt_cells</code>, <code>bodor_pt_target_proofread</code>, and <code>pt_synapse_targets</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>functional_properties_v3_bcm</code> ( <a href="version-943.html">v943</a> )</li>
+<li><code>coregistration_manual_v4</code> ( <a href="version-943.html">v943</a> )</li>
+<li><code>apl_functional_coreg_vess_fwd</code>, <code>coregistration_auto_phase3_fwd</code>, and <code>coregistration_auto_phase3_fwd_apl_vess_combined</code> ( <a href="version-943.html">v943</a> )</li>
 </ul>
+<p>Information about the version 1078 release can be queried with the following:</p>
+<div id="a19919bd-6cfd-4067-96a3-2ed009a74a2d" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># report timestamp metadata on the version of interest</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client.materialize.get_version_metadata(<span class="dv">1078</span>)[<span class="st">'time_stamp'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>datetime.datetime(2024, 6, 5, 10, 10, 1, 203215, tzinfo=datetime.timezone.utc)</code></pre>
+</div>
+</div>
 <section id="vortex-efforts" class="level2">
 <h2 class="anchored" data-anchor-id="vortex-efforts">VORTEX Efforts</h2>
 <section id="proofreading-status-and-strategy" class="level3">
@@ -557,11 +606,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>This table, <code>proofreading_status_and_strategy</code>, supercedes <code>proofreading_status_public_release</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'proofreading_status_and_strategy'</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'proofreading_status_and_strategy'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="vortex-proofread-astrocytes" class="level3">
@@ -599,11 +648,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_astrocyte_proofreading_status'</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_astrocyte_proofreading_status(status<span class="op">=</span><span class="st">'clean'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_astrocyte_proofreading_status'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_astrocyte_proofreading_status(status<span class="op">=</span><span class="st">'clean'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="vortex-synapse-compartments" class="level3">
 <h3 class="anchored" data-anchor-id="vortex-synapse-compartments">VORTEX synapse compartments</h3>
@@ -653,11 +702,11 @@ Tip
 <p>This is a reference table on <code>synapses_pni_2</code>, and can be indexed by the same synapse id.</p>
 </div>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_compartment_targets'</span>, limit<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_compartment_targets(pre_pt_root_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_compartment_targets'</span>, limit<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_compartment_targets(pre_pt_root_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="vortex-manual-myelin" class="level3">
 <h3 class="anchored" data-anchor-id="vortex-manual-myelin">VORTEX manual myelin</h3>
@@ -707,11 +756,11 @@ Warning
 <p>The myelination was evaluated for the <code>valid_id</code> and not necessarily the <code>pt_root_id</code>.</p>
 </div>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_manual_myelination_v0'</span>, limit<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_manual_myelination_v0(valid_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_manual_myelination_v0'</span>, limit<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_manual_myelination_v0(valid_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="vortex-nodes-of-ranvier" class="level3">
 <h3 class="anchored" data-anchor-id="vortex-nodes-of-ranvier">VORTEX nodes of Ranvier</h3>
@@ -761,11 +810,11 @@ Warning
 <p>The myelination was evaluated for the <code>valid_id</code> and not necessarily the <code>pt_root_id</code>.</p>
 </div>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_manual_nodes_of_ranvier'</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_manual_nodes_of_ranvier(valid_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_manual_nodes_of_ranvier'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_manual_nodes_of_ranvier(valid_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For more on how to interpret the table, see <a href="../annotation-tables.html">Annotation Tables</a></p>
 </section>
 </section>
@@ -819,11 +868,71 @@ Tip
 <p>This is a reference table on <code>nucleus_detection_v0</code>, and can be indexed by the same nucleus id.</p>
 </div>
 </div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'nucleus_functional_area_assignment'</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.nucleus_functional_area_assignment(tag<span class="op">=</span><span class="st">'V1'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'nucleus_functional_area_assignment'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.nucleus_functional_area_assignment(tag<span class="op">=</span><span class="st">'V1'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For more on how to interpret the table, see <a href="../annotation-tables.html">Annotation Tables</a>.</p>
+</section>
+<section id="synapse-target-structure" class="level2">
+<h2 class="anchored" data-anchor-id="synapse-target-structure">Synapse target structure</h2>
+<p>Table name: <code>synapse_target_structure</code></p>
+<p>Postsynaptic structure classification for individual synapses by Brendan Celii and Jacob Reimer at Baylor College of Medicine based on mesh structure and initial synapse detection and classification.</p>
+<p>It contains the following columns:</p>
+<table class="table-light table-hover caption-top table">
+<caption>Synapse target predictions column definitions</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pre_pt_position</code> / <code>pre_pt_supervoxel_id</code> / <code>pre_pt_root_id</code></td>
+<td style="text-align: left;">The bound spatial point data for the presynaptic side of the synapse.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>post_pt_position</code> / <code>post_pt_supervoxel_id</code> / <code>post_pt_root_id</code></td>
+<td style="text-align: left;">The bound spatial point data for the postsynaptic side of the synapse.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>size</code></td>
+<td style="text-align: left;">The size of the synapse in voxels. This correlates well, but not perfectly, with the surface area of synapse.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ctr_pt_position</code></td>
+<td style="text-align: left;">A position in the center of the detected synaptic junction. Of all points in the synapse table, this is usually the closest point to the surface (and thus mesh) of both neurons. Because it is at the edge of cells, it is not associated with a root id.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>value</code></td>
+<td style="text-align: left;">Each synapse has a value from 0-6 indicating spine, shaft, or other target compartments. 0 : Synapse onto spine head 1 : Synapse onto spine neck 2 : Synapse onto dendritic shaft 3 : Synapse onto spine but no clear head/neck separation for spine. 4 : Synapse onto axonal bouton. 5 : Synapse onto axonal structure other than a bouton. 6 : Synapse onto soma</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a reference table on <code>synapses_pni_2</code>, and can be indexed by the same synapse id.</p>
+</div>
+</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'synapse_target_structure'</span>, limit<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.synapse_target_structure(post_pt_root_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For more on how to interpret the table, see <a href="../annotation-tables.html">Annotation Tables</a>.</p>
 
 

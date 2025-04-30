@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -181,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1300.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-943.html">943 (Jan 2024)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1412.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-943.html">943 (Jan 2024)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -378,6 +398,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">943 (Jan 2024)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-795.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">795 (Aug 2023)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-661.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">661 (Jun 2023)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-343.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">343 (Feb 2022)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-117.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">117 (Jun 2021)</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item">
@@ -406,13 +450,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#functional-properties-of-coregistered-cells" id="toc-functional-properties-of-coregistered-cells" class="nav-link active" data-scroll-target="#functional-properties-of-coregistered-cells">Functional properties of coregistered cells</a></li>
   <li><a href="#manual-coregistration" id="toc-manual-coregistration" class="nav-link" data-scroll-target="#manual-coregistration">Manual Coregistration</a></li>
+  <li><a href="#automated-coregistration" id="toc-automated-coregistration" class="nav-link" data-scroll-target="#automated-coregistration">Automated Coregistration</a></li>
+  <li><a href="#flat-segmentation" id="toc-flat-segmentation" class="nav-link" data-scroll-target="#flat-segmentation">Flat Segmentation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-943.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1300.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-943.html">943 (Jan 2024)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1412.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-943.html">943 (Jan 2024)</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">943 (Jan 2024)</h1>
 </div>
@@ -436,16 +482,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p><code>functional_properties_v3_bcm</code> : functional properties for each of the coregistered neurons</p></li>
 <li><p><code>coregistration_manual_v4</code> : an update to the manual coregistration between functionally recorded units and EM cells</p></li>
+<li><p><code>apl_functional_coreg_vess_fwd</code>, <code>coregistration_auto_phase3_fwd</code>, and <code>coregistration_auto_phase3_fwd_apl_vess_combined</code> : a set of tables that interact to build the automated coregistration model</p></li>
+<li><p>A <strong>flat segmentation</strong> of the meshes is also available</p></li>
 </ul>
-<p>It includes all other tables as of v795, with the following exceptions (removed tables still available in version 795):</p>
+<p>The following tables from previous versions are included:</p>
 <ul>
-<li></li>
+<li><code>synapses_pni_2</code> ( <a href="version-117.html">v117</a> )</li>
+<li><code>nucleus_detection_v0</code> ( <a href="version-117.html">v117</a> )</li>
+<li><code>proofreading_status_public_release</code> ( <a href="version-343.html">v343</a> )</li>
+<li><code>allen_v1_column_types_slanted_ref</code>( <a href="version-661.html">v661</a> )</li>
+<li><code>aibs_column_nonneuronal_ref</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>baylor_log_reg_cell_type_coarse_v1</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>coregistration_manual_v3</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>nucleus_alternative_points</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>nucleus_ref_neuron_svm</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>allen_column_mtypes_v2</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>aibs_metamodel_celltypes_v661</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>aibs_metamodel_mtypes_v661_v2</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>l5et_column</code>, <code>bodor_pt_cells</code>, <code>bodor_pt_target_proofread</code>, and <code>pt_synapse_targets</code> ( <a href="version-795.html">v795</a> )</li>
 </ul>
-<p>A flat segmentation of the meshes at version 943 is available at: <code>precomputed://gs://iarpa_microns/minnie/minnie65/seg_m943</code></p>
+<p>The following tables have been REMOVED (removed tables still available in version 795):</p>
+<ul>
+<li><p><code>apl_functional_coreg_forward_v5</code> : removed and superseded by <code>coregistration_auto_phase3_fwd_apl_vess_combined</code></p></li>
+<li><p><code>aibs_soma_nuc_metamodel_preds_v117</code> : removed and superseded by <code>aibs_metamodel_celltypes_v661</code></p></li>
+<li><p><code>allen_minnie_extra_types</code> : a working table associated with v795</p></li>
+<li><p><code>aibs_soma_nuc_exc_mtype_preds_v117</code> : removed and superseded by <code>aibs_metamodel_mtypes_v661_v2</code></p></li>
+<li><p><code>allen_column_mtypes_v1</code> : removed and superseded by <code>allen_column_mtypes_v2</code></p></li>
+<li><p><code>cell_edits_v661</code> : a working table associated with v795</p></li>
+</ul>
+<p>Information about the version 943 release can be queried with the following:</p>
+<div id="32fdb30f-2c73-464a-a7dc-422f28fbd945" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># report timestamp metadata on the version of interest</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client.materialize.get_version_metadata(<span class="dv">943</span>)[<span class="st">'time_stamp'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>datetime.datetime(2024, 1, 22, 8, 10, 1, 497934, tzinfo=datetime.timezone.utc)</code></pre>
+</div>
+</div>
 <section id="functional-properties-of-coregistered-cells" class="level2">
 <h2 class="anchored" data-anchor-id="functional-properties-of-coregistered-cells">Functional properties of coregistered cells</h2>
 <p>Table name: <code>functional_properties_v3_bcm</code></p>
-<p>A summary of the functional properties for each of the coregistered neurons (as of <code>coregistration_manual_v3</code>). For details, see <span class="citation" data-cites="ding_functional_2025">[@ding_functional_2025]</span></p>
+<p>A summary of the functional properties for each of the coregistered neurons (as of <code>coregistration_manual_v3</code>). For details, see <span class="citation" data-cites="ding_functional_2025">(<a href="#ref-ding_functional_2025" role="doc-biblioref">Ding et al. 2025</a>)</span></p>
 <p>The key columns are:</p>
 <table class="table-light table-hover caption-top table">
 <caption>Fuctional properties of coregistered neurons</caption>
@@ -528,11 +604,11 @@ Warning
 <p>This table includes duplicate entries for the same ‘pt_root_id’ and nucleus id if the coregistered cell has multiple unit recordings</p>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'functional_properties_v3_bcm'</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.functional_properties_v3_bcm(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'functional_properties_v3_bcm'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.functional_properties_v3_bcm(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For more on how to interpret the table, see <a href="../annotation-tables.html">Annotation Tables</a>.</p>
 </section>
 <section id="manual-coregistration" class="level2">
@@ -613,22 +689,128 @@ Warning
 <p>This table includes duplicate entries for the same ‘pt_root_id’ and nucleus id if the coregistered cell has multiple unit recordings</p>
 </div>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'coregistration_manual_v4'</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.coregistration_manual_v4(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'coregistration_manual_v4'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.coregistration_manual_v4(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This table <code>coregistration_manual_v4</code> supercedes previous iterations of this table:</p>
 <ul>
 <li><code>coregistration_manual_v3</code></li>
 <li><code>coregistration_manual</code></li>
 </ul>
 <p>For more on how to interpret the table, see <a href="../annotation-tables.html">Annotation Tables</a>.</p>
+</section>
+<section id="automated-coregistration" class="level2">
+<h2 class="anchored" data-anchor-id="automated-coregistration">Automated Coregistration</h2>
+<p>Table name: <code>coregistration_auto_phase3_fwd_apl_vess_combined</code></p>
+<p>A table of EM nucleus centroids automatically matched to Baylor functional units. This table reconciles the following two tables that both make a best match of the of registration using different techniques: <code>coregistration_auto_phase3_fwd</code> and <code>apl_functional_coreg_vess_fwd</code>. A unique functional unit is identified by its session, scan_idx and unit_id. An EM nucleus centroid may have matched to more than one functional unit if it was scanned on more than one imaging field.</p>
+<p>The key columns are:</p>
+<table class="table-light table-hover caption-top table">
+<caption>Coregistration table</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>session</code></td>
+<td style="text-align: left;">The session index from functional imaging</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>scan_idx</code></td>
+<td style="text-align: left;">The scan index from functional imaging</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>unit_id</code></td>
+<td style="text-align: left;">The functional unit index from imaging. Only unique within scan and session</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>field</code></td>
+<td style="text-align: left;">The field index from functional imaging</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>residual</code></td>
+<td style="text-align: left;">The residual distance between the functional and the assigned structural points after transformation, in microns</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>score</code></td>
+<td style="text-align: left;">A separation score, measuring the difference between the residual distance to the assigned neuron and the distance to the nearest non-assigned neuron, in microns. <em>This can be negative if the non-assigned neuron is closer than the assigned neuron. Larger values indicate fewer nearby neurons that could be confused with the assigned neuron.</em></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Deprecated table
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This table remains available from materialization versions: 943, 1078, 1181</p>
+<p>Use <code>coregistration_auto_phase3_fwd_apl_vess_combined_v2</code> instead.</p>
+<p>This table includes duplicate entries for the same <code>pt_root_id</code> and nucleus id if the coregistered cell has multiple unit recordings</p>
+</div>
+</div>
+<p>For more on how to interpret the table, see <a href="../annotation-tables.html">Annotation Tables</a>.</p>
+</section>
+<section id="flat-segmentation" class="level2">
+<h2 class="anchored" data-anchor-id="flat-segmentation">Flat Segmentation</h2>
+<table class="caption-top table">
+<caption>minnie65 flat segmentation v943</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Volume</th>
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;">Short Description</th>
+<th style="text-align: left;">Type (size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Proofread Segmentation (v943)</td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
+<td style="text-align: left;"><code>https://storage.googleapis.com/iarpa_microns/minnie/minnie65/seg_m943</code></td>
+<td style="text-align: left;">Mulit-resolution flat / static cellular segmentation voxels and meshes from 8,8,40 nm and above</td>
+<td style="text-align: left;">Precomputed Shareded Compressed Segmentation (12 TB)</td>
+</tr>
+</tbody>
+</table>
+<p>This contains the fixed state of the cellular segmentation at each version, where each voxel has been assigned an ID which is unique to each cellular object at 8,8,40, along with downsampled versions. Not all objects have been proofread, but a summary of the most focused efforts on cells can be found in the proofreading status metadata. In addition the mesh folder contains meshes of each object available at 3 different levels of downsampling. Folder contains many files, for download use cloud-volume, tensor-store, for bulk download use igneous, AWS CLI or gsutil CLI.</p>
+
 
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-ding_functional_2025" class="csl-entry" role="listitem">
+Ding, Zhuokun, Paul G. Fahey, Stelios Papadopoulos, Eric Y. Wang, Brendan Celii, Christos Papadopoulos, Andersen Chang, et al. 2025. <span>“Functional Connectomics Reveals General Wiring Rule in Mouse Visual Cortex.”</span> <em>Nature</em> 640 (8058): 459–69. <a href="https://doi.org/10.1038/s41586-025-08840-3">https://doi.org/10.1038/s41586-025-08840-3</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
