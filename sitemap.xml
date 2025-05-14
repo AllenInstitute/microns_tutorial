@@ -13,6 +13,10 @@
     <lastmod>2025-04-30T07:23:58.989Z</lastmod>
   </url>
   <url>
+    <loc>https://tutorial.microns-explorer.org/release_manifests/version-1412.html</loc>
+    <lastmod>2025-04-30T16:49:57.752Z</lastmod>
+  </url>
+  <url>
     <loc>https://tutorial.microns-explorer.org/release_manifests/version-1181.html</loc>
     <lastmod>2025-04-23T01:03:58.810Z</lastmod>
   </url>
@@ -26,15 +30,15 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/06-cloudvolume-download-mesh.html</loc>
-    <lastmod>2025-04-15T16:55:25.560Z</lastmod>
+    <lastmod>2025-04-30T16:47:28.336Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/04-cave-query-synapses.html</loc>
-    <lastmod>2025-04-15T16:55:09.012Z</lastmod>
+    <lastmod>2025-04-30T16:44:29.707Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/02-cave-query-cell-types.html</loc>
-    <lastmod>2025-04-15T16:54:50.577Z</lastmod>
+    <lastmod>2025-04-30T16:44:32.959Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/00_skeletons.html</loc>
@@ -58,11 +62,11 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/dash-connectivity.html</loc>
-    <lastmod>2025-04-09T18:59:24.305Z</lastmod>
+    <lastmod>2025-04-30T16:44:37.787Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/annotation-tables.html</loc>
-    <lastmod>2025-04-30T07:27:50.110Z</lastmod>
+    <lastmod>2025-04-30T16:44:39.054Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/analysis_gallery/index.html</loc>
@@ -74,7 +78,7 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/dash-table-viewer.html</loc>
-    <lastmod>2025-04-03T19:28:05.035Z</lastmod>
+    <lastmod>2025-04-30T16:44:36.624Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/dataset-basics.html</loc>
@@ -82,7 +86,7 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/faq.html</loc>
-    <lastmod>2025-04-15T19:29:19.702Z</lastmod>
+    <lastmod>2025-04-30T16:44:35.391Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/index.html</loc>
@@ -90,7 +94,7 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/materialization-version.html</loc>
-    <lastmod>2025-04-30T06:06:30.176Z</lastmod>
+    <lastmod>2025-04-30T16:44:41.972Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/neuroglancer-basic.html</loc>
@@ -102,7 +106,7 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/proofreading.html</loc>
-    <lastmod>2025-04-09T18:55:45.576Z</lastmod>
+    <lastmod>2025-04-30T16:44:34.222Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/00_cave_quickstart.html</loc>
@@ -114,7 +118,7 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/03-cave-query-proofread-cells.html</loc>
-    <lastmod>2025-04-14T17:09:45.759Z</lastmod>
+    <lastmod>2025-04-30T16:44:31.530Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/05-cloudvolume-download.html</loc>
@@ -122,11 +126,11 @@
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/07-cave-download-skeleton.html</loc>
-    <lastmod>2025-04-15T16:55:31.625Z</lastmod>
+    <lastmod>2025-04-30T16:47:26.620Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/quickstart_notebooks/09-nglui-neuroglancer.html</loc>
-    <lastmod>2025-04-15T16:55:51.491Z</lastmod>
+    <lastmod>2025-04-30T16:49:08.268Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/release_manifests/version-117.html</loc>

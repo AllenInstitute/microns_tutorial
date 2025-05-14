@@ -382,6 +382,12 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./release_manifests/version-1412.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1412 (Apr 2025)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./release_manifests/version-1300.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1300 (Jan 2025)</span></a>
   </div>
@@ -458,7 +464,7 @@ div.csl-indent {
   <li><a href="#what-types-of-data-change-with-time" id="toc-what-types-of-data-change-with-time" class="nav-link" data-scroll-target="#what-types-of-data-change-with-time">What types of data change with time</a></li>
   <li><a href="#how-to-set-the-version-of-your-analysis" id="toc-how-to-set-the-version-of-your-analysis" class="nav-link" data-scroll-target="#how-to-set-the-version-of-your-analysis">How to set the version of your analysis</a>
   <ul class="collapse">
-  <li><a href="#how-set-the-timestamp-to-an-expired-version" id="toc-how-set-the-timestamp-to-an-expired-version" class="nav-link" data-scroll-target="#how-set-the-timestamp-to-an-expired-version">How set the timestamp to an expired version</a></li>
+  <li><a href="#how-to-set-the-timestamp-to-an-expired-version" id="toc-how-to-set-the-timestamp-to-an-expired-version" class="nav-link" data-scroll-target="#how-to-set-the-timestamp-to-an-expired-version">How to set the timestamp to an expired version</a></li>
   <li><a href="#timestamps-for-all-public-release-versions" id="toc-timestamps-for-all-public-release-versions" class="nav-link" data-scroll-target="#timestamps-for-all-public-release-versions">Timestamps for all public release versions</a></li>
   </ul></li>
   <li><a href="#how-to-cross-reference-across-time" id="toc-how-to-cross-reference-across-time" class="nav-link" data-scroll-target="#how-to-cross-reference-across-time">How to cross-reference across time</a>
@@ -491,6 +497,20 @@ div.csl-indent {
 </header>
 
 
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Version update
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We have released a new public version 1412, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1412.html">Release Manifests: 1412</a>.</p>
+<p>Tutorials remain pinned to v1300 as the latest major version.</p>
+</div>
+</div>
 <h3 class="anchored">
 The MICrONS Dataset is public and open access, ready for analysis. But: manual edits to the segmentation continue to improve data quality.
 </h3>
@@ -729,8 +749,8 @@ Wall time: 59.2 s</code></pre>
 </div>
 </div>
 </div>
-<section id="how-set-the-timestamp-to-an-expired-version" class="level3">
-<h3 class="anchored" data-anchor-id="how-set-the-timestamp-to-an-expired-version">How set the timestamp to an expired version</h3>
+<section id="how-to-set-the-timestamp-to-an-expired-version" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-set-the-timestamp-to-an-expired-version">How to set the timestamp to an expired version</h3>
 <p>Materialization versions expire at regular intervals. Indeed, every version between our major long-term public releases existed at some point, but has since expired.</p>
 <p>This does not mean the data from those versions is gone.</p>
 <p>It does mean it takes longer to materialize data from that date, because the chunkedgraph has to calculate differences between an extant materialized version and the requested time. In order to materialize data from an expired version, you must set the optional timestamp argument in every query:</p>
