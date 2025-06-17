@@ -71,6 +71,7 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Functional Data – MICrONs Tutorial">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="MICrONs Tutorial">
 </head>
 
@@ -395,8 +396,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#combining-structural-and-functional-information" id="toc-combining-structural-and-functional-information" class="nav-link active" data-scroll-target="#combining-structural-and-functional-information">Combining Structural and Functional information</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/functional-data.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -420,8 +427,23 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>The functional data for the MICrONS project is available on DataJoint, and is hosted publicly. There are several ways to access the data.</p>
+<ul>
+<li>General instructions and links are at https://www.microns-explorer.org/cortical-mm3#f-data</li>
+<li>The scan and stack metadata, synchronized stimulus movies, synchronized behavioral traces, cell segmentation masks, calcium traces, and inferred spikes are available as a containerized MYSQL v5.7 database, schematized using DataJoint. This file is available for download <a href="https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/functional_data/two_photon_processed_data_and_metadata/database_v8/functional_data_database_container_image_v8.tar">here</a> (97 GB).</li>
+<li><strong>Instructions for using the container are available</strong> at https://github.com/cajal/microns-nda-access<br>
+</li>
+<li>Further tutorials for interacting with the DataJoint Schemas and data are available at https://github.com/cajal/microns_phase3_nda</li>
+<li>You can get access to a hosted database and interactive notebooks by following the instructions on this fork of the nda: https://github.com/datajoint/microns_phase3_nda, and running in GitHub Codespaces</li>
+<li>See also the microns page on DataJoint https://www.datajoint.com/microns</li>
+</ul>
+<section id="combining-structural-and-functional-information" class="level2">
+<h2 class="anchored" data-anchor-id="combining-structural-and-functional-information">Combining Structural and Functional information</h2>
+<p>The functional data is all in DataJoint, while the EM data is all in connectome annotation versioning engine (CAVE). The two datasets are merged on the unit ID of the cell using a coregistration table in the EM dataset.</p>
+<p>For more on accessing the EM data: * Python tools overview https://tutorial.microns-explorer.org/python-tools.html * CAVEclient quickstart https://tutorial.microns-explorer.org/quickstart_notebooks/01-caveclient-setup.html * Example using CAVE to match the EM and functional cells https://github.com/cajal/microns_phase3_nda/blob/v8/tutorial_notebooks/Matched_Cell_Functional_Data.ipynb</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -849,7 +871,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/functional-data.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/functional-data.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

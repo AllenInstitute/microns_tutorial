@@ -93,8 +93,8 @@ div.csl-indent {
 <meta property="og:description" content="">
 <meta property="og:image" content="https://tutorial.microns-explorer.org/img/connectivity-viewer-top.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
-<meta property="og:image:height" content="518">
-<meta property="og:image:width" content="1836">
+<meta property="og:image:height" content="266">
+<meta property="og:image:width" content="1183">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -453,7 +453,7 @@ div.csl-indent {
 </header>
 
 
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -463,8 +463,8 @@ Version update
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>This tutorial has recently been updated to materialization version 1412 (from 1300).</p>
 <p>We have released a new public version 1412, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1412.html">Release Manifests: 1412</a>.</p>
-<p>Tutorials remain pinned to v1300 as the latest major version.</p>
 </div>
 </div>
 <p>We have created two webapps to help explore and visualize the data. These apps were created using the <a href="https://plotly.com/dash/">Dash</a> framework, hence the name.</p>
@@ -491,14 +491,22 @@ Note
 <p>Note that if you want to use cell IDs from the nucleus detection table, you must select the <code>Nucleus ID</code> option from the dropdown next to the entry box.</p>
 </div>
 </div>
-<p>Select the data version from the dropdown. (the <code>Live Query</code> option is not relevent for the public data)</p>
+<p>The <code>Materialization</code> option allows you to select which version of the dataset to query from. Default is ‘latest’.</p>
 <p>For the optional <code>Table</code> dropdown, there are several tables to choose from, though the most informative will be one of the <a href="annotation-tables.html#cell-type-tables">cell type classification tables</a>. The <code>aibs_metamodel_celltypes_v661</code> has the greatest coverage of the dataset, and is described in Perisomatic ultrastructure efficiently classifies cells in mouse cortex” <span class="citation" data-cites="elabbady_perisomatic_2025">(<a href="#ref-elabbady_perisomatic_2025" role="doc-biblioref">Elabbady et al. 2025</a>)</span>.</p>
 <p>The table <code>aibs_metamodel_mtypes_v661_v2</code> is the most current version version of the cell type classification, described in “A connectomic census of mouse visual cortex” <span class="citation" data-cites="schneider-mizell_inhibitory_2025">(<a href="#ref-schneider-mizell_inhibitory_2025" role="doc-biblioref">Schneider-Mizell et al. 2025</a>)</span>.</p>
 <p>Pressing “Submit” will query the database for the cell and its synapses.</p>
-<p>Once completed, you will see the bar under the input options turn green and report the data that it is displaying. For example, if we query root id <code>864691135408247241</code> and the default cell type table, we will see the following:</p>
+<p>Once completed, you will see the bar under the input options turn green and report the data that it is displaying. You may get one of several outputs depending on the root id you use.</p>
+<p>For example, if we query root id <code>864691135408247241</code> at version 1412, we will see the following:</p>
+<p><img src="img/connectivity_viewer_update.png" class="img-fluid"></p>
+<p>Meaning the server looked up the correct root id for the selected materialization version. If you DO want the connectivity for the expired root id, you mus select the materialization version for when it was extant.</p>
+<p>When you use a current root id or nucleus id, you will see the following return message</p>
 <p><img src="img/connectivity-viewer-success.png" class="img-fluid"></p>
 <p>Importantly, the data displayed below will match whatever is in this bar —&nbsp;if your query takes a long time or fails for some reason (i.e.bad internet, server error), the tables displayed might be stale.</p>
-<p>There are two locations the resulting data is displayed, as we’ll see below. First, a bar of tabs allows you to quickly visualize the data in different ways. Second, the table can present synaptic partners in a more detailed way.</p>
+<p>There are two locations the resulting data is displayed, as we’ll see below.</p>
+<ul>
+<li>First, a bar of tabs allows you to quickly visualize the data in different ways.</li>
+<li>Second, the table can present synaptic partners in a more detailed way.</li>
+</ul>
 <section id="visualization-tabs" class="level3">
 <h3 class="anchored" data-anchor-id="visualization-tabs">Visualization tabs</h3>
 <p>The first and default option in the tabs is <strong>Tables Only</strong> which doesn’t actually show any data. This is merely a placeholder to let you look directly at the tablular data below.</p>
@@ -534,6 +542,7 @@ Note
 <p>One of the first things you can see in the table viewer is that it is split into two tabs, <strong>Input</strong> and <strong>Output</strong>, with the tab names for each showing the total number of synapses in each category.</p>
 <p>To move between them, just click the tab you want.</p>
 <p>Above the Input/Ouput tabs is a link to the Neuroglancer view of the synapses show in the table, after filtering and/or selecting a subset of rows.</p>
+<p>You also have the drop-down option to select which branch of neuroglancer to use: <code>Seung-lab</code> or <code>Spelunker</code>. If the annotations you expect are not rendering, try the other neuroglancer type.</p>
 <p>The table view here is similar to in the Annotation Table Viewer described above. You can sort the table by clicking column headers, filter the table using the row underneath the headers, and select individual rows. If you select individual rows, the Neuroglancer link will group all synapses from each partner together, making it particularly easy to see how synaptic connectivity relates to neuronal anatomy.</p>
 <p>The default sorting of the table is by total number of synapses, but note that both summed total synapse size (<code>net_size</code>) and average synapse size (<code>mean_size</code>) are also shown. These can be particularly important values when thinking about connectivity between excitatory neurons.</p>
 <p>A CSV file of the entire table can be downloaded by clicking the “Export to CSV” button.</p>

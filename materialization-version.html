@@ -497,7 +497,7 @@ div.csl-indent {
 </header>
 
 
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -507,8 +507,8 @@ Version update
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>This tutorial has recently been updated to materialization version 1412 (from 1300).</p>
 <p>We have released a new public version 1412, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1412.html">Release Manifests: 1412</a>.</p>
-<p>Tutorials remain pinned to v1300 as the latest major version.</p>
 </div>
 </div>
 <h3 class="anchored">
@@ -577,7 +577,7 @@ Initial Setup
 </div>
 </div>
 <p>To initialize a caveclient, we give it a <strong>datastack</strong>, which is a name that defines a particular combination of imagery, segmentation, and annotation database. For the MICrONs public data, we use the datastack name <code>minnie65_public</code>.</p>
-<div id="afc3fa46-afd4-4a2b-a40a-7ab85fe3cd08" class="cell" data-execution_count="7">
+<div id="afc3fa46-afd4-4a2b-a40a-7ab85fe3cd08" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timezone</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -586,8 +586,8 @@ Initial Setup
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># see the available materialization versions</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>client.materialize.get_versions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>[1300, 1078, 117, 661, 343, 1181, 795, 943]</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>[1300, 1078, 117, 661, 343, 1181, 795, 943, 1412]</code></pre>
 </div>
 </div>
 <p>And these are their associated timestamps (all timestamps are in UTC):</p>
@@ -602,13 +602,14 @@ Version 661: 2023-04-06 20:17:09.199182+00:00
 Version 343: 2022-02-24 08:10:00.184668+00:00
 Version 1181: 2024-09-16 10:10:01.121167+00:00
 Version 795: 2023-08-23 08:10:01.404268+00:00
-Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
+Version 943: 2024-01-22 08:10:01.497934+00:00
+Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 </div>
 </div>
 <p>You can set the overall materialization version for the dataset using <code>client.version</code>. This will ensure all of the subsequent CAVE queries are performed at the same materialization, so you will get consistency between, for example, a cell type query and a synapse query.</p>
 <div id="c50f2606-e2d8-47aa-acd7-44397e9cdb02" class="cell" data-tags="[]" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set materialization version, for consistency</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1300</span> <span class="co"># current public as of 1/13/2025</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1412</span> <span class="co"># current public as of 4/29/2025</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>However, you can also set individual queries to a different version with optional argument <code>materialization_version</code>. For more about table queries, see <a href="quickstart_notebooks/02-cave-query-cell-types.html">CAVE Query Cell Types</a>.</p>
 <div id="48927998-633f-48da-8866-32382ce19df3" class="cell" data-execution_count="4">
@@ -637,41 +638,41 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">92393</td>
-<td>391995</td>
-<td>2020-09-28 22:43:43.204393+00:00</td>
+<td data-quarto-table-cell-role="th">27095</td>
+<td>717226</td>
+<td>2020-09-28 22:41:36.353256+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>143.598387</td>
-<td>96695656953309967</td>
-<td>864691135736903556</td>
-<td>[232304, 127728, 16737]</td>
+<td>340.089078</td>
+<td>118380363788982290</td>
+<td>864691135386337877</td>
+<td>[389712, 210880, 24904]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">77241</td>
-<td>437922</td>
-<td>2020-09-28 22:43:14.122531+00:00</td>
+<td data-quarto-table-cell-role="th">143388</td>
+<td>164389</td>
+<td>2020-09-28 22:45:24.957212+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>94.680515</td>
-<td>100231274366863259</td>
-<td>864691135090300591</td>
-<td>[258080, 255920, 19317]</td>
+<td>454.651412</td>
+<td>81435535339497985</td>
+<td>864691135475705920</td>
+<td>[121056, 201904, 18463]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">23906</td>
-<td>308570</td>
-<td>2020-09-28 22:41:28.612416+00:00</td>
+<td data-quarto-table-cell-role="th">34048</td>
+<td>126135</td>
+<td>2020-09-28 22:41:48.617493+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>77.572833</td>
-<td>91223731514852491</td>
-<td>864691135373378760</td>
-<td>[192272, 253488, 19393]</td>
+<td>158.299423</td>
+<td>78694108986133068</td>
+<td>864691135625910878</td>
+<td>[101216, 223936, 16893]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
@@ -688,8 +689,8 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>nuc_v661.sample(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>CPU times: total: 688 ms
-Wall time: 59.2 s</code></pre>
+<pre><code>CPU times: total: 812 ms
+Wall time: 59.7 s</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -711,35 +712,35 @@ Wall time: 59.2 s</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">37886</td>
-<td>253051</td>
+<td data-quarto-table-cell-role="th">99694</td>
+<td>500984</td>
 <td>t</td>
-<td>91.884913</td>
-<td>0</td>
-<td>0</td>
-<td>[177456, 79216, 24517]</td>
+<td>245.666775</td>
+<td>103042450989740874</td>
+<td>864691136287472323</td>
+<td>[278528, 229328, 21380]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">47218</td>
-<td>291916</td>
+<td data-quarto-table-cell-role="th">110157</td>
+<td>563160</td>
 <td>t</td>
-<td>237.901906</td>
-<td>91205108066569853</td>
-<td>864691136174955526</td>
-<td>[192128, 114608, 15436]</td>
+<td>333.836780</td>
+<td>107894390181643519</td>
+<td>864691136974411804</td>
+<td>[313680, 203072, 25566]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">44601</td>
-<td>268785</td>
+<td data-quarto-table-cell-role="th">120527</td>
+<td>612800</td>
 <td>t</td>
-<td>128.630948</td>
-<td>87488484222419503</td>
-<td>864691135293082636</td>
-<td>[165216, 210992, 18093]</td>
+<td>291.528704</td>
+<td>113866387252299373</td>
+<td>864691135763026486</td>
+<td>[357008, 133440, 22939]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
@@ -754,7 +755,7 @@ Wall time: 59.2 s</code></pre>
 <p>Materialization versions expire at regular intervals. Indeed, every version between our major long-term public releases existed at some point, but has since expired.</p>
 <p>This does not mean the data from those versions is gone.</p>
 <p>It does mean it takes longer to materialize data from that date, because the chunkedgraph has to calculate differences between an extant materialized version and the requested time. In order to materialize data from an expired version, you must set the optional timestamp argument in every query:</p>
-<div id="b82ffddd-f58c-48e4-90e2-0fba2ac78566" class="cell" data-execution_count="17">
+<div id="b82ffddd-f58c-48e4-90e2-0fba2ac78566" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set the timestamp of a version that may or may not exist</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>example_timestamp <span class="op">=</span> datetime(<span class="dv">2022</span>, <span class="dv">2</span>, <span class="dv">24</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">184668</span>, tzinfo<span class="op">=</span>timezone.utc)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -764,7 +765,7 @@ Wall time: 59.2 s</code></pre>
 <div class="cell-output cell-output-stderr">
 <pre><code>201 - "Limited query to 100 rows</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -822,11 +823,11 @@ Wall time: 59.2 s</code></pre>
 </div>
 </div>
 </div>
-<div id="46761e13-2fa5-4aaf-888c-a1f9f3de1933" class="cell" data-execution_count="22">
+<div id="46761e13-2fa5-4aaf-888c-a1f9f3de1933" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example synapse query</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>syn_timestamp <span class="op">=</span> client.materialize.synapse_query(post_ids<span class="op">=</span>nuc_timestamp.pt_root_id, timestamp<span class="op">=</span>example_timestamp)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>syn_timestamp.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -941,6 +942,10 @@ Wall time: 59.2 s</code></pre>
 <td style="text-align: left;">1300</td>
 <td style="text-align: left;">datetime(2025, 1, 13, 10, 10, 1, 286229, tzinfo=datetime.timezone.utc)</td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">1412</td>
+<td style="text-align: left;">datetime(2025, 4, 29, 10, 10, 1, 200893, tzinfo=datetime.timezone.utc)</td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -989,7 +994,7 @@ Initial Setup
 <p>Before using any programmatic access to the data, <a href="em_py_01_caveclient_setup.html">you first need to set up your CAVEclient token</a>.</p>
 </div>
 </div>
-<div id="799b0b55-5d6e-4b11-88e0-23fa5a0c6e21" class="cell" data-execution_count="19">
+<div id="799b0b55-5d6e-4b11-88e0-23fa5a0c6e21" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -998,24 +1003,24 @@ Initial Setup
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># return the current timestamp</span></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>client.materialize.get_timestamp()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
-<pre><code>datetime.datetime(2025, 1, 13, 10, 10, 1, 286229, tzinfo=datetime.timezone.utc)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>datetime.datetime(2025, 4, 29, 10, 10, 1, 200893, tzinfo=datetime.timezone.utc)</code></pre>
 </div>
 </div>
 <p>Most commonly, what you will want is to look-up the current root id for a <code>pt_root_id</code> in a previous analysis. This is not always a trivial thing to do, for example in the case of a multi-soma object that has been manually split. Which of the two new cells was your original cell of interest?</p>
 <p>The ChunkedGraph will make its best guess, given supervoxel overlap, with the function <code>suggest_latest_roots()</code></p>
-<div id="dcc4a640-8f1e-4224-9395-e9cfb9be4e24" class="cell" data-execution_count="27">
+<div id="dcc4a640-8f1e-4224-9395-e9cfb9be4e24" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>example_id <span class="op">=</span> <span class="dv">864691135919440816</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Access the ChunkedGraph service of caveclient</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>client.chunkedgraph.suggest_latest_roots(example_id, timestamp <span class="op">=</span> client.materialize.get_timestamp())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="27">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>np.int64(864691135970572133)</code></pre>
 </div>
 </div>
 <p>Now we have updated <code>pt_root_id</code> for our cell, at the current materialized version.</p>
 <p>If you want to run this for a large number of root ids, you can first check if the <code>pt_root_id</code>s are current to your CAVEclient materialization version using <code>is_latest_roots()</code>, and then only update the ids that have expired:</p>
-<div id="bc13e8cd-7d60-4920-87f1-11f908bf86de" class="cell" data-execution_count="29">
+<div id="bc13e8cd-7d60-4920-87f1-11f908bf86de" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if roots are current</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(client.chunkedgraph.is_latest_roots(example_id))</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1024,17 +1029,17 @@ Initial Setup
 <div class="cell-output cell-output-stdout">
 <pre><code>[False]</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="29">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>array([datetime.datetime(2023, 2, 1, 8, 47, 29, 891000, tzinfo=&lt;UTC&gt;)],
       dtype=object)</code></pre>
 </div>
 </div>
 <p>Using the <code>timestamp</code> argument, you can also lookup the suggested root at any arbitrary time. Here we use the timestamp for a different materialization, verion 943:</p>
-<div id="9211ec58-7ea0-471f-8106-a5f2d87035fe" class="cell" data-execution_count="30">
+<div id="9211ec58-7ea0-471f-8106-a5f2d87035fe" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>client.chunkedgraph.suggest_latest_roots(example_id, </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                                         timestamp<span class="op">=</span>client.materialize.get_version_metadata(<span class="dv">943</span>)[<span class="st">'time_stamp'</span>]</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                                        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="30">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>np.int64(864691135808631069)</code></pre>
 </div>
 </div>
@@ -1047,11 +1052,11 @@ Initial Setup
 <p>The live database is written to by the <a href="https://caveconnectome.github.io/CAVEclient/tutorials/annotation/">Annotation service</a> and is actively managed by the <a href="https://caveconnectome.github.io/CAVEclient/tutorials/materialization/">Materialization service</a> to keep root IDs up to date for all BoundSpatialPoints in all tables. Snapshotted databases are copies of a time-locked state of the ‘live’ database’s segmentation and annotation information used to facilitate consistent querying.</p>
 <p>This means if you use a static <strong>annotation</strong> label to index your analysis, for example a <code>nucleus_id</code> or a <code>synapse_id</code> which do not undergo proofreading, you can look up the current <code>pt_root_id</code> at any time by asking CAVEclient to materialize the new segmentation under the static point.</p>
 <p>Using our example cell from above, let’s find its nucleus id. If we try to query the nucleus table with the expired id, we will return no result:</p>
-<div id="fb9e1dbf-908f-4344-88ab-abce04df077c" class="cell" data-execution_count="32">
+<div id="fb9e1dbf-908f-4344-88ab-abce04df077c" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>example_id <span class="op">=</span> <span class="dv">864691135919440816</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.nucleus_detection_v0(pt_root_id<span class="op">=</span>example_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="32">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -1081,9 +1086,9 @@ Initial Setup
 <p>
 </p>
 <p>This is expected, since the example id is <em>expired</em> at the time of this materialization. Instead, let’s query the version we know this id existed at: version 661</p>
-<div id="352e5ca1-7808-4a3b-b114-a9e55417a701" class="cell" data-execution_count="33">
+<div id="352e5ca1-7808-4a3b-b114-a9e55417a701" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.nucleus_detection_v0(pt_root_id<span class="op">=</span>example_id).query(materialization_version<span class="op">=</span><span class="dv">661</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="33">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -1125,11 +1130,11 @@ Initial Setup
 </div>
 <p>This returns both the expected <code>pt_root_id</code> 864691135919440816, and the <code>id</code> from the <code>nucleus_detection_v0</code> – better known as the <code>nucleus_id</code>.</p>
 <p>Given the <code>nucleus_id</code>, we can now query the current materialized version for the current root id.</p>
-<div id="22dbe5e7-ff72-44d2-b8ca-d8f1b81de0d7" class="cell" data-execution_count="34">
+<div id="22dbe5e7-ff72-44d2-b8ca-d8f1b81de0d7" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>nuc_id <span class="op">=</span> client.materialize.tables.nucleus_detection_v0(pt_root_id<span class="op">=</span>example_id).query(materialization_version<span class="op">=</span><span class="dv">661</span>)[<span class="st">'id'</span>]</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.nucleus_detection_v0(<span class="bu">id</span><span class="op">=</span>nuc_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="34">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
 

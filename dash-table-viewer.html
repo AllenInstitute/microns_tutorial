@@ -73,8 +73,8 @@ ul.task-list li input[type="checkbox"] {
 <meta property="og:description" content="">
 <meta property="og:image" content="https://tutorial.microns-explorer.org/img/table-viewer.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
-<meta property="og:image:height" content="455">
-<meta property="og:image:width" content="1584">
+<meta property="og:image:height" content="256">
+<meta property="og:image:width" content="1206">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -429,7 +429,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -439,8 +439,8 @@ Version update
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>This tutorial has recently been updated to materialization version 1412 (from 1300).</p>
 <p>We have released a new public version 1412, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1412.html">Release Manifests: 1412</a>.</p>
-<p>Tutorials remain pinned to v1300 as the latest major version.</p>
 </div>
 </div>
 <p>We have created two webapps to help explore and visualize the data. These apps were created using the <a href="https://plotly.com/dash/">Dash</a> framework, hence the name.</p>
@@ -454,13 +454,14 @@ Version update
 </figure>
 </div>
 <p>In the Table Viewer, you first select one of the tables from a dropdown in the upper left side.</p>
-<p>The <code>Live Query</code> option is not relevent for the public data.</p>
+<p>The <code>Materialization</code> option allows you to select which version of the dataset to query from. Default is ‘latest’.</p>
 <p>Filter options allow you to limit the query to a subset of the data, if desired. Note that filtering can occur in the tables afterward as well.</p>
 <p>The <code>Cell IDs</code> field lets you put in one or more root IDs, cell IDs (i.e.&nbsp;“Nucleus ID”), or IDs from the annotation table being queried. Note that if you use this option, you havet to set the dropdown to the appropriate ID type.</p>
-<p>The <code>Value Search</code> field lets you search for a particular value, such as a specific cell type.</p>
+<p>The <code>Value Search</code> field lets you search the <code>Search Column</code> for a particular value, such as a specific cell type.</p>
 <p>Once you have selected your table and set any pre-query filters, click the <code>Submit</code> button to run the query. When the query is done, a green bar will appear below the query input stating that it’s showing the state of the table you queried.</p>
 <p>The first set of controls allow you to build a Neuroglancer link for the whole table using the “Generate Link” button.</p>
 <p>Optionally, if you would like to make a link where different values of a given column — example, different cell types — are shown in different layers, you can turn on the “Group Annotations” toggle on the right and select the column you want to use for groupings.</p>
+<p>You have the drop-down option to select which branch of neuroglancer to use: <code>Seung-lab</code> or <code>Spelunker</code>. If the annotations you expect are not rendering, try the other neuroglancer type.</p>
 <p>After setting these controls, click the “Generate Link” button to create the Neuroglancer link.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

@@ -441,6 +441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#parsing-neuroglancer-states" id="toc-parsing-neuroglancer-states" class="nav-link" data-scroll-target="#parsing-neuroglancer-states">Parsing Neuroglancer states</a></li>
   <li><a href="#generating-neuroglancer-states-from-data" id="toc-generating-neuroglancer-states-from-data" class="nav-link" data-scroll-target="#generating-neuroglancer-states-from-data">Generating Neuroglancer States from Data</a></li>
+  <li><a href="#uploading-local-annotations-to-neuroglancer" id="toc-uploading-local-annotations-to-neuroglancer" class="nav-link" data-scroll-target="#uploading-local-annotations-to-neuroglancer">Uploading local annotations to neuroglancer</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/quickstart_notebooks/09-nglui-neuroglancer.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/AllenInstitute/microns_tutorial/tree/main/tutorial_book/quickstart_notebooks"><i class="bi bi-file-code"></i>Download Quickstart Notebooks</a></li></ul></div></nav>
@@ -467,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -477,8 +478,8 @@ Version update
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>This tutorial has recently been updated to materialization version 1412 (from 1300).</p>
 <p>We have released a new public version 1412, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1412.html">Release Manifests: 1412</a>.</p>
-<p>Tutorials remain pinned to v1300 as the latest major version.</p>
 </div>
 </div>
 <section id="programmatic-interaction-with-neuroglancer-states" class="level2">
@@ -489,9 +490,16 @@ Version update
 </div>
 <section id="parsing-neuroglancer-states" class="level3">
 <h3 class="anchored" data-anchor-id="parsing-neuroglancer-states">Parsing Neuroglancer states</h3>
-<p>The <code>nglui.parser</code> package can be used to parse Neuroglancer states.</p>
-<p>The simplest way to parse the annotations in a Neuroglancer state is to first save the state using the Share button, and then copy the state id (the last number in the URL).</p>
-<p>For example, for the share URL <code>https://neuroglancer.neuvue.io/?json_url=https://global.daf-apis.com/nglstate/api/v1/5560000195854336</code>, the state id is <code>5560000195854336</code></p>
+<p>The <code>nglui.parser</code> module offers a number of tools to get information about neuroglancer states out of the JSON format that neuroglancer uses. The recommended approach here is to pass a dictionary representation of the JSON object the StateParser class and build various kinds of dataframes from it.</p>
+<p>The simplest way to parse the annotations in a Neuroglancer state is to first save the state using the ‘Share’ button, and then copy the state id (the last number in the URL). But you could also use the text you can download from the {} button in the viewer, and load this JSON into python.</p>
+<p>In Neuroglancer, on the upper right, there is a ‘Share’ button.</p>
+<p>When you click this link, you will be prompted for a google login. Use any google profile, but it is convenient to use the same as for this notebook.</p>
+<p>This will upload the text of your neuroglancer state (the JSON format file, also accessed with the {} button) to a server, and returns a lookup number to access that state. The link with this state is automatically copied to your system’s clipboard.</p>
+<p>When you paste it, you will see something like this:</p>
+<blockquote class="blockquote">
+<p>https://neuroglancer.neuvue.io/?json_url=https://global.daf-apis.com/nglstate/api/v1/5560000195854336</p>
+</blockquote>
+<p>for which the state id is <code>5560000195854336</code></p>
 <p>You can then download the json and then use the <code>annotation_dataframe</code> function to generate a comprehensive dataframe of all the annotations in the state.</p>
 <div id="88f2c1aa-03c0-4880-ae00-f6901d0246bf" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
@@ -501,9 +509,66 @@ Version update
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">'minnie65_public'</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>state_id <span class="op">=</span> <span class="dv">5560000195854336</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>state <span class="op">=</span> client.state.get_state_json(state_id)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>parser.annotation_dataframe(state).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>state_json <span class="op">=</span> client.state.get_state_json(state_id)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>state <span class="op">=</span> parser.StateParser(state_json)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can now access different aspects of the state. For example, to get a list of all layers and their core info, you can use the <code>layer_dataframe</code> method.</p>
+<div id="05c7005e-e39f-418e-bbe5-8517de7b43c1" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>state.layer_dataframe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">layer</th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">source</th>
+<th data-quarto-table-cell-role="th">archived</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>img</td>
+<td>image</td>
+<td>precomputed://https://bossdb-open-data.s3.amaz...</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>seg</td>
+<td>segmentation_with_graph</td>
+<td>graphene://https://minnie.microns-daf.com/segm...</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>syns_in</td>
+<td>annotation</td>
+<td>None</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>syns_out</td>
+<td>annotation</td>
+<td>None</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>This will give you a table with a row for each layer and columns for layer name, type, source, and whether the layer is archived (i.e.&nbsp;visible) or not.</p>
+<p>With <code>parser</code> you can get a list of all annotations with the annotation_dataframe method.</p>
+<div id="462c5a35-23a5-4c45-ab9e-1bed1f3da03c" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>state.annotation_dataframe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -577,18 +642,324 @@ Version update
 <td>None</td>
 <td>None</td>
 </tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5272</td>
+<td>syns_out</td>
+<td>point</td>
+<td>[277152, 200746, 22723]</td>
+<td>NaN</td>
+<td>[864691132294257136]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5273</td>
+<td>syns_out</td>
+<td>point</td>
+<td>[298884, 189782, 21453]</td>
+<td>NaN</td>
+<td>[864691132135519710]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5274</td>
+<td>syns_out</td>
+<td>point</td>
+<td>[330182, 198986, 23862]</td>
+<td>NaN</td>
+<td>[864691132100215248]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5275</td>
+<td>syns_out</td>
+<td>point</td>
+<td>[326552, 186446, 24792]</td>
+<td>NaN</td>
+<td>[864691131892380409]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5276</td>
+<td>syns_out</td>
+<td>point</td>
+<td>[275784, 206898, 21524]</td>
+<td>NaN</td>
+<td>[864691131593914919]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+</tr>
 </tbody>
 </table>
 
+<p>5277 rows × 8 columns</p>
 </div>
 </div>
 </div>
+<p>This will give you a dataframe where each row is an annotation, and columns show <code>layer name</code>, <code>point</code> locations, annotation type, annotation id, descriptive text, linked segmentations, tags, etc.</p>
+<p>If you have multiple annotation layers, each layer is specified by the <code>layer</code> column and all points across all layers are concatenated together.</p>
+<p>The point coordinates are returned at the resolution of the neuroglancer view (default: 4x4x40 nm). You can change this resolution with argument <code>point_resolution</code> which will rescale the points to the requested resolution.</p>
+<p>The <code>description</code> column populates with any text you have attached to the point.</p>
 <p>Note that tags in the dataframe are stored as a list of integers, with each integer corresponding to one of the tags in the list.</p>
 <p>To get the mapping between the tag index and the tag name for each layer, you can use the <code>tag_dictionary</code> function.</p>
-<div id="5d108ad8-9e54-463b-8f85-39cf5fb47f45" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>parser.tag_dictionary(state, layer_name<span class="op">=</span><span class="st">'syns_out'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div id="5d108ad8-9e54-463b-8f85-39cf5fb47f45" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>parser.tag_dictionary(state_json, layer_name<span class="op">=</span><span class="st">'syns_out'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>{1: 'targets_spine', 2: 'targets_shaft', 3: 'targets_soma'}</code></pre>
+</div>
+</div>
+<p>Alternately if you are using tags, the <code>expand_tags=True</code> argument will create a column for every tag and assign a boolean value to the row based on whether the tag is present in the annotation.</p>
+<p>Another option that is sometimes useful is <code>split_points=True</code>, which will create a separate column for each x, y, or z coordinate in the annotation.</p>
+<div id="8599badc-b990-445d-bac1-969a9043c8e5" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>state.annotation_dataframe(expand_tags<span class="op">=</span><span class="va">True</span>, split_points<span class="op">=</span><span class="va">True</span>, point_resolution<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">layer</th>
+<th data-quarto-table-cell-role="th">anno_type</th>
+<th data-quarto-table-cell-role="th">linked_segmentation</th>
+<th data-quarto-table-cell-role="th">tags</th>
+<th data-quarto-table-cell-role="th">group_id</th>
+<th data-quarto-table-cell-role="th">description</th>
+<th data-quarto-table-cell-role="th">point_x</th>
+<th data-quarto-table-cell-role="th">point_y</th>
+<th data-quarto-table-cell-role="th">point_z</th>
+<th data-quarto-table-cell-role="th">pointB_x</th>
+<th data-quarto-table-cell-role="th">pointB_y</th>
+<th data-quarto-table-cell-role="th">pointB_z</th>
+<th data-quarto-table-cell-role="th">targets_spine</th>
+<th data-quarto-table-cell-role="th">targets_shaft</th>
+<th data-quarto-table-cell-role="th">targets_soma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>syns_in</td>
+<td>point</td>
+<td>[864691136333760691]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+<td>73523.75</td>
+<td>49119.0</td>
+<td>614.000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>syns_in</td>
+<td>point</td>
+<td>[864691136333760691]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+<td>73719.75</td>
+<td>49093.5</td>
+<td>609.775</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>syns_in</td>
+<td>point</td>
+<td>[864691136333760691]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+<td>75061.50</td>
+<td>50140.5</td>
+<td>607.425</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>syns_in</td>
+<td>point</td>
+<td>[864691136333760691]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+<td>75223.50</td>
+<td>50461.0</td>
+<td>609.425</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>syns_in</td>
+<td>point</td>
+<td>[864691136333760691]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+<td>73685.50</td>
+<td>49888.0</td>
+<td>584.800</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5272</td>
+<td>syns_out</td>
+<td>point</td>
+<td>[864691132294257136]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+<td>69288.00</td>
+<td>50186.5</td>
+<td>568.075</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5273</td>
+<td>syns_out</td>
+<td>point</td>
+<td>[864691132135519710]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+<td>74721.00</td>
+<td>47445.5</td>
+<td>536.325</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5274</td>
+<td>syns_out</td>
+<td>point</td>
+<td>[864691132100215248]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+<td>82545.50</td>
+<td>49746.5</td>
+<td>596.550</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5275</td>
+<td>syns_out</td>
+<td>point</td>
+<td>[864691131892380409]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+<td>81638.00</td>
+<td>46611.5</td>
+<td>619.800</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5276</td>
+<td>syns_out</td>
+<td>point</td>
+<td>[864691131593914919]</td>
+<td>[]</td>
+<td>None</td>
+<td>None</td>
+<td>68946.00</td>
+<td>51724.5</td>
+<td>538.100</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+
+<p>5277 rows × 15 columns</p>
+</div>
 </div>
 </div>
 </section>
@@ -596,30 +967,29 @@ Version update
 <h3 class="anchored" data-anchor-id="generating-neuroglancer-states-from-data">Generating Neuroglancer States from Data</h3>
 <p>The <code>nglui.statebuilder</code> package is used to build Neuroglancer states that express arbitrary data.</p>
 <p>The <a href="https://caveconnectome.github.io/nglui/usage/config/">Site Configuration</a> options determine the default configurations for your <code>StateBuilder</code> objects. We will set this to <code>spelunker</code>, and set the materialization version to <code>661</code> for reproducibility.</p>
-<div id="107ae3d2-69ab-42a5-843b-fbd47053e427" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nglui <span class="im">import</span> statebuilder</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>statebuilder.site_utils.set_default_config(target_site<span class="op">=</span><span class="st">'spelunker'</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>client.version<span class="op">=</span><span class="dv">1300</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="107ae3d2-69ab-42a5-843b-fbd47053e427" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nglui <span class="im">import</span> statebuilder</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>statebuilder.site_utils.set_default_config(target_site<span class="op">=</span><span class="st">'spelunker'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>client.version<span class="op">=</span><span class="dv">1412</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The general pattern is that one makes a “StateBuilder” object that has rules for how to build a Neuroglancer state layer by layer, including selecting certain neurons, and populate layers of annotations.<br>
-You then pass a DataFrame to the StateBuiler, and the rules tell it how to render the DataFrame into a Neuroglancer link.<br>
-The same set of rules can be used on similar dataframes but with different data, such as synapses from different neurons.<br>
-To understand the detailed use of the package, please see the <a href="https://caveconnectome.github.io/nglui/usage/statebuilder/">tutorial</a>.</p>
+You then pass a DataFrame to the StateBuilder, and the rules tell it how to render the DataFrame into a Neuroglancer link. The same set of rules can be used on similar dataframes but with different data, such as synapses from different neurons.</p>
+<p>To understand the detailed use of the package, please see the <a href="https://caveconnectome.github.io/nglui/usage/statebuilder/">tutorial</a>.</p>
 <p>However, a number of basic helper functions allow <code>nglui</code> to be used for common functions in just a few lines.</p>
 <p>For example, to generate a Neuroglancer state that shows a neuron and its synaptic inputs and outputs, we can use the <code>make_neuron_neuroglancer_link</code> helper function.</p>
-<div id="657910bc-023f-4be4-839f-2845d164259a" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nglui.statebuilder <span class="im">import</span> helpers</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>statebuilder.helpers.make_neuron_neuroglancer_link(</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    client,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="dv">864691135441799752</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    show_inputs<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    show_outputs<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    return_as<span class="op">=</span><span class="st">'html'</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5240350697324544">Neuroglancer Link</a>
+<div id="657910bc-023f-4be4-839f-2845d164259a" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nglui.statebuilder <span class="im">import</span> helpers</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>statebuilder.helpers.make_neuron_neuroglancer_link(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    client,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="dv">864691135441799752</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    show_inputs<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    show_outputs<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    return_as<span class="op">=</span><span class="st">'html'</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6024956772089856">Neuroglancer Link</a>
 </div>
 </div>
 <p>The main helper functions are:</p>
@@ -629,6 +999,109 @@ To understand the detailed use of the package, please see the <a href="https://c
 <li><code>make_point_statebuilder</code> - Generate a statebuilder to map a dataframe containing points (by default, formatted like a cell types table) to a Neuroglancer link.</li>
 </ul>
 <p>In all cases, please look at the docstrings for more information on how to use the functions.</p>
+</section>
+<section id="uploading-local-annotations-to-neuroglancer" class="level3">
+<h3 class="anchored" data-anchor-id="uploading-local-annotations-to-neuroglancer">Uploading local annotations to neuroglancer</h3>
+<p><strong>NGLUI</strong> also has many functions for turning data into neuroglancer states. As a toy example, lets reupload the points from the <code>parser</code> example.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Here we generate the state for <code>seunglab</code> version. See the <a href="https://caveconnectome.github.io/nglui/usage/config/">NGLUI documentation on site configuration</a> for more options.</p>
+</div>
+</div>
+<div id="c6f82f0b-00cb-40fb-b1f2-4edc9edb9103" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data_df <span class="op">=</span> state.annotation_dataframe()[[<span class="st">'point'</span>,<span class="st">'description'</span>,<span class="st">'tags'</span>,<span class="st">'linked_segmentation'</span>]]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>data_df.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">point</th>
+<th data-quarto-table-cell-role="th">description</th>
+<th data-quarto-table-cell-role="th">tags</th>
+<th data-quarto-table-cell-role="th">linked_segmentation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>[294095, 196476, 24560]</td>
+<td>None</td>
+<td>[]</td>
+<td>[864691136333760691]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>[294879, 196374, 24391]</td>
+<td>None</td>
+<td>[]</td>
+<td>[864691136333760691]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>[300246, 200562, 24297]</td>
+<td>None</td>
+<td>[]</td>
+<td>[864691136333760691]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="ec58c1b7-cfa6-435e-9d1f-14dcb4dfd441" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nglui.statebuilder <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set sensible defaults for your link generation</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>site_utils.set_default_config(target_site<span class="op">=</span><span class="st">'seunglab'</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>img, seg <span class="op">=</span> helpers.from_client(client)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a basic imagery source layer</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>img_layer <span class="op">=</span> ImageLayerConfig(img.source)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a basic segmentation source layer</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>seg_layer <span class="op">=</span> SegmentationLayerConfig(seg.source)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># # Alternately: set v1300 flat as source</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># seg_layer = SegmentationLayerConfig('precomputed://gs://iarpa_microns/minnie/minnie65/seg_m1300')</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the mapping between your dataframe and the annotation layer</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>points <span class="op">=</span> PointMapper(point_column<span class="op">=</span><span class="st">'point'</span>,</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>                     description_column<span class="op">=</span><span class="st">'description'</span>,</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>                     linked_segmentation_column<span class="op">=</span><span class="st">'linked_segmentation'</span>,</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>                     tag_column<span class="op">=</span><span class="st">'tags'</span>,</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>                     )</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>anno_layer <span class="op">=</span> AnnotationLayerConfig(name<span class="op">=</span><span class="st">'new-annotations'</span>,</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>                                   linked_segmentation_layer<span class="op">=</span><span class="st">'seg'</span>,</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>                                   mapping_rules<span class="op">=</span>points,</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>                                   tags <span class="op">=</span> [<span class="st">'targets_spine'</span>, <span class="st">'targets_shaft'</span>, <span class="st">'targets_soma'</span>]</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>                                  )</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Stack the layers together, and render</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>sb <span class="op">=</span> StateBuilder([img_layer, seg_layer, anno_layer], client<span class="op">=</span>client)</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>sb.render_state(data_df.head(<span class="dv">10</span>), return_as<span class="op">=</span><span class="st">'short'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>'https://neuromancer-seung-import.appspot.com/?json_url=https://global.daf-apis.com/nglstate/api/v1/5069482274848768'</code></pre>
+</div>
+</div>
+<p>We built up the <code>StateBuilder</code> with different layers, including imagery, segmentation, and annotations.</p>
+<p><code>PointMapper</code> determines how data is interpretted in the annotation layer, including which columns in a dataframe to use</p>
+<p><code>AnnotationLayerConfig</code> controls how the points will appear, including the name of the layer as it appears in neuroglancer, which segmentation layer is activated under the points, and the list of active ‘tags’.</p>
+<p>The StateBuilder is rendered in the final line, taking only the first 10 elements of the dataframe and returned a ‘shortened’ link. Other options include: <code>return_as='html'</code> for a hyperlink, <code>return_as='url'</code> for a long link, <code>return_as='dict'</code> for an editable text version of the JSON state.</p>
 
 
 </section>

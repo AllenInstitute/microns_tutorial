@@ -492,7 +492,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -502,8 +502,8 @@ Version update
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>This tutorial has recently been updated to materialization version 1412 (from 1300).</p>
 <p>We have released a new public version 1412, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1412.html">Release Manifests: 1412</a>.</p>
-<p>Tutorials remain pinned to v1300 as the latest major version.</p>
 </div>
 </div>
 <p>The <strong>Connectome Annotation Versioning Engine (CAVE)</strong> is a suite of tools developed at the Allen Institute and Seung Lab to manage large connectomics data.</p>
@@ -567,7 +567,7 @@ Tip
 <div id="468594d9" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>client.materialize.get_versions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[1300, 1078, 117, 661, 343, 1181, 795, 943]</code></pre>
+<pre><code>[1300, 1078, 117, 661, 343, 1181, 795, 943, 1412]</code></pre>
 </div>
 </div>
 <p>And these are their associated timestamps (all timestamps are in UTC):</p>
@@ -582,13 +582,14 @@ Version 661: 2023-04-06 20:17:09.199182+00:00
 Version 343: 2022-02-24 08:10:00.184668+00:00
 Version 1181: 2024-09-16 10:10:01.121167+00:00
 Version 795: 2023-08-23 08:10:01.404268+00:00
-Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
+Version 943: 2024-01-22 08:10:01.497934+00:00
+Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 </div>
 </div>
 <p>The client will automatically query the latest materialization version. You can specify a <code>materialization_version</code> for every query if you want to access a specific version.</p>
 <div id="27bf81de-8698-4911-af8f-5979ff562425" class="cell" data-tags="[]" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set materialization version, for consistency</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1300</span> <span class="co"># current public as of 1/13/2025</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1412</span> <span class="co"># current public as of 4/29/2025</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -637,213 +638,213 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>482324897</td>
-<td>2020-11-04 06:48:58.343057+00:00</td>
+<td>4456</td>
+<td>2020-11-04 13:02:08.388988+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>1476448.0</td>
-<td>850856.0</td>
-<td>620360.0</td>
-<td>1476288.0</td>
-<td>850376.0</td>
-<td>620400.0</td>
-<td>1476192.0</td>
-<td>850648.0</td>
-<td>620360.0</td>
-<td>2976</td>
-<td>115495518947404152</td>
-<td>864691135035312593</td>
-<td>115495450227928501</td>
-<td>864691134965890572</td>
+<td>211448.0</td>
+<td>409744.0</td>
+<td>801440.0</td>
+<td>211448.0</td>
+<td>409744.0</td>
+<td>801440.0</td>
+<td>211612.0</td>
+<td>410172.0</td>
+<td>801400.0</td>
+<td>2956</td>
+<td>72063160986635724</td>
+<td>864691135533713769</td>
+<td>72063160986635724</td>
+<td>864691135533713769</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>111356912</td>
-<td>2020-11-04 06:48:58.343057+00:00</td>
+<td>4503</td>
+<td>2020-11-04 12:09:33.286834+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>591184.0</td>
-<td>555056.0</td>
-<td>675880.0</td>
-<td>591104.0</td>
-<td>555408.0</td>
-<td>675960.0</td>
-<td>591152.0</td>
-<td>555200.0</td>
-<td>676000.0</td>
-<td>2976</td>
-<td>85086257273159206</td>
-<td>864691135557293342</td>
-<td>85086257339729644</td>
-<td>864691137053640566</td>
+<td>212456.0</td>
+<td>408032.0</td>
+<td>800360.0</td>
+<td>212456.0</td>
+<td>408032.0</td>
+<td>800360.0</td>
+<td>212168.0</td>
+<td>408088.0</td>
+<td>800400.0</td>
+<td>344</td>
+<td>72063092267156962</td>
+<td>864691135087527094</td>
+<td>72063092267156962</td>
+<td>864691135087527094</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>219362361</td>
-<td>2020-11-04 06:48:58.343057+00:00</td>
+<td>4508</td>
+<td>2020-11-04 13:02:13.024144+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>865496.0</td>
-<td>482488.0</td>
-<td>662320.0</td>
-<td>864912.0</td>
-<td>482048.0</td>
-<td>661920.0</td>
-<td>865192.0</td>
-<td>482288.0</td>
-<td>662000.0</td>
-<td>2976</td>
-<td>94513263810944271</td>
-<td>864691135595450728</td>
-<td>94513195091453796</td>
-<td>864691135204272683</td>
+<td>212448.0</td>
+<td>411696.0</td>
+<td>801440.0</td>
+<td>212448.0</td>
+<td>411696.0</td>
+<td>801440.0</td>
+<td>212224.0</td>
+<td>411800.0</td>
+<td>801560.0</td>
+<td>344</td>
+<td>72063229706111827</td>
+<td>864691135533713769</td>
+<td>72063229706111827</td>
+<td>864691135533713769</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>350226388</td>
-<td>2020-11-04 06:48:58.343057+00:00</td>
+<td>4568</td>
+<td>2020-11-04 13:44:08.085705+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>1173304.0</td>
-<td>349688.0</td>
-<td>992960.0</td>
-<td>1173240.0</td>
-<td>349448.0</td>
-<td>992800.0</td>
-<td>1173232.0</td>
-<td>349616.0</td>
-<td>992840.0</td>
-<td>2976</td>
-<td>105064109745413552</td>
-<td>864691136216863455</td>
-<td>105064109745412680</td>
-<td>864691136774161774</td>
+<td>213392.0</td>
+<td>415448.0</td>
+<td>802920.0</td>
+<td>213392.0</td>
+<td>415448.0</td>
+<td>802920.0</td>
+<td>213096.0</td>
+<td>415176.0</td>
+<td>802880.0</td>
+<td>13816</td>
+<td>72133735889250131</td>
+<td>864691134530418554</td>
+<td>72133735889250131</td>
+<td>864691134530418554</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>292350246</td>
-<td>2020-11-04 06:48:58.343057+00:00</td>
+<td>4581</td>
+<td>2020-11-04 07:29:12.917622+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>1029376.0</td>
-<td>421024.0</td>
-<td>1059200.0</td>
-<td>1029232.0</td>
-<td>421336.0</td>
-<td>1058880.0</td>
-<td>1029336.0</td>
-<td>421280.0</td>
-<td>1059040.0</td>
-<td>2976</td>
-<td>100140703036155312</td>
-<td>864691135628516419</td>
-<td>100140703036140569</td>
-<td>864691132041695465</td>
+<td>213552.0</td>
+<td>417184.0</td>
+<td>800800.0</td>
+<td>213552.0</td>
+<td>417184.0</td>
+<td>800800.0</td>
+<td>213240.0</td>
+<td>417080.0</td>
+<td>801080.0</td>
+<td>10436</td>
+<td>72133804608718799</td>
+<td>864691134745062676</td>
+<td>72133804608718799</td>
+<td>864691134745062676</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
-<td>164940667</td>
-<td>2020-11-04 06:48:58.343057+00:00</td>
+<td>4582</td>
+<td>2020-11-04 13:02:17.694701+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>728984.0</td>
-<td>575104.0</td>
-<td>620400.0</td>
-<td>729032.0</td>
-<td>574904.0</td>
-<td>620040.0</td>
-<td>729072.0</td>
-<td>574824.0</td>
-<td>620400.0</td>
-<td>2976</td>
-<td>89801650193255101</td>
-<td>864691135375598409</td>
-<td>89801650193247746</td>
-<td>864691136175511558</td>
+<td>212880.0</td>
+<td>409120.0</td>
+<td>801440.0</td>
+<td>212880.0</td>
+<td>409120.0</td>
+<td>801440.0</td>
+<td>213016.0</td>
+<td>408832.0</td>
+<td>801520.0</td>
+<td>1344</td>
+<td>72063160986636743</td>
+<td>864691135533713769</td>
+<td>72063160986636743</td>
+<td>864691135533713769</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
-<td>261934954</td>
-<td>2020-11-04 06:48:58.343057+00:00</td>
+<td>4588</td>
+<td>2020-11-04 12:20:12.290593+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>960512.0</td>
-<td>747088.0</td>
-<td>778120.0</td>
-<td>960600.0</td>
-<td>747560.0</td>
-<td>778400.0</td>
-<td>960600.0</td>
-<td>747352.0</td>
-<td>778280.0</td>
-<td>2976</td>
-<td>97759091191496793</td>
-<td>864691136296744475</td>
-<td>97759091258050193</td>
-<td>864691135404420078</td>
+<td>213200.0</td>
+<td>421120.0</td>
+<td>805520.0</td>
+<td>213200.0</td>
+<td>421120.0</td>
+<td>805520.0</td>
+<td>213064.0</td>
+<td>421000.0</td>
+<td>805600.0</td>
+<td>7128</td>
+<td>72133942047682150</td>
+<td>864691134609767690</td>
+<td>72133942047682150</td>
+<td>864691134609767690</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
-<td>47809213</td>
-<td>2020-11-04 06:48:58.343057+00:00</td>
+<td>4590</td>
+<td>2020-11-04 13:20:01.875310+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>443488.0</td>
-<td>848552.0</td>
-<td>684400.0</td>
-<td>443848.0</td>
-<td>848512.0</td>
-<td>684600.0</td>
-<td>443576.0</td>
-<td>848496.0</td>
-<td>684440.0</td>
-<td>2976</td>
-<td>80029534644397607</td>
-<td>864691135585163343</td>
-<td>80029534644408014</td>
-<td>864691135379785202</td>
+<td>213504.0</td>
+<td>406440.0</td>
+<td>805160.0</td>
+<td>213504.0</td>
+<td>406440.0</td>
+<td>805160.0</td>
+<td>213336.0</td>
+<td>406596.0</td>
+<td>805200.0</td>
+<td>6572</td>
+<td>72133461011344162</td>
+<td>864691135091400630</td>
+<td>72133461011344162</td>
+<td>864691135091400630</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">8</td>
-<td>65519860</td>
-<td>2020-11-04 06:48:58.343057+00:00</td>
+<td>4606</td>
+<td>2020-11-04 07:24:39.038223+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>500232.0</td>
-<td>633600.0</td>
-<td>1039280.0</td>
-<td>500424.0</td>
-<td>633344.0</td>
-<td>1038960.0</td>
-<td>500380.0</td>
-<td>633448.0</td>
-<td>1039080.0</td>
-<td>5960</td>
-<td>81992645077294792</td>
-<td>864691136156246677</td>
-<td>81992645077283850</td>
-<td>864691136817302638</td>
+<td>213384.0</td>
+<td>413792.0</td>
+<td>800800.0</td>
+<td>213384.0</td>
+<td>413792.0</td>
+<td>800800.0</td>
+<td>213256.0</td>
+<td>413976.0</td>
+<td>801040.0</td>
+<td>2100</td>
+<td>72133667169766499</td>
+<td>864691134609872906</td>
+<td>72133667169766499</td>
+<td>864691134609872906</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">9</td>
-<td>446835682</td>
-<td>2020-11-04 06:48:58.343057+00:00</td>
+<td>4611</td>
+<td>2020-11-04 07:24:37.800341+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>1401536.0</td>
-<td>596288.0</td>
-<td>708680.0</td>
-<td>1401744.0</td>
-<td>596096.0</td>
-<td>708720.0</td>
-<td>1401648.0</td>
-<td>596136.0</td>
-<td>708520.0</td>
-<td>2976</td>
-<td>112953654491063415</td>
-<td>864691136538026146</td>
-<td>112953654491055747</td>
-<td>864691134020263786</td>
+<td>213336.0</td>
+<td>415304.0</td>
+<td>800960.0</td>
+<td>213336.0</td>
+<td>415304.0</td>
+<td>800960.0</td>
+<td>213192.0</td>
+<td>415604.0</td>
+<td>800960.0</td>
+<td>492</td>
+<td>72133735889243887</td>
+<td>864691134609872906</td>
+<td>72133735889243887</td>
+<td>864691134609872906</td>
 </tr>
 </tbody>
 </table>
@@ -863,9 +864,9 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <p>The <code>synapse_query</code> function allows you to query the synapse table in a more convenient way than most other tables. In particular, the <code>pre_ids</code> and <code>post_ids</code> let you specify which root id (or collection of root ids) you want to query, with pre_ids indicating the collection of <strong>presynaptic neurons</strong> and post_ids the collection of <strong>postsynaptic neurons</strong>.</p>
 <p>Using both <code>pre_ids</code> and <code>post_ids</code> in one call is effectively a logical AND, returning only those synapses from neurons in the list of <code>pre_ids</code> that target neurons in the list of <code>post_ids</code>.</p>
 <p>Let’s look at one particular example.</p>
-<div id="2aabf10f-79ef-4ed5-bc5f-d749205664cf" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="7">
+<div id="2aabf10f-79ef-4ed5-bc5f-d749205664cf" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pick example cell</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>example_root_id <span class="op">=</span> <span class="dv">864691135808473885</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>example_root_id <span class="op">=</span> <span class="dv">864691136968109774</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Query synapse table with synapse_query()</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>input_syn_df <span class="op">=</span> client.materialize.synapse_query(post_ids<span class="op">=</span>example_root_id)</span>
@@ -873,9 +874,9 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total number of input synapses for </span><span class="sc">{</span>example_root_id<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">len</span>(input_syn_df)<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>input_syn_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Total number of input synapses for 864691135808473885: 4628</code></pre>
+<pre><code>Total number of input synapses for 864691136968109774: 4628</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
@@ -908,7 +909,7 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <td>89667372671545980</td>
 <td>864691135522708676</td>
 <td>89667372671554898</td>
-<td>864691135808473885</td>
+<td>864691136968109774</td>
 <td>[181250, 191912, 18361]</td>
 <td>[181278, 191844, 18364]</td>
 <td>[181276, 191873, 18366]</td>
@@ -923,7 +924,7 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <td>88540717118418517</td>
 <td>864691135412525042</td>
 <td>88540717051854108</td>
-<td>864691135808473885</td>
+<td>864691136968109774</td>
 <td>[172816, 186434, 19971]</td>
 <td>[172892, 186468, 19969]</td>
 <td>[172821, 186483, 19965]</td>
@@ -938,28 +939,13 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <td>90230391344454185</td>
 <td>864691136711146862</td>
 <td>90160022600247406</td>
-<td>864691135808473885</td>
+<td>864691136968109774</td>
 <td>[184962, 192380, 18359]</td>
 <td>[184836, 192448, 18366]</td>
 <td>[184916, 192396, 18359]</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>159676064</td>
-<td>2020-11-04 06:48:59.876707+00:00</td>
-<td>NaN</td>
-<td>t</td>
-<td>14460</td>
-<td>89385691939052008</td>
-<td>864691135773033723</td>
-<td>89385691939060896</td>
-<td>864691135808473885</td>
-<td>[178870, 190176, 21429]</td>
-<td>[178870, 190204, 21437]</td>
-<td>[178878, 190132, 21434]</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
 <td>169597812</td>
 <td>2020-11-04 06:49:11.962249+00:00</td>
 <td>NaN</td>
@@ -968,10 +954,25 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <td>89598584945119102</td>
 <td>864691135459877874</td>
 <td>89598584945109756</td>
-<td>864691135808473885</td>
+<td>864691136968109774</td>
 <td>[180636, 203654, 21957]</td>
 <td>[180706, 203762, 21963]</td>
 <td>[180680, 203716, 21959]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>159676064</td>
+<td>2020-11-04 06:48:59.876707+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>14460</td>
+<td>89385691939052008</td>
+<td>864691135773033723</td>
+<td>89385691939060896</td>
+<td>864691136968109774</td>
+<td>[178870, 190176, 21429]</td>
+<td>[178870, 190204, 21437]</td>
+<td>[178878, 190132, 21434]</td>
 </tr>
 </tbody>
 </table>
@@ -979,16 +980,16 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 </div>
 </div>
 </div>
-<div id="fa8ae5fa-c482-4dc7-b76e-d8392fea03fe" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="8">
+<div id="fa8ae5fa-c482-4dc7-b76e-d8392fea03fe" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Query synapse table with synapse_query()</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>output_syn_df <span class="op">=</span> client.materialize.synapse_query(pre_ids<span class="op">=</span>example_root_id)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total number of output synapses for </span><span class="sc">{</span>example_root_id<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">len</span>(output_syn_df)<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>output_syn_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Total number of output synapses for 864691135808473885: 1498</code></pre>
+<pre><code>Total number of output synapses for 864691136968109774: 1499</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 
 
@@ -1013,78 +1014,78 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>162136319</td>
-<td>2020-11-04 14:43:13.226680+00:00</td>
-<td>NaN</td>
-<td>t</td>
-<td>2064</td>
-<td>89174654291344339</td>
-<td>864691135808473885</td>
-<td>89174654291351817</td>
-<td>864691136057875416</td>
-<td>[177614, 190930, 19985]</td>
-<td>[177692, 190868, 19997]</td>
-<td>[177678, 190900, 19993]</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
 <td>158405512</td>
 <td>2020-11-04 06:48:59.403833+00:00</td>
 <td>NaN</td>
 <td>t</td>
 <td>420</td>
 <td>89385416926790697</td>
-<td>864691135808473885</td>
+<td>864691136968109774</td>
 <td>89385416926797494</td>
 <td>864691135546540484</td>
 <td>[179076, 188248, 20233]</td>
 <td>[179156, 188220, 20239]</td>
 <td>[179140, 188230, 20239]</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
 <td>185549462</td>
 <td>2020-11-04 06:49:10.903020+00:00</td>
 <td>NaN</td>
 <td>t</td>
 <td>4832</td>
 <td>91356016507479890</td>
-<td>864691135808473885</td>
+<td>864691136968109774</td>
 <td>91356016507470163</td>
 <td>864691135884799088</td>
 <td>[193168, 190452, 19262]</td>
 <td>[193142, 190404, 19257]</td>
 <td>[193180, 190432, 19254]</td>
 </tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
 <td>138110803</td>
 <td>2020-11-04 06:49:46.758528+00:00</td>
 <td>NaN</td>
 <td>t</td>
 <td>3176</td>
 <td>87263084540201919</td>
-<td>864691135808473885</td>
+<td>864691136968109774</td>
 <td>87263084540199587</td>
 <td>864691135060075931</td>
 <td>[163440, 104292, 19808]</td>
 <td>[163498, 104348, 19806]</td>
 <td>[163460, 104356, 19804]</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
 <td>157378264</td>
 <td>2020-11-04 07:38:27.332669+00:00</td>
 <td>NaN</td>
 <td>t</td>
 <td>412</td>
 <td>89374490395905686</td>
-<td>864691135808473885</td>
+<td>864691136968109774</td>
 <td>89374490395921430</td>
 <td>864691135446953106</td>
 <td>[179218, 107132, 19372]</td>
 <td>[179204, 107010, 19383]</td>
 <td>[179196, 107072, 19380]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>148262628</td>
+<td>2020-11-04 06:53:27.294021+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>3536</td>
+<td>88189766885093187</td>
+<td>864691136968109774</td>
+<td>88189835604584343</td>
+<td>864691135250533976</td>
+<td>[170154, 193170, 21123]</td>
+<td>[170046, 193240, 21123]</td>
+<td>[170118, 193220, 21128]</td>
 </tr>
 </tbody>
 </table>
@@ -1094,7 +1095,7 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 </div>
 <p>Note that synapse queries always return the list of every synapse between the neurons in the query, even if there are multiple synapses between the same pair of neurons.</p>
 <p>A common pattern to generate a list of connections between unique pairs of neurons is to group by the root ids of the presynaptic and postsynaptic neurons and then count the number of synapses between them. For example, use <code>pandas.groupby()</code> to get the number of synapses from this neuron onto every other neuron:</p>
-<div id="f3cb7983-a67f-4a46-8063-e88724ab4086" class="cell" data-execution_count="9">
+<div id="f3cb7983-a67f-4a46-8063-e88724ab4086" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get count of synapses between presynaptic and postsynaptic partners</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>output_syn_df.groupby(</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  [<span class="st">'pre_pt_root_id'</span>, <span class="st">'post_pt_root_id'</span>]</span>
@@ -1106,7 +1107,7 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the 'id' part here is just a way to quickly extract one column. This could be any of the remaining column names, </span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co"># but `id` is often convenient because it is common to all tables.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
 
@@ -1125,12 +1126,12 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="11" data-quarto-table-cell-role="th" data-valign="top">864691135808473885</td>
+<td rowspan="11" data-quarto-table-cell-role="th" data-valign="top">864691136968109774</td>
 <td data-quarto-table-cell-role="th">864691135280056225</td>
 <td>20</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">864691135617649257</td>
+<td data-quarto-table-cell-role="th">864691135456207722</td>
 <td>16</td>
 </tr>
 <tr class="odd">
@@ -1150,23 +1151,23 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <td>...</td>
 </tr>
 <tr class="odd">
+<td data-quarto-table-cell-role="th">864691136911628017</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">864691135234846808</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">864691135236362017</td>
+<td>1</td>
+</tr>
+<tr class="even">
 <td data-quarto-table-cell-role="th">864691136913679601</td>
 <td>1</td>
 </tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">864691136923311076</td>
-<td>1</td>
-</tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">864691136923570404</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">864691136924123364</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">864691136973673244</td>
+<td data-quarto-table-cell-role="th">864691136965772238</td>
 <td>1</td>
 </tr>
 </tbody>
@@ -1192,15 +1193,14 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <h3 class="anchored" data-anchor-id="proofread-neurons">Proofread neurons</h3>
 <p>The table <code>proofreading_status_and_strategy</code> contains proofreading information about ~2000 neurons. For more on interpretting and using the proofreading table, see <a href="03-cave-query-proofread-cells.html">the previous quickstart notebook</a>.</p>
 <p>Here we query all neurons in the dataset that have proofread axons</p>
-<div id="97152d2a-bc1a-4235-bf99-90e4c248ab48" class="cell" data-tags="[]" data-execution_count="10">
+<div id="97152d2a-bc1a-4235-bf99-90e4c248ab48" class="cell" data-tags="[]" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>proof_df <span class="op">=</span> client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query(desired_resolution<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>], split_positions<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>proof_df[<span class="st">"strategy_axon"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>strategy_axon
-axon_partially_extended    1459
-axon_interareal             130
-axon_fully_extended         127
-none                          7
+axon_partially_extended    1702
+axon_fully_extended         156
+axon_interareal             124
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
@@ -1222,9 +1222,9 @@ Tip
 <p>However, connectivity between two cells is generally interpretable even if only the <strong>presynaptic cell has axon proofreading</strong>. Meaning, you can remove the <code>post_ids</code> argument in the section below, and still have interpretable data.</p>
 </div>
 </div>
-<div id="dd7bd406-c4f0-4ccf-a005-8c226cc12be6" class="cell" data-execution_count="11">
+<div id="dd7bd406-c4f0-4ccf-a005-8c226cc12be6" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This takes 3-5 minutes to complete</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This takes 4-6 minutes to complete</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>syn_proof_only_df <span class="op">=</span> client.materialize.synapse_query(pre_ids<span class="op">=</span>proof_df.pt_root_id,</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                                                  post_ids<span class="op">=</span>proof_df.pt_root_id,</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                                                  remove_autapses<span class="op">=</span><span class="va">True</span>,</span>
@@ -1232,16 +1232,16 @@ Tip
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(syn_proof_only_df))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>158931
-CPU times: total: 609 ms
-Wall time: 3min 25s</code></pre>
+<pre><code>183905
+CPU times: total: 1.17 s
+Wall time: 6min 14s</code></pre>
 </div>
 </div>
 </section>
 <section id="plot-connectivity-as-binarized-heatmap" class="level3">
 <h3 class="anchored" data-anchor-id="plot-connectivity-as-binarized-heatmap">Plot connectivity as binarized heatmap</h3>
 <p>Now lets plot the connectivity between every proofread cell and every other cell. This uses the <code>pandas.pivot_table()</code> to turn the long-form synapse table into a connectivity matrix.</p>
-<div id="0c1cf99b-c035-4650-b51c-c306abed8471" class="cell" data-tags="[]" data-execution_count="12">
+<div id="0c1cf99b-c035-4650-b51c-c306abed8471" class="cell" data-tags="[]" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This takes 2 minutes to complete</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>syn_mat <span class="op">=</span> syn_proof_only_df.pivot_table(index<span class="op">=</span><span class="st">"pre_pt_root_id"</span>, </span>
@@ -1251,19 +1251,19 @@ Wall time: 3min 25s</code></pre>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>                                       ).fillna(<span class="dv">0</span>)</span>
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>syn_mat <span class="op">=</span> syn_mat.reindex(columns<span class="op">=</span>np.array(syn_mat.index))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>CPU times: total: 1min 4s
-Wall time: 2min 6s</code></pre>
+<pre><code>CPU times: total: 1min 49s
+Wall time: 2min 37s</code></pre>
 </div>
 </div>
 <p>Plot the binarized connectivity with Seaborn <code>heatmap()</code>:</p>
-<div id="27d3ab35-9951-4dd0-822c-0ceb487be345" class="cell" data-tags="[]" data-execution_count="43">
+<div id="27d3ab35-9951-4dd0-822c-0ceb487be345" class="cell" data-tags="[]" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>), dpi<span class="op">=</span><span class="dv">150</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>sns.heatmap(syn_mat, cmap<span class="op">=</span><span class="st">"gray_r"</span>, xticklabels<span class="op">=</span>[], yticklabels<span class="op">=</span>[], </span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>            ax<span class="op">=</span>ax, square<span class="op">=</span><span class="va">True</span>,</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>            cbar_kws<span class="op">=</span>{<span class="st">"label"</span>: <span class="st">"Connected - binary"</span>})</span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Connectivity between proofread cells'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="43">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>Text(0.5, 1.0, 'Connectivity between proofread cells')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1295,7 +1295,7 @@ Tip
 <p>For more on cell types and how to interpret them, see the <a href="..\annotation-tables.html#cell-type-tables">Annotation Tables</a> page.</p>
 </div>
 </div>
-<div id="14a088a8" class="cell" data-execution_count="14">
+<div id="14a088a8" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ct_manual_df <span class="op">=</span> client.materialize.tables.allen_v1_column_types_slanted_ref().query()</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># rename the reference column for clarity</span></span>
@@ -1304,7 +1304,7 @@ Tip
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># remove segments with multiple cell bodies</span></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>ct_manual_df.drop_duplicates(<span class="st">"pt_root_id"</span>, keep<span class="op">=</span><span class="va">False</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>ct_manual_df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 
 
@@ -1355,7 +1355,7 @@ Tip
 <td>t</td>
 <td>277.317714</td>
 <td>89465269428261699</td>
-<td>864691136487559186</td>
+<td>864691135164434989</td>
 <td>1119</td>
 <td>2023-03-18 14:13:22.506660+00:00</td>
 <td>t</td>
@@ -1409,7 +1409,7 @@ Tip
 <td>t</td>
 <td>230.092308</td>
 <td>88468836747612860</td>
-<td>864691135759892302</td>
+<td>864691135778773856</td>
 <td>81</td>
 <td>2023-03-18 14:13:21.634505+00:00</td>
 <td>t</td>
@@ -1428,7 +1428,7 @@ Tip
 </div>
 <p>This table is a reference on the <code>nucleus_detection_v0</code> table, and adds two additional data columns: <code>classification_system</code> and <code>cell_type</code>. The <code>classification_system</code> divides the cells into excitatitory and inhibitory neurons as well as non-neuronal cells. <code>cell_type</code> provides lower level cell annotations.</p>
 <p>Next, we query the automatically classified cell type information. The query works the same way:</p>
-<div id="403c0d36" class="cell" data-execution_count="15">
+<div id="403c0d36" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>ct_auto_df <span class="op">=</span> client.materialize.tables.aibs_metamodel_celltypes_v661().query()</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># rename the reference column for clarity</span></span>
@@ -1437,7 +1437,7 @@ Tip
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co"># remove segments with multiple cell bodies</span></span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>ct_auto_df.drop_duplicates(<span class="st">"pt_root_id"</span>, keep<span class="op">=</span><span class="va">False</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>ct_auto_df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 
 
@@ -1524,7 +1524,7 @@ Tip
 <td>t</td>
 <td>91.308851</td>
 <td>84529699506051734</td>
-<td>864691136050858227</td>
+<td>864691135655940290</td>
 <td>13259</td>
 <td>2023-12-19 22:41:14.417986+00:00</td>
 <td>t</td>
@@ -1559,41 +1559,41 @@ Tip
 </div>
 </div>
 </div>
-<div id="30bd4ea3" class="cell" data-execution_count="16">
+<div id="30bd4ea3" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>ct_auto_df[<span class="st">"classification_system"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>classification_system
-excitatory_neuron    63757
-nonneuron            18699
-inhibitory_neuron     7847
+excitatory_neuron    63776
+nonneuron            18716
+inhibitory_neuron     7855
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="81dea009" class="cell" data-execution_count="17">
+<div id="81dea009" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>ct_auto_df[<span class="st">"cell_type"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>cell_type
-23P          19642
-4P           14720
-6P-IT        11637
-5P-IT         7889
-astrocyte     7108
+23P          19647
+4P           14723
+6P-IT        11638
+5P-IT         7892
+astrocyte     7111
 oligo         6900
-6P-CT         6755
-BC            3309
-MC            2433
-microglia     2394
-5P-ET         2157
+6P-CT         6759
+BC            3312
+MC            2438
+microglia     2400
+5P-ET         2159
 BPC           1484
-OPC           1451
-5P-NP          957
+OPC           1459
+5P-NP          958
 pericyte       846
 NGC            621
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can merge the <strong>manual</strong> and <strong>automatic</strong> cell types together into a single cell type table for convenience, using <code>pandas.merge()</code> on shared columns <code>[pt_root_id, nucleus_id]</code>. Here we perform an <code>outer</code> merge to keep rows that exist in either table.</p>
-<div id="09408d70-97b1-4654-8d46-a08ef8ea3e1d" class="cell" data-tags="[]" data-execution_count="18">
+<div id="09408d70-97b1-4654-8d46-a08ef8ea3e1d" class="cell" data-tags="[]" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>ct_all_df <span class="op">=</span> (pd.merge(ct_auto_df[[<span class="st">'pt_root_id'</span>,<span class="st">'classification_system'</span>,<span class="st">'cell_type'</span>, <span class="st">'nucleus_id'</span>]],</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>                     ct_manual_df[[<span class="st">'pt_root_id'</span>,<span class="st">'classification_system'</span>,<span class="st">'cell_type'</span>,<span class="st">'nucleus_id'</span>]],</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>                     on<span class="op">=</span>[<span class="st">'pt_root_id'</span>,<span class="st">'nucleus_id'</span>],</span>
@@ -1607,7 +1607,7 @@ Name: count, dtype: int64</code></pre>
 <span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>                    )</span>
 <span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>            )</span>
 <span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>ct_all_df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <div>
 
 
@@ -1625,47 +1625,47 @@ Name: count, dtype: int64</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">90328</td>
-<td>864691137199039297</td>
+<td data-quarto-table-cell-role="th">90372</td>
+<td>864691137199238721</td>
 <td>excitatory_neuron</td>
-<td>23P</td>
-<td>293714</td>
+<td>4P</td>
+<td>260813</td>
 <td>NaN</td>
 <td>unknown</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">90329</td>
-<td>864691137199050049</td>
-<td>excitatory_neuron</td>
-<td>4P</td>
-<td>194481</td>
+<td data-quarto-table-cell-role="th">90373</td>
+<td>864691137199243585</td>
+<td>nonneuron</td>
+<td>astrocyte</td>
+<td>304889</td>
 <td>NaN</td>
 <td>unknown</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">90330</td>
-<td>864691137199094593</td>
+<td data-quarto-table-cell-role="th">90374</td>
+<td>864691137199255873</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
-<td>361383</td>
+<td>358554</td>
 <td>NaN</td>
 <td>unknown</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">90331</td>
-<td>864691137199115073</td>
-<td>excitatory_neuron</td>
-<td>4P</td>
-<td>260071</td>
+<td data-quarto-table-cell-role="th">90375</td>
+<td>864691137199268417</td>
+<td>nonneuron</td>
+<td>astrocyte</td>
+<td>266983</td>
 <td>NaN</td>
 <td>unknown</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">90332</td>
-<td>864691137199116097</td>
-<td>inhibitory_neuron</td>
-<td>BC</td>
-<td>372402</td>
+<td data-quarto-table-cell-role="th">90376</td>
+<td>864691137199312705</td>
+<td>excitatory_neuron</td>
+<td>23P</td>
+<td>422139</td>
 <td>NaN</td>
 <td>unknown</td>
 </tr>
@@ -1680,7 +1680,7 @@ Name: count, dtype: int64</code></pre>
 <h3 class="anchored" data-anchor-id="sorting-the-synapse-matrix-with-cell-types">Sorting the synapse matrix with cell types</h3>
 <p>Let’s combine the synaptic connecitivity with the cell type information. Below we provide logic for sorting a connectivity matrix using a list of labels.</p>
 <p>This example looks at the connectivity among: <strong>proofread excitatory cells in the V1 column</strong> . Using <code>proofreading_status_and_strategy</code> and <code>allen_v1_column_types_slanted_ref</code> to filter the connectivity. The same approach can be used for all cells in the dataset by substituting the <code>cell_type_auto</code> label from <code>aibs_metamodel_celltypes_v661</code>.</p>
-<div id="c34c5f6d-6cb3-4eb7-8124-4d1378558bd0" class="cell" data-execution_count="19">
+<div id="c34c5f6d-6cb3-4eb7-8124-4d1378558bd0" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sort_matrix_by_types(mat: pd.DataFrame, </span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>                         labels: pd.DataFrame, </span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>                         label_type_col: <span class="bu">str</span> <span class="op">=</span> <span class="st">"cell_type_auto"</span>, </span>
@@ -1725,7 +1725,7 @@ Name: count, dtype: int64</code></pre>
 <span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mat_sorted, pre_mat_labels[pre_sorting], post_mat_labels[post_sorting]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="d64020ea-0af4-4968-8eda-e8f350ae7030" class="cell" data-execution_count="25">
+<div id="d64020ea-0af4-4968-8eda-e8f350ae7030" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select the proofread, manually-identified excitatory cells</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>manual_exc_root_ids <span class="op">=</span> ct_all_df.query(<span class="st">"classification_system_manual=='aibs_coarse_excitatory'"</span>).pt_root_id.to_numpy()</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1742,14 +1742,14 @@ Name: count, dtype: int64</code></pre>
 <span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>              )</span>
 <span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>exc_syn_mat <span class="op">=</span> exc_syn_mat.reindex(columns<span class="op">=</span>np.array(exc_syn_mat.index))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f9355785-a89c-4fcb-80c3-1d3ede258089" class="cell" data-execution_count="26">
+<div id="f9355785-a89c-4fcb-80c3-1d3ede258089" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sort the matrix by cell types to render sensibly in heatmap</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>syn_mat_ct, syn_mat_cell_types, _ <span class="op">=</span> sort_matrix_by_types(exc_syn_mat, ct_all_df, label_type_col<span class="op">=</span><span class="st">"cell_type_manual"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="plot-cell-connectivity-sorted-by-cell-type" class="level3">
 <h3 class="anchored" data-anchor-id="plot-cell-connectivity-sorted-by-cell-type">Plot cell connectivity, sorted by cell type</h3>
-<div id="fa4de0e3-b2b8-458c-b1a3-58bb45c9b69a" class="cell" data-execution_count="48">
+<div id="fa4de0e3-b2b8-458c-b1a3-58bb45c9b69a" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># add colormap for cell type</span></span>
@@ -1793,7 +1793,7 @@ Name: count, dtype: int64</code></pre>
 <section id="merge-cell-types-to-synapse-table" class="level3">
 <h3 class="anchored" data-anchor-id="merge-cell-types-to-synapse-table">Merge cell types to synapse table</h3>
 <p>Here, we can assign a cell type to the pre-synaptic and post-synaptic root id on the connectivity matrix. Given the established <code>syn_proof_only_df</code> and the merged cell type table <code>ct_all_df</code>, let’s consider the connectivity between manually identified cell types:</p>
-<div id="98655954-f264-49db-a7dd-7106264c99ea" class="cell" data-execution_count="28">
+<div id="98655954-f264-49db-a7dd-7106264c99ea" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the cell types to the presynaptic cell id</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>syn_proof_ct_df <span class="op">=</span> ( syn_proof_only_df.merge(</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    ct_all_df[[<span class="st">'pt_root_id'</span>,<span class="st">'cell_type_manual'</span>]], </span>
@@ -1815,7 +1815,7 @@ Name: count, dtype: int64</code></pre>
 <span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>syn_proof_ct_df.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <div>
 
 
@@ -1842,6 +1842,23 @@ Name: count, dtype: int64</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
+<td>174979485</td>
+<td>2020-11-04 08:50:39.220791+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>4688</td>
+<td>90161191099360974</td>
+<td>864691135817602127</td>
+<td>90161191099310671</td>
+<td>864691136674495623</td>
+<td>[184770, 200984, 19986]</td>
+<td>[184786, 201052, 19972]</td>
+<td>[184816, 200974, 19981]</td>
+<td>unknown</td>
+<td>5P-IT</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
 <td>152094175</td>
 <td>2020-11-04 07:20:36.943498+00:00</td>
 <td>NaN</td>
@@ -1857,39 +1874,22 @@ Name: count, dtype: int64</code></pre>
 <td>23P</td>
 <td>MC</td>
 </tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>148367619</td>
-<td>2020-11-04 11:46:41.982682+00:00</td>
-<td>NaN</td>
-<td>t</td>
-<td>4880</td>
-<td>88187223727657156</td>
-<td>864691136057875416</td>
-<td>88187223727666196</td>
-<td>864691135659200386</td>
-<td>[170264, 174184, 17059]</td>
-<td>[170378, 174182, 17060]</td>
-<td>[170300, 174144, 17052]</td>
-<td>unknown</td>
-<td>unknown</td>
-</tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>174979485</td>
-<td>2020-11-04 08:50:39.220791+00:00</td>
+<td>161901009</td>
+<td>2020-11-04 14:35:02.898645+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>4688</td>
-<td>90161191099360974</td>
-<td>864691136057875416</td>
-<td>90161191099310671</td>
-<td>864691136674495623</td>
-<td>[184770, 200984, 19986]</td>
-<td>[184786, 201052, 19972]</td>
-<td>[184816, 200974, 19981]</td>
+<td>668</td>
+<td>89030412042836638</td>
+<td>864691135817602127</td>
+<td>89030480762316394</td>
+<td>864691136380816597</td>
+<td>[176280, 165046, 19727]</td>
+<td>[176256, 165108, 19730]</td>
+<td>[176238, 165052, 19722]</td>
 <td>unknown</td>
-<td>5P-IT</td>
+<td>Unsure E</td>
 </tr>
 </tbody>
 </table>
@@ -1901,12 +1901,12 @@ Name: count, dtype: int64</code></pre>
 <section id="pivot-the-synapse-table-to-collect-cell-type-connectivity" class="level3">
 <h3 class="anchored" data-anchor-id="pivot-the-synapse-table-to-collect-cell-type-connectivity">Pivot the synapse table to collect cell type connectivity</h3>
 <p>Using <code>pandas.pivot()</code> on the pre- and post-synaptic cell classes, we count the number of connections between:</p>
-<div id="a4d027de-8e66-48dc-b998-144e6832a3ba" class="cell" data-execution_count="33">
+<div id="a4d027de-8e66-48dc-b998-144e6832a3ba" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot table to get connectivity between cell types</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>syn_ct_counts <span class="op">=</span> (syn_proof_ct_df.pivot_table(index<span class="op">=</span><span class="st">'cell_type_pre'</span>,</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                                             columns<span class="op">=</span><span class="st">'cell_type_post'</span>,</span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>                                             values<span class="op">=</span><span class="st">'id'</span>, aggfunc<span class="op">=</span><span class="kw">lambda</span> x: <span class="bu">len</span>(x)).fillna(<span class="dv">0</span>)</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>                 .drop(columns<span class="op">=</span>[<span class="st">'Unsure E'</span>,<span class="st">'Unsure I'</span>,<span class="st">'unknown'</span>], index<span class="op">=</span>[<span class="st">'Unsure E'</span>,<span class="st">'Unsure I'</span>,<span class="st">'unknown'</span>])</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>                 .drop(columns<span class="op">=</span>[<span class="st">'Unsure E'</span>,<span class="st">'Unsure I'</span>,<span class="st">'Unsure'</span>, <span class="st">'WM-P'</span>, <span class="st">'unknown'</span>], index<span class="op">=</span>[<span class="st">'Unsure E'</span>,<span class="st">'Unsure I'</span>,<span class="st">'Unsure'</span>, <span class="st">'WM-P'</span>, <span class="st">'unknown'</span>])</span>
 <span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>                 .astype(<span class="bu">int</span>) </span>
 <span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>                )</span>
 <span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -1922,7 +1922,7 @@ Name: count, dtype: int64</code></pre>
 <section id="plot-cell-connectivity-aggregated-by-cell-type" class="level3">
 <h3 class="anchored" data-anchor-id="plot-cell-connectivity-aggregated-by-cell-type">Plot cell connectivity, aggregated by cell type</h3>
 <p>This now summarizes connectivity between broad cell classes</p>
-<div id="7a35b52f-974c-4ea6-ad78-4419c7abb3c8" class="cell" data-execution_count="49">
+<div id="7a35b52f-974c-4ea6-ad78-4419c7abb3c8" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>), dpi<span class="op">=</span><span class="dv">150</span>)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(syn_ct_counts, cmap<span class="op">=</span><span class="st">"gist_heat_r"</span>, annot<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>ax, fmt<span class="op">=</span><span class="st">'d'</span>, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">15000</span>,</span>
@@ -1935,7 +1935,7 @@ Name: count, dtype: int64</code></pre>
 <span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>ax.vlines([<span class="dv">8</span>], <span class="op">*</span>ax.get_ylim(), color<span class="op">=</span><span class="st">'white'</span>,linewidth <span class="op">=</span> <span class="dv">3</span>)</span>
 <span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Aggregate Connectivity between proofread cells </span><span class="ch">\n</span><span class="st"> (cell type manually labeled)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="49">
+<div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>Text(0.5, 1.0, 'Aggregate Connectivity between proofread cells \n (cell type manually labeled)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">

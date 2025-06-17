@@ -472,7 +472,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -482,8 +482,8 @@ Version update
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>This tutorial has recently been updated to materialization version 1412 (from 1300).</p>
 <p>We have released a new public version 1412, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1412.html">Release Manifests: 1412</a>.</p>
-<p>Tutorials remain pinned to v1300 as the latest major version.</p>
 </div>
 </div>
 <p>The <strong>Connectome Annotation Versioning Engine (CAVE)</strong> is a suite of tools developed at the Allen Institute and Seung Lab to manage large connectomics data.</p>
@@ -541,7 +541,7 @@ Tip
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># see the available materialization versions</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.get_versions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[1300, 1078, 117, 661, 343, 1181, 795, 943]</code></pre>
+<pre><code>[1300, 1078, 117, 661, 343, 1181, 795, 943, 1412]</code></pre>
 </div>
 </div>
 <p>And these are their associated timestamps (all timestamps are in UTC):</p>
@@ -556,12 +556,13 @@ Version 661: 2023-04-06 20:17:09.199182+00:00
 Version 343: 2022-02-24 08:10:00.184668+00:00
 Version 1181: 2024-09-16 10:10:01.121167+00:00
 Version 795: 2023-08-23 08:10:01.404268+00:00
-Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
+Version 943: 2024-01-22 08:10:01.497934+00:00
+Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 </div>
 </div>
 <div id="a066a177-5d23-4898-9765-4f4e620be719" class="cell" data-tags="[]" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set materialization version, for consistency</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1300</span> <span class="co"># current public as of 1/13/2025</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1412</span> <span class="co"># current public as of 4/29/2025</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -687,10 +688,10 @@ Version 943: 2024-01-22 08:10:01.497934+00:00</code></pre>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>proof_all_df[<span class="st">"strategy_axon"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>strategy_axon
-axon_partially_extended    1459
-none                        149
-axon_interareal             130
-axon_fully_extended         127
+axon_partially_extended    1702
+axon_fully_extended         156
+axon_interareal             124
+none                         38
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
@@ -731,89 +732,89 @@ Name: count, dtype: int64</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1711</td>
-<td>3062</td>
-<td>2025-01-12 03:00:00.936352+00:00</td>
+<td data-quarto-table-cell-role="th">1977</td>
+<td>3639</td>
+<td>2025-04-26 15:26:01.884071+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>705920.0</td>
-<td>705664.0</td>
-<td>903960.0</td>
-<td>864691135867413893</td>
+<td>768192.0</td>
+<td>722624.0</td>
+<td>865560.0</td>
+<td>864691135124248359</td>
 <td>t</td>
 <td>t</td>
-<td>dendrite_clean</td>
+<td>dendrite_extended</td>
 <td>axon_partially_extended</td>
-<td>89031992993240476</td>
-<td>864691135867413893</td>
+<td>91213973684426061</td>
+<td>864691135124248359</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1712</td>
-<td>3063</td>
-<td>2025-01-12 03:00:00.954516+00:00</td>
+<td data-quarto-table-cell-role="th">1978</td>
+<td>3640</td>
+<td>2025-04-26 15:26:01.897693+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>684800.0</td>
-<td>659968.0</td>
-<td>891160.0</td>
-<td>864691135276601317</td>
+<td>742784.0</td>
+<td>743936.0</td>
+<td>823560.0</td>
+<td>864691135447653010</td>
 <td>t</td>
 <td>t</td>
-<td>dendrite_clean</td>
+<td>dendrite_extended</td>
 <td>axon_partially_extended</td>
-<td>88326724936602021</td>
-<td>864691135276601317</td>
+<td>90299867070611957</td>
+<td>864691135447653010</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1713</td>
-<td>3064</td>
-<td>2025-01-12 03:00:00.972946+00:00</td>
+<td data-quarto-table-cell-role="th">1979</td>
+<td>3641</td>
+<td>2025-04-26 15:26:01.911083+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>742400.0</td>
-<td>667008.0</td>
-<td>830000.0</td>
-<td>864691135742247787</td>
+<td>726848.0</td>
+<td>730944.0</td>
+<td>864320.0</td>
+<td>864691135849699166</td>
 <td>t</td>
 <td>t</td>
-<td>dendrite_clean</td>
+<td>dendrite_extended</td>
 <td>axon_partially_extended</td>
-<td>90297324450184090</td>
-<td>864691135742247787</td>
+<td>89736504934533504</td>
+<td>864691135849699166</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1714</td>
-<td>3065</td>
-<td>2025-01-12 03:00:00.992770+00:00</td>
+<td data-quarto-table-cell-role="th">1980</td>
+<td>3642</td>
+<td>2025-04-26 15:26:01.924637+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>689472.0</td>
-<td>839744.0</td>
-<td>904880.0</td>
-<td>864691135591960075</td>
+<td>792832.0</td>
+<td>936128.0</td>
+<td>952600.0</td>
+<td>864691135396485877</td>
+<td>t</td>
+<td>t</td>
+<td>dendrite_extended</td>
+<td>axon_partially_extended</td>
+<td>92065545708721615</td>
+<td>864691135396485877</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1981</td>
+<td>3643</td>
+<td>2025-04-26 15:36:38.403644+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>738176.0</td>
+<td>727168.0</td>
+<td>893440.0</td>
+<td>864691135646493679</td>
 <td>t</td>
 <td>t</td>
 <td>dendrite_extended</td>
 <td>axon_fully_extended</td>
-<td>88473509805848805</td>
-<td>864691135591960075</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1715</td>
-<td>3066</td>
-<td>2025-01-12 03:00:01.012280+00:00</td>
-<td>NaN</td>
-<td>t</td>
-<td>746880.0</td>
-<td>612224.0</td>
-<td>891720.0</td>
-<td>864691135939049988</td>
-<td>t</td>
-<td>t</td>
-<td>dendrite_clean</td>
-<td>axon_partially_extended</td>
-<td>90436206713993499</td>
-<td>864691135939049988</td>
+<td>90158580028006378</td>
+<td>864691135646493679</td>
 </tr>
 </tbody>
 </table>
@@ -862,44 +863,44 @@ Caution
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1711</td>
-<td>864691135867413893</td>
+<td data-quarto-table-cell-role="th">1977</td>
+<td>864691135124248359</td>
 <td>t</td>
 <td>t</td>
 <td>axon_partially_extended</td>
-<td>dendrite_clean</td>
+<td>dendrite_extended</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1712</td>
-<td>864691135276601317</td>
+<td data-quarto-table-cell-role="th">1978</td>
+<td>864691135447653010</td>
 <td>t</td>
 <td>t</td>
 <td>axon_partially_extended</td>
-<td>dendrite_clean</td>
+<td>dendrite_extended</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1713</td>
-<td>864691135742247787</td>
+<td data-quarto-table-cell-role="th">1979</td>
+<td>864691135849699166</td>
 <td>t</td>
 <td>t</td>
 <td>axon_partially_extended</td>
-<td>dendrite_clean</td>
+<td>dendrite_extended</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1714</td>
-<td>864691135591960075</td>
+<td data-quarto-table-cell-role="th">1980</td>
+<td>864691135396485877</td>
+<td>t</td>
+<td>t</td>
+<td>axon_partially_extended</td>
+<td>dendrite_extended</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1981</td>
+<td>864691135646493679</td>
 <td>t</td>
 <td>t</td>
 <td>axon_fully_extended</td>
 <td>dendrite_extended</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1715</td>
-<td>864691135939049988</td>
-<td>t</td>
-<td>t</td>
-<td>axon_partially_extended</td>
-<td>dendrite_clean</td>
 </tr>
 </tbody>
 </table>
@@ -950,18 +951,18 @@ Tip
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>cell_type_df.value_counts(<span class="st">'pt_root_id'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>pt_root_id
-864691134966128927    350
+864691135891586697    350
 0                     175
 864691137020183406    102
 864691136974041116     60
-864691135303545767     43
+864691135455264362     43
                      ... 
-864691135571655661      1
-864691135571652845      1
-864691135571650797      1
-864691135571649317      1
-864691135777169085      1
-Name: count, Length: 91423, dtype: int64</code></pre>
+864691135568905862      1
+864691135568905350      1
+864691135568904326      1
+864691135568904172      1
+864691137199312705      1
+Name: count, Length: 91446, dtype: int64</code></pre>
 </div>
 </div>
 <p>For analytical simplicity, we will drop any multi-soma objects. We will also rename the <code>id</code> column for clarity</p>
@@ -1011,7 +1012,7 @@ Name: count, Length: 91423, dtype: int64</code></pre>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>864691136050858227</td>
+<td>864691135655940290</td>
 <td>197927</td>
 <td>nonneuron</td>
 <td>oligo</td>
@@ -1053,59 +1054,59 @@ Name: count, Length: 91423, dtype: int64</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1700</td>
-<td>864691135867413893</td>
+<td data-quarto-table-cell-role="th">1929</td>
+<td>864691135124248359</td>
 <td>t</td>
 <td>t</td>
 <td>axon_partially_extended</td>
-<td>dendrite_clean</td>
-<td>263073</td>
+<td>dendrite_extended</td>
+<td>301119</td>
 <td>excitatory_neuron</td>
 <td>5P-IT</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1701</td>
-<td>864691135276601317</td>
+<td data-quarto-table-cell-role="th">1930</td>
+<td>864691135447653010</td>
 <td>t</td>
 <td>t</td>
 <td>axon_partially_extended</td>
-<td>dendrite_clean</td>
-<td>262889</td>
+<td>dendrite_extended</td>
+<td>300956</td>
 <td>excitatory_neuron</td>
-<td>4P</td>
+<td>5P-IT</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1702</td>
-<td>864691135742247787</td>
+<td data-quarto-table-cell-role="th">1931</td>
+<td>864691135849699166</td>
 <td>t</td>
 <td>t</td>
 <td>axon_partially_extended</td>
-<td>dendrite_clean</td>
-<td>298800</td>
+<td>dendrite_extended</td>
+<td>301083</td>
 <td>excitatory_neuron</td>
-<td>4P</td>
+<td>5P-IT</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1703</td>
-<td>864691135591960075</td>
+<td data-quarto-table-cell-role="th">1932</td>
+<td>864691135396485877</td>
+<td>t</td>
+<td>t</td>
+<td>axon_partially_extended</td>
+<td>dendrite_extended</td>
+<td>342334</td>
+<td>excitatory_neuron</td>
+<td>6P-IT</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1933</td>
+<td>864691135646493679</td>
 <td>t</td>
 <td>t</td>
 <td>axon_fully_extended</td>
 <td>dendrite_extended</td>
-<td>269591</td>
-<td>excitatory_neuron</td>
-<td>5P-IT</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1704</td>
-<td>864691135939049988</td>
-<td>t</td>
-<td>t</td>
-<td>axon_partially_extended</td>
-<td>dendrite_clean</td>
-<td>296761</td>
-<td>excitatory_neuron</td>
-<td>4P</td>
+<td>301203</td>
+<td>inhibitory_neuron</td>
+<td>BPC</td>
 </tr>
 </tbody>
 </table>
