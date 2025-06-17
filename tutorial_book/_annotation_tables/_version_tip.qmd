@@ -1,0 +1,6 @@
+::: {.callout-tip}
+## Version update
+This tutorial has recently been updated to materialization version 1412 (from 1300).
+
+We have released a new public version 1412, as part of our quarterly release schedule. See details at [Release Manifests: 1412](../release_manifests/version-1412.html). 
+:::
