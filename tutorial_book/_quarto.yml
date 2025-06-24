@@ -36,7 +36,12 @@ website:
         contents:
           - proofreading.ipynb
           - materialization-version.ipynb
-          - vortex-overview.ipynb
+          - proofreading-status.ipynb
+      - section: "Virtual Observatory of the Cortex (VORTEX)"
+        href: vortex-overview.ipynb
+        contents:
+          - vortex-year-1.ipynb
+          - vortex-year-2.ipynb
       - section: "Online Tools"
         contents:
           - neuroglancer-basic.ipynb
