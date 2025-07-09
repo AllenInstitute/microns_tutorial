@@ -1,4 +1,19 @@
 
+- category: Analysis demos
+  description: |
+    Coding vignettes using different parts of the dataset
+  tiles:
+    - title: Astrocyte Meshes
+      subtitle: Download and render astrocyte meshes
+      href: ../examples/astrocyte_meshes.ipynb
+      thumbnail: thumbnail/thumbnail_astrocytes.png
+      code: ../examples/astrocyte_meshes.ipynb
+    - title: Myelin Labels
+      subtitle: Apply myelin labels to basket cell axon
+      href: ../examples/basket_cell_myelin.ipynb
+      thumbnail: thumbnail/thumbnail_myelin_basket.png
+      code: ../examples/basket_cell_myelin.ipynb
+      
 - category: Code from Research Publications
   description: |
     Coding examples and github repositories for the Nature 2025 research publications

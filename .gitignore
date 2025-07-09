@@ -4,5 +4,9 @@
 .quarto/
 _site/
 
+# Local working directories
+.data/
+_local*
+
 # Jupyter Notebook
 .ipynb_checkpoints
