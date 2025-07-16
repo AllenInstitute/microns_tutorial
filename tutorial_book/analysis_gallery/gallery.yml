@@ -1,4 +1,24 @@
 
+- category: Analysis demos
+  description: |
+    Coding vignettes using different parts of the dataset
+  tiles:
+    - title: Functional properties as synaptic input
+      subtitle: View the convergence of preferred orientation of visual stimuli
+      href: ../examples/functional_inputs_orientation.ipynb
+      thumbnail: thumbnail/thumbnail_orientation.png
+      code: ../examples/functional_inputs_orientation.ipynb
+    - title: Astrocyte Meshes
+      subtitle: Download and render astrocyte meshes
+      href: ../examples/astrocyte_meshes.ipynb
+      thumbnail: thumbnail/thumbnail_astrocytes.png
+      code: ../examples/astrocyte_meshes.ipynb
+    - title: Myelin Labels
+      subtitle: Apply myelin labels to basket cell axon
+      href: ../examples/basket_cell_myelin.ipynb
+      thumbnail: thumbnail/thumbnail_myelin_basket.png
+      code: ../examples/basket_cell_myelin.ipynb
+      
 - category: Code from Research Publications
   description: |
     Coding examples and github repositories for the Nature 2025 research publications
