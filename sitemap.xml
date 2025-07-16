@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tutorial.microns-explorer.org/vortex-year-2.html</loc>
+    <lastmod>2025-07-16T22:51:18.417Z</lastmod>
+  </url>
+  <url>
     <loc>https://tutorial.microns-explorer.org/vortex-overview.html</loc>
-    <lastmod>2025-04-22T03:03:19.021Z</lastmod>
+    <lastmod>2025-07-16T22:52:31.629Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/release_manifests/version-943.html</loc>
@@ -49,16 +53,32 @@
     <lastmod>2025-04-14T05:12:33.179Z</lastmod>
   </url>
   <url>
-    <loc>https://tutorial.microns-explorer.org/programmatic_access/ultrastructure_tutorial/em_ultrastructure.html</loc>
-    <lastmod>2025-01-07T23:43:14.833Z</lastmod>
+    <loc>https://tutorial.microns-explorer.org/programmatic_access/functional_tutorial/em_functional_intro.html</loc>
+    <lastmod>2025-01-07T23:43:14.511Z</lastmod>
   </url>
   <url>
-    <loc>https://tutorial.microns-explorer.org/introduction.html</loc>
-    <lastmod>2025-04-14T19:25:11.556Z</lastmod>
+    <loc>https://tutorial.microns-explorer.org/neuroglancer-basic.html</loc>
+    <lastmod>2025-04-03T19:28:05.335Z</lastmod>
   </url>
   <url>
-    <loc>https://tutorial.microns-explorer.org/examples/skeleton_load_and_generate.html</loc>
-    <lastmod>2025-01-07T23:43:14.033Z</lastmod>
+    <loc>https://tutorial.microns-explorer.org/materialization-version.html</loc>
+    <lastmod>2025-06-16T22:59:22.414Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tutorial.microns-explorer.org/index.html</loc>
+    <lastmod>2025-04-29T00:51:27.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tutorial.microns-explorer.org/faq.html</loc>
+    <lastmod>2025-06-16T22:52:42.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tutorial.microns-explorer.org/examples/functional_inputs_orientation.html</loc>
+    <lastmod>2025-07-16T01:46:05.762Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tutorial.microns-explorer.org/examples/astrocyte_meshes.html</loc>
+    <lastmod>2025-07-16T01:28:44.467Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/dash-connectivity.html</loc>
@@ -85,24 +105,20 @@
     <lastmod>2025-06-16T22:23:44.844Z</lastmod>
   </url>
   <url>
-    <loc>https://tutorial.microns-explorer.org/faq.html</loc>
-    <lastmod>2025-06-16T22:52:42.619Z</lastmod>
+    <loc>https://tutorial.microns-explorer.org/examples/basket_cell_myelin.html</loc>
+    <lastmod>2025-07-16T01:28:37.634Z</lastmod>
   </url>
   <url>
-    <loc>https://tutorial.microns-explorer.org/index.html</loc>
-    <lastmod>2025-04-29T00:51:27.357Z</lastmod>
+    <loc>https://tutorial.microns-explorer.org/examples/skeleton_load_and_generate.html</loc>
+    <lastmod>2025-01-07T23:43:14.033Z</lastmod>
   </url>
   <url>
-    <loc>https://tutorial.microns-explorer.org/materialization-version.html</loc>
-    <lastmod>2025-06-16T22:59:22.414Z</lastmod>
+    <loc>https://tutorial.microns-explorer.org/introduction.html</loc>
+    <lastmod>2025-04-14T19:25:11.556Z</lastmod>
   </url>
   <url>
-    <loc>https://tutorial.microns-explorer.org/neuroglancer-basic.html</loc>
-    <lastmod>2025-04-03T19:28:05.335Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tutorial.microns-explorer.org/programmatic_access/functional_tutorial/em_functional_intro.html</loc>
-    <lastmod>2025-01-07T23:43:14.511Z</lastmod>
+    <loc>https://tutorial.microns-explorer.org/programmatic_access/ultrastructure_tutorial/em_ultrastructure.html</loc>
+    <lastmod>2025-01-07T23:43:14.833Z</lastmod>
   </url>
   <url>
     <loc>https://tutorial.microns-explorer.org/proofreading.html</loc>
@@ -151,5 +167,9 @@
   <url>
     <loc>https://tutorial.microns-explorer.org/static-repositories.html</loc>
     <lastmod>2025-04-22T22:17:55.902Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tutorial.microns-explorer.org/vortex-year-1.html</loc>
+    <lastmod>2025-07-16T01:55:24.369Z</lastmod>
   </url>
 </urlset>
