@@ -548,7 +548,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored">
 Axon extension of functionally recorded cells
 </h3>
-<p>Proofreading and extending functionally coregistered pyramidal cells, which were a combination of excitatory cell types in different superficial layers.</p>
+<p>Proofreading and extending functionally coregistered pyramidal cells, which were a set of excitatory cell types in different layers.This effort includes proofreading done to excitatory cells in the V1 column that are not coregistered, but are interconnected with the coregistered cells.</p>
 <center>
 Synaptic connectivity added from version 1078 to 1300:
 </center>
@@ -598,7 +598,7 @@ Improvement in connectivity between functionally-coregistered pyramidal cells
 </center>
 <iframe src="img/interactives/coreg_bar_y2_p1.html" width="101%" height="470px" style="border-width: 0px; border-color: white; display: block; margin: 0 auto;">
 </iframe>
-<p>This connectivity combined with the derived visual functional properties, means we can evaluate the convergence of inputs such as preferred orientation of visual stimuli:</p>
+<p>This connectivity, combined with the derived visual functional properties, means we can evaluate the convergence of inputs such as preferred orientation of visual stimuli:</p>
 <div class="grid">
 <div class="g-col-8">
 <center>
@@ -617,7 +617,7 @@ Interactive: Preferred orientation of functionally-characterized cell inputs
 <p><img src="img/interactives/orientation_wheel.png" class="img-fluid"></p>
 </div>
 </div>
-<p>For an example of how to generate this plot, see Gallery</p>
+<p>For a coding example of how to render this cell with its inputs, see: <a href="./examples/functional_inputs_orientation.html">Analysis Gallery: Functional properties as synaptic input</a></p>
 <h3 class="anchored">
 Annotation of spine synapses
 </h3>
@@ -644,6 +644,7 @@ Annotation of spine synapses
 Annotation of myelin
 </h3>
 <p>Manual annotation of <strong>myelination</strong> and <strong>nodes of Ranvier</strong> 1) along basket cell axons, and 2) dense annotations within a subvolume: 26393 annotations</p>
+<p>For a coding example of how to a cell with its myelin, see: <a href="./examples/basket_cell_myelin.html">Analysis Gallery: Myelin Labels</a></p>
 <p>CAVE table: <code>vortex_manual_myelination_v0</code></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_manual_myelination_v0'</span>, limit<span class="op">=</span><span class="dv">10</span>)</span>
