@@ -3,6 +3,11 @@
   description: |
     Coding vignettes using different parts of the dataset
   tiles:
+    - title: Functional properties as synaptic input
+      subtitle: View the convergence of preferred orientation of visual stimuli
+      href: ../examples/functional_inputs_orientation.ipynb
+      thumbnail: thumbnail/thumbnail_orientation.png
+      code: ../examples/functional_inputs_orientation.ipynb
     - title: Astrocyte Meshes
       subtitle: Download and render astrocyte meshes
       href: ../examples/astrocyte_meshes.ipynb
