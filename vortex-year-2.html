@@ -679,22 +679,22 @@ Annotation of myelin
 <tr class="odd">
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">Axon proofreading of excitatory cells</td>
-<td>Added ~300 cells in the V1 column</td>
+<td>Added ~250 cells in the V1 column</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">3</td>
 <td style="text-align: left;">Axon proofreading of inhibitory cells</td>
-<td>Added ~100 putative basket cells around the V1 column</td>
+<td>Added ~100 putative basket cells around the V1 column; 30 peptidergic targets (putative VIP)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">3.5</td>
-<td style="text-align: left;">Astrocyte proofreadng: remove neurites</td>
-<td>Cleaned ~100 astrocytes in the V1 column</td>
+<td style="text-align: left;">Astrocyte proofreading: remove neurites</td>
+<td>Cleaned ~110 astrocytes in the V1 column</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">3.75</td>
 <td style="text-align: left;">Axon proofreading of thalamocortical axons</td>
-<td>Added ~14 axons, improved 12 axons</td>
+<td>Added ~19 axons, improved 12 axons</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">4.5</td>
@@ -709,15 +709,59 @@ Annotation of myelin
 <tr class="odd">
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">Characterize neuromodulatory synapses</td>
-<td>Added 26393 myelin annotations</td>
+<td>Ongoing into Y3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">7</td>
 <td style="text-align: left;">Axon proofreading of neuromodulatory synapses</td>
-<td>Labeled and cleaned ~5 axons</td>
+<td>Labeled and cleaned 20 axons</td>
 </tr>
 </tbody>
 </table>
+<h3 class="anchored">
+Axon extension of functionally recorded cells
+</h3>
+<p>Proofreading and extending functionally coregistered pyramidal cells, which were a set of excitatory cell types in different layers.This effort includes proofreading done to excitatory cells in the V1 column that are not coregistered, but are interconnected with the coregistered cells.</p>
+<center>
+Synaptic connectivity added from version 1300 to 1500:
+</center>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Cell type</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Morphology Type</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="grid">
+<div class="g-col-7">
+<iframe src="img/interactives/diff_ct_heatmap_y2_p2.html" width="101%" height="550px" style="border-width: 0px; border-color: white; display: block; margin: 0 auto;">
+</iframe>
+</div>
+<div class="g-col-5">
+<iframe src="img/interactives/diff_ct_bar_y2_p2.html" width="101%" height="550px" style="border-width: 0px; border-color: white; display: block; margin: 0 auto;">
+</iframe>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="grid">
+<div class="g-col-7">
+<iframe src="img/interactives/diff_mtype_heatmap_y2_p2.html" width="101%" height="550px" style="border-width: 0px; border-color: white; display: block; margin: 0 auto;">
+</iframe>
+</div>
+<div class="g-col-5">
+<iframe src="img/interactives/diff_mtype_bar_y2_p2.html" width="101%" height="550px" style="border-width: 0px; border-color: white; display: block; margin: 0 auto;">
+</iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<iframe src="img/interactives/proofreading_upgrades_bar_y2_p2.html" width="101%" height="450px" style="border-width: 0px; border-color: white; display: block; margin: 0 auto;">
+</iframe>
+<p>Queried from CAVE table: <code>proofreading_status_and_strategy</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'proofreading_status_and_strategy'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
