@@ -505,6 +505,19 @@ div.csl-indent {
 </header>
 
 
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Archiving versions: v343, v661, v795
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We have begun archiving release versions that are more 2 years old. All publicly released annotation data is available as a static download. See: <a href="../static-repositories.html#archived-data-tables">Access archived data versions</a> for details.</p>
+</div>
+</div>
 <p>Data Release v343 (February 24, 2022) is the first update to the public datastack.</p>
 <p>This version ADDS the following tables</p>
 <ul>
@@ -709,7 +722,20 @@ Deprecated table
 </tr>
 </tbody>
 </table>
-<p>This table is deprecated and superseded by <code>proofreading_status_and_strategy</code>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Deprecated table
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This table is deprecated, use <code>proofreading_status_and_strategy</code> instead.</p>
+</div>
+</div>
+<p>For archival analysis, use:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set version to 1078 or before</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1078</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>

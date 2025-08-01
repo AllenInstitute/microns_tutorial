@@ -525,7 +525,7 @@ div.csl-indent {
 </header>
 
 
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -535,8 +535,8 @@ Version update
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This tutorial has recently been updated to materialization version 1412 (from 1300).</p>
-<p>We have released a new public version 1412, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1412.html">Release Manifests: 1412</a>.</p>
+<p>We have released a new public version 1507, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1507.html">Release Manifests: 1507</a>.</p>
+<p>Tutorials remain pinned to v1412 but will updated in coming weeks.</p>
 </div>
 </div>
 <p>The <code>minnie65_public</code> data release includes a number of annotation tables that help label the dataset. This section describes the content of each of these tables — <a href=".\quickstart_notebooks/em_py_02_cave_quickstart.html">see here for instructions for how to query and filter tables</a>.</p>
@@ -1548,7 +1548,7 @@ M-type Cell Type definitions
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1557,7 +1557,7 @@ Proofreading status at public release
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1616,7 +1616,20 @@ Important
 </tr>
 </tbody>
 </table>
-<p>This table is deprecated and superseded by <code>proofreading_status_and_strategy</code>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Deprecated table
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This table is deprecated, use <code>proofreading_status_and_strategy</code> instead.</p>
+</div>
+</div>
+<p>For archival analysis, use:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set version to 1078 or before</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1078</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1818,14 +1831,14 @@ Warning
 </section>
 <section id="functional-properties" class="level3">
 <h3 class="anchored" data-anchor-id="functional-properties">Functional properties</h3>
-<p>Table name: <code>functional_properties_v3_bcm</code></p>
-<p>A summary of the functional properties for each of the coregistered neurons (as of <code>coregistration_manual_v3</code>). For details, see <span class="citation" data-cites="ding_functional_2025">(<a href="#ref-ding_functional_2025" role="doc-biblioref">Ding et al. 2025</a>)</span></p>
+<p>Table name: <code>digital_twin_properties_bcm_coreg_v4</code></p>
+<p>A summary of the functional properties for each of the coregistered neurons using the coregistration information from: <code>coregistration_manual_v4</code>. For details, see <span class="citation" data-cites="wang_foundation_2025">(<a href="#ref-wang_foundation_2025" role="doc-biblioref">Wang et al. 2025</a>)</span> and <span class="citation" data-cites="ding_functional_2025">(<a href="#ref-ding_functional_2025" role="doc-biblioref">Ding et al. 2025</a>)</span>.</p>
 <p>The key columns are:</p>
 <table class="table-light table-hover caption-top table">
 <caption>Fuctional properties of coregistered neurons</caption>
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 37%">
+<col style="width: 62%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1835,32 +1848,24 @@ Warning
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>target_id</code></td>
-<td style="text-align: left;">Soma ID for the cell</td>
+<td style="text-align: left;"><code>cc_abs</code></td>
+<td style="text-align: left;">Test set performance of the digital twin model unit, higher is better</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
-<td style="text-align: left;">Bound spatial point columns associated with the centroid of the nucleus</td>
+<td style="text-align: left;"><code>cc_max</code></td>
+<td style="text-align: left;">Neuron variability score used to normalize digital twin model unit performance</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>session</code></td>
-<td style="text-align: left;">The session index from functional imaging</td>
+<td style="text-align: left;"><code>cc_norm</code></td>
+<td style="text-align: left;">Normalized model unit performance, higher is better</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>scan_idx</code></td>
-<td style="text-align: left;">The scan index from functional imaging</td>
+<td style="text-align: left;"><code>OSI</code></td>
+<td style="text-align: left;">orientation selectivity index</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>unit_id</code></td>
-<td style="text-align: left;">The functional unit index from imaging. Only unique within scan and session</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>pref_ori</code></td>
-<td style="text-align: left;">preferred orientation in radians (0 - pi), horizontal bar moving upward is 0 and orientation increases clockwise, extracted from model responses to oriented noise stimuli</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>pref_dir</code></td>
-<td style="text-align: left;">preferred direction in radians (0 - 2pi), horizontal bar moving upward is 0 and orientation increases clockwise, extracted from model responses to oriented noise stimuli</td>
+<td style="text-align: left;"><code>DSI</code></td>
+<td style="text-align: left;">direction selectivity index</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>gOSI</code></td>
@@ -1871,8 +1876,20 @@ Warning
 <td style="text-align: left;">global direction selectivity index</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>cc_abs</code></td>
-<td style="text-align: left;">prediction performance of the model, higher is better</td>
+<td style="text-align: left;"><code>pref_ori</code></td>
+<td style="text-align: left;">Preferred orientation in degrees (0 - 180), vertical bar moving right is 0 and orientation increases counter-clockwise</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>pref_dir</code></td>
+<td style="text-align: left;">Preferred direction in degrees (0 - 360), vertical bar moving right is 0 and orientation increases counter-clockwise</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>readout_loc_x</code></td>
+<td style="text-align: left;">X coordinate of the readout location, an approximation of receptive field center in stimulus space; (-1, -1) bottom-left, (1, 1) top-right</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>readout_loc_y</code></td>
+<td style="text-align: left;">Y coordinate of the readout location, an approximation of receptive field center in stimulus space; (-1, -1) bottom-left, (1, 1) top-right</td>
 </tr>
 </tbody>
 </table>
@@ -1903,10 +1920,25 @@ Warning
 </div>
 </div>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'functional_properties_v3_bcm'</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'digital_twin_properties_bcm_coreg_v4'</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.functional_properties_v3_bcm(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.digital_twin_properties_bcm_coreg_v4(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Merged to Automatic Coregistration</strong></p>
+<p>Table name: <code>digital_twin_properties_bcm_coreg_auto_phase3_fwd_v2</code></p>
+<p>Follows the same scheme as <code>digital_twin_properties_bcm_coreg_v4</code>, but uses the coregistration information from: <code>coregistration_auto_phase3_fwd_v2</code>.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'digital_twin_properties_bcm_coreg_auto_phase3_fwd_v2'</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.digital_twin_properties_bcm_coreg_auto_phase3_fwd_v2(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Table name: <code>digital_twin_properties_bcm_coreg_apl_vess_fwd</code></p>
+<p>Follows the same scheme as <code>digital_twin_properties_bcm_coreg_v4</code>, but uses the coregistration information from: <code>apl_functional_coreg_vess_fwd</code>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'digital_twin_properties_bcm_coreg_apl_vess_fwd'</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.digital_twin_properties_bcm_coreg_apl_vess_fwd(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="overview-of-relevant-tables" class="level2">
@@ -2020,6 +2052,9 @@ Elabbady, Leila, Sharmishtaa Seshamani, Shang Mu, Gayathri Mahalingam, Casey M. 
 </div>
 <div id="ref-schneider-mizell_inhibitory_2025" class="csl-entry" role="listitem">
 Schneider-Mizell, Casey M., Agnes L. Bodor, Derrick Brittain, JoAnn Buchanan, Daniel J. Bumbarger, Leila Elabbady, Clare Gamlin, et al. 2025. <span>“Inhibitory Specificity from a Connectomic Census of Mouse Visual Cortex.”</span> <em>Nature</em> 640 (8058): 448–58. <a href="https://doi.org/10.1038/s41586-024-07780-8">https://doi.org/10.1038/s41586-024-07780-8</a>.
+</div>
+<div id="ref-wang_foundation_2025" class="csl-entry" role="listitem">
+Wang, Eric Y., Paul G. Fahey, Zhuokun Ding, Stelios Papadopoulos, Kayla Ponder, Marissa A. Weis, Andersen Chang, et al. 2025. <span>“Foundation Model of Neural Activity Predicts Response to New Stimulus Types.”</span> <em>Nature</em> 640 (8058): 470–77. <a href="https://doi.org/10.1038/s41586-025-08829-y">https://doi.org/10.1038/s41586-025-08829-y</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -489,6 +489,7 @@ div.csl-indent {
   <li><a href="#lineage-graphs" id="toc-lineage-graphs" class="nav-link" data-scroll-target="#lineage-graphs">Lineage Graphs</a></li>
   <li><a href="#static-annotations" id="toc-static-annotations" class="nav-link" data-scroll-target="#static-annotations">Static annotations</a></li>
   </ul></li>
+  <li><a href="#access-archived-data-versions" id="toc-access-archived-data-versions" class="nav-link" data-scroll-target="#access-archived-data-versions">Access archived data versions</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/materialization-version.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -514,18 +515,18 @@ div.csl-indent {
 </header>
 
 
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Version update
+Archiving versions: v343, v661, v795
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This tutorial has recently been updated to materialization version 1412 (from 1300).</p>
-<p>We have released a new public version 1412, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1412.html">Release Manifests: 1412</a>.</p>
+<p>We have begun archiving release versions that are more 2 years old. All publicly released annotation data is available as a static download. See: <a href="materialization-version.html#access-archived-data-versions">Access archived data versions</a> for details.</p>
+<p>You can continue to access older versions of materialization and segmentation by setting the <code>timestamp</code> argument instead of a version argument. However, fully deprecated tables will no longer be queriable from CAVEclient.</p>
 </div>
 </div>
 <h3 class="anchored">
@@ -965,6 +966,7 @@ Wall time: 59.7 s</code></pre>
 </tr>
 </tbody>
 </table>
+<p><strong>Some fully deprecated tables can no longer be accesses from CAVEclient. See <a href="materialization-version.html#access-archived-data-versions">Access archived data versions</a> for details.</strong></p>
 </section>
 </section>
 <section id="how-to-cross-reference-across-time" class="level2">
@@ -1198,10 +1200,65 @@ If you are working with a neuron, glial cell, or any cell that has a nucleus det
 <h4 class="anchored">
 If you do use <code>pt_root_id</code>, be sure to note the dataset materialization version in your analysis.
 </h4>
-
-
-
 </section>
+</section>
+<section id="access-archived-data-versions" class="level2">
+<h2 class="anchored" data-anchor-id="access-archived-data-versions">Access archived data versions</h2>
+<p>As the MICrONS dataset matures, we are beginning to deactivate older materialization versions.</p>
+<p><strong>All publically released annotation data from these versions remains available</strong>, but only as static downloads.</p>
+<p>At this time we have allowed versions <a href="release_manifests/version-343.html">v343</a>, <a href="release_manifests/version-661.html">v661</a>, and <a href="release_manifests/version-795.html">v795</a> to expire. We will continue to archive and remove materializations at approximately <strong>2 years</strong> after their release.</p>
+<p>You can download all tables except the <code>synapses_pni_2</code> with the following:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install cloudfiles</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> cloudfiles <span class="im">import</span> CloudFiles</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> BytesIO</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> os.path <span class="im">import</span> join <span class="im">as</span> pjoin</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>base_path <span class="op">=</span> <span class="st">"gs://mat_dbs/public/minnie65_phase3_v1/"</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co"># given: table_name and materialization_version</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>table_name <span class="op">=</span> <span class="st">'nucleus_detection_v0'</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>materialization_version <span class="op">=</span> <span class="dv">661</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>cf <span class="op">=</span> CloudFiles(pjoin(base_path, <span class="ss">f"v</span><span class="sc">{</span>materialization_version<span class="sc">}</span><span class="ss">"</span>), use_https<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>df_data <span class="op">=</span> cf.get(<span class="ss">f"</span><span class="sc">{</span>table_name<span class="sc">}</span><span class="ss">_merged.csv.gz"</span>)</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>header_data <span class="op">=</span> cf.get(<span class="ss">f"</span><span class="sc">{</span>table_name<span class="sc">}</span><span class="ss">_merged_header.csv"</span>)</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> BytesIO(header_data) <span class="im">as</span> f:</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>    header <span class="op">=</span> pd.read_csv(f, header<span class="op">=</span><span class="va">None</span>, names<span class="op">=</span>[<span class="st">"column"</span>, <span class="st">"type"</span>])</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> header[<span class="st">"column"</span>].tolist()</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> BytesIO(df_data) <span class="im">as</span> f:</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(f, compression<span class="op">=</span><span class="st">"gzip"</span>, header<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>    df.columns <span class="op">=</span> columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To access the synapses table, we recommend directly downloading the following two files rather than streaming with <code>BytesIO</code>:</p>
+<table class="caption-top table">
+<caption>archived synapse tables</caption>
+<colgroup>
+<col style="width: 62%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Compressed .csv (20 GB)</td>
+<td style="text-align: left;"><code>https://storage.cloud.google.com/mat_dbs/public/minnie65_phase3_v1/{materialization_version} /synapses_pni_2_v1_filtered_view.csv.gz</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">.csv (0.5 KB)</td>
+<td style="text-align: left;"><code>https://storage.cloud.google.com/mat_dbs/public/minnie65_phase3_v1/{materialization_version} /synapses_pni_2_v1_filtered_view_header.csv</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">

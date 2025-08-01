@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>795 (Aug 2023) – MICrONs Tutorial</title>
+<title>1507 (Jul 2025) – MICrONs Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -123,7 +123,7 @@ div.csl-indent {
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="795 (Aug 2023) – MICrONs Tutorial">
+<meta property="og:title" content="1507 (Jul 2025) – MICrONs Tutorial">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="MICrONs Tutorial">
 </head>
@@ -201,7 +201,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1412.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-795.html">795 (Aug 2023)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">1507 (Jul 2025)</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -384,13 +384,13 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Release Manifests</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../release_manifests/version-1412.html" class="sidebar-item-text sidebar-link">
@@ -423,7 +423,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../release_manifests/version-795.html" class="sidebar-item-text sidebar-link active">
+  <a href="../release_manifests/version-795.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">795 (Aug 2023)</span></a>
   </div>
 </li>
@@ -471,33 +471,25 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#automated-cell-types" id="toc-automated-cell-types" class="nav-link active" data-scroll-target="#automated-cell-types">Automated Cell types</a>
+  <li><a href="#functional-digital-twin-properties" id="toc-functional-digital-twin-properties" class="nav-link active" data-scroll-target="#functional-digital-twin-properties">Functional digital twin properties</a>
   <ul class="collapse">
-  <li><a href="#soma-and-nucleus-model" id="toc-soma-and-nucleus-model" class="nav-link" data-scroll-target="#soma-and-nucleus-model">Soma and nucleus model</a></li>
-  <li><a href="#dendritic-features-and-connectivity-motifs" id="toc-dendritic-features-and-connectivity-motifs" class="nav-link" data-scroll-target="#dendritic-features-and-connectivity-motifs">Dendritic features and connectivity motifs</a></li>
-  <li><a href="#dendritic-features-and-connectivity-motifs-of-v1-column" id="toc-dendritic-features-and-connectivity-motifs-of-v1-column" class="nav-link" data-scroll-target="#dendritic-features-and-connectivity-motifs-of-v1-column">Dendritic features and connectivity motifs of V1 column</a></li>
+  <li><a href="#merged-to-manual-coregistration" id="toc-merged-to-manual-coregistration" class="nav-link" data-scroll-target="#merged-to-manual-coregistration">Merged to manual coregistration</a></li>
+  <li><a href="#merged-to-automatic-coregistration" id="toc-merged-to-automatic-coregistration" class="nav-link" data-scroll-target="#merged-to-automatic-coregistration">Merged to Automatic Coregistration</a></li>
   </ul></li>
-  <li><a href="#manual-cell-types" id="toc-manual-cell-types" class="nav-link" data-scroll-target="#manual-cell-types">Manual Cell types</a>
+  <li><a href="#vortex-efforts" id="toc-vortex-efforts" class="nav-link" data-scroll-target="#vortex-efforts">VORTEX Efforts</a>
   <ul class="collapse">
-  <li><a href="#manual-cell-typing-outside-v1-column" id="toc-manual-cell-typing-outside-v1-column" class="nav-link" data-scroll-target="#manual-cell-typing-outside-v1-column">manual cell typing outside V1 column</a></li>
+  <li><a href="#proofreading-status-and-strategy" id="toc-proofreading-status-and-strategy" class="nav-link" data-scroll-target="#proofreading-status-and-strategy">Proofreading Status and Strategy</a></li>
+  <li><a href="#vortex-proofread-neuromodulatory-axons" id="toc-vortex-proofread-neuromodulatory-axons" class="nav-link" data-scroll-target="#vortex-proofread-neuromodulatory-axons">VORTEX proofread neuromodulatory axons</a></li>
   </ul></li>
-  <li><a href="#publication-bodor-et-al." id="toc-publication-bodor-et-al." class="nav-link" data-scroll-target="#publication-bodor-et-al.">Publication: Bodor et al.</a>
-  <ul class="collapse">
-  <li><a href="#l5-extratelencephalic-cells" id="toc-l5-extratelencephalic-cells" class="nav-link" data-scroll-target="#l5-extratelencephalic-cells">L5 extratelencephalic cells</a></li>
-  <li><a href="#l5-pyramidal-tract-cells" id="toc-l5-pyramidal-tract-cells" class="nav-link" data-scroll-target="#l5-pyramidal-tract-cells">L5 pyramidal tract cells</a></li>
-  <li><a href="#targets-of-l5-pt-cells" id="toc-targets-of-l5-pt-cells" class="nav-link" data-scroll-target="#targets-of-l5-pt-cells">Targets of L5 PT cells</a></li>
-  <li><a href="#proofread-targets-of-l5-pt-cells" id="toc-proofread-targets-of-l5-pt-cells" class="nav-link" data-scroll-target="#proofread-targets-of-l5-pt-cells">Proofread targets of L5 PT cells</a></li>
-  </ul></li>
-  <li><a href="#count-of-cell-edits" id="toc-count-of-cell-edits" class="nav-link" data-scroll-target="#count-of-cell-edits">Count of cell edits</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-795.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-1507.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1412.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-795.html">795 (Aug 2023)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">795 (Aug 2023)</h1>
+<h1 class="title">1507 (Jul 2025)</h1>
 </div>
 
 
@@ -514,429 +506,192 @@ div.csl-indent {
 </header>
 
 
+<p>Data Release v1507 (July 31, 2025) is the third quarterly release of 2025.</p>
+<p>This version ADDS the following tables</p>
+<ul>
+<li><p><code>digital_twin_properties_bcm_coreg_v4</code>: Functional properties computed from the digital twin model <span class="citation" data-cites="wang_foundation_2025">(<a href="#ref-wang_foundation_2025" role="doc-biblioref">Wang et al. 2025</a>)</span> merged with <code>coregistration_manual_v4</code></p></li>
+<li><p><code>digital_twin_properties_bcm_coreg_auto_phase3_fwd_v2</code>: Functional properties computed from the digital twin model <span class="citation" data-cites="wang_foundation_2025">(<a href="#ref-wang_foundation_2025" role="doc-biblioref">Wang et al. 2025</a>)</span> merged with <code>coregistration_auto_phase3_fwd_v2</code></p></li>
+<li><p><code>digital_twin_properties_bcm_coreg_apl_vess_fwd</code>: Functional properties computed from the digital twin model <span class="citation" data-cites="wang_foundation_2025">(<a href="#ref-wang_foundation_2025" role="doc-biblioref">Wang et al. 2025</a>)</span> merged with <code>apl_functional_coreg_vess_fwd</code></p></li>
+<li><p><code>vortex_peptidergic_proofreading_status</code>: selected proofreading of putative neuromodulatory axons, distinguished by boutons with large secretory vesicles. Labeled as part of the VORTEX effort</p></li>
+</ul>
+<p>The following tables have updated status or entries, from VORTEX proofreading and annotations</p>
+<ul>
+<li><p><code>proofreading_status_and_strategy</code> (newly proofread cells and upgraded cell status)</p></li>
+<li><p><code>vortex_thalamic_proofreading_status</code> (newly proofread cells and upgraded cell status)</p></li>
+</ul>
+<p>The following tables from previous versions are included:</p>
+<ul>
+<li><code>synapses_pni_2</code> ( <a href="version-117.html">v117</a> )</li>
+<li><code>nucleus_detection_v0</code> ( <a href="version-117.html">v117</a> )</li>
+<li><code>allen_v1_column_types_slanted_ref</code>( <a href="version-661.html">v661</a> )</li>
+<li><code>aibs_column_nonneuronal_ref</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>baylor_log_reg_cell_type_coarse_v1</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>nucleus_alternative_points</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>allen_column_mtypes_v2</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>aibs_metamodel_celltypes_v661</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>aibs_metamodel_mtypes_v661_v2</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>l5et_column</code>, <code>bodor_pt_cells</code>, <code>bodor_pt_target_proofread</code>, and <code>pt_synapse_targets</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>functional_properties_v3_bcm</code> ( <a href="version-943.html">v943</a> )</li>
+<li><code>coregistration_manual_v4</code> ( <a href="version-943.html">v943</a> )</li>
+<li><code>apl_functional_coreg_vess_fwd</code> ( <a href="version-943.html">v943</a> )</li>
+<li><code>proofreading_status_and_strategy</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>vortex_astrocyte_proofreading_status</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>vortex_compartment_targets</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>vortex_manual_myelination_v0</code>, <code>vortex_manual_nodes_of_ranvier</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>nucleus_functional_area_assignment</code>( <a href="version-1078.html">v1078</a> )</li>
+<li><code>synapse_target_structure</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>synapse_target_predictions_ssa</code> ( <a href="version-1300.html">v1300</a> )</li>
+<li><code>coregistration_auto_phase3_fwd_apl_vess_combined_v2</code> ( <a href="version-1300.html">v1300</a> )</li>
+<li><code>coregistration_auto_phase3_fwd_v2</code> ( <a href="version-1300.html">v1300</a> )</li>
+<li><code>cg_cell_type_calls</code>, <code>gamlin_2023_mcs</code>, <code>gamlin_2023_mcs_met_types</code> ( <a href="version-1300.html">v1300</a> )</li>
+<li><code>vortex_thalamic_proofreading_status</code> ( <a href="version-1412.html">v1412</a> )</li>
+<li><code>multi_input_spine_predictions_ssa</code> ( <a href="version-1412.html">v1412</a> )</li>
+</ul>
+<p>The following tables have been REMOVED (removed tables still available in version 1412):</p>
+<ul>
+<li><code>functional_properties_v3_bcm</code> : removed and superseded by <code>digital_twin_properties_bcm_coreg_v4</code></li>
+</ul>
+<p>Information about the version 1507 release can be queried with the following:</p>
+<div id="d4b45ac1-201b-43af-9698-a13612b3a51d" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># report timestamp metadata on the version of interest</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client.materialize.get_version_metadata(<span class="dv">1507</span>)[<span class="st">'time_stamp'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>datetime.datetime(2025, 7, 31, 8, 10, 1, 117494, tzinfo=datetime.timezone.utc)</code></pre>
+</div>
+</div>
+<section id="functional-digital-twin-properties" class="level2">
+<h2 class="anchored" data-anchor-id="functional-digital-twin-properties">Functional digital twin properties</h2>
+<section id="merged-to-manual-coregistration" class="level3">
+<h3 class="anchored" data-anchor-id="merged-to-manual-coregistration">Merged to manual coregistration</h3>
+<p>Table name: <code>digital_twin_properties_bcm_coreg_v4</code></p>
+<p>A summary of the functional properties for each of the coregistered neurons using the coregistration information from: <code>coregistration_manual_v4</code>. For details, see <span class="citation" data-cites="wang_foundation_2025">(<a href="#ref-wang_foundation_2025" role="doc-biblioref">Wang et al. 2025</a>)</span> and <span class="citation" data-cites="ding_functional_2025">(<a href="#ref-ding_functional_2025" role="doc-biblioref">Ding et al. 2025</a>)</span>.</p>
+<p>The key columns are:</p>
+<table class="table-light table-hover caption-top table">
+<caption>Fuctional properties of coregistered neurons</caption>
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>cc_abs</code></td>
+<td style="text-align: left;">Test set performance of the digital twin model unit, higher is better</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cc_max</code></td>
+<td style="text-align: left;">Neuron variability score used to normalize digital twin model unit performance</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cc_norm</code></td>
+<td style="text-align: left;">Normalized model unit performance, higher is better</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>OSI</code></td>
+<td style="text-align: left;">orientation selectivity index</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>DSI</code></td>
+<td style="text-align: left;">direction selectivity index</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>gOSI</code></td>
+<td style="text-align: left;">global orientation selectivity index</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>gDSI</code></td>
+<td style="text-align: left;">global direction selectivity index</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pref_ori</code></td>
+<td style="text-align: left;">Preferred orientation in degrees (0 - 180), vertical bar moving right is 0 and orientation increases counter-clockwise</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>pref_dir</code></td>
+<td style="text-align: left;">Preferred direction in degrees (0 - 360), vertical bar moving right is 0 and orientation increases counter-clockwise</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>readout_loc_x</code></td>
+<td style="text-align: left;">X coordinate of the readout location, an approximation of receptive field center in stimulus space; (-1, -1) bottom-left, (1, 1) top-right</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>readout_loc_y</code></td>
+<td style="text-align: left;">Y coordinate of the readout location, an approximation of receptive field center in stimulus space; (-1, -1) bottom-left, (1, 1) top-right</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a reference table on <code>nucleus_detection_v0</code>, and can be indexed by the same nucleus id.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Archiving versions: v343, v661, v795
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We have begun archiving release versions that are more 2 years old. All publicly released annotation data is available as a static download. See: <a href="../static-repositories.html#archived-data-tables">Access archived data versions</a> for details.</p>
-</div>
-</div>
-<p>Data Release v795 (August 23, 2023) is the first quarterly release of 2024.</p>
-<p>This version ADDS the following tables</p>
-<ul>
-<li><p><code>aibs_metamodel_celltypes_v661</code> : Cell type prediction from the soma and nucleus model</p></li>
-<li><p><code>aibs_metamodel_mtypes_v661_v2</code> and <code>allen_column_mtypes_v2</code> : Cell type prediction from dendritic features and connectivity motifs</p></li>
-<li><p><code>allen_minnie_extra_types</code> :</p></li>
-<li><p><code>l5et_column</code>, <code>bodor_pt_cells</code>, <code>bodor_pt_target_proofread</code>, and <code>pt_synapse_targets</code> : tables associated with <span class="citation" data-cites="bodor_agnes_l_synaptic_2023">(<a href="#ref-bodor_agnes_l_synaptic_2023" role="doc-biblioref">Bodor, Agnes L. et al. 2023</a>)</span>.</p></li>
-<li><p><code>cell_edits_v661</code> : a count of the number of edits associated with each nucleus, as of version 661</p></li>
-</ul>
-<p>The following tables from previous versions are included:</p>
-<ul>
-<li><code>synapses_pni_2</code> ( <a href="version-117.html">v117</a> )</li>
-<li><code>nucleus_detection_v0</code> ( <a href="version-117.html">v117</a> )</li>
-<li><code>aibs_soma_nuc_metamodel_preds_v117</code> ( <a href="version-343.html">v343</a> )</li>
-<li><code>proofreading_status_public_release</code> ( <a href="version-343.html">v343</a> )</li>
-<li><code>allen_v1_column_types_slanted_ref</code>( <a href="version-661.html">v661</a> )</li>
-<li><code>aibs_column_nonneuronal_ref</code> ( <a href="version-661.html">v661</a> )</li>
-<li><code>aibs_soma_nuc_exc_mtype_preds_v117</code> ( <a href="version-661.html">v661</a> )</li>
-<li><code>allen_column_mtypes_v1</code> ( <a href="version-661.html">v661</a> )</li>
-<li><code>apl_functional_coreg_forward_v5</code> ( <a href="version-661.html">v661</a> )</li>
-<li><code>baylor_gnn_cell_type_fine_model_v2</code> ( <a href="version-661.html">v661</a> )</li>
-<li><code>baylor_log_reg_cell_type_coarse_v1</code> ( <a href="version-661.html">v661</a> )</li>
-<li><code>coregistration_manual_v3</code> ( <a href="version-661.html">v661</a> )</li>
-<li><code>nucleus_alternative_points</code> ( <a href="version-661.html">v661</a> )</li>
-<li><code>nucleus_ref_neuron_svm</code> ( <a href="version-661.html">v661</a> )</li>
-</ul>
-<p>The following tables have been REMOVED (removed tables still available in version 661):</p>
-<ul>
-<li><code>connectivity_groups_v507</code></li>
-</ul>
-<div id="d41839aa-cfd2-4069-b1c6-aff899f482ac" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># report timestamp metadata on the version of interest</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client.materialize.get_version_metadata(<span class="dv">795</span>)[<span class="st">'time_stamp'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>datetime.datetime(2023, 8, 23, 8, 10, 1, 404268, tzinfo=datetime.timezone.utc)</code></pre>
-</div>
-</div>
-<section id="automated-cell-types" class="level2">
-<h2 class="anchored" data-anchor-id="automated-cell-types">Automated Cell types</h2>
-<section id="soma-and-nucleus-model" class="level3">
-<h3 class="anchored" data-anchor-id="soma-and-nucleus-model">Soma and nucleus model</h3>
-<p>Table name: <code>aibs_metamodel_celltypes_v661</code></p>
-<p>This table contains the results of a hierarchical classifier trained on features of the cell body and nucleus of cells. This was applied to most cells in the dataset that had complete cell bodies (e.g.&nbsp;not cut off by the edge of the data), detected by <code>nucleus_detection_v0</code>, with small-objects and multi-soma errors removed. The model was run with cell-based features as of version 661 of the dataset. For more details, see <span class="citation" data-cites="elabbady_perisomatic_2025">(<a href="#ref-elabbady_perisomatic_2025" role="doc-biblioref">Elabbady et al. 2025</a>)</span>. In general, this does a good job, but sometimes confuses layer 5 inhibitory neurons as being excitatory:</p>
-<p>The key columns are:</p>
-<table class="table-light table-hover caption-top table">
-<caption>AIBS Soma Nuc Metamodel Table</caption>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">Soma ID for the cell</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
-<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>classification-system</code></td>
-<td style="text-align: left;">One of <code>excitatory_neuron</code> or <code>inhibitory_neuron</code> for detected neurons, or <code>nonneuron</code> for non-neurons (glia/pericytes).</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>cell_type</code></td>
-<td style="text-align: left;">One of several cell types, detailed below</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is a reference table on <code>nucleus_detection_v0</code>, and can be indexed by the same nucleus id.</p>
-</div>
-</div>
-<p>The cell types in the table are:</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Soma Nuc Metamodel Cell types
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<table class="table-light table-hover caption-top table">
-<caption>AIBS Soma Nuc Metamodel: Cell Type definitions</caption>
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Cell Type</th>
-<th style="text-align: left;">Subclass</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>23P</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">Layer 2/3 cells</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>4P</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">Layer 4 cells</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>5P-IT</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">Layer 5 <strong>i</strong>ntra<strong>t</strong>elencephalic cells</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>5P-ET</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">Layer 5 <strong>e</strong>xtra<strong>t</strong>elencephalic cells</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>5P-NP</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">Layer 5 near-projecting cells</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>6P-IT</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">Layer 6 <strong>i</strong>ntra<strong>t</strong>elencephalic cells</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>6P-CT</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">Layer 6 <strong>c</strong>ortico<strong>t</strong>halamic cells</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>BC</code></td>
-<td style="text-align: left;">Inhibitory</td>
-<td style="text-align: left;">Basket cell</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>BPC</code></td>
-<td style="text-align: left;">Inhibitory</td>
-<td style="text-align: left;">Bipolar cell. <em>In practice, this was used for all cells thought to be VIP cell, not only those with a bipolar dendrite</em></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>MC</code></td>
-<td style="text-align: left;">Inhibitory</td>
-<td style="text-align: left;">Martinotti cell. <em>In practice, this label was used for all inhibitory neurons that appeared to be Somatostatin cell, not only those with a Martinotti cell morphology</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>NGC</code></td>
-<td style="text-align: left;">Inhibitory</td>
-<td style="text-align: left;">Neurogliaform cell. <em>In practice, this label also is used for all inhibitory neurons in layer 1, many of which may not be neurogliaform cells although they might be in the same molecular family</em></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>OPC</code></td>
-<td style="text-align: left;">Non-neuronal</td>
-<td style="text-align: left;">Oligodendrocyte precursor cell</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>astrocyte</code></td>
-<td style="text-align: left;">Non-neuronal</td>
-<td style="text-align: left;">Astrocyte</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>microglia</code></td>
-<td style="text-align: left;">Non-neuronal</td>
-<td style="text-align: left;">Microglia</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>pericyte</code></td>
-<td style="text-align: left;">Non-neuronal</td>
-<td style="text-align: left;">Pericyte</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>oligo</code></td>
-<td style="text-align: left;">Non-neuronal</td>
-<td style="text-align: left;">Oligodendrocyte</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>This table includes duplicate entries for the same ‘pt_root_id’ and nucleus id if the coregistered cell has multiple unit recordings</p>
 </div>
 </div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'aibs_metamodel_celltypes_v661'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'digital_twin_properties_bcm_coreg_v4'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.aibs_metamodel_celltypes_v661(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For more on how to interpret the table, see <a href="../annotation-tables.html">Annotation Tables</a>.</p>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.digital_twin_properties_bcm_coreg_v4(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="dendritic-features-and-connectivity-motifs" class="level3">
-<h3 class="anchored" data-anchor-id="dendritic-features-and-connectivity-motifs">Dendritic features and connectivity motifs</h3>
-<p>Table name: <code>aibs_metamodel_mtypes_v661_v2</code></p>
-<p>Excitatory neurons and inhibitory neurons were distinguished with the soma-nucleus model <span class="citation" data-cites="elabbady_perisomatic_2025">(<a href="#ref-elabbady_perisomatic_2025" role="doc-biblioref">Elabbady et al. 2025</a>)</span>, and subclasses were assigned based on a data-driven clustering of the neuronal features. Inhibitory neurons were classified based on how they distributed they synaptic outputs onto target cells, while exictatory neurons were classified based on a collection of dendritic features.</p>
-<p>This was applied to most detected neurons in the dataset that had complete cell bodies (e.g.&nbsp;not cut off by the edge of the data), detected by <code>nucleus_detection_v0</code>, with small-objects and multi-soma errors removed. The model was run with cell-based features as of version 661 of the dataset.For more details, see <span class="citation" data-cites="schneider-mizell_inhibitory_2025">(<a href="#ref-schneider-mizell_inhibitory_2025" role="doc-biblioref">Schneider-Mizell et al. 2025</a>)</span>.</p>
-<p>Note that all cell-type labels in this table come from a clustering specific to this paper, and while they are intended to align with the broader literature they are not a direct mapping or a well-established convention.</p>
-<p>For a more conventional set of labels on the same set of cells, look at the manual table <code>allen_v1_column_types_slanted_ref</code>. Cell types in that table align with those in the <code>aibs_metamodel_celltypes_v661</code>.</p>
-<p>The key columns are:</p>
-<table class="table-light table-hover caption-top table">
-<caption>Allen Motif-type (mtype) Table</caption>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">Soma ID for the cell</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
-<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>classification-system</code></td>
-<td style="text-align: left;"><code>excitatory</code> or <code>inhibitory</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>cell_type</code></td>
-<td style="text-align: left;">One of several cell types, detailed below</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is a reference table on <code>nucleus_detection_v0</code>, and can be indexed by the same nucleus id.</p>
-</div>
-</div>
-<p>The cell types in the table are:</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-M-type Cell Type definitions
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Cell Type</th>
-<th style="text-align: left;">Subclass</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>L2a</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of layer 2 (upper layer 2/3) excitatory neurons</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>L2b</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of layer 2 (upper layer 2/3) excitatory neurons</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>L3a</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of excitatory neurons transitioning between upper and lower layer 2/3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>L3b</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of layer 3 (upper layer 2/3) excitatory neurons</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>L3c</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of layer 3 (upper layer 2/3) excitatory neurons</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>L4a</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">The largest cluster of layer 4 excitatory neurons</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>L4b</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">Another cluster of layer 4 excitatory neurons</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>L4c</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of layer 4 excitatory neurons along the border with layer 5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>L5a</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of layer 5 IT neurons at the top of layer 5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>L5b</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of layer 5 IT neurons throughout layer 5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>L5ET</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">The cluster of layer 5 ET neurons</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>L5NP</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">The cluster of layer 5 NP neurons</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>L6a</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of layer 6 IT neurons at the top of layer 6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>L6b</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of layer 6 IT neurons throughout layer 6. <em>Note that this is different than the label “Layer 6b” which refers to a narrow band at the border between layer 6 and white matter</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>L6c</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of tall layer 6 cells (unsure if IT or CT)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>L6CT</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of tall layer 6 cells matching manual CT labels</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>L6wm</code></td>
-<td style="text-align: left;">Excitatory</td>
-<td style="text-align: left;">A cluster of layer 6 cells along the border with white matter</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>PTC</code></td>
-<td style="text-align: left;">Inhibitory</td>
-<td style="text-align: left;">Perisomatic targeting cells, a cluster of inhibitory neurons that target the soma and proximal dendrites of excitatory neurons. Approximately corresponds to <strong>basket cell</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>DTC</code></td>
-<td style="text-align: left;">Inhibitory</td>
-<td style="text-align: left;">Dendrite targeting cells, a cluster of inhibitory neurons that target the distal dendrites of excitatory neurons. Most <strong>SST cells</strong> would be DTC</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>STC</code></td>
-<td style="text-align: left;">Inhibitory</td>
-<td style="text-align: left;">Sparsely targeting cells, a cluster of inhibitory neurons that don’t concentrate multiple synapses onto the same target neurons. Many <strong>neurogliaform cells</strong> and layer 1 interneurons fall into this category</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>ITC</code></td>
-<td style="text-align: left;">Inhibitory</td>
-<td style="text-align: left;">Inhibitory targeting cells, a cluster of inhibitory neurons that preferntially target other inhibitory neurons. Most <strong>VIP cells</strong> would be ITCs</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
+<section id="merged-to-automatic-coregistration" class="level3">
+<h3 class="anchored" data-anchor-id="merged-to-automatic-coregistration">Merged to Automatic Coregistration</h3>
+<p>Table name: <code>digital_twin_properties_bcm_coreg_auto_phase3_fwd_v2</code></p>
+<p>Follows the same scheme as <code>digital_twin_properties_bcm_coreg_v4</code>, but uses the coregistration information from: <code>coregistration_auto_phase3_fwd_v2</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'aibs_metamodel_mtypes_v661_v2'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'digital_twin_properties_bcm_coreg_auto_phase3_fwd_v2'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.aibs_metamodel_mtypes_v661_v2(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.digital_twin_properties_bcm_coreg_auto_phase3_fwd_v2(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Table name: <code>digital_twin_properties_bcm_coreg_apl_vess_fwd</code></p>
+<p>Follows the same scheme as <code>digital_twin_properties_bcm_coreg_v4</code>, but uses the coregistration information from: <code>apl_functional_coreg_vess_fwd</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'digital_twin_properties_bcm_coreg_apl_vess_fwd'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.digital_twin_properties_bcm_coreg_apl_vess_fwd(<span class="bu">id</span><span class="op">=</span>example_nucleus_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="dendritic-features-and-connectivity-motifs-of-v1-column" class="level3">
-<h3 class="anchored" data-anchor-id="dendritic-features-and-connectivity-motifs-of-v1-column">Dendritic features and connectivity motifs of V1 column</h3>
-<p>Table name: <code>allen_column_mtypes_v2</code></p>
-<p>This table contains the anatomical cell type clusters (m-types) for the Minnie columnar sample described in <span class="citation" data-cites="schneider-mizell_inhibitory_2025">(<a href="#ref-schneider-mizell_inhibitory_2025" role="doc-biblioref">Schneider-Mizell et al. 2025</a>)</span>.</p>
+</section>
+<section id="vortex-efforts" class="level2">
+<h2 class="anchored" data-anchor-id="vortex-efforts">VORTEX Efforts</h2>
+<section id="proofreading-status-and-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="proofreading-status-and-strategy">Proofreading Status and Strategy</h3>
+<p>Table name: <code>proofreading_status_and_strategy</code></p>
+<p>The table <code>proofreading_status_and_strategy</code> describes the status of cells that have undergone manual proofreading.</p>
+<p>Because of the inherent difference in the difficulty and time required for different kinds of proofreading, we describe the status of axons and dendrites separately.</p>
+<p>Each compartment <code>status</code> may be either:</p>
+<ul>
+<li><code>FALSE</code>: indicates no comprehensive proofreading has been performed, or is not applicable.<br>
+</li>
+<li><code>TRUE</code>: indicates that false merges have been comprehensively removed, and the compartment is at least ‘clean’. Consult the <code>strategy</code> column if completeness of the compartment is relevant to your research.</li>
+</ul>
+<p>An axon or dendrite labeled as <code>status=TRUE</code> can be trusted to be correct, but may not be complete. The degree of completion can be read from the <code>strategy</code> column. For more information, please see <a href="../em_03_proofreading.html">Proofreading and Data Quality</a>; or also the <a href="https://www.microns-explorer.org/manifests/mm3-proofreading">microns-explorer page on proofreading strategies</a>.</p>
 <p>The key columns are:</p>
 <table class="table-light table-hover caption-top table">
-<caption>Allen Motif-type (mtype) Table</caption>
+<caption>Proofreading Status Table</caption>
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -957,84 +712,87 @@ M-type Cell Type definitions
 <td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>classification-system</code></td>
-<td style="text-align: left;"><code>excitatory</code> or <code>inhibitory</code></td>
+<td style="text-align: left;"><code>valid_id</code></td>
+<td style="text-align: left;">The root id of the neuron when it the proofreading assessment was made. <em>NOTE: if this does not match the <code>pt_root_id</code> then the cell has undergone further changes. This is usually and improvement in proofreading, but proceed with caution.</em></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>cell_type</code></td>
-<td style="text-align: left;">One of several cell types, detailed in the reference</td>
+<td style="text-align: left;"><code>status_dendrite</code></td>
+<td style="text-align: left;">The status of the dendrite proofreading. May be <code>TRUE</code> or <code>FALSE</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>status_axon</code></td>
+<td style="text-align: left;">The status of the axon proofreading. May be <code>TRUE</code> or <code>FALSE</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>strategy_dendrite</code></td>
+<td style="text-align: left;">The strategy employed to proofread the dendrite. See strategy table below for details</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>strategy_axon</code></td>
+<td style="text-align: left;">The strategy employed to proofread the axon. See strategy table below for details</td>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Consider using <code>aibs_metamodel_mtypes_v661_v2</code> instead, which is the same model run across the entire dataset.</p>
-</div>
-</div>
-<p>For more on how to interpret the table, see <a href="../annotation-tables.html">Annotation Tables</a>.</p>
-</section>
-</section>
-<section id="manual-cell-types" class="level2">
-<h2 class="anchored" data-anchor-id="manual-cell-types">Manual Cell types</h2>
-<section id="manual-cell-typing-outside-v1-column" class="level3">
-<h3 class="anchored" data-anchor-id="manual-cell-typing-outside-v1-column">manual cell typing outside V1 column</h3>
-<p>Table name: <code>allen_minnie_extra_types</code></p>
-<p>This is a table to store extra manual cell typing that the Allen Insitute has done outside the column, in relation to several papers including: <span class="citation" data-cites="elabbady_perisomatic_2025">(<a href="#ref-elabbady_perisomatic_2025" role="doc-biblioref">Elabbady et al. 2025</a>)</span>, <span class="citation" data-cites="schneider-mizell_inhibitory_2025">(<a href="#ref-schneider-mizell_inhibitory_2025" role="doc-biblioref">Schneider-Mizell et al. 2025</a>)</span>, <span class="citation" data-cites="gamlin_connectomics_2025">(<a href="#ref-gamlin_connectomics_2025" role="doc-biblioref">Gamlin et al. 2025</a>)</span>, and <span class="citation" data-cites="bodor_agnes_l_synaptic_2023">(<a href="#ref-bodor_agnes_l_synaptic_2023" role="doc-biblioref">Bodor, Agnes L. et al. 2023</a>)</span>.</p>
+<p>The specific strategies are as follows (and will update over time):</p>
+<section id="proofreading-strategies" class="level4">
+<h4 class="anchored" data-anchor-id="proofreading-strategies">Proofreading Strategies</h4>
 <table class="table-light table-hover caption-top table">
-<caption>Allen Extra Manual Cell Types Table</caption>
+<caption>Proofreading Strategy Table</caption>
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 25%">
+<col style="width: 75%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Strategy</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
-<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+<td style="text-align: left;"><code>none</code></td>
+<td style="text-align: left;">No cleaning, and no extension. Indicates an entry in <code>proofreading_status</code> that is <code>FALSE</code> for that compartment</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>classification-system</code></td>
-<td style="text-align: left;"><code>aibs_coarse_neuronal,</code>aibs_coarse_excitatory<code>, 'aibs_coarse_excitatory,</code>aibs_coarse_inhibitory<code>|  |</code>cell_type<code>| One of several cell types, depending on the</code>classification-system`</td>
+<td style="text-align: left;"><code>dendrite_clean</code></td>
+<td style="text-align: left;">The dendrite had incorrectly-merged axon and dendritic segments comprehensively removed, meaning the input synapses are accurate. The dendrite may be incorrectly truncated by segmentation error. Not all dendrite tips have been checked for extension. No comprehensive attempt was made to re-attach spine heads.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>dendrite_extended</code></td>
+<td style="text-align: left;">The dendrite had incorrectly-merged axon and dendritic segments comprehensively removed, meaning the input synapses are accurate. Every tip was identified, manually inspected, and extended if possible. No comprehensive attempt was made to re-attach spine heads.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>axon_column_truncated</code></td>
+<td style="text-align: left;">AThe axon was extended within the V1 cortical column, with a preference for local connections. In some cases the axon was cut at the column boundary and/or the layer boundary, especially the boundary between layers 2/3 and layer 4. Output synapses represent a sampling of potential partners</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>axon_interareal</code></td>
+<td style="text-align: left;">The axon was extended with a preference for branches that projected to other brain areas. Some axon branches were fully extended, but local connections may be incomplete. Output synapses represent a sampling of potential partners.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>axon_partially_extended</code></td>
+<td style="text-align: left;">The axon was extended outward from the soma, following each branch to its termination. Output synapses represent a sampling of potential partners.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>axon_fully_extended</code></td>
+<td style="text-align: left;">Axon was extended outward from the soma, following each branch to its termination. After initial extension, every endpoint was identified, manually inspected, and extended again if possible. Output synapses represent a largely complete sampling of partners.</td>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This working table is only available from materialization version 795</p>
-</div>
-</div>
+<p>This table, <code>proofreading_status_and_strategy</code>, supercedes <code>proofreading_status_public_release</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'proofreading_status_and_strategy'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="publication-bodor-et-al." class="level2">
-<h2 class="anchored" data-anchor-id="publication-bodor-et-al.">Publication: Bodor et al.</h2>
-<section id="l5-extratelencephalic-cells" class="level3">
-<h3 class="anchored" data-anchor-id="l5-extratelencephalic-cells">L5 extratelencephalic cells</h3>
-<p>Table name: <code>l5et_column</code></p>
-<p>All the Layer 5 extratelencephalic cells in the V1 column used for <span class="citation" data-cites="bodor_agnes_l_synaptic_2023">(<a href="#ref-bodor_agnes_l_synaptic_2023" role="doc-biblioref">Bodor, Agnes L. et al. 2023</a>)</span></p>
+<section id="vortex-proofread-neuromodulatory-axons" class="level3">
+<h3 class="anchored" data-anchor-id="vortex-proofread-neuromodulatory-axons">VORTEX proofread neuromodulatory axons</h3>
+<p>Table name: <code>vortex_peptidergic_proofreading_status</code></p>
+<p>This table reports the status of a manually selected subset of putative neuromodulatory axons, distinguished by boutons with large secretory vesicles. Labeled as part of the as part of the <a href="../vortex-overview.html">VORTEX project</a>.</p>
 <p>The key columns are:</p>
-<table class="table-light table-hover caption-top table">
-<caption>Bodor et al.&nbsp;L5ET</caption>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -1052,7 +810,15 @@ Tip
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
-<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+<td style="text-align: left;">Bound spatial point columns associated with a representative point of axon</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>status</code></td>
+<td style="text-align: left;">One of ‘non’ indicating no cleaning or extension; ‘clean’ indicating synapses can be trusted but may not be complete; ‘extended’ meaning all end points visited and extended to completion</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>valid_id</code></td>
+<td style="text-align: left;">The root id of the axon when it the proofreading assessment was made</td>
 </tr>
 </tbody>
 </table>
@@ -1066,207 +832,27 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is a reference table on <code>nucleus_detection_v0</code>, and can be indexed by the same nucleus id.</p>
+<p>Axons in this table that are complete and <code>extended</code> are also posted to <code>proofreading_status_and_strategy</code> with strategy: <code>axon_fully_extended</code> and <code>dendrite_none</code>.</p>
 </div>
 </div>
-</section>
-<section id="l5-pyramidal-tract-cells" class="level3">
-<h3 class="anchored" data-anchor-id="l5-pyramidal-tract-cells">L5 pyramidal tract cells</h3>
-<p>Table name: <code>bodor_pt_cells</code></p>
-<p>Pyramidal tract Layer 5 cells used for <span class="citation" data-cites="bodor_agnes_l_synaptic_2023">(<a href="#ref-bodor_agnes_l_synaptic_2023" role="doc-biblioref">Bodor, Agnes L. et al. 2023</a>)</span></p>
-<p>The key columns are:</p>
-<table class="table-light table-hover caption-top table">
-<caption>Bodor et al.&nbsp;L5PT</caption>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
-<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>classification-system</code></td>
-<td style="text-align: left;">is <code>layer5_pt</code> for all entries in the table</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>cell_type</code></td>
-<td style="text-align: left;">brain area of the cell body, one of: primary visual cortex <code>v1</code> or higher visual areas <code>hva</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="targets-of-l5-pt-cells" class="level3">
-<h3 class="anchored" data-anchor-id="targets-of-l5-pt-cells">Targets of L5 PT cells</h3>
-<p>Table name: <code>pt_synapse_targets</code></p>
-<p>Target classification of a subset of downstream synaptic partners of PT cells in the <code>bodor_pt_cells table</code>, used for <span class="citation" data-cites="bodor_agnes_l_synaptic_2023">(<a href="#ref-bodor_agnes_l_synaptic_2023" role="doc-biblioref">Bodor, Agnes L. et al. 2023</a>)</span>.</p>
-<p>The key columns are:</p>
-<table class="table-light table-hover caption-top table">
-<caption>Bodor et al.&nbsp;L5PT Targets</caption>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">Soma ID for the cell</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
-<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>classification-system</code></td>
-<td style="text-align: left;">One of <code>excitatory</code>, <code>inhibitory</code>, <code>error</code>.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>cell_type</code></td>
-<td style="text-align: left;">Subclass label or <code>none</code></td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is a reference table on <code>synapses_pni_2</code>, and can be indexed by the same synapse id.</p>
-</div>
-</div>
-</section>
-<section id="proofread-targets-of-l5-pt-cells" class="level3">
-<h3 class="anchored" data-anchor-id="proofread-targets-of-l5-pt-cells">Proofread targets of L5 PT cells</h3>
-<p>Table name: <code>bodor_pt_target_proofread</code></p>
-<p>A proofread collection of numerically strong BC and MC targets downstream of the L5-ET cells in the <code>bodor_pt_cells table</code>, used for <span class="citation" data-cites="bodor_agnes_l_synaptic_2023">(<a href="#ref-bodor_agnes_l_synaptic_2023" role="doc-biblioref">Bodor, Agnes L. et al. 2023</a>)</span>.</p>
-<p>The key columns are:</p>
-<table class="table-light table-hover caption-top table">
-<caption>Bodor et al.&nbsp;L5PT Targets, proofread</caption>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">Soma ID for the cell</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
-<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>classification-system</code></td>
-<td style="text-align: left;"><code>proofread_inhib_target</code> for all entries.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>cell_type</code></td>
-<td style="text-align: left;">Inhibitory subclass, one of: <code>BC</code> or <code>MC</code></td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is a reference table on <code>nucleus_neuron_svm</code>, and can be indexed by the same nucleus id.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="count-of-cell-edits" class="level2">
-<h2 class="anchored" data-anchor-id="count-of-cell-edits">Count of cell edits</h2>
-<p>Table name: <code>cell_edits_v661</code></p>
-<p>A count of how many proofreading edits were made to each cell, one entry for every nucleus that had a valid id, calculated at v661.</p>
-<p>The key columns of are:</p>
-<table class="table-light table-hover caption-top table">
-<caption>Cell edit at v661</caption>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">Soma ID for the cell</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
-<td style="text-align: left;">Bound spatial point columns associated with the centroid of the nucleus</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>group_id</code></td>
-<td style="text-align: left;">The number of edits at v661</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is a reference table on <code>nucleus_detection_v0</code>, and can be indexed by the same nucleus id.</p>
-<p>This working table is only available from materialization version 795</p>
-</div>
-</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_peptidergic_proofreading_status'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_peptidergic_proofreading_status(status<span class="op">=</span><span class="st">'extended'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For more on how to interpret the table, see <a href="../annotation-tables.html">Annotation Tables</a></p>
 
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-bodor_agnes_l_synaptic_2023" class="csl-entry" role="listitem">
-Bodor, Agnes L., Schneider-Mizell, Casey M., Zhang, Chi, Elabbady, Leila, Mallen, Alex, Bergeson, Andi, Brittain, Derrick, et al. 2023. <span>“The Synaptic Architecture of Layer 5 Thick Tufted Excitatory Neurons in the Visual Cortex of Mice.”</span> <span>bioRxiv</span>. <a href="https://doi.org/10.1101/2023.10.18.562531">https://doi.org/10.1101/2023.10.18.562531</a>.
+<div id="ref-ding_functional_2025" class="csl-entry" role="listitem">
+Ding, Zhuokun, Paul G. Fahey, Stelios Papadopoulos, Eric Y. Wang, Brendan Celii, Christos Papadopoulos, Andersen Chang, et al. 2025. <span>“Functional Connectomics Reveals General Wiring Rule in Mouse Visual Cortex.”</span> <em>Nature</em> 640 (8058): 459–69. <a href="https://doi.org/10.1038/s41586-025-08840-3">https://doi.org/10.1038/s41586-025-08840-3</a>.
 </div>
-<div id="ref-elabbady_perisomatic_2025" class="csl-entry" role="listitem">
-Elabbady, Leila, Sharmishtaa Seshamani, Shang Mu, Gayathri Mahalingam, Casey M. Schneider-Mizell, Agnes L. Bodor, J. Alexander Bae, et al. 2025. <span>“Perisomatic Ultrastructure Efficiently Classifies Cells in Mouse Cortex.”</span> <em>Nature</em> 640 (8058): 478–86. <a href="https://doi.org/10.1038/s41586-024-07765-7">https://doi.org/10.1038/s41586-024-07765-7</a>.
-</div>
-<div id="ref-gamlin_connectomics_2025" class="csl-entry" role="listitem">
-Gamlin, Clare R., Casey M. Schneider-Mizell, Matthew Mallory, Leila Elabbady, Nathan Gouwens, Grace Williams, Alice Mukora, et al. 2025. <span>“Connectomics of Predicted Sst Transcriptomic Types in Mouse Visual Cortex.”</span> <em>Nature</em> 640 (8058): 497–505. <a href="https://doi.org/10.1038/s41586-025-08805-6">https://doi.org/10.1038/s41586-025-08805-6</a>.
-</div>
-<div id="ref-schneider-mizell_inhibitory_2025" class="csl-entry" role="listitem">
-Schneider-Mizell, Casey M., Agnes L. Bodor, Derrick Brittain, JoAnn Buchanan, Daniel J. Bumbarger, Leila Elabbady, Clare Gamlin, et al. 2025. <span>“Inhibitory Specificity from a Connectomic Census of Mouse Visual Cortex.”</span> <em>Nature</em> 640 (8058): 448–58. <a href="https://doi.org/10.1038/s41586-024-07780-8">https://doi.org/10.1038/s41586-024-07780-8</a>.
+<div id="ref-wang_foundation_2025" class="csl-entry" role="listitem">
+Wang, Eric Y., Paul G. Fahey, Zhuokun Ding, Stelios Papadopoulos, Kayla Ponder, Marissa A. Weis, Andersen Chang, et al. 2025. <span>“Foundation Model of Neural Activity Predicts Response to New Stimulus Types.”</span> <em>Nature</em> 640 (8058): 470–77. <a href="https://doi.org/10.1038/s41586-025-08829-y">https://doi.org/10.1038/s41586-025-08829-y</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1694,7 +1280,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-795.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-1507.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

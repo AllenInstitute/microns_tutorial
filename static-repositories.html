@@ -510,6 +510,12 @@ div.csl-indent {
   <li><a href="#example-load-cell-with-known-nucleus-id-and-segment-id" id="toc-example-load-cell-with-known-nucleus-id-and-segment-id" class="nav-link" data-scroll-target="#example-load-cell-with-known-nucleus-id-and-segment-id">Example: load cell with known nucleus id and segment id</a></li>
   </ul></li>
   <li><a href="#neuron-skeletons-v1300" id="toc-neuron-skeletons-v1300" class="nav-link" data-scroll-target="#neuron-skeletons-v1300">Neuron Skeletons (v1300)</a></li>
+  <li><a href="#archived-data-tables" id="toc-archived-data-tables" class="nav-link" data-scroll-target="#archived-data-tables">Archived data tables</a>
+  <ul class="collapse">
+  <li><a href="#tables-available-from-version-343" id="toc-tables-available-from-version-343" class="nav-link" data-scroll-target="#tables-available-from-version-343">Tables available from version 343</a></li>
+  <li><a href="#tables-available-from-version-661" id="toc-tables-available-from-version-661" class="nav-link" data-scroll-target="#tables-available-from-version-661">Tables available from version 661</a></li>
+  <li><a href="#tables-available-from-version-795" id="toc-tables-available-from-version-795" class="nav-link" data-scroll-target="#tables-available-from-version-795">Tables available from version 795</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/static-repositories.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -535,6 +541,19 @@ div.csl-indent {
 </header>
 
 
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Archiving versions: v343, v661, v795
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We have begun archiving release versions that are more 2 years old. All publicly released annotation data is available as a static download. See: <a href="static-repositories.html#archived-data-tables">Access archived data versions</a> for details.</p>
+</div>
+</div>
 <section id="imagery" class="level2">
 <h2 class="anchored" data-anchor-id="imagery">Imagery</h2>
 <section id="electron-microscopy-images" class="level3">
@@ -1584,9 +1603,279 @@ Important
 </tbody>
 </table>
 <p>The swc files contain a simple graphical representation of neurons that has nodes with their 3d points in space, the estimated radius of those points and the compartment of the node (axon, (basal) dendrite, apical dendrite, soma). The <strong>proofread</strong> cells include the axons, while all unproofread cells have had their axons removed from the skeleton reconstruction for clarity.</p>
+</section>
+<section id="archived-data-tables" class="level2">
+<h2 class="anchored" data-anchor-id="archived-data-tables">Archived data tables</h2>
+<p>As the MICrONS dataset matures, we are beginning to deactivate older materialization versions.</p>
+<p><strong>All publically released data from these versions remains available</strong>, but only as static downloads.</p>
+<p>You can download all tables except the <code>synapses_pni_2</code> with the following:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install cloudfiles</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> cloudfiles <span class="im">import</span> CloudFiles</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> BytesIO</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> os.path <span class="im">import</span> join <span class="im">as</span> pjoin</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>base_path <span class="op">=</span> <span class="st">"gs://mat_dbs/public/minnie65_phase3_v1/"</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># given: table_name and materialization_version</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>table_name <span class="op">=</span> <span class="st">'nucleus_detection_v0'</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>materialization_version <span class="op">=</span> <span class="dv">661</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>cf <span class="op">=</span> CloudFiles(pjoin(base_path, <span class="ss">f"v</span><span class="sc">{</span>materialization_version<span class="sc">}</span><span class="ss">"</span>), use_https<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>df_data <span class="op">=</span> cf.get(<span class="ss">f"</span><span class="sc">{</span>table_name<span class="sc">}</span><span class="ss">_merged.csv.gz"</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>header_data <span class="op">=</span> cf.get(<span class="ss">f"</span><span class="sc">{</span>table_name<span class="sc">}</span><span class="ss">_merged_header.csv"</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> BytesIO(header_data) <span class="im">as</span> f:</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    header <span class="op">=</span> pd.read_csv(f, header<span class="op">=</span><span class="va">None</span>, names<span class="op">=</span>[<span class="st">"column"</span>, <span class="st">"type"</span>])</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> header[<span class="st">"column"</span>].tolist()</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> BytesIO(df_data) <span class="im">as</span> f:</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.read_csv(f, compression<span class="op">=</span><span class="st">"gzip"</span>, header<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    df.columns <span class="op">=</span> columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To access the synapses table, we recommend directly downloading the following two files rather than streaming with <code>BytesIO</code>:</p>
+<table class="caption-top table">
+<caption>archived synapse tables</caption>
+<colgroup>
+<col style="width: 62%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Cloudpath</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Compressed .csv (20 GB)</td>
+<td style="text-align: left;"><code>https://storage.cloud.google.com/mat_dbs/public/minnie65_phase3_v1/{materialization_version} /synapses_pni_2_v1_filtered_view.csv.gz</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">.csv (0.5 KB)</td>
+<td style="text-align: left;"><code>https://storage.cloud.google.com/mat_dbs/public/minnie65_phase3_v1/{materialization_version} /synapses_pni_2_v1_filtered_view_header.csv</code></td>
+</tr>
+</tbody>
+</table>
+<section id="tables-available-from-version-343" class="level3">
+<h3 class="anchored" data-anchor-id="tables-available-from-version-343">Tables available from version 343</h3>
+<table class="caption-top table">
+<caption>v343 static tables and views</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Table name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>aibs_column_nonneuronal</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>aibs_soma_nuc_metamodel_preds_v117</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>allen_v1_column_types_slanted</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>func_unit_em_match_release</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>functional_coreg</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>nucleus_detection_v0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>nucleus_neuron_svm</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>proofreading_status_public_release</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>synapses_pni_2_in_out_degree</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>synapses_pni_2_v1_filtered_view</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tables-available-from-version-661" class="level3">
+<h3 class="anchored" data-anchor-id="tables-available-from-version-661">Tables available from version 661</h3>
+<table class="caption-top table">
+<caption>v661 static tables and views</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Table name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>aibs_column_nonneuronal_ref</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>aibs_soma_nuc_exc_mtype_preds_v117</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>aibs_soma_nuc_metamodel_preds_v117</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>allen_column_mtypes_v1</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>allen_v1_column_types_slanted_ref</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>apl_functional_coreg_forward_v5</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>baylor_gnn_cell_type_fine_model_v2</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>baylor_log_reg_cell_type_coarse_v1</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>connections_with_nuclei</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>connectivity_groups_v507</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>coregistration_manual_v3</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>nucleus_alternative_points</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>nucleus_detection_lookup_v1</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>nucleus_detection_v0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>nucleus_ref_neuron_svm</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>proofreading_status_public_release</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>single_neurons</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>soma_counts</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>synapses_pni_2_in_out_degree</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>synapses_pni_2_v1_filtered_view</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tables-available-from-version-795" class="level3">
+<h3 class="anchored" data-anchor-id="tables-available-from-version-795">Tables available from version 795</h3>
+<table class="caption-top table">
+<caption>795 static tables and views</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Table name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>aibs_column_nonneuronal_ref</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>aibs_metamodel_celltypes_v661v</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>aibs_metamodel_mtypes_v661_v2</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>aibs_soma_nuc_exc_mtype_preds_v117</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>aibs_soma_nuc_metamodel_preds_v117</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>allen_column_mtypes_v1</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>allen_column_mtypes_v2</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>allen_minnie_extra_types</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>allen_v1_column_types_slanted_ref</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>apl_functional_coreg_forward_v5</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>baylor_gnn_cell_type_fine_model_v2</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>baylor_log_reg_cell_type_coarse_v1</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>bodor_pt_cells</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>bodor_pt_target_proofread</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cell_edits_v661</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>connections_with_nuclei</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>coregistration_manual_v3</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>l5et_column</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>nucleus_alternative_points</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>nucleus_detection_lookup_v1</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>nucleus_detection_v0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>nucleus_neuron_svm</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>nucleus_ref_neuron_svm</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>proofreading_status_public_release</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>pt_synapse_targets</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>single_neurons</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>soma_counts</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>synapses_pni_2_in_out_degree</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>synapses_pni_2_v1_filtered_view</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
