@@ -23,7 +23,13 @@ The key columns are:
 : Proofreading Status Table {.light .hover}
 
 
-This table is deprecated and superseded by `proofreading_status_and_strategy`.
+::: {.callout-warning}
+## Deprecated table
+
+This table is deprecated, use `proofreading_status_and_strategy` instead. 
+:::
+
+For archival analysis, use:
 
 ```python
 # Set version to 1078 or before
