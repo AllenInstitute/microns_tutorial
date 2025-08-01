@@ -1,8 +1,6 @@
 Table name: `digital_twin_properties_bcm_coreg_apl_vess_fwd`
 
-A summary of the functional properties for each of the coregistered neurons (as of `coregistration_manual_v3`). For details, see [@wang_foundation_2025] and [@ding_functional_2025].
-
-The functional properties use the coregistration information from: `apl_functional_coreg_vess_fwd`.
+A summary of the functional properties for each of the coregistered neurons, using the coregistration information from: `apl_functional_coreg_vess_fwd`. For details, see [@wang_foundation_2025] and [@ding_functional_2025].
 
 The key columns are:
 
