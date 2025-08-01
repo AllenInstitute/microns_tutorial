@@ -19,18 +19,9 @@ The key columns are:
 
 : Fuctional properties of coregistered neurons {.light .hover}
 
-:::{.callout-tip}
-This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 
+::: {.callout-warning}
+## Deprecated table
+This table remains available from materialization versions: 1412, 1300, 1181, 1078, 943
+
+This table is deprecated, use `digital_twin_properties_bcm_coreg_v4` instead. 
 :::
-
-:::{.callout-warning}
-This table includes duplicate entries for the same 'pt_root_id' and nucleus id if the coregistered cell has multiple unit recordings
-:::
-
-```python
-# Standard query
-client.materialize.query_table('functional_properties_v3_bcm')
-
-# Content-aware query
-client.materialize.tables.functional_properties_v3_bcm(id=example_nucleus_id).query()
-```

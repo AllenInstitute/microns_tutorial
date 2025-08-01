@@ -65,6 +65,7 @@ website:
         contents:
           - section: "Release Manifests"
             contents: 
+              - release_manifests/version-1507.ipynb
               - release_manifests/version-1412.ipynb
               - release_manifests/version-1300.ipynb
               - release_manifests/version-1181.ipynb
