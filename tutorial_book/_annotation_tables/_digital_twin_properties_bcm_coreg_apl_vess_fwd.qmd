@@ -1,0 +1,39 @@
+Table name: `digital_twin_properties_bcm_coreg_apl_vess_fwd`
+
+A summary of the functional properties for each of the coregistered neurons (as of `coregistration_manual_v3`). For details, see [@wang_foundation_2025] and [@ding_functional_2025].
+
+The functional properties use the coregistration information from: `apl_functional_coreg_vess_fwd`.
+
+The key columns are:
+
+| Column | Description |
+| :-- | :---- |
+| `cc_abs` | Test set performance of the digital twin model unit, higher is better |
+| `cc_max` | Neuron variability score used to normalize digital twin model unit performance
+| `cc_norm` | Normalized model unit performance, higher is better
+| `OSI` | orientation selectivity index
+| `DSI` | direction selectivity index
+| ` gOSI` | global orientation selectivity index
+| ` gDSI` | global direction selectivity index |
+| `pref_ori` |  Preferred orientation in degrees (0 - 180), vertical bar moving right is 0 and orientation increases counter-clockwise
+| `pref_dir` |  Preferred direction in degrees (0 - 360), vertical bar moving right is 0 and orientation increases counter-clockwise
+| `readout_loc_x` |  X coordinate of the readout location, an approximation of receptive field center in stimulus space; (-1, -1) bottom-left, (1, 1) top-right
+| `readout_loc_y` | Y coordinate of the readout location, an approximation of receptive field center in stimulus space; (-1, -1) bottom-left, (1, 1) top-right
+
+: Fuctional properties of coregistered neurons {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id. 
+:::
+
+:::{.callout-warning}
+This table includes duplicate entries for the same 'pt_root_id' and nucleus id if the coregistered cell has multiple unit recordings
+:::
+
+```python
+# Standard query
+client.materialize.query_table('digital_twin_properties_bcm_coreg_apl_vess_fwd')
+
+# Content-aware query
+client.materialize.tables.digital_twin_properties_bcm_coreg_apl_vess_fwd(id=example_nucleus_id).query()
+```
