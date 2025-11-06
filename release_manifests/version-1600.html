@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>em_functional_intro – MICrONs Tutorial</title>
+<title>1600 (Oct 2025) – MICrONs Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9eb995e8644016eb670a0cb3bf478a26.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9eb995e8644016eb670a0cb3bf478a26.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,10 +100,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="quarto:status" content="draft">
 
 
-<link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="MICrONs Tutorial">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="1600 (Oct 2025) – MICrONs Tutorial">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="MICrONs Tutorial">
 </head>
@@ -77,11 +112,11 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MICrONs Tutorial</span>
     </a>
   </div>
@@ -92,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../introduction.html"> 
+    <a class="nav-link" href="../introduction.html"> 
 <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
@@ -100,11 +135,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Microns Explorer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../analysis_gallery/index.html"> 
+    <a class="nav-link" href="../analysis_gallery/index.html"> 
 <span class="menu-text">Analysis Gallery</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../faq.html"> 
+    <a class="nav-link" href="../faq.html"> 
 <span class="menu-text">FAQ</span></a>
   </li>  
   <li class="nav-item">
@@ -147,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">1600 (Oct 2025)</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -169,13 +204,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../background.html" class="sidebar-item-text sidebar-link">
+  <a href="../background.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Background</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../dataset-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../dataset-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dataset Basics</span></a>
   </div>
 </li>
@@ -190,13 +225,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../proofreading.html" class="sidebar-item-text sidebar-link">
+  <a href="../proofreading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Proofreading and Data Quality</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../materialization-version.html" class="sidebar-item-text sidebar-link">
+  <a href="../materialization-version.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Materialization and Versioning</span></a>
   </div>
 </li>
@@ -204,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../vortex-overview.html" class="sidebar-item-text sidebar-link">
+            <a href="../vortex-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Virtual Observatory of the Cortex (VORTEX)</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -213,13 +248,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../vortex-year-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../vortex-year-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Outcomes - Year 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../vortex-year-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../vortex-year-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Outcomes - Year 2</span></a>
   </div>
 </li>
@@ -236,19 +271,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../neuroglancer-basic.html" class="sidebar-item-text sidebar-link">
+  <a href="../neuroglancer-basic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Neuroglancer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../dash-table-viewer.html" class="sidebar-item-text sidebar-link">
+  <a href="../dash-table-viewer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dash Apps: Table Viewer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../dash-connectivity.html" class="sidebar-item-text sidebar-link">
+  <a href="../dash-connectivity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dash Apps: Connectivity Viewer</span></a>
   </div>
 </li>
@@ -256,7 +291,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../python-tools.html" class="sidebar-item-text sidebar-link">
+            <a href="../python-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python Tools</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -265,55 +300,55 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quickstart_notebooks/01-caveclient-setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/01-caveclient-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CAVEclient Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quickstart_notebooks/02-cave-query-cell-types.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/02-cave-query-cell-types.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CAVE Query: Cell Types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quickstart_notebooks/03-cave-query-proofread-cells.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/03-cave-query-proofread-cells.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CAVE Query: Proofread Cells</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quickstart_notebooks/04-cave-query-synapses.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/04-cave-query-synapses.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CAVE Query: Synaptic Connectivity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quickstart_notebooks/05-cloudvolume-download.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/05-cloudvolume-download.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Download Imagery and Segmentation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quickstart_notebooks/06-cloudvolume-download-mesh.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/06-cloudvolume-download-mesh.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Download Meshes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quickstart_notebooks/07-cave-download-skeleton.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/07-cave-download-skeleton.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Download Skeletons</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quickstart_notebooks/08-standard-transform.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/08-standard-transform.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Standard Transform: Coordinate System</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quickstart_notebooks/09-nglui-neuroglancer.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/09-nglui-neuroglancer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">NGLui: Neuroglancer States</span></a>
   </div>
 </li>
@@ -339,61 +374,61 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../release_manifests/version-1507.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1507.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1507 (Jul 2025)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../release_manifests/version-1412.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1412.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1412 (Apr 2025)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../release_manifests/version-1300.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1300.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1300 (Jan 2025)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../release_manifests/version-1181.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1181.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1181 (Sep 2024)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../release_manifests/version-1078.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1078.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1078 (Jun 2024)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../release_manifests/version-943.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-943.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">943 (Jan 2024)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../release_manifests/version-795.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-795.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">795 (Aug 2023)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../release_manifests/version-661.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-661.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">661 (Jun 2023)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../release_manifests/version-343.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-343.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">343 (Feb 2022)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../release_manifests/version-117.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-117.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">117 (Jun 2021)</span></a>
   </div>
 </li>
@@ -401,13 +436,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../annotation-tables.html" class="sidebar-item-text sidebar-link">
+  <a href="../annotation-tables.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Annotation Tables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../static-repositories.html" class="sidebar-item-text sidebar-link">
+  <a href="../static-repositories.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Static Repositories</span></a>
   </div>
 </li>
@@ -423,104 +458,258 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#stimuli-and-digital-twin" id="toc-stimuli-and-digital-twin" class="nav-link active" data-scroll-target="#stimuli-and-digital-twin">Stimuli and “Digital twin”</a></li>
-  <li><a href="#coregistration" id="toc-coregistration" class="nav-link" data-scroll-target="#coregistration">Coregistration</a>
+  <li><a href="#vortex-efforts" id="toc-vortex-efforts" class="nav-link active" data-scroll-target="#vortex-efforts">VORTEX Efforts</a>
   <ul class="collapse">
-  <li><a href="#coregistration-quality-metrics" id="toc-coregistration-quality-metrics" class="nav-link" data-scroll-target="#coregistration-quality-metrics">Coregistration Quality Metrics</a></li>
-  <li><a href="#matching-em-to-function" id="toc-matching-em-to-function" class="nav-link" data-scroll-target="#matching-em-to-function">Matching EM to Function</a></li>
+  <li><a href="#proofreading-status-and-strategy" id="toc-proofreading-status-and-strategy" class="nav-link" data-scroll-target="#proofreading-status-and-strategy">Proofreading Status and Strategy</a></li>
+  <li><a href="#vortex-proofread-neuromodulatory-axons" id="toc-vortex-proofread-neuromodulatory-axons" class="nav-link" data-scroll-target="#vortex-proofread-neuromodulatory-axons">VORTEX proofread neuromodulatory axons</a></li>
   </ul></li>
-  <li><a href="#functional-data" id="toc-functional-data" class="nav-link" data-scroll-target="#functional-data">Functional data</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/AllenInstitute/microns_tutorial/edit/main/tutorial_book/programmatic_access/functional_tutorial/em_functional_intro.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-1600.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
-
-
-
-<p>(em:functional-data)= # MICrONS Functional Data</p>
-<p>The MICrONs mouse went through a battery of functional imaging experiments before be prepared for electron microscopy. Excitatory neurons were imaged with 2-photon calcium imaging using GCaMP6s. Because of the size of the volume, different populations of neurons were imaged in different sessions, spanning several days. Each neuronal {term}`ROI`` from the functional data is uniquely determined based on the combination of image session, scan index, and ROI unit id. During each imaging session, the mouse was head-fixed and presented a variety of visual stimuli to the left visual field, including both natural movies and synthetic parametric movies. In addition to functional 2p imaging, the treadmill rotation, left eye position, and left pupil diameter were recorded to provide behavioral context.</p>
-<section id="stimuli-and-digital-twin" class="level2">
-<h2 class="anchored" data-anchor-id="stimuli-and-digital-twin">Stimuli and “Digital twin”</h2>
-<p>The visual stimuli presented to the mouse included many natural movies, as well as parametric stimuli that were designed to emphasize specific visual features, such as orientation and spatial frequency. Because imaging sessions were performed over several days and imaging time in any one location was limited, comparisons between cells in different sessions are not straightforward. To get around this, the principle goal of this collection of stimuli was to be used as training data for deep neural networks that were trained to predict the response of each cell to an arbitrary stimulus. These so-called “digital twins” were designed to be used to probe functional responses to cells to stimuli that were outside the original training set. More details about this digital twin approach can be found in <a href="https://www.biorxiv.org/content/10.1101/2023.03.21.533548v2">Wang et al.&nbsp;2023</a>.</p>
-<p>As a measure of the reliability of visual responses, a collection of six movies totalling one minute were presented to the mouse ten times per imaging session. An <strong>oracle score</strong> was computed based on the signal correlation of a given cell to the oracle stimuli across the imaging session, where higher numbers indicate more reliable responses. Specifically, the oracle score is the mean signal correlation of the response of each presentation to the average of the other nine presentations.</p>
-</section>
-<section id="coregistration" class="level2">
-<h2 class="anchored" data-anchor-id="coregistration">Coregistration</h2>
-<p>The process of aligning the location of cells from the functional imaging with the same cells in the EM imaging is called <strong>coregistration</strong>. It is a challenging problem due to the need for micron-scale alignment of image volumes, despite signifiant differences in the imaging modalities, tissue deformations under different conditions and potential distortions introduced by sample preparation.</p>
-<p>The dataset contains two approaches to coregistration, one semi-manual and one fully automatic. In the semi-manual approach, a transform between the EM data and the 2p data was generated based on fiducual points such as blood vessels and cell bodies. This transform was then applied to the functional data to identify a location in the EM space, and a human annotator then identified the cell body in the EM data that was a best match to the functional ROI based on location and context. In the fully automatic approach, blood vessels were segmented in both 2p and EM volumes, and a transform was generated based on matching this 3d structure. More details can be found in the <a href="https://www.biorxiv.org/content/10.1101/2021.07.28.454025v3">MICrONS dataset preprint</a>.</p>
-<section id="coregistration-quality-metrics" class="level3">
-<h3 class="anchored" data-anchor-id="coregistration-quality-metrics">Coregistration Quality Metrics</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>```ptgqgtou img/coreg-metrics.png</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>align: center</td>
-</tr>
-</tbody>
-</table>
-<p>Cartoon illustrating the coregistration metrics.</p>
-<pre><code>
-Two values are available to help assess the quality of the coregistration.
-The **residual** indicates the distance between the location of an ROI after transformation to the EM space and the location of the matched cell body in the EM data.
-The **score** (or separation score) is the distance between the matched cell body and the nearest other cell body in the EM data.
-This attempts to measure how the residual compares with the distance to other potential matches in the data.
-Larger values indicate fewer potential matches and therefore a more confident match, in general.
-
-When using the automated coregistration, it is important to filter the data based on assignment confidence.
-A guide for this can be found by comparing the subset of cells matched by both the automated and manual coregistration methods.
-
-```{figure} img/coreg-agreement.png
----
-align: center
----
-Relationship between separation threshold (left) and residual (right) and the accuracy of automated coregistration compared to manual coregistration. Orange curves depict the fraction of cells that remain after filtering out those matches beyond the threshold indicated on the x-axis.</code></pre>
-</section>
-<section id="matching-em-to-function" class="level3">
-<h3 class="anchored" data-anchor-id="matching-em-to-function">Matching EM to Function</h3>
-<p>The combination of session index, scan index, and ROI unit id uniquely identifies each ROI in the functional data. The annotation database contains tables with the results of each of the coregistration methods. Each row in each table contains the nucleus id, centroid, and root ID of an EM cell as well as the scan/session/unit indices required to match it. In additoin, the residual and score metrics for each match are provided to filter by quality. For manual coregistration, the table is called <code>coregistration_manual_v3</code> and for automated coregistration, the table is called <code>apl_functional_coreg_forward_v5</code>.</p>
-<p>Full column definitions can be <a href="em:functional-coreg">found on Annotation Tables page</a>.</p>
-</section>
-</section>
-<section id="functional-data" class="level2">
-<h2 class="anchored" data-anchor-id="functional-data">Functional data</h2>
-<p>A collection of <em>in silico</em> model responses of neurons to a variety of visual stimuli has been precomputed. The data can be found in a collection of files:</p>
-<div class="{list-table}">
-<p>:header-rows: 1 * - Filename - Format - Info * - <code>nat_movie.npy</code> - <code>numpy.ndarray</code> - dimensions=<code>[clip, frame, height, width]</code> * - <code>nat_resp.npy</code> - <code>numpy.ndarray</code> - dimensions=<code>[unit, bin]</code> * - <code>nat_unit.csv</code> - importable into <code>pandas.DataFrame</code> - columns=<code>[animal_id, scan_session, scan_idx, unit_id, row_idx]</code> * - <code>monet_resp.npy</code> - <code>numpy.ndarray</code> - dimensions=<code>[unit, direction, trial]</code> * - <code>monet_dir.npy</code> - <code>numpy.ndarray</code> - dimensions=<code>[direction]</code> * - <code>monet_unit.csv</code> - importable into <code>pandas.DataFrame</code> - columns=<code>[animal_id, scan_session, scan_idx, unit_id]</code></p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">1600 (Oct 2025)</h1>
 </div>
-<p>The model response data is organized into two sets of files, one for natural movies and one for Monet stimuli, a type of parametric stimulus that measures orientation tuning. The <code>.npy</code> files can be read with the numpy function <code>np.load</code> and the <code>.csv</code> files with the pandas function <code>pd.read_csv</code>.</p>
-<table class="caption-top table">
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Data Release v1600 (November, 2025) is the fourth quarterly release of 2025.</p>
+<p>This version ADDS the following tables</p>
+<ul>
+<li><p>(myelin)</p></li>
+<li><p>(backtracing)</p></li>
+<li><p>(oligodendrocytes and microglia)</p></li>
+</ul>
+<p>The following tables have updated status or entries, from VORTEX proofreading and annotations</p>
+<ul>
+<li><p><code>proofreading_status_and_strategy</code> (newly proofread cells and upgraded cell status)</p></li>
+<li><p><code>vortex_thalamic_proofreading_status</code> (identification of additional unproofread cells)</p></li>
+</ul>
+<p>The following tables from previous versions are included:</p>
+<ul>
+<li><code>synapses_pni_2</code> ( <a href="version-117.html">v117</a> )</li>
+<li><code>nucleus_detection_v0</code> ( <a href="version-117.html">v117</a> )</li>
+<li><code>allen_v1_column_types_slanted_ref</code>( <a href="version-661.html">v661</a> )</li>
+<li><code>aibs_column_nonneuronal_ref</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>baylor_log_reg_cell_type_coarse_v1</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>nucleus_alternative_points</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>allen_column_mtypes_v2</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>aibs_metamodel_celltypes_v661</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>aibs_metamodel_mtypes_v661_v2</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>l5et_column</code>, <code>bodor_pt_cells</code>, <code>bodor_pt_target_proofread</code>, and <code>pt_synapse_targets</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>functional_properties_v3_bcm</code> ( <a href="version-943.html">v943</a> )</li>
+<li><code>coregistration_manual_v4</code> ( <a href="version-943.html">v943</a> )</li>
+<li><code>apl_functional_coreg_vess_fwd</code> ( <a href="version-943.html">v943</a> )</li>
+<li><code>proofreading_status_and_strategy</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>vortex_astrocyte_proofreading_status</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>vortex_compartment_targets</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>vortex_manual_myelination_v0</code>, <code>vortex_manual_nodes_of_ranvier</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>nucleus_functional_area_assignment</code>( <a href="version-1078.html">v1078</a> )</li>
+<li><code>synapse_target_structure</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>synapse_target_predictions_ssa</code> ( <a href="version-1300.html">v1300</a> )</li>
+<li><code>coregistration_auto_phase3_fwd_apl_vess_combined_v2</code> ( <a href="version-1300.html">v1300</a> )</li>
+<li><code>coregistration_auto_phase3_fwd_v2</code> ( <a href="version-1300.html">v1300</a> )</li>
+<li><code>cg_cell_type_calls</code>, <code>gamlin_2023_mcs</code>, <code>gamlin_2023_mcs_met_types</code> ( <a href="version-1300.html">v1300</a> )</li>
+<li><code>vortex_thalamic_proofreading_status</code> ( <a href="version-1412.html">v1412</a> )</li>
+<li><code>multi_input_spine_predictions_ssa</code> ( <a href="version-1412.html">v1412</a> )</li>
+<li><code>digital_twin_properties_bcm_coreg_v4</code> ( <a href="version-1507.html">v1507</a> )</li>
+<li><code>digital_twin_properties_bcm_coreg_auto_phase3_fwd_v2</code> ( <a href="version-1507.html">v1507</a> )</li>
+<li><code>digital_twin_properties_bcm_coreg_apl_vess_fwd</code> ( <a href="version-1507.html">v1507</a> )</li>
+<li><code>vortex_peptidergic_proofreading_status</code> ( <a href="version-1507.html">v1507</a> )</li>
+</ul>
+<p>The following tables have been REMOVED (removed tables still available in version 1507):</p>
+<p>Information about the version 1600 release can be queried with the following:</p>
+<div id="d4b45ac1-201b-43af-9698-a13612b3a51d" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># report timestamp metadata on the version of interest</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client.materialize.get_version_metadata(<span class="dv">1600</span>)[<span class="st">'time_stamp'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>datetime.datetime(2025, 7, 31, 8, 10, 1, 117494, tzinfo=datetime.timezone.utc)</code></pre>
+</div>
+</div>
+<section id="vortex-efforts" class="level2">
+<h2 class="anchored" data-anchor-id="vortex-efforts">VORTEX Efforts</h2>
+<section id="proofreading-status-and-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="proofreading-status-and-strategy">Proofreading Status and Strategy</h3>
+<p>Table name: <code>proofreading_status_and_strategy</code></p>
+<p>The table <code>proofreading_status_and_strategy</code> describes the status of cells that have undergone manual proofreading.</p>
+<p>Because of the inherent difference in the difficulty and time required for different kinds of proofreading, we describe the status of axons and dendrites separately.</p>
+<p>Each compartment <code>status</code> may be either:</p>
+<ul>
+<li><code>FALSE</code>: indicates no comprehensive proofreading has been performed, or is not applicable.<br>
+</li>
+<li><code>TRUE</code>: indicates that false merges have been comprehensively removed, and the compartment is at least ‘clean’. Consult the <code>strategy</code> column if completeness of the compartment is relevant to your research.</li>
+</ul>
+<p>An axon or dendrite labeled as <code>status=TRUE</code> can be trusted to be correct, but may not be complete. The degree of completion can be read from the <code>strategy</code> column. For more information, please see <a href="../em_03_proofreading.html">Proofreading and Data Quality</a>; or also the <a href="https://www.microns-explorer.org/manifests/mm3-proofreading">microns-explorer page on proofreading strategies</a>.</p>
+<p>The key columns are:</p>
+<table class="table-light table-hover caption-top table">
+<caption>Proofreading Status Table</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>```ptgqgtou img/function-stimulus.png</th>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>align: center</td>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>valid_id</code></td>
+<td style="text-align: left;">The root id of the neuron when it the proofreading assessment was made. <em>NOTE: if this does not match the <code>pt_root_id</code> then the cell has undergone further changes. This is usually and improvement in proofreading, but proceed with caution.</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>status_dendrite</code></td>
+<td style="text-align: left;">The status of the dendrite proofreading. May be <code>TRUE</code> or <code>FALSE</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>status_axon</code></td>
+<td style="text-align: left;">The status of the axon proofreading. May be <code>TRUE</code> or <code>FALSE</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>strategy_dendrite</code></td>
+<td style="text-align: left;">The strategy employed to proofread the dendrite. See strategy table below for details</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>strategy_axon</code></td>
+<td style="text-align: left;">The strategy employed to proofread the axon. See strategy table below for details</td>
 </tr>
 </tbody>
 </table>
-<p>Example images from a variety fo the stimuli used to probe functional responses. Natural movies include scenes from cinema, POV nature videos, and rendered 3d scenes. Monet stimuli are a parametic textured stimulus that varies in orientation and spatial frequency of correlated motion. ```</p>
-<p>The natural movie data is organized into three files:</p>
-<ul>
-<li><code>nat_movie</code> contains 250 10-sec clips of natural movies. Movies were shown to the model at a resolution of 72 * 128 pixels at 30 hz. This is downsampled from the <em>in vivo</em> presentation resolution of 144 * 256 pixels.</li>
-<li><code>nat_resp</code> contains 104,171 units’ binned responses to natural movies. Responses were binned into 500 msec non-overlapping bins. This results in 250 clips * 10 sec / 500 msec = 5000 bins, with every binned response corresponding to 15 frames of natural movies.</li>
-<li><code>nat_unit</code> contains the mapping from rows in nat_resp to functional unit keys. Since there is only a single animal for the EM data, use the session, scan, and unit id values to match to the EM data via one of the coregistration tables described above.</li>
-</ul>
-<p>The Monet stimulus data is similarly organized into three files:</p>
-<ul>
-<li><p><code>monet_resp</code> contains 104,171 units’ mean responses to Monet stimuli. 120 trials of 16-direction Monet stimuli were shown to the model. The 120 trials were generated with different random seeds.</p></li>
-<li><p><code>monet_dir</code> contains the direction (in units of degrees) for the Monet stimulus shown to the model. The order of directions matches the order in the direction dimension of monet_resp. Here, 0 degrees is vertical feature moving leftwards, with degrees increases in the anti-clockwise direction.</p></li>
-<li><p><code>monet_unit</code> contains the functional unit keys of the 104,171 units. The order of the unit keys matches the order in the unit dimension of <code>monet_resp</code>. Since there is only a single animal for the EM data, use the session, scan, and unit id values to match to the EM data via one of the coregistration tables described above.</p></li>
-</ul>
+<p>The specific strategies are as follows (and will update over time):</p>
+<section id="proofreading-strategies" class="level4">
+<h4 class="anchored" data-anchor-id="proofreading-strategies">Proofreading Strategies</h4>
+<table class="table-light table-hover caption-top table">
+<caption>Proofreading Strategy Table</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Strategy</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>none</code></td>
+<td style="text-align: left;">No cleaning, and no extension. Indicates an entry in <code>proofreading_status</code> that is <code>FALSE</code> for that compartment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>dendrite_clean</code></td>
+<td style="text-align: left;">The dendrite had incorrectly-merged axon and dendritic segments comprehensively removed, meaning the input synapses are accurate. The dendrite may be incorrectly truncated by segmentation error. Not all dendrite tips have been checked for extension. No comprehensive attempt was made to re-attach spine heads.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>dendrite_extended</code></td>
+<td style="text-align: left;">The dendrite had incorrectly-merged axon and dendritic segments comprehensively removed, meaning the input synapses are accurate. Every tip was identified, manually inspected, and extended if possible. No comprehensive attempt was made to re-attach spine heads.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>axon_column_truncated</code></td>
+<td style="text-align: left;">AThe axon was extended within the V1 cortical column, with a preference for local connections. In some cases the axon was cut at the column boundary and/or the layer boundary, especially the boundary between layers 2/3 and layer 4. Output synapses represent a sampling of potential partners</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>axon_interareal</code></td>
+<td style="text-align: left;">The axon was extended with a preference for branches that projected to other brain areas. Some axon branches were fully extended, but local connections may be incomplete. Output synapses represent a sampling of potential partners.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>axon_partially_extended</code></td>
+<td style="text-align: left;">The axon was extended outward from the soma, following each branch to its termination. Output synapses represent a sampling of potential partners.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>axon_fully_extended</code></td>
+<td style="text-align: left;">Axon was extended outward from the soma, following each branch to its termination. After initial extension, every endpoint was identified, manually inspected, and extended again if possible. Output synapses represent a largely complete sampling of partners.</td>
+</tr>
+</tbody>
+</table>
+<p>This table, <code>proofreading_status_and_strategy</code>, supercedes <code>proofreading_status_public_release</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'proofreading_status_and_strategy'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="vortex-proofread-neuromodulatory-axons" class="level3">
+<h3 class="anchored" data-anchor-id="vortex-proofread-neuromodulatory-axons">VORTEX proofread neuromodulatory axons</h3>
+<p>Table name: <code>vortex_peptidergic_proofreading_status</code></p>
+<p>This table reports the status of a manually selected subset of putative neuromodulatory axons, distinguished by boutons with large secretory vesicles. Labeled as part of the as part of the <a href="../vortex-overview.html">VORTEX project</a>.</p>
+<p>The key columns are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with a representative point of axon</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>status</code></td>
+<td style="text-align: left;">One of ‘non’ indicating no cleaning or extension; ‘clean’ indicating synapses can be trusted but may not be complete; ‘extended’ meaning all end points visited and extended to completion</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>valid_id</code></td>
+<td style="text-align: left;">The root id of the axon when it the proofreading assessment was made</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Axons in this table that are complete and <code>extended</code> are also posted to <code>proofreading_status_and_strategy</code> with strategy: <code>axon_fully_extended</code> and <code>dendrite_none</code>.</p>
+</div>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_peptidergic_proofreading_status'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_peptidergic_proofreading_status(status<span class="op">=</span><span class="st">'extended'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For more on how to interpret the table, see <a href="../annotation-tables.html">Annotation Tables</a></p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -949,7 +1138,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AllenInstitute/microns_tutorial/edit/main/tutorial_book/programmatic_access/functional_tutorial/em_functional_intro.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-1600.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
