@@ -1,0 +1,19 @@
+Table name: `vortex_microglia_proofreading_status`
+
+Manual screening and proofreading of microglia within the V1 column, as part of the as part of the [VORTEX project](../vortex-overview.html).
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus. |
+| `status`| One of 'non' indicating no cleaning or extension; 'clean' indicating neurite and non-microglia elements have been manually removed and the substantive processes attached; 'extended' meaning all endpoints of the microglia evaluated and extended. |
+| `valid_id` | The root id of the microglia when it the proofreading assessment was made. |
+
+```python
+# Standard query
+client.materialize.query_table('vortex_microglia_proofreading_status')
+
+# Content-aware query
+client.materialize.tables.vortex_microglia_proofreading_status(status='clean').query()
+```
