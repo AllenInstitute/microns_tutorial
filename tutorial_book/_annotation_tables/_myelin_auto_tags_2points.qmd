@@ -1,0 +1,28 @@
+Table name: `myelin_auto_tags_2points`
+
+This table annotates the presence (TRUE) or absence (FALSE) of myelin along the axons of a subset of proofread cells (currently from v1300). Each point was processed using an automated myelin detection pipeline, which evaluates the proportion of the segmentation outline adjacent to segment == 0. If more than half of the outline is closely surrounded by segment == 0, the location is labeled as TRUE. 
+
+For questions and citation, contact Wan-Qing Yu.
+
+| Column | Description |
+| :--- | :--- |
+| `pt_position` | The position along the axon that was evaluated for myelin. |
+| `pt2_position` | The next point position along the axon that was evaluated for myelin, outward from the soma. For branch end points, `pt_position` is equal to `pt2_position` |
+| `tag` \ `tag2` | Myelination status, either `True` or `False`, for the respective `pt_position` or `pt2_position` |
+| `pt_supervoxel_id` \ `pt_root_id` \ `pt2_root_id` | The bound spatial point data for the evaluated point. |
+
+: Auto Myelination {.light .hover}
+
+:::{.callout-warning}
+The myelination was evaluated for the a specific version of the segmentaion (v1300) and may not match the current segmentation of the selected neurons. 
+:::
+
+Note: the two-point annotation allows for easy rendering of myelinated stretches in neuroglancer, like in the following: [Myelin precomputed annotations in neuroglancer](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5091823897804800) (takes a moment to load).
+
+```python
+# Standard query
+client.materialize.query_table('myelin_auto_tags_2points', limit=10)
+
+# Content-aware query
+client.materialize.tables.myelin_auto_tags_2points(pt_root_id=example_root_id).query()
+```

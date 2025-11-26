@@ -1,0 +1,24 @@
+Table name: `vortex_axon_backtrace_column`
+
+This table reports the status of a subset of local axons that have been proofread within the V1 column as part of a backtracing pilot: extending the disconnected axon from a synapse of interest. The axons are CLEAN but only complete within the borders of the VISP column. Axon selection and proofreading performed as part of the [VORTEX project](../vortex-overview.html).
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id`/`target_id` | Synapse ID for the source synapse of the axon of interest. This table is reference on `synapses_pni_2`. |
+| `pre_pt_position` / `pre_pt_supervoxel_id` / `pre_pt_root_id` | The bound spatial point data for the presynaptic side of the synapse. |  
+| `post_pt_position` / `post_pt_supervoxel_id` / `post_pt_root_id` | The bound spatial point data for the postsynaptic side of the synapse. |  
+| `size` | The size of the synapse in voxels. This correlates well, but not perfectly, with the surface area of synapse. |  
+| `ctr_pt_position` | A position in the center of the detected synaptic junction. Of all points in the synapse table, this is usually the closest point to the surface (and thus mesh) of both neurons. Because it is at the edge of cells, it is not associated with a root id. |
+| `tag` | Status of the backtrace, one of:  `complete` indicating the axons was evaluated to be excitatory and successfully proofread within the column; `incomplete` indicating the axon was evaluated to be inhibitory or shaft-targetting and abandoned; `error` indicating an error of synapses detection. |
+
+```python
+# Standard query
+client.materialize.query_table('vortex_axon_backtrace_column')
+
+# Content-aware query
+client.materialize.tables.vortex_axon_backtrace_column(post_pt_root_id=example_root_id).query()
+
+client.materialize.tables.vortex_axon_backtrace_column(tag='complete').query()
+```
