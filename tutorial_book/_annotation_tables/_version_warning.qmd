@@ -1,6 +1,6 @@
 ::: {.callout-warning}
 ## Version update
-We have released a new public version 1507, as part of our quarterly release schedule. See details at [Release Manifests: 1507](../release_manifests/version-1507.html). 
+We have released a new public version 1621, as part of our quarterly release schedule. See details at [Release Manifests: 1621](../release_manifests/version-1621.html). 
 
-Tutorials remain pinned to v1412 but will updated in coming weeks.
+Tutorials remain pinned to v1412 at this time.
 :::
