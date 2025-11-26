@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1600 (Oct 2025) – MICrONs Tutorial</title>
+<title>1621 (Nov 2025) – MICrONs Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -100,11 +100,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="1600 (Oct 2025) – MICrONs Tutorial">
+<meta property="og:title" content="1621 (Nov 2025) – MICrONs Tutorial">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="MICrONs Tutorial">
 </head>
@@ -112,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -182,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">1600 (Oct 2025)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1621.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-1621.html">1621 (Nov 2025)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -365,13 +364,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Release Manifests</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../release_manifests/version-1621.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">1621 (Nov 2025)</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../release_manifests/version-1507.html" class="sidebar-item-text sidebar-link">
@@ -458,20 +463,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#vortex-efforts" id="toc-vortex-efforts" class="nav-link active" data-scroll-target="#vortex-efforts">VORTEX Efforts</a>
+  <li><a href="#automated-myelin-annotation" id="toc-automated-myelin-annotation" class="nav-link active" data-scroll-target="#automated-myelin-annotation">Automated myelin annotation</a></li>
+  <li><a href="#vortex-efforts" id="toc-vortex-efforts" class="nav-link" data-scroll-target="#vortex-efforts">VORTEX Efforts</a>
   <ul class="collapse">
+  <li><a href="#backtracing-axons-in-proximity-to-cortical-minicolumns" id="toc-backtracing-axons-in-proximity-to-cortical-minicolumns" class="nav-link" data-scroll-target="#backtracing-axons-in-proximity-to-cortical-minicolumns">Backtracing axons in proximity to cortical minicolumns</a></li>
+  <li><a href="#vortex-proofread-microglia" id="toc-vortex-proofread-microglia" class="nav-link" data-scroll-target="#vortex-proofread-microglia">VORTEX proofread microglia</a></li>
   <li><a href="#proofreading-status-and-strategy" id="toc-proofreading-status-and-strategy" class="nav-link" data-scroll-target="#proofreading-status-and-strategy">Proofreading Status and Strategy</a></li>
-  <li><a href="#vortex-proofread-neuromodulatory-axons" id="toc-vortex-proofread-neuromodulatory-axons" class="nav-link" data-scroll-target="#vortex-proofread-neuromodulatory-axons">VORTEX proofread neuromodulatory axons</a></li>
+  <li><a href="#vortex-proofread-thalamic-axons" id="toc-vortex-proofread-thalamic-axons" class="nav-link" data-scroll-target="#vortex-proofread-thalamic-axons">VORTEX proofread thalamic axons</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-1600.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-1621.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1621.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-1621.html">1621 (Nov 2025)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">1600 (Oct 2025)</h1>
+<h1 class="title">1621 (Nov 2025)</h1>
 </div>
 
 
@@ -488,17 +496,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Data Release v1600 (November, 2025) is the fourth quarterly release of 2025.</p>
+<p>Data Release v1621 (November 25, 2025) is the fourth quarterly release of 2025.</p>
 <p>This version ADDS the following tables</p>
 <ul>
-<li><p>(myelin)</p></li>
-<li><p>(backtracing)</p></li>
-<li><p>(oligodendrocytes and microglia)</p></li>
+<li><p><code>myelin_auto_tags_2points</code> : automated annotation of myelin along a subset of proofread cells (cell status as of v1300)</p></li>
+<li><p><code>vortex_axon_backtrace_column</code> : proofreading status of a subset of local axons backtraced (from synapses of interest) in the V1 column</p></li>
+<li><p><code>vortex_synapse_reattachment</code> : proofreading status of a subset of disconnected synapses in the V1 column that were manually evaluated and reattached</p></li>
+<li><p><code>vortex_microglia_proofreading_status</code> : proofreading status of microglia, comprehensive within the V1 column</p></li>
 </ul>
 <p>The following tables have updated status or entries, from VORTEX proofreading and annotations</p>
 <ul>
 <li><p><code>proofreading_status_and_strategy</code> (newly proofread cells and upgraded cell status)</p></li>
-<li><p><code>vortex_thalamic_proofreading_status</code> (identification of additional unproofread cells)</p></li>
+<li><p><code>vortex_thalamic_proofreading_status</code> (identification of additional unproofread axons)</p></li>
 </ul>
 <p>The following tables from previous versions are included:</p>
 <ul>
@@ -532,17 +541,209 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>digital_twin_properties_bcm_coreg_apl_vess_fwd</code> ( <a href="version-1507.html">v1507</a> )</li>
 <li><code>vortex_peptidergic_proofreading_status</code> ( <a href="version-1507.html">v1507</a> )</li>
 </ul>
-<p>The following tables have been REMOVED (removed tables still available in version 1507):</p>
-<p>Information about the version 1600 release can be queried with the following:</p>
-<div id="d4b45ac1-201b-43af-9698-a13612b3a51d" class="cell" data-execution_count="2">
+<p>Information about the version 1621 release can be queried with the following:</p>
+<div id="d4b45ac1-201b-43af-9698-a13612b3a51d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># report timestamp metadata on the version of interest</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client.materialize.get_version_metadata(<span class="dv">1600</span>)[<span class="st">'time_stamp'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>datetime.datetime(2025, 7, 31, 8, 10, 1, 117494, tzinfo=datetime.timezone.utc)</code></pre>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client.materialize.get_version_metadata(<span class="dv">1621</span>)[<span class="st">'time_stamp'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>datetime.datetime(2025, 11, 25, 8, 10, 1, 94430, tzinfo=datetime.timezone.utc)</code></pre>
 </div>
 </div>
+<section id="automated-myelin-annotation" class="level2">
+<h2 class="anchored" data-anchor-id="automated-myelin-annotation">Automated myelin annotation</h2>
+<p>Table name: <code>myelin_auto_tags_2points</code></p>
+<p>This table annotates the presence (TRUE) or absence (FALSE) of myelin along the axons of a subset of proofread cells (currently from v1300). Each point was processed using an automated myelin detection pipeline, which evaluates the proportion of the segmentation outline adjacent to segment == 0. If more than half of the outline is closely surrounded by segment == 0, the location is labeled as TRUE.</p>
+<p>For questions and citation, contact Wan-Qing Yu.</p>
+<table class="table-light table-hover caption-top table">
+<caption>Auto Myelination</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pt_position</code></td>
+<td style="text-align: left;">The position along the axon that was evaluated for myelin.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt2_position</code></td>
+<td style="text-align: left;">The next point position along the axon that was evaluated for myelin, outward from the soma. For branch end points, <code>pt_position</code> is equal to <code>pt2_position</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>tag</code> &nbsp;<code>tag2</code></td>
+<td style="text-align: left;">Myelination status, either <code>True</code> or <code>False</code>, for the respective <code>pt_position</code> or <code>pt2_position</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code> &nbsp;<code>pt2_root_id</code></td>
+<td style="text-align: left;">The bound spatial point data for the evaluated point.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The myelination was evaluated for the a specific version of the segmentaion (v1300) and may not match the current segmentation of the selected neurons.</p>
+</div>
+</div>
+<p>Note: the two-point annotation allows for easy rendering of myelinated stretches in neuroglancer, like in the following: <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5091823897804800">Myelin precomputed annotations in neuroglancer</a> (takes a moment to load).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'myelin_auto_tags_2points'</span>, limit<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.myelin_auto_tags_2points(pt_root_id<span class="op">=</span>example_root_id).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="vortex-efforts" class="level2">
 <h2 class="anchored" data-anchor-id="vortex-efforts">VORTEX Efforts</h2>
+<section id="backtracing-axons-in-proximity-to-cortical-minicolumns" class="level3">
+<h3 class="anchored" data-anchor-id="backtracing-axons-in-proximity-to-cortical-minicolumns">Backtracing axons in proximity to cortical minicolumns</h3>
+<p>This vortex effort produced two tables to densely proofread inputs to a set of apical axons: 1) a table annotating the backtracing effort, and 2) a table quantifying the number of disconnected synapses in a small area and the outcome of evaluating the synapse as a disconnected spine head.</p>
+<p>Table name: <code>vortex_axon_backtrace_column</code></p>
+<p>This table reports the status of a subset of local axons that have been proofread within the V1 column as part of a backtracing pilot: extending the disconnected axon from a synapse of interest. The axons are CLEAN but only complete within the borders of the VISP column. Axon selection and proofreading performed as part of the <a href="../vortex-overview.html">VORTEX project</a>.</p>
+<p>The key columns are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code>/<code>target_id</code></td>
+<td style="text-align: left;">Synapse ID for the source synapse of the axon of interest. This table is reference on <code>synapses_pni_2</code>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pre_pt_position</code> / <code>pre_pt_supervoxel_id</code> / <code>pre_pt_root_id</code></td>
+<td style="text-align: left;">The bound spatial point data for the presynaptic side of the synapse.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>post_pt_position</code> / <code>post_pt_supervoxel_id</code> / <code>post_pt_root_id</code></td>
+<td style="text-align: left;">The bound spatial point data for the postsynaptic side of the synapse.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>size</code></td>
+<td style="text-align: left;">The size of the synapse in voxels. This correlates well, but not perfectly, with the surface area of synapse.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ctr_pt_position</code></td>
+<td style="text-align: left;">A position in the center of the detected synaptic junction. Of all points in the synapse table, this is usually the closest point to the surface (and thus mesh) of both neurons. Because it is at the edge of cells, it is not associated with a root id.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>tag</code></td>
+<td style="text-align: left;">Status of the backtrace, one of: <code>complete</code> indicating the axons was evaluated to be excitatory and successfully proofread within the column; <code>incomplete</code> indicating the axon was evaluated to be inhibitory or shaft-targetting and abandoned; <code>error</code> indicating an error of synapses detection.</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_axon_backtrace_column'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_axon_backtrace_column(post_pt_root_id<span class="op">=</span>example_root_id).query()</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_axon_backtrace_column(tag<span class="op">=</span><span class="st">'complete'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Table name: <code>vortex_synapse_reattachment</code></p>
+<p>This table reports the status of a subset of synapses in the V1 column that were not connected to a postsynaptic soma (as of v1300). All synapses in this table were evaluated for reattachment as part of a VORTEX proofreading pilot. Synapse selection and proofreading performed as part of the <a href="../vortex-overview.html">VORTEX project</a>.</p>
+<p>The key columns are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code>/<code>target_id</code></td>
+<td style="text-align: left;">Synapse ID for the previously disconnected synapse. This table is reference on <code>synapses_pni_2</code>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pre_pt_position</code> / <code>pre_pt_supervoxel_id</code> / <code>pre_pt_root_id</code></td>
+<td style="text-align: left;">The bound spatial point data for the presynaptic side of the synapse.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>post_pt_position</code> / <code>post_pt_supervoxel_id</code> / <code>post_pt_root_id</code></td>
+<td style="text-align: left;">The bound spatial point data for the postsynaptic side of the synapse.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>size</code></td>
+<td style="text-align: left;">The size of the synapse in voxels. This correlates well, but not perfectly, with the surface area of synapse.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ctr_pt_position</code></td>
+<td style="text-align: left;">A position in the center of the detected synaptic junction. Of all points in the synapse table, this is usually the closest point to the surface (and thus mesh) of both neurons. Because it is at the edge of cells, it is not associated with a root id.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>tag</code></td>
+<td style="text-align: left;">The final state of synapse attachment, one of: ‘spine’ indicating the disconnected synapse was a spinehead and successfully attached to a dendrite; ‘dendrite’ indicating the synapse was part of a disconnected dendrite and successfully attached to the soma; ‘disconnected’: indicating a real spinehead that could not be connected to a dendrite; and ‘error’ indicating an error of synapse detection.</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_synapse_reattachment'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_synapse_reattachment(post_pt_root_id<span class="op">=</span>example_root_id).query()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_synapse_reattachment(tag<span class="op">=</span><span class="st">'spine'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="vortex-proofread-microglia" class="level3">
+<h3 class="anchored" data-anchor-id="vortex-proofread-microglia">VORTEX proofread microglia</h3>
+<p>Table name: <code>vortex_microglia_proofreading_status</code></p>
+<p>Manual screening and proofreading of microglia within the V1 column, as part of the as part of the <a href="../vortex-overview.html">VORTEX project</a>.</p>
+<p>The key columns are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>status</code></td>
+<td style="text-align: left;">One of ‘non’ indicating no cleaning or extension; ‘clean’ indicating neurite and non-microglia elements have been manually removed and the substantive processes attached; ‘extended’ meaning all endpoints of the microglia evaluated and extended.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>valid_id</code></td>
+<td style="text-align: left;">The root id of the microglia when it the proofreading assessment was made.</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_microglia_proofreading_status'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_microglia_proofreading_status(status<span class="op">=</span><span class="st">'clean'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="proofreading-status-and-strategy" class="level3">
 <h3 class="anchored" data-anchor-id="proofreading-status-and-strategy">Proofreading Status and Strategy</h3>
 <p>Table name: <code>proofreading_status_and_strategy</code></p>
@@ -646,17 +847,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>This table, <code>proofreading_status_and_strategy</code>, supercedes <code>proofreading_status_public_release</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'proofreading_status_and_strategy'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'proofreading_status_and_strategy'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="vortex-proofread-neuromodulatory-axons" class="level3">
-<h3 class="anchored" data-anchor-id="vortex-proofread-neuromodulatory-axons">VORTEX proofread neuromodulatory axons</h3>
-<p>Table name: <code>vortex_peptidergic_proofreading_status</code></p>
-<p>This table reports the status of a manually selected subset of putative neuromodulatory axons, distinguished by boutons with large secretory vesicles. Labeled as part of the as part of the <a href="../vortex-overview.html">VORTEX project</a>.</p>
+<section id="vortex-proofread-thalamic-axons" class="level3">
+<h3 class="anchored" data-anchor-id="vortex-proofread-thalamic-axons">VORTEX proofread thalamic axons</h3>
+<p>Table name: <code>vortex_thalamic_proofreading_status</code></p>
+<p>This table reports the status of a manually selected subset of putative thalamocortical axons as part of the as part of the <a href="../vortex-overview.html">VORTEX project</a>.</p>
 <p>The key columns are:</p>
 <table class="caption-top table">
 <colgroup>
@@ -676,7 +877,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
-<td style="text-align: left;">Bound spatial point columns associated with a representative point of axon</td>
+<td style="text-align: left;">Bound spatial point columns associated with the entry point of the axon into the EMvolume</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>status</code></td>
@@ -698,14 +899,14 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Axons in this table that are complete and <code>extended</code> are also posted to <code>proofreading_status_and_strategy</code> with strategy: <code>axon_fully_extended</code> and <code>dendrite_none</code>.</p>
+<p>Thalamic axons in this table that are complete and <code>extended</code> are also posted to <code>proofreading_status_and_strategy</code> with strategy: <code>axon_fully_extended</code> and <code>dendrite_none</code>.</p>
 </div>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_peptidergic_proofreading_status'</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_peptidergic_proofreading_status(status<span class="op">=</span><span class="st">'extended'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_thalamic_proofreading_status'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_thalamic_proofreading_status(status<span class="op">=</span><span class="st">'extended'</span>).query()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For more on how to interpret the table, see <a href="../annotation-tables.html">Annotation Tables</a></p>
 
 
@@ -1138,7 +1339,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-1600.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-1621.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
