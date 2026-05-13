@@ -524,12 +524,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Version update
+Archived versions: v1078, v1181, v1412
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We have released a new public version 1718, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1718.html">Release Manifests: 1718</a>.</p>
-<p>Tutorials remain pinned to v1412 at this time.</p>
+<p>We have begun archiving release versions that are more 1 years old. All publicly released annotation data is available as a static download. See: <a href="materialization-version.html#access-archived-data-versions">Access archived data versions</a> for details.</p>
+<p>You can continue to access older versions of materialization and segmentation by setting the <code>timestamp</code> argument instead of a version argument. However, fully deprecated tables will no longer be queriable from CAVEclient.</p>
 </div>
 </div>
 <section id="connected-morphological-representations-skeletons" class="level2">
@@ -610,16 +610,16 @@ Initial Setup
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">"minnie65_public"</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># specify the materialization version, for consistency across time",</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1412</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1718</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: pyramidal cell in v1412</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>example_cell_id <span class="op">=</span> <span class="dv">864691135572530981</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="8664e1d0-3fc3-41b2-a212-061bedf48c7f" class="cell" data-execution_count="2">
+<div id="8664e1d0-3fc3-41b2-a212-061bedf48c7f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sk_df <span class="op">=</span> client.skeleton.get_skeleton(example_cell_id, output_format<span class="op">=</span><span class="st">'swc'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>sk_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -695,27 +695,27 @@ Initial Setup
 </div>
 <p>Skeletons are “tree-like”, where every vertex (except the root vertex) has a single parent that is closer to the root than it, and any number of child vertices. Because of this, for a skeleton there are well-defined directions “away from root” and “towards root” and few types of vertices have special names:</p>
 <p>You can see these vertices and edges represented in the alternative <code>dict</code> skeleton output.</p>
-<div id="96328dcc-781e-4425-9858-58491c5e9e4b" class="cell" data-execution_count="3">
+<div id="96328dcc-781e-4425-9858-58491c5e9e4b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sk_dict <span class="op">=</span> client.skeleton.get_skeleton(example_cell_id, output_format<span class="op">=</span><span class="st">'dict'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sk_dict.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>dict_keys(['meta', 'edges', 'mesh_to_skel_map', 'root', 'vertices', 'compartment', 'radius'])</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>dict_keys(['meta', 'edges', 'mesh_to_skel_map', 'root', 'vertices', 'compartment', 'radius', 'lvl2_ids'])</code></pre>
 </div>
 </div>
 <p>Alternately, you can query a set of root_ids, for example all of the <strong>proofread cells</strong> in the dataset, and bulk download the skeletons</p>
-<div id="c9fee259-8741-4d3b-81a3-d0a1c2beda6a" class="cell" data-execution_count="4">
+<div id="c9fee259-8741-4d3b-81a3-d0a1c2beda6a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>prf_root_ids <span class="op">=</span> client.materialize.tables.proofreading_status_and_strategy(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    status_axon<span class="op">=</span><span class="st">'t'</span>).query()[<span class="st">'pt_root_id'</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>prf_root_ids.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>0    864691135308929350
-1    864691135163673901
-2    864691136812081779
-Name: pt_root_id, dtype: int64</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>0    864691135686494647
+1    864691136812081779
+2    864691136195284556
+Name: pt_root_id, dtype: Int64</code></pre>
 </div>
 </div>
-<div id="9260c7ec-4780-4043-a435-b81e42d6a791" class="cell" data-scrolled="true" data-execution_count="5">
+<div id="9260c7ec-4780-4043-a435-b81e42d6a791" class="cell" data-scrolled="true" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>all_sk_dict <span class="op">=</span> client.skeleton.get_bulk_skeletons(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    prf_root_ids.head(<span class="dv">3</span>), </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    generate_missing_skeletons<span class="op">=</span><span class="va">True</span>,</span>
@@ -723,13 +723,13 @@ Name: pt_root_id, dtype: int64</code></pre>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    skeleton_version<span class="op">=</span><span class="dv">4</span>)</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>all_sk_dict.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>dict_keys(['864691135308929350', '864691135163673901', '864691136812081779'])</code></pre>
-</div>
-</div>
-<div id="44de057f-12ec-42c9-bb47-321b5a7ed56b" class="cell" data-scrolled="true" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>all_sk_dict[<span class="st">'864691135308929350'</span>].keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>dict_keys(['864691135686494647', '864691136812081779', '864691136195284556'])</code></pre>
+</div>
+</div>
+<div id="44de057f-12ec-42c9-bb47-321b5a7ed56b" class="cell" data-scrolled="true" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>all_sk_dict[<span class="st">'864691135686494647'</span>].keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>dict_keys(['meta', 'edges', 'mesh_to_skel_map', 'root', 'vertices', 'compartment', 'radius', 'lvl2_ids'])</code></pre>
 </div>
 </div>
@@ -739,7 +739,7 @@ Name: pt_root_id, dtype: int64</code></pre>
 <p>See <a href="06-cloudvolume-download-meshes.html">Download Meshes | MeshParty</a> for more details.</p>
 <p>Skeletons are “tree-like”, where every vertex (except the root vertex) has a single parent that is closer to the root than it, and any number of child vertices. Because of this, for a skeleton there are well-defined directions “away from root” and “towards root” and few types of vertices have special names:</p>
 <p>Converting the pregenerated skeleton <code>sk_dict</code> to a meshwork object <code>sk</code> converts the skeleton to a graph object, for convenient representation and analysis.</p>
-<div id="e1b32cf4-e581-4383-92f6-668b3b8e057a" class="cell" data-execution_count="7">
+<div id="e1b32cf4-e581-4383-92f6-668b3b8e057a" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> meshparty.skeleton <span class="im">import</span> Skeleton</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>sk <span class="op">=</span> Skeleton.from_dict(sk_dict)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -751,7 +751,7 @@ Name: pt_root_id, dtype: int64</code></pre>
 <p>Our convenience package <strong>skeleton_plot</strong> renders the skeleton in aligned, 2D views.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pip install skeleton_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Our convenience package <strong>skeleton_plot</strong> renders the skeleton in aligned, 2D views, with the compartments labeled in different colors. Here, <em>dendrite</em> is red, <em>axon</em> is blue, and <em>soma</em> (the root of the connected graph) is olive</p>
-<div id="6ce2582a-f097-4ca3-8fb3-40d6730f6f64" class="cell" data-execution_count="8">
+<div id="6ce2582a-f097-4ca3-8fb3-40d6730f6f64" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> skeleton_plot.plot_tools <span class="im">import</span> plot_skel</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plot_skel(sk<span class="op">=</span>sk,</span>
@@ -762,7 +762,7 @@ Name: pt_root_id, dtype: int64</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07-cave-download-skeleton_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="07-cave-download-skeleton_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -775,7 +775,7 @@ Name: pt_root_id, dtype: int64</code></pre>
 <p>To install pcg_skel, use pip.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>pip install pcg_skel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>By loading a skeleton as a meshwork skeleton, you can easily ‘rehydrate’ the mesh features of the neuron (annotations such as <strong>synapses</strong> and <strong>compartment labels</strong>) and MeshParty functions (such as <em>masking</em> and <em>pathlength</em>)</p>
-<div id="6d9ce395-bfae-498a-9380-ce06f6032ed8" class="cell" data-execution_count="9">
+<div id="6d9ce395-bfae-498a-9380-ce06f6032ed8" class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pcg_skel <span class="im">import</span> get_meshwork_from_client</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>sk_mesh <span class="op">=</span> get_meshwork_from_client(example_cell_id,</span>
@@ -786,9 +786,6 @@ Name: pt_root_id, dtype: int64</code></pre>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                                   skeleton_version<span class="op">=</span><span class="dv">4</span>,</span>
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>sk_mesh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>&lt;meshparty.meshwork.meshwork.Meshwork at 0x29f79b4cc50&gt;</code></pre>
-</div>
 </div>
 <p>Skeletons are “tree-like”, where every vertex (except the root vertex) has a single parent that is closer to the root than it, and any number of child vertices. Because of this, for a skeleton there are well-defined directions “away from root” and “towards root” and few types of vertices have special names:</p>
 <ul>
@@ -830,9 +827,9 @@ Name: pt_root_id, dtype: int64</code></pre>
 <li><code>vol_prop</code>: For every vertex, information about the volume and surface area of the level 2 id it is associated with.</li>
 </ul>
 <p>To access one of the DataFrames, use the name of the table as an attribute of the <code>anno</code> object and then get the <code>.df</code> property. For example, to get the postsynaptic sites, we can do:</p>
-<div id="030c0934-e3c8-4c5b-9786-0549895d51bd" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sk_mesh.anno.post_syn.df.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div id="030c0934-e3c8-4c5b-9786-0549895d51bd" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sk_mesh.anno.post_syn.df.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -841,6 +838,7 @@ Name: pt_root_id, dtype: int64</code></pre>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">deleted</th>
 <th data-quarto-table-cell-role="th">size</th>
 <th data-quarto-table-cell-role="th">pre_pt_supervoxel_id</th>
 <th data-quarto-table-cell-role="th">post_pt_supervoxel_id</th>
@@ -857,13 +855,14 @@ Name: pt_root_id, dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>456611088</td>
-<td>5140</td>
+<td>NaT</td>
+<td>5140.0</td>
 <td>113239596703504810</td>
 <td>113239596703516355</td>
 <td>864691135572530981</td>
-<td>[1410648.0, 729000.0, 850240.0]</td>
-<td>[1410800.0, 728960.0, 850520.0]</td>
-<td>[1410672.0, 728960.0, 850280.0]</td>
+<td>[1410648, 729000, 850240]</td>
+<td>[1410800, 728960, 850520]</td>
+<td>[1410672, 728960, 850280]</td>
 <td>185297190741082374</td>
 <td>11880</td>
 <td>11880</td>
@@ -871,13 +870,14 @@ Name: pt_root_id, dtype: int64</code></pre>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>460786295</td>
-<td>1904</td>
+<td>NaT</td>
+<td>1904.0</td>
 <td>114084296310348680</td>
 <td>114084365029814954</td>
 <td>864691135572530981</td>
-<td>[1434984.0, 737808.0, 794360.0]</td>
-<td>[1435488.0, 738120.0, 794120.0]</td>
-<td>[1435224.0, 737856.0, 794400.0]</td>
+<td>[1434984, 737808, 794360]</td>
+<td>[1435488, 738120, 794120]</td>
+<td>[1435224, 737856, 794400]</td>
 <td>186141959067271764</td>
 <td>13325</td>
 <td>13325</td>
@@ -885,13 +885,14 @@ Name: pt_root_id, dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>415745273</td>
-<td>14532</td>
+<td>NaT</td>
+<td>14532.0</td>
 <td>110214290325399938</td>
 <td>110214290325398722</td>
 <td>864691135572530981</td>
-<td>[1322336.0, 744768.0, 807360.0]</td>
-<td>[1322032.0, 744560.0, 807440.0]</td>
-<td>[1322120.0, 744656.0, 807360.0]</td>
+<td>[1322336, 744768, 807360]</td>
+<td>[1322032, 744560, 807440]</td>
+<td>[1322120, 744656, 807360]</td>
 <td>182271884363039168</td>
 <td>3695</td>
 <td>3695</td>
@@ -904,11 +905,11 @@ Name: pt_root_id, dtype: int64</code></pre>
 </div>
 <p>However, in addition to these rows, you can also easily get the mesh vertex index or skeleton vertex index that a row corresponds to with <code>nrn.anno.post_syn.mesh_index</code> or <code>nrn.anno.post_syn.skel_index</code> respectively. This seems small, but it allows you to integrate skeleton-like measurements with annotations trivially.</p>
 <p>For example, to get the distance from the cell body for each postsynaptic site, we can do:</p>
-<div id="fe6fa2bb-ef6b-4d8d-a595-f5ed1c2bcb07" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sk_mesh.distance_to_root(sk_mesh.anno.post_syn.mesh_index)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div id="fe6fa2bb-ef6b-4d8d-a595-f5ed1c2bcb07" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sk_mesh.distance_to_root(sk_mesh.anno.post_syn.mesh_index)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>array([104938.90991211,  90399.17230225,  52673.86270142, ...,
-        70199.43048096, 212153.28248978,  91076.815979  ])</code></pre>
+       151305.01012039, 125304.9967041 , 212153.28248978], shape=(7135,))</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -925,11 +926,11 @@ Note
 </div>
 </div>
 <p>A common pattern is to copy a synapse dataframe and then add columns to it. For example, to add the distance to root to the postsynaptic sites, we can do:</p>
-<div id="8f74866b-2c14-46fb-81c1-fe51a8d2032c" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>syn_df <span class="op">=</span> sk_mesh.anno.pre_syn.df.copy()</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>syn_df[<span class="st">'dist_to_root'</span>] <span class="op">=</span> sk_mesh.distance_to_root(sk_mesh.anno.pre_syn.mesh_index)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>syn_df.head(<span class="dv">3</span>)[[<span class="st">'id'</span>,<span class="st">'size'</span>,<span class="st">'dist_to_root'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div id="8f74866b-2c14-46fb-81c1-fe51a8d2032c" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>syn_df <span class="op">=</span> sk_mesh.anno.pre_syn.df.copy()</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>syn_df[<span class="st">'dist_to_root'</span>] <span class="op">=</span> sk_mesh.distance_to_root(sk_mesh.anno.pre_syn.mesh_index)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>syn_df.head(<span class="dv">3</span>)[[<span class="st">'id'</span>,<span class="st">'size'</span>,<span class="st">'dist_to_root'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
 
@@ -946,19 +947,19 @@ Note
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>395248437</td>
-<td>9532</td>
+<td>9532.0</td>
 <td>550625.977657</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>440616430</td>
-<td>4432</td>
+<td>4432.0</td>
 <td>59338.621429</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>439592768</td>
-<td>576</td>
+<td>576.0</td>
 <td>426225.854660</td>
 </tr>
 </tbody>
@@ -972,9 +973,9 @@ Note
 <section id="calculate-path_length-of-axon-and-dendrite" class="level3">
 <h3 class="anchored" data-anchor-id="calculate-path_length-of-axon-and-dendrite">Calculate <code>path_length()</code> of axon and dendrite</h3>
 <p>Given the skeleton graph, it is trivial to estimate the pathlength (sum of all branch lengths) for a neuron:</p>
-<div id="88ea335a-9a28-405b-b91b-d99d7aff5bdc" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sk_mesh.path_length() <span class="op">/</span> <span class="fl">1e6</span> <span class="co"># to convert from nm to mm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div id="88ea335a-9a28-405b-b91b-d99d7aff5bdc" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sk_mesh.path_length() <span class="op">/</span> <span class="fl">1e6</span> <span class="co"># to convert from nm to mm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>np.float32(14.846251)</code></pre>
 </div>
 </div>
@@ -983,18 +984,18 @@ Note
 <pre><code>sk_mesh.anno.is_axon
 </code></pre>
 <p>and you can <em>mask</em> the neuron skeleton by the type of comparment simply by using these annotations as an index:</p>
-<div id="ba013a61-18bb-47f2-9b69-496d54fc9eaa" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply a mask to the mesh using the axon labels</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>sk_mesh.apply_mask(sk_mesh.anno.is_axon.mesh_mask)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="ss">f'Axon path length is </span><span class="sc">{</span>sk_mesh<span class="sc">.</span>path_length() <span class="op">/</span> <span class="fl">1e6</span><span class="sc">}</span><span class="ss"> mm'</span>)</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Reset the mask</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>sk_mesh.reset_mask()</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="ss">f'Total path length is </span><span class="sc">{</span>sk_mesh<span class="sc">.</span>path_length() <span class="op">/</span> <span class="fl">1e6</span><span class="sc">}</span><span class="ss"> mm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ba013a61-18bb-47f2-9b69-496d54fc9eaa" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply a mask to the mesh using the axon labels</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>sk_mesh.apply_mask(sk_mesh.anno.is_axon.mesh_mask)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="ss">f'Axon path length is </span><span class="sc">{</span>sk_mesh<span class="sc">.</span>path_length() <span class="op">/</span> <span class="fl">1e6</span><span class="sc">}</span><span class="ss"> mm'</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Reset the mask</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>sk_mesh.reset_mask()</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="ss">f'Total path length is </span><span class="sc">{</span>sk_mesh<span class="sc">.</span>path_length() <span class="op">/</span> <span class="fl">1e6</span><span class="sc">}</span><span class="ss"> mm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Axon path length is 7.599738121032715 mm
+<pre><code>Axon path length is 7.599737644195557 mm
 Total path length is 14.846250534057617 mm</code></pre>
 </div>
 </div>

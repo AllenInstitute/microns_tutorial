@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="CAVE Query: Synaptic Connectivity – MICrONs Tutorial">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://tutorial.microns-explorer.org/quickstart_notebooks/04-cave-query-synapses_files/figure-html/cell-14-output-2.png">
+<meta property="og:image" content="https://tutorial.microns-explorer.org/quickstart_notebooks/04-cave-query-synapses_files/figure-html/cell-15-output-2.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
 <meta property="og:image:height" content="668">
 <meta property="og:image:width" content="782">
@@ -539,12 +539,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Version update
+Archived versions: v1078, v1181, v1412
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We have released a new public version 1718, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1718.html">Release Manifests: 1718</a>.</p>
-<p>Tutorials remain pinned to v1412 at this time.</p>
+<p>We have begun archiving release versions that are more 1 years old. All publicly released annotation data is available as a static download. See: <a href="materialization-version.html#access-archived-data-versions">Access archived data versions</a> for details.</p>
+<p>You can continue to access older versions of materialization and segmentation by setting the <code>timestamp</code> argument instead of a version argument. However, fully deprecated tables will no longer be queriable from CAVEclient.</p>
 </div>
 </div>
 <p>The <strong>Connectome Annotation Versioning Engine (CAVE)</strong> is a suite of tools developed at the Allen Institute and Seung Lab to manage large connectomics data.</p>
@@ -608,7 +608,7 @@ Tip
 <div id="468594d9" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>client.materialize.get_versions()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[1300, 1078, 117, 661, 343, 1181, 795, 943, 1412]</code></pre>
+<pre><code>[1300, 117, 943, 1507, 1621, 1718]</code></pre>
 </div>
 </div>
 <p>And these are their associated timestamps (all timestamps are in UTC):</p>
@@ -617,20 +617,17 @@ Tip
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Version </span><span class="sc">{</span>version<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>client<span class="sc">.</span>materialize<span class="sc">.</span>get_timestamp(version)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Version 1300: 2025-01-13 10:10:01.286229+00:00
-Version 1078: 2024-06-05 10:10:01.203215+00:00
 Version 117: 2021-06-11 08:10:00.215114+00:00
-Version 661: 2023-04-06 20:17:09.199182+00:00
-Version 343: 2022-02-24 08:10:00.184668+00:00
-Version 1181: 2024-09-16 10:10:01.121167+00:00
-Version 795: 2023-08-23 08:10:01.404268+00:00
 Version 943: 2024-01-22 08:10:01.497934+00:00
-Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
+Version 1507: 2025-07-31 08:10:01.117494+00:00
+Version 1621: 2025-11-25 08:10:01.094430+00:00
+Version 1718: 2026-03-07 08:10:01.190228+00:00</code></pre>
 </div>
 </div>
 <p>The client will automatically query the latest materialization version. You can specify a <code>materialization_version</code> for every query if you want to access a specific version.</p>
 <div id="27bf81de-8698-4911-af8f-5979ff562425" class="cell" data-tags="[]" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set materialization version, for consistency</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1412</span> <span class="co"># current public as of 4/29/2025</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1718</span> <span class="co"># current public as of 3/7/2026</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -1008,7 +1005,7 @@ Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 <td>t</td>
 <td>14460</td>
 <td>89385691939052008</td>
-<td>864691135773033723</td>
+<td>864691135272003237</td>
 <td>89385691939060896</td>
 <td>864691136968109774</td>
 <td>[178870, 190176, 21429]</td>
@@ -1055,6 +1052,21 @@ Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
+<td>162611261</td>
+<td>2020-11-04 06:51:43.367692+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>1080</td>
+<td>89033916736382129</td>
+<td>864691136968109774</td>
+<td>89033916736383300</td>
+<td>864691135351096279</td>
+<td>[176634, 191046, 19890]</td>
+<td>[176552, 190968, 19892]</td>
+<td>[176572, 191036, 19891]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
 <td>158405512</td>
 <td>2020-11-04 06:48:59.403833+00:00</td>
 <td>NaN</td>
@@ -1063,13 +1075,13 @@ Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 <td>89385416926790697</td>
 <td>864691136968109774</td>
 <td>89385416926797494</td>
-<td>864691135546540484</td>
+<td>864691135015586198</td>
 <td>[179076, 188248, 20233]</td>
 <td>[179156, 188220, 20239]</td>
 <td>[179140, 188230, 20239]</td>
 </tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
 <td>185549462</td>
 <td>2020-11-04 06:49:10.903020+00:00</td>
 <td>NaN</td>
@@ -1083,8 +1095,8 @@ Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 <td>[193142, 190404, 19257]</td>
 <td>[193180, 190432, 19254]</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
 <td>138110803</td>
 <td>2020-11-04 06:49:46.758528+00:00</td>
 <td>NaN</td>
@@ -1093,13 +1105,13 @@ Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 <td>87263084540201919</td>
 <td>864691136968109774</td>
 <td>87263084540199587</td>
-<td>864691135060075931</td>
+<td>864691136619529179</td>
 <td>[163440, 104292, 19808]</td>
 <td>[163498, 104348, 19806]</td>
 <td>[163460, 104356, 19804]</td>
 </tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
 <td>157378264</td>
 <td>2020-11-04 07:38:27.332669+00:00</td>
 <td>NaN</td>
@@ -1112,21 +1124,6 @@ Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 <td>[179218, 107132, 19372]</td>
 <td>[179204, 107010, 19383]</td>
 <td>[179196, 107072, 19380]</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>148262628</td>
-<td>2020-11-04 06:53:27.294021+00:00</td>
-<td>NaN</td>
-<td>t</td>
-<td>3536</td>
-<td>88189766885093187</td>
-<td>864691136968109774</td>
-<td>88189835604584343</td>
-<td>864691135250533976</td>
-<td>[170154, 193170, 21123]</td>
-<td>[170046, 193240, 21123]</td>
-<td>[170118, 193220, 21128]</td>
 </tr>
 </tbody>
 </table>
@@ -1168,7 +1165,7 @@ Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 <tbody>
 <tr class="odd">
 <td rowspan="11" data-quarto-table-cell-role="th" data-valign="top">864691136968109774</td>
-<td data-quarto-table-cell-role="th">864691135280056225</td>
+<td data-quarto-table-cell-role="th">864691135362104647</td>
 <td>20</td>
 </tr>
 <tr class="even">
@@ -1176,7 +1173,7 @@ Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 <td>16</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">864691134949547516</td>
+<td data-quarto-table-cell-role="th">864691135866975708</td>
 <td>15</td>
 </tr>
 <tr class="even">
@@ -1184,37 +1181,37 @@ Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 <td>13</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">864691136275521549</td>
-<td>11</td>
+<td data-quarto-table-cell-role="th">864691135431712560</td>
+<td>13</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">864691136911628017</td>
+<td data-quarto-table-cell-role="th">864691137054711158</td>
 <td>1</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">864691135234846808</td>
+<td data-quarto-table-cell-role="th">864691137056230006</td>
 <td>1</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">864691135236362017</td>
+<td data-quarto-table-cell-role="th">864691135226481020</td>
 <td>1</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">864691136913679601</td>
+<td data-quarto-table-cell-role="th">864691135230495696</td>
 <td>1</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">864691136965772238</td>
+<td data-quarto-table-cell-role="th">864691133363813825</td>
 <td>1</td>
 </tr>
 </tbody>
 </table>
 
-<p>1035 rows × 1 columns</p>
+<p>1022 rows × 1 columns</p>
 </div>
 </div>
 </div>
@@ -1239,9 +1236,9 @@ Version 1412: 2025-04-29 10:10:01.200893+00:00</code></pre>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>proof_df[<span class="st">"strategy_axon"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>strategy_axon
-axon_partially_extended    1702
-axon_fully_extended         156
-axon_interareal             124
+axon_partially_extended    1608
+axon_fully_extended         547
+axon_interareal             120
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
@@ -1273,9 +1270,9 @@ Tip
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(syn_proof_only_df))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>183905
-CPU times: total: 1.17 s
-Wall time: 6min 14s</code></pre>
+<pre><code>373785
+CPU times: total: 1.36 s
+Wall time: 3min 44s</code></pre>
 </div>
 </div>
 </section>
@@ -1292,8 +1289,8 @@ Wall time: 6min 14s</code></pre>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>                                       ).fillna(<span class="dv">0</span>)</span>
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>syn_mat <span class="op">=</span> syn_mat.reindex(columns<span class="op">=</span>np.array(syn_mat.index))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>CPU times: total: 1min 49s
-Wall time: 2min 37s</code></pre>
+<pre><code>CPU times: total: 3min 42s
+Wall time: 5min 48s</code></pre>
 </div>
 </div>
 <p>Plot the binarized connectivity with Seaborn <code>heatmap()</code>:</p>
@@ -1310,7 +1307,7 @@ Wall time: 2min 37s</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04-cave-query-synapses_files/figure-html/cell-14-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="04-cave-query-synapses_files/figure-html/cell-15-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1378,7 +1375,7 @@ Tip
 <td>t</td>
 <td>261.806162</td>
 <td>89309001002848425</td>
-<td>864691136021936376</td>
+<td>864691136968429774</td>
 <td>50</td>
 <td>2023-03-18 14:13:21.613360+00:00</td>
 <td>t</td>
@@ -1414,7 +1411,7 @@ Tip
 <td>t</td>
 <td>230.111805</td>
 <td>89170256379033022</td>
-<td>864691135784109363</td>
+<td>864691135778954848</td>
 <td>35</td>
 <td>2023-03-18 14:13:21.602813+00:00</td>
 <td>t</td>
@@ -1486,18 +1483,18 @@ Tip
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">created</th>
-<th data-quarto-table-cell-role="th">valid</th>
-<th data-quarto-table-cell-role="th">volume</th>
-<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
-<th data-quarto-table-cell-role="th">pt_root_id</th>
 <th data-quarto-table-cell-role="th">id_ref</th>
 <th data-quarto-table-cell-role="th">created_ref</th>
 <th data-quarto-table-cell-role="th">valid_ref</th>
 <th data-quarto-table-cell-role="th">nucleus_id</th>
 <th data-quarto-table-cell-role="th">classification_system</th>
 <th data-quarto-table-cell-role="th">cell_type</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
 <th data-quarto-table-cell-role="th">pt_position</th>
 <th data-quarto-table-cell-role="th">bb_start_position</th>
 <th data-quarto-table-cell-role="th">bb_end_position</th>
@@ -1506,90 +1503,90 @@ Tip
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>336365</td>
-<td>2020-09-28 22:42:48.966292+00:00</td>
-<td>t</td>
-<td>272.488202</td>
-<td>93606511657924288</td>
-<td>864691136274724621</td>
 <td>36916</td>
 <td>2023-12-19 22:47:18.659864+00:00</td>
 <td>t</td>
 <td>336365</td>
 <td>excitatory_neuron</td>
 <td>5P-IT</td>
+<td>336365</td>
+<td>2020-09-28 22:42:48.966292+00:00</td>
+<td>t</td>
+<td>272.488202</td>
+<td>93606511657924288</td>
+<td>864691136274724621</td>
 <td>[209760, 180832, 27076]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>110648</td>
-<td>2020-09-28 22:45:09.650639+00:00</td>
-<td>t</td>
-<td>328.533443</td>
-<td>79385153184885329</td>
-<td>864691135489403194</td>
 <td>1070</td>
 <td>2023-12-19 22:38:00.472115+00:00</td>
 <td>t</td>
 <td>110648</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
+<td>110648</td>
+<td>2020-09-28 22:45:09.650639+00:00</td>
+<td>t</td>
+<td>328.533443</td>
+<td>79385153184885329</td>
+<td>864691135489403194</td>
 <td>[106448, 129632, 25410]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>112071</td>
-<td>2020-09-28 22:43:34.088785+00:00</td>
-<td>t</td>
-<td>272.929423</td>
-<td>79035988248401958</td>
-<td>864691136147292311</td>
 <td>1099</td>
 <td>2023-12-19 22:38:00.898837+00:00</td>
 <td>t</td>
 <td>112071</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
+<td>112071</td>
+<td>2020-09-28 22:43:34.088785+00:00</td>
+<td>t</td>
+<td>272.929423</td>
+<td>79035988248401958</td>
+<td>864691136147292311</td>
 <td>[103696, 149472, 15583]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>197927</td>
-<td>2020-09-28 22:43:10.652649+00:00</td>
-<td>t</td>
-<td>91.308851</td>
-<td>84529699506051734</td>
-<td>864691135655940290</td>
 <td>13259</td>
 <td>2023-12-19 22:41:14.417986+00:00</td>
 <td>t</td>
 <td>197927</td>
 <td>nonneuron</td>
 <td>oligo</td>
+<td>197927</td>
+<td>2020-09-28 22:43:10.652649+00:00</td>
+<td>t</td>
+<td>91.308851</td>
+<td>84529699506051734</td>
+<td>864691135655940290</td>
 <td>[143600, 186192, 26471]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>198087</td>
-<td>2020-09-28 22:41:36.677186+00:00</td>
-<td>t</td>
-<td>161.744978</td>
-<td>83756261929388963</td>
-<td>864691135809440972</td>
 <td>13271</td>
 <td>2023-12-19 22:41:14.685474+00:00</td>
 <td>t</td>
 <td>198087</td>
 <td>nonneuron</td>
 <td>astrocyte</td>
+<td>198087</td>
+<td>2020-09-28 22:41:36.677186+00:00</td>
+<td>t</td>
+<td>161.744978</td>
+<td>83756261929388963</td>
+<td>864691135809440972</td>
 <td>[137952, 190944, 27361]</td>
 <td>[nan, nan, nan]</td>
 <td>[nan, nan, nan]</td>
@@ -1604,9 +1601,9 @@ Tip
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>ct_auto_df[<span class="st">"classification_system"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>classification_system
-excitatory_neuron    63776
-nonneuron            18716
-inhibitory_neuron     7855
+excitatory_neuron    63810
+nonneuron            18761
+inhibitory_neuron     7863
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
@@ -1614,21 +1611,21 @@ Name: count, dtype: int64</code></pre>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>ct_auto_df[<span class="st">"cell_type"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>cell_type
-23P          19647
-4P           14723
-6P-IT        11638
-5P-IT         7892
-astrocyte     7111
-oligo         6900
-6P-CT         6759
-BC            3312
-MC            2438
-microglia     2400
-5P-ET         2159
+23P          19656
+4P           14728
+6P-IT        11641
+5P-IT         7899
+astrocyte     7133
+oligo         6902
+6P-CT         6761
+BC            3319
+MC            2439
+microglia     2410
+5P-ET         2167
 BPC           1484
-OPC           1459
+OPC           1471
 5P-NP          958
-pericyte       846
+pericyte       845
 NGC            621
 Name: count, dtype: int64</code></pre>
 </div>
@@ -1666,47 +1663,47 @@ Name: count, dtype: int64</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">90372</td>
-<td>864691137199238721</td>
+<td data-quarto-table-cell-role="th">90459</td>
+<td>864691137199860033</td>
+<td>inhibitory_neuron</td>
+<td>BC</td>
+<td>301120</td>
+<td>aibs_coarse_inhibitory</td>
+<td>BC</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">90460</td>
+<td>864691137199863361</td>
+<td>excitatory_neuron</td>
+<td>23P</td>
+<td>328053</td>
+<td>NaN</td>
+<td>unknown</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">90461</td>
+<td>864691137199868225</td>
 <td>excitatory_neuron</td>
 <td>4P</td>
-<td>260813</td>
+<td>296904</td>
 <td>NaN</td>
 <td>unknown</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">90373</td>
-<td>864691137199243585</td>
-<td>nonneuron</td>
-<td>astrocyte</td>
-<td>304889</td>
+<td data-quarto-table-cell-role="th">90462</td>
+<td>864691137199871553</td>
+<td>excitatory_neuron</td>
+<td>4P</td>
+<td>262365</td>
 <td>NaN</td>
 <td>unknown</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">90374</td>
-<td>864691137199255873</td>
+<td data-quarto-table-cell-role="th">90463</td>
+<td>864691137199877953</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
-<td>358554</td>
-<td>NaN</td>
-<td>unknown</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">90375</td>
-<td>864691137199268417</td>
-<td>nonneuron</td>
-<td>astrocyte</td>
-<td>266983</td>
-<td>NaN</td>
-<td>unknown</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">90376</td>
-<td>864691137199312705</td>
-<td>excitatory_neuron</td>
-<td>23P</td>
-<td>422139</td>
+<td>326213</td>
 <td>NaN</td>
 <td>unknown</td>
 </tr>
@@ -1821,7 +1818,7 @@ Name: count, dtype: int64</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04-cave-query-synapses_files/figure-html/cell-23-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="04-cave-query-synapses_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1883,30 +1880,13 @@ Name: count, dtype: int64</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>174979485</td>
-<td>2020-11-04 08:50:39.220791+00:00</td>
-<td>NaN</td>
-<td>t</td>
-<td>4688</td>
-<td>90161191099360974</td>
-<td>864691135817602127</td>
-<td>90161191099310671</td>
-<td>864691136674495623</td>
-<td>[184770, 200984, 19986]</td>
-<td>[184786, 201052, 19972]</td>
-<td>[184816, 200974, 19981]</td>
-<td>unknown</td>
-<td>5P-IT</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
 <td>152094175</td>
 <td>2020-11-04 07:20:36.943498+00:00</td>
 <td>NaN</td>
 <td>t</td>
 <td>14020</td>
 <td>88401010355440214</td>
-<td>864691135778700477</td>
+<td>864691136138779517</td>
 <td>88401010355435596</td>
 <td>864691135561699041</td>
 <td>[171952, 194076, 19787]</td>
@@ -1915,22 +1895,39 @@ Name: count, dtype: int64</code></pre>
 <td>23P</td>
 <td>MC</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>161901009</td>
-<td>2020-11-04 14:35:02.898645+00:00</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>162440369</td>
+<td>2020-11-04 14:11:14.134148+00:00</td>
 <td>NaN</td>
 <td>t</td>
-<td>668</td>
-<td>89030412042836638</td>
-<td>864691135817602127</td>
-<td>89030480762316394</td>
-<td>864691136380816597</td>
-<td>[176280, 165046, 19727]</td>
-<td>[176256, 165108, 19730]</td>
-<td>[176238, 165052, 19722]</td>
+<td>5372</td>
+<td>89386997608754462</td>
+<td>864691135892176009</td>
+<td>89386997608756790</td>
+<td>864691135343081925</td>
+<td>[179126, 200166, 21083]</td>
+<td>[179168, 200108, 21088]</td>
+<td>[179206, 200182, 21083]</td>
 <td>unknown</td>
-<td>Unsure E</td>
+<td>6P-CT</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>148367619</td>
+<td>2020-11-04 11:46:41.982682+00:00</td>
+<td>NaN</td>
+<td>t</td>
+<td>4880</td>
+<td>88187223727657156</td>
+<td>864691135892176009</td>
+<td>88187223727666196</td>
+<td>864691135562474977</td>
+<td>[170264, 174184, 17059]</td>
+<td>[170378, 174182, 17060]</td>
+<td>[170300, 174144, 17052]</td>
+<td>unknown</td>
+<td>unknown</td>
 </tr>
 </tbody>
 </table>
@@ -1942,7 +1939,7 @@ Name: count, dtype: int64</code></pre>
 <section id="pivot-the-synapse-table-to-collect-cell-type-connectivity" class="level3">
 <h3 class="anchored" data-anchor-id="pivot-the-synapse-table-to-collect-cell-type-connectivity">Pivot the synapse table to collect cell type connectivity</h3>
 <p>Using <code>pandas.pivot()</code> on the pre- and post-synaptic cell classes, we count the number of connections between:</p>
-<div id="a4d027de-8e66-48dc-b998-144e6832a3ba" class="cell" data-execution_count="28">
+<div id="a4d027de-8e66-48dc-b998-144e6832a3ba" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot table to get connectivity between cell types</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>syn_ct_counts <span class="op">=</span> (syn_proof_ct_df.pivot_table(index<span class="op">=</span><span class="st">'cell_type_pre'</span>,</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                                             columns<span class="op">=</span><span class="st">'cell_type_post'</span>,</span>
@@ -1963,7 +1960,7 @@ Name: count, dtype: int64</code></pre>
 <section id="plot-cell-connectivity-aggregated-by-cell-type" class="level3">
 <h3 class="anchored" data-anchor-id="plot-cell-connectivity-aggregated-by-cell-type">Plot cell connectivity, aggregated by cell type</h3>
 <p>This now summarizes connectivity between broad cell classes</p>
-<div id="7a35b52f-974c-4ea6-ad78-4419c7abb3c8" class="cell" data-execution_count="29">
+<div id="7a35b52f-974c-4ea6-ad78-4419c7abb3c8" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>), dpi<span class="op">=</span><span class="dv">150</span>)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(syn_ct_counts, cmap<span class="op">=</span><span class="st">"gist_heat_r"</span>, annot<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>ax, fmt<span class="op">=</span><span class="st">'d'</span>, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">15000</span>,</span>
@@ -1976,13 +1973,13 @@ Name: count, dtype: int64</code></pre>
 <span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>ax.vlines([<span class="dv">8</span>], <span class="op">*</span>ax.get_ylim(), color<span class="op">=</span><span class="st">'white'</span>,linewidth <span class="op">=</span> <span class="dv">3</span>)</span>
 <span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Aggregate Connectivity between proofread cells </span><span class="ch">\n</span><span class="st"> (cell type manually labeled)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>Text(0.5, 1.0, 'Aggregate Connectivity between proofread cells \n (cell type manually labeled)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04-cave-query-synapses_files/figure-html/cell-26-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="04-cave-query-synapses_files/figure-html/cell-27-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
