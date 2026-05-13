@@ -1,0 +1,8 @@
+::: {.callout-warning}
+
+## Archived versions: v1078, v1181, v1412
+We have begun archiving release versions that are more 1 years old. All publicly released annotation data is available as a static download. See: [Access archived data versions](materialization-version.html#access-archived-data-versions) for details.
+
+You can continue to access older versions of materialization and segmentation by setting the `timestamp` argument instead of a version argument. However, fully deprecated tables will no longer be queriable from CAVEclient. 
+
+:::
