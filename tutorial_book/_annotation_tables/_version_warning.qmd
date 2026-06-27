@@ -1,6 +1,6 @@
-::: {.callout-warning}
+::: {.callout-tip}
 ## Version update
-We have released a new public version 1718, as part of our quarterly release schedule. See details at [Release Manifests: 1718](../release_manifests/version-1718.html). 
+We have released a new public version 1822, as part of our quarterly release schedule. See details at [Release Manifests: 1822](../release_manifests/version-1822.html). 
 
-Tutorials remain pinned to v1412 at this time.
+Tutorials will be updated from v1412 in the coming weeks
 :::
