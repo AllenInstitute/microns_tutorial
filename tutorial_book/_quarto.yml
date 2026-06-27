@@ -61,6 +61,7 @@ website:
         contents:
           - section: "Release Manifests"
             contents: 
+              - release_manifests/version-1822.ipynb
               - release_manifests/version-1718.ipynb
               - release_manifests/version-1621.ipynb
               - release_manifests/version-1507.ipynb
