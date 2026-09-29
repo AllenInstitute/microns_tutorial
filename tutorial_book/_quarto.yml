@@ -60,7 +60,8 @@ website:
       - section: "Data Inventory"
         contents:
           - section: "Release Manifests"
-            contents: 
+            contents:
+              - release_manifests/version-1926.ipynb
               - release_manifests/version-1822.ipynb
               - release_manifests/version-1718.ipynb
               - release_manifests/version-1621.ipynb
