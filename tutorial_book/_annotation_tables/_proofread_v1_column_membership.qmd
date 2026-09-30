@@ -1,0 +1,30 @@
+Table name: `proofread_v1_column_membership`
+
+This reference table documents which cells belong to the highly-proofread V1 Column. Cells in this table are EITHER part of the manually identified 100 µm diameter cortical column (`classification_system=core_column`) OR part of the 100 µm expansion of that column (`classification_system=expanded_column`). All cells in this table are proofread to at least a status of `clean`, further documented in the CAVE tables `proofreading_status_and_strategy`, `vortex_astrocyte_proofreading_status`, and `vortex_microglia_proofreading_status`. Fine-grained cell type and detailed proofreading status are available in those other tables.
+
+As of v1926, the table contains 1778 cells: 1564 in the `core_column` and 214 in the `expanded_column`; 1571 are neurons and 207 are non-neurons.
+
+Uploaded and maintained by Bethanny Danskin.
+
+The key columns are:
+
+| Column | Description |
+| :--- | :--- |
+| `id` | Soma ID for the cell |
+| `pt_position` \ `pt_supervoxel_id` \ `pt_root_id` | Bound spatial point columns associated with the centroid of the cell nucleus |
+| `classification_system` | Membership in the column, one of `core_column` or `expanded_column` |
+| `cell_type` | Broad cell type category, one of `neuron` or `nonneuron` |
+
+: Proofread V1 Column Membership column definitions {.light .hover}
+
+:::{.callout-tip}
+This is a reference table on `nucleus_detection_v0`, and can be indexed by the same nucleus id.
+:::
+
+```python
+# Standard query
+client.materialize.query_table('proofread_v1_column_membership')
+
+# Content-aware query
+client.materialize.tables.proofread_v1_column_membership(target_id=example_nucleus_id).query()
+```
