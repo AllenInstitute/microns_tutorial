@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -93,10 +96,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f670ab49fb9634e9dab58972b11477cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-4e663f3a4ff1a491e18bd6a28adf0390.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -372,6 +375,12 @@ div.csl-indent {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./release_manifests/version-1926.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1926 (Sep 2026)</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./release_manifests/version-1822.html" class="sidebar-item-text sidebar-link">
@@ -910,7 +919,7 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">PSD Segmentation</td>
-<td style="text-align: left;"><strong>minie65</strong></td>
+<td style="text-align: left;"><strong>minnie65</strong></td>
 <td style="text-align: left;"><code>https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/clefts</code></td>
 <td style="text-align: left;">Voxel segmentation of each synapse (post-synaptic density - PSD) detected</td>
 <td style="text-align: left;">Precomputed Compressed Segmentation Data (127 GB)</td>
@@ -1468,7 +1477,7 @@ Important
 </tr>
 </tbody>
 </table>
-<p>Each h5 file here can be ingested into a meshwork object in python with the package <a href=".\quickstart_notebooks/06-cloudvolume-download-mesh.html#meshparty-for-processing-mesh-objects">MeshParty</a>. This meshwork integrates anatomical data and other user defined annotations such as synapses. The meshworks here contain annotation tables including pre and post synaptic chemical synapses on the given neuron and the ids of the post or presynaptic neurons respectively. Unless the neuron has had a high level of proofreading, the axon has been masked and removed.</p>
+<p>Each h5 file here can be ingested into a meshwork object in python with the package <a href="./quickstart_notebooks/06-cloudvolume-download-mesh.html#meshparty-for-processing-mesh-objects">MeshParty</a>. This meshwork integrates anatomical data and other user defined annotations such as synapses. The meshworks here contain annotation tables including pre and post synaptic chemical synapses on the given neuron and the ids of the post or presynaptic neurons respectively. Unless the neuron has had a high level of proofreading, the axon has been masked and removed.</p>
 <table class="caption-top table">
 <caption>minnie65 Skeleton metadata v661</caption>
 <colgroup>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dataset Basics – MICrONs Tutorial</title>
+<title>1926 (Sep 2026) – MICrONs Tutorial</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,26 +26,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4e663f3a4ff1a491e18bd6a28adf0390.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-4e663f3a4ff1a491e18bd6a28adf0390.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,8 +110,8 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Dataset Basics – MICrONs Tutorial">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="1926 (Sep 2026) – MICrONs Tutorial">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="MICrONs Tutorial">
 </head>
@@ -88,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MICrONs Tutorial</span>
     </a>
   </div>
@@ -99,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./introduction.html"> 
+    <a class="nav-link" href="../introduction.html"> 
 <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
@@ -107,11 +142,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Microns Explorer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./analysis_gallery/index.html"> 
+    <a class="nav-link" href="../analysis_gallery/index.html"> 
 <span class="menu-text">Analysis Gallery</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./faq.html"> 
+    <a class="nav-link" href="../faq.html"> 
 <span class="menu-text">FAQ</span></a>
   </li>  
   <li class="nav-item">
@@ -154,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dataset-basics.html">Dataset Basics</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1926.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-1926.html">1926 (Sep 2026)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -176,13 +211,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./background.html" class="sidebar-item-text sidebar-link">
+  <a href="../background.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Background</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dataset-basics.html" class="sidebar-item-text sidebar-link active">
+  <a href="../dataset-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dataset Basics</span></a>
   </div>
 </li>
@@ -197,13 +232,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./proofreading.html" class="sidebar-item-text sidebar-link">
+  <a href="../proofreading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Proofreading and Data Quality</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./materialization-version.html" class="sidebar-item-text sidebar-link">
+  <a href="../materialization-version.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Materialization and Versioning</span></a>
   </div>
 </li>
@@ -220,19 +255,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./neuroglancer-basic.html" class="sidebar-item-text sidebar-link">
+  <a href="../neuroglancer-basic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Neuroglancer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dash-table-viewer.html" class="sidebar-item-text sidebar-link">
+  <a href="../dash-table-viewer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dash Apps: Table Viewer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dash-connectivity.html" class="sidebar-item-text sidebar-link">
+  <a href="../dash-connectivity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dash Apps: Connectivity Viewer</span></a>
   </div>
 </li>
@@ -240,7 +275,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./python-tools.html" class="sidebar-item-text sidebar-link">
+            <a href="../python-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python Tools</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -249,55 +284,55 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart_notebooks/01-caveclient-setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/01-caveclient-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CAVEclient Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart_notebooks/02-cave-query-cell-types.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/02-cave-query-cell-types.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CAVE Query: Cell Types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart_notebooks/03-cave-query-proofread-cells.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/03-cave-query-proofread-cells.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CAVE Query: Proofread Cells</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart_notebooks/04-cave-query-synapses.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/04-cave-query-synapses.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CAVE Query: Synaptic Connectivity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart_notebooks/05-cloudvolume-download.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/05-cloudvolume-download.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Download Imagery and Segmentation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart_notebooks/06-cloudvolume-download-mesh.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/06-cloudvolume-download-mesh.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Download Meshes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart_notebooks/07-cave-download-skeleton.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/07-cave-download-skeleton.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Download Skeletons</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart_notebooks/08-standard-transform.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/08-standard-transform.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Standard Transform: Coordinate System</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quickstart_notebooks/09-nglui-neuroglancer.html" class="sidebar-item-text sidebar-link">
+  <a href="../quickstart_notebooks/09-nglui-neuroglancer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">NGLui: Neuroglancer States</span></a>
   </div>
 </li>
@@ -305,103 +340,103 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Data Inventory</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Release Manifests</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-1926.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1926.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">1926 (Sep 2026)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-1822.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1822.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1822 (Jun 2026)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-1718.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1718.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1718 (Mar 2026)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-1621.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1621.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1621 (Nov 2025)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-1507.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1507.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1507 (Jul 2025)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-1412.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1412.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1412 (Apr 2025)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-1300.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1300.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1300 (Jan 2025)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-1181.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1181.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1181 (Sep 2024)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-1078.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-1078.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1078 (Jun 2024)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-943.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-943.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">943 (Jan 2024)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-795.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-795.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">795 (Aug 2023)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-661.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-661.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">661 (Jun 2023)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-343.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-343.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">343 (Feb 2022)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./release_manifests/version-117.html" class="sidebar-item-text sidebar-link">
+  <a href="../release_manifests/version-117.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">117 (Jun 2021)</span></a>
   </div>
 </li>
@@ -409,13 +444,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./annotation-tables.html" class="sidebar-item-text sidebar-link">
+  <a href="../annotation-tables.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Annotation Tables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./static-repositories.html" class="sidebar-item-text sidebar-link">
+  <a href="../static-repositories.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Static Repositories</span></a>
   </div>
 </li>
@@ -423,7 +458,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./vortex-overview.html" class="sidebar-item-text sidebar-link">
+            <a href="../vortex-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Virtual Observatory of the Cortex (VORTEX)</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -432,19 +467,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vortex-year-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../vortex-year-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Outcomes - Year 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vortex-year-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../vortex-year-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Outcomes - Year 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vortex-year-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../vortex-year-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project Outcomes - Year 3</span></a>
   </div>
 </li>
@@ -460,17 +495,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dataset-information-hub" id="toc-dataset-information-hub" class="nav-link active" data-scroll-target="#dataset-information-hub">Dataset Information Hub</a></li>
-  <li><a href="#how-to-reference-a-neuron" id="toc-how-to-reference-a-neuron" class="nav-link" data-scroll-target="#how-to-reference-a-neuron">How to reference a neuron</a></li>
+  <li><a href="#proofread-v1-column" id="toc-proofread-v1-column" class="nav-link active" data-scroll-target="#proofread-v1-column">Proofread V1 Column</a></li>
+  <li><a href="#vortex-efforts" id="toc-vortex-efforts" class="nav-link" data-scroll-target="#vortex-efforts">VORTEX Efforts</a>
+  <ul class="collapse">
+  <li><a href="#proofreading-status-and-strategy" id="toc-proofreading-status-and-strategy" class="nav-link" data-scroll-target="#proofreading-status-and-strategy">Proofreading Status and Strategy</a></li>
+  <li><a href="#vortex-proofread-thalamic-axons" id="toc-vortex-proofread-thalamic-axons" class="nav-link" data-scroll-target="#vortex-proofread-thalamic-axons">VORTEX proofread thalamic axons</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/dataset-basics.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-1926.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Inventory</li><li class="breadcrumb-item"><a href="../release_manifests/version-1926.html">Release Manifests</a></li><li class="breadcrumb-item"><a href="../release_manifests/version-1926.html">1926 (Sep 2026)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Dataset Basics</h1>
+<h1 class="title">1926 (Sep 2026)</h1>
 </div>
 
 
@@ -487,49 +526,287 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>One of the more complicated things about using connectomics data is that it’s both highly multimodal —&nbsp;there are images, tables, meshes, and more — and that it has been designed to be dynamic, as the segmentation changes with proofeading and carries changes to synaptic connectivity and more. This section will cover what types of data exist and how to access them.</p>
-<p>The types of data we will describe here are:</p>
+<p>Data Release v1926 (September 28, 2026) is the third quarterly release of 2026.</p>
+<p>This version ADDS the following table</p>
 <ul>
-<li><strong>Imagery</strong>: The 3d array depicting the ultrastructure, with grayscale values.<br>
-</li>
-<li><strong>Segmentation</strong>: A 3d array where each voxel has the root id of the segmentation at that location (see next section).<br>
-</li>
-<li><strong>Meshes</strong>: A representation of the 3d surface of a neuron.<br>
-</li>
-<li><strong>Skeletons</strong> : A representation of the tree-like structure of a neuron.<br>
-</li>
-<li><strong>Tables</strong>: Database tables that describe the various types of annotations, such as cell types, synapses, and more.</li>
+<li><code>proofread_v1_column_membership</code> : a reference table documenting which cells belong to the highly-proofread V1 cortical column, either the manually identified 100 µm diameter core column or its 100 µm expansion</li>
 </ul>
-<p>In addition, there are three primary ways to access the data:</p>
+<p>The following tables have updated status or entries, from VORTEX proofreading and annotations</p>
 <ul>
-<li><strong>Neuroglancer</strong> : Neuroglancer is a web-based viewer to explore the 3d data, and offers access to imagery, segmentations, meshes, and annotations.<br>
-Its graphical interface, ability to quickly explore data, and share links make it convenient for fast exploration.</li>
-<li><strong>Dash web apps</strong>: Web apps that allow fast querying of tables and synaptic connectivity that can also be used to generate complex Neuroglancer links.<br>
-Not as flexible as python programmatic access, but it can be used to quickly explore certain features of the data and visualize in Neuroglancer.</li>
-<li><strong>Python</strong> : A collection of tools based around the CAVEclient offer a programmatic interface to the data.</li>
+<li><code>proofreading_status_and_strategy</code> (newly proofread cells and upgraded cell status)</li>
+<li><code>vortex_thalamic_proofreading_status</code> (newly proofread axons and upgraded cell status)</li>
 </ul>
-<section id="dataset-information-hub" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-information-hub">Dataset Information Hub</h2>
-<p>If you need to look up any particular values or links for the dataset — how to open a Neuroglancer link for it, what annotation tables exist, how to find Dash Apps — the <strong>public MICrONs datastack</strong> has a <a href="https://global.daf-apis.com/info/datastack/minnie65_public">useful information page</a>. Go there if you need to look up basic details about the dataset.</p>
-<p>Particularly useful links here are:</p>
+<p>The following tables from previous versions are included:</p>
 <ul>
-<li>the <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6002690212495360">Spelunker neuroglancer link</a></li>
-<li>the <a href="https://minnie.microns-daf.com/dash/datastack/minnie65_public">public Dash Apps</a></li>
-<li>the <a href="https://minnie.microns-daf.com/materialize/views/datastack/minnie65_public">list of all materialization versions</a></li>
-<li>and the <a href="https://minnie.microns-daf.com/materialize/views/datastack/minnie65_public/version/1412">annotation tables</a> associated with the most recent release version (v1300).</li>
+<li><code>synapses_pni_2</code> ( <a href="version-117.html">v117</a> )</li>
+<li><code>nucleus_detection_v0</code> ( <a href="version-117.html">v117</a> )</li>
+<li><code>allen_v1_column_types_slanted_ref</code>( <a href="version-661.html">v661</a> )</li>
+<li><code>aibs_column_nonneuronal_ref</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>baylor_log_reg_cell_type_coarse_v1</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>nucleus_alternative_points</code> ( <a href="version-661.html">v661</a> )</li>
+<li><code>allen_column_mtypes_v2</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>aibs_metamodel_celltypes_v661</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>aibs_metamodel_mtypes_v661_v2</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>l5et_column</code>, <code>bodor_pt_cells</code>, <code>bodor_pt_target_proofread</code>, and <code>pt_synapse_targets</code> ( <a href="version-795.html">v795</a> )</li>
+<li><code>functional_properties_v3_bcm</code> ( <a href="version-943.html">v943</a> )</li>
+<li><code>coregistration_manual_v4</code> ( <a href="version-943.html">v943</a> )</li>
+<li><code>apl_functional_coreg_vess_fwd</code> ( <a href="version-943.html">v943</a> )</li>
+<li><code>proofreading_status_and_strategy</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>vortex_astrocyte_proofreading_status</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>vortex_compartment_targets</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>vortex_manual_myelination_v0</code>, <code>vortex_manual_nodes_of_ranvier</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>nucleus_functional_area_assignment</code>( <a href="version-1078.html">v1078</a> )</li>
+<li><code>synapse_target_structure</code> ( <a href="version-1078.html">v1078</a> )</li>
+<li><code>coregistration_auto_phase3_fwd_apl_vess_combined_v2</code> ( <a href="version-1300.html">v1300</a> )</li>
+<li><code>coregistration_auto_phase3_fwd_v2</code> ( <a href="version-1300.html">v1300</a> )</li>
+<li><code>cg_cell_type_calls</code>, <code>gamlin_2023_mcs</code>, <code>gamlin_2023_mcs_met_types</code> ( <a href="version-1300.html">v1300</a> )</li>
+<li><code>vortex_thalamic_proofreading_status</code> ( <a href="version-1412.html">v1412</a> )</li>
+<li><code>digital_twin_properties_bcm_coreg_v4</code> ( <a href="version-1507.html">v1507</a> )</li>
+<li><code>digital_twin_properties_bcm_coreg_auto_phase3_fwd_v2</code> ( <a href="version-1507.html">v1507</a> )</li>
+<li><code>digital_twin_properties_bcm_coreg_apl_vess_fwd</code> ( <a href="version-1507.html">v1507</a> )</li>
+<li><code>vortex_peptidergic_proofreading_status</code> ( <a href="version-1507.html">v1507</a> )</li>
+<li><code>myelin_auto_tags_2points</code> ( <a href="version-1621.html">v1621</a> )</li>
+<li><code>vortex_axon_backtrace_column</code> ( <a href="version-1621.html">v1621</a> )</li>
+<li><code>vortex_synapse_reattachment</code> ( <a href="version-1621.html">v1621</a> )</li>
+<li><code>vortex_microglia_proofreading_status</code> ( <a href="version-1621.html">v1621</a> )</li>
+<li><code>cell_type_multifeature_combo</code> ( <a href="version-1718.html">v1718</a> )</li>
+<li><code>synapse_target_predictions_ssa_v2</code> ( <a href="version-1718.html">v1718</a> )</li>
+<li><code>synapse_spine_mapping_v2</code> ( <a href="version-1718.html">v1718</a> )</li>
 </ul>
+<p>Information about the version 1926 release can be queried with the following:</p>
+<div id="d4b45ac1-201b-43af-9698-a13612b3a51d" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># report timestamp metadata on the version of interest</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client.materialize.get_version_metadata(<span class="dv">1926</span>)[<span class="st">'time_stamp'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>datetime.datetime(2026, 9, 28, 22, 44, 42, 598563, tzinfo=datetime.timezone.utc)</code></pre>
+</div>
+</div>
+<section id="proofread-v1-column" class="level2">
+<h2 class="anchored" data-anchor-id="proofread-v1-column">Proofread V1 Column</h2>
+<p>Table name: <code>proofread_v1_column_membership</code></p>
+<p>This reference table documents which cells belong to the highly-proofread V1 Column. Cells in this table are EITHER part of the manually identified 100 µm diameter cortical column (<code>classification_system=core_column</code>) OR part of the 100 µm expansion of that column (<code>classification_system=expanded_column</code>). All cells in this table are proofread to at least a status of <code>clean</code>, further documented in the CAVE tables <code>proofreading_status_and_strategy</code>, <code>vortex_astrocyte_proofreading_status</code>, and <code>vortex_microglia_proofreading_status</code>. Fine-grained cell type and detailed proofreading status are available in those other tables.</p>
+<p>As of v1926, the table contains 1778 cells: 1564 in the <code>core_column</code> and 214 in the <code>expanded_column</code>; 1571 are neurons and 207 are non-neurons.</p>
+<p>Uploaded and maintained by Bethanny Danskin.</p>
+<p>The key columns are:</p>
+<table class="table-light table-hover caption-top table">
+<caption>Proofread V1 Column Membership column definitions</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>classification_system</code></td>
+<td style="text-align: left;">Membership in the column, one of <code>core_column</code> or <code>expanded_column</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cell_type</code></td>
+<td style="text-align: left;">Broad cell type category, one of <code>neuron</code> or <code>nonneuron</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a reference table on <code>nucleus_detection_v0</code>, and can be indexed by the same nucleus id.</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'proofread_v1_column_membership'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofread_v1_column_membership(target_id<span class="op">=</span>example_nucleus_id).query()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For more on how to interpret the table, see <a href="../annotation-tables.html">Annotation Tables</a></p>
 </section>
-<section id="how-to-reference-a-neuron" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-reference-a-neuron">How to reference a neuron</h2>
-<p>The dynamic nature of the data means that there is more than one way to reference a neuron, and each way has a slightly different meaning.</p>
-<p>The most frequent way to reference a specific neuron is its <strong>root id</strong>, a unique integer that identifies a specific segmentation, and can be used in numerous places. However, as proofreading occurs, the segmentation of a cell can change, and each edit creates a new “version” of a given neuron that is given its own unique root id. Root ids thus refer to not only a specific cell, but a specific version of that cell.</p>
-<p>When downloading meshes, querying the database, or browsing in Neuroglancer, we use the <strong>root id</strong> of a cell.</p>
-<p>However, when using data from different points in time, however, root ids can change and the data might not be consistent across two time points. One way to make this easier is to only use data from one moment in time.</p>
-<p>This is the case for the public database that will be used in the course — all data from the public database is synched up to a single moment in time, but it does mean that the analysis cannot respond to any changes in segmentation. In some cases, in some cases, you might see the root id called a “segment id” or an “object id,” but they all refer to the same thing.</p>
-<p>For segmentations with a cell body in the volume, we also have a <strong>cell id</strong> (or <strong>soma id</strong>), which is a unique integer that identifies each nucleus in the dataset. The advantage of the soma id is that it remains constant across all versions of a cell, so it can be used to track a cell across time. The disadvantage is that to look up the id at any given time or to load into Neuroglancer, you need to look up the root id.</p>
-<p>Cell ids can be found in the <code>nucleus_detection_v0</code> table in the database, as well as many of the tables that reference cell types.</p>
+<section id="vortex-efforts" class="level2">
+<h2 class="anchored" data-anchor-id="vortex-efforts">VORTEX Efforts</h2>
+<section id="proofreading-status-and-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="proofreading-status-and-strategy">Proofreading Status and Strategy</h3>
+<p>Table name: <code>proofreading_status_and_strategy</code></p>
+<p>The table <code>proofreading_status_and_strategy</code> describes the status of cells that have undergone manual proofreading.</p>
+<p>Because of the inherent difference in the difficulty and time required for different kinds of proofreading, we describe the status of axons and dendrites separately.</p>
+<p>Each compartment <code>status</code> may be either:</p>
+<ul>
+<li><code>FALSE</code>: indicates no comprehensive proofreading has been performed, or is not applicable.<br>
+</li>
+<li><code>TRUE</code>: indicates that false merges have been comprehensively removed, and the compartment is at least ‘clean’. Consult the <code>strategy</code> column if completeness of the compartment is relevant to your research.</li>
+</ul>
+<p>An axon or dendrite labeled as <code>status=TRUE</code> can be trusted to be correct, but may not be complete. The degree of completion can be read from the <code>strategy</code> column. For more information, please see <a href="../em_03_proofreading.html">Proofreading and Data Quality</a>; or also the <a href="https://www.microns-explorer.org/manifests/mm3-proofreading">microns-explorer page on proofreading strategies</a>.</p>
+<p>The key columns are:</p>
+<table class="table-light table-hover caption-top table">
+<caption>Proofreading Status Table</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the centroid of the cell nucleus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>valid_id</code></td>
+<td style="text-align: left;">The root id of the neuron when it the proofreading assessment was made. <em>NOTE: if this does not match the <code>pt_root_id</code> then the cell has undergone further changes. This is usually and improvement in proofreading, but proceed with caution.</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>status_dendrite</code></td>
+<td style="text-align: left;">The status of the dendrite proofreading. May be <code>TRUE</code> or <code>FALSE</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>status_axon</code></td>
+<td style="text-align: left;">The status of the axon proofreading. May be <code>TRUE</code> or <code>FALSE</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>strategy_dendrite</code></td>
+<td style="text-align: left;">The strategy employed to proofread the dendrite. See strategy table below for details</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>strategy_axon</code></td>
+<td style="text-align: left;">The strategy employed to proofread the axon. See strategy table below for details</td>
+</tr>
+</tbody>
+</table>
+<p>The specific strategies are as follows (and will update over time):</p>
+<section id="proofreading-strategies" class="level4">
+<h4 class="anchored" data-anchor-id="proofreading-strategies">Proofreading Strategies</h4>
+<table class="table-light table-hover caption-top table">
+<caption>Proofreading Strategy Table</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Strategy</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>none</code></td>
+<td style="text-align: left;">No cleaning, and no extension. Indicates an entry in <code>proofreading_status</code> that is <code>FALSE</code> for that compartment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>dendrite_clean</code></td>
+<td style="text-align: left;">The dendrite had incorrectly-merged axon and dendritic segments comprehensively removed, meaning the input synapses are accurate. The dendrite may be incorrectly truncated by segmentation error. Not all dendrite tips have been checked for extension. No comprehensive attempt was made to re-attach spine heads.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>dendrite_extended</code></td>
+<td style="text-align: left;">The dendrite had incorrectly-merged axon and dendritic segments comprehensively removed, meaning the input synapses are accurate. Every tip was identified, manually inspected, and extended if possible. No comprehensive attempt was made to re-attach spine heads.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>axon_column_truncated</code></td>
+<td style="text-align: left;">AThe axon was extended within the V1 cortical column, with a preference for local connections. In some cases the axon was cut at the column boundary and/or the layer boundary, especially the boundary between layers 2/3 and layer 4. Output synapses represent a sampling of potential partners</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>axon_interareal</code></td>
+<td style="text-align: left;">The axon was extended with a preference for branches that projected to other brain areas. Some axon branches were fully extended, but local connections may be incomplete. Output synapses represent a sampling of potential partners.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>axon_partially_extended</code></td>
+<td style="text-align: left;">The axon was extended outward from the soma, following each branch to its termination. Output synapses represent a sampling of potential partners.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>axon_fully_extended</code></td>
+<td style="text-align: left;">Axon was extended outward from the soma, following each branch to its termination. After initial extension, every endpoint was identified, manually inspected, and extended again if possible. Output synapses represent a largely complete sampling of partners.</td>
+</tr>
+</tbody>
+</table>
+<p>This table, <code>proofreading_status_and_strategy</code>, supercedes <code>proofreading_status_public_release</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'proofreading_status_and_strategy'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="vortex-proofread-thalamic-axons" class="level3">
+<h3 class="anchored" data-anchor-id="vortex-proofread-thalamic-axons">VORTEX proofread thalamic axons</h3>
+<p>Table name: <code>vortex_thalamic_proofreading_status</code></p>
+<p>This table reports the status of a manually selected subset of putative thalamocortical axons as part of the as part of the <a href="../vortex-overview.html">VORTEX project</a>.</p>
+<p>The key columns are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">Soma ID for the cell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pt_position</code> &nbsp;<code>pt_supervoxel_id</code> &nbsp;<code>pt_root_id</code></td>
+<td style="text-align: left;">Bound spatial point columns associated with the entry point of the axon into the EMvolume</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>status</code></td>
+<td style="text-align: left;">One of ‘non’ indicating no cleaning or extension; ‘clean’ indicating synapses can be trusted but may not be complete; ‘extended’ meaning all end points visited and extended to completion</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>valid_id</code></td>
+<td style="text-align: left;">The root id of the axon when it the proofreading assessment was made</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Thalamic axons in this table that are complete and <code>extended</code> are also posted to <code>proofreading_status_and_strategy</code> with strategy: <code>axon_fully_extended</code> and <code>dendrite_none</code>.</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard query</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>client.materialize.query_table(<span class="st">'vortex_thalamic_proofreading_status'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Content-aware query</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.vortex_thalamic_proofreading_status(status<span class="op">=</span><span class="st">'extended'</span>).query()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -941,7 +1218,7 @@ Not as flexible as python programmatic access, but it can be used to quickly exp
     </div>   
     <div class="nav-footer-center">
 <p>Contributions by: Bethanny Danskin, Ben Pedigo, Casey Schneider-Mizell, Forrest Collman, Leila Elabbady, Sven Dorkenwald</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/dataset-basics.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/release_manifests/version-1926.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
