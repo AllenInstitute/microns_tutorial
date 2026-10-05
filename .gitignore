@@ -8,5 +8,10 @@ _site/
 .data/
 _local*
 
+# uv / virtual environment
+.venv/
+__pycache__/
+
 # Jupyter Notebook
 .ipynb_checkpoints
+**/.jupyter_cache/
