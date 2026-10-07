@@ -3432,6 +3432,7 @@ dependencies = [
     { name = "nglui", extra = ["full"] },
     { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
     { name = "numpy", version = "2.5.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "ossify" },
     { name = "pandas" },
     { name = "pcg-skel" },
     { name = "pyvista", extra = ["jupyter"] },
@@ -3456,6 +3457,7 @@ requires-dist = [
     { name = "meshparty", specifier = ">=2.0.1" },
     { name = "nglui", extras = ["full"], specifier = ">=4.9.0" },
     { name = "numpy", specifier = ">=1.26" },
+    { name = "ossify", specifier = ">=0.3.0" },
     { name = "pandas", specifier = ">=2.2" },
     { name = "pcg-skel", specifier = ">=1.3.0" },
     { name = "pyvista", extras = ["jupyter"], specifier = ">=0.44" },
@@ -4324,6 +4326,27 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/11/a6/79aed402eb3ab284dc5b4791a7ad62c5875127de01b8e3f04bd92d551298/orjson-3.12.0-cp315-cp315-win32.whl", hash = "sha256:03091c8a64db4be38746597ceea68f33c238e27acd9bfe99fb59420224ae7a55", size = 128048, upload-time = "2026-08-14T16:13:26.217Z" },
     { url = "https://files.pythonhosted.org/packages/64/f7/2723e264aab7248c1ed6ecaad8e5d0cb866c0cffde75442102ffa7491aba/orjson-3.12.0-cp315-cp315-win_amd64.whl", hash = "sha256:2b7bcefb9f40fa242fa6b06377232c048e655747790829609168c01162f60578", size = 121860, upload-time = "2026-08-14T16:13:27.577Z" },
     { url = "https://files.pythonhosted.org/packages/82/56/630c9113ec8996778f1f0304b364b091b9a9db5fef5fdc17cca622f5ea24/orjson-3.12.0-cp315-cp315-win_arm64.whl", hash = "sha256:859fc4196855890150bb08e649b30d2c93b249b3e3edd0d3bb2231abf8aa8adc", size = 126754, upload-time = "2026-08-14T16:13:28.962Z" },
+]
+
+[[package]]
+name = "ossify"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "caveclient" },
+    { name = "cloud-files" },
+    { name = "fastremap" },
+    { name = "matplotlib" },
+    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "numpy", version = "2.5.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "orjson" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "trimesh" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/21/72/31609e6bc250c6af89b2e2885c79d06f671f15d22aaa46c87551aa18d8ed/ossify-0.3.0.tar.gz", hash = "sha256:b94bc66ae45f7a5efc7f87511ad2fecfb6f12bb92ed80314b5a6e24722c1a724", size = 608065, upload-time = "2026-09-20T04:05:08.63Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/56/92/564ad5cfab2f3c2ae665f2c1d84e2e3ce3448a023fe0ad02098acf0836cb/ossify-0.3.0-py3-none-any.whl", hash = "sha256:92703c4b41ab49d131b420c05b944a8ad76e0f217ac56e01c0b2c4c005247004", size = 627186, upload-time = "2026-09-20T04:05:07.551Z" },
 ]
 
 [[package]]
