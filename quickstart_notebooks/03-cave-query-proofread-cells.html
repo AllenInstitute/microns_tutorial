@@ -543,8 +543,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We have released a new public version 1926, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1926.html">Release Manifests: 1926</a>.</p>
-<p>Tutorials will be updated from v1412 in the coming weeks</p>
+<p>We have updated to <a href="../release_manifests/version-1926.html">v1926</a>. Previous versions of this notebook are available from the repository history.</p>
 </div>
 </div>
 <p>The <strong>Connectome Annotation Versioning Engine (CAVE)</strong> is a suite of tools developed at the Allen Institute and Seung Lab to manage large connectomics data.</p>
@@ -566,7 +565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Most programmatic access to the CAVE services occurs through CAVEclient, a Python client to access various types of data from the online services.</p>
 <p>Full documentation for CAVEclient <a href="http://caveclient.readthedocs.io">is available here</a>.</p>
 <p>To initialize a caveclient, we give it a <strong>datastack</strong>, which is a name that defines a particular combination of imagery, segmentation, and annotation database. For the MICrONs public data, we use the datastack name <code>minnie65_public</code>.</p>
-<div id="3ebc5ac7" class="cell" data-execution_count="1">
+<div id="3ebc5ac7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:55:56.559448Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:55:56.559448Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:55:58.868893Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:55:58.868893Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -598,15 +597,15 @@ Tip
 <p>Read more about <a href="../materialization-version.html#how-to-set-the-version-of-your-analysis">setting the version of your analysis</a></p>
 </div>
 </div>
-<div id="b8e8a165-6cae-44b4-b7c9-b52ae94eec37" class="cell" data-tags="[]" data-execution_count="2">
+<div id="b8e8a165-6cae-44b4-b7c9-b52ae94eec37" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:55:58.868893Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:55:58.868893Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:55:59.801766Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:55:59.801766Z&quot;}}" data-tags="[]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># see the available materialization versions</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.get_versions()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[1300, 117, 943, 1507, 1621, 1718]</code></pre>
+<pre><code>[1300, 117, 943, 1507, 1621, 1718, 1822, 1926]</code></pre>
 </div>
 </div>
 <p>And these are their associated timestamps (all timestamps are in UTC):</p>
-<div id="3c9d7b64-56b6-4567-8307-775dcf139ca4" class="cell" data-execution_count="3">
+<div id="3c9d7b64-56b6-4567-8307-775dcf139ca4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:55:59.801766Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:55:59.801766Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:56:01.869434Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:56:01.869434Z&quot;}}" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> version <span class="kw">in</span> client.materialize.get_versions():</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Version </span><span class="sc">{</span>version<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>client<span class="sc">.</span>materialize<span class="sc">.</span>get_timestamp(version)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -615,12 +614,14 @@ Version 117: 2021-06-11 08:10:00.215114+00:00
 Version 943: 2024-01-22 08:10:01.497934+00:00
 Version 1507: 2025-07-31 08:10:01.117494+00:00
 Version 1621: 2025-11-25 08:10:01.094430+00:00
-Version 1718: 2026-03-07 08:10:01.190228+00:00</code></pre>
+Version 1718: 2026-03-07 08:10:01.190228+00:00
+Version 1822: 2026-06-27 14:05:22.813147+00:00
+Version 1926: 2026-09-28 22:44:42.598563+00:00</code></pre>
 </div>
 </div>
-<div id="a066a177-5d23-4898-9765-4f4e620be719" class="cell" data-tags="[]" data-execution_count="5">
+<div id="a066a177-5d23-4898-9765-4f4e620be719" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:56:01.871104Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:56:01.871104Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:56:02.299566Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:56:02.299566Z&quot;}}" data-tags="[]" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set materialization version, for consistency</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1718</span> <span class="co"># current public as of 3/7/2026</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1926</span> <span class="co"># current public as of 9/28/2026</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -713,7 +714,7 @@ Version 1718: 2026-03-07 08:10:01.190228+00:00</code></pre>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>axon_column_truncated</code></td>
-<td style="text-align: left;">AThe axon was extended within the V1 cortical column, with a preference for local connections. In some cases the axon was cut at the column boundary and/or the layer boundary, especially the boundary between layers 2/3 and layer 4. Output synapses represent a sampling of potential partners</td>
+<td style="text-align: left;">The axon was extended within the V1 cortical column, with a preference for local connections. In some cases the axon was cut at the column boundary and/or the layer boundary, especially the boundary between layers 2/3 and layer 4. Output synapses represent a sampling of potential partners</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>axon_interareal</code></td>
@@ -737,17 +738,17 @@ Version 1718: 2026-03-07 08:10:01.190228+00:00</code></pre>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">'t'</span>).query()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Here we query and return the table as of version <strong>1300</strong>.</p>
 <p>For the commands used for querying tables, see the <a href="02-cave-query-cell-types.html#querying-tables">previous quickstart notebook on CAVE queries</a></p>
-<div id="78de0c65-effb-402c-a77b-5adbe426126d" class="cell" data-execution_count="6">
+<div id="78de0c65-effb-402c-a77b-5adbe426126d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:56:02.299566Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:56:02.299566Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:56:03.802137Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:56:03.802137Z&quot;}}" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>proof_all_df <span class="op">=</span> client.materialize.query_table(<span class="st">"proofreading_status_and_strategy"</span>, </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                                              desired_resolution<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>], </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                                              split_positions<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b89e1d76-0275-475e-9ddc-04bca7d83043" class="cell" data-execution_count="7">
+<div id="b89e1d76-0275-475e-9ddc-04bca7d83043" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:56:03.802137Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:56:03.802137Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:56:03.817729Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:56:03.817729Z&quot;}}" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>proof_all_df[<span class="st">"strategy_axon"</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>strategy_axon
-axon_partially_extended    1608
-axon_fully_extended         547
+axon_partially_extended    1382
+axon_fully_extended         802
 axon_interareal             120
 none                         41
 Name: count, dtype: Int64</code></pre>
@@ -758,13 +759,13 @@ Name: count, dtype: Int64</code></pre>
 <section id="filtering-queries-by-proofreading-status" class="level3">
 <h3 class="anchored" data-anchor-id="filtering-queries-by-proofreading-status">Filtering Queries by proofreading status</h3>
 <p>We can filter our query to only return rows that match a condition by adding a filter to our query:</p>
-<div id="104bac4e-6bc1-4a20-8da5-170fc61eaaa9" class="cell" data-execution_count="8">
+<div id="104bac4e-6bc1-4a20-8da5-170fc61eaaa9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:56:03.820681Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:56:03.820681Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:56:04.134485Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:56:04.134485Z&quot;}}" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>proof_axon_df <span class="op">=</span> client.materialize.query_table(<span class="st">"proofreading_status_and_strategy"</span>, </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                                               filter_in_dict<span class="op">=</span>{<span class="st">"strategy_axon"</span>: [<span class="st">"axon_partially_extended"</span>, <span class="st">"axon_fully_extended"</span>, <span class="st">"axon_interareal"</span>]}, </span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                                               desired_resolution<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>], </span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                                               split_positions<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>proof_axon_df.tail()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -790,89 +791,89 @@ Name: count, dtype: Int64</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2270</th>
-<td>5209</td>
-<td>2026-03-06 20:48:04.965249+00:00</td>
+<th data-quarto-table-cell-role="th">2299</th>
+<td>6052</td>
+<td>2026-09-28 19:01:13.712812+00:00</td>
 <td>&lt;NA&gt;</td>
 <td>True</td>
-<td>729600</td>
-<td>709568</td>
-<td>875040</td>
-<td>864691135858363694</td>
+<td>732736</td>
+<td>460032</td>
+<td>861880</td>
+<td>864691136914803953</td>
+<td>True</td>
+<td>True</td>
+<td>dendrite_clean</td>
+<td>axon_partially_extended</td>
+<td>89938540196086387</td>
+<td>864691136914803953</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2300</th>
+<td>6053</td>
+<td>2026-09-28 19:01:13.732568+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>699264</td>
+<td>807360</td>
+<td>814560</td>
+<td>864691135695429823</td>
 <td>True</td>
 <td>True</td>
 <td>dendrite_extended</td>
 <td>axon_partially_extended</td>
-<td>89876555228481414</td>
-<td>864691135858363694</td>
+<td>88824253679891664</td>
+<td>864691135695429823</td>
 </tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">2271</th>
-<td>5210</td>
-<td>2026-03-06 20:48:04.986705+00:00</td>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2301</th>
+<td>6054</td>
+<td>2026-09-28 19:01:13.755351+00:00</td>
 <td>&lt;NA&gt;</td>
 <td>True</td>
-<td>688128</td>
-<td>482432</td>
-<td>812360</td>
-<td>864691136111559352</td>
+<td>749248</td>
+<td>420032</td>
+<td>862520</td>
+<td>864691135869973270</td>
 <td>True</td>
 <td>True</td>
 <td>dendrite_clean</td>
 <td>axon_partially_extended</td>
-<td>88391183537481077</td>
-<td>864691136111559352</td>
+<td>90500115759990681</td>
+<td>864691135869973270</td>
 </tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2272</th>
-<td>5211</td>
-<td>2026-03-06 20:48:05.008887+00:00</td>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2302</th>
+<td>6055</td>
+<td>2026-09-28 19:26:26.104991+00:00</td>
 <td>&lt;NA&gt;</td>
 <td>True</td>
-<td>770624</td>
-<td>379072</td>
-<td>823520</td>
-<td>864691135920851376</td>
+<td>745088</td>
+<td>477696</td>
+<td>844000</td>
+<td>864691134942943075</td>
+<td>True</td>
+<td>True</td>
+<td>dendrite_clean</td>
+<td>axon_partially_extended</td>
+<td>90361302349957438</td>
+<td>864691135158320484</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2303</th>
+<td>6056</td>
+<td>2026-09-28 19:26:26.144672+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>746112</td>
+<td>507776</td>
+<td>809920</td>
+<td>864691135977473391</td>
 <td>True</td>
 <td>True</td>
 <td>dendrite_extended</td>
-<td>axon_partially_extended</td>
-<td>91272797422269509</td>
-<td>864691135920851376</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">2273</th>
-<td>5212</td>
-<td>2026-03-06 20:48:05.024490+00:00</td>
-<td>&lt;NA&gt;</td>
-<td>True</td>
-<td>740224</td>
-<td>634880</td>
-<td>903320</td>
-<td>864691135480916422</td>
-<td>True</td>
-<td>True</td>
-<td>dendrite_clean</td>
-<td>axon_partially_extended</td>
-<td>90225856462565231</td>
-<td>864691135480916422</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2274</th>
-<td>5213</td>
-<td>2026-03-06 20:48:05.042556+00:00</td>
-<td>&lt;NA&gt;</td>
-<td>True</td>
-<td>683392</td>
-<td>654592</td>
-<td>887280</td>
-<td>864691135886314096</td>
-<td>True</td>
-<td>True</td>
-<td>dendrite_clean</td>
-<td>axon_partially_extended</td>
-<td>88256218753380966</td>
-<td>864691135886314096</td>
+<td>axon_fully_extended</td>
+<td>90432701752255117</td>
+<td>864691135977473391</td>
 </tr>
 </tbody>
 </table>
@@ -899,12 +900,12 @@ Caution
 </div>
 </div>
 <p>With this, we can easily query all proofread cells with proofread axons:</p>
-<div id="e07c63af-3c81-487b-90f3-ca3b4b220bf8" class="cell" data-execution_count="9">
+<div id="e07c63af-3c81-487b-90f3-ca3b4b220bf8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:56:04.135736Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:56:04.135736Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:56:05.812586Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:56:05.812586Z&quot;}}" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>proof_axon_df <span class="op">=</span> client.materialize.tables.proofreading_status_and_strategy(strategy_axon<span class="op">=</span>[<span class="st">"axon_partially_extended"</span>, <span class="st">"axon_fully_extended"</span>, <span class="st">"axon_interareal"</span>]).query(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    select_columns<span class="op">=</span>[<span class="st">'pt_root_id'</span>,<span class="st">'status_axon'</span>,<span class="st">'status_dendrite'</span>,<span class="st">'strategy_axon'</span>,<span class="st">'strategy_dendrite'</span>],</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>proof_axon_df.tail()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -922,49 +923,49 @@ Caution
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2270</th>
-<td>89876555228481414</td>
-<td>864691135858363694</td>
+<th data-quarto-table-cell-role="th">2299</th>
+<td>89938540196086387</td>
+<td>864691136914803953</td>
+<td>True</td>
+<td>True</td>
+<td>axon_partially_extended</td>
+<td>dendrite_clean</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2300</th>
+<td>88824253679891664</td>
+<td>864691135695429823</td>
 <td>True</td>
 <td>True</td>
 <td>axon_partially_extended</td>
 <td>dendrite_extended</td>
 </tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2301</th>
+<td>90500115759990681</td>
+<td>864691135869973270</td>
+<td>True</td>
+<td>True</td>
+<td>axon_partially_extended</td>
+<td>dendrite_clean</td>
+</tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">2271</th>
-<td>88391183537481077</td>
-<td>864691136111559352</td>
+<th data-quarto-table-cell-role="th">2302</th>
+<td>90361302349957438</td>
+<td>864691135158320484</td>
 <td>True</td>
 <td>True</td>
 <td>axon_partially_extended</td>
 <td>dendrite_clean</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2272</th>
-<td>91272797422269509</td>
-<td>864691135920851376</td>
+<th data-quarto-table-cell-role="th">2303</th>
+<td>90432701752255117</td>
+<td>864691135977473391</td>
 <td>True</td>
 <td>True</td>
-<td>axon_partially_extended</td>
+<td>axon_fully_extended</td>
 <td>dendrite_extended</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">2273</th>
-<td>90225856462565231</td>
-<td>864691135480916422</td>
-<td>True</td>
-<td>True</td>
-<td>axon_partially_extended</td>
-<td>dendrite_clean</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2274</th>
-<td>88256218753380966</td>
-<td>864691135886314096</td>
-<td>True</td>
-<td>True</td>
-<td>axon_partially_extended</td>
-<td>dendrite_clean</td>
 </tr>
 </tbody>
 </table>
@@ -983,7 +984,7 @@ Caution
 <li>Merge the two tables on the shared index, in this case <code>pt_root_id</code></li>
 </ol>
 <p>We covered <a href="02-cave-query-cell-types.html">querying cell types in the previous quickstart notebook</a>. Now lets put that together with the proofreading query:</p>
-<div id="367285c0-ac12-4091-b279-bdaa2bb1903e" class="cell" data-execution_count="10">
+<div id="367285c0-ac12-4091-b279-bdaa2bb1903e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:56:05.812586Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:56:05.812586Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:56:09.076477Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:56:09.076477Z&quot;}}" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Query proofread cells with status_axon==True</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>proof_df <span class="op">=</span> client.materialize.tables.proofreading_status_and_strategy(status_axon<span class="op">=</span><span class="st">"t"</span>).query(</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    select_columns<span class="op">=</span>[<span class="st">'pt_root_id'</span>,<span class="st">'status_axon'</span>,<span class="st">'status_dendrite'</span>,<span class="st">'strategy_axon'</span>,<span class="st">'strategy_dendrite'</span>],</span>
@@ -1011,26 +1012,26 @@ Tip
 </div>
 <p>Now we can merge the two tables together on the shared index!</p>
 <p>But it is worth checking if there are duplicates in either of the tables. How you handle duplicates will depend on your question, and the table you are using. Here we might see duplicates from multi-soma merges in the cell type table</p>
-<div id="7f6bfa07-2f34-4b96-bd6e-70a8d8fbba94" class="cell" data-execution_count="11">
+<div id="7f6bfa07-2f34-4b96-bd6e-70a8d8fbba94" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:56:09.076477Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:56:09.076477Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:56:09.104670Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:56:09.104670Z&quot;}}" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>cell_type_df.value_counts(<span class="st">'pt_root_id'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>pt_root_id
-864691135698390426    346
+864691136381686997    482
 0                     175
-864691135566810455    102
 864691136974041116     60
+864691135303545767     43
 864691135455264362     43
                      ... 
-864691137199761729      1
-864691137199763521      1
-864691137199765313      1
-864691137199772993      1
-864691134273690220      1
-Name: count, Length: 91489, dtype: int64</code></pre>
+864691137199858753      1
+864691137199863361      1
+864691137199868225      1
+864691137199871553      1
+864691137200143169      1
+Name: count, Length: 91498, dtype: int64</code></pre>
 </div>
 </div>
 <p>For analytical simplicity, we will drop any multi-soma objects. We will also rename the <code>id</code> column for clarity</p>
-<div id="ebae041b-af55-436f-af2f-93cfb018bd5a" class="cell" data-execution_count="12">
+<div id="ebae041b-af55-436f-af2f-93cfb018bd5a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:56:09.104670Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:56:09.104670Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:56:09.128855Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:56:09.128855Z&quot;}}" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop duplicate pt_root_id and rename the nucleus_id</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> (cell_type_df</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                .drop_duplicates(<span class="st">'pt_root_id'</span>, keep<span class="op">=</span><span class="va">False</span>)</span>
@@ -1038,7 +1039,7 @@ Name: count, Length: 91489, dtype: int64</code></pre>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>               )</span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                        </span>
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>cell_type_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
 
@@ -1101,10 +1102,10 @@ Name: count, Length: 91489, dtype: int64</code></pre>
 </div>
 </div>
 <p>Now we can merge the two tables with <code>pandas.merge</code>, on index <code>pt_root_id</code>. We will keep the inner join of the two tables: cells that 1) are proofread, and 2) have a cell type</p>
-<div id="6a4dc552-8125-4b92-ab5d-84a33439c286" class="cell" data-execution_count="13">
+<div id="6a4dc552-8125-4b92-ab5d-84a33439c286" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:56:09.128855Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:56:09.128855Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:56:09.157159Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:56:09.157159Z&quot;}}" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>proof_cell_type_df <span class="op">=</span> pd.merge(proof_df, cell_type_df, on<span class="op">=</span><span class="st">'pt_root_id'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>proof_cell_type_df.tail()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -1127,68 +1128,68 @@ Name: count, Length: 91489, dtype: int64</code></pre>
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2187</th>
-<td>89876555228481414</td>
-<td>864691135858363694</td>
-<td>True</td>
-<td>True</td>
-<td>axon_partially_extended</td>
-<td>dendrite_extended</td>
-<td>89876555228481414</td>
-<td>301193</td>
-<td>inhibitory_neuron</td>
-<td>BC</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">2188</th>
-<td>88391183537481077</td>
-<td>864691136111559352</td>
+<td>89938540196086387</td>
+<td>864691136914803953</td>
 <td>True</td>
 <td>True</td>
 <td>axon_partially_extended</td>
 <td>dendrite_clean</td>
-<td>88391183537481077</td>
-<td>256304</td>
+<td>89938540196086387</td>
+<td>292714</td>
+<td>excitatory_neuron</td>
+<td>23P</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2188</th>
+<td>88824253679891664</td>
+<td>864691135695429823</td>
+<td>True</td>
+<td>True</td>
+<td>axon_partially_extended</td>
+<td>dendrite_extended</td>
+<td>88824253679891664</td>
+<td>267038</td>
+<td>excitatory_neuron</td>
+<td>5P-ET</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2189</th>
+<td>90500115759990681</td>
+<td>864691135869973270</td>
+<td>True</td>
+<td>True</td>
+<td>axon_partially_extended</td>
+<td>dendrite_clean</td>
+<td>90500115759990681</td>
+<td>291177</td>
+<td>excitatory_neuron</td>
+<td>23P</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2190</th>
+<td>90361302349957438</td>
+<td>864691135158320484</td>
+<td>True</td>
+<td>True</td>
+<td>axon_partially_extended</td>
+<td>dendrite_clean</td>
+<td>90361302349957438</td>
+<td>292727</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2189</th>
-<td>91272797422269509</td>
-<td>864691135920851376</td>
-<td>True</td>
-<td>True</td>
-<td>axon_partially_extended</td>
-<td>dendrite_extended</td>
-<td>91272797422269509</td>
-<td>291125</td>
-<td>inhibitory_neuron</td>
-<td>NGC</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">2190</th>
-<td>90225856462565231</td>
-<td>864691135480916422</td>
-<td>True</td>
-<td>True</td>
-<td>axon_partially_extended</td>
-<td>dendrite_clean</td>
-<td>90225856462565231</td>
-<td>296750</td>
-<td>excitatory_neuron</td>
-<td>4P</td>
-</tr>
-<tr class="odd">
 <th data-quarto-table-cell-role="th">2191</th>
-<td>88256218753380966</td>
-<td>864691135886314096</td>
+<td>90432701752255117</td>
+<td>864691135977473391</td>
 <td>True</td>
 <td>True</td>
-<td>axon_partially_extended</td>
-<td>dendrite_clean</td>
-<td>88256218753380966</td>
-<td>262886</td>
+<td>axon_fully_extended</td>
+<td>dendrite_extended</td>
+<td>90432701752255117</td>
+<td>292575</td>
 <td>excitatory_neuron</td>
-<td>4P</td>
+<td>23P</td>
 </tr>
 </tbody>
 </table>
@@ -1198,7 +1199,7 @@ Name: count, Length: 91489, dtype: int64</code></pre>
 </div>
 <p>And we have the list of all proofread cells, by their cell type!</p>
 <p>We can do this same kind of query more simply by: querying the second table by BOTH the root ids of interest and the cell type of interest. If we wanted only the <strong>proofread 23P cells</strong>, we could do:</p>
-<div id="3f487eb4-87b8-483f-9d90-0c26fd589fb7" class="cell" data-execution_count="14">
+<div id="3f487eb4-87b8-483f-9d90-0c26fd589fb7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:56:09.157159Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:56:09.157159Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:56:10.436042Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:56:10.436042Z&quot;}}" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Query the proofread 23P cells, and merge the proofreading status</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>proof_23p_df <span class="op">=</span> (client.materialize.tables.aibs_metamodel_celltypes_v661(pt_root_id<span class="op">=</span>proof_df.pt_root_id, cell_type<span class="op">=</span><span class="st">'23P'</span>).query(</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    select_columns <span class="op">=</span> {<span class="st">'nucleus_detection_v0'</span>: [<span class="st">'pt_root_id'</span>, <span class="st">'id'</span>],</span>
@@ -1209,7 +1210,7 @@ Name: count, Length: 91489, dtype: int64</code></pre>
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>               )</span>
 <span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>proof_23p_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -1233,15 +1234,15 @@ Name: count, Length: 91489, dtype: int64</code></pre>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">0</th>
 <td>88884727087844075</td>
-<td>864691135774053371</td>
+<td>864691135811910092</td>
 <td>258375</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
 <td>88884727087844075</td>
 <td>True</td>
 <td>True</td>
-<td>axon_partially_extended</td>
-<td>dendrite_clean</td>
+<td>axon_fully_extended</td>
+<td>dendrite_extended</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
@@ -1259,7 +1260,7 @@ Name: count, Length: 91489, dtype: int64</code></pre>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
 <td>89378751472802282</td>
-<td>864691135584646253</td>
+<td>864691135469856396</td>
 <td>258403</td>
 <td>excitatory_neuron</td>
 <td>23P</td>

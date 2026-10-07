@@ -632,7 +632,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Before using any programmatic access to the data, <a href="01-caveclient-setup.html">you first need to set up your CAVEclient token</a>. When <code>CAVEclient</code> saves the token to your local machine, <code>cloudvolume</code> will access the same token.</p>
 </div>
 </div>
-<div id="edfd4bec-cbbd-4d17-81e0-fae562710eb2" class="cell" data-execution_count="1">
+<div id="edfd4bec-cbbd-4d17-81e0-fae562710eb2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:57:29.085355Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:57:29.085355Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:57:40.946111Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:57:40.944413Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> cloudvolume <span class="im">import</span> CloudVolume</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -640,14 +640,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(datastack_name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The datastack includes information about the segmentation source, and can provide that information when prompted</p>
-<div id="ee3b135b-a385-4b13-9c4b-7e0e646ef7fc" class="cell" data-execution_count="2">
+<div id="ee3b135b-a385-4b13-9c4b-7e0e646ef7fc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:57:40.947149Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:57:40.947149Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:57:40.953129Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:57:40.953129Z&quot;}}" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>client.info.segmentation_source()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>'graphene://https://minnie.microns-daf.com/segmentation/table/minnie65_public'</code></pre>
 </div>
 </div>
 <p>Note that this is the same as the <strong>dynamic</strong> segmentation path above</p>
-<div id="34045fbc-160e-4af0-a1e0-2eb9f77a7510" class="cell" data-execution_count="3">
+<div id="34045fbc-160e-4af0-a1e0-2eb9f77a7510" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:57:40.954892Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:57:40.954892Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:57:41.775682Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:57:41.775169Z&quot;}}" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this can be used to initialize a cloudvolume object</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cv <span class="op">=</span> CloudVolume(client.info.segmentation_source(), progress<span class="op">=</span><span class="va">False</span>, use_https<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -660,7 +660,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="download-dynamic-mesh" class="level3">
 <h3 class="anchored" data-anchor-id="download-dynamic-mesh">Download dynamic mesh</h3>
 <p>Given a root_id, <strong>CloudVolume</strong> can be used to retrieve the mesh. <code>cloudvolume.mesh.get()</code> returns a dictionary with the neuron segment id as the key and the mesh as the value</p>
-<div id="58151c04-8f58-42a4-a373-9c111d9ab74c" class="cell" data-tags="[]" data-execution_count="4">
+<div id="58151c04-8f58-42a4-a373-9c111d9ab74c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:57:41.779734Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:57:41.778725Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:58:28.129263Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:58:28.129263Z&quot;}}" data-tags="[]" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># specify the materialization version, for consistency across time",</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1300</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -669,8 +669,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time mesh <span class="op">=</span> cv.mesh.get(example_cell_id)[example_cell_id]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Warning: deduplication not currently supported for this layer's variable layered draco meshes
-CPU times: total: 42 s
-Wall time: 1min 5s</code></pre>
+CPU times: total: 32.1 s
+Wall time: 45.3 s</code></pre>
 </div>
 </div>
 </section>
@@ -679,26 +679,26 @@ Wall time: 1min 5s</code></pre>
 <p>The meshes that are available in the visualization on <a href="https://www.microns-explorer.org/gallery-mm3">microns-explorer.org</a> are fast to load because they are static and have been downsampled at multiple resolutions. However, this comes with the drawback of being less biologically accurate.</p>
 <p>Level of detail is controlled with optional argument, where <code>lod=0</code> is the highest level of detail</p>
 <p>we can access one of these downsampled static meshes by setting the path here:</p>
-<div id="0afd27fc-be9a-4840-8811-b97a80f998fc" class="cell" data-tags="[]" data-execution_count="6">
+<div id="0afd27fc-be9a-4840-8811-b97a80f998fc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:58:28.158560Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:58:28.144684Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:58:28.601264Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:58:28.601264Z&quot;}}" data-tags="[]" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cv <span class="op">=</span> CloudVolume(<span class="st">"precomputed://gs://iarpa_microns/minnie/minnie65/seg_m1300"</span>, use_https<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5a2e2f4d-0142-4cd9-8614-07c7ae9e01e5" class="cell" data-tags="[]" data-execution_count="7">
+<div id="5a2e2f4d-0142-4cd9-8614-07c7ae9e01e5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:58:28.601264Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:58:28.601264Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:58:29.536211Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:58:29.536211Z&quot;}}" data-tags="[]" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the cloud volume interface is the same but it is a faster initial download </span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>time mesh <span class="op">=</span> cv.mesh.get(example_cell_id, lod<span class="op">=</span><span class="dv">3</span>)[example_cell_id]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>CPU times: total: 78.1 ms
-Wall time: 1.19 s</code></pre>
+<pre><code>CPU times: total: 0 ns
+Wall time: 925 ms</code></pre>
 </div>
 </div>
-<div id="94c0f514-9e02-4d2e-aed9-e0a074d210e9" class="cell" data-tags="[]" data-execution_count="8">
+<div id="94c0f514-9e02-4d2e-aed9-e0a074d210e9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:58:29.536211Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:58:29.536211Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:58:29.544238Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:58:29.544238Z&quot;}}" data-tags="[]" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># as you can see the meshes aren't exactly the same as before. They because they have not been downsampled</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>mesh.vertices.shape, mesh.faces.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>((56938, 3), (99936, 3))</code></pre>
 </div>
 </div>
 <p>In addition, the Static meshes are available in 3 levels of detail, this covers two orders of magnitude of detail which is what neuroglancer leverages to efficiently load the data at the resolution necessary to render the current scene.</p>
-<div id="5d27eeb3-5d72-41c7-b668-2ce23fa693cf" class="cell" data-execution_count="9">
+<div id="5d27eeb3-5d72-41c7-b668-2ce23fa693cf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:58:29.544238Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:58:29.544238Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:58:34.106835Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:58:34.106835Z&quot;}}" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lod <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    mesh <span class="op">=</span> mesh <span class="op">=</span> cv.mesh.get(example_cell_id, lod<span class="op">=</span>lod)[example_cell_id]</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"level of detail </span><span class="sc">{</span>lod<span class="sc">}</span><span class="ss">: n_verts: </span><span class="sc">{</span>mesh<span class="sc">.</span>vertices<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> n_faces: </span><span class="sc">{</span>mesh<span class="sc">.</span>faces<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -725,7 +725,20 @@ Wall time: 1.19 s</code></pre>
 <p>The MeshParty object has more useful properties and attributes such as: * a scipy.csgraph sparse graph object (mesh.csgraph) * a networkx graph object (mesh.nxgraph)</p>
 <p>Read more about what you can do with MeshParty on its <a href="https://meshparty.readthedocs.io/en/latest/?badge=latest">Documentation</a>.</p>
 <p>In particular it lets you associate <em>skeletons</em>, and <em>annotations</em> onto the mesh into a “meshwork” object.</p>
-<div id="b011ef59-ec37-43a9-9196-dc631c8ba225" class="cell" data-tags="[]" data-execution_count="10">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span><code>meshparty</code> is being deprecated
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>meshparty</code> package used in this section is being superseded by <a href="https://pypi.org/project/ossify/"><code>ossify</code></a>, which represents a neuron as a single <code>Cell</code> object bundling its mesh, skeleton, spatial graph, and annotations, together with modern plotting utilities. For the recommended <code>ossify</code> workflow — loading a cell and its skeleton directly from the client — see <a href="07-cave-download-skeleton.html#recommended-load-and-plot-cells-with-ossify">Download Skeletons</a>.</p>
+</div>
+</div>
+<div id="b011ef59-ec37-43a9-9196-dc631c8ba225" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:58:34.106835Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:58:34.106835Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:59:37.891679Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:59:37.888281Z&quot;}}" data-tags="[]" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> meshparty <span class="im">import</span> trimesh_io</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>

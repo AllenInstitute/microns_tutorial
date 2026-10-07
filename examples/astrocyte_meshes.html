@@ -528,7 +528,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This example uses the plotting package <strong>PyVista</strong> for interactive rendering. Any rendering program that takes vertices and edges can work.</p>
-<div id="d1e27f3f-79b0-4159-bb71-495381de8c78" class="cell" data-execution_count="1">
+<div id="d1e27f3f-79b0-4159-bb71-495381de8c78" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:31.521615Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:31.521615Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:37.894174Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:37.894174Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -539,7 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="query-the-proofread-astrocytes" class="level2">
 <h2 class="anchored" data-anchor-id="query-the-proofread-astrocytes">Query the proofread astrocytes</h2>
-<div id="7cc497c8-8508-4dfe-a74c-87a040cbfa12" class="cell" data-tags="[]" data-execution_count="2">
+<div id="7cc497c8-8508-4dfe-a74c-87a040cbfa12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:37.894174Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:37.894174Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:40.625108Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:40.625108Z&quot;}}" data-tags="[]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set version to the most recent datastack with a flat segmentation</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">"minnie65_public"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1300</span></span>
@@ -554,16 +554,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>root_ids <span class="op">=</span> astrocyte_df.pt_root_id.unique()</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(root_ids)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[864691136057675736 864691135852189639 864691135995876778
- 864691135527301979 864691135955003656 864691134886294010
- 864691135970105957 864691135772920395 864691135384083674
- 864691135234576473 864691135164125997 864691136298097435]</code></pre>
+<pre><code>&lt;IntegerArray&gt;
+[864691136057675736, 864691135852189639, 864691135995876778,
+ 864691135527301979, 864691135955003656, 864691134886294010,
+ 864691135970105957, 864691135772920395, 864691135384083674,
+ 864691135234576473, 864691135164125997, 864691136298097435]
+Length: 12, dtype: Int64</code></pre>
 </div>
 </div>
 </section>
 <section id="load-the-static-meshes-for-all-cells" class="level2">
 <h2 class="anchored" data-anchor-id="load-the-static-meshes-for-all-cells">Load the static meshes for all cells</h2>
-<div id="83a42e91-f749-4fb9-9b02-f2e39a0d9277" class="cell" data-tags="[]" data-execution_count="3">
+<div id="83a42e91-f749-4fb9-9b02-f2e39a0d9277" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:40.625108Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:40.625108Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:42.987139Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:42.987139Z&quot;}}" data-tags="[]" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the static segmentaiton source</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>seg_source <span class="op">=</span> <span class="st">'precomputed://gs://iarpa_microns/minnie/minnie65/seg_m1300'</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -574,7 +576,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="initialize-plotting-object-add-all-astrocytes" class="level2">
 <h2 class="anchored" data-anchor-id="initialize-plotting-object-add-all-astrocytes">Initialize plotting object, add all astrocytes</h2>
-<div id="9135fff4-cb24-4681-94a8-2609a43b1555" class="cell" data-execution_count="6">
+<div id="9135fff4-cb24-4681-94a8-2609a43b1555" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:42.990704Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:42.990704Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:52.692101Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:52.692101Z&quot;}}" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pv.set_jupyter_backend(<span class="st">"client"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plotter <span class="op">=</span> pv.Plotter()</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -610,8 +612,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>plotter.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"ec73fcacf2b346d9a1b0ada3f073c60a","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"a2f8b2b4c4bf4ed18a1de64da556e632","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
+</div>
+</div>
+<div id="7ff7ec04-7e09-460a-bcb0-bca1175cad9e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:52.693895Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:52.693895Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:55.452228Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:55.451393Z&quot;}}" data-execution_count="5">
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\bethanny.danskin\AppData\Local\Temp\ipykernel_11344\1721258976.py:2: PyVistaDeprecationWarning: Plotter.export_html is deprecated. Use plotter.trame.export_html(...) instead. Install via `pip install trame-pyvista`.
+  plotter.export_html('../img/interactives/six_astrocytes.html')</code></pre>
 </div>
 </div>
 <center>
@@ -624,6 +632,9 @@ Interactive: Six ‘cleaned’ astrocytes
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script type="application/vnd.jupyter.widget-state+json">
+{"state":{"2920837522cb4c5ca5ff63428e809119":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"8e386dfd1b63498f8fbd77901d00177e":{"model_module":"@jupyter-widgets/controls","model_module_version":"2.0.0","model_name":"HTMLStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"2.0.0","_model_name":"HTMLStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","background":null,"description_width":"","font_size":null,"text_color":null}},"a2f8b2b4c4bf4ed18a1de64da556e632":{"model_module":"@jupyter-widgets/controls","model_module_version":"2.0.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"2.0.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"2.0.0","_view_name":"HTMLView","description":"","description_allow_html":false,"layout":"IPY_MODEL_2920837522cb4c5ca5ff63428e809119","placeholder":"​","style":"IPY_MODEL_8e386dfd1b63498f8fbd77901d00177e","tabbable":null,"tooltip":null,"value":"<iframe src=\"http://localhost:60363/index.html?ui=P_0x2714997ead0_0&reconnect=auto\" class=\"pyvista\" style=\"width: 100%; height: 600px; border: 1px solid rgb(221,221,221);\" scrolling=\"no\"></iframe>"}}},"version_major":2,"version_minor":0}
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

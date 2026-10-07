@@ -540,8 +540,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We have released a new public version 1926, as part of our quarterly release schedule. See details at <a href="../release_manifests/version-1926.html">Release Manifests: 1926</a>.</p>
-<p>Tutorials will be updated from v1412 in the coming weeks</p>
+<p>We have updated to <a href="../release_manifests/version-1926.html">v1926</a>. Previous versions of this notebook are available from the repository history.</p>
 </div>
 </div>
 <p>The <strong>Connectome Annotation Versioning Engine (CAVE)</strong> is a suite of tools developed at the Allen Institute and Seung Lab to manage large connectomics data.</p>
@@ -563,7 +562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Most programmatic access to the CAVE services occurs through CAVEclient, a Python client to access various types of data from the online services.</p>
 <p>Full documentation for CAVEclient <a href="http://caveclient.readthedocs.io">is available here</a>.</p>
 <p>To initialize a caveclient, we give it a <strong>datastack</strong>, which is a name that defines a particular combination of imagery, segmentation, and annotation database. For the MICrONs public data, we use the datastack name <code>minnie65_public</code>.</p>
-<div id="3ebc5ac7" class="cell" data-execution_count="1">
+<div id="3ebc5ac7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:54:51.211885Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:54:51.211885Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:54:53.663940Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:54:53.663060Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>datastack_name <span class="op">=</span> <span class="st">'minnie65_public'</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(datastack_name)</span>
@@ -592,15 +591,15 @@ Tip
 <p>Read more about <a href="../materialization-version.html#how-to-set-the-version-of-your-analysis">setting the version of your analysis</a></p>
 </div>
 </div>
-<div id="b8e8a165-6cae-44b4-b7c9-b52ae94eec37" class="cell" data-tags="[]" data-execution_count="2">
+<div id="b8e8a165-6cae-44b4-b7c9-b52ae94eec37" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:54:53.663940Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:54:53.663940Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:54:54.575840Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:54:54.575840Z&quot;}}" data-tags="[]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># see the available materialization versions</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>client.materialize.get_versions()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[1300, 117, 943, 1507, 1621, 1718]</code></pre>
+<pre><code>[1300, 117, 943, 1507, 1621, 1718, 1822, 1926]</code></pre>
 </div>
 </div>
 <p>And these are their associated timestamps (all timestamps are in UTC):</p>
-<div id="3c9d7b64-56b6-4567-8307-775dcf139ca4" class="cell" data-execution_count="3">
+<div id="3c9d7b64-56b6-4567-8307-775dcf139ca4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:54:54.575840Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:54:54.575840Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:54:56.722006Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:54:56.721498Z&quot;}}" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> version <span class="kw">in</span> client.materialize.get_versions():</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Version </span><span class="sc">{</span>version<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>client<span class="sc">.</span>materialize<span class="sc">.</span>get_timestamp(version)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -609,57 +608,58 @@ Version 117: 2021-06-11 08:10:00.215114+00:00
 Version 943: 2024-01-22 08:10:01.497934+00:00
 Version 1507: 2025-07-31 08:10:01.117494+00:00
 Version 1621: 2025-11-25 08:10:01.094430+00:00
-Version 1718: 2026-03-07 08:10:01.190228+00:00</code></pre>
+Version 1718: 2026-03-07 08:10:01.190228+00:00
+Version 1822: 2026-06-27 14:05:22.813147+00:00
+Version 1926: 2026-09-28 22:44:42.598563+00:00</code></pre>
 </div>
 </div>
-<div id="a066a177-5d23-4898-9765-4f4e620be719" class="cell" data-tags="[]" data-execution_count="4">
+<div id="a066a177-5d23-4898-9765-4f4e620be719" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:54:56.722794Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:54:56.722794Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:54:57.178243Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:54:57.178243Z&quot;}}" data-tags="[]" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set materialization version, for consistency</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1718</span> <span class="co"># current public as of 3/7/2026</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1926</span> <span class="co"># current public as of 9/28/2026</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
 <section id="caveclient-materialization-basics" class="level2">
 <h2 class="anchored" data-anchor-id="caveclient-materialization-basics">CAVEclient Materialization Basics</h2>
 <p>The most frequent use of the CAVEclient is to query the database for annotations like synapses. All database functions are under the <code>client.materialize</code> property. To see what tables are available, use the <code>get_tables</code> function:</p>
-<div id="65009f3a" class="cell" data-execution_count="5">
+<div id="65009f3a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:54:57.180692Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:54:57.180692Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:54:57.385846Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:54:57.385846Z&quot;}}" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>client.materialize.get_tables()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>['synapses_pni_2',
- 'nucleus_detection_v0',
- 'vortex_manual_nodes_of_ranvier',
- 'bodor_pt_target_proofread',
+<pre><code>['vortex_peptidergic_proofreading_status',
  'baylor_gnn_cell_type_fine_model_v2',
  'nucleus_alternative_points',
- 'nucleus_functional_area_assignment',
- 'coregistration_auto_phase3_fwd_apl_vess_combined_v2',
- 'aibs_metamodel_mtypes_v661_v2_corrections',
- 'vortex_thalamic_proofreading_status',
  'allen_column_mtypes_v2',
- 'proofreading_status_and_strategy',
  'bodor_pt_cells',
  'aibs_metamodel_mtypes_v661_v2',
  'aibs_metamodel_celltypes_v661_corrections',
  'vortex_microglia_proofreading_status',
  'allen_v1_column_types_slanted_ref',
- 'multi_input_spine_predictions_ssa',
  'aibs_column_nonneuronal_ref',
  'nucleus_ref_neuron_svm',
- 'synapse_target_structure',
- 'myelin_auto_tags_2points',
  'apl_functional_coreg_vess_fwd',
  'vortex_axon_backtrace_column',
- 'cell_type_multifeature_combo',
  'vortex_compartment_targets',
  'baylor_log_reg_cell_type_coarse_v1',
  'vortex_synapse_reattachment',
- 'coregistration_auto_phase3_fwd_v2',
  'synapse_target_predictions_ssa_v2',
  'gamlin_2023_mcs',
  'l5et_column',
  'pt_synapse_targets',
- 'vortex_peptidergic_proofreading_status',
  'coregistration_manual_v4',
  'cg_cell_type_calls',
+ 'synapses_pni_2',
+ 'nucleus_detection_v0',
+ 'vortex_manual_nodes_of_ranvier',
+ 'bodor_pt_target_proofread',
+ 'nucleus_functional_area_assignment',
+ 'coregistration_auto_phase3_fwd_apl_vess_combined_v2',
+ 'aibs_metamodel_mtypes_v661_v2_corrections',
+ 'vortex_thalamic_proofreading_status',
+ 'multi_input_spine_predictions_ssa',
+ 'synapse_target_structure',
+ 'myelin_auto_tags_2points',
+ 'cell_type_multifeature_combo',
+ 'coregistration_auto_phase3_fwd_v2',
  'digital_twin_properties_bcm_coreg_v4',
  'synapse_spine_mapping_v2',
  'vortex_astrocyte_proofreading_status',
@@ -667,20 +667,22 @@ Version 1718: 2026-03-07 08:10:01.190228+00:00</code></pre>
  'digital_twin_properties_bcm_coreg_apl_vess_fwd',
  'gamlin_2023_mcs_met_types',
  'vortex_manual_myelination_v0',
+ 'proofread_v1_column_membership',
+ 'proofreading_status_and_strategy',
  'synapse_target_predictions_ssa',
  'aibs_metamodel_celltypes_v661']</code></pre>
 </div>
 </div>
 <p>For each table, you can see the metadata describing that table. For example, let’s look at the <code>nucleus_detection_v0</code> table:</p>
-<div id="7703a2d7" class="cell" data-tags="[]" data-execution_count="6">
+<div id="7703a2d7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:54:57.387857Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:54:57.387857Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:54:57.730331Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:54:57.730331Z&quot;}}" data-tags="[]" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>client.materialize.get_table_metadata(<span class="st">'nucleus_detection_v0'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>{'aligned_volume': 'minnie65_phase3',
- 'valid': True,
+<pre><code>{'created': '2020-11-02T18:56:35.530100',
+ 'aligned_volume': 'minnie65_phase3',
  'schema': 'nucleus_detection',
- 'id': 89398,
- 'created': '2020-11-02T18:56:35.530100',
  'table_name': 'nucleus_detection_v0',
+ 'id': 106659,
+ 'valid': True,
  'schema_type': 'nucleus_detection',
  'user_id': '121',
  'description': 'A table of nuclei detections from a nucleus detection model developed by Shang Mu, Leila Elabbady, Gayathri Mahalingam and Forrest Collman. Pt is the centroid of the nucleus detection. id corresponds to the flat_segmentation_source segmentID. Only included nucleus detections of volume&gt;25 um^3, below which detections are false positives, though some false positives above that threshold remain. ',
@@ -692,7 +694,7 @@ Version 1718: 2026-03-07 08:10:01.190228+00:00</code></pre>
  'last_modified': '2022-10-25T19:24:28.559914',
  'segmentation_source': '',
  'pcg_table_name': 'minnie3_v1',
- 'last_updated': '2026-05-12T00:00:00.157782',
+ 'last_updated': '2026-10-05T22:03:54.996818',
  'voxel_resolution': [4.0, 4.0, 40.0]}</code></pre>
 </div>
 </div>
@@ -714,7 +716,7 @@ Version 1718: 2026-03-07 08:10:01.190228+00:00</code></pre>
 <section id="querying-tables" class="level2">
 <h2 class="anchored" data-anchor-id="querying-tables">Querying Tables</h2>
 <p>To get the contents of a table, use the <code>query_table</code> function. This will return the whole contents of a table without any filtering, up to for a maximum limit of 200,000 rows. The table is returned as a Pandas DataFrame and you can immediately use standard Pandas function on it.</p>
-<div id="003abc71" class="cell" data-tags="[]" data-execution_count="7">
+<div id="003abc71" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:54:57.730331Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:54:57.730331Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:55:01.924948Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:55:01.924948Z&quot;}}" data-tags="[]" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> client.materialize.query_table(<span class="st">'nucleus_detection_v0'</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>cell_type_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -830,7 +832,7 @@ Caution
 <li><code>limit</code> : This parameter allows you to limit the number of rows returned. If you are just testing out a query or trying to inspect the kind of data within a table, you can set this to a small number to make sure it works before downloading the whole table. Note that this will show a warning so that you don’t accidentally limit your query when you don’t mean to.</li>
 </ul>
 <p>For example, using all of these together:</p>
-<div id="acfa352d" class="cell" data-execution_count="8">
+<div id="acfa352d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:55:01.924948Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:55:01.924948Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:55:02.589515Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:55:02.589003Z&quot;}}" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> client.materialize.query_table(<span class="st">'nucleus_detection_v0'</span>, split_positions<span class="op">=</span><span class="va">True</span>, desired_resolution<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>], select_columns<span class="op">=</span>[<span class="st">'pt_position'</span>, <span class="st">'pt_root_id'</span>], limit<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>cell_type_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
@@ -957,7 +959,7 @@ Caution
 </div>
 </div>
 <p>For example, let’s look at the table <code>aibs_metamodel_celltypes_v661</code>, which has cell type predictions across the dataset. We can get the whole table as a DataFrame:</p>
-<div id="16a8223a" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="9">
+<div id="16a8223a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:55:02.591576Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:55:02.591576Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:55:07.222222Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:55:07.222222Z&quot;}}" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> client.materialize.tables.aibs_metamodel_celltypes_v661().query()</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>cell_type_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
@@ -968,18 +970,18 @@ Caution
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">created</th>
-<th data-quarto-table-cell-role="th">valid</th>
-<th data-quarto-table-cell-role="th">volume</th>
-<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
-<th data-quarto-table-cell-role="th">pt_root_id</th>
 <th data-quarto-table-cell-role="th">id_ref</th>
 <th data-quarto-table-cell-role="th">created_ref</th>
 <th data-quarto-table-cell-role="th">valid_ref</th>
 <th data-quarto-table-cell-role="th">target_id</th>
 <th data-quarto-table-cell-role="th">classification_system</th>
 <th data-quarto-table-cell-role="th">cell_type</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
 <th data-quarto-table-cell-role="th">pt_position</th>
 <th data-quarto-table-cell-role="th">bb_start_position</th>
 <th data-quarto-table-cell-role="th">bb_end_position</th>
@@ -988,90 +990,90 @@ Caution
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">0</th>
-<td>336365</td>
-<td>2020-09-28 22:42:48.966292+00:00</td>
-<td>True</td>
-<td>272.48819</td>
-<td>93606511657924288</td>
-<td>864691136274724621</td>
 <td>36916</td>
 <td>2023-12-19 22:47:18.659864+00:00</td>
 <td>True</td>
 <td>336365</td>
 <td>excitatory_neuron</td>
 <td>5P-IT</td>
+<td>336365</td>
+<td>2020-09-28 22:42:48.966292+00:00</td>
+<td>True</td>
+<td>272.48819</td>
+<td>93606511657924288</td>
+<td>864691136274724621</td>
 <td>[209760, 180832, 27076]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
-<td>110648</td>
-<td>2020-09-28 22:45:09.650639+00:00</td>
-<td>True</td>
-<td>328.533447</td>
-<td>79385153184885329</td>
-<td>864691135489403194</td>
 <td>1070</td>
 <td>2023-12-19 22:38:00.472115+00:00</td>
 <td>True</td>
 <td>110648</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
+<td>110648</td>
+<td>2020-09-28 22:45:09.650639+00:00</td>
+<td>True</td>
+<td>328.533447</td>
+<td>79385153184885329</td>
+<td>864691135489403194</td>
 <td>[106448, 129632, 25410]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
-<td>112071</td>
-<td>2020-09-28 22:43:34.088785+00:00</td>
-<td>True</td>
-<td>272.929413</td>
-<td>79035988248401958</td>
-<td>864691136147292311</td>
 <td>1099</td>
 <td>2023-12-19 22:38:00.898837+00:00</td>
 <td>True</td>
 <td>112071</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
+<td>112071</td>
+<td>2020-09-28 22:43:34.088785+00:00</td>
+<td>True</td>
+<td>272.929413</td>
+<td>79035988248401958</td>
+<td>864691136147292311</td>
 <td>[103696, 149472, 15583]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3</th>
-<td>197927</td>
-<td>2020-09-28 22:43:10.652649+00:00</td>
-<td>True</td>
-<td>91.308853</td>
-<td>84529699506051734</td>
-<td>864691135655940290</td>
 <td>13259</td>
 <td>2023-12-19 22:41:14.417986+00:00</td>
 <td>True</td>
 <td>197927</td>
 <td>nonneuron</td>
 <td>oligo</td>
+<td>197927</td>
+<td>2020-09-28 22:43:10.652649+00:00</td>
+<td>True</td>
+<td>91.308853</td>
+<td>84529699506051734</td>
+<td>864691135655940290</td>
 <td>[143600, 186192, 26471]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
-<td>198087</td>
-<td>2020-09-28 22:41:36.677186+00:00</td>
-<td>True</td>
-<td>161.74498</td>
-<td>83756261929388963</td>
-<td>864691135809440972</td>
 <td>13271</td>
 <td>2023-12-19 22:41:14.685474+00:00</td>
 <td>True</td>
 <td>198087</td>
 <td>nonneuron</td>
 <td>astrocyte</td>
+<td>198087</td>
+<td>2020-09-28 22:41:36.677186+00:00</td>
+<td>True</td>
+<td>161.74498</td>
+<td>83756261929388963</td>
+<td>864691135809440972</td>
 <td>[137952, 190944, 27361]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
@@ -1083,7 +1085,7 @@ Caution
 </div>
 </div>
 <p>and we can add similar formatting options as in the last section to the query function:</p>
-<div id="2819259e" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="10">
+<div id="2819259e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:55:07.224391Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:55:07.224391Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:55:07.870965Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:55:07.870965Z&quot;}}" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>cell_type_df <span class="op">=</span> client.materialize.tables.aibs_metamodel_celltypes_v661().query(split_positions<span class="op">=</span><span class="va">True</span>, desired_resolution<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>], select_columns<span class="op">=</span>[<span class="st">'pt_position'</span>, <span class="st">'pt_root_id'</span>, <span class="st">'cell_type'</span>], limit<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>cell_type_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
@@ -1094,104 +1096,104 @@ Caution
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">cell_type</th>
 <th data-quarto-table-cell-role="th">pt_position_x</th>
 <th data-quarto-table-cell-role="th">pt_position_y</th>
 <th data-quarto-table-cell-role="th">pt_position_z</th>
 <th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
 <th data-quarto-table-cell-role="th">pt_root_id</th>
+<th data-quarto-table-cell-role="th">cell_type</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">0</th>
-<td>23P</td>
 <td>257600</td>
 <td>487936</td>
 <td>802760</td>
 <td>73613884698831796</td>
 <td>864691135724233643</td>
+<td>23P</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
-<td>23P</td>
 <td>260992</td>
 <td>493568</td>
 <td>801560</td>
 <td>73754828345558830</td>
 <td>864691136436395166</td>
+<td>23P</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
-<td>NGC</td>
 <td>256256</td>
 <td>466432</td>
 <td>831040</td>
 <td>73613197571380105</td>
 <td>864691135462260637</td>
+<td>NGC</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3</th>
-<td>23P</td>
 <td>255744</td>
 <td>480640</td>
 <td>833200</td>
 <td>73543309863605007</td>
 <td>864691136723556861</td>
+<td>23P</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
-<td>23P</td>
 <td>262144</td>
 <td>505856</td>
 <td>824880</td>
 <td>73755240729611855</td>
 <td>864691135776658528</td>
+<td>23P</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">5</th>
-<td>23P</td>
 <td>257536</td>
 <td>521728</td>
 <td>804440</td>
 <td>73615052929975022</td>
 <td>864691135941166708</td>
+<td>23P</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">6</th>
-<td>23P</td>
 <td>251840</td>
 <td>552896</td>
 <td>832320</td>
 <td>73404977556816286</td>
 <td>864691135545065768</td>
+<td>23P</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">7</th>
-<td>23P</td>
 <td>251136</td>
 <td>546048</td>
 <td>821320</td>
 <td>73404771398156190</td>
 <td>864691135479369926</td>
+<td>23P</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">8</th>
-<td>23P</td>
 <td>256000</td>
 <td>626368</td>
 <td>814000</td>
 <td>73548188879300688</td>
 <td>864691135697633557</td>
+<td>23P</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">9</th>
-<td>astrocyte</td>
 <td>324096</td>
 <td>417920</td>
 <td>658880</td>
 <td>75933716324660175</td>
 <td>864691135937358133</td>
+<td>astrocyte</td>
 </tr>
 </tbody>
 </table>
@@ -1200,7 +1202,7 @@ Caution
 </div>
 </div>
 <p>However, now we can also filter the table to get only cells that are predicted to have cell type <code>"BC"</code> (for “basket cell”).</p>
-<div id="1375a2ea" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="11">
+<div id="1375a2ea" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:55:07.874047Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:55:07.872130Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:55:09.026389Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:55:09.026389Z&quot;}}" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_cell_type <span class="op">=</span> <span class="st">"BC"</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.aibs_metamodel_celltypes_v661(cell_type<span class="op">=</span>my_cell_type).query()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
@@ -1211,18 +1213,18 @@ Caution
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">created</th>
-<th data-quarto-table-cell-role="th">valid</th>
-<th data-quarto-table-cell-role="th">volume</th>
-<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
-<th data-quarto-table-cell-role="th">pt_root_id</th>
 <th data-quarto-table-cell-role="th">id_ref</th>
 <th data-quarto-table-cell-role="th">created_ref</th>
 <th data-quarto-table-cell-role="th">valid_ref</th>
 <th data-quarto-table-cell-role="th">target_id</th>
 <th data-quarto-table-cell-role="th">classification_system</th>
 <th data-quarto-table-cell-role="th">cell_type</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
 <th data-quarto-table-cell-role="th">pt_position</th>
 <th data-quarto-table-cell-role="th">bb_start_position</th>
 <th data-quarto-table-cell-role="th">bb_end_position</th>
@@ -1231,90 +1233,90 @@ Caution
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">0</th>
-<td>369908</td>
-<td>2020-09-28 22:40:41.814964+00:00</td>
-<td>True</td>
-<td>332.862762</td>
-<td>96002690286851358</td>
-<td>864691136276011533</td>
 <td>43009</td>
 <td>2023-12-19 22:48:53.577191+00:00</td>
 <td>True</td>
 <td>369908</td>
 <td>inhibitory_neuron</td>
 <td>BC</td>
+<td>369908</td>
+<td>2020-09-28 22:40:41.814964+00:00</td>
+<td>True</td>
+<td>332.862762</td>
+<td>96002690286851358</td>
+<td>864691135948379684</td>
 <td>[227104, 207840, 20841]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
-<td>193846</td>
-<td>2020-09-28 22:40:41.897904+00:00</td>
-<td>True</td>
-<td>306.148956</td>
-<td>82838443188669165</td>
-<td>864691135578780933</td>
 <td>12051</td>
 <td>2023-12-19 22:40:57.133228+00:00</td>
 <td>True</td>
 <td>193846</td>
 <td>inhibitory_neuron</td>
 <td>BC</td>
+<td>193846</td>
+<td>2020-09-28 22:40:41.897904+00:00</td>
+<td>True</td>
+<td>306.148956</td>
+<td>82838443188669165</td>
+<td>864691135578780933</td>
 <td>[131568, 168496, 16452]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
-<td>615735</td>
-<td>2020-09-28 22:40:41.957345+00:00</td>
-<td>True</td>
-<td>314.539551</td>
-<td>112181247505371364</td>
-<td>864691135183493378</td>
 <td>83044</td>
 <td>2023-12-19 22:58:50.269173+00:00</td>
 <td>True</td>
 <td>615735</td>
 <td>inhibitory_neuron</td>
 <td>BC</td>
+<td>615735</td>
+<td>2020-09-28 22:40:41.957345+00:00</td>
+<td>True</td>
+<td>314.539551</td>
+<td>112181247505371364</td>
+<td>864691135183493378</td>
 <td>[344880, 161104, 17084]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3</th>
-<td>613047</td>
-<td>2020-09-28 22:40:41.982376+00:00</td>
-<td>True</td>
-<td>242.159775</td>
-<td>113234168401651200</td>
-<td>864691136065413528</td>
 <td>82324</td>
 <td>2023-12-19 22:58:39.896999+00:00</td>
 <td>True</td>
 <td>613047</td>
 <td>inhibitory_neuron</td>
 <td>BC</td>
+<td>613047</td>
+<td>2020-09-28 22:40:41.982376+00:00</td>
+<td>True</td>
+<td>242.159775</td>
+<td>113234168401651200</td>
+<td>864691136065413528</td>
 <td>[352688, 141616, 25312]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
-<td>402885</td>
-<td>2020-09-28 22:40:41.994716+00:00</td>
-<td>True</td>
-<td>279.232361</td>
-<td>97621720621533350</td>
-<td>864691135645529583</td>
 <td>48951</td>
 <td>2023-12-19 22:50:24.710643+00:00</td>
 <td>True</td>
 <td>402885</td>
 <td>inhibitory_neuron</td>
 <td>BC</td>
+<td>402885</td>
+<td>2020-09-28 22:40:41.994716+00:00</td>
+<td>True</td>
+<td>279.232361</td>
+<td>97621720621533350</td>
+<td>864691135645529583</td>
 <td>[238848, 211712, 16471]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
@@ -1339,91 +1341,91 @@ Caution
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">3360</th>
-<td>255438</td>
-<td>2020-09-28 22:45:25.156551+00:00</td>
+<td>58796</td>
+<td>2023-12-19 22:52:46.480501+00:00</td>
 <td>True</td>
-<td>476.715424</td>
-<td>88388710307053252</td>
-<td>864691135751091753</td>
-<td>21867</td>
-<td>2023-12-19 22:43:29.179174+00:00</td>
-<td>True</td>
-<td>255438</td>
+<td>460371</td>
 <td>inhibitory_neuron</td>
 <td>BC</td>
-<td>[171872, 102128, 25159]</td>
+<td>460371</td>
+<td>2020-09-28 22:45:25.161699+00:00</td>
+<td>True</td>
+<td>477.413696</td>
+<td>102540593187674520</td>
+<td>864691135387039317</td>
+<td>[274496, 160320, 25188]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3361</th>
-<td>676137</td>
-<td>2020-09-28 22:45:25.371421+00:00</td>
+<td>42689</td>
+<td>2023-12-19 22:48:48.940096+00:00</td>
 <td>True</td>
-<td>510.804291</td>
-<td>116061493832778551</td>
-<td>864691136119431960</td>
+<td>368447</td>
+<td>inhibitory_neuron</td>
+<td>BC</td>
+<td>368447</td>
+<td>2020-09-28 22:45:25.205361+00:00</td>
+<td>True</td>
+<td>482.77063</td>
+<td>94803467302035339</td>
+<td>864691136485018412</td>
+<td>[218448, 185728, 25230]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">3362</th>
+<td>33105</td>
+<td>2023-12-19 22:46:21.462807+00:00</td>
+<td>True</td>
+<td>309783</td>
+<td>inhibitory_neuron</td>
+<td>BC</td>
+<td>309783</td>
+<td>2020-09-28 22:45:25.220527+00:00</td>
+<td>True</td>
+<td>484.993256</td>
+<td>89675413990989256</td>
+<td>864691135941616385</td>
+<td>[181024, 251872, 26867]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3363</th>
+<td>7593</td>
+<td>2023-12-19 22:39:46.223932+00:00</td>
+<td>True</td>
+<td>164085</td>
+<td>inhibitory_neuron</td>
+<td>BC</td>
+<td>164085</td>
+<td>2020-09-28 22:45:25.231616+00:00</td>
+<td>True</td>
+<td>486.191772</td>
+<td>81434504346081217</td>
+<td>864691135988288256</td>
+<td>[121200, 193936, 16976]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">3364</th>
 <td>89145</td>
 <td>2023-12-19 23:00:27.383578+00:00</td>
 <td>True</td>
 <td>676137</td>
 <td>inhibitory_neuron</td>
 <td>BC</td>
+<td>676137</td>
+<td>2020-09-28 22:45:25.371421+00:00</td>
+<td>True</td>
+<td>510.804291</td>
+<td>116061493832778551</td>
+<td>864691136119431960</td>
 <td>[372976, 235696, 25121]</td>
-<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
-<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">3362</th>
-<td>208056</td>
-<td>2020-09-28 22:45:25.401800+00:00</td>
-<td>True</td>
-<td>521.621643</td>
-<td>84540007091735344</td>
-<td>864691135801456226</td>
-<td>15548</td>
-<td>2023-12-19 22:41:48.382554+00:00</td>
-<td>True</td>
-<td>208056</td>
-<td>inhibitory_neuron</td>
-<td>BC</td>
-<td>[143472, 262944, 23693]</td>
-<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
-<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3363</th>
-<td>438586</td>
-<td>2020-09-28 22:45:25.430745+00:00</td>
-<td>True</td>
-<td>529.501404</td>
-<td>99807894274485381</td>
-<td>864691135212348352</td>
-<td>55791</td>
-<td>2023-12-19 22:52:02.582669+00:00</td>
-<td>True</td>
-<td>438586</td>
-<td>inhibitory_neuron</td>
-<td>BC</td>
-<td>[254912, 247440, 23680]</td>
-<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
-<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">3364</th>
-<td>419363</td>
-<td>2020-09-28 22:45:25.436862+00:00</td>
-<td>True</td>
-<td>530.6427</td>
-<td>99716496901116512</td>
-<td>864691135294355638</td>
-<td>50504</td>
-<td>2023-12-19 22:50:48.576826+00:00</td>
-<td>True</td>
-<td>419363</td>
-<td>inhibitory_neuron</td>
-<td>BC</td>
-<td>[254416, 90336, 20469]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 </tr>
@@ -1435,10 +1437,10 @@ Caution
 </div>
 </div>
 <p>or maybe we just want the cell types for a particular collection of root ids:</p>
-<div id="acd0d226" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="15">
+<div id="acd0d226" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T22:55:09.031708Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T22:55:09.031708Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T22:55:09.594145Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T22:55:09.594145Z&quot;}}" data-tags="[&quot;remove-stderr&quot;]" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>my_root_ids <span class="op">=</span> [<span class="dv">864691135771677771</span>, <span class="dv">864691135560505569</span>, <span class="dv">864691136723556861</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>client.materialize.tables.aibs_metamodel_celltypes_v661(pt_root_id<span class="op">=</span>my_root_ids).query()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -1446,18 +1448,18 @@ Caution
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">created</th>
-<th data-quarto-table-cell-role="th">valid</th>
-<th data-quarto-table-cell-role="th">volume</th>
-<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
-<th data-quarto-table-cell-role="th">pt_root_id</th>
 <th data-quarto-table-cell-role="th">id_ref</th>
 <th data-quarto-table-cell-role="th">created_ref</th>
 <th data-quarto-table-cell-role="th">valid_ref</th>
 <th data-quarto-table-cell-role="th">target_id</th>
 <th data-quarto-table-cell-role="th">classification_system</th>
 <th data-quarto-table-cell-role="th">cell_type</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
 <th data-quarto-table-cell-role="th">pt_position</th>
 <th data-quarto-table-cell-role="th">bb_start_position</th>
 <th data-quarto-table-cell-role="th">bb_end_position</th>
@@ -1466,54 +1468,54 @@ Caution
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">0</th>
-<td>19116</td>
-<td>2020-09-28 22:41:51.767906+00:00</td>
-<td>True</td>
-<td>301.426117</td>
-<td>74737997899501359</td>
-<td>864691135771677771</td>
 <td>11282</td>
 <td>2023-12-19 22:40:43.249642+00:00</td>
 <td>True</td>
 <td>19116</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
+<td>19116</td>
+<td>2020-09-28 22:41:51.767906+00:00</td>
+<td>True</td>
+<td>301.426117</td>
+<td>74737997899501359</td>
+<td>864691135771677771</td>
 <td>[72576, 108656, 20291]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
-<td>21783</td>
-<td>2020-09-28 22:41:59.966574+00:00</td>
-<td>True</td>
-<td>263.637085</td>
-<td>75795590176519004</td>
-<td>864691135560505569</td>
 <td>15681</td>
 <td>2023-12-19 22:41:50.365399+00:00</td>
 <td>True</td>
 <td>21783</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
+<td>21783</td>
+<td>2020-09-28 22:41:59.966574+00:00</td>
+<td>True</td>
+<td>263.637085</td>
+<td>75795590176519004</td>
+<td>864691135560505569</td>
 <td>[80128, 124000, 16563]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
-<td>4074</td>
-<td>2020-09-28 22:42:41.341179+00:00</td>
-<td>True</td>
-<td>313.678223</td>
-<td>73543309863605007</td>
-<td>864691136723556861</td>
 <td>50080</td>
 <td>2023-12-19 22:50:42.474168+00:00</td>
 <td>True</td>
 <td>4074</td>
 <td>excitatory_neuron</td>
 <td>23P</td>
+<td>4074</td>
+<td>2020-09-28 22:42:41.341179+00:00</td>
+<td>True</td>
+<td>313.678223</td>
+<td>73543309863605007</td>
+<td>864691136723556861</td>
 <td>[63936, 120160, 20830]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
 <td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>

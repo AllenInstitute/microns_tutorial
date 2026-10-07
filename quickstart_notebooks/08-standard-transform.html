@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -108,6 +108,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -505,6 +508,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#why-use-standard-transform" id="toc-why-use-standard-transform" class="nav-link" data-scroll-target="#why-use-standard-transform">Why use Standard Transform?</a></li>
   <li><a href="#how-to-use-standard-transform." id="toc-how-to-use-standard-transform." class="nav-link" data-scroll-target="#how-to-use-standard-transform.">How to use Standard Transform.</a></li>
   </ul></li>
+  <li><a href="#transforming-a-skeleton" id="toc-transforming-a-skeleton" class="nav-link" data-scroll-target="#transforming-a-skeleton">Transforming a skeleton</a>
+  <ul class="collapse">
+  <li><a href="#streamline-correction" id="toc-streamline-correction" class="nav-link" data-scroll-target="#streamline-correction">Streamline correction</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/AllenInstitute/microns_tutorial/blob/main/tutorial_book/quickstart_notebooks/08-standard-transform.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/AllenInstitute/microns_tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/AllenInstitute/microns_tutorial/tree/main/tutorial_book/quickstart_notebooks"><i class="bi bi-file-code"></i>Download Quickstart Notebooks</a></li></ul></div></nav>
     </div>
@@ -563,7 +570,7 @@ Note
 <section id="why-use-standard-transform" class="level3">
 <h3 class="anchored" data-anchor-id="why-use-standard-transform">Why use Standard Transform?</h3>
 <p>Let’s look at the coordinates of every excitatory neuron in the MICrONs data to see why we might want to use transformed coordinates.</p>
-<div id="0c05a972" class="cell" data-tags="[]" data-execution_count="2">
+<div id="0c05a972" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-07T00:52:54.500709Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-07T00:52:54.500709Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-07T00:53:04.160881Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-07T00:53:04.159871Z&quot;}}" data-tags="[]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
@@ -601,11 +608,11 @@ Note
 <p>First, if you look along the top of the data, you can see that the pia surface is not flat. In fact, there’s a roughly 5 degree slope from the left to the right. Second, if you look at the location of the pia surface, it’s at around y = 0.4 * 10^6.</p>
 <p>Not only are these units large, the offset is arbitrary and it would make much more sense to anchor y=0 to the pial surface.</p>
 <p>Let’s see how we can do this with <code>standard_transform</code>.</p>
-<div id="78355af9" class="cell" data-tags="[]" data-execution_count="3">
+<div id="78355af9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-07T00:53:04.166096Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-07T00:53:04.163863Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-07T00:53:04.707149Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-07T00:53:04.706139Z&quot;}}" data-tags="[]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> standard_transform <span class="im">import</span> minnie_ds</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>X_transformed <span class="op">=</span> minnie_ds.transform_vx.apply_dataframe(<span class="st">'pt_position'</span>, ct_df)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>X_transformed <span class="op">=</span> minnie_ds.transform(<span class="st">'vx'</span>).apply_dataframe(<span class="st">'pt_position'</span>, ct_df)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>X_transformed <span class="op">=</span> np.array(X_transformed)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ct_df[<span class="st">'pt_xt'</span>] <span class="op">=</span> X_transformed[:,<span class="dv">0</span>]</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>ct_df[<span class="st">'pt_yt'</span>] <span class="op">=</span> X_transformed[:,<span class="dv">1</span>]</span>
@@ -638,14 +645,14 @@ Note
 <p>A number of examples are available in the <a href="https://github.com/ceesem/standard_transform">standard_transform readme</a>.</p>
 <section id="transforming-points" class="level4">
 <h4 class="anchored" data-anchor-id="transforming-points">Transforming points</h4>
-<p>The main functions when working with point data are <code>transform_vx</code> and <code>transform_nm</code>, which transform from voxel coordinates and from nanometer coordinates respectively. In the above example, you will note that because we were working with annotations, we used the voxel coordinate transform.</p>
+<p>The main functions when working with point data are <code>transform('vx')</code> and <code>transform('nm')</code>, which transform from voxel coordinates and from nanometer coordinates respectively. In the above example, you will note that because we were working with annotations, we used the voxel coordinate transform.</p>
 <p>Each of the two transforms has the same functions that can be used:</p>
 <ul>
 <li><code>minnie_ds.{transform}.apply(x)</code>: This converts an <code>Nx3</code> array of points from the original space to an <code>Nx3</code> array of transformed coordinates.</li>
 <li><code>minnie_ds.{transform}.apply_project(projection_axis, x)</code>: This converts an <code>Nx3</code> array of points from the original space to an <code>N</code>-length array of transformed coordinates, taking only values along the given axis (<code>x</code>, <code>y</code>, or <code>z</code>). This is typically done along the <code>y</code> axis to get the depth of each point.</li>
 <li><code>minnie_ds.{transform}.apply_dataframe(column_name, df, Optional[projection_axis])</code>: This takes points from a dataframe column (or collection of three dataframe columns named <code>{column_name}_x</code>, <code>{column_name}_y</code>, and <code>{column_name}_z</code>) and converts them to transformed coordinates. If <code>projection_axis</code> is given, it will only return the values along that axis.</li>
 </ul>
-<p>Where <code>{transform}</code> is either <code>transform_vx</code> or <code>transform_nm</code>.</p>
+<p>Where <code>{transform}</code> is either <code>transform('vx')</code> or <code>transform('nm')</code>.</p>
 <p>You can also invert a transformation, for example if you want to convert transformed coordinates back to voxel coordinates to view in Neuroglancer.</p>
 <ul>
 <li><code>minnie_ds.{transform}.invert(X)</code>: This maps from an Nx3 array in the <em>transformed space</em> back to the original space (voxel or nanometer coordiantes, depending on which transform you used).</li>
@@ -655,18 +662,188 @@ Note
 <h4 class="anchored" data-anchor-id="transforming-meshes-and-skeletons">Transforming meshes and skeletons</h4>
 <p>Standard transform has the capability to transform MeshParty skeletons, MeshWorks, and MeshWork annotations using these same transforms as above.</p>
 <p>For example, to transform all the vertices of meshwork object:</p>
-<div id="2f3c0794-cae3-4fd8-9bfa-03ef3717c3f0" class="cell" data-tags="[]" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nrn_transformed <span class="op">=</span> minnie_ds.transform_nm.apply_meshwork_vertices(nrn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nrn_transformed <span class="op">=</span> minnie_ds.transform(<span class="st">'nm'</span>).apply_meshwork_vertices(nrn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>However, Meshwork objects also have annotations in dataframes as well as vertices. In order to transform these points, we need to specify both the name of the dataframe table and the columns to transform as a dictionary. For example, if you want to also remap the <code>ctr_pt_position</code> values from the <code>pre_syn</code> table and <code>post_syn</code> tables (which are in voxels by default), you would use:</p>
-<div id="803edf12-dc80-4522-8223-3fc33839f39f" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>anno_dict<span class="op">=</span>{<span class="st">'pre_syn'</span>: <span class="st">'ctr_pt_position'</span>, <span class="st">'post_syn'</span>: <span class="st">'ctr_pt_position'</span>}</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>nrn_transformed <span class="op">=</span> minnie_ds.transform_vx.apply_meshwork_annotations(nrn_transformed, anno_dict, inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>anno_dict <span class="op">=</span> {<span class="st">'pre_syn'</span>: <span class="st">'ctr_pt_position'</span>, <span class="st">'post_syn'</span>: <span class="st">'ctr_pt_position'</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>nrn_transformed <span class="op">=</span> minnie_ds.transform(<span class="st">'vx'</span>).apply_meshwork_annotations(nrn_transformed, anno_dict, inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Note that without the <code>inplace=True</code> parameter, these meshwork transformations will return a new object, while if<code>inplace=True</code> the original object is modified.</p>
-
-
 </section>
+</section>
+</section>
+<section id="transforming-a-skeleton" class="level2">
+<h2 class="anchored" data-anchor-id="transforming-a-skeleton">Transforming a skeleton</h2>
+<p>The same transform works on whole neurons, not just point tables. Load a skeletonized cell with <a href="https://pypi.org/project/ossify/"><code>ossify</code></a> (see <a href="07-cave-download-skeleton.html#recommended-load-and-plot-cells-with-ossify">Download Skeletons</a>) and apply the transform to the entire <code>Cell</code> — every skeleton vertex is mapped into the transformed, depth-from-pia micron space. Use <code>transform('nm')</code> because skeleton vertices are stored in nanometers.</p>
+<div id="babf4075519a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-07T00:53:04.710146Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-07T00:53:04.710146Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-07T00:53:24.756123Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-07T00:53:24.756123Z&quot;}}" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ossify</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a skeletonized cell (see the Download Skeletons tutorial)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>cell <span class="op">=</span> ossify.load_cell_from_client(<span class="dv">864691135572530981</span>, client, synapses<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the nm -&gt; transformed (microns, depth below pia) transform to the whole cell</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>cell_t <span class="op">=</span> cell.transform(minnie_ds.transform(<span class="st">'nm'</span>).<span class="bu">apply</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># The skeleton is now in microns; y increases with depth from the pia</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>cell_t.skeleton.root_location</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>array([1293.38573152,  482.85783476,  812.6       ])</code></pre>
+</div>
+</div>
+<p>The transformed skeleton plots directly in anatomical depth coordinates. Point annotations such as synapses share the skeleton’s nanometer space, so the same transform — via <code>apply_dataframe</code> — places them in the same coordinates:</p>
+<div id="1cc017680760" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-07T00:53:24.756123Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-07T00:53:24.756123Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-07T00:53:25.103182Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-07T00:53:25.102773Z&quot;}}" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the transformed skeleton, colored by compartment</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>), dpi<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ossify.plot.plot_morphology_2d(</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    cell,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    projection<span class="op">=</span><span class="st">'xy'</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'compartment'</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span>{ossify.SWC_SOMA: <span class="st">'black'</span>, ossify.SWC_DENDRITE: <span class="st">'black'</span>, ossify.SWC_AXON: <span class="st">'firebrick'</span>},</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    linewidth<span class="op">=</span><span class="st">'radius'</span>, linewidth_norm<span class="op">=</span>(<span class="dv">100</span>, <span class="dv">1000</span>), widths<span class="op">=</span>(<span class="fl">0.25</span>, <span class="dv">2</span>),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">0</span>]</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>ossify.plot.plot_morphology_2d(</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    cell_t,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    projection<span class="op">=</span><span class="st">'xy'</span>,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'compartment'</span>,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span>{ossify.SWC_SOMA: <span class="st">'black'</span>, ossify.SWC_DENDRITE: <span class="st">'black'</span>, ossify.SWC_AXON: <span class="st">'firebrick'</span>},</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    linewidth<span class="op">=</span><span class="st">'radius'</span>, linewidth_norm<span class="op">=</span>(<span class="dv">100</span>, <span class="dv">1000</span>), widths<span class="op">=</span>(<span class="fl">0.25</span>, <span class="dv">2</span>),</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">1</span>]</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Original"</span>,</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="vs">r"X, medial-lateral </span><span class="kw">(</span><span class="vs">nm</span><span class="kw">)</span><span class="vs">"</span>,</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="vs">r"Y, depth from pia </span><span class="kw">(</span><span class="vs">nm</span><span class="kw">)</span><span class="vs">"</span>,</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Transformed"</span>,</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="vs">r"X, medial-lateral </span><span class="kw">(</span><span class="dv">$\m</span><span class="vs">u m</span><span class="dv">$</span><span class="kw">)</span><span class="vs">"</span>,</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="vs">r"Y, depth from pia </span><span class="kw">(</span><span class="dv">$\m</span><span class="vs">u m</span><span class="dv">$</span><span class="kw">)</span><span class="vs">"</span>,</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>sns.despine()</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-standard-transform_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="c40b6ea255db" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-07T00:53:25.106203Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-07T00:53:25.104190Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-07T00:53:25.129123Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-07T00:53:25.128600Z&quot;}}" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Synapse centroids share the skeleton's nm space, so apply the same transform for their depth</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>post_syn_df <span class="op">=</span> cell.annotations.post_syn.df.copy()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>post_syn_df[<span class="st">'depth_um'</span>] <span class="op">=</span> minnie_ds.transform(<span class="st">'nm'</span>).apply_dataframe(<span class="st">'ctr_pt_position'</span>, post_syn_df, projection<span class="op">=</span><span class="st">'y'</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>post_syn_df[[<span class="st">'ctr_pt_position_x'</span>, <span class="st">'ctr_pt_position_y'</span>, <span class="st">'depth_um'</span>]].head(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ctr_pt_position_x</th>
+<th data-quarto-table-cell-role="th">ctr_pt_position_y</th>
+<th data-quarto-table-cell-role="th">depth_um</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">456611088</th>
+<td>1410672.0</td>
+<td>728960.0</td>
+<td>452.463221</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">415745273</th>
+<td>1322120.0</td>
+<td>744656.0</td>
+<td>460.381677</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">461382317</th>
+<td>1433504.0</td>
+<td>817792.0</td>
+<td>542.947128</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<section id="streamline-correction" class="level3">
+<h3 class="anchored" data-anchor-id="streamline-correction">Streamline correction</h3>
+<p>Cells often do not follow a straight line from pia to white matter. At a given location, apical dendrites and descending axons turn out to follow a “streamline” that is is specific to that location. When measuring radial distances relative to a cell body at very different layers, it is useful to use the <code>radial_distance</code> function in <code>standard_transform</code>, which takes this streamline into account.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\img\steamline_correction_cartoon.png" class="img-fluid figure-img"></p>
+<figcaption>streamline correction of one neuron, simplifying its linear representation</figcaption>
+</figure>
+</div>
+<div id="efa9b78f" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># straighten a whole cell according to its streamline</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>cell_streamlined <span class="op">=</span> cell.transform(minnie_ds.streamline(<span class="st">'nm'</span>).transformer(cell.s.root_location))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="a9147e42" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the transformed skeleton, colored by compartment</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>), dpi<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>ossify.plot.plot_morphology_2d(</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    cell,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    projection<span class="op">=</span><span class="st">'zy'</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'compartment'</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span>{ossify.SWC_SOMA: <span class="st">'black'</span>, ossify.SWC_DENDRITE: <span class="st">'black'</span>, ossify.SWC_AXON: <span class="st">'firebrick'</span>},</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    linewidth<span class="op">=</span><span class="st">'radius'</span>, linewidth_norm<span class="op">=</span>(<span class="dv">100</span>, <span class="dv">1000</span>), widths<span class="op">=</span>(<span class="fl">0.25</span>, <span class="dv">2</span>),</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">0</span>]</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>ossify.plot.plot_morphology_2d(</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    cell_streamlined,</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    projection<span class="op">=</span><span class="st">'zy'</span>,</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'compartment'</span>,</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span>{ossify.SWC_SOMA: <span class="st">'black'</span>, ossify.SWC_DENDRITE: <span class="st">'black'</span>, ossify.SWC_AXON: <span class="st">'firebrick'</span>},</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    linewidth<span class="op">=</span><span class="st">'radius'</span>, linewidth_norm<span class="op">=</span>(<span class="dv">100</span>, <span class="dv">1000</span>), widths<span class="op">=</span>(<span class="fl">0.25</span>, <span class="dv">2</span>),</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">1</span>]</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Original"</span>,</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="vs">r"X, medial-lateral </span><span class="kw">(</span><span class="vs">nm</span><span class="kw">)</span><span class="vs">"</span>,</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="vs">r"Y, depth from pia </span><span class="kw">(</span><span class="vs">nm</span><span class="kw">)</span><span class="vs">"</span>,</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Streamline-corrected"</span>,</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="vs">r"X, medial-lateral </span><span class="kw">(</span><span class="dv">$\m</span><span class="vs">u m</span><span class="dv">$</span><span class="kw">)</span><span class="vs">"</span>,</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="vs">r"Y, depth from pia </span><span class="kw">(</span><span class="dv">$\m</span><span class="vs">u m</span><span class="dv">$</span><span class="kw">)</span><span class="vs">"</span>,</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>sns.despine()</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-standard-transform_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note: streamline correcting one neuron in isolation can make cross-neurons comparisons more equitable, such as when quantifying apical span. But it warps any distances between your neuron and other neurons or objects around it. To flatten the entire field of neurons, consider warping along the <a href="https://www.caveconnecto.me/standard_transform/streamline-field-method/"><code>Streamline field</code></a>.</p>
+
+
 </section>
 </section>
 

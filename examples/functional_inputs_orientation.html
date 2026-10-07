@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Label preferred-orientation of synaptic inputs – MICrONs Tutorial">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://tutorial.microns-explorer.org/examples/functional_inputs_orientation_files/figure-html/cell-9-output-1.png">
+<meta property="og:image" content="https://tutorial.microns-explorer.org/examples/functional_inputs_orientation_files/figure-html/cell-10-output-1.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
 <meta property="og:image:height" content="340">
 <meta property="og:image:width" content="403">
@@ -537,7 +537,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This example uses the plotting package <strong>PyVista</strong> for interactive rendering. Any rendering program that takes vertices and edges can work.</p>
-<div id="d1e27f3f-79b0-4159-bb71-495381de8c78" class="cell" data-execution_count="2">
+<div id="d1e27f3f-79b0-4159-bb71-495381de8c78" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:31.521615Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:31.521615Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:36.229725Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:36.229725Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -550,7 +550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="query-the-functional-properties-of-coregistered-cells" class="level2">
 <h2 class="anchored" data-anchor-id="query-the-functional-properties-of-coregistered-cells">Query the functional properties of coregistered cells</h2>
-<div id="06503964-32cb-47b3-a39a-2094a6c0eea3" class="cell" data-tags="[]" data-execution_count="6">
+<div id="06503964-32cb-47b3-a39a-2094a6c0eea3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:36.231234Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:36.231234Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:39.572828Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:39.572828Z&quot;}}" data-tags="[]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set version to the most recent major version with a flat segmentation</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">"minnie65_public"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1300</span></span>
@@ -567,7 +567,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>This table includes duplicates on <code>pt_root_id</code> because some cells were recorded in more than one session. For this analysis, we will keep the derived properties from the recording with the highest quality, denoted under <code>cc_abs</code></p>
-<div id="47c3c4dc-8e23-48a6-9078-9ab8a462041e" class="cell" data-execution_count="14">
+<div id="47c3c4dc-8e23-48a6-9078-9ab8a462041e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:39.572828Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:39.572828Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:39.580866Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:39.580866Z&quot;}}" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep the row with highest cc_abs</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>functional_df <span class="op">=</span> (functional_df</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                 .sort_values(<span class="st">'cc_abs'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
@@ -583,13 +583,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="select-an-example-functional-cell" class="level2">
 <h2 class="anchored" data-anchor-id="select-an-example-functional-cell">Select an example functional cell</h2>
-<div id="f20eb82d-ec13-4485-94ee-51c214879020" class="cell" data-execution_count="9">
+<div id="f20eb82d-ec13-4485-94ee-51c214879020" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:39.580866Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:39.580866Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:44.763079Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:44.763079Z&quot;}}" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>root_id <span class="op">=</span> <span class="dv">864691135655627458</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># query the input synapses</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>syn_df <span class="op">=</span> client.materialize.synapse_query(post_ids<span class="op">=</span>root_id)[[<span class="st">'id'</span>,<span class="st">'pre_pt_root_id'</span>,<span class="st">'post_pt_root_id'</span>,<span class="st">'ctr_pt_position'</span>]]</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>syn_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -627,17 +627,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3</th>
-<td>189711855</td>
-<td>864691136911120750</td>
+<td>162553821</td>
+<td>864691134653472533</td>
 <td>864691135655627458</td>
-<td>[195675, 191580, 20316]</td>
+<td>[178298, 197644, 20219]</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
-<td>142643510</td>
-<td>864691134753572256</td>
+<td>158924326</td>
+<td>864691134898059741</td>
 <td>864691135655627458</td>
-<td>[170124, 106842, 19907]</td>
+<td>[179384, 104726, 20652]</td>
 </tr>
 </tbody>
 </table>
@@ -648,7 +648,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="merge-the-functional-properties-to-the-synapse-table" class="level2">
 <h2 class="anchored" data-anchor-id="merge-the-functional-properties-to-the-synapse-table">Merge the functional properties to the synapse table</h2>
-<div id="4f1cb1b8-b5e5-47bd-baab-d32e07a49420" class="cell" data-execution_count="15">
+<div id="4f1cb1b8-b5e5-47bd-baab-d32e07a49420" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:44.763079Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:44.763079Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:44.784514Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:44.783882Z&quot;}}" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine functional measure to synapse table (preferred orientation)</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>coreg_syn_ori <span class="op">=</span> (syn_df.merge(functional_df[[<span class="st">'pt_root_id'</span>, <span class="st">'pref_ori'</span>]],</span>
@@ -671,7 +671,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>coreg_syn_ori.tail()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -689,7 +689,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">8961</th>
+<th data-quarto-table-cell-role="th">9000</th>
 <td>159745553</td>
 <td>864691135539486066</td>
 <td>864691135655627458</td>
@@ -698,7 +698,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2.573279</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">9001</th>
+<th data-quarto-table-cell-role="th">9017</th>
 <td>158198769</td>
 <td>864691135519025802</td>
 <td>864691135655627458</td>
@@ -707,7 +707,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2.573279</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">9006</th>
+<th data-quarto-table-cell-role="th">9021</th>
 <td>160833418</td>
 <td>864691135293488822</td>
 <td>864691135655627458</td>
@@ -716,7 +716,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2.573279</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">9043</th>
+<th data-quarto-table-cell-role="th">9057</th>
 <td>165737524</td>
 <td>864691135993150913</td>
 <td>864691135655627458</td>
@@ -725,7 +725,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2.573279</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">9077</th>
+<th data-quarto-table-cell-role="th">9078</th>
 <td>158328537</td>
 <td>864691134990217850</td>
 <td>864691135655627458</td>
@@ -742,7 +742,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="load-the-static-mesh-for-one-cell" class="level2">
 <h2 class="anchored" data-anchor-id="load-the-static-mesh-for-one-cell">Load the static mesh for one cell</h2>
-<div id="39f85210-9ffb-48bb-8639-dfd9af959074" class="cell" data-tags="[]" data-execution_count="16">
+<div id="39f85210-9ffb-48bb-8639-dfd9af959074" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:44.785546Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:44.785546Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:47.313735Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:47.313735Z&quot;}}" data-tags="[]" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the static segmentaiton source to the most recent flat segmentation where that root id is valid</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>seg_source <span class="op">=</span> <span class="st">'precomputed://gs://iarpa_microns/minnie/minnie65/seg_m1300'</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -750,7 +750,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>cv <span class="op">=</span> cloudvolume.CloudVolume(seg_source, progress<span class="op">=</span><span class="va">False</span>, use_https<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>mesh <span class="op">=</span> cv.mesh.get(root_id, lod<span class="op">=</span><span class="dv">2</span>)[root_id]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="28ed5fc9-0214-49c4-a659-0538fa7d063c" class="cell" data-tags="[]" data-execution_count="17">
+<div id="28ed5fc9-0214-49c4-a659-0538fa7d063c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:47.318625Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:47.317230Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:47.348833Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:47.348833Z&quot;}}" data-tags="[]" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the mesh vertices for pyvista</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>vertices <span class="op">=</span> mesh.vertices</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>faces <span class="op">=</span> mesh.faces</span>
@@ -765,7 +765,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="set-the-color-map-for-orientation" class="level3">
 <h3 class="anchored" data-anchor-id="set-the-color-map-for-orientation">set the color map for orientation</h3>
-<div id="e845e050-d02a-4aac-b03c-d42cd14cd0eb" class="cell" data-execution_count="19">
+<div id="e845e050-d02a-4aac-b03c-d42cd14cd0eb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:47.348833Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:47.348833Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:47.481689Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:47.481689Z&quot;}}" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>[<span class="dv">4</span>,<span class="dv">4</span>])</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>quant_steps <span class="op">=</span> <span class="dv">2056</span></span>
@@ -789,7 +789,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="functional_inputs_orientation_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="functional_inputs_orientation_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -798,7 +798,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="format-the-synapse-positions" class="level2">
 <h2 class="anchored" data-anchor-id="format-the-synapse-positions">Format the synapse positions</h2>
-<div id="28ecc946-636d-4e8c-9cb2-979b73bc37ab" class="cell" data-execution_count="20">
+<div id="28ecc946-636d-4e8c-9cb2-979b73bc37ab" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:47.483580Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:47.483580Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:47.490608Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:47.490608Z&quot;}}" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># format the synapse positions</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>presyn_positions <span class="op">=</span> np.vstack(coreg_syn_ori.ctr_pt_position.to_numpy()).astype(<span class="bu">float</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>presyn_positions <span class="op">=</span> presyn_positions<span class="op">*</span>np.tile([<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">40</span>],[<span class="bu">len</span>(presyn_positions),<span class="dv">1</span>])</span>
@@ -813,7 +813,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="initialize-plotting-object-add-mesh-and-annotations" class="level2">
 <h2 class="anchored" data-anchor-id="initialize-plotting-object-add-mesh-and-annotations">Initialize plotting object, add mesh and annotations</h2>
-<div id="9135fff4-cb24-4681-94a8-2609a43b1555" class="cell" data-execution_count="21">
+<div id="9135fff4-cb24-4681-94a8-2609a43b1555" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:47.490608Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:47.490608Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:50.922739Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:50.922739Z&quot;}}" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pv.set_jupyter_backend(<span class="st">"client"</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plotter <span class="op">=</span> pv.Plotter(image_scale<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -826,8 +826,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>plotter.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"a132c7caee4d4076a136a82108059f7e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"efe2b30e7e704f6e81e62f18829d5f3e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
+</div>
+</div>
+<div id="7ff7ec04-7e09-460a-bcb0-bca1175cad9e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:50.927249Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:50.922739Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:51.860359Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:51.860359Z&quot;}}" data-execution_count="11">
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\bethanny.danskin\AppData\Local\Temp\ipykernel_16972\1872190736.py:2: PyVistaDeprecationWarning: Plotter.export_html is deprecated. Use plotter.trame.export_html(...) instead. Install via `pip install trame-pyvista`.
+  plotter.export_html('../img/interactives/coregistered_orientation_example.html')</code></pre>
 </div>
 </div>
 <center>
@@ -840,6 +846,9 @@ Interactive: Preferred orientation of functionally-characterized cell inputs
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script type="application/vnd.jupyter.widget-state+json">
+{"state":{"3eb21a7ea44547dc915650b6cd39e18a":{"model_module":"@jupyter-widgets/controls","model_module_version":"2.0.0","model_name":"HTMLStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"2.0.0","_model_name":"HTMLStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","background":null,"description_width":"","font_size":null,"text_color":null}},"43721ed5a1684af4b07d9b999d287d52":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"efe2b30e7e704f6e81e62f18829d5f3e":{"model_module":"@jupyter-widgets/controls","model_module_version":"2.0.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"2.0.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"2.0.0","_view_name":"HTMLView","description":"","description_allow_html":false,"layout":"IPY_MODEL_43721ed5a1684af4b07d9b999d287d52","placeholder":"​","style":"IPY_MODEL_3eb21a7ea44547dc915650b6cd39e18a","tabbable":null,"tooltip":null,"value":"<iframe src=\"http://localhost:60362/index.html?ui=P_0x2107c94afd0_0&reconnect=auto\" class=\"pyvista\" style=\"width: 100%; height: 600px; border: 1px solid rgb(221,221,221);\" scrolling=\"no\"></iframe>"}}},"version_major":2,"version_minor":0}
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
