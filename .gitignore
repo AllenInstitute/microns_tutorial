@@ -8,5 +8,13 @@ _site/
 .data/
 _local*
 
+# uv / virtual environment
+.venv/
+__pycache__/
+
+# meshparty MeshMeta disk cache (downloaded meshes)
+tutorial_book/quickstart_notebooks/meshes/
+
 # Jupyter Notebook
 .ipynb_checkpoints
+**/.jupyter_cache/

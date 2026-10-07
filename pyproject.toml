@@ -1,0 +1,29 @@
+[project]
+name = "microns-tutorial"
+version = "0.1.0"
+description = "Source for the tutorial.microns-explorer.org MICrONS dataset documentation, built with Quarto"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "caveclient>=8.0.1",
+    "cloud-volume>=12.1.0",
+    "cloud-files>=5.0.0",
+    "meshparty>=2.0.1",
+    "pcg-skel>=1.3.0",
+    "skeleton-plot>=0.0.10",
+    "ossify>=0.3.0",
+    "imageryclient>=1.0.4",
+    "nglui[full]>=4.9.0",
+    "standard-transform>=1.4.1",
+    "pyvista[jupyter]>=0.44",
+    "matplotlib>=3.9",
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "seaborn>=0.13.2",
+    "tqdm>=4.66",
+    "jupyter>=1.1.1",
+    "jupyter-cache>=1.0.0",
+    "jupyterlab-quarto>=0.3.5",
+    "ipykernel>=6.29",
+    "ipywidgets>=8.1",
+]

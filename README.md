@@ -1,19 +1,24 @@
 # MICrONs Tutorial
 
-Build for the tutorial.microns-explorer.org documentation. Website built with [Quarto](https://quarto.org/) `version 1.6.42`
+Build for the tutorial.microns-explorer.org documentation. Website built with [Quarto](https://quarto.org/).
 
-Running the code blocks requires packages:
+## Development environment
 
+This project uses [uv](https://docs.astral.sh/uv/) for Python environment and package management. Dependencies are declared in `pyproject.toml` and pinned in `uv.lock`.
+
+To create a local virtual environment (`.venv`, git-ignored) with all required packages:
+
+```bash
+uv sync
 ```
-  caveclient >=7.4.3  
-  cloud-volume >=12.1.0  
-  meshparty == 2.0.1
-  pcg_skel >= 1.3.0
-  imageryclient >=1.0.4 
-  skeleton_plot >= 0.0.10
+
+Render the site locally (executing the notebooks) with:
+
+```bash
+uv run quarto render tutorial_book
 ```
 
-All available with `pip install`.
+The core analysis packages include `caveclient`, `cloud-volume`, `meshparty`, `pcg-skel`, `imageryclient`, `skeleton-plot`, `nglui`, and `standard-transform`; see `pyproject.toml` for the full list.
 
 ## Issues
 We welcome bug reports and questions. Please post an informative issue on the GitHub issue tracker.
