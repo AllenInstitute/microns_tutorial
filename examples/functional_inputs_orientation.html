@@ -119,8 +119,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:description" content="">
 <meta property="og:image" content="https://tutorial.microns-explorer.org/examples/functional_inputs_orientation_files/figure-html/cell-10-output-1.png">
 <meta property="og:site_name" content="MICrONs Tutorial">
-<meta property="og:image:height" content="340">
-<meta property="og:image:width" content="403">
+<meta property="og:image:height" content="239">
+<meta property="og:image:width" content="376">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -537,7 +537,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This example uses the plotting package <strong>PyVista</strong> for interactive rendering. Any rendering program that takes vertices and edges can work.</p>
-<div id="d1e27f3f-79b0-4159-bb71-495381de8c78" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:31.521615Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:31.521615Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:36.229725Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:36.229725Z&quot;}}" data-execution_count="1">
+<div id="d1e27f3f-79b0-4159-bb71-495381de8c78" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-08T00:25:21.616935Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-08T00:25:21.616935Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-08T00:25:30.782141Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-08T00:25:30.781034Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -550,46 +550,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="query-the-functional-properties-of-coregistered-cells" class="level2">
 <h2 class="anchored" data-anchor-id="query-the-functional-properties-of-coregistered-cells">Query the functional properties of coregistered cells</h2>
-<div id="06503964-32cb-47b3-a39a-2094a6c0eea3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:36.231234Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:36.231234Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:39.572828Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:39.572828Z&quot;}}" data-tags="[]" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set version to the most recent major version with a flat segmentation</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">"minnie65_public"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1300</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Query functional properties, keep value with highest cc_abs</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>functional_df <span class="op">=</span> client.materialize.tables.functional_properties_v3_bcm().query(</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    select_columns <span class="op">=</span> {<span class="st">'nucleus_detection_v0'</span>: [<span class="st">'id'</span>, <span class="st">'pt_root_id'</span>],</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                      <span class="st">'functional_properties_v3_bcm'</span>: [<span class="st">'pref_dir'</span>,<span class="st">'pref_ori'</span>,<span class="st">'cc_abs'</span>],</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                     },</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(functional_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The table <code>digital_twin_properties_bcm_coreg_v4</code> was first released with materialization version <a href="../release_manifests/version-1507.html">v1507</a>. However, we will find the same root at the earlier <strong>v1300</strong> for easier mesh loading.</p>
+<div id="06503964-32cb-47b3-a39a-2094a6c0eea3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-08T00:25:30.791865Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-08T00:25:30.791865Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-08T00:25:33.740626Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-08T00:25:33.740626Z&quot;}}" data-tags="[]" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(<span class="st">"minnie65_public"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client.version <span class="op">=</span> <span class="dv">1926</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Query functional properties, keep value with highest cc_abs</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>functional_df <span class="op">=</span> client.materialize.tables.digital_twin_properties_bcm_coreg_v4().query(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    select_columns <span class="op">=</span> {<span class="st">'nucleus_detection_v0'</span>: [<span class="st">'id'</span>, <span class="st">'pt_root_id'</span>],</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                      <span class="st">'digital_twin_properties_bcm_coreg_v4'</span>: [<span class="st">'pref_dir'</span>,<span class="st">'pref_ori'</span>,<span class="st">'cc_abs'</span>],</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                     },</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(functional_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Table Owner Notice on digital_twin_properties_bcm_coreg_v4:  For the use of this table please cite: 1) https://doi.org/10.1038/s41586-025-08829-y; Wang et al., 2025 2) https://doi.org/10.1038/s41586-025-08840-3; Ding, Fahey, and Papadopoulos et al., 2025 3) https://doi.org/10.1038/s41586-025-08790-w; MICrONS Consortium et al., 2025</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>12094</code></pre>
+<pre><code>15780</code></pre>
 </div>
 </div>
 <p>This table includes duplicates on <code>pt_root_id</code> because some cells were recorded in more than one session. For this analysis, we will keep the derived properties from the recording with the highest quality, denoted under <code>cc_abs</code></p>
-<div id="47c3c4dc-8e23-48a6-9078-9ab8a462041e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:39.572828Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:39.572828Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:39.580866Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:39.580866Z&quot;}}" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep the row with highest cc_abs</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>functional_df <span class="op">=</span> (functional_df</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                 .sort_values(<span class="st">'cc_abs'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                 .drop_duplicates(subset<span class="op">=</span><span class="st">'id'</span>, keep<span class="op">=</span><span class="st">'first'</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                 .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                )</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(functional_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="47c3c4dc-8e23-48a6-9078-9ab8a462041e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-08T00:25:33.740626Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-08T00:25:33.740626Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-08T00:25:33.752548Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-08T00:25:33.752548Z&quot;}}" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep the row with highest cc_abs</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>functional_df <span class="op">=</span> (functional_df</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                 .sort_values(<span class="st">'cc_abs'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                 .drop_duplicates(subset<span class="op">=</span><span class="st">'id'</span>, keep<span class="op">=</span><span class="st">'first'</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                 .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(functional_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>10631</code></pre>
+<pre><code>13090</code></pre>
 </div>
 </div>
 </section>
 <section id="select-an-example-functional-cell" class="level2">
 <h2 class="anchored" data-anchor-id="select-an-example-functional-cell">Select an example functional cell</h2>
-<div id="f20eb82d-ec13-4485-94ee-51c214879020" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:39.580866Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:39.580866Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:44.763079Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:44.763079Z&quot;}}" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>root_id <span class="op">=</span> <span class="dv">864691135655627458</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># query the input synapses</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>syn_df <span class="op">=</span> client.materialize.synapse_query(post_ids<span class="op">=</span>root_id)[[<span class="st">'id'</span>,<span class="st">'pre_pt_root_id'</span>,<span class="st">'post_pt_root_id'</span>,<span class="st">'ctr_pt_position'</span>]]</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>syn_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<p>The <code>digital_twin_properties_bcm_coreg_v4</code> functional table is available from materialization version 1507 onward, so we query it — and the input synapses — at the current public version. The static mesh below, however, comes from the <code>seg_m1300</code> flat segmentation, so we track the example cell by <strong>two</strong> root ids: original <code>root_id</code> (valid in the v1300 segmentation) and <code>version_root_id</code> (its current root, used for the functional and synapse queries).</p>
+<div id="f20eb82d-ec13-4485-94ee-51c214879020" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-08T00:25:33.752548Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-08T00:25:33.752548Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-08T00:25:35.569984Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-08T00:25:35.569984Z&quot;}}" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The example cell, as a root id valid in the v1300 flat segmentation (used for the mesh below)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>root_id <span class="op">=</span> <span class="dv">864691135655627458</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The functional data and synapses are queried at the current version, so remap the</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># example cell to its current (v1926) root id</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>timestamp <span class="op">=</span> client.materialize.get_timestamp(client.version)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>version_root_id <span class="op">=</span> <span class="bu">int</span>(client.chunkedgraph.suggest_latest_roots(root_id, timestamp<span class="op">=</span>timestamp))</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"v1300 root id: </span><span class="sc">{</span>root_id<span class="sc">}</span><span class="ss">, current root id: </span><span class="sc">{</span>version_root_id<span class="sc">}</span><span class="ss">. The root may change between versions with proofreading.  "</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># query the input synapses</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>syn_df <span class="op">=</span> client.materialize.synapse_query(post_ids<span class="op">=</span>version_root_id)[[<span class="st">'id'</span>,<span class="st">'pre_pt_root_id'</span>,<span class="st">'post_pt_root_id'</span>,<span class="st">'ctr_pt_position'</span>]]</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>syn_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>v1300 root id: 864691135655627458, current root id: 864691135811906764. The root may change between versions with proofreading.  </code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -608,36 +622,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">0</th>
 <td>174174984</td>
 <td>864691135392563698</td>
-<td>864691135655627458</td>
+<td>864691135811906764</td>
 <td>[186856, 191906, 22934]</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
 <td>162422539</td>
-<td>864691135448388082</td>
-<td>864691135655627458</td>
+<td>864691135885598064</td>
+<td>864691135811906764</td>
 <td>[178626, 205198, 22722]</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
 <td>173960580</td>
 <td>864691135615882692</td>
-<td>864691135655627458</td>
+<td>864691135811906764</td>
 <td>[185226, 196182, 22506]</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3</th>
-<td>162553821</td>
-<td>864691134653472533</td>
-<td>864691135655627458</td>
-<td>[178298, 197644, 20219]</td>
+<td>159219981</td>
+<td>864691134898719965</td>
+<td>864691135811906764</td>
+<td>[178500, 106780, 20910]</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
-<td>158924326</td>
-<td>864691134898059741</td>
-<td>864691135655627458</td>
-<td>[179384, 104726, 20652]</td>
+<td>189711855</td>
+<td>864691136911120750</td>
+<td>864691135811906764</td>
+<td>[195675, 191580, 20316]</td>
 </tr>
 </tbody>
 </table>
@@ -648,30 +662,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="merge-the-functional-properties-to-the-synapse-table" class="level2">
 <h2 class="anchored" data-anchor-id="merge-the-functional-properties-to-the-synapse-table">Merge the functional properties to the synapse table</h2>
-<div id="4f1cb1b8-b5e5-47bd-baab-d32e07a49420" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:44.763079Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:44.763079Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:44.784514Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:44.783882Z&quot;}}" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine functional measure to synapse table (preferred orientation)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>coreg_syn_ori <span class="op">=</span> (syn_df.merge(functional_df[[<span class="st">'pt_root_id'</span>, <span class="st">'pref_ori'</span>]],</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                              left_on<span class="op">=</span><span class="st">'pre_pt_root_id'</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                              right_on<span class="op">=</span><span class="st">'pt_root_id'</span>, </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                              how<span class="op">=</span><span class="st">'left'</span>)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                 .drop(columns<span class="op">=</span>{<span class="st">'pt_root_id'</span>})</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>coreg_syn_ori <span class="op">=</span> (coreg_syn_ori.merge(functional_df[[<span class="st">'pt_root_id'</span>, <span class="st">'pref_ori'</span>]],</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                                     left_on<span class="op">=</span><span class="st">'post_pt_root_id'</span>, </span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                                     right_on<span class="op">=</span><span class="st">'pt_root_id'</span>, </span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                                     how<span class="op">=</span><span class="st">'left'</span>,</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                                     suffixes<span class="op">=</span>[<span class="st">'_pre'</span>,<span class="st">'_post'</span>])</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                   .drop(columns<span class="op">=</span>{<span class="st">'pt_root_id'</span>})</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop the synaptic partners without an orientation preference (non coregistered cells)</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>coreg_syn_ori <span class="op">=</span> coreg_syn_ori.dropna(subset<span class="op">=</span>[<span class="st">'pref_ori_pre'</span>,<span class="st">'pref_ori_post'</span>])</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>coreg_syn_ori.tail()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div id="4f1cb1b8-b5e5-47bd-baab-d32e07a49420" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-08T00:25:35.571502Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-08T00:25:35.571502Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-08T00:25:35.586828Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-08T00:25:35.586828Z&quot;}}" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine functional measure to synapse table (preferred orientation)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>coreg_syn_ori <span class="op">=</span> (syn_df.merge(functional_df[[<span class="st">'pt_root_id'</span>, <span class="st">'pref_ori'</span>]],</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                              left_on<span class="op">=</span><span class="st">'pre_pt_root_id'</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                              right_on<span class="op">=</span><span class="st">'pt_root_id'</span>, </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                              how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                 .drop(columns<span class="op">=</span>{<span class="st">'pt_root_id'</span>})</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>coreg_syn_ori <span class="op">=</span> (coreg_syn_ori.merge(functional_df[[<span class="st">'pt_root_id'</span>, <span class="st">'pref_ori'</span>]],</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                                     left_on<span class="op">=</span><span class="st">'post_pt_root_id'</span>, </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                                     right_on<span class="op">=</span><span class="st">'pt_root_id'</span>, </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                                     how<span class="op">=</span><span class="st">'left'</span>,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                                     suffixes<span class="op">=</span>[<span class="st">'_pre'</span>,<span class="st">'_post'</span>])</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>                   .drop(columns<span class="op">=</span>{<span class="st">'pt_root_id'</span>})</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop the synaptic partners without an orientation preference (non coregistered cells)</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>coreg_syn_ori <span class="op">=</span> coreg_syn_ori.dropna(subset<span class="op">=</span>[<span class="st">'pref_ori_pre'</span>,<span class="st">'pref_ori_post'</span>])</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>coreg_syn_ori.tail()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -689,49 +703,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">9000</th>
+<th data-quarto-table-cell-role="th">9232</th>
+<td>159218970</td>
+<td>864691135977473391</td>
+<td>864691135811906764</td>
+<td>[177222, 159044, 20627]</td>
+<td>153.240433</td>
+<td>138.018661</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9257</th>
 <td>159745553</td>
-<td>864691135539486066</td>
-<td>864691135655627458</td>
+<td>864691136177629702</td>
+<td>864691135811906764</td>
 <td>[178414, 121410, 21070]</td>
-<td>2.646102</td>
-<td>2.573279</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">9017</th>
-<td>158198769</td>
-<td>864691135519025802</td>
-<td>864691135655627458</td>
-<td>[175653, 124157, 20593]</td>
-<td>0.102209</td>
-<td>2.573279</td>
+<td>119.237099</td>
+<td>138.018661</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">9021</th>
-<td>160833418</td>
-<td>864691135293488822</td>
-<td>864691135655627458</td>
-<td>[178344, 125064, 21023]</td>
-<td>1.344499</td>
-<td>2.573279</td>
+<th data-quarto-table-cell-role="th">9274</th>
+<td>158924324</td>
+<td>864691135720809265</td>
+<td>864691135811906764</td>
+<td>[179370, 105188, 20665]</td>
+<td>5.258744</td>
+<td>138.018661</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">9057</th>
+<th data-quarto-table-cell-role="th">9328</th>
 <td>165737524</td>
-<td>864691135993150913</td>
-<td>864691135655627458</td>
+<td>864691135215092352</td>
+<td>864691135811906764</td>
 <td>[179838, 104038, 20625]</td>
-<td>1.417019</td>
-<td>2.573279</td>
+<td>13.710155</td>
+<td>138.018661</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">9078</th>
-<td>158328537</td>
-<td>864691134990217850</td>
-<td>864691135655627458</td>
-<td>[178680, 203290, 22572]</td>
-<td>2.914949</td>
-<td>2.573279</td>
+<th data-quarto-table-cell-role="th">9329</th>
+<td>197114781</td>
+<td>864691135384344043</td>
+<td>864691135811906764</td>
+<td>[199398, 203886, 22306]</td>
+<td>79.00901</td>
+<td>138.018661</td>
 </tr>
 </tbody>
 </table>
@@ -742,50 +756,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="load-the-static-mesh-for-one-cell" class="level2">
 <h2 class="anchored" data-anchor-id="load-the-static-mesh-for-one-cell">Load the static mesh for one cell</h2>
-<div id="39f85210-9ffb-48bb-8639-dfd9af959074" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:44.785546Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:44.785546Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:47.313735Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:47.313735Z&quot;}}" data-tags="[]" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the static segmentaiton source to the most recent flat segmentation where that root id is valid</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>seg_source <span class="op">=</span> <span class="st">'precomputed://gs://iarpa_microns/minnie/minnie65/seg_m1300'</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># load from cloudvolume</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>cv <span class="op">=</span> cloudvolume.CloudVolume(seg_source, progress<span class="op">=</span><span class="va">False</span>, use_https<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>mesh <span class="op">=</span> cv.mesh.get(root_id, lod<span class="op">=</span><span class="dv">2</span>)[root_id]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="39f85210-9ffb-48bb-8639-dfd9af959074" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-08T00:25:35.586828Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-08T00:25:35.586828Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-08T00:25:37.130335Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-08T00:25:37.130335Z&quot;}}" data-tags="[]" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the static segmentaiton source to the most recent flat segmentation where that root id is valid</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>seg_source <span class="op">=</span> <span class="st">'precomputed://gs://iarpa_microns/minnie/minnie65/seg_m1300'</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># load from cloudvolume</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>cv <span class="op">=</span> cloudvolume.CloudVolume(seg_source, progress<span class="op">=</span><span class="va">False</span>, use_https<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>mesh <span class="op">=</span> cv.mesh.get(root_id, lod<span class="op">=</span><span class="dv">2</span>)[root_id]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="28ed5fc9-0214-49c4-a659-0538fa7d063c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:47.318625Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:47.317230Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:47.348833Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:47.348833Z&quot;}}" data-tags="[]" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the mesh vertices for pyvista</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>vertices <span class="op">=</span> mesh.vertices</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>faces <span class="op">=</span> mesh.faces</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># add a column of all 3s to the faces</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>padded_faces <span class="op">=</span> np.concatenate([np.full((faces.shape[<span class="dv">0</span>], <span class="dv">1</span>), <span class="dv">3</span>), faces], axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>mesh_poly <span class="op">=</span> pv.PolyData(vertices, faces<span class="op">=</span>padded_faces)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Flip with y axis</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>mesh_poly.points[:, <span class="dv">1</span>] <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="28ed5fc9-0214-49c4-a659-0538fa7d063c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-08T00:25:37.131816Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-08T00:25:37.131816Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-08T00:25:37.183870Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-08T00:25:37.183870Z&quot;}}" data-tags="[]" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the mesh vertices for pyvista</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>vertices <span class="op">=</span> mesh.vertices</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>faces <span class="op">=</span> mesh.faces</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># add a column of all 3s to the faces</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>padded_faces <span class="op">=</span> np.concatenate([np.full((faces.shape[<span class="dv">0</span>], <span class="dv">1</span>), <span class="dv">3</span>), faces], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>mesh_poly <span class="op">=</span> pv.PolyData(vertices, faces<span class="op">=</span>padded_faces)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Flip with y axis</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>mesh_poly.points[:, <span class="dv">1</span>] <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="set-the-color-map-for-orientation" class="level3">
 <h3 class="anchored" data-anchor-id="set-the-color-map-for-orientation">set the color map for orientation</h3>
-<div id="e845e050-d02a-4aac-b03c-d42cd14cd0eb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:47.348833Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:47.348833Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:47.481689Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:47.481689Z&quot;}}" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>[<span class="dv">4</span>,<span class="dv">4</span>])</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>quant_steps <span class="op">=</span> <span class="dv">2056</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>colormap <span class="op">=</span> plt.get_cmap(<span class="st">'hsv'</span>, quant_steps)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> mpl.colors.Normalize(<span class="fl">0.0</span>, np.pi)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>display_axes <span class="op">=</span> fig.add_axes([<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.8</span>,<span class="fl">0.8</span>], projection<span class="op">=</span><span class="st">'polar'</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> mpl.colors.Normalize(<span class="fl">0.0</span>, np.pi)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># # Plot the colorbar onto the polar axis</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>cb <span class="op">=</span> mpl.colorbar.ColorbarBase(display_axes, cmap<span class="op">=</span>colormap,</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>                               norm<span class="op">=</span>norm,</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>                               orientation<span class="op">=</span><span class="st">'horizontal'</span>) </span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># use orientation horizontal so that the gradient goes around the wheel rather than centre out</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co"># aesthetics - get rid of border and axis labels                                   </span></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>cb.outline.set_visible(<span class="va">False</span>)                                 </span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>display_axes.set_rlim([<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>])</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>display_axes.set_title(<span class="st">'Preferred orientation (degrees)'</span>, y<span class="op">=</span><span class="dv">0</span>, loc<span class="op">=</span><span class="st">'center'</span>)</span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>plt.show() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e845e050-d02a-4aac-b03c-d42cd14cd0eb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-08T00:25:37.183870Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-08T00:25:37.183870Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-08T00:25:37.334369Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-08T00:25:37.334369Z&quot;}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Legend for orientation map, annotated with the drifting-bar stimulus at each angle.</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># a vertical bar (moving right) is 0 deg and orientation increases counter-clockwise. </span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Preferred orientation is 180-degree periodic (0 deg == 180 deg).</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> mpatches</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>colormap <span class="op">=</span> plt.get_cmap(<span class="st">'hsv'</span>, <span class="dv">2056</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>ori_norm <span class="op">=</span> mpl.colors.Normalize(<span class="fl">0.0</span>, <span class="fl">180.0</span>)   <span class="co"># pref_ori is in degrees [0, 180]</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">4.6</span>, <span class="fl">3.0</span>))</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>ax.set_aspect(<span class="st">'equal'</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">'off'</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># colored half-ring: angular position = preferred orientation (0 deg at right, CCW to 180 deg at left)</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>r_in, r_out, n <span class="op">=</span> <span class="fl">0.60</span>, <span class="fl">1.0</span>, <span class="dv">180</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    a0, a1 <span class="op">=</span> <span class="dv">180</span> <span class="op">*</span> i <span class="op">/</span> n, <span class="dv">180</span> <span class="op">*</span> (i <span class="op">+</span> <span class="dv">1</span>) <span class="op">/</span> n</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    ax.add_patch(mpatches.Wedge((<span class="dv">0</span>, <span class="dv">0</span>), r_out, a0, a1, width<span class="op">=</span>r_out <span class="op">-</span> r_in,</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>                                facecolor<span class="op">=</span>colormap(ori_norm((a0 <span class="op">+</span> a1) <span class="op">/</span> <span class="dv">2</span>)), edgecolor<span class="op">=</span><span class="st">'none'</span>))</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co"># stimulus-bar glyph + label at each major orientation</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>bar_r, label_r <span class="op">=</span> <span class="fl">1.17</span>, <span class="fl">1.44</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>bar_w, bar_h <span class="op">=</span> <span class="fl">0.055</span>, <span class="fl">0.26</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> deg <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">45</span>, <span class="dv">90</span>, <span class="dv">135</span>, <span class="dv">180</span>]:</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> np.deg2rad(deg)</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    cx, cy <span class="op">=</span> bar_r <span class="op">*</span> np.cos(a), bar_r <span class="op">*</span> np.sin(a)</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># a vertical rectangle is orientation 0; rotate it CCW by `deg` to draw the stimulus bar</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    rect <span class="op">=</span> mpatches.Rectangle((cx <span class="op">-</span> bar_w <span class="op">/</span> <span class="dv">2</span>, cy <span class="op">-</span> bar_h <span class="op">/</span> <span class="dv">2</span>), bar_w, bar_h, facecolor<span class="op">=</span><span class="st">'k'</span>, edgecolor<span class="op">=</span><span class="st">'none'</span>)</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    rect.set_transform(mpl.transforms.Affine2D().rotate_deg_around(cx, cy, deg) <span class="op">+</span> ax.transData)</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>    ax.add_patch(rect)</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>    ax.text(label_r <span class="op">*</span> np.cos(a), label_r <span class="op">*</span> np.sin(a), <span class="ss">f'</span><span class="sc">{</span>deg<span class="sc">}</span><span class="ss">°'</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'center'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span><span class="fl">1.75</span>, <span class="fl">1.75</span>)</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="fl">0.25</span>, <span class="fl">1.7</span>)</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Preferred orientation'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -798,42 +827,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="format-the-synapse-positions" class="level2">
 <h2 class="anchored" data-anchor-id="format-the-synapse-positions">Format the synapse positions</h2>
-<div id="28ecc946-636d-4e8c-9cb2-979b73bc37ab" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:47.483580Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:47.483580Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:47.490608Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:47.490608Z&quot;}}" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># format the synapse positions</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>presyn_positions <span class="op">=</span> np.vstack(coreg_syn_ori.ctr_pt_position.to_numpy()).astype(<span class="bu">float</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>presyn_positions <span class="op">=</span> presyn_positions<span class="op">*</span>np.tile([<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">40</span>],[<span class="bu">len</span>(presyn_positions),<span class="dv">1</span>])</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>pre_syn_poly <span class="op">=</span> pv.PolyData(presyn_positions)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Flip with y axis</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>pre_syn_poly.points[:, <span class="dv">1</span>] <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>pre_syn_colors <span class="op">=</span> colormap(coreg_syn_ori.pref_ori_pre)</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>post_syn_color <span class="op">=</span> colormap(coreg_syn_ori.pref_ori_post)[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="28ecc946-636d-4e8c-9cb2-979b73bc37ab" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-08T00:25:37.337306Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-08T00:25:37.337306Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-08T00:25:37.344388Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-08T00:25:37.343906Z&quot;}}" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># format the synapse positions</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>presyn_positions <span class="op">=</span> np.vstack(coreg_syn_ori.ctr_pt_position.to_numpy()).astype(<span class="bu">float</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>presyn_positions <span class="op">=</span> presyn_positions<span class="op">*</span>np.tile([<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">40</span>],[<span class="bu">len</span>(presyn_positions),<span class="dv">1</span>])</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>pre_syn_poly <span class="op">=</span> pv.PolyData(presyn_positions)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Flip with y axis</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>pre_syn_poly.points[:, <span class="dv">1</span>] <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># pref_ori is in degrees [0, 180]. Use a dedicated normalizer here (independent of the colorbar</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># cell above) so the point colors always span the full hsv wheel: norm(deg) maps [0, 180] -&gt; [0, 1].</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>ori_norm <span class="op">=</span> mpl.colors.Normalize(<span class="fl">0.0</span>, <span class="fl">180.0</span>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>pre_syn_colors <span class="op">=</span> colormap(ori_norm(coreg_syn_ori.pref_ori_pre))</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>post_syn_color <span class="op">=</span> colormap(ori_norm(coreg_syn_ori.pref_ori_post))[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="initialize-plotting-object-add-mesh-and-annotations" class="level2">
 <h2 class="anchored" data-anchor-id="initialize-plotting-object-add-mesh-and-annotations">Initialize plotting object, add mesh and annotations</h2>
-<div id="9135fff4-cb24-4681-94a8-2609a43b1555" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:47.490608Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:47.490608Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:50.922739Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:50.922739Z&quot;}}" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pv.set_jupyter_backend(<span class="st">"client"</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plotter <span class="op">=</span> pv.Plotter(image_scale<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>plotter.add_mesh(mesh_poly, color<span class="op">=</span>post_syn_color, opacity<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>plotter.add_mesh(pre_syn_poly, scalars<span class="op">=</span>pre_syn_colors, rgb<span class="op">=</span><span class="va">True</span>, point_size<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plotter.camera_position <span class="op">=</span> <span class="st">'zy'</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>plotter.set_background(<span class="st">'#fbfbfb'</span>)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>plotter.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="9135fff4-cb24-4681-94a8-2609a43b1555" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-08T00:25:37.346848Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-08T00:25:37.346848Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-08T00:25:42.597328Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-08T00:25:42.597328Z&quot;}}" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>pv.set_jupyter_backend(<span class="st">"client"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>plotter <span class="op">=</span> pv.Plotter(image_scale<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>plotter.add_mesh(mesh_poly, color<span class="op">=</span>post_syn_color, opacity<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>plotter.add_mesh(pre_syn_poly, scalars<span class="op">=</span>pre_syn_colors, rgb<span class="op">=</span><span class="va">True</span>, point_size<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>plotter.camera_position <span class="op">=</span> <span class="st">'zy'</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>plotter.set_background(<span class="st">'#fbfbfb'</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>plotter.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"efe2b30e7e704f6e81e62f18829d5f3e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"b86c092af60649869467c5194e8d9a75","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
-</div>
-</div>
-<div id="7ff7ec04-7e09-460a-bcb0-bca1175cad9e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-10-05T23:42:50.927249Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-10-05T23:42:50.922739Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-10-05T23:42:51.860359Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-10-05T23:42:51.860359Z&quot;}}" data-execution_count="11">
-<div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\bethanny.danskin\AppData\Local\Temp\ipykernel_16972\1872190736.py:2: PyVistaDeprecationWarning: Plotter.export_html is deprecated. Use plotter.trame.export_html(...) instead. Install via `pip install trame-pyvista`.
-  plotter.export_html('../img/interactives/coregistered_orientation_example.html')</code></pre>
 </div>
 </div>
 <center>
@@ -847,7 +873,7 @@ Interactive: Preferred orientation of functionally-characterized cell inputs
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script type="application/vnd.jupyter.widget-state+json">
-{"state":{"3eb21a7ea44547dc915650b6cd39e18a":{"model_module":"@jupyter-widgets/controls","model_module_version":"2.0.0","model_name":"HTMLStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"2.0.0","_model_name":"HTMLStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","background":null,"description_width":"","font_size":null,"text_color":null}},"43721ed5a1684af4b07d9b999d287d52":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"efe2b30e7e704f6e81e62f18829d5f3e":{"model_module":"@jupyter-widgets/controls","model_module_version":"2.0.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"2.0.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"2.0.0","_view_name":"HTMLView","description":"","description_allow_html":false,"layout":"IPY_MODEL_43721ed5a1684af4b07d9b999d287d52","placeholder":"​","style":"IPY_MODEL_3eb21a7ea44547dc915650b6cd39e18a","tabbable":null,"tooltip":null,"value":"<iframe src=\"http://localhost:60362/index.html?ui=P_0x2107c94afd0_0&reconnect=auto\" class=\"pyvista\" style=\"width: 100%; height: 600px; border: 1px solid rgb(221,221,221);\" scrolling=\"no\"></iframe>"}}},"version_major":2,"version_minor":0}
+{"state":{"689eeb78e5c64ff3a6bea3a675f033db":{"model_module":"@jupyter-widgets/controls","model_module_version":"2.0.0","model_name":"HTMLStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"2.0.0","_model_name":"HTMLStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","background":null,"description_width":"","font_size":null,"text_color":null}},"7af349281f4f462395c5d5cef7385c7c":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"9f77413baca848d2bba31e7ca0b66546":{"model_module":"@jupyter-widgets/controls","model_module_version":"2.0.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"2.0.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"2.0.0","_view_name":"HTMLView","description":"","description_allow_html":false,"layout":"IPY_MODEL_7af349281f4f462395c5d5cef7385c7c","placeholder":"​","style":"IPY_MODEL_689eeb78e5c64ff3a6bea3a675f033db","tabbable":null,"tooltip":null,"value":"<iframe src=\"http://localhost:55094/index.html?ui=P_0x244f208bcd0_0&reconnect=auto\" class=\"pyvista\" style=\"width: 100%; height: 600px; border: 1px solid rgb(221,221,221);\" scrolling=\"no\"></iframe>"}}},"version_major":2,"version_minor":0}
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
